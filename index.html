@@ -506,13 +506,6 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
     margin-top: 3.5rem;
-    position: relative;
-  }
-  .process-steps::before {
-    content: '';
-    position: absolute;
-    top: 22px; left: 10%; right: 10%;
-    height: 1px; background: var(--border);
   }
   .process-step { text-align: center; padding: 0 1.5rem; }
   .step-num {
@@ -522,11 +515,13 @@
     border: 1px solid var(--sage-light);
     display: flex; align-items: center; justify-content: center;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 400;
+    line-height: 44px;
     color: var(--sage);
     margin: 0 auto 1.25rem;
-    position: relative; z-index: 1;
+    padding: 0;
+    text-align: center;
   }
   .process-step h4 {
     font-family: 'Cormorant Garamond', serif;
@@ -540,6 +535,66 @@
     font-weight: 300;
     color: var(--muted);
     line-height: 1.75;
+  }
+
+
+  /* ── FAQ ── */
+  #faq { background: var(--warm-white); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+  .faq-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.75rem;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .faq-item:hover { border-color: var(--sage-light); box-shadow: 0 6px 24px rgba(0,0,0,0.06); }
+  .faq-item.open { border-color: var(--sage); }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .faq-question h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.4;
+    margin: 0;
+  }
+  .faq-icon {
+    width: 22px; height: 22px; flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; color: var(--sage);
+    transition: transform 0.25s, background 0.2s;
+    margin-top: 2px;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--sage); color: white; border-color: var(--sage); }
+  .faq-answer {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, margin-top 0.3s ease;
+  }
+  .faq-item.open .faq-answer { max-height: 300px; margin-top: 0.85rem; }
+  @media (max-width: 900px) {
+    .faq-grid { grid-template-columns: 1fr; }
   }
 
   /* ── SAMPLE WORK ── */
@@ -742,8 +797,7 @@
     .hero-right { height: 300px; }
     .about-grid, .sample-card, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .services-grid, .pricing-grid { grid-template-columns: 1fr; }
-    .process-steps { grid-template-columns: 1fr 1fr; }
-    .process-steps::before { display: none; }
+    .process-steps { grid-template-columns: 1fr 1fr; row-gap: 2.5rem; }
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     section { padding: 4rem 1.5rem; }
@@ -974,7 +1028,7 @@
     <h2 class="section-title">Everything your practice <em>needs online.</em></h2>
     <p class="section-sub">From brand-new sites to refreshes of outdated ones — I handle the full picture so you don't have to think about it.</p>
 
-```
+
 <div class="services-grid">
   <div class="service-card">
     <div class="service-icon">🎨</div>
@@ -1012,7 +1066,7 @@
     <span class="service-badge">Optional</span>
   </div>
 </div>
-```
+
 
   </div>
 </section>
@@ -1027,7 +1081,7 @@
       <p class="section-sub">Every package includes a mobile-ready, SEO-optimized WordPress site with a contact form. You own your site outright — no monthly platform fees.</p>
     </div>
 
-```
+
 <div class="pricing-grid">
   <!-- Starter -->
   <div class="pricing-card">
@@ -1097,7 +1151,7 @@
 </div>
 
 <p class="pricing-note">Need ongoing updates? Monthly maintenance plans start at <strong>$75/month</strong>. Not sure which package is right for you? <a href="#contact" style="color:var(--sage);">Let's chat for free.</a></p>
-```
+
 
   </div>
 </section>
@@ -1110,7 +1164,7 @@
     <h2 class="section-title">Stress-free from <em>start to launch.</em></h2>
     <p class="section-sub">A simple, guided process so you're never left wondering what comes next.</p>
 
-```
+
 <div class="process-steps">
   <div class="process-step">
     <div class="step-num">1</div>
@@ -1133,7 +1187,72 @@
     <p>Your site goes live. I'm here for post-launch questions and support — you're never left on your own.</p>
   </div>
 </div>
-```
+
+
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section id="faq">
+  <div class="container">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title">Everything you need <em>to know.</em></h2>
+    <p class="section-sub">Quick answers before we talk. Still have questions? The contact form is right below.</p>
+
+
+<div class="faq-grid">
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question">
+      <h3>How much does a therapist website cost?</h3>
+      <div class="faq-icon">+</div>
+    </div>
+    <div class="faq-answer">Packages start at $499 for a clean, professional 4-page site. Most solo therapists choose the Growth package at $899 — it includes full SEO, custom design, and copywriting support. Group practices start at $1,499. All pricing is one-time; you'll never pay a monthly platform fee to me.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question">
+      <h3>Do I own the website after it's built?</h3>
+      <div class="faq-icon">+</div>
+    </div>
+    <div class="faq-answer">Yes — completely. Your domain, your hosting account, your WordPress login. Everything is in your name. You're never locked into working with me, and the site doesn't disappear if we stop working together. This is a key difference from platforms like Brighter Vision or TherapySites.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question">
+      <h3>How long does it take?</h3>
+      <div class="faq-icon">+</div>
+    </div>
+    <div class="faq-answer">Most sites launch within 2–3 weeks of receiving your deposit and completed intake questionnaire. The timeline depends mostly on how quickly you can provide feedback — I keep things moving on my end and send progress updates every few days.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question">
+      <h3>Do I have to write my own copy?</h3>
+      <div class="faq-icon">+</div>
+    </div>
+    <div class="faq-answer">No. Copywriting support is available starting at $150. I'll ask you the right questions, then write your homepage, about page, and service descriptions in your voice. Most clients say it's their favorite part of the process — and it takes a task off your plate that most therapists dread.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question">
+      <h3>Will my site show up on Google?</h3>
+      <div class="faq-icon">+</div>
+    </div>
+    <div class="faq-answer">Every site I build is optimized for search from day one — meta tags, site structure, XML sitemap, and Rank Math SEO configured for your location and specialty. Realistic timeline for organic results is 3–6 months. For faster local visibility, I also offer Google Business Profile setup for $75.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-question">
+      <h3>Do you work with practices outside Colorado?</h3>
+      <div class="faq-icon">+</div>
+    </div>
+    <div class="faq-answer">Yes — I work with therapists and private practice counselors nationwide. Everything is handled remotely. I've worked with practices across the country and the process is identical whether you're in Denver or Miami.</div>
+  </div>
+
+</div>
+
 
   </div>
 </section>
@@ -1207,7 +1326,7 @@
         </div>
       </div>
 
-```
+
   <div>
     <form class="contact-form" id="contactForm" novalidate onsubmit="return false;">
       <!-- Formspree config fields -->
@@ -1251,13 +1370,13 @@
       <div style="text-align:center;padding:2rem 1rem;">
         <div style="font-size:2.5rem;margin-bottom:0.75rem;">✦</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--charcoal);margin-bottom:0.5rem;">Message received!</div>
-        <p style="font-size:0.92rem;font-weight:300;color:var(--muted);line-height:1.8;max-width:380px;margin:0 auto 1rem;">Thanks for reaching out. I'll personally review your message and get back to you within one business day!</p>
+        <p style="font-size:0.92rem;font-weight:300;color:var(--muted);line-height:1.8;max-width:380px;margin:0 auto 1rem;">Thanks for reaching out. I'll personally review your message and get back to you within one business day.</p>
         <p style="font-size:0.8rem;color:var(--sage);font-weight:400;">— Chad Moravec</p>
       </div>
     </div>
   </div>
 </div>
-```
+
 
   </div>
 </section>
@@ -1276,6 +1395,16 @@
 </footer>
 
 <script>
+
+// FAQ accordion — must be global for onclick= handlers
+function toggleFaq(el) {
+  var isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(item) {
+    item.classList.remove('open');
+  });
+  if (!isOpen) el.classList.add('open');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 
   var FORMSPREE_URL = 'https://formspree.io/f/maqpokge';
@@ -1348,6 +1477,8 @@ document.addEventListener('DOMContentLoaded', function() {
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
   });
+
+
 
 });
 </script>
