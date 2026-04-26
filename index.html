@@ -671,29 +671,6 @@
   .preview-dot:nth-child(1) { background: #f4a89d; }
   .preview-dot:nth-child(2) { background: #f4d57c; }
   .preview-dot:nth-child(3) { background: var(--sage-light); }
-  /* Live FBC iframe preview — gives the embedded site a stable 1400×1050 desktop
-     viewport, then visually scales the rendered output to fit the preview frame.
-     Using fixed pixel dimensions (not %) gives the FBC site's hero JS a normal
-     viewport context to measure against, which prevents the broken hero state
-     that occurred with relative sizing on desktop. */
-  .fbc-iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 1400px;
-    height: 1050px;
-    border: 0;
-    transform-origin: top left;
-  }
-  /* Scale factor matches the .sample-preview's actual rendered width.
-     Default desktop card ≈ 540px wide → 540/1400 ≈ 0.385.
-     We use 0.4 and let aspect-ratio:4/3 on the wrapper crop any overflow. */
-  .fbc-frame .fbc-iframe { transform: scale(0.4); }
-  @media (min-width: 1400px) {
-    .fbc-frame .fbc-iframe { transform: scale(0.45); }
-  }
-  @media (max-width: 768px) {
-    .fbc-frame .fbc-iframe { transform: scale(0.28); }
-  }
   .preview-content {
     padding: 0;
     background: linear-gradient(160deg, #f0f4ef, #faf8f5);
@@ -1333,12 +1310,12 @@
           <div class="preview-dot"></div>
           <span style="flex:1;background:white;border-radius:3px;font-size:0.6rem;color:#999;padding:0.15rem 0.5rem;font-family:monospace;">fullbloomcounseling.com</span>
         </div>
-        <div class="fbc-frame" style="position:relative;overflow:hidden;line-height:0;aspect-ratio:4 / 3;background:#fff;">
+        <div style="position:relative;overflow:hidden;line-height:0;aspect-ratio:4 / 3;background:#fff;">
           <iframe
             src="https://fullbloomcounseling.com/"
             title="Full Bloom Counseling — live website preview"
             loading="lazy"
-            class="fbc-iframe"
+            style="position:absolute;top:0;left:0;width:250%;height:250%;border:0;transform:scale(0.4);transform-origin:top left;"
           ></iframe>
           <a href="https://fullbloomcounseling.com/" target="_blank" rel="noopener"
              style="position:absolute;bottom:0.75rem;right:0.75rem;font-size:0.68rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;background:white;border:1px solid var(--border);padding:0.35rem 0.8rem;border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,0.1);z-index:1;">
