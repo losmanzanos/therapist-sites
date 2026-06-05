@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block crawlers from accessing source maps or dev artifacts if any are ever added
+Disallow: /*.map$
+
+Sitemap: https://therapistweb.design/sitemap.xml

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Forest green rounded-square — matches site brand -->
+  <rect width="64" height="64" rx="13" fill="#2d4a35"/>
+  <!-- Four-pointed star (✦) in cream — matches the ticker separator already in the brand -->
+  <path d="M32,7 L39,25 57,32 39,39 32,57 25,39 7,32 25,25 Z" fill="#f1ebe0"/>
+</svg>

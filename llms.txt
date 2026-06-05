@@ -1,0 +1,35 @@
+# therapistweb.design
+
+> A small Denver studio building bespoke, hand-coded websites for therapists and counselors in private practice. No templates. No platform fees. No two sites alike.
+
+## About
+
+therapistweb.design is operated by Chad Moravec, a web designer and developer based in Denver, CO. Chad's wife runs a group therapy practice, which means he understands the mental health private practice world from the inside — the directories, the niche specialties, the language that helps clients find and trust a therapist online.
+
+Every site is hand-coded from scratch. No WordPress, no page builders, no themes. The result is a fast, secure, uniquely designed website the client owns outright — domain, hosting, and code all in their name.
+
+## Services
+
+- **Custom website design & development** for solo and group therapy practices (nationwide)
+- **Website refreshes** for practices on existing platforms (WordPress, Squarespace, Wix)
+- **SEO & copywriting** — homepage, about page, service descriptions, and ongoing monthly blog posts
+- **Platform migrations** when a rebuild makes more sense than a refresh
+
+## Portfolio
+
+- **Full Bloom Counseling Group** — fullbloomcounseling.com — Denver, CO — group practice of eight therapists, hand-coded static build
+
+## Contact
+
+- Email: hello@therapistweb.design
+- Phone: (720) 466-1013
+- Location: Denver, CO (serving practices nationwide)
+- Contact form: https://therapistweb.design/#contact
+
+## Technical approach
+
+All builds are static HTML/CSS/JS — no CMS, no database, no server-side runtime. Sites are deployed to edge hosting (Cloudflare Pages or GitHub Pages) for zero ongoing hosting fees. Every build includes: semantic HTML structure, local SEO targeting, JSON-LD structured data, XML sitemap, and proper meta tags from day one.
+
+## Other work
+
+For experimental creative work and custom web applications, Chad operates a separate studio at studionull.io.

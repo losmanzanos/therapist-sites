@@ -1,0 +1,17 @@
+{
+  "name": "therapistweb.design",
+  "short_name": "therapistweb",
+  "description": "Bespoke, hand-coded websites for therapists and counselors in private practice. Chad Moravec · Denver, CO.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1ebe0",
+  "theme_color": "#2d4a35",
+  "icons": [
+    { "src": "favicon-16.png", "sizes": "16x16", "type": "image/png" },
+    { "src": "favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
