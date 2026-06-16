@@ -971,40 +971,22 @@ footer{background:var(--ink)}
   .hero-figure{
     display:block;
     left:auto;
-    right:-16%;
+    right:-18%;
     bottom:auto;
     top:-6%;
     width:72%;
     z-index:3;
-    opacity:.20;
+    opacity:.11;
     transform:rotate(7deg);
     pointer-events:none;
   }
   .hero-figure img{
     mix-blend-mode:multiply;
-    filter:saturate(.35) contrast(1.08);
+    filter:saturate(.2) contrast(.9) brightness(1.1);
   }
 
-  /* ── ABOUT: leaf as ghost watermark behind copy ── */
-  .mission{position:relative;overflow:hidden}
-  .mission-img{
-    display:block;
-    position:absolute;
-    right:-8px;
-    bottom:-16px;
-    width:170px;
-    opacity:.09;
-    pointer-events:none;
-    margin:0;
-    z-index:0;
-  }
-  .mission-img .stamp{width:100%}
-  .mission-img .stamp img{
-    width:100%;
-    mix-blend-mode:normal;
-    filter:none;
-  }
-  .mission-img .stamp::after{display:none}
+  /* ── ABOUT: leaf hidden on mobile — overlaps text at narrow widths ── */
+  .mission-img{display:none}
 
   /* ── EYEBROW: ✦ ornament before every section label ── */
   .eyebrow::before{
