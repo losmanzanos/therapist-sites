@@ -15,9 +15,21 @@ Every site is hand-coded from scratch. No WordPress, no page builders, no themes
 - **SEO & copywriting** — homepage, about page, service descriptions, and ongoing monthly blog posts
 - **Platform migrations** when a rebuild makes more sense than a refresh
 
+Pricing: custom builds are quoted per project after a free introductory call (no fixed prices published — every practice is scoped individually). Hourly work for refreshes and existing sites is $150/hr, or by fixed quote. All work is a one-time investment with no recurring platform fees.
+
 ## Portfolio
 
-- **Full Bloom Counseling Group** — fullbloomcounseling.com — Denver, CO — group practice of eight therapists, hand-coded static build
+- **Full Bloom Counseling Group** — fullbloomcounseling.com — Denver, CO — group practice of seven therapists; hand-coded static build with individual clinician profiles, specialty service pages, and structured data.
+- **Lovett Counseling & Consulting** — lovettcounselingandconsulting.com — Denver, CO — solo trauma-informed practice (LPC, CCTP); multi-page hand-coded build covering individual therapy, couples therapy, consulting & training, fees, and FAQ.
+- **The Safer Sounds Club** — safersoundsclub.com — Colorado — specialty brand for a licensed therapist focused on misophonia and somatic/EMDR-informed work; hand-coded landing page with an interactive quiz, workshop, and blog.
+
+## Pages
+
+- Home — https://therapistweb.design/ — overview, process, services, tech stack, FAQ, and contact.
+- Work — https://therapistweb.design/work/ — case studies of the three builds above.
+- Journal — https://therapistweb.design/journal/ — articles on building, owning, and getting found online as a therapist.
+  - "The real cost of renting your therapy website" — https://therapistweb.design/journal/renting-vs-owning-your-therapy-website/ — the math and ownership case for a one-time hand-coded site vs. subscription platforms like Brighter Vision, TherapySites, or Squarespace.
+  - "How clients actually find a therapist online" — https://therapistweb.design/journal/how-clients-find-a-therapist-online/ — how directories, Google, and word of mouth work together, and the job a therapist's own website does in that chain.
 
 ## Contact
 
@@ -28,7 +40,7 @@ Every site is hand-coded from scratch. No WordPress, no page builders, no themes
 
 ## Technical approach
 
-All builds are static HTML/CSS/JS — no CMS, no database, no server-side runtime. Sites are deployed to edge hosting (Cloudflare Pages or GitHub Pages) for zero ongoing hosting fees. Every build includes: semantic HTML structure, local SEO targeting, JSON-LD structured data, XML sitemap, and proper meta tags from day one.
+All builds are static HTML/CSS/JS — no CMS runtime, no database, no server-side code. Sites are version-controlled in a GitHub repository owned by the client and deployed to edge hosting (Cloudflare Pages or GitHub Pages) for zero ongoing hosting fees. An optional lightweight editor (TinaCMS) can be added when a client wants to edit their own copy. Contact and intake forms are custom-built and fully branded via EmailJS — designed to match the site rather than a generic embed — so there is no server to maintain. Every build includes: semantic HTML structure, local SEO targeting, JSON-LD structured data, an XML sitemap, and proper meta tags from day one — so both search engines and AI assistants can understand and recommend the practice.
 
 ## Other work
 
