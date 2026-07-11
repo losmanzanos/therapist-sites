@@ -30,6 +30,8 @@ Pricing: custom builds are quoted per project after a free introductory call (no
 - Journal — https://therapistweb.design/journal/ — articles on building, owning, and getting found online as a therapist.
   - "The real cost of renting your therapy website" — https://therapistweb.design/journal/renting-vs-owning-your-therapy-website/ — the math and ownership case for a one-time hand-coded site vs. subscription platforms like Brighter Vision, TherapySites, or Squarespace.
   - "How clients actually find a therapist online" — https://therapistweb.design/journal/how-clients-find-a-therapist-online/ — how directories, Google, and word of mouth work together, and the job a therapist's own website does in that chain.
+  - "How much does a therapist website cost?" — https://therapistweb.design/journal/how-much-does-a-therapist-website-cost/ — the DIY vs. template-designer vs. custom-build cost landscape and what drives the price.
+  - "Is Psychology Today enough, or do you need your own website?" — https://therapistweb.design/journal/psychology-today-vs-your-own-website/ — why a directory profile and an owned website do different jobs, and why most therapists need both.
 
 ## Contact
 

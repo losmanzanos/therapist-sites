@@ -1192,3 +1192,13 @@ footer{background:var(--ink)}
 /* clickable brand wordmark (links home on every page) */
 .hdr-brand a{display:inline-block;transition:opacity .2s}
 .hdr-brand a:hover{opacity:.62}
+
+/* ── TESTIMONIAL (standalone) ── */
+.testi{background:var(--cream-s);padding:var(--sy) 0;position:relative;overflow:hidden}
+.testi-inner{max-width:820px;margin:0 auto;padding:0 var(--gut);text-align:center;position:relative;z-index:2}
+.testi .eyebrow{display:block;margin-bottom:22px}
+.testi blockquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(23px,2.9vw,38px);line-height:1.24;color:var(--ink);margin:0}
+.testi blockquote em{font-style:italic;color:var(--forest-2)}
+.testi cite{display:block;margin-top:26px;font-style:normal;font-family:var(--sans);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-m)}
+.testi cite a{color:var(--forest);border-bottom:1px solid var(--forest-l);transition:color .2s}
+.testi cite a:hover{color:var(--forest-2)}
