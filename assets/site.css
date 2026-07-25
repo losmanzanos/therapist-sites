@@ -10,7 +10,7 @@
   --cream-w:    #ebe2d0;
   --ink:        #2c2d36;
   --ink-s:      #4b4d59;
-  --ink-m:      #76798a;
+  --ink-m:      #5f6273;   /* was #76798a — only 3.39:1 on --cream-s, below WCAG AA */
   --dusty:      #a9b1b6;
   --border:     rgba(44,45,54,.12);
   --serif:      "Cormorant Garamond","EB Garamond",Georgia,serif;
@@ -130,7 +130,8 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 .hdr-brand-sub{
   display:block;
   font-family:var(--sans);font-weight:400;font-size:8.5px;
-  letter-spacing:.38em;text-transform:uppercase;color:var(--ink-m);
+  letter-spacing:.38em;text-transform:uppercase;
+  color:#555869; /* --ink-m (#76798a) was only 3.39:1 on --cream-s at this size */
 }
 
 /* right — CTA */
@@ -204,7 +205,12 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
    ═══════════════════════════════ */
 .hero{
   position:relative;
+  /* fallback first, then WebP for browsers that support image-set() */
   background:url('../images/bg-floral.jpg') center/cover no-repeat;
+  background:image-set(
+    url('../images/bg-floral.webp') type('image/webp'),
+    url('../images/bg-floral.jpg')  type('image/jpeg')
+  ) center/cover no-repeat;
   padding:56px 0 0;overflow:hidden;isolation:isolate;
   min-height:clamp(600px,88vh,900px);
 }
@@ -351,6 +357,10 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 .quote::after{
   content:"";position:absolute;inset:0;z-index:0;
   background:url('../images/bg-sky.jpg') center/cover no-repeat;
+  background:image-set(
+    url('../images/bg-sky.webp') type('image/webp'),
+    url('../images/bg-sky.jpg')  type('image/jpeg')
+  ) center/cover no-repeat;
   filter:saturate(.35) brightness(.92) sepia(.15);
   opacity:.55;
   pointer-events:none;
@@ -374,7 +384,12 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   width:100%;height:100%;
   clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
   background-size:cover;background-position:center;
-  background-image:url('../images/decor-moon.png');background-color:#2a3036;
+  background-image:url('../images/decor-moon.png');
+  background-image:image-set(
+    url('../images/decor-moon.webp') type('image/webp'),
+    url('../images/decor-moon.png')  type('image/png')
+  );
+  background-color:#2a3036;
   position:relative;
 }
 .hex-mask::after{
@@ -513,10 +528,11 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 .step:last-child{border-bottom:1px solid var(--border)}
 .step-num{
   font-family:var(--serif);font-style:italic;
-  font-size:1.35rem;font-weight:400;color:var(--forest-l);line-height:1.4;
+  /* --forest-l is 1.98:1 on cream; --forest-2 keeps the green but clears AA */
+  font-size:1.35rem;font-weight:400;color:var(--forest-2);line-height:1.4;
 }
 .step-body{padding-left:1rem;border-left:1px solid var(--border)}
-.step-body h4{
+.step-body h3{
   font-family:var(--serif-d);font-size:1.35rem;font-weight:400;
   color:var(--ink);margin-bottom:.5rem;line-height:1.2;
 }
@@ -619,7 +635,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 .refresh-panel{
   background:var(--cream);border:1px solid var(--border);padding:2.4rem;
 }
-.refresh-panel h5{
+.refresh-panel h3{
   font-family:var(--serif);font-style:italic;font-size:1.1rem;
   font-weight:500;color:var(--forest);margin-bottom:1.15rem;
 }
@@ -749,7 +765,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
   font-size:1.2rem;color:var(--forest);margin-bottom:1.1rem;
 }
-.fsuc h4{
+.fsuc h3{
   font-family:var(--serif-d);font-size:1.6rem;font-weight:400;
   color:var(--ink);margin-bottom:.55rem;
 }
@@ -788,7 +804,7 @@ footer{background:var(--ink)}
 }
 .ft-blurb{
   font-size:.78rem;line-height:1.78;
-  color:rgba(255,255,255,.42);max-width:240px;
+  color:rgba(255,255,255,.56);max-width:240px; /* .42 failed WCAG AA (3.72:1) on #2c2d36 */
 }
 .ft-nav{list-style:none;display:flex;flex-direction:column;gap:.52rem}
 .ft-nav a{
@@ -826,9 +842,11 @@ footer{background:var(--ink)}
   display:flex;justify-content:space-between;
   align-items:center;flex-wrap:wrap;gap:.8rem;
 }
-.ft-copy{font-size:.62rem;color:rgba(255,255,255,.3);letter-spacing:.04em}
-.ft-extra{font-size:.62rem;color:rgba(255,255,255,.24);letter-spacing:.03em}
-.ft-extra a{color:rgba(255,255,255,.38);border-bottom:1px solid rgba(255,255,255,.12);transition:color .2s}
+/* Footer alphas raised to clear WCAG AA 4.5:1 on #2c2d36 while keeping the
+   original hierarchy (copy > extra, links brightest). Was .30 / .24 / .38. */
+.ft-copy{font-size:.62rem;color:rgba(255,255,255,.6);letter-spacing:.04em}
+.ft-extra{font-size:.62rem;color:rgba(255,255,255,.56);letter-spacing:.03em}
+.ft-extra a{color:rgba(255,255,255,.72);border-bottom:1px solid rgba(255,255,255,.2);transition:color .2s}
 .ft-extra a:hover{color:rgba(255,255,255,.7)}
 
 

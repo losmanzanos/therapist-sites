@@ -19,26 +19,28 @@ Pricing: custom builds are quoted per project after a free introductory call (no
 
 ## Portfolio
 
-- **Full Bloom Counseling Group** — fullbloomcounseling.com — Denver, CO — group practice of seven therapists; hand-coded static build with individual clinician profiles, specialty service pages, and structured data.
-- **Lovett Counseling & Consulting** — lovettcounselingandconsulting.com — Denver, CO — solo trauma-informed practice (LPC, CCTP); multi-page hand-coded build covering individual therapy, couples therapy, consulting & training, fees, and FAQ.
-- **The Safer Sounds Club** — safersoundsclub.com — Colorado — specialty brand for a licensed therapist focused on misophonia and somatic/EMDR-informed work; hand-coded landing page with an interactive quiz, workshop, and blog.
+- [Full Bloom Counseling Group](https://fullbloomcounseling.com): Denver, CO — group practice of seven therapists; hand-coded static build with individual clinician profiles, specialty service pages, and structured data.
+- [Lovett Counseling & Consulting](https://lovettcounselingandconsulting.com): Denver, CO — solo trauma-informed practice (LPC, CCTP); multi-page hand-coded build covering individual therapy, couples therapy, consulting & training, fees, and FAQ.
+- [The Safer Sounds Club](https://safersoundsclub.com): Colorado — specialty brand for a licensed therapist focused on misophonia and somatic/EMDR-informed work; hand-coded landing page with an interactive quiz, workshop, and blog.
 
 ## Pages
 
-- Home — https://therapistweb.design/ — overview, process, services, tech stack, FAQ, and contact.
-- Work — https://therapistweb.design/work/ — case studies of the three builds above.
-- Journal — https://therapistweb.design/journal/ — articles on building, owning, and getting found online as a therapist.
-  - "The real cost of renting your therapy website" — https://therapistweb.design/journal/renting-vs-owning-your-therapy-website/ — the math and ownership case for a one-time hand-coded site vs. subscription platforms like Brighter Vision, TherapySites, or Squarespace.
-  - "How clients actually find a therapist online" — https://therapistweb.design/journal/how-clients-find-a-therapist-online/ — how directories, Google, and word of mouth work together, and the job a therapist's own website does in that chain.
-  - "How much does a therapist website cost?" — https://therapistweb.design/journal/how-much-does-a-therapist-website-cost/ — the DIY vs. template-designer vs. custom-build cost landscape and what drives the price.
-  - "Is Psychology Today enough, or do you need your own website?" — https://therapistweb.design/journal/psychology-today-vs-your-own-website/ — why a directory profile and an owned website do different jobs, and why most therapists need both.
+- [Home](https://therapistweb.design/): Overview, process, services, tech stack, FAQ, and contact.
+- [Work](https://therapistweb.design/work/): Case studies of the three builds above.
+- [Journal](https://therapistweb.design/journal/): Articles on building, owning, and getting found online as a therapist.
+
+## Journal articles
+
+- [The real cost of renting your therapy website](https://therapistweb.design/journal/renting-vs-owning-your-therapy-website/): The math and ownership case for a one-time hand-coded site vs. subscription platforms like Brighter Vision, TherapySites, or Squarespace.
+- [How clients actually find a therapist online](https://therapistweb.design/journal/how-clients-find-a-therapist-online/): How directories, Google, and word of mouth work together, and the job a therapist's own website does in that chain.
+- [How much does a therapist website cost?](https://therapistweb.design/journal/how-much-does-a-therapist-website-cost/): The DIY vs. template-designer vs. custom-build cost landscape and what drives the price.
+- [Is Psychology Today enough, or do you need your own website?](https://therapistweb.design/journal/psychology-today-vs-your-own-website/): Why a directory profile and an owned website do different jobs, and why most therapists need both.
 
 ## Contact
 
-- Email: hello@therapistweb.design
-- Phone: (720) 466-1013
-- Location: Denver, CO (serving practices nationwide)
-- Contact form: https://therapistweb.design/#contact
+- [Contact form](https://therapistweb.design/#contact): Start a project or ask a question.
+- [Email hello@therapistweb.design](mailto:hello@therapistweb.design): Direct email.
+- [Phone (720) 466-1013](tel:+17204661013): Denver, CO (serving practices nationwide).
 
 ## Technical approach
 
@@ -46,4 +48,4 @@ All builds are static HTML/CSS/JS — no CMS runtime, no database, no server-sid
 
 ## Other work
 
-For experimental creative work and custom web applications, Chad operates a separate studio at studionull.io.
+- [Studio Null](https://studionull.io): Chad's separate studio for experimental creative work and custom web applications.

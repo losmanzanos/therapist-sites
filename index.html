@@ -36,8 +36,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
 <link rel="shortcut icon" href="favicon.ico"/>
-<!-- Preload the hero background for LCP -->
-<link rel="preload" as="image" href="images/bg-floral.jpg" fetchpriority="high"/>
+<!-- Preload the hero background for LCP. WebP first; the type attribute makes
+     browsers without WebP support skip it and fall back to the JPEG in site.css. -->
+<link rel="preload" as="image" href="images/bg-floral.webp" type="image/webp" fetchpriority="high"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
@@ -103,11 +104,18 @@
      HERO
      ══════════════════════════════════════ -->
 <section class="hero grain" id="hero">
+  <!-- .hero-art-leaf is display:none at every breakpoint in site.css (lines ~226 and ~908),
+       so this image was downloaded on every page load but never painted (~596KB wasted).
+       Markup kept here, commented out, so it can be restored if the style comes back.
   <div class="hero-art-leaf">
     <img src="images/decor-leaf.png" alt=""/>
   </div>
+  -->
   <div class="hero-figure">
-    <img src="images/stars.png" alt=""/>
+    <picture>
+      <source srcset="images/stars.webp" type="image/webp"/>
+      <img src="images/stars.png" alt="" width="800" height="1200" fetchpriority="low" decoding="async"/>
+    </picture>
   </div>
   <div class="hero-stripe"></div>
 
@@ -179,7 +187,12 @@
     </div>
     <div class="mission-img" data-r data-d="2">
       <div class="stamp">
-        <img src="images/decor-leaf.png" alt="" loading="lazy" width="250" height="250"/>
+        <picture>
+          <source srcset="images/decor-leaf.webp" type="image/webp"/>
+          <!-- width/height must match the file's natural 630x1216 ratio, not the rendered box,
+               or Lighthouse flags image-aspect-ratio. CSS still sizes it via width:100%. -->
+          <img src="images/decor-leaf.png" alt="" loading="lazy" decoding="async" width="630" height="1216"/>
+        </picture>
       </div>
     </div>
   </div>
@@ -253,7 +266,10 @@
      PROCESS
      ══════════════════════════════════════ -->
 <section class="process" id="process">
-  <img class="process-figure" src="images/decor-figure.png" alt="" loading="lazy"/>
+  <picture>
+    <source srcset="images/decor-figure.webp" type="image/webp"/>
+    <img class="process-figure" src="images/decor-figure.png" alt="" loading="lazy" decoding="async" width="314" height="900"/>
+  </picture>
   <div class="process-inner">
     <div class="process-left" data-r>
       <p class="eyebrow" style="margin-bottom:16px">How this works</p>
@@ -263,19 +279,19 @@
     <div class="step-list">
       <div class="step" data-r>
         <div class="step-num">i.</div>
-        <div class="step-body"><h4>The first call</h4><p>Thirty minutes, free, no pitch deck. You tell me about your practice and the kind of clients you want to reach. I tell you honestly whether I'm the right person for the project.</p></div>
+        <div class="step-body"><h3>The first call</h3><p>Thirty minutes, free, no pitch deck. You tell me about your practice and the kind of clients you want to reach. I tell you honestly whether I'm the right person for the project.</p></div>
       </div>
       <div class="step" data-r data-d="1">
         <div class="step-num">ii.</div>
-        <div class="step-body"><h4>Design &amp; build</h4><p>I design and code your site from scratch, sharing live previews along the way. We iterate on look, voice, and structure together. Usually three to five weeks, start to finish.</p></div>
+        <div class="step-body"><h3>Design &amp; build</h3><p>I design and code your site from scratch, sharing live previews along the way. We iterate on look, voice, and structure together. Usually three to five weeks, start to finish.</p></div>
       </div>
       <div class="step" data-r data-d="2">
         <div class="step-num">iii.</div>
-        <div class="step-body"><h4>Review &amp; refine</h4><p>You review the site, request changes, and we fine-tune until everything feels right. I'm responsive and unhurried, this isn't an assembly line.</p></div>
+        <div class="step-body"><h3>Review &amp; refine</h3><p>You review the site, request changes, and we fine-tune until everything feels right. I'm responsive and unhurried, this isn't an assembly line.</p></div>
       </div>
       <div class="step" data-r data-d="3">
         <div class="step-num">iv.</div>
-        <div class="step-body"><h4>Launch &amp; after</h4><p>Your site goes live. I'm here for post-launch questions for the first 60 days, available on retainer or hourly after that. You're never left on your own.</p></div>
+        <div class="step-body"><h3>Launch &amp; after</h3><p>Your site goes live. I'm here for post-launch questions for the first 60 days, available on retainer or hourly after that. You're never left on your own.</p></div>
       </div>
     </div>
   </div>
@@ -432,7 +448,7 @@
       <a href="#contact" class="btn btn-forest" style="margin-top:22px" id="rfBtn"><span>Tell me about your site</span></a>
     </div>
     <div class="refresh-panel" data-r data-d="2">
-      <h5>What this covers</h5>
+      <h3>What this covers</h3>
       <ul>
         <li>Design refreshes on existing platforms</li>
         <li>Adding pages, sections, or therapist profiles</li>
@@ -477,7 +493,10 @@
      CONTACT
      ══════════════════════════════════════ -->
 <section class="contact grain" id="contact">
-  <img class="contact-snake" src="images/decor-snake.png" alt="" loading="lazy"/>
+  <picture>
+    <source srcset="images/decor-snake.webp" type="image/webp"/>
+    <img class="contact-snake" src="images/decor-snake.png" alt="" loading="lazy" decoding="async" width="1400" height="778"/>
+  </picture>
   <div class="contact-inner">
     <div class="contact-info" data-r>
       <p class="eyebrow">Get in touch</p>
@@ -533,7 +552,7 @@
       </form>
       <div class="fsuc" id="fsuc">
         <div class="fsuc-chk">✓</div>
-        <h4>Message received.</h4>
+        <h3>Message received.</h3>
         <p>Thanks for reaching out. I'll personally review your note and get back to you within one business day., Chad</p>
       </div>
     </div>
@@ -595,13 +614,22 @@
 {
   "@context":"https://schema.org",
   "@type":["ProfessionalService","LocalBusiness"],
+  "@id":"https://therapistweb.design/#business",
   "name":"therapistweb.design",
   "alternateName":"Chad Moravec Web Design",
   "description":"A small Denver studio building custom, hand-coded websites for therapists and counselors in private practice. No templates, no platform fees, no two sites alike. Nationwide service.",
   "url":"https://therapistweb.design",
+  "image":"https://therapistweb.design/images/bg-sky.jpg",
+  "logo":"https://therapistweb.design/icon-512.png",
   "telephone":"+1-720-466-1013",
   "email":"hello@therapistweb.design",
   "priceRange":"$$$",
+  "openingHoursSpecification":[{
+    "@type":"OpeningHoursSpecification",
+    "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens":"09:00",
+    "closes":"17:00"
+  }],
   "slogan":"Bespoke, hand-coded websites for therapists. No templates. No platform fees. You own everything.",
   "founder":{
     "@type":"Person",
