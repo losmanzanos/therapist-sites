@@ -31,6 +31,8 @@ Pricing: custom builds are quoted per project after a free introductory call (no
 
 ## Journal articles
 
+- [What's actually included in a therapist website package?](https://therapistweb.design/journal/what-a-therapist-website-package-includes/): A plain breakdown of what's in the Solo and Group packages, what's a paid add-on, and what still gets billed hourly.
+- [When you need a web app, not a website](https://therapistweb.design/journal/when-you-need-a-web-app-not-a-website/): The actual difference between a website and a web application, examples (client portals, booking systems, internal tools), and where that work happens (Studio Null).
 - [The real cost of renting your therapy website](https://therapistweb.design/journal/renting-vs-owning-your-therapy-website/): The math and ownership case for a one-time hand-coded site vs. subscription platforms like Brighter Vision, TherapySites, or Squarespace.
 - [How clients actually find a therapist online](https://therapistweb.design/journal/how-clients-find-a-therapist-online/): How directories, Google, and word of mouth work together, and the job a therapist's own website does in that chain.
 - [How much does a therapist website cost?](https://therapistweb.design/journal/how-much-does-a-therapist-website-cost/): The DIY vs. template-designer vs. custom-build cost landscape and what drives the price.

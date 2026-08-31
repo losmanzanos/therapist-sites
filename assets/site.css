@@ -657,6 +657,58 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 
 
 /* ═══════════════════════════════
+   PACKAGES / PRICING
+   ═══════════════════════════════ */
+.pricing{position:relative;padding:var(--sy) 0;background:var(--cream);overflow:hidden}
+.pricing-inner{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+.pricing-head{text-align:center;max-width:600px;margin:0 auto clamp(40px,5vw,60px)}
+.pricing-head h2{
+  font-family:var(--serif-d);font-size:clamp(36px,4.2vw,62px);
+  font-weight:400;font-style:italic;line-height:1.05;margin:0 0 14px;
+}
+.pricing-head p{font-size:15px;line-height:1.8;color:var(--ink-s)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:clamp(32px,4vw,48px)}
+.pkg-card{
+  background:var(--cream-s);border:1px solid var(--border);padding:2.2rem 2rem;
+  display:flex;flex-direction:column;
+}
+.pkg-card--feat{border-color:var(--forest);position:relative}
+.pkg-card--feat::before{
+  content:'Most common';position:absolute;top:-11px;left:2rem;
+  background:var(--forest);color:#fff;font-size:.58rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;padding:.3rem .7rem;
+}
+.pkg-name{font-family:var(--serif);font-style:italic;font-size:1.15rem;font-weight:500;color:var(--forest);margin-bottom:.3rem}
+.pkg-price{font-family:var(--serif-d);font-size:2.2rem;font-weight:400;color:var(--ink);line-height:1}
+.pkg-price small{font-size:.75rem;color:var(--ink-m);font-weight:300}
+.pkg-desc{font-size:.82rem;color:var(--ink-m);margin:.5rem 0 1.3rem;padding-bottom:1.3rem;border-bottom:1px solid var(--border)}
+.pkg-card ul{list-style:none;flex:1}
+.pkg-card li{
+  font-size:.86rem;line-height:1.55;color:var(--ink-s);
+  padding:.5rem 0 .5rem 1.3rem;position:relative;
+}
+.pkg-card li::before{content:'→';position:absolute;left:0;color:var(--forest-2)}
+.pkg-note{text-align:center;font-size:.85rem;color:var(--ink-m);max-width:560px;margin:0 auto}
+.pkg-note strong{color:var(--ink)}
+.addons{
+  background:var(--cream-s);border:1px solid var(--border);
+  padding:clamp(2rem,3vw,2.8rem);margin-top:clamp(32px,4vw,48px);
+  display:grid;grid-template-columns:1fr 1.6fr;gap:2.5rem;align-items:start;
+}
+.addons h3{font-family:var(--serif);font-style:italic;font-size:1.15rem;font-weight:500;color:var(--forest);margin-bottom:.6rem}
+.addons > div:first-child p{font-size:.85rem;line-height:1.7;color:var(--ink-s)}
+.addon-list{list-style:none;display:grid;gap:0}
+.addon-item{
+  display:flex;justify-content:space-between;gap:1rem;align-items:baseline;
+  padding:.85rem 0;border-bottom:1px solid var(--border);
+}
+.addon-item:last-child{border-bottom:none}
+.addon-item-name{font-size:.88rem;color:var(--ink);font-weight:500}
+.addon-item-desc{font-size:.78rem;color:var(--ink-m);display:block;margin-top:.15rem;font-weight:400}
+.addon-item-price{font-size:.82rem;color:var(--forest-2);font-weight:600;white-space:nowrap}
+
+
+/* ═══════════════════════════════
    FAQ
    ═══════════════════════════════ */
 .faq{position:relative;padding:var(--sy) 0;background:var(--cream);overflow:hidden}
@@ -905,6 +957,9 @@ footer{background:var(--ink)}
   .ham{display:flex;flex-direction:column;justify-content:space-between}
   .mission-inner{grid-template-columns:1fr;gap:32px}
   .process-inner,.refresh-inner,.contact-inner,.faq-inner{grid-template-columns:1fr;gap:40px}
+  .spotlight-inner{grid-template-columns:1fr;gap:40px}
+  .pkg-grid{grid-template-columns:1fr}
+  .addons{grid-template-columns:1fr}
   .faq-anchor{position:static}
   .threes-grid{grid-template-columns:1fr 1fr;gap:40px}
   .stats-inner{grid-template-columns:repeat(3,1fr)}
@@ -948,6 +1003,7 @@ footer{background:var(--ink)}
   .stats-inner{grid-template-columns:1fr;gap:20px}
   /* process */
   .process-inner{grid-template-columns:1fr;gap:36px}
+  .pkg-card--feat::before{left:1.4rem}
   /* work */
   .work-grid{grid-template-columns:1fr}
   .wframe{height:220px}
@@ -1116,6 +1172,62 @@ footer{background:var(--ink)}
 }
 .cs-link::after{content:'→'}
 .cs-link:hover{color:var(--forest);gap:.7rem}
+
+/* ═══════════════════════════════
+   SPOTLIGHT — dark break-out panel for
+   non-therapist proof-of-range case studies.
+   Deliberately NOT the iframe/browser-chrome
+   pattern: (1) reads as a clear departure from
+   the therapist case studies above it, (2) sidesteps
+   third-party sites that block framing via
+   X-Frame-Options/CSP (most sites we don't control
+   the headers on will do this).
+   ═══════════════════════════════ */
+.spotlight{position:relative;padding:var(--sy) 0;background:var(--ink);overflow:hidden}
+.spotlight-inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);
+  display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:center;
+}
+.spotlight-text .eyebrow{color:var(--forest-l)}
+.spotlight-text h2{
+  font-family:var(--serif-d);font-size:clamp(32px,3.8vw,56px);
+  font-weight:400;font-style:italic;line-height:1.05;margin:14px 0 18px;color:#fff;
+}
+.spotlight-text p{font-size:15px;line-height:1.82;color:rgba(255,255,255,.78);margin-bottom:14px;max-width:460px}
+.spotlight-text p strong{color:#fff}
+.spotlight-text .cs-tag{background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.2)}
+.spotlight-text .cs-link{color:var(--forest-l)}
+.spotlight-text .cs-link:hover{color:#fff}
+.spotlight-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);
+  padding:3rem 2.4rem;text-align:center;
+}
+.spotlight-brand{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--forest-l);margin-bottom:.6rem}
+.spotlight-loc{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.6rem}
+.spotlight-card blockquote{
+  font-family:var(--serif-d);font-style:italic;font-weight:400;
+  font-size:clamp(22px,2.6vw,32px);line-height:1.25;color:#fff;margin:0 0 1rem;
+}
+.spotlight-sub{font-size:.85rem;color:rgba(255,255,255,.55);letter-spacing:.04em}
+
+/* homepage teaser banner (lightweight, not a full case study) */
+.wk-banner{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);
+}
+.wk-banner-inner{
+  border:1px solid var(--border);padding:1.4rem 1.8rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;
+}
+.wk-banner-inner p{font-size:.85rem;color:var(--ink-s);line-height:1.6}
+.wk-banner-inner p strong{color:var(--ink)}
+.wk-banner-inner a{
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--forest-2);display:inline-flex;align-items:center;gap:.45rem;
+  transition:gap .2s,color .2s;white-space:nowrap;
+}
+.wk-banner-inner a::after{content:'→'}
+.wk-banner-inner a:hover{color:var(--forest);gap:.7rem}
+
 
 /* ── JOURNAL LIST ── */
 .jlist{display:grid;gap:1px;background:var(--border);border:1px solid var(--border)}
