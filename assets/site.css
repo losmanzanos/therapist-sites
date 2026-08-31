@@ -961,7 +961,6 @@ footer{background:var(--ink)}
   .ham{display:flex;flex-direction:column;justify-content:space-between}
   .mission-inner{grid-template-columns:1fr;gap:32px}
   .process-inner,.refresh-inner,.contact-inner,.faq-inner{grid-template-columns:1fr;gap:40px}
-  .spotlight-inner{grid-template-columns:1fr;gap:40px}
   .pkg-grid{grid-template-columns:1fr}
   .addons{grid-template-columns:1fr}
   .tech-list{grid-template-columns:1fr}
@@ -1193,6 +1192,7 @@ footer{background:var(--ink)}
   max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);
   display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:center;
 }
+@media(max-width:1080px){.spotlight-inner{grid-template-columns:1fr;gap:40px}}
 .spotlight-text .eyebrow{color:var(--forest-l)}
 .spotlight-text h2{
   font-family:var(--serif-d);font-size:clamp(32px,3.8vw,56px);
