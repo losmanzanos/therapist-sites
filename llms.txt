@@ -25,6 +25,7 @@ Pricing is published, not quoted blind: Solo practice $2,000 (homepage, about, s
 - [Lovett Counseling & Consulting](https://lovettcounselingandconsulting.com): Denver, CO — solo trauma-informed practice (LPC, CCTP); multi-page hand-coded build covering individual therapy, couples therapy, consulting & training, fees, and FAQ.
 - [Golden Hour Wellness Colorado](https://goldenhourwellnesscolorado.com): Colorado — group practice; migrated off Squarespace, with blog functionality and self-edit content access for a support group with changing dates.
 - [Cool Bird Counseling](https://coolbirdcounseling.com): Denver, CO — addiction & mental health counseling (Kelly Faus, MA, LPC, LAC); pixel-for-pixel hand-coded rebuild of an existing design, migrated off its original CMS.
+- [Rooted Resonance Therapy](https://rootedresonancetherapy.com): Colorado — somatic therapy and sound healing (Annie Memmott); full rebrand from Rooted Resonance Coaching, with 301 redirects preserving SEO authority from the old domain.
 - [The Safer Sounds Club](https://safersoundsclub.com): Colorado — specialty brand for a licensed therapist focused on misophonia and somatic/EMDR-informed work; hand-coded landing page with an interactive quiz, workshop, and blog.
 - [BrunsonWorks](https://workwithbrunson.com): Denver, CO — not a therapist site. Owner's-representative and project-management practice for multifamily property; proof this studio isn't exclusively therapist work (see also Studio Null for web applications).
 
