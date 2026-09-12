@@ -77,6 +77,7 @@
   <div class="subnav-inner">
     <div class="snav-links">
       <a href="work/">Work</a>
+      <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
       <a href="#process">Process</a>
       <a href="journal/">Journal</a>
@@ -89,6 +90,7 @@
   </div>
   <div class="mob-menu">
     <a href="work/">Work</a>
+    <a href="#pricing">Pricing</a>
     <a href="#about">About</a>
     <a href="#process">Process</a>
     <a href="#refresh">Refresh</a>
@@ -311,16 +313,19 @@
     <div class="pkg-grid">
       <div class="pkg-card" data-r>
         <span class="pkg-name">Solo practice</span>
-        <div class="pkg-price">$1,500</div>
+        <div class="pkg-price">$2,000</div>
         <p class="pkg-desc">The base build. Everything a solo practice needs to look credible and get found.</p>
         <ul>
           <li>Homepage</li>
           <li>About page</li>
           <li>Services overview</li>
           <li>FAQ page</li>
+          <li>Privacy policy</li>
+          <li>Terms &amp; conditions</li>
           <li>Contact, wired straight to your inbox</li>
           <li>SEO-structured from day one</li>
         </ul>
+        <a class="cs-link" href="services/website-design/">More about this build</a>
       </div>
       <div class="pkg-card pkg-card--feat" data-r data-d="1">
         <span class="pkg-name">Group practice</span>
@@ -332,6 +337,7 @@
           <li>Individual schema markup per clinician</li>
           <li>A directory that routes clients to the right person</li>
         </ul>
+        <a class="cs-link" href="services/group-practice/">More about group builds</a>
       </div>
       <div class="pkg-card" data-r data-d="2">
         <span class="pkg-name">Blog / Journal add-on</span>
@@ -343,6 +349,7 @@
           <li>Matches your site's design automatically</li>
           <li>Built for search from the first post</li>
         </ul>
+        <a class="cs-link" href="services/blog-journal/">More about the blog add-on</a>
       </div>
     </div>
 
@@ -761,8 +768,9 @@
     "@type":"OfferCatalog",
     "name":"Web Design Services for Therapists",
     "itemListElement":[
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Website Design for Solo Practices","description":"Bespoke, hand-coded website for a therapist in solo private practice. No templates, no platform fees."}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Website Design for Group Practices","description":"Multi-page hand-coded website for group therapy practices, with individual clinician profiles and specialty pages."}},
+      {"@type":"Offer","priceSpecification":{"@type":"UnitPriceSpecification","price":"2000","priceCurrency":"USD"},"itemOffered":{"@type":"Service","name":"Custom Website Design for Solo Practices","description":"Bespoke, hand-coded website for a therapist in solo private practice: homepage, about, services, FAQ, privacy policy, terms & conditions, and contact. No templates, no platform fees."}},
+      {"@type":"Offer","priceSpecification":{"@type":"UnitPriceSpecification","price":"2500","priceCurrency":"USD"},"itemOffered":{"@type":"Service","name":"Custom Website Design for Group Practices","description":"Multi-page hand-coded website for group therapy practices, with up to 4 additional clinician profiles and individual schema markup per clinician."}},
+      {"@type":"Offer","priceSpecification":{"@type":"UnitPriceSpecification","price":"750","priceCurrency":"USD"},"itemOffered":{"@type":"Service","name":"Blog / Journal Add-On","description":"Self-service blog functionality added to a Solo or Group build, with password-protected admin login to write, edit, and delete posts."}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Website Refresh & Copywriting","description":"Design refreshes, SEO improvements, copy rewrites, monthly blog posts, and platform migrations for existing therapy practice websites."}}
     ]
   },

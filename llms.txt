@@ -10,27 +10,34 @@ Every site is hand-coded from scratch. No WordPress, no page builders, no themes
 
 ## Services
 
-- **Custom website design & development** for solo and group therapy practices (nationwide)
-- **Website refreshes** for practices on existing platforms (WordPress, Squarespace, Wix)
-- **SEO & copywriting** — homepage, about page, service descriptions, and ongoing monthly blog posts
-- **Platform migrations** when a rebuild makes more sense than a refresh
+- **[Custom website design](https://therapistweb.design/services/website-design/)** for solo and group therapy practices (nationwide) — Solo from $2,000, Group from $2,500
+- **[Group practice websites](https://therapistweb.design/services/group-practice/)** — up to 4 additional clinician profiles with individual schema markup, $2,500
+- **[Blog / Journal setup](https://therapistweb.design/services/blog-journal/)** — self-service posting, $750 add-on to either package
+- **[SEO](https://therapistweb.design/services/seo/)** — schema.org markup, sitemaps, llms.txt, and Google Business Profile setup, built in from day one
+- **Website refreshes & platform migrations** for practices on existing platforms (WordPress, Squarespace, Wix)
+- Also: **web applications** (client portals, booking systems, internal tools) via [Studio Null](https://studionull.io)
 
-Pricing: custom builds are quoted per project after a free introductory call (no fixed prices published — every practice is scoped individually). Hourly work for refreshes and existing sites is $150/hr, or by fixed quote. All work is a one-time investment with no recurring platform fees.
+Pricing is published, not quoted blind: Solo practice $2,000 (homepage, about, services, FAQ, privacy policy, terms & conditions, contact). Group practice $2,500 (Solo + up to 4 clinician profiles). Blog/Journal add-on +$750. Add-ons: SEO/authority carryover for migrations from $250, branded email templates from $200, TinaCMS self-edit access from $400, Google Business Profile setup from $200. Everything else billed at $150/hr. See [full pricing](https://therapistweb.design/#pricing).
 
 ## Portfolio
 
 - [Full Bloom Counseling Group](https://fullbloomcounseling.com): Denver, CO — group practice of seven therapists; hand-coded static build with individual clinician profiles, specialty service pages, and structured data.
 - [Lovett Counseling & Consulting](https://lovettcounselingandconsulting.com): Denver, CO — solo trauma-informed practice (LPC, CCTP); multi-page hand-coded build covering individual therapy, couples therapy, consulting & training, fees, and FAQ.
+- [Golden Hour Wellness Colorado](https://goldenhourwellnesscolorado.com): Colorado — group practice; migrated off Squarespace, with blog functionality and self-edit content access for a support group with changing dates.
+- [Cool Bird Counseling](https://coolbirdcounseling.com): Denver, CO — addiction & mental health counseling (Kelly Faus, MA, LPC, LAC); pixel-for-pixel hand-coded rebuild of an existing design, migrated off its original CMS.
 - [The Safer Sounds Club](https://safersoundsclub.com): Colorado — specialty brand for a licensed therapist focused on misophonia and somatic/EMDR-informed work; hand-coded landing page with an interactive quiz, workshop, and blog.
+- [BrunsonWorks](https://workwithbrunson.com): Denver, CO — not a therapist site. Owner's-representative and project-management practice for multifamily property; proof this studio isn't exclusively therapist work (see also Studio Null for web applications).
 
 ## Pages
 
-- [Home](https://therapistweb.design/): Overview, process, services, tech stack, FAQ, and contact.
-- [Work](https://therapistweb.design/work/): Case studies of the three builds above.
+- [Home](https://therapistweb.design/): Overview, process, pricing, tech stack, FAQ, and contact.
+- [Work](https://therapistweb.design/work/): Case studies of the builds above.
+- [Services](https://therapistweb.design/services/): Website design, SEO, blog/journal setup, and group practice builds, each with its own page.
 - [Journal](https://therapistweb.design/journal/): Articles on building, owning, and getting found online as a therapist.
 
 ## Journal articles
 
+- [I Googled myself, so you don't have to](https://therapistweb.design/journal/i-googled-myself-so-you-dont-have-to/): What actually shows up when you Google your own practice name, including what Google's AI Mode says, why that matters, and what to check for your own practice.
 - [What's actually included in a therapist website package?](https://therapistweb.design/journal/what-a-therapist-website-package-includes/): A plain breakdown of what's in the Solo and Group packages, what's a paid add-on, and what still gets billed hourly.
 - [When you need a web app, not a website](https://therapistweb.design/journal/when-you-need-a-web-app-not-a-website/): The actual difference between a website and a web application, examples (client portals, booking systems, internal tools), and where that work happens (Studio Null).
 - [The real cost of renting your therapy website](https://therapistweb.design/journal/renting-vs-owning-your-therapy-website/): The math and ownership case for a one-time hand-coded site vs. subscription platforms like Brighter Vision, TherapySites, or Squarespace.
