@@ -1161,6 +1161,7 @@ footer{background:var(--ink)}
    (never its width, so the zoom/proportions stay identical to every other
    case-study preview) to stop right at the hero's own edge instead. */
 .cstudy-frame--crop-tight{height:clamp(280px,32vw,400px)}
+.cstudy-frame--crop-tighter{height:clamp(255px,29vw,375px)}
 .cstudy-frame-fallback{
   position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:10px;text-align:center;padding:32px;text-decoration:none;color:inherit;
