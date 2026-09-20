@@ -6,7 +6,7 @@
 
   <url>
     <loc>https://therapistweb.design/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -27,37 +27,44 @@
 
   <url>
     <loc>https://therapistweb.design/services/website-design/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://therapistweb.design/services/seo/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://therapistweb.design/services/blog-journal/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://therapistweb.design/services/group-practice/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://therapistweb.design/journal/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://therapistweb.design/journal/i-ran-the-numbers-on-my-own-pricing-page/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>
@@ -76,7 +83,7 @@
 
   <url>
     <loc>https://therapistweb.design/journal/what-a-therapist-website-package-includes/</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
