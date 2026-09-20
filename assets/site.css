@@ -1,6 +1,6 @@
 /* ── TOKENS ── */
 :root {
-  --forest:     #2d4a35;   /* primary brand — dark forest green */
+  --forest:     #2d4a35;   /* primary brand: dark forest green */
   --forest-2:   #3d6147;   /* mid green */
   --forest-3:   #527a5e;   /* lighter green */
   --forest-l:   #8aab93;   /* pale green */
@@ -10,7 +10,7 @@
   --cream-w:    #ebe2d0;
   --ink:        #2c2d36;
   --ink-s:      #4b4d59;
-  --ink-m:      #5f6273;   /* was #76798a — only 3.39:1 on --cream-s, below WCAG AA */
+  --ink-m:      #5f6273;   /* was #76798a, only 3.39:1 on --cream-s, below WCAG AA */
   --dusty:      #a9b1b6;
   --border:     rgba(44,45,54,.12);
   --serif:      "Cormorant Garamond","EB Garamond",Georgia,serif;
@@ -60,7 +60,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2);
 }
 
-/* btn — fill-up from bottom */
+/* btn: fill-up from bottom */
 .btn{
   display:inline-block;padding:16px 32px;
   border:1.5px solid var(--ink);
@@ -89,7 +89,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 
 
 /* ═══════════════════════════════════════
-   HEADER  —  cream background, minimal,
+   HEADER: cream background, minimal,
    matching the site's editorial aesthetic
    ═══════════════════════════════════════ */
 .site-header{
@@ -105,7 +105,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   align-items:center;gap:24px;
 }
 
-/* left — phone */
+/* left: phone */
 .hdr-left{
   display:flex;align-items:center;gap:.6rem;
   font-family:var(--sans);font-size:11px;font-weight:500;
@@ -115,7 +115,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 .hdr-left:hover{color:var(--ink)}
 .hdr-left svg{width:12px;height:12px;flex-shrink:0;color:var(--forest-2)}
 
-/* centre — wordmark */
+/* centre: wordmark */
 .hdr-brand{text-align:center;line-height:1}
 .hdr-brand-name{
   display:block;
@@ -134,7 +134,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   color:#555869; /* --ink-m (#76798a) was only 3.39:1 on --cream-s at this size */
 }
 
-/* right — CTA */
+/* right: CTA */
 .hdr-right{
   display:flex;justify-content:flex-end;align-items:center;gap:.6rem;
   font-family:var(--sans);font-size:11px;font-weight:500;
@@ -220,7 +220,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   background:rgba(241,235,224,.72);
   pointer-events:none;
 }
-/* faint diagonal hatching — hero texture layer */
+/* faint diagonal hatching: hero texture layer */
 .hero-stripe{
   position:absolute;left:5%;top:18%;z-index:2;
   width:380px;height:480px;
@@ -540,7 +540,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 
 
 /* ═══════════════════════════════
-   WORK  —  2-col stacked grid,
+   WORK: 2-col stacked grid,
    iframes pointer-events:auto
    ═══════════════════════════════ */
 .work{position:relative;padding:var(--sy) 0;background:var(--cream);overflow:hidden}
@@ -558,13 +558,13 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   text-align:right;padding-right:1.4rem;
   border-right:1.5px solid var(--border);
 }
-/* 3-column grid on desktop — one clean row */
+/* 3-column grid on desktop: one clean row */
 .work-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:24px;
 }
-/* single card — centre it, cap the width */
+/* single card: centre it, cap the width */
 .work-grid--single{
   grid-template-columns:1fr;
   max-width:640px;
@@ -593,7 +593,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   background:rgba(255,255,255,.5);padding:.1rem .4rem;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
-/* iframe at real scale — pointer-events:auto so it's navigable */
+/* iframe at real scale, pointer-events:auto so it's navigable */
 .wframe{
   position:relative;overflow:hidden;background:var(--cream-w);
   height:280px;
@@ -829,7 +829,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 
 
 /* ═══════════════════════════════
-   FOOTER — editorial redesign
+   FOOTER: editorial redesign
    ═══════════════════════════════ */
 footer{background:var(--ink)}
 .ft-top{
@@ -906,7 +906,7 @@ footer{background:var(--ink)}
 .ft-extra a:hover{color:rgba(255,255,255,.7)}
 
 
-/* skip link — accessibility + SEO */
+/* skip link: accessibility + SEO */
 .skip-link{
   position:absolute;top:-99px;left:0;z-index:9999;
   background:var(--forest);color:#fff;padding:.8rem 1.5rem;
@@ -917,7 +917,7 @@ footer{background:var(--ink)}
 
 
 /* ═══════════════════════════════
-   STACK  —  infrastructure you own
+   STACK: infrastructure you own
    ═══════════════════════════════ */
 .stack{position:relative;padding:var(--sy) 0;background:var(--cream);overflow:hidden}
 .stack::before{
@@ -1033,7 +1033,7 @@ footer{background:var(--ink)}
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   MOBILE VISUAL ENHANCEMENTS — restore decorative richness ≤750px
+   MOBILE VISUAL ENHANCEMENTS: restore decorative richness ≤750px
    ═══════════════════════════════════════════════════════════════ */
 @media(max-width:750px){
 
@@ -1055,7 +1055,7 @@ footer{background:var(--ink)}
     filter:saturate(.2) contrast(.9) brightness(1.1);
   }
 
-  /* ── ABOUT: leaf hidden on mobile — overlaps text at narrow widths ── */
+  /* ── ABOUT: leaf hidden on mobile, overlaps text at narrow widths ── */
   .mission-img{display:none}
 
   /* ── EYEBROW: ✦ ornament before every section label ── */
@@ -1196,7 +1196,7 @@ footer{background:var(--ink)}
 .cs-link:hover{color:var(--forest);gap:.7rem}
 
 /* ═══════════════════════════════
-   SPOTLIGHT — dark break-out panel for
+   SPOTLIGHT: dark break-out panel for
    non-therapist proof-of-range case studies.
    Deliberately NOT the iframe/browser-chrome
    pattern: (1) reads as a clear departure from
