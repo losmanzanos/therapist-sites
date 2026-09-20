@@ -92,7 +92,7 @@
   @media(max-width:1080px){.snav-links,.snav-cta{display:none}.ham{display:flex;flex-direction:column;justify-content:space-between}}
   @media(max-width:750px){.hdr-left,.hdr-right{display:none}.header-inner{grid-template-columns:1fr}}
   @media(max-width:600px){.header-inner{padding:20px 22px}.subnav-inner{padding:15px 22px}.mob-menu{padding:16px 22px 20px}}
-  /* linked cards / chips — explicit color so :visited never shifts to browser purple */
+  /* linked cards / chips: explicit color so :visited never shifts to browser purple */
   a{color:inherit}
   a.card{text-decoration:none;color:inherit;display:block}
   a.chip{text-decoration:none;color:var(--ink)}
@@ -182,7 +182,7 @@
   .creds{padding:90px 0}
   .cred-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .flip{perspective:1200px;cursor:pointer}
-  /* faces share one grid cell so the card grows to fit the taller face — nothing clips */
+  /* faces share one grid cell so the card grows to fit the taller face; nothing clips */
   .flip-in{position:relative;width:100%;min-height:230px;transition:transform .7s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d;display:grid}
   @media(hover:hover){.flip:hover .flip-in{transform:rotateY(180deg)}}
   .flip.tapped .flip-in{transform:rotateY(180deg)}
