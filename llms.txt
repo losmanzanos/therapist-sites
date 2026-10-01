@@ -38,6 +38,7 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 
 ## Journal articles
 
+- [Do you need a blog on your therapy website?](https://therapistweb.design/journal/do-you-need-a-blog-on-your-therapy-website/): Honest pros and cons of a therapist blog, who should have one, and how to keep a site without a blog current in Google's eyes (service pages, accurate facts, FAQ, Google Business Profile, honest lastmod dates, Search Console).
 - [I Googled myself, so you don't have to](https://therapistweb.design/journal/i-googled-myself-so-you-dont-have-to/): What actually shows up when you Google your own practice name, including what Google's AI Mode says, why that matters, and what to check for your own practice.
 - [What's actually included in a therapist website package?](https://therapistweb.design/journal/what-a-therapist-website-package-includes/): A plain breakdown of what's in the Solo and Group packages, what's a paid add-on, and what still gets billed hourly.
 - [When you need a web app, not a website](https://therapistweb.design/journal/when-you-need-a-web-app-not-a-website/): The actual difference between a website and a web application, examples (client portals, booking systems, internal tools), and where that work happens (Studio Null).
