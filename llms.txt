@@ -22,7 +22,7 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 ## Portfolio
 
 - [Full Bloom Counseling Group](https://fullbloomcounseling.com): Denver, CO, group practice of seven therapists; hand-coded static build with individual clinician profiles, specialty service pages, and structured data.
-- [Apex Counseling](https://apex-mhc.com): mental health counseling practice (Jeremy); full brand identity from scratch (logo, palette, type system, business cards) plus a hand-coded website with a self-edit blog via TinaCMS, on Cloudflare Pages.
+- [Apex Mental Health Counseling](https://apex-mhc.com): Colorado, telehealth therapy practice (Dr. Jeremy Reichert, PhD, LPC); full brand identity from scratch (contour-line logo mark, Bodoni Moda and Jost type, ink/paper/sage palette, logo kit, business cards, branded inquiry email) plus a hand-coded website with a page per specialty and a self-edit journal.
 - [Lovett Counseling & Consulting](https://lovettcounselingandconsulting.com): Denver, CO, solo trauma-informed practice (LPC, CCTP); multi-page hand-coded build covering individual therapy, couples therapy, consulting & training, fees, and FAQ.
 - [Golden Hour Wellness Colorado](https://goldenhourwellnesscolorado.com): Colorado, group practice; migrated off Squarespace, with blog functionality and self-edit content access for a support group with changing dates.
 - [Cool Bird Counseling](https://coolbirdcounseling.com): Denver, CO, addiction & mental health counseling (Kelly Faus, MA, LPC, LAC); pixel-for-pixel hand-coded rebuild of an existing design, migrated off its original CMS.
