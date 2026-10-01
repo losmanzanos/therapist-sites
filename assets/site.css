@@ -1338,6 +1338,26 @@ footer{background:var(--ink)}
 }
 .work-more a:hover{color:var(--forest)}
 
+/* Identity row inside a case study, for builds that included the brand.
+   Spans both grid columns and always sits after the media and body. */
+.cstudy-identity{grid-column:1/-1;order:3;padding-top:clamp(8px,1.5vw,16px)}
+.cstudy-identity-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-m);margin-bottom:16px}
+.cstudy-identity-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+.idtile{margin:0}
+.idtile-plate{
+  aspect-ratio:5/3;border:1px solid var(--border);background:#f4f3ee;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.idtile-plate picture{display:contents}
+.idtile-plate img{display:block}
+.idtile--logo .idtile-plate img{width:62%;height:auto}
+.idtile-plate--card{background:transparent}
+.idtile-plate--card img{width:100%;height:100%;object-fit:cover}
+.idtile figcaption{margin-top:10px;font-size:12.5px;color:var(--ink-m)}
+@media(max-width:750px){
+  .cstudy-identity-row{grid-template-columns:1fr;gap:20px}
+}
+
 @media(max-width:900px){
   .cstudy{grid-template-columns:1fr;gap:28px}
   .cstudy:nth-child(even) .cstudy-media{order:0}
