@@ -1151,7 +1151,8 @@ footer{background:var(--ink)}
   box-shadow:0 18px 44px rgba(44,45,54,.09);
 }
 .cstudy-media .wbar{background:rgba(44,45,54,.055)}
-.cstudy-frame{position:relative;overflow:hidden;background:var(--cream-w);height:clamp(300px,34vw,420px)}
+/* every preview is the same 16:10 window onto a desktop-width render */
+.cstudy-frame{position:relative;overflow:hidden;background:var(--cream-w);aspect-ratio:16/10;height:auto}
 .cstudy-frame iframe{
   position:absolute;top:0;left:0;width:200%;height:200%;border:0;
   transform:scale(.5);transform-origin:top left;pointer-events:auto;
@@ -1160,8 +1161,7 @@ footer{background:var(--ink)}
    catches its first sliver; this modifier trims the crop window's height only
    (never its width, so the zoom/proportions stay identical to every other
    case-study preview) to stop right at the hero's own edge instead. */
-.cstudy-frame--crop-tight{height:clamp(280px,32vw,400px)}
-.cstudy-frame--crop-tighter{height:clamp(255px,29vw,375px)}
+.cstudy-frame--crop-tight,.cstudy-frame--crop-tighter{height:auto}
 .cstudy-frame-fallback{
   position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:10px;text-align:center;padding:32px;text-decoration:none;color:inherit;
@@ -1397,12 +1397,13 @@ footer{background:var(--ink)}
 .ba-tag{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-m)}
 .ba-tag--now{color:var(--forest-2)}
 .ba-url{font-size:12px;color:var(--ink-m);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ba-frame{position:relative;overflow:hidden;height:clamp(440px,48vw,640px)}
+.ba-frame{position:relative;overflow:hidden;aspect-ratio:16/10;height:auto}
+.ba-shot{position:absolute;inset:0;overflow-y:auto;background:#fff}
+.ba-shot img{width:100%;height:auto;display:block}
 .ba-frame iframe{position:absolute;top:0;left:0;width:200%;height:200%;border:0;transform:scale(.5);transform-origin:top left}
 .ba-link{margin-top:22px}
 @media (max-width:860px){
   .ba-head{grid-template-columns:1fr}
   .ba-head h2{margin-bottom:18px}
   .ba-pair{grid-template-columns:1fr}
-  .ba-frame{height:min(78vh,560px)}
 }

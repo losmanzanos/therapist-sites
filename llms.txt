@@ -28,6 +28,7 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 - [Cool Bird Counseling](https://coolbirdcounseling.com): Denver, CO, addiction & mental health counseling (Kelly Faus, MA, LPC, LAC); pixel-for-pixel hand-coded rebuild of an existing design, migrated off its original CMS.
 - [Rooted Resonance Therapy](https://rootedresonancetherapy.com): Colorado, somatic therapy and sound healing (Annie Memmott); full rebrand from Rooted Resonance Coaching, with 301 redirects preserving SEO authority from the old domain.
 - [The Safer Sounds Club](https://safersoundsclub.com): Colorado, specialty brand for a licensed therapist focused on misophonia and somatic/EMDR-informed work; hand-coded landing page with an interactive quiz, workshop, and blog.
+- [Sanare Psychosocial Rehabilitation](https://www.sanare-colorado.com): Colorado psychosocial rehabilitation practice; redesign inside its existing Squarespace site with new color, type and spacing, rewritten service pages, structured data, alt text, cleaner navigation, and redirects. Shown on the work page as a before/after.
 - [BrunsonWorks](https://workwithbrunson.com): Denver, CO, not a therapist site. Owner's-representative and project-management practice for multifamily property; proof this studio isn't exclusively therapist work (see also Studio Null for web applications).
 
 ## Pages
