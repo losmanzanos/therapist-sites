@@ -1408,9 +1408,11 @@ footer{background:var(--ink)}
   .ba-pair{grid-template-columns:1fr}
 }
 
-/* Phones: show each site's own mobile layout instead of a shrunken desktop.
-   The iframe renders at the frame's real width (no 50% zoom) in a taller window. */
+/* Phones: render each site at a real phone viewport (375x812) and shrink it
+   into a narrow, phone-shaped window, so the preview reads as a miniature
+   phone rather than a full-size site crammed into the page. */
 @media(max-width:750px){
-  .cstudy-frame,.ba-frame{aspect-ratio:4/5}
-  .cstudy-frame iframe,.ba-frame iframe{width:100%;height:100%;transform:none}
+  .cstudy-media,.ba-pane{width:262px;max-width:100%;margin-left:auto;margin-right:auto}
+  .cstudy-frame,.ba-frame{aspect-ratio:375/812}
+  .cstudy-frame iframe,.ba-frame iframe{width:375px;height:812px;transform:scale(.6933);transform-origin:top left}
 }
