@@ -1407,3 +1407,10 @@ footer{background:var(--ink)}
   .ba-head h2{margin-bottom:18px}
   .ba-pair{grid-template-columns:1fr}
 }
+
+/* Phones: show each site's own mobile layout instead of a shrunken desktop.
+   The iframe renders at the frame's real width (no 50% zoom) in a taller window. */
+@media(max-width:750px){
+  .cstudy-frame,.ba-frame{aspect-ratio:4/5}
+  .cstudy-frame iframe,.ba-frame iframe{width:100%;height:100%;transform:none}
+}
