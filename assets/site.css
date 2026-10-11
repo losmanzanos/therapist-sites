@@ -1415,4 +1415,8 @@ footer{background:var(--ink)}
   .cstudy-media,.ba-pane{width:300px;max-width:100%;margin-left:auto;margin-right:auto}
   .cstudy-frame,.ba-frame{aspect-ratio:375/640}
   .cstudy-frame iframe,.ba-frame iframe{width:430px;height:734px;transform:scale(.6930);transform-origin:top left}
+  /* Sites whose mobile hero is content-height (not full screen) read better at a
+     375px phone width: the hero then fills the window instead of the next
+     section peeking in. Same window size as every other preview. */
+  .cstudy-frame--phone375 iframe{width:375px;height:640px;transform:scale(.7947)}
 }
