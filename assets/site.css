@@ -1419,4 +1419,7 @@ footer{background:var(--ink)}
      375px phone width: the hero then fills the window instead of the next
      section peeking in. Same window size as every other preview. */
   .cstudy-frame--phone375 iframe{width:375px;height:640px;transform:scale(.7947)}
+  /* Apex stacks its hero map under the headline on phones; a 600px phone
+     width (still under its 620px breakpoint) fits the whole map in the window. */
+  .cstudy-frame--phone600 iframe{width:600px;height:1025px;transform:scale(.4967)}
 }
