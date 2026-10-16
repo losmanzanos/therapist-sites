@@ -141,14 +141,14 @@ figure img:not(.bw){filter:saturate(.88) contrast(.97) sepia(.05)}
 /* ============ APPROACH ============ */
 .approach{padding:clamp(100px,12vw,180px) 0 clamp(80px,10vw,140px)}
 .approach .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 24px}
-.approach h2{grid-column:1 / span 8;font-size:clamp(42px,5.4vw,80px);margin-bottom:clamp(40px,5vw,70px)}
-.approach .a1{grid-column:1 / span 5;font-size:clamp(20px,1.8vw,24px);line-height:1.45;font-family:var(--display)}
-.approach .a2{grid-column:7 / span 5}
+.approach h2{grid-column:1 / span 6;grid-row:1;font-size:clamp(42px,5.4vw,80px);margin-bottom:clamp(36px,4vw,56px)}
+.approach .a1{grid-column:1 / span 6;grid-row:2;font-size:clamp(21px,1.9vw,26px);line-height:1.42;font-family:var(--display);max-width:26em}
+.approach .a2{grid-column:1 / span 6;grid-row:3;margin-top:26px;max-width:34em}
 .approach .a2 p+p{margin-top:1em}
-.approach figure{grid-column:8 / span 5;margin-top:70px;position:relative}
+.approach figure{grid-column:8 / span 5;grid-row:1 / span 4;align-self:start;position:sticky;top:90px;margin-top:12px}
 .approach figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .approach figcaption{font-size:13px;color:var(--walnut-2);margin-top:12px}
-.methods{grid-column:1 / span 6;margin-top:70px;align-self:start}
+.methods{grid-column:1 / span 6;grid-row:4;margin-top:56px;padding-top:30px;border-top:1px solid rgba(45,35,31,.18);align-self:start}
 .methods p.k{font-size:14px;color:var(--madder);margin-bottom:16px}
 .methods ul{list-style:none;font-family:var(--display);font-size:clamp(22px,2vw,28px);line-height:1.5}
 .methods li span{font-family:var(--text);font-size:14px;color:var(--walnut-2);margin-left:10px}
@@ -164,7 +164,7 @@ figure img:not(.bw){filter:saturate(.88) contrast(.97) sepia(.05)}
 .svc:nth-of-type(1){margin-left:0;--c:var(--sage)}
 .svc:nth-of-type(2){margin-left:12%;--c:var(--saffron)}
 .svc:nth-of-type(3){margin-left:24%;--c:var(--madder)}
-.svc:nth-of-type(4){margin-left:8%;--c:var(--sage)}
+.svc:nth-of-type(4){margin-left:36%;--c:var(--sage)}
 .affirm{margin-top:clamp(50px,6vw,80px);padding-top:28px;border-top:1px solid rgba(45,35,31,.2);display:grid;grid-template-columns:1fr 1fr;gap:24px 60px;font-size:15px;color:var(--walnut-2)}
 
 /* ============ MAC ============ */
@@ -289,7 +289,10 @@ footer .crisis{flex-basis:100%;font-size:12.5px}
   .approach .wrap,.mac .wrap,.about .wrap,.fees .wrap,.faq .wrap,.contact .wrap{display:block}
   .approach .a2,.methods,.approach figure{margin-top:40px}
   .svc:nth-of-type(n){margin-left:0}
-  .svc:nth-of-type(2),.svc:nth-of-type(4){margin-left:8%}
+  .svc:nth-of-type(2){margin-left:6%}
+  .svc:nth-of-type(3){margin-left:12%}
+  .svc:nth-of-type(4){margin-left:18%}
+  .approach figure{position:static}
   .affirm{grid-template-columns:1fr}
   .mac .pics{margin-bottom:50px}
   .about figure{max-width:300px;margin-bottom:44px}
