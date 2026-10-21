@@ -79,7 +79,7 @@ figure img:not(.bw){filter:saturate(.88) contrast(.97) sepia(.05)}
 .p-portrait{left:28%;top:0;width:44%;height:70%;--dx:10px;--dy:24px;--r:2.2deg}
 .p-mac{left:75%;top:20%;width:25%;height:50%;--dx:40px;--dy:34px;--r:4.5deg}
 .p-rug{left:0;top:74%;width:100%;height:7.5%;--dx:-30px;--dy:60px;--r:-6deg;z-index:2}
-.p-mac img{filter:grayscale(1) contrast(1.05);object-position:38% center}
+.p-mac img{object-position:38% 30%}
 .caption{position:absolute;left:28%;right:0;top:86%;font-size:14.5px;line-height:1.55;font-weight:300;max-width:30em;opacity:calc((var(--p) - .55) * 2.2);transform:translateY(calc((1 - var(--p)) * 12px))}
 .settle{position:absolute;z-index:4;right:var(--g);bottom:30px;font-size:14px;font-weight:300;text-align:right;line-height:1.5;opacity:calc(.8 - var(--p) * 2)}
 
@@ -117,7 +117,7 @@ figure img:not(.bw){filter:saturate(.88) contrast(.97) sepia(.05)}
 
 /* ============ PACK ============ */
 .pack{background:var(--pine);color:var(--wool)}
-.pack-img{position:relative;width:100%;aspect-ratio:3/1;min-height:300px;background:url(assets/wolves.webp) center 42%/cover}
+.pack-img{position:relative;width:100%;aspect-ratio:16/9;max-height:92vh;min-height:320px;background:url(assets/wolfdog.webp) center bottom/cover}
 .pack-img::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:30%;background:linear-gradient(rgba(34,61,60,0),var(--pine))}
 .pack-head h2{color:var(--wool)}
 .pack .wrap{padding-top:clamp(50px,6vw,90px);padding-bottom:clamp(90px,11vw,160px)}
@@ -131,6 +131,9 @@ figure img:not(.bw){filter:saturate(.88) contrast(.97) sepia(.05)}
 .leader .k{font-size:14px;color:var(--sage);margin-bottom:18px}
 .leader h3{font-size:clamp(32px,3.4vw,50px);margin-bottom:18px}
 .leader p{opacity:.84;font-weight:300;max-width:26em}
+.leader p+p{margin-top:1em}
+.leader p.map{font-size:15px;opacity:.62}
+.pack em{font-family:var(--display);font-style:normal;font-size:1.08em;opacity:1}
 .turn{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,5vw,80px);padding-top:clamp(56px,6vw,90px)}
 .turn p.big{font-family:var(--display);font-size:clamp(30px,3.4vw,50px);line-height:1.08}
 .turn p{opacity:.88;font-weight:300}
@@ -330,9 +333,9 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
       <div class="act"><a class="u" href="#contact">Book a free 15-minute consult</a><span>In network with most major insurance</span></div>
     </div>
     <div class="collage" id="collage">
-      <figure class="piece p-portrait"><img src="assets/portrait.webp" alt="Brooke Bloker in a black wide-brim hat, smiling in an open field at golden hour"></figure>
+      <figure class="piece p-portrait"><img src="assets/portrait.webp" alt="Brooke Bloker in a black wide-brim hat and white dress, smiling in an open Colorado field"></figure>
       <figure class="piece p-pampas"><img src="assets/pampas.webp" alt="Dried pampas grass in soft light"></figure>
-      <figure class="piece p-mac"><img src="assets/mac-office.webp" alt="Brooke with Mac, her golden retriever therapy dog"></figure>
+      <figure class="piece p-mac"><img src="assets/brooke-mac.webp" alt="Brooke cheek to cheek with Mac, her golden retriever therapy dog"></figure>
       <figure class="piece p-rug"><img src="assets/rug-strip.webp" alt="A strip of the hand-dyed rug in Brooke's office"></figure>
       <p class="caption">Loose threads, pulled straight one at a time. That’s chaos to clarity, and it’s close to what happens in my office. Nothing gets forced into place. It settles.</p>
     </div>
@@ -370,32 +373,36 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 </section>
 
 <section class="pack" aria-labelledby="pack-h">
-  <div class="pack-img" role="img" aria-label="Two gray wolves moving side by side through a snowy birch forest"></div>
+  <div class="pack-img" role="img" aria-label="A woman sits on a striped blanket beside a gray wolf dog at the Great Sand Dunes, mountains glowing pink at sunset behind them"></div>
   <div class="wrap">
     <div class="pack-head">
       <h2 id="pack-h">Every pack has two leaders.</h2>
       <div>
-        <p>People used to picture wolf packs as a fight for rank, with one “alpha” on top. David Mech, the biologist who made that idea famous, spent years walking it back.</p>
-        <p>Wild wolves live in families. Two parents lead, and they split the work.</p>
+        <p>Every wolf in a pack notices things. They hear sounds, feel movement, and track changes in the land around them. But not every wolf has the same job.</p>
+        <p>A wild pack is a family led by two parents who split the work. One looks outward. One keeps track of everyone inside.</p>
       </div>
     </div>
     <div class="leaders">
       <div class="leader out">
         <p class="k">Facing out</p>
-        <h3>One ranges</h3>
-        <p>Travels, hunts, reads the terrain. Decides what’s actually a threat and what’s just wind in the trees.</p>
+        <h3>Rocky looks outward</h3>
+        <p>He hears the sound in the distance, notices movement, and turns toward it to learn more. He doesn’t tell the pack to run every time something moves. He looks. He listens. He checks. Then he says what he found: <em>There is danger. We need to move.</em> Or: <em>I checked. We’re okay.</em></p>
+        <p class="map">In parts work, this is the Part That Goes on With Everyday Life. It goes to work, handles responsibilities, keeps up relationships, and lives in today.</p>
       </div>
       <div class="leader in">
         <p class="k">Facing in</p>
-        <h3>One keeps the den</h3>
-        <p>Stays close to the pups. Settles them, feeds them, guards what’s inside, and knows where everyone is.</p>
+        <h3>Spirit tends the pack</h3>
+        <p>Spirit notices who has become unsettled, tracks movement within the pack, and helps information travel between its members.</p>
+        <p class="map">Spirit carries messages between the Part That Goes on With Everyday Life and the Parts That Carry What Happened: the parts still holding fear, anger, grief, or old expectations from another time.</p>
       </div>
     </div>
     <div class="turn">
-      <p class="big">Trauma tends to take one of them offline.</p>
+      <p class="big">Rocky checked. Come look. Something is different now.</p>
       <div>
-      <p>Sometimes the scout never stops scanning. Every sound is danger, and nobody gets to rest. Sometimes no one is keeping the den, and the parts of you inside it scatter, go quiet, or turn on each other.</p>
-      <p>Our work brings both back. We start at the den with steadiness and safety, and by getting your parts on speaking terms. Then we look outward together and sort out what was dangerous then from what’s dangerous now.</p>
+      <p>The parts that carry what happened aren’t broken. They learned from experience, and sometimes what they learned kept you alive. They may just still be responding to information from another time.</p>
+      <p>Sometimes a system survives by walling those experiences off. We don’t tear the walls down all at once. A pack would panic if every gate opened at the same time. We build communication, so more of you gets access to what’s true now: you’re older, you’re here, you have choices.</p>
+      <p>Some days the message will be <em>we need to protect ourselves.</em> Other days it will be <em>that felt familiar, but Rocky checked. We’re here. It’s different now.</em></p>
+      <p>And the pack can rest.</p>
       <p class="cite">Mech, L. D. (1999). Alpha status, dominance, and division of labor in wolf packs. Canadian Journal of Zoology, 77, 1196–1203.</p>
       </div>
     </div>
@@ -448,8 +455,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
   <div class="wrap">
     <div class="pics">
       <figure class="f1"><img src="assets/mac-field.webp" alt="Black and white photo of Brooke kneeling in a field, shaking paws with Mac"></figure>
-      <figure class="f2"><img src="assets/mac-office.webp" alt="Brooke smiling beside Mac in her office"></figure>
-      <figcaption>Mac in the field, and Mac at work.</figcaption>
+      <figure class="f2"><img src="assets/mac-paw.webp" alt="Close view of Mac’s paw resting in Brooke’s hand"></figure>
+      <figcaption>Mac, shaking on it.</figcaption>
     </div>
     <div class="copy">
       <h2 id="mac-h">Mac</h2>
