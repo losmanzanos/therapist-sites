@@ -1211,6 +1211,7 @@ footer{background:var(--ink)}
   display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:center;
 }
 @media(max-width:1080px){.spotlight-inner{grid-template-columns:1fr;gap:40px}}
+.spotlight-inner + .spotlight-inner{margin-top:clamp(56px,7vw,96px);padding-top:clamp(56px,7vw,96px);border-top:1px solid rgba(255,255,255,.14)}
 .spotlight-text .eyebrow{color:var(--forest-l)}
 .spotlight-text h2{
   font-family:var(--serif-d);font-size:clamp(32px,3.8vw,56px);
