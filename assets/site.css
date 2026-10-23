@@ -23,7 +23,7 @@
 
 /* ── RESET ── */
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{
   background:var(--cream);color:var(--ink);
   font-family:var(--sans);font-size:17px;line-height:1.6;
@@ -1022,14 +1022,6 @@ footer{background:var(--ink)}
   /* ── ABOUT: leaf hidden on mobile, overlaps text at narrow widths ── */
   .mission-img{display:none}
 
-  /* ── EYEBROW: ✦ ornament before every section label ── */
-  .eyebrow::before{
-    content:'✦  ';
-    font-size:.5em;
-    color:var(--forest-l);
-    letter-spacing:.05em;
-    vertical-align:middle;
-  }
 
   /* ── QUOTE ART: slightly larger on mobile ── */
   .quote-art{max-width:240px;margin:0 auto 8px}
@@ -1753,3 +1745,41 @@ footer{background:var(--ink)}
   .cstrip .contact-snake{width:78%;right:-24%;bottom:0;opacity:.3}
   .cstrip-row{flex-direction:column;align-items:flex-start;gap:18px}
 }
+
+/* ═══════════════════════════════
+   PRINT: the price sheet prints as a sheet
+   ═══════════════════════════════ */
+@media print{
+  .site-header,.subnav,#prog,.faq,.cta-strip,footer,.rail,.tv-tag,.hero-link,.sheet::before{display:none!important}
+  body{background:#fff;color:#111;font-size:12.5px}
+  .subhero{background:none;border:0;padding:0 0 18px}
+  .subhero::before{display:none}
+  .subhero h1{font-size:28px;max-width:none}
+  .subhero-sub{font-size:13px;max-width:none}
+  .crumbs{display:none}
+  .pricing{padding:0}
+  .sheet{max-width:none;margin:0;padding:0;box-shadow:none;background:#fff}
+  .sh-item{break-inside:avoid;padding:12px 0 13px}
+  .sh-inc{gap:3px 20px;font-size:11.5px}
+  .sh-desc{font-size:11.5px}
+  .sh-item .cs-link{display:none}
+  .sh-price,.sh-name,.sh-title{color:#111}
+  .sh-foot{font-size:11.5px}
+  a{color:inherit;text-decoration:none;border:0!important}
+  .sh-sign::after{content:"  Chad Moravec · (720) 466-1013 · hello@therapistweb.design · therapistweb.design/pricing";display:block;margin-top:14px;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.04em;color:#333}
+  @page{margin:16mm 16mm 18mm}
+}
+
+/* off the air (midnight to 6am, Denver) */
+.tv-offair{position:absolute;inset:0;z-index:2;display:none;flex-direction:column;background:#14181a}
+.tv.is-off .tv-offair{display:flex}
+.tv.is-off .tv-feed{visibility:hidden}
+.tv-bars{display:flex;height:46%}
+.tv-bars i{flex:1}
+.tv-bars i:nth-child(1){background:#c8c3b4}.tv-bars i:nth-child(2){background:#c9b24c}.tv-bars i:nth-child(3){background:#3f9c9a}
+.tv-bars i:nth-child(4){background:#3e7a4f}.tv-bars i:nth-child(5){background:#8e4b7f}.tv-bars i:nth-child(6){background:#a9412f}.tv-bars i:nth-child(7){background:#2d4a9a}
+.tv-card{flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 10%;color:#e9e4d6;text-align:center}
+.tv-card-k{font-size:clamp(7px,.8vw,10px);letter-spacing:.34em;text-transform:uppercase;color:#a6ff9f}
+.tv-card strong{font-family:var(--serif-d);font-weight:400;font-size:clamp(12px,1.7vw,22px);line-height:1.15}
+.tv-card span:last-child{font-family:var(--serif);font-style:italic;font-size:clamp(9px,1.1vw,14px);color:#c9c4b6}
+.tv.is-off .tv-osd,.tv.is-off .tv-static{display:none}

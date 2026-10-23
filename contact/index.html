@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=202610231719"/>
+<link rel="stylesheet" href="../assets/site.css?v=202610231725"/>
 </head>
 <body>
 
@@ -126,17 +126,19 @@
         <div class="frow"><label for="nm">Your name</label><input id="nm" name="name" type="text" autocomplete="name" required></div>
         <div class="frow"><label for="em">Email address</label><input id="em" name="email" type="email" autocomplete="email" required></div>
         <div class="frow"><label for="ph">Phone (optional)</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="frow"><label for="site">Your current site, if you have one</label><input id="site" name="current_site" type="url" inputmode="url" autocomplete="url" placeholder="https://" spellcheck="false"></div>
         <div class="frow">
           <label for="pl">What's the project?</label>
           <select id="pl" name="plan">
             <option>Not sure yet, let's talk</option>
-            <option>New bespoke build, solo practice</option>
-            <option>New bespoke build, group practice</option>
-            <option>Existing site, refresh or rebuild</option>
-            <option>Other</option>
+            <option>Door one: I need a website (solo practice)</option>
+            <option>Door one: I need a website (group practice)</option>
+            <option>Door two: I have a site and it isn't working</option>
+            <option>Something else</option>
           </select>
+          <input type="hidden" name="_subject" value="Therapist Web Design: new note from the site">
         </div>
-        <div class="frow"><label for="msg">Tell me about your practice</label><textarea id="msg" name="message" required placeholder="What kind of practice, what you're hoping the site does, anything you love or hate about your current setup…"></textarea></div>
+        <div class="frow"><label for="msg">Tell me about your practice</label><textarea id="msg" name="message" required placeholder="What kind of practice, who you want to reach, and what you love or hate about your current setup. If you pasted a link above, tell me what bugs you about it."></textarea></div>
         <button class="fsub" type="submit">Send my message</button>
         <p class="fnote">I'll respond within one business day. No spam, ever.</p>
       </form>
@@ -214,6 +216,8 @@ var suc=document.getElementById('fsuc');
 if(form){
   form.addEventListener('submit',function(e){
     e.preventDefault();
+    var subj=form.querySelector('[name=_subject]'),pl=form.querySelector('#pl'),cs=form.querySelector('#site');
+    if(subj&&pl)subj.value='TWD: '+pl.value+(cs&&cs.value?' · '+cs.value.replace(/^https?:\/\//,''):'');
     var btn=form.querySelector('.fsub');
     btn.disabled=true;
     btn.textContent='Sending…';
@@ -244,6 +248,6 @@ if(form){
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KSDGGVPW0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6KSDGGVPW0');</script>
-<script src="../assets/site.js?v=202610231719" defer></script>
+<script src="../assets/site.js?v=202610231725" defer></script>
 </body>
 </html>

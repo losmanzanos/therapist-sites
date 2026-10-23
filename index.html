@@ -45,7 +45,7 @@
 <link rel="dns-prefetch" href="//formspree.io"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/site.css?v=202610231719"/>
+<link rel="stylesheet" href="assets/site.css?v=202610231725"/>
 </head>
 <body>
 
@@ -166,6 +166,10 @@
             <canvas class="tv-static" id="tvStatic" width="160" height="120" aria-hidden="true"></canvas>
             <div class="tv-glass" aria-hidden="true"></div>
             <span class="tv-osd" id="tvOsd" aria-hidden="true">CH 02</span>
+            <div class="tv-offair" id="tvOff" aria-hidden="true">
+              <div class="tv-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="tv-card"><span class="tv-card-k">Off the air</span><strong>Back at 6 a.m. Mountain.</strong><span>You're up late. Turn the dial anyway.</span></div>
+            </div>
           </div>
           <picture>
             <source srcset="images/tv-set.webp" type="image/webp"/>
@@ -736,6 +740,16 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
   }
   chs.forEach(function(b,i){b.addEventListener('click',function(){go(i);});});
   fit();window.addEventListener('resize',fit);settle();
+  /* after midnight in Denver, the set opens off the air until someone touches it */
+  try{
+    var hr=+new Intl.DateTimeFormat('en-US',{hour:'numeric',hour12:false,timeZone:'America/Denver'}).format(new Date());
+    if(hr>=0&&hr<6){
+      tv.classList.add('is-off');
+      var wake=function(){tv.classList.remove('is-off');tune(true);flashOsd();setTimeout(function(){tune(false);},700);};
+      knob.addEventListener('click',wake,{once:true});
+      chs.forEach(function(b){b.addEventListener('click',wake,{once:true});});
+    }
+  }catch(e){}
   if('ResizeObserver' in window)new ResizeObserver(fit).observe(scr);
   knob.addEventListener('click',function(){go(cur+1);});
   knob.addEventListener('keydown',function(e){
