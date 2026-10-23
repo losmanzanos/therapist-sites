@@ -1,4 +1,4 @@
 #!/bin/sh
-# Refresh the "last changed" date in the homepage footer and include it in this commit.
+# Refresh the footer date and the ?v= on site.css / site.js, and include them in this commit.
 # Enable once with:  git config core.hooksPath .githooks
-python3 tools/stamp.py && git add index.html
+python3 tools/stamp.py && git add -A -- '*.html'

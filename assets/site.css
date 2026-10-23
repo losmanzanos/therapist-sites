@@ -1612,7 +1612,7 @@ footer{background:var(--ink)}
   .receipt > *{opacity:1;transform:none}
 }
 /* left on one channel too long: the picture starts to drift */
-.tv.is-drift .tv-static{opacity:.16;transition:opacity 1.6s}
+.tv.is-drift .tv-static{opacity:.24;transition:opacity 1.6s}
 
 /* ═══════════════════════════════
    PRICING, one quote sheet

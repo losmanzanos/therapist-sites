@@ -45,7 +45,7 @@
 <link rel="dns-prefetch" href="//formspree.io"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/site.css"/>
+<link rel="stylesheet" href="assets/site.css?v=202610231352"/>
 </head>
 <body>
 
@@ -356,7 +356,7 @@
     </div>
 
     <div class="sheet" id="sheet">
-      <header class="sh-head">
+      <div class="sh-head">
         <div>
           <p class="sh-kicker">Quote sheet</p>
           <p class="sh-title">Hand-coded practice websites</p>
@@ -366,7 +366,7 @@
           <div><dt>Prepared</dt><dd id="shDate">today</dd></div>
           <div><dt>Valid</dt><dd>until prices change, and they're posted here first</dd></div>
         </dl>
-      </header>
+      </div>
 
       <ol class="sh-items">
         <li class="sh-item">
@@ -431,11 +431,11 @@
         </li>
       </ol>
 
-      <footer class="sh-foot">
+      <div class="sh-foot">
         <p><strong>Terms.</strong> Half up front, half when the site goes live. One payment at the end is fine too if you'd rather. No deposit is taken until we've talked.</p>
         <p><strong>Not on this sheet.</strong> Hosting ($0), platform fees ($0), and anything that renews.</p>
         <p class="sh-sign">Bigger idea, or something that doesn't fit a line? <a href="#contact">Tell me about it</a> and I'll scope it honestly.</p>
-      </footer>
+      </div>
     </div>
   </div>
 </section>
@@ -1040,7 +1040,7 @@ document.querySelectorAll('.step').forEach(function(el){
     clearTimeout(driftT);
     if(tv.classList.contains('is-drift')){tv.classList.remove('is-drift');if(!tv.classList.contains('is-tuning')){cancelAnimationFrame(raf);raf=0;}}
     if(reduce)return;
-    driftT=setTimeout(function(){tv.classList.add('is-drift');if(!raf)noise();},120000);
+    driftT=setTimeout(function(){tv.classList.add('is-drift');if(!raf)noise();},90000);
   }
   function flashOsd(){
     tv.classList.add('show-osd');clearTimeout(osdT);
