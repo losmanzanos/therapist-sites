@@ -30,6 +30,7 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 - [The Safer Sounds Club](https://safersoundsclub.com): Colorado, specialty brand for a licensed therapist focused on misophonia and somatic/EMDR-informed work; hand-coded landing page with an interactive quiz, workshop, and blog.
 - [Sanare Psychosocial Rehabilitation](https://www.sanare-colorado.com): Colorado psychosocial rehabilitation practice; redesign inside its existing Squarespace site with new color, type and spacing, rewritten service pages, structured data, alt text, cleaner navigation, and redirects. Shown on the work page as a before/after.
 - [BrunsonWorks](https://workwithbrunson.com): Denver, CO, not a therapist site. Owner's-representative and project-management practice for multifamily property; proof this studio isn't exclusively therapist work (see also Studio Null for web applications).
+- [Log Dog Timberworks](https://logdogtimberworks.com): Denver metro, CO, not a therapist site. Timber framing shop hand-cutting pergolas, pavilions, arbors and hewn beams in Douglas fir; hand-coded site with service pages, a sixteen-town service-area page, a project journal, and LocalBusiness structured data.
 
 ## Pages
 
