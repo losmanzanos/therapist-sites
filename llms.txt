@@ -36,7 +36,7 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 
 - [Home](https://therapistweb.design/): A live preview of all ten portfolio sites, a renting-vs-owning cost calculator, the four-step process, a three-line pricing summary, and contact. The full price sheet and FAQ are on the Pricing page.
 - [Pricing](https://therapistweb.design/pricing/): The full price sheet (solo $2,800, group $4,200, blog +$850, add-ons, existing-site work, terms) and the FAQ.
-- [About](https://therapistweb.design/about/): Who Chad Moravec is (bio photo: Chad, his wife and daughter in bedsheet ghost costumes, on purpose), how he works, and the technical stack every site is built on.
+- [About](https://therapistweb.design/about/): Who Chad Moravec is, how he works, and the technical stack every site is built on.
 - [Work](https://therapistweb.design/work/): Case studies of the builds above.
 - [Services](https://therapistweb.design/services/): Two doors. Door one, you need a website (solo $2,800, group $4,200, blog +$850). Door two, you have a site on Squarespace, Wix or WordPress that isn't working (a free look, then $150/hr or a fixed quote, Google Business Profile from $200, platform migration from $250). SEO is included in every build, not sold separately.
 - [Journal](https://therapistweb.design/journal/): Articles on building, owning, and getting found online as a therapist.
