@@ -181,14 +181,12 @@
   <div class="quote-inner">
       <!-- decor-circle: deep crimson watercolor blob floats behind art -->
     <div class="quote-art" data-r>
-      <div class="forest-stroke"></div>
-      <div class="hex-mask"></div>
+      <div class="hex-mask moon"></div>
     </div>
     <div class="quote-text" data-r data-d="1">
       <blockquote>"Most therapist websites look like they were built the same afternoon, by someone who'd never met a therapist."</blockquote>
       <cite>The reason this studio exists</cite>
     </div>
-    <svg class="quote-scribble" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 44 C20 10, 38 52, 55 28 C70 8, 82 50, 100 30 C108 22, 114 34, 112 42" stroke="#2d4a35" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".55"/><path d="M18 52 C28 38, 44 56, 60 44" stroke="#2d4a35" stroke-width="1" stroke-linecap="round" fill="none" opacity=".3"/></svg>
   </div>
 </section>
 
@@ -346,93 +344,98 @@
 </section>
 
 <!-- ══════════════════════════════════════
-     PRICING / PACKAGES
+     PRICING, one quote sheet
      ══════════════════════════════════════ -->
 <section class="pricing" id="pricing">
   <div class="pricing-inner">
-    <div class="pricing-head" data-r>
+    <div class="pricing-head">
       <p class="eyebrow" style="margin-bottom:14px">What it costs</p>
       <h2>No sales call. Just the numbers.</h2>
-      <p>No monthly fees, no surprise invoices. Here's what a hand-coded practice website actually runs, starting price, plain English.</p>
+      <p>This is the same sheet I'd send you after a first call, minus your name at the top. Nothing on it is monthly.</p>
     </div>
 
-    <div class="pkg-grid">
-      <div class="pkg-card" data-r>
-        <span class="pkg-name">Solo practice</span>
-        <div class="pkg-price">$2,800</div>
-        <p class="pkg-desc">The base build. Everything a solo practice needs to look credible and get found.</p>
-        <ul>
-          <li>Homepage</li>
-          <li>About page</li>
-          <li>Services overview</li>
-          <li>A dedicated page per service or specialty, each SEO-targeted</li>
-          <li>FAQ page</li>
-          <li>Privacy policy</li>
-          <li>Terms &amp; conditions</li>
-          <li>Contact, wired straight to your inbox</li>
-          <li>SEO-structured from day one</li>
-          <li>Google Business Profile setup</li>
-        </ul>
-        <a class="cs-link" href="services/website-design/">More about this build</a>
-      </div>
-      <div class="pkg-card pkg-card--feat" data-r data-d="1">
-        <span class="pkg-name">Group practice</span>
-        <div class="pkg-price">$4,200</div>
-        <p class="pkg-desc">Everything in Solo, plus room for the rest of your clinicians.</p>
-        <ul>
-          <li>Everything in Solo practice</li>
-          <li>Up to 4 additional clinician profiles</li>
-          <li>Individual schema markup per clinician</li>
-          <li>A directory that routes clients to the right person</li>
-        </ul>
-        <a class="cs-link" href="services/group-practice/">More about group builds</a>
-      </div>
-      <div class="pkg-card" data-r data-d="2">
-        <span class="pkg-name">Blog / Journal add-on</span>
-        <div class="pkg-price">+$850</div>
-        <p class="pkg-desc">Add to either package above. No code required to post.</p>
-        <ul>
-          <li>Password-protected admin login</li>
-          <li>Write, edit &amp; delete posts yourself</li>
-          <li>Matches your site's design automatically</li>
-          <li>Built for search from the first post</li>
-        </ul>
-        <a class="cs-link" href="services/blog-journal/">More about the blog add-on</a>
-      </div>
+    <div class="sheet" id="sheet">
+      <header class="sh-head">
+        <div>
+          <p class="sh-kicker">Quote sheet</p>
+          <p class="sh-title">Hand-coded practice websites</p>
+        </div>
+        <dl class="sh-meta">
+          <div><dt>No.</dt><dd id="shNo">TWD-1026-Q</dd></div>
+          <div><dt>Prepared</dt><dd id="shDate">today</dd></div>
+          <div><dt>Valid</dt><dd>until prices change, and they're posted here first</dd></div>
+        </dl>
+      </header>
+
+      <ol class="sh-items">
+        <li class="sh-item">
+          <div class="sh-line">
+            <span class="sh-n">1</span>
+            <span class="sh-name">Solo practice website</span>
+            <i></i>
+            <span class="sh-price">$2,800</span>
+          </div>
+          <p class="sh-desc">The base build. Everything a solo practice needs to look credible and get found.</p>
+          <ul class="sh-inc">
+            <li>Homepage</li><li>About page</li><li>Services overview</li><li>A page per service or specialty, each SEO-targeted</li><li>FAQ</li><li>Privacy policy and terms</li><li>Contact form wired to your inbox</li><li>Google Business Profile setup</li>
+          </ul>
+          <a class="cs-link" href="services/website-design/">More about this build</a>
+        </li>
+        <li class="sh-item">
+          <div class="sh-line">
+            <span class="sh-n">2</span>
+            <span class="sh-name">Group practice website</span>
+            <i></i>
+            <span class="sh-price">$4,200</span>
+          </div>
+          <p class="sh-desc">Everything in line 1, plus room for the rest of your clinicians. This is the one most practices end up on.</p>
+          <ul class="sh-inc">
+            <li>Up to 4 additional clinician profiles</li><li>Individual schema markup per clinician</li><li>A directory that routes clients to the right person</li>
+          </ul>
+          <a class="cs-link" href="services/group-practice/">More about group builds</a>
+        </li>
+        <li class="sh-item">
+          <div class="sh-line">
+            <span class="sh-n">3</span>
+            <span class="sh-name">Blog / journal</span>
+            <i></i>
+            <span class="sh-price">+$850</span>
+          </div>
+          <p class="sh-desc">Add to line 1 or 2. A password-protected login where you write, edit and delete posts yourself. Matches the site automatically and is built for search from the first post.</p>
+          <a class="cs-link" href="services/blog-journal/">More about the blog add-on</a>
+        </li>
+      </ol>
+
+      <p class="sh-sub">Often added</p>
+      <ol class="sh-items sh-items--small" start="4">
+        <li class="sh-item">
+          <div class="sh-line"><span class="sh-n">4</span><span class="sh-name">SEO &amp; authority carryover</span><i></i><span class="sh-price">from $250</span></div>
+          <p class="sh-desc">Moving an existing site? Redirects, sitemap, robots.txt, llms.txt and schema all come with you, so Google doesn't forget you exist for three months.</p>
+        </li>
+        <li class="sh-item">
+          <div class="sh-line"><span class="sh-n">5</span><span class="sh-name">Branded email templates</span><i></i><span class="sh-price">from $200</span></div>
+          <p class="sh-desc">Contact and intake notifications that look like your site instead of a default form-plugin email.</p>
+        </li>
+        <li class="sh-item">
+          <div class="sh-line"><span class="sh-n">6</span><span class="sh-name">Self-edit access (TinaCMS)</span><i></i><span class="sh-price">from $400</span></div>
+          <p class="sh-desc">A simple login so you can change basic page copy yourself. No code, no calling me, unless you want to.</p>
+        </li>
+        <li class="sh-item">
+          <div class="sh-line"><span class="sh-n">7</span><span class="sh-name">Google Business Profile, existing site</span><i></i><span class="sh-price">from $200</span></div>
+          <p class="sh-desc">Free with lines 1 and 2. For a site I didn't build: claimed, filled in properly, and linked back correctly.</p>
+        </li>
+        <li class="sh-item">
+          <div class="sh-line"><span class="sh-n">8</span><span class="sh-name">Anything else</span><i></i><span class="sh-price">$150 / hr</span></div>
+          <p class="sh-desc">Copy, monthly posts, fixes to a site that lives on Squarespace or WordPress, or a fixed quote after a quick look.</p>
+        </li>
+      </ol>
+
+      <footer class="sh-foot">
+        <p><strong>Terms.</strong> Half up front, half when the site goes live. One payment at the end is fine too if you'd rather. No deposit is taken until we've talked.</p>
+        <p><strong>Not on this sheet.</strong> Hosting ($0), platform fees ($0), and anything that renews.</p>
+        <p class="sh-sign">Bigger idea, or something that doesn't fit a line? <a href="#contact">Tell me about it</a> and I'll scope it honestly.</p>
+      </footer>
     </div>
-
-    <p class="pkg-note" data-r>A subscription platform runs $800 to $4,000 a year, every year, for as long as you keep paying. These prices don't disappear if you stop, because there's nothing to stop. They reflect a site built by hand, one page at a time, for one practice, not a template with a new logo dropped in.</p>
-
-    <div class="addons" data-r>
-      <div>
-        <h3>Beyond the base build</h3>
-        <p>A few things clients ask for often enough that they've earned their own line item. Anything not listed here is billed the same honest way: $150/hr, or a fixed quote after a quick look.</p>
-      </div>
-      <ul class="addon-list">
-        <li class="addon-item">
-          <div><span class="addon-item-name">SEO &amp; authority carryover</span><span class="addon-item-desc">Migrating an existing site? Redirects, sitemap, robots.txt, llms.txt, and schema all carry over, so Google doesn't forget you exist for three months.</span></div>
-          <span class="addon-item-price">From $250</span>
-        </li>
-        <li class="addon-item">
-          <div><span class="addon-item-name">Branded email templates</span><span class="addon-item-desc">Contact &amp; intake notifications that look like your site instead of a default form-plugin email.</span></div>
-          <span class="addon-item-price">From $200</span>
-        </li>
-        <li class="addon-item">
-          <div><span class="addon-item-name">Self-edit access (TinaCMS)</span><span class="addon-item-desc">A simple login so you can update basic page copy yourself. No code, no calling me, unless you want to.</span></div>
-          <span class="addon-item-price">From $400</span>
-        </li>
-        <li class="addon-item">
-          <div><span class="addon-item-name">Google Business Profile setup</span><span class="addon-item-desc">Included free with new Solo and Group builds. For an existing site, claimed, optimized, and linked back correctly.</span></div>
-          <span class="addon-item-price">From $200</span>
-        </li>
-        <li class="addon-item">
-          <div><span class="addon-item-name">Ongoing copy &amp; monthly posts</span><span class="addon-item-desc">A standing retainer if you want fresh content without thinking about it.</span></div>
-          <span class="addon-item-price">$150/hr</span>
-        </li>
-      </ul>
-    </div>
-
-    <p class="pkg-note" data-r>Bigger vision, custom features, or something that doesn't fit a box? <a href="#contact" style="color:var(--forest-2);text-decoration:underline">Tell me about it</a> and I'll scope it honestly.</p>
   </div>
 </section>
 
@@ -652,7 +655,7 @@
   </div>
   <div class="ft-base">
     <p class="ft-copy">&copy; 2026 Chad Moravec &middot; therapistweb.design &middot; Denver, CO</p>
-    <p class="ft-made" id="ftMade">Written by hand in Denver.</p>
+    <p class="ft-made" id="ftMade">Written by hand in Denver. Last changed <span id="ftStamp">October 23, 2026</span>.<span id="ftSpeed"></span></p>
     <p class="ft-extra">Creative work &amp; web apps: <a href="https://studionull.io/" target="_blank" rel="noopener noreferrer">studionull.io</a> &middot; <a href="colophon/">Colophon</a></p>
   </div>
 </footer>
@@ -1029,7 +1032,14 @@ document.querySelectorAll('.step').forEach(function(el){
   function tune(on){
     if(reduce)return;
     if(on){tv.classList.add('is-tuning');if(!raf)noise();clearTimeout(tuneT);}
-    else{tv.classList.remove('is-tuning');tuneT=setTimeout(function(){cancelAnimationFrame(raf);raf=0;},220);}
+    else{tv.classList.remove('is-tuning');tuneT=setTimeout(function(){if(!tv.classList.contains('is-drift')){cancelAnimationFrame(raf);raf=0;}},220);}
+  }
+  var driftT=0;
+  function settle(){
+    clearTimeout(driftT);
+    if(tv.classList.contains('is-drift')){tv.classList.remove('is-drift');if(!tv.classList.contains('is-tuning')){cancelAnimationFrame(raf);raf=0;}}
+    if(reduce)return;
+    driftT=setTimeout(function(){tv.classList.add('is-drift');if(!raf)noise();},120000);
   }
   function flashOsd(){
     tv.classList.add('show-osd');clearTimeout(osdT);
@@ -1046,7 +1056,7 @@ document.querySelectorAll('.step').forEach(function(el){
     hit.href=b.dataset.url;
     hit.firstChild.textContent='Visit '+name+' (opens in a new tab)';
     cap.innerHTML='<strong>'+esc(name)+'</strong><span>'+esc(b.dataset.blurb)+'</span><a href="'+esc(b.dataset.url)+'" target="_blank" rel="noopener noreferrer">Visit the live site</a>';
-    flashOsd();tune(true);
+    flashOsd();tune(true);settle();
     var my=++token,t0=Date.now();
     function finish(){
       if(my!==token)return;my=-1;
@@ -1056,7 +1066,7 @@ document.querySelectorAll('.step').forEach(function(el){
     frame.src=b.dataset.src;
   }
   chs.forEach(function(b,i){b.addEventListener('click',function(){go(i);});});
-  fit();window.addEventListener('resize',fit);
+  fit();window.addEventListener('resize',fit);settle();
   if('ResizeObserver' in window)new ResizeObserver(fit).observe(scr);
   knob.addEventListener('click',function(){go(cur+1);});
   knob.addEventListener('keydown',function(e){
@@ -1067,7 +1077,7 @@ document.querySelectorAll('.step').forEach(function(el){
   if('IntersectionObserver' in window&&!reduce){
     var io=new IntersectionObserver(function(es){
       if(!es[0].isIntersecting)return;io.disconnect();
-      tune(true);flashOsd();setTimeout(function(){tune(false);},650);
+      tune(true);flashOsd();setTimeout(function(){tune(false);},650);settle();
     },{threshold:.35});
     io.observe(tv);
   }
@@ -1105,6 +1115,17 @@ document.querySelectorAll('.step').forEach(function(el){
       rcNote.textContent='At '+usd(m)+' a month, owning takes about '+y+' to pay off. Honestly? Renting might be the right call for you, and I would rather say so.';
     }
   }
+  var shD=document.getElementById('shDate'),shN=document.getElementById('shNo');
+  if(shD)shD.textContent=now.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  if(shN)shN.textContent='TWD-'+mmyy+'-Q';
+  var rc=document.getElementById('receipt');
+  if('IntersectionObserver' in window){
+    var pio=new IntersectionObserver(function(es){
+      if(!es[0].isIntersecting)return;pio.disconnect();
+      rc.classList.add('printed');setTimeout(function(){rc.classList.add('done');},2600);
+    },{threshold:.3});
+    pio.observe(rc);
+  }else{rc.classList.add('printed','done');}
   r.addEventListener('input',update);
   pks.forEach(function(b){
     b.addEventListener('click',function(){
@@ -1117,11 +1138,11 @@ document.querySelectorAll('.step').forEach(function(el){
 })();
 /* ── footer receipt + a note for whoever opens dev tools ── */
 (function(){
-  var el=document.getElementById('ftMade');
+  var el=document.getElementById('ftSpeed');
   function stamp(){
     var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
     var ms=nav?nav.domContentLoadedEventEnd:0;
-    if(el&&ms>0)el.textContent='Written by hand in Denver. This page was ready in '+(ms/1000).toFixed(2)+' seconds on your connection.';
+    if(el&&ms>0)el.textContent=' Ready in '+(ms/1000).toFixed(2)+' seconds on your connection.';
   }
   if(document.readyState==='complete')stamp();else window.addEventListener('load',stamp);
   try{

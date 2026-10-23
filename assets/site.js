@@ -39,6 +39,22 @@
     document.querySelectorAll("[data-r]").forEach(function (el) { el.classList.add("on"); });
   }
 
+
+  /* work page channel rail: highlight the project you're looking at */
+  var rail=document.querySelector('.rail');
+  if(rail&&'IntersectionObserver' in window){
+    var links=[].slice.call(rail.querySelectorAll('a')),map={};
+    links.forEach(function(a){var t=document.getElementById(a.getAttribute('href').slice(1));if(t)map[a.getAttribute('href').slice(1)]=a;});
+    var ro=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        links.forEach(function(a){a.classList.remove('is-on');});
+        var a=map[e.target.id];if(a)a.classList.add('is-on');
+      });
+    },{rootMargin:'-40% 0px -50% 0px',threshold:0});
+    Object.keys(map).forEach(function(id){ro.observe(document.getElementById(id));});
+  }
+
   /* FAQ accordion (if present) */
   document.querySelectorAll(".fq").forEach(function (btn) {
     btn.addEventListener("click", function () {

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Refresh the "last changed" date in the homepage footer and include it in this commit.
+# Enable once with:  git config core.hooksPath .githooks
+python3 tools/stamp.py && git add index.html
