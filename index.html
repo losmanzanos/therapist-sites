@@ -219,6 +219,78 @@
 </section>
 
 <!-- ══════════════════════════════════════
+     WORK, the channel changer
+     ══════════════════════════════════════ -->
+<section class="tvwork" id="work" aria-labelledby="work-h">
+  <div class="tvwork-inner">
+    <div class="tvwork-head" data-r>
+      <div>
+        <p class="eyebrow">Recent work</p>
+        <h2 id="work-h">Ten sites. Go ahead, change the channel.</h2>
+      </div>
+      <p class="tv-note">Every channel is a live site, running right now. Turn the dial, pick from the guide, or click the screen to go visit.</p>
+    </div>
+
+    <div class="tv-wrap">
+      <div class="tv-stage" data-r>
+        <div class="tv" id="tv">
+          <div class="tv-screen">
+            <div class="tv-feed"><iframe id="tvFrame" src="https://fullbloomcounseling.com/" title="Live preview of the selected site" loading="lazy" tabindex="-1" aria-hidden="true" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            <canvas class="tv-static" id="tvStatic" width="160" height="120" aria-hidden="true"></canvas>
+            <div class="tv-glass" aria-hidden="true"></div>
+            <span class="tv-osd" id="tvOsd" aria-hidden="true">CH 02</span>
+          </div>
+          <picture>
+            <source srcset="images/tv-set.webp" type="image/webp"/>
+            <img class="tv-set" src="images/tv-set.png" alt="" width="994" height="683" loading="lazy" decoding="async"/>
+          </picture>
+          <a class="tv-hit" id="tvHit" href="https://fullbloomcounseling.com/" target="_blank" rel="noopener noreferrer"><span class="sr-only">Visit Full Bloom Counseling Group (opens in a new tab)</span></a>
+          <span class="tv-lcd" id="tvLcd" aria-hidden="true">CH 02</span>
+          <button class="tv-knob" id="tvKnob" type="button" aria-label="Turn the dial to the next channel">
+            <picture>
+              <source srcset="images/tv-knob.webp" type="image/webp"/>
+              <img src="images/tv-knob.png" alt="" width="74" height="74"/>
+            </picture>
+          </button>
+          <span class="tv-tag" aria-hidden="true">turn me
+            <svg viewBox="0 0 34 46" fill="none"><path d="M3 5 C 22 4, 30 18, 24 40" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M17 34 L 24 41 L 30 33" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <p class="tv-caption" id="tvCaption" aria-live="polite"><strong>Full Bloom Counseling Group</strong><span>Seven clinicians, one site that routes each client to the right one.</span><a href="https://fullbloomcounseling.com/" target="_blank" rel="noopener noreferrer">Visit the live site</a></p>
+      </div>
+
+      <div class="guide-wrap" data-r data-d="1">
+        <p class="guide-h">Tonight's lineup</p>
+        <ol class="guide" id="guide">
+          <li><button type="button" class="ch is-on" aria-pressed="true" data-src="https://fullbloomcounseling.com/" data-url="https://fullbloomcounseling.com/" data-blurb="Seven clinicians, one site that routes each client to the right one."><span class="ch-n">02</span><span class="ch-name">Full Bloom Counseling Group</span><span class="ch-meta">Group practice · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="work/preview/apex/" data-url="https://apex-mhc.com/" data-blurb="Logo, type and site from scratch. The contour lines are real Colorado elevation data."><span class="ch-n">03</span><span class="ch-name">Apex Mental Health Counseling</span><span class="ch-meta">Brand &amp; website · Colorado</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://lovettcounselingandconsulting.com/" data-url="https://lovettcounselingandconsulting.com/" data-blurb="A trauma-informed counselor whose site reads the way her sessions feel."><span class="ch-n">04</span><span class="ch-name">Lovett Counseling &amp; Consulting</span><span class="ch-meta">Solo practice · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://goldenhourwellnesscolorado.com/" data-url="https://goldenhourwellnesscolorado.com/" data-blurb="Off Squarespace, with a blog and self-edit access for group dates that keep changing."><span class="ch-n">05</span><span class="ch-name">Golden Hour Wellness</span><span class="ch-meta">Group practice · Colorado</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://cbc-preview.therapistweb.design/" data-url="https://coolbirdcounseling.com/" data-blurb="A pixel-for-pixel rebuild of an existing design, finally off its old CMS."><span class="ch-n">06</span><span class="ch-name">Cool Bird Counseling</span><span class="ch-meta">Rebuild &amp; migration · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://rootedresonancetherapy.com/" data-url="https://rootedresonancetherapy.com/" data-blurb="New name, new domain, and 301 redirects so Google kept up."><span class="ch-n">07</span><span class="ch-name">Rooted Resonance Therapy</span><span class="ch-meta">Full rebrand · Colorado</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://safersoundsclub.com/" data-url="https://safersoundsclub.com/" data-blurb="Misophonia education with a quiz, a workshop and an identity all its own."><span class="ch-n">08</span><span class="ch-name">The Safer Sounds Club</span><span class="ch-meta">Specialty brand · Online</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://www.sanare-colorado.com/" data-url="https://www.sanare-colorado.com/" data-blurb="Stayed on Squarespace. Got new type, new color and 21 rewritten service pages."><span class="ch-n">09</span><span class="ch-name">Sanare Psychosocial Rehab</span><span class="ch-meta">Squarespace redesign · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://workwithbrunson.com/" data-url="https://workwithbrunson.com/" data-blurb="Owner's rep and project management for multifamily property. Zero clinical language required."><span class="ch-n">10</span><span class="ch-name">BrunsonWorks</span><span class="ch-meta">Not therapy · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://logdogtimberworks.com/" data-url="https://logdogtimberworks.com/" data-blurb="Hand-cut timber frame pergolas, and a service-area page covering sixteen towns."><span class="ch-n">11</span><span class="ch-name">Log Dog Timberworks</span><span class="ch-meta">Not therapy · Denver metro</span></button></li>
+        </ol>
+        <a class="cs-link guide-more" href="work/">Read the full case studies</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIAL
+     ══════════════════════════════════════ -->
+<section class="testi grain" id="kind-words">
+  <div class="testi-inner" data-r>
+    <p class="eyebrow">Kind words</p>
+    <blockquote>"Chad built our whole group-practice site and I still get compliments on it, from clients and from other therapists asking who made it. It sounds like <em>us</em>, it's fast, and I've never once worried about a monthly fee or losing access. He gets this field in a way most web people simply don't."</blockquote>
+    <cite>Becca Moravec · <a href="https://fullbloomcounseling.com/" target="_blank" rel="noopener">Full Bloom Counseling Group</a></cite>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
      THREE PILLARS
      ══════════════════════════════════════ -->
 <section class="threes">
@@ -402,105 +474,6 @@
     </div>
 
     <p class="pkg-note" data-r>Bigger vision, custom features, or something that doesn't fit a box? <a href="#contact" style="color:var(--forest-2);text-decoration:underline">Tell me about it</a> and I'll scope it honestly.</p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     WORK, 2-col grid, navigable iframes
-     ══════════════════════════════════════ -->
-<section class="work" id="work">
-  <div class="work-inner">
-    <div class="work-head" data-r>
-      <div>
-        <p class="eyebrow" style="margin-bottom:8px">Recent work</p>
-        <h2>A few projects I'm genuinely proud of.</h2>
-      </div>
-      <div class="work-note" data-r data-d="2">Each site designed around the practice, not the other way around.</div>
-    </div>
-    <div class="work-studies">
-
-      <article class="cstudy" data-r>
-        <div class="cstudy-media">
-          <div class="wbar"><div class="wdot"></div><div class="wdot"></div><div class="wdot"></div><div class="wurl">fullbloomcounseling.com</div></div>
-          <div class="cstudy-frame">
-            <iframe src="https://fullbloomcounseling.com/" title="Full Bloom Counseling Group, Denver, CO" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-        <div class="cstudy-body">
-          <span class="eyebrow">Group practice</span>
-          <h2>Full Bloom Counseling Group</h2>
-          <span class="cstudy-place">Denver, Colorado</span>
-          <p>A Denver group practice of seven clinicians, individual therapist profiles, specialty service pages, structured data, and a multi-fallback contact form. Warm, credible, and easy for the right client to find the right person.</p>
-          <div class="cs-tags">
-            <span class="cs-tag">7 clinician profiles</span>
-            <span class="cs-tag">Specialty pages</span>
-            <span class="cs-tag">$0 hosting</span>
-          </div>
-          <a class="cs-link" href="https://fullbloomcounseling.com/" target="_blank" rel="noopener noreferrer">Visit the live site</a>
-        </div>
-      </article>
-
-      <article class="cstudy" data-r>
-        <div class="cstudy-media">
-          <div class="wbar"><div class="wdot"></div><div class="wdot"></div><div class="wdot"></div><div class="wurl">lovettcounselingandconsulting.com</div></div>
-          <div class="cstudy-frame">
-            <iframe src="https://lovettcounselingandconsulting.com/" title="Lovett Counseling &amp; Consulting, Denver, CO" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-        <div class="cstudy-body">
-          <span class="eyebrow">Solo practice</span>
-          <h2>Lovett Counseling &amp; Consulting</h2>
-          <span class="cstudy-place">Denver, Colorado</span>
-          <p>A solo, trauma-informed counselor (LPC, CCTP) who needed a site that reads the way her sessions feel. A full multi-page build, individual and couples therapy, consulting, fees, and FAQ, in a warm editorial voice built to convert.</p>
-          <div class="cs-tags">
-            <span class="cs-tag">Multi-page build</span>
-            <span class="cs-tag">Individual &amp; couples</span>
-            <span class="cs-tag">Trauma-informed voice</span>
-          </div>
-          <a class="cs-link" href="https://lovettcounselingandconsulting.com/" target="_blank" rel="noopener noreferrer">Visit the live site</a>
-        </div>
-      </article>
-
-      <article class="cstudy" data-r>
-        <div class="cstudy-media">
-          <div class="wbar"><div class="wdot"></div><div class="wdot"></div><div class="wdot"></div><div class="wurl">safersoundsclub.com</div></div>
-          <div class="cstudy-frame">
-            <iframe src="https://safersoundsclub.com/" title="The Safer Sounds Club, misophonia &amp; somatic therapy" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-        <div class="cstudy-body">
-          <span class="eyebrow">Specialty brand &amp; digital product</span>
-          <h2>The Safer Sounds Club</h2>
-          <span class="cstudy-place">Online workshop</span>
-          <p>A specialty brand and digital workshop for a licensed therapist working with misophonia through somatic therapy. A narrative landing page, an interactive quiz, workshop and blog sections, and email capture, its own identity, not a template.</p>
-          <div class="cs-tags">
-            <span class="cs-tag">Brand identity</span>
-            <span class="cs-tag">Interactive quiz</span>
-            <span class="cs-tag">Email capture</span>
-          </div>
-          <a class="cs-link" href="https://safersoundsclub.com/" target="_blank" rel="noopener noreferrer">Visit the live site</a>
-        </div>
-      </article>
-
-    </div>
-    <div class="work-more" data-r><a href="work/">Read the full case studies →</a></div>
-    <div class="wk-banner" data-r style="margin-top:28px">
-      <div class="wk-banner-inner">
-        <p><strong>Not exclusively therapists.</strong> Same approach, built recently for BrunsonWorks, a Denver property-management &amp; owner's-rep practice.</p>
-        <a href="work/#brunson">See that one too</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     TESTIMONIAL
-     ══════════════════════════════════════ -->
-<section class="testi grain" id="kind-words">
-  <div class="testi-inner" data-r>
-    <p class="eyebrow">Kind words</p>
-    <blockquote>"Chad built our whole group-practice site and I still get compliments on it, from clients and from other therapists asking who made it. It sounds like <em>us</em>, it's fast, and I've never once worried about a monthly fee or losing access. He gets this field in a way most web people simply don't."</blockquote>
-    <cite>Becca Moravec · <a href="https://fullbloomcounseling.com/" target="_blank" rel="noopener">Full Bloom Counseling Group</a></cite>
   </div>
 </section>
 
@@ -872,37 +845,147 @@
   "mainEntity":{
     "@type":"ItemList",
     "itemListElement":[
-      {
-        "@type":"ListItem","position":1,
-        "item":{
-          "@type":"CreativeWork",
-          "name":"Full Bloom Counseling Group",
-          "url":"https://fullbloomcounseling.com",
-          "description":"Hand-coded website for a Denver group therapy practice of seven clinicians, individual profiles, specialty service pages, and structured data. Built by therapistweb.design.",
-          "creator":{"@type":"Person","name":"Chad Moravec"}
-        }
-      },
-      {
-        "@type":"ListItem","position":2,
-        "item":{
-          "@type":"CreativeWork",
-          "name":"Lovett Counseling & Consulting",
-          "url":"https://lovettcounselingandconsulting.com",
-          "description":"Hand-coded multi-page website for a Denver trauma-informed counselor, individual and couples therapy, consulting, and fees pages. Built by therapistweb.design.",
-          "creator":{"@type":"Person","name":"Chad Moravec"}
-        }
-      },
-      {
-        "@type":"ListItem","position":3,
-        "item":{
-          "@type":"CreativeWork",
-          "name":"The Safer Sounds Club",
-          "url":"https://safersoundsclub.com",
-          "description":"Hand-coded specialty brand for a Colorado therapist focused on misophonia and somatic therapy, landing page, quiz, workshop, and blog. Built by therapistweb.design.",
-          "creator":{"@type":"Person","name":"Chad Moravec"}
-        }
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "Full Bloom Counseling Group",
+      "url": "https://fullbloomcounseling.com",
+      "description": "Hand-coded website for a Denver group therapy practice of seven clinicians, with individual profiles, specialty service pages, and structured data.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
       }
-    ]
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "Apex Mental Health Counseling",
+      "url": "https://apex-mhc.com",
+      "description": "Brand identity and hand-coded website for a Colorado telehealth therapy practice.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "Lovett Counseling & Consulting",
+      "url": "https://lovettcounselingandconsulting.com",
+      "description": "Hand-coded multi-page website for a Denver trauma-informed counselor.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 4,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "Golden Hour Wellness Colorado",
+      "url": "https://goldenhourwellnesscolorado.com",
+      "description": "Colorado group practice migrated off Squarespace, with a blog and self-edit content access.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 5,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "Cool Bird Counseling",
+      "url": "https://coolbirdcounseling.com",
+      "description": "Hand-coded rebuild of an existing design for a Denver addiction and mental health counseling practice.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 6,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "Rooted Resonance Therapy",
+      "url": "https://rootedresonancetherapy.com",
+      "description": "Full rebrand for a Colorado somatic therapy and sound healing practice, with 301 redirects from the old domain.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 7,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "The Safer Sounds Club",
+      "url": "https://safersoundsclub.com",
+      "description": "Specialty brand for a Colorado therapist focused on misophonia and somatic therapy, with a quiz, workshop, and blog.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 8,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "Sanare Psychosocial Rehabilitation",
+      "url": "https://www.sanare-colorado.com",
+      "description": "Redesign inside an existing Squarespace site for a Denver psychosocial rehabilitation practice.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 9,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "BrunsonWorks",
+      "url": "https://workwithbrunson.com",
+      "description": "Website for a Denver owner's-representative and project-management practice for multifamily property.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 10,
+    "item": {
+      "@type": "CreativeWork",
+      "name": "Log Dog Timberworks",
+      "url": "https://logdogtimberworks.com",
+      "description": "Website for a Denver-metro timber framing shop with service, service-area, and project journal pages.",
+      "creator": {
+        "@type": "Person",
+        "name": "Chad Moravec"
+      }
+    }
+  }
+]
   }
 }
 </script>
@@ -975,6 +1058,74 @@ document.querySelectorAll('.step').forEach(function(el){
   pobs.observe(el);
 });
 
+/* ── WORK: the channel changer ── */
+(function(){
+  var tv=document.getElementById('tv');
+  if(!tv)return;
+  var frame=document.getElementById('tvFrame'),hit=document.getElementById('tvHit'),
+      osd=document.getElementById('tvOsd'),lcd=document.getElementById('tvLcd'),
+      knob=document.getElementById('tvKnob'),cap=document.getElementById('tvCaption'),
+      cv=document.getElementById('tvStatic'),ctx=cv.getContext('2d'),
+      chs=[].slice.call(document.querySelectorAll('#guide .ch')),
+      reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      cur=0,raf=0,osdT=0,tuneT=0,token=0;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function noise(){
+    var w=cv.width,h=cv.height,img=ctx.createImageData(w,h),d=img.data,roll=(Math.random()*h)|0;
+    for(var y=0;y<h;y++){
+      var band=Math.abs(y-roll)<6?60:0;
+      for(var x=0;x<w;x++){
+        var i=(y*w+x)*4,v=(Math.random()*215|0)+band;
+        d[i]=v;d[i+1]=v;d[i+2]=v+8;d[i+3]=255;
+      }
+    }
+    ctx.putImageData(img,0,0);
+    raf=requestAnimationFrame(noise);
+  }
+  function tune(on){
+    if(reduce)return;
+    if(on){tv.classList.add('is-tuning');if(!raf)noise();clearTimeout(tuneT);}
+    else{tv.classList.remove('is-tuning');tuneT=setTimeout(function(){cancelAnimationFrame(raf);raf=0;},220);}
+  }
+  function flashOsd(){
+    tv.classList.add('show-osd');clearTimeout(osdT);
+    osdT=setTimeout(function(){tv.classList.remove('show-osd');},1900);
+  }
+  function go(i){
+    var n=chs.length;i=((i%n)+n)%n;
+    if(i===cur)return;
+    cur=i;
+    var b=chs[cur],num=b.querySelector('.ch-n').textContent,name=b.querySelector('.ch-name').textContent;
+    chs.forEach(function(c,j){var on=j===cur;c.classList.toggle('is-on',on);c.setAttribute('aria-pressed',on?'true':'false');});
+    knob.style.setProperty('--rot',(20+30*cur)+'deg');
+    lcd.textContent='CH '+num;osd.textContent='CH '+num;
+    hit.href=b.dataset.url;
+    hit.firstChild.textContent='Visit '+name+' (opens in a new tab)';
+    cap.innerHTML='<strong>'+esc(name)+'</strong><span>'+esc(b.dataset.blurb)+'</span><a href="'+esc(b.dataset.url)+'" target="_blank" rel="noopener noreferrer">Visit the live site</a>';
+    flashOsd();tune(true);
+    var my=++token,t0=Date.now();
+    function finish(){
+      if(my!==token)return;my=-1;
+      setTimeout(function(){tune(false);},Math.max(0,450-(Date.now()-t0)));
+    }
+    frame.onload=finish;setTimeout(finish,1800);
+    frame.src=b.dataset.src;
+  }
+  chs.forEach(function(b,i){b.addEventListener('click',function(){go(i);});});
+  knob.addEventListener('click',function(){go(cur+1);});
+  knob.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();go(cur+1);}
+    else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();go(cur-1);}
+  });
+  /* first time it scrolls into view: a little warm-up static, like an old set coming on */
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){
+      if(!es[0].isIntersecting)return;io.disconnect();
+      tune(true);flashOsd();setTimeout(function(){tune(false);},650);
+    },{threshold:.35});
+    io.observe(tv);
+  }
+})();
 /* ── FAQ accordion ── */
 document.querySelectorAll('.fq').forEach(function(btn){
   btn.addEventListener('click',function(){
