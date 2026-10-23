@@ -34,7 +34,7 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 
 ## Pages
 
-- [Home](https://therapistweb.design/): Overview, process, pricing, tech stack, FAQ, and contact.
+- [Home](https://therapistweb.design/): Overview, a live preview of all ten portfolio sites, a renting-vs-owning cost calculator, process, pricing, tech stack, FAQ, and contact.
 - [Work](https://therapistweb.design/work/): Case studies of the builds above.
 - [Services](https://therapistweb.design/services/): Website design, SEO, blog/journal setup, and group practice builds, each with its own page.
 - [Journal](https://therapistweb.design/journal/): Articles on building, owning, and getting found online as a therapist.
