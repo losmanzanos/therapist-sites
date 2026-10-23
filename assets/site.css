@@ -1724,3 +1724,32 @@ footer{background:var(--ink)}
   .doors .wrap{grid-template-columns:1fr;gap:48px}
   .addons{grid-template-columns:1fr}
 }
+
+/* ═══════════════════════════════
+   HOMEPAGE STRIPS, pricing + contact
+   ═══════════════════════════════ */
+.pstrip{padding:var(--sy) 0;background:var(--cream-s)}
+.pstrip-inner{max-width:760px;margin:0 auto;padding:0 var(--gut)}
+.pstrip-head h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(34px,4vw,58px);line-height:1.04;margin:12px 0 34px}
+.pstrip-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.pstrip-list li{border-bottom:1px dashed rgba(44,45,54,.3)}
+.pstrip-list a{display:flex;align-items:baseline;gap:14px;padding:18px 0;transition:padding .25s}
+.pstrip-list a:hover{padding-left:8px}
+.ps-name{font-family:var(--serif-d);font-size:clamp(19px,2.2vw,26px);color:var(--ink);transition:color .2s}
+.pstrip-list a:hover .ps-name{color:var(--forest-2)}
+.pstrip-list i{flex:1;border-bottom:1px dotted rgba(44,45,54,.45);transform:translateY(-6px);min-width:24px}
+.ps-price{font-family:var(--serif-d);font-size:clamp(22px,2.4vw,30px);color:var(--forest);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pstrip-foot{margin-top:22px;font-size:15px;line-height:1.7;color:var(--ink-s)}
+.pstrip-foot a{color:var(--forest);border-bottom:1px solid var(--forest-l)}
+.pstrip-foot a:hover{color:var(--forest-2);border-color:var(--forest-2)}
+
+.cstrip{position:relative;padding:var(--sy) 0 calc(var(--sy) + 40px);background:var(--cream);overflow:hidden}
+.cstrip .contact-snake{position:absolute;right:-6%;bottom:-18%;width:min(46%,560px);opacity:.55;pointer-events:none}
+.cstrip-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+.cstrip h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(36px,4.6vw,66px);line-height:1.02;margin:12px 0 18px}
+.cstrip-inner > p{font-size:16px;line-height:1.75;color:var(--ink-s);max-width:440px}
+.cstrip-row{display:flex;flex-wrap:wrap;align-items:center;gap:22px 32px;margin-top:34px}
+@media (max-width:720px){
+  .cstrip .contact-snake{width:70%;right:-20%;bottom:-8%;opacity:.35}
+  .cstrip-row{flex-direction:column;align-items:flex-start;gap:18px}
+}

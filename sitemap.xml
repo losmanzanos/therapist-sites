@@ -19,6 +19,20 @@
   </url>
 
   <url>
+    <loc>https://therapistweb.design/pricing/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://therapistweb.design/contact/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://therapistweb.design/about/</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>

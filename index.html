@@ -45,7 +45,7 @@
 <link rel="dns-prefetch" href="//formspree.io"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/site.css?v=202610231651"/>
+<link rel="stylesheet" href="assets/site.css?v=202610231707"/>
 </head>
 <body>
 
@@ -61,11 +61,11 @@
       (720) 466-1013
     </a>
     <div class="hdr-brand">
-      <a href="./" aria-label="therapistweb.design, home"><span class="hdr-brand-name">therapistweb.design</span></a>
+      <a href="./" aria-label="Therapist Web Design, home"><span class="hdr-brand-name">Therapist Web Design</span></a>
       <span class="hdr-brand-rule"></span>
       <span class="hdr-brand-sub">Therapist websites &nbsp;·&nbsp; Denver, CO</span>
     </div>
-    <a href="#contact" class="hdr-right">
+    <a href="contact/" class="hdr-right">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
       Start a project
     </a>
@@ -78,11 +78,11 @@
     <div class="snav-links">
       <a href="work/">Work</a>
       <a href="services/">Services</a>
-      <a href="#pricing">Pricing</a>
+      <a href="pricing/">Pricing</a>
       <a href="about/">About</a>
       <a href="journal/">Journal</a>
     </div>
-    <a href="#contact" class="snav-cta">Start a project &#8594;</a>
+    <a href="contact/" class="snav-cta">Contact &#8594;</a>
     <button class="ham" id="ham" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -90,10 +90,10 @@
   <div class="mob-menu">
     <a href="work/">Work</a>
     <a href="services/">Services</a>
-    <a href="#pricing">Pricing</a>
+    <a href="pricing/">Pricing</a>
     <a href="about/">About</a>
     <a href="journal/">Journal</a>
-    <a href="#contact" style="color:var(--forest)">Start a project &#8594;</a>
+    <a href="contact/" style="color:var(--forest)">Contact &#8594;</a>
   </div>
 </nav>
 
@@ -130,7 +130,7 @@
       Every site is written line by line for one practice, and you own every line of it. Platforms keep raising their prices. You will never get that email from me.
     </p>
     <div class="hero-btns">
-      <a href="#contact" class="btn btn-forest"><span>Start a project</span></a>
+      <a href="contact/" class="btn btn-forest"><span>Start a project</span></a>
       <a href="#work" class="hero-link">or flip through the work</a>
     </div>
   </div>
@@ -305,190 +305,39 @@
 </section>
 
 <!-- ══════════════════════════════════════
-     PRICING, one quote sheet
+     PRICING STRIP, the three numbers
      ══════════════════════════════════════ -->
-<section class="pricing" id="pricing">
-  <div class="pricing-inner">
-    <div class="pricing-head">
-      <p class="eyebrow" style="margin-bottom:14px">What it costs</p>
-      <h2>The numbers, before we ever talk.</h2>
-      <p>This is the sheet. Not a starting point for a quote, the actual prices, so you can decide whether to call before you call. Nothing on it is monthly.</p>
+<section class="pstrip" id="pricing-strip" aria-labelledby="pstrip-h">
+  <div class="pstrip-inner">
+    <div class="pstrip-head">
+      <p class="eyebrow">What it costs</p>
+      <h2 id="pstrip-h">The numbers, before we ever talk.</h2>
     </div>
-
-    <div class="sheet" id="sheet">
-      <div class="sh-head">
-        <div>
-          <p class="sh-kicker">Quote sheet</p>
-          <p class="sh-title">Hand-coded practice websites</p>
-        </div>
-        <dl class="sh-meta">
-          <div><dt>No.</dt><dd id="shNo">TWD-1026-Q</dd></div>
-          <div><dt>Prepared</dt><dd id="shDate">today</dd></div>
-          <div><dt>Valid</dt><dd>until prices change, and they're posted here first</dd></div>
-        </dl>
-      </div>
-
-      <ol class="sh-items">
-        <li class="sh-item">
-          <div class="sh-line">
-            <span class="sh-n">1</span>
-            <span class="sh-name">Solo practice website</span>
-            <i></i>
-            <span class="sh-price">$2,800</span>
-          </div>
-          <p class="sh-desc">The base build. Everything a solo practice needs to look credible and get found.</p>
-          <ul class="sh-inc">
-            <li>Homepage</li><li>About page</li><li>Services overview</li><li>A page per service or specialty, each SEO-targeted</li><li>FAQ</li><li>Privacy policy and terms</li><li>Contact form wired to your inbox</li><li>Google Business Profile setup</li>
-          </ul>
-          <a class="cs-link" href="services/website-design/">More about this build</a>
-        </li>
-        <li class="sh-item">
-          <div class="sh-line">
-            <span class="sh-n">2</span>
-            <span class="sh-name">Group practice website</span>
-            <i></i>
-            <span class="sh-price">$4,200</span>
-          </div>
-          <p class="sh-desc">Everything in line 1, plus a page for each of your clinicians. Covers you and up to four more. Bigger than five? Each clinician past that is one more profile page, priced per clinician on the sheet I send you, not a jump to a new tier.</p>
-          <ul class="sh-inc">
-            <li>Up to 4 additional clinician profiles</li><li>Individual schema markup per clinician</li><li>A directory that routes clients to the right person</li>
-          </ul>
-          <a class="cs-link" href="services/group-practice/">More about group builds</a>
-        </li>
-        <li class="sh-item">
-          <div class="sh-line">
-            <span class="sh-n">3</span>
-            <span class="sh-name">Blog / journal</span>
-            <i></i>
-            <span class="sh-price">+$850</span>
-          </div>
-          <p class="sh-desc">Add to line 1 or 2. A login where you write and publish posts yourself, no code. This is for new articles. Changing the words on your existing pages is line 6, and having me write for you is line 8.</p>
-          <a class="cs-link" href="services/blog-journal/">More about the blog add-on</a>
-        </li>
-      </ol>
-
-      <p class="sh-sub">Often added, or instead</p>
-      <ol class="sh-items sh-items--small" start="4">
-        <li class="sh-item">
-          <div class="sh-line"><span class="sh-n">4</span><span class="sh-name">SEO &amp; authority carryover</span><i></i><span class="sh-price">from $250</span></div>
-          <p class="sh-desc">Moving an existing site? Redirects, sitemap, robots.txt, llms.txt and schema all come with you, so Google doesn't forget you exist for three months.</p>
-        </li>
-        <li class="sh-item">
-          <div class="sh-line"><span class="sh-n">5</span><span class="sh-name">Branded email templates</span><i></i><span class="sh-price">from $200</span></div>
-          <p class="sh-desc">Contact and intake notifications that look like your site instead of a default form-plugin email.</p>
-        </li>
-        <li class="sh-item">
-          <div class="sh-line"><span class="sh-n">6</span><span class="sh-name">Self-edit access (TinaCMS)</span><i></i><span class="sh-price">from $400</span></div>
-          <p class="sh-desc">A login for the pages you already have: fix a bio, change your hours, swap a photo. Not for writing new articles, that's line 3.</p>
-        </li>
-        <li class="sh-item">
-          <div class="sh-line"><span class="sh-n">7</span><span class="sh-name">Google Business Profile, existing site</span><i></i><span class="sh-price">from $200</span></div>
-          <p class="sh-desc">Free with lines 1 and 2. For a site I didn't build: claimed, filled in properly, and linked back correctly.</p>
-        </li>
-        <li class="sh-item">
-          <div class="sh-line"><span class="sh-n">8</span><span class="sh-name">Writing, done for you</span><i></i><span class="sh-price">$150 / hr</span></div>
-          <p class="sh-desc">Page copy in your voice, or a standing monthly post so the blog on line 3 never goes quiet. Most of my clients have me write the first version of everything.</p>
-        </li>
-        <li class="sh-item">
-          <div class="sh-line"><span class="sh-n">9</span><span class="sh-name">The site you already have</span><i></i><span class="sh-price">$150 / hr, or a fixed quote</span></div>
-          <p class="sh-desc">On Squarespace, Wix or WordPress and not ready to leave? I'll work inside it: design, speed, copy, SEO, or a redesign like <a href="work/#sanare">Sanare's</a>. I'll also tell you if a rebuild would cost less. <a href="services/#existing">How that works</a>.</p>
-        </li>
-      </ol>
-
-      <div class="sh-foot">
-        <p><strong>Terms.</strong> Half up front, half when the site goes live. One payment at the end is fine too if you'd rather. No deposit is taken until we've talked.</p>
-        <p><strong>Not on this sheet.</strong> Hosting ($0), platform fees ($0), SEO (it's inside lines 1 and 2, not a thing you add), and anything that renews.</p>
-        <p class="sh-sign">Bigger idea, or something that doesn't fit a line? <a href="#contact">Tell me about it</a> and I'll scope it honestly.</p>
-      </div>
-    </div>
+    <ol class="pstrip-list">
+      <li><a href="pricing/#line-1"><span class="ps-name">Solo practice website</span><i></i><span class="ps-price">$2,800</span></a></li>
+      <li><a href="pricing/#line-2"><span class="ps-name">Group practice website</span><i></i><span class="ps-price">$4,200</span></a></li>
+      <li><a href="pricing/#line-3"><span class="ps-name">Blog, added to either</span><i></i><span class="ps-price">+$850</span></a></li>
+    </ol>
+    <p class="pstrip-foot">One payment, nothing monthly. Add-ons, the site you already have, and terms are on <a href="pricing/">the full sheet</a>.</p>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════
-     FAQ
+     CONTACT STRIP
      ══════════════════════════════════════ -->
-<section class="faq" id="faq">
-  <div class="faq-inner">
-    <div class="faq-anchor">
-      <p class="eyebrow">Common questions</p>
-      <h2>Questions people actually ask me.</h2>
-    </div>
-    <div>
-      <div class="fitem"><button class="fq" type="button">Is the price really the price?<div class="fplus">+</div></button><div class="fa"><div class="fai">Yes. The sheet above is what you pay: $2,800 for a solo practice, $4,200 for a group, $850 to add a blog. The call is to find out which line you need, not to negotiate it. The only things that get a custom number are a group bigger than five clinicians, or work on a site I didn't build.</div></div></div>
-      <div class="fitem"><button class="fq" type="button">Do I own the website after it's built?<div class="fplus">+</div></button><div class="fa"><div class="fai">Completely. Your domain, your hosting account, your code in a repository in your name. It stays yours if we stop working together. This is the opposite of Brighter Vision or TherapySites, where the site disappears the day you stop paying.</div></div></div>
-      <div class="fitem"><button class="fq" type="button">Why hand-coded instead of Squarespace or WordPress?<div class="fplus">+</div></button><div class="fa"><div class="fai">Two reasons. It looks like nothing else, because it started from a blank file instead of a theme. And it's smaller, faster and harder to break, with no plugins to update and no monthly bill. The trade: you can't drag and drop pages yourself. For small text changes there's a login (line 6 on the sheet); for anything bigger, you call me. Most clients decide that's a feature.</div></div></div>
-      <div class="fitem"><button class="fq" type="button">How long does it take, and do I have to write the copy?<div class="fplus">+</div></button><div class="fa"><div class="fai">Three to five weeks from deposit to launch for most builds; five to eight for a group with a blog. And no, you don't have to write anything. I ask questions, you answer them out loud, I write the first draft of every page in your voice. Most clients say it's their favorite part.</div></div></div>
-      <div class="fitem"><button class="fq" type="button">Do you only build therapist sites?<div class="fplus">+</div></button><div class="fa"><div class="fai">Nope. Therapists are the specialty, my wife runs a group practice, so I know that world from the inside, but the hand-coded, no-platform-fee approach works for anyone tired of renting their web presence. Recent proof: <a href="work/#brunson">BrunsonWorks</a>, a Denver property-management outfit, and <a href="work/#logdog">Log Dog Timberworks</a>, who build pergolas. And if what you actually need isn't a website but a web application, a client portal, a booking system, that's a different build and I do those under a separate studio: <a href="https://studionull.io/" target="_blank" rel="noopener">studionull.io</a>. Current resident project over there: a site whose entire HTML is generated live by PostgreSQL, because apparently that's a thing I find relaxing.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     CONTACT
-     ══════════════════════════════════════ -->
-<section class="contact grain" id="contact">
+<section class="cstrip" id="contact" aria-labelledby="cstrip-h">
   <picture>
     <source srcset="images/decor-snake.webp" type="image/webp"/>
     <img class="contact-snake" src="images/decor-snake.png" alt="" loading="lazy" decoding="async" width="1400" height="778"/>
   </picture>
-  <div class="contact-inner">
-    <div class="contact-info" data-r>
-      <p class="eyebrow">Get in touch</p>
-      <h2>Let's get started.</h2>
-      <p>Fill out the form and you'll hear back within one business day. If you'd rather talk first, call. I pick up.</p>
-      <div class="ct-details">
-        <div class="ctline">
-          <div class="cti">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <polyline points="2,8 12,14 22,8"/>
-            </svg>
-          </div>
-          <a href="mailto:hello@therapistweb.design">hello@therapistweb.design</a>
-        </div>
-        <div class="ctline">
-          <div class="cti">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>
-            </svg>
-          </div>
-          <a href="tel:7204661013">(720) 466-1013</a>
-        </div>
-        <div class="ctline">
-          <div class="cti">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-              <circle cx="12" cy="9" r="2.5"/>
-            </svg>
-          </div>
-          <span>Denver, CO, building nationwide</span>
-        </div>
-      </div>
-    </div>
-    <div class="fcard" data-r data-d="1">
-      <form id="cform" aria-label="Start a project" action="https://formspree.io/f/maqpokge" method="POST">
-        <div class="frow"><label for="nm">Your name</label><input id="nm" name="name" type="text" autocomplete="name" required></div>
-        <div class="frow"><label for="em">Email address</label><input id="em" name="email" type="email" autocomplete="email" required></div>
-        <div class="frow"><label for="ph">Phone (optional)</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="frow">
-          <label for="pl">What's the project?</label>
-          <select id="pl" name="plan">
-            <option>Not sure yet, let's talk</option>
-            <option>New bespoke build, solo practice</option>
-            <option>New bespoke build, group practice</option>
-            <option>Existing site, refresh or rebuild</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="frow"><label for="msg">Tell me about your practice</label><textarea id="msg" name="message" required placeholder="What kind of practice, what you're hoping the site does, anything you love or hate about your current setup…"></textarea></div>
-        <button class="fsub" type="submit">Send my message</button>
-        <p class="fnote">I'll respond within one business day. No spam, ever.</p>
-      </form>
-      <div class="fsuc" id="fsuc">
-        <div class="fsuc-chk">✓</div>
-        <h3>Message received.</h3>
-        <p>Thanks for reaching out. I read every one of these myself, and you'll hear back within one business day.</p>
-      </div>
+  <div class="cstrip-inner">
+    <p class="eyebrow">Get in touch</p>
+    <h2 id="cstrip-h">Let's get started.</h2>
+    <p>Send a note and you'll hear back within one business day. Or call. I pick up.</p>
+    <div class="cstrip-row">
+      <a href="contact/" class="btn btn-forest"><span>Start a project</span></a>
+      <a href="tel:7204661013" class="hero-link">(720) 466-1013</a>
+      <a href="mailto:hello@therapistweb.design" class="hero-link">hello@therapistweb.design</a>
     </div>
   </div>
 </section>
@@ -503,7 +352,7 @@
   <div class="ft-cols">
     <div>
       <p class="ft-col-lbl"><span data-nosnippet>Studio</span></p>
-      <span class="ft-wordmark" data-nosnippet>therapistweb.design</span>
+      <span class="ft-wordmark" data-nosnippet>Therapist Web Design</span>
       <p class="ft-blurb"><span data-nosnippet>Custom, hand-coded websites for therapists and counselors in private practice. No templates. No platform fees. No two sites alike.</span></p>
     </div>
     <div>
@@ -511,10 +360,10 @@
       <ul class="ft-nav">
         <li><a href="work/">Work</a></li>
         <li><a href="services/">Services</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="pricing/">Pricing</a></li>
         <li><a href="about/">About</a></li>
         <li><a href="journal/">Journal</a></li>
-        <li><a href="#contact" style="color:var(--forest-l)">Start a project &#8594;</a></li>
+        <li><a href="contact/" style="color:var(--forest-l)">Contact &#8594;</a></li>
       </ul>
     </div>
     <div>
@@ -533,7 +382,7 @@
           <span>Denver, CO, Nationwide</span>
         </div>
       </address>
-      <a href="#contact" class="ft-cta-sm">Start a project &#8594;</a>
+      <a href="contact/" class="ft-cta-sm">Start a project &#8594;</a>
     </div>
   </div>
   <div class="ft-base">
@@ -610,54 +459,6 @@
     "reviewBody":"Chad built our whole group-practice site and I still get compliments on it, from clients and from other therapists asking who made it. It sounds like us, it's fast, and I've never once worried about a monthly fee or losing access. He gets this field in a way most web people simply don't."
   },
   "sameAs":["https://studionull.io"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is the price really the price?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. $2,800 for a solo practice website, $4,200 for a group practice, $850 to add a blog. The first call is to find out which you need, not to negotiate. Only two things get a custom number: a group practice larger than five clinicians, or work on an existing site I didn't build ($150/hr or a fixed quote)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I own the website after it's built?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Completely. Your domain, hosting account, and code repository are all in your name permanently, even if we stop working together. This is the opposite of platforms like Brighter Vision or TherapySites, where the site disappears when you stop paying."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why hand-coded instead of Squarespace or WordPress?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A hand-coded site looks like nothing else because it starts from a blank file, not a theme, and it is smaller, faster, and harder to break, with no plugins to update and no monthly platform fee. The trade-off is you can't drag-and-drop edit pages yourself; a simple self-edit login covers small text changes, and anything larger is a call to me."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does a therapist website take, and do I have to write the copy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most builds launch three to five weeks after the deposit; a group practice with a blog runs five to eight. You don't have to write anything: I interview you and write the first draft of every page in your voice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you only build websites for therapists?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Therapists are the specialty, but the same hand-coded, no-platform-fee approach works for other small businesses, including BrunsonWorks (property management) and Log Dog Timberworks (timber framing). Web applications such as client portals or booking systems are built under a separate studio, studionull.io."
-      }
-    }
-  ]
 }
 </script>
 <script type="application/ld+json">
@@ -983,9 +784,6 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
       rcNote.textContent='At '+usd(m)+' a month, owning takes about '+y+' to pay off. Honestly? Renting might be the right call for you, and I would rather say so.';
     }
   }
-  var shD=document.getElementById('shDate'),shN=document.getElementById('shNo');
-  if(shD)shD.textContent=now.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
-  if(shN)shN.textContent='TWD-'+mmyy+'-Q';
   var rc=document.getElementById('receipt');
   if('IntersectionObserver' in window){
     var pio=new IntersectionObserver(function(es){
@@ -1028,35 +826,6 @@ document.querySelectorAll('.fq').forEach(function(btn){
   });
 });
 
-/* ── contact form (Formspree) ── */
-var form=document.getElementById('cform');
-var suc=document.getElementById('fsuc');
-if(form){
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var btn=form.querySelector('.fsub');
-    btn.disabled=true;
-    btn.textContent='Sending…';
-    fetch(form.action,{
-      method:'POST',
-      body:new FormData(form),
-      headers:{'Accept':'application/json'}
-    }).then(function(r){
-      if(r.ok){
-        form.style.display='none';
-        suc.classList.add('on');
-      } else {
-        btn.disabled=false;
-        btn.textContent='Send my message';
-        alert('Something went wrong, please call or try again.');
-      }
-    }).catch(function(){
-      btn.disabled=false;
-      btn.textContent='Send my message';
-      alert('Something went wrong, please call or try again.');
-    });
-  });
-}
 
 
 })();

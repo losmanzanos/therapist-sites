@@ -1,10 +1,10 @@
-# therapistweb.design
+# Therapist Web Design (therapistweb.design)
 
 > A small Denver studio building bespoke, hand-coded websites for therapists and counselors in private practice. No templates. No platform fees. No two sites alike.
 
 ## About
 
-therapistweb.design is operated by Chad Moravec, a web designer and developer based in Denver, CO. Chad's wife runs a group therapy practice, which means he understands the mental health private practice world from the inside: the directories, the niche specialties, the language that helps clients find and trust a therapist online.
+Therapist Web Design is operated by Chad Moravec, a web designer and developer based in Denver, CO. Chad's wife runs a group therapy practice, which means he understands the mental health private practice world from the inside: the directories, the niche specialties, the language that helps clients find and trust a therapist online.
 
 Every site is hand-coded from scratch. No WordPress, no page builders, no themes. The result is a fast, secure, uniquely designed website the client owns outright: domain, hosting, and code all in their name.
 
@@ -17,7 +17,7 @@ Every site is hand-coded from scratch. No WordPress, no page builders, no themes
 - **Website refreshes & platform migrations** for practices on existing platforms (WordPress, Squarespace, Wix)
 - Also: **web applications** (client portals, booking systems, internal tools) via [Studio Null](https://studionull.io)
 
-Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a dedicated page per service or specialty each SEO-targeted to the practice area, FAQ, privacy policy, terms & conditions, contact). Group practice $4,200 (Solo + up to 4 clinician profiles). Blog/Journal add-on +$850. Add-ons: SEO/authority carryover for migrations from $250, branded email templates from $200, TinaCMS self-edit access from $400, Google Business Profile setup included free with new Solo/Group builds ($200 standalone for an existing site). Everything else billed at $150/hr. See [full pricing](https://therapistweb.design/#pricing).
+Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a dedicated page per service or specialty each SEO-targeted to the practice area, FAQ, privacy policy, terms & conditions, contact). Group practice $4,200 (Solo + up to 4 clinician profiles). Blog/Journal add-on +$850. Add-ons: SEO/authority carryover for migrations from $250, branded email templates from $200, TinaCMS self-edit access from $400, Google Business Profile setup included free with new Solo/Group builds ($200 standalone for an existing site). Everything else billed at $150/hr. See [full pricing](https://therapistweb.design/pricing/).
 
 ## Portfolio
 
@@ -34,7 +34,8 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 
 ## Pages
 
-- [Home](https://therapistweb.design/): A live preview of all ten portfolio sites, a renting-vs-owning cost calculator, the four-step process, the published price sheet, FAQ, and contact.
+- [Home](https://therapistweb.design/): A live preview of all ten portfolio sites, a renting-vs-owning cost calculator, the four-step process, a three-line pricing summary, and contact. The full price sheet and FAQ are on the Pricing page.
+- [Pricing](https://therapistweb.design/pricing/): The full price sheet (solo $2,800, group $4,200, blog +$850, add-ons, existing-site work, terms) and the FAQ.
 - [About](https://therapistweb.design/about/): Who Chad Moravec is, how he works, and the technical stack every site is built on.
 - [Work](https://therapistweb.design/work/): Case studies of the builds above.
 - [Services](https://therapistweb.design/services/): Two doors. Door one, you need a website (solo $2,800, group $4,200, blog +$850). Door two, you have a site on Squarespace, Wix or WordPress that isn't working (a free look, then $150/hr or a fixed quote, Google Business Profile from $200, platform migration from $250). SEO is included in every build, not sold separately.
@@ -55,7 +56,7 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 
 ## Contact
 
-- [Contact form](https://therapistweb.design/#contact): Start a project or ask a question.
+- [Contact](https://therapistweb.design/contact/): Start a project or ask a question.
 - [Email hello@therapistweb.design](mailto:hello@therapistweb.design): Direct email.
 - [Phone (720) 466-1013](tel:+17204661013): Denver, CO (serving practices nationwide).
 
