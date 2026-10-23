@@ -610,7 +610,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="ft-top">
-    <p class="ft-tagline"><span data-nosnippet>A small studio.<br>Bespoke work, every time.</span></p>
+    <p class="ft-tagline"><span data-nosnippet>That&rsquo;s all for tonight.<br>Thanks for watching.</span></p>
   </div>
   <div class="ft-cols">
     <div>
@@ -652,6 +652,7 @@
   </div>
   <div class="ft-base">
     <p class="ft-copy">&copy; 2026 Chad Moravec &middot; therapistweb.design &middot; Denver, CO</p>
+    <p class="ft-made" id="ftMade">Written by hand in Denver.</p>
     <p class="ft-extra">Creative work &amp; web apps: <a href="https://studionull.io/" target="_blank" rel="noopener noreferrer">studionull.io</a> &middot; <a href="colophon/">Colophon</a></p>
   </div>
 </footer>
@@ -1104,6 +1105,20 @@ document.querySelectorAll('.step').forEach(function(el){
     });
   });
   update();
+})();
+/* ── footer receipt + a note for whoever opens dev tools ── */
+(function(){
+  var el=document.getElementById('ftMade');
+  function stamp(){
+    var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+    var ms=nav?nav.domContentLoadedEventEnd:0;
+    if(el&&ms>0)el.textContent='Written by hand in Denver. This page was ready in '+(ms/1000).toFixed(2)+' seconds on your connection.';
+  }
+  if(document.readyState==='complete')stamp();else window.addEventListener('load',stamp);
+  try{
+    console.log('%cHand-written, start to finish.','font:italic 22px Georgia,serif;color:#2d4a35;padding:6px 0');
+    console.log('No framework, no page builder, no build step. View source all you like, it reads the way it was typed.\n\nIf you are a therapist and you opened the console: you are already more technical than most of my clients. Say hi.\nhello@therapistweb.design');
+  }catch(e){}
 })();
 /* ── FAQ accordion ── */
 document.querySelectorAll('.fq').forEach(function(btn){

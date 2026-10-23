@@ -908,6 +908,7 @@ footer{background:var(--ink)}
    original hierarchy (copy > extra, links brightest). Was .30 / .24 / .38. */
 .ft-copy{font-size:.62rem;color:rgba(255,255,255,.6);letter-spacing:.04em}
 .ft-extra{font-size:.62rem;color:rgba(255,255,255,.56);letter-spacing:.03em}
+.ft-made{font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.03em;font-variant-numeric:tabular-nums}
 .ft-extra a{color:rgba(255,255,255,.72);border-bottom:1px solid rgba(255,255,255,.2);transition:color .2s}
 .ft-extra a:hover{color:rgba(255,255,255,.7)}
 
