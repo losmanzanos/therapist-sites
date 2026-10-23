@@ -19,36 +19,43 @@
   </url>
 
   <url>
+    <loc>https://therapistweb.design/about/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://therapistweb.design/services/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://therapistweb.design/services/website-design/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://therapistweb.design/services/seo/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://therapistweb.design/services/blog-journal/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://therapistweb.design/services/group-practice/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

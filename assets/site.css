@@ -1696,3 +1696,31 @@ footer{background:var(--ink)}
 }
 .rail a:hover em,.rail a:focus-visible em{opacity:1;transform:translateY(-50%) translateX(6px)}
 .rail a:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
+
+/* ═══════════════════════════════
+   SERVICES, two doors
+   ═══════════════════════════════ */
+.doors .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5vw,72px);align-items:start}
+.door{border-top:1px solid var(--ink);padding-top:22px}
+.door-n{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-m)}
+.door h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(28px,2.6vw,38px);line-height:1.08;margin:10px 0 14px}
+.door-head p{font-size:15.5px;line-height:1.75;color:var(--ink-s)}
+.door-list{list-style:none;margin:28px 0 0;padding:0}
+.door-list li{padding:16px 0 18px;border-top:1px dashed rgba(44,45,54,.3)}
+.door-list > li > a{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.door-list strong{font-family:var(--serif-d);font-weight:400;font-size:clamp(18px,1.6vw,21px);color:var(--ink);transition:color .2s}
+.door-list > li > a:hover strong{color:var(--forest-2)}
+.door-list span{font-family:var(--sans);font-size:12.5px;letter-spacing:.06em;color:var(--forest);white-space:nowrap;text-align:right}
+.door-list p{margin-top:6px;font-size:14px;line-height:1.7;color:var(--ink-s)}
+.door-list p a{color:var(--forest);border-bottom:1px solid var(--forest-l)}
+.door-note{margin-top:22px;padding-top:16px;border-top:1px solid var(--ink);font-family:var(--serif);font-style:italic;font-size:16.5px;line-height:1.55;color:var(--ink)}
+.door-note a{color:var(--forest);border-bottom:1px solid var(--forest-l)}
+.subhero-sub a{color:var(--forest);border-bottom:1px solid var(--forest-l)}
+/* service subpages still use this two-column note */
+.addons{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start;padding:22px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--border)}
+.addons h3{font-family:var(--serif);font-style:italic;font-size:1.15rem;font-weight:500;color:var(--forest);margin-bottom:.6rem}
+.addons > div:first-child p{font-size:.9rem;line-height:1.7;color:var(--ink-s)}
+@media (max-width:900px){
+  .doors .wrap{grid-template-columns:1fr;gap:48px}
+  .addons{grid-template-columns:1fr}
+}
