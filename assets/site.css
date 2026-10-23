@@ -380,15 +380,30 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 }
 .hex-mask{
   width:100%;height:100%;
-  background-size:contain;background-position:center;background-repeat:no-repeat;
-  filter:drop-shadow(0 18px 30px rgba(20,24,30,.28));
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  background-size:cover;background-position:center;
   background-image:url('../images/decor-moon.png');
   background-image:image-set(
     url('../images/decor-moon.webp') type('image/webp'),
     url('../images/decor-moon.png')  type('image/png')
   );
-  background-color:transparent;
+  background-color:#2a3036;
   position:relative;
+}
+.hex-mask::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.1),transparent 60%);
+}
+.forest-stroke{
+  position:absolute;right:-8%;top:-8%;width:78%;height:88%;
+  background:var(--forest);
+  clip-path:polygon(20% 0,100% 8%,92% 95%,56% 100%,0 60%);
+  z-index:1;opacity:.9;
+}
+.forest-stroke::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);
+  background-size:6px 6px;mix-blend-mode:screen;
 }
 .quote-text{position:relative;z-index:3}
 .quote-text blockquote{
