@@ -115,7 +115,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 .hdr-left:hover{color:var(--ink)}
 .hdr-left svg{width:12px;height:12px;flex-shrink:0;color:var(--forest-2)}
 
-/* centre: wordmark */
+/* center: wordmark */
 .hdr-brand{text-align:center;line-height:1}
 .hdr-brand-name{
   display:block;
@@ -571,7 +571,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   grid-template-columns:repeat(3,1fr);
   gap:24px;
 }
-/* single card: centre it, cap the width */
+/* single card: center it, cap the width */
 .work-grid--single{
   grid-template-columns:1fr;
   max-width:640px;
