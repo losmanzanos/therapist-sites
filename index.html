@@ -1045,7 +1045,7 @@ document.querySelectorAll('.step').forEach(function(el){
       if(my!==token)return;my=-1;
       setTimeout(function(){tune(false);},Math.max(0,450-(Date.now()-t0)));
     }
-    frame.onload=finish;setTimeout(finish,1800);
+    frame.onload=finish;setTimeout(finish,2400);
     frame.src=b.dataset.src;
   }
   chs.forEach(function(b,i){b.addEventListener('click',function(){go(i);});});
