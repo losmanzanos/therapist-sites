@@ -416,6 +416,11 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 .quote-scribble{
   position:absolute;right:-1%;bottom:-6%;width:120px;opacity:.5;z-index:1;
 }
+/* attribution rule (replaces the stray leading comma) */
+.quote-text cite::before,.testi cite::before{
+  content:"";display:inline-block;width:28px;height:1px;
+  background:currentColor;opacity:.6;vertical-align:middle;margin-right:14px;
+}
 
 
 /* ═══════════════════════════════
