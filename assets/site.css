@@ -1548,3 +1548,85 @@ footer{background:var(--ink)}
 @media (prefers-reduced-motion:reduce){
   .tv-knob,.ch{transition:none}
 }
+
+/* ═══════════════════════════════
+   THE MATH, renting vs owning
+   ═══════════════════════════════ */
+.math{position:relative;padding:var(--sy) 0;background:var(--cream)}
+.math-inner{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  gap:clamp(40px,7vw,120px);align-items:center;
+}
+.math-text h2{
+  font-family:var(--serif-d);font-weight:400;font-style:italic;
+  font-size:clamp(34px,4vw,58px);line-height:1.04;margin:14px 0 22px;max-width:14ch;
+}
+.math-text > p:not(.eyebrow){font-size:16px;line-height:1.8;color:var(--ink-s);max-width:440px}
+.math-ctl{margin-top:40px;max-width:460px}
+.math-ctl-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.math-ctl-top label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-m)}
+.math-ctl-top output{font-family:var(--serif-d);font-size:clamp(34px,3.4vw,46px);line-height:1;color:var(--forest);font-variant-numeric:tabular-nums}
+.math-scale{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.12em;color:var(--ink-m);margin-top:8px}
+#rent{-webkit-appearance:none;appearance:none;width:100%;height:22px;background:transparent;cursor:pointer}
+#rent::-webkit-slider-runnable-track{height:1px;background:var(--ink)}
+#rent::-moz-range-track{height:1px;background:var(--ink)}
+#rent::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-7.5px;background:var(--forest);border:0;transition:transform .15s}
+#rent::-moz-range-thumb{width:16px;height:16px;background:var(--forest);border:0;border-radius:0}
+#rent:active::-webkit-slider-thumb{transform:scale(1.25)}
+#rent:focus-visible{outline:2px solid var(--forest);outline-offset:6px}
+.math-pick{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;font-size:15px;color:var(--ink-s)}
+.pk{
+  font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink-m);
+  border-bottom:1px solid transparent;padding:0 0 1px;transition:color .2s,border-color .2s;
+}
+.pk:hover{color:var(--forest-2)}
+.pk.is-on{color:var(--forest);border-bottom-color:var(--forest)}
+.pk:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
+
+/* the receipt */
+.receipt-wrap{
+  justify-self:center;width:100%;max-width:400px;
+  filter:drop-shadow(0 16px 18px rgba(44,45,54,.14)) drop-shadow(0 1px 1px rgba(44,45,54,.12));
+}
+.receipt{
+  transform:rotate(1.8deg);
+  background:#fbf8f1;color:#34353d;padding:34px 30px 46px;
+  font-family:var(--sans);font-size:13px;font-variant-numeric:tabular-nums;
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;
+          mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;
+  background-image:
+    radial-gradient(rgba(44,45,54,.035) 1px,transparent 1px);
+  background-size:4px 4px;
+}
+.rc-head{
+  text-align:center;font-family:var(--serif-d);font-size:24px;line-height:1.1;color:var(--ink);
+}
+.rc-meta{
+  display:flex;justify-content:space-between;margin:12px 0 20px;padding-bottom:14px;
+  border-bottom:1px dashed rgba(44,45,54,.35);
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-m);
+}
+.rc-sec{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-m);margin:18px 0 8px}
+.rc-row{display:flex;align-items:baseline;gap:8px;padding:3px 0;line-height:1.5}
+.rc-row i{flex:1;border-bottom:1px dotted rgba(44,45,54,.4);transform:translateY(-4px)}
+.rc-row span:last-child{white-space:nowrap}
+.rc-own{font-weight:600}
+.rc-own span:last-child{font-family:var(--serif);font-style:italic;font-weight:600;font-size:16px}
+.rc-total{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  margin-top:22px;padding:14px 0 12px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+}
+.rc-total strong{font-family:var(--serif-d);font-weight:400;font-size:24px;letter-spacing:0;text-transform:none;color:var(--forest)}
+.rc-total.is-rent strong{color:#9a4a2e}
+.rc-note{margin-top:16px;font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.45;color:var(--ink)}
+.rc-foot{
+  margin-top:22px;text-align:center;font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-m);
+}
+.rc-foot::before,.rc-foot::after{content:"*  *  *";white-space:pre;margin:0 10px;letter-spacing:0}
+
+@media (max-width:900px){
+  .math-inner{grid-template-columns:1fr}
+  .receipt{transform:rotate(1deg)}
+}

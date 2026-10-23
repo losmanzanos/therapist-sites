@@ -148,32 +148,6 @@
 -->
 </section>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ttrack">
-    <span class="titem">Hand-coded · not WordPress</span>
-    <span class="titem">You own everything outright</span>
-    <span class="titem">Zero platform fees · ever</span>
-    <span class="titem">Real human · I pick up the phone</span>
-    <span class="titem">Domain · Hosting · Code · All yours</span>
-    <span class="titem">3-5 week turnaround</span>
-    <span class="titem">No two therapist sites alike</span>
-    <span class="titem">SEO-structured from day one</span>
-    <span class="titem">Solo &amp; group practices welcome</span>
-    <span class="titem">Serving practices nationwide</span>
-    <span class="titem">Hand-coded · not WordPress</span>
-    <span class="titem">You own everything outright</span>
-    <span class="titem">Zero platform fees · ever</span>
-    <span class="titem">Real human · I pick up the phone</span>
-    <span class="titem">Domain · Hosting · Code · All yours</span>
-    <span class="titem">3-5 week turnaround</span>
-    <span class="titem">No two therapist sites alike</span>
-    <span class="titem">SEO-structured from day one</span>
-    <span class="titem">Solo &amp; group practices welcome</span>
-    <span class="titem">Serving practices nationwide</span>
-  </div>
-</div>
-
 <!-- ══════════════════════════════════════
      ABOUT / MISSION
      ══════════════════════════════════════ -->
@@ -291,50 +265,50 @@
 </section>
 
 <!-- ══════════════════════════════════════
-     THREE PILLARS
+     THE MATH, renting vs owning
      ══════════════════════════════════════ -->
-<section class="threes">
-  <div class="threes-head" data-r>
-    <p class="eyebrow" style="margin-bottom:14px">Why hand-coded?</p>
-    <h2>What can your current site actually say?</h2>
-    <p class="sub">The case for owning your web presence outright.</p>
-  </div>
-  <div class="threes-grid">
-    <div class="cee" data-r>
-      <div class="cee-num">01</div>
-      <h3>No template chrome</h3>
-      <p>Your therapist website looks like nothing else online. Not like Squarespace. Not like Wix. Not like anything a competitor is renting for $40-$100/month. Every pixel is intentional and yours alone.</p>
+<section class="math" id="math" aria-labelledby="math-h">
+  <div class="math-inner">
+    <div class="math-text" data-r>
+      <p class="eyebrow">The math nobody puts on a sales page</p>
+      <h2 id="math-h">What are you paying to rent your website?</h2>
+      <p>Most therapy website platforms bill every month, forever, and the site disappears the day you stop paying. Slide this to whatever yours costs. I'll wait.</p>
+      <div class="math-ctl">
+        <div class="math-ctl-top">
+          <label for="rent">Your platform, per month</label>
+          <output id="rentOut" for="rent">$60</output>
+        </div>
+        <input type="range" id="rent" min="15" max="150" step="1" value="60"/>
+        <div class="math-scale" aria-hidden="true"><span>$15</span><span>$150</span></div>
+        <div class="math-pick" role="group" aria-label="Compare against">
+          <span>Compare against a</span>
+          <button type="button" class="pk is-on" data-price="2800" data-label="Solo build, once" aria-pressed="true">solo build</button>
+          <span>or a</span>
+          <button type="button" class="pk" data-price="4200" data-label="Group build, once" aria-pressed="false">group build</button>
+        </div>
+      </div>
     </div>
-    <div class="cee" data-r data-d="1">
-      <div class="cee-num">02</div>
-      <h3>You own everything</h3>
-      <p>Domain, hosting account, code repository, all in your name. The site stays yours regardless of what happens between us. This is the opposite of platforms where the site disappears the day you stop paying.</p>
-    </div>
-    <div class="cee" data-r data-d="2">
-      <div class="cee-num">03</div>
-      <h3>Built for search</h3>
-      <p>Clean semantic HTML, proper schema markup, local SEO targeting, and a sitemap submitted on day one. Not bolted on as an afterthought, structured for Google from the first line of code.</p>
+
+    <div class="receipt-wrap" data-r data-d="1">
+      <div class="receipt" id="receipt">
+        <p class="rc-head">Five years, itemized</p>
+        <p class="rc-meta"><span id="rcNo">No. TWD-0060</span><span id="rcDate">Denver, CO</span></p>
+        <p class="rc-sec">Renting</p>
+        <p class="rc-row"><span>Platform, monthly</span><i></i><span id="rcM">$60</span></p>
+        <p class="rc-row"><span>&times; 60 months</span><i></i><span id="rcRent">$3,600</span></p>
+        <p class="rc-row rc-own"><span>You own</span><i></i><span>Nothing</span></p>
+        <p class="rc-sec">Owning</p>
+        <p class="rc-row"><span id="rcBuildL">Solo build, once</span><i></i><span id="rcBuild">$2,800</span></p>
+        <p class="rc-row"><span>Hosting</span><i></i><span>$0</span></p>
+        <p class="rc-row"><span>Domain, about $15 a year</span><i></i><span>$75</span></p>
+        <p class="rc-row rc-own"><span>You own</span><i></i><span>All of it</span></p>
+        <p class="rc-total"><span id="rcDiffL">Five-year difference</span><strong id="rcDiff">$725 yours</strong></p>
+        <p class="rc-note" id="rcNote" aria-live="polite">Owning pulls ahead in month 48. Every month after that is money you keep.</p>
+        <p class="rc-foot">Thank you for owning</p>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat" data-r>
-      <div class="stat-n" data-count="100" data-suf="%">100%</div>
-      <div class="stat-l">Hand-coded · no themes</div>
-    </div>
-    <div class="stat" data-r data-d="1">
-      <div class="stat-n">3-5</div>
-      <div class="stat-l">Week typical turnaround</div>
-    </div>
-    <div class="stat" data-r data-d="2">
-      <div class="stat-n" data-count="0" data-pre="$">$0</div>
-      <div class="stat-l">Platform fees · ever</div>
-    </div>
-  </div>
-</div>
 
 <!-- ══════════════════════════════════════
      PROCESS
@@ -1024,29 +998,6 @@ var obs=new IntersectionObserver(function(entries){
 },{threshold:.09,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
 
-/* ── counter animation (stats band) ── */
-function animCount(el,target,pre,suf,dur){
-  var st=null;
-  (function step(ts){
-    if(!st)st=ts;
-    var p=Math.min((ts-st)/dur,1);
-    var ease=1-Math.pow(1-p,3);
-    el.textContent=(pre||'')+Math.round(target*ease)+(suf||'');
-    if(p<1)requestAnimationFrame(step);
-  })(performance.now());
-}
-var cobs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(!e.isIntersecting)return;
-    e.target.querySelectorAll('[data-count]').forEach(function(el){
-      animCount(el,parseInt(el.dataset.count,10),el.dataset.pre||'',el.dataset.suf||'',1400);
-    });
-    cobs.unobserve(e.target);
-  });
-},{threshold:.5});
-var statsEl=document.querySelector('.stats');
-if(statsEl)cobs.observe(statsEl);
-
 /* ── process steps dim on scroll ── */
 var pobs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){
@@ -1125,6 +1076,49 @@ document.querySelectorAll('.step').forEach(function(el){
     },{threshold:.35});
     io.observe(tv);
   }
+})();
+/* ── THE MATH: rent vs own receipt ── */
+(function(){
+  var r=document.getElementById('rent');
+  if(!r)return;
+  var $=function(id){return document.getElementById(id);},
+      out=$('rentOut'),rcM=$('rcM'),rcRent=$('rcRent'),rcBuild=$('rcBuild'),rcBuildL=$('rcBuildL'),
+      rcDiff=$('rcDiff'),rcDiffL=$('rcDiffL'),rcNote=$('rcNote'),rcNo=$('rcNo'),rcDate=$('rcDate'),
+      tot=rcDiff.parentNode,pks=[].slice.call(document.querySelectorAll('.math .pk')),
+      build=2800,DOMAIN=15;
+  var now=new Date(),
+      mmyy=('0'+(now.getMonth()+1)).slice(-2)+String(now.getFullYear()).slice(-2);
+  rcDate.textContent=now.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  function usd(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function update(){
+    var m=+r.value,rent5=m*60,own5=build+DOMAIN*5,diff=rent5-own5,
+        months=Math.ceil(build/(m-DOMAIN/12)),yrs=Math.round(months/12*2)/2;
+    out.textContent=usd(m);
+    rcM.textContent=usd(m);rcRent.textContent=usd(rent5);rcBuild.textContent=usd(build);
+    rcNo.textContent='No. TWD-'+mmyy+'-'+('00'+m).slice(-3);
+    if(diff>=0){
+      tot.classList.remove('is-rent');rcDiffL.textContent='Five-year difference';rcDiff.textContent=usd(diff)+' yours';
+    }else{
+      tot.classList.add('is-rent');rcDiffL.textContent='Renting saves you';rcDiff.textContent=usd(-diff);
+    }
+    var y=(yrs===1?'a year':(yrs%1?String(yrs).replace('.5',' and a half'):yrs)+' years');
+    if(months<=60){
+      rcNote.textContent='Owning pulls ahead in month '+months+'. Every month after that is money you keep.';
+    }else if(months<=120){
+      rcNote.textContent='Owning pulls ahead in month '+months+', about '+y+' in. Slower, but you still end up owning the thing.';
+    }else{
+      rcNote.textContent='At '+usd(m)+' a month, owning takes about '+y+' to pay off. Honestly? Renting might be the right call for you, and I would rather say so.';
+    }
+  }
+  r.addEventListener('input',update);
+  pks.forEach(function(b){
+    b.addEventListener('click',function(){
+      build=+b.dataset.price;rcBuildL.textContent=b.dataset.label;
+      pks.forEach(function(o){var on=o===b;o.classList.toggle('is-on',on);o.setAttribute('aria-pressed',on?'true':'false');});
+      update();
+    });
+  });
+  update();
 })();
 /* ── FAQ accordion ── */
 document.querySelectorAll('.fq').forEach(function(btn){
