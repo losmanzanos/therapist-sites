@@ -999,6 +999,13 @@ document.querySelectorAll('.step').forEach(function(el){
 (function(){
   var tv=document.getElementById('tv');
   if(!tv)return;
+  /* the screen always shows the desktop layout of each site, whatever size the TV is drawn at */
+  var scr=tv.querySelector('.tv-screen'),VW=1280;
+  function fit(){
+    var w=scr.clientWidth,h=scr.clientHeight;if(!w)return;
+    var s=w/VW;tv.style.setProperty('--tvs',s);
+    frame.style.height=Math.ceil(h/s)+'px';
+  }
   var frame=document.getElementById('tvFrame'),hit=document.getElementById('tvHit'),
       osd=document.getElementById('tvOsd'),lcd=document.getElementById('tvLcd'),
       knob=document.getElementById('tvKnob'),cap=document.getElementById('tvCaption'),
@@ -1049,6 +1056,8 @@ document.querySelectorAll('.step').forEach(function(el){
     frame.src=b.dataset.src;
   }
   chs.forEach(function(b,i){b.addEventListener('click',function(){go(i);});});
+  fit();window.addEventListener('resize',fit);
+  if('ResizeObserver' in window)new ResizeObserver(fit).observe(scr);
   knob.addEventListener('click',function(){go(cur+1);});
   knob.addEventListener('keydown',function(e){
     if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();go(cur+1);}
