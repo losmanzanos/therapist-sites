@@ -1783,3 +1783,8 @@ footer{background:var(--ink)}
 .tv-card strong{font-family:var(--serif-d);font-weight:400;font-size:clamp(12px,1.7vw,22px);line-height:1.15}
 .tv-card span:last-child{font-family:var(--serif);font-style:italic;font-size:clamp(9px,1.1vw,14px);color:#c9c4b6}
 .tv.is-off .tv-osd,.tv.is-off .tv-static{display:none}
+
+/* stills on touch devices */
+.tv-still{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;filter:saturate(1.08) contrast(1.05) sepia(.08)}
+.tv.is-still .tv-still{display:block}
+.tv.is-still .tv-feed iframe{display:none}

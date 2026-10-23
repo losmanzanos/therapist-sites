@@ -45,7 +45,7 @@
 <link rel="dns-prefetch" href="//formspree.io"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/site.css?v=202610232230"/>
+<link rel="stylesheet" href="assets/site.css?v=202610232241"/>
 </head>
 <body>
 
@@ -162,7 +162,7 @@
       <div class="tv-stage" data-r>
         <div class="tv" id="tv">
           <div class="tv-screen">
-            <div class="tv-feed"><iframe id="tvFrame" src="https://fullbloomcounseling.com/" title="Live preview of the selected site" loading="lazy" tabindex="-1" aria-hidden="true" sandbox="allow-scripts allow-same-origin" allow="autoplay 'none'; fullscreen 'none'; camera 'none'; microphone 'none'; geolocation 'none'" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            <div class="tv-feed"><img class="tv-still" id="tvStill" alt="" decoding="async"><iframe id="tvFrame" title="Live preview of the selected site" loading="lazy" tabindex="-1" aria-hidden="true" sandbox="allow-scripts allow-same-origin" allow="autoplay 'none'; fullscreen 'none'; camera 'none'; microphone 'none'; geolocation 'none'" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
             <canvas class="tv-static" id="tvStatic" width="160" height="120" aria-hidden="true"></canvas>
             <div class="tv-glass" aria-hidden="true"></div>
             <span class="tv-osd" id="tvOsd" aria-hidden="true">CH 02</span>
@@ -193,16 +193,16 @@
       <div class="guide-wrap" data-r data-d="1">
         <p class="guide-h">Tonight's lineup</p>
         <ol class="guide" id="guide">
-          <li><button type="button" class="ch is-on" aria-pressed="true" data-src="https://fullbloomcounseling.com/" data-url="https://fullbloomcounseling.com/" data-blurb="Seven clinicians, one site that routes each client to the right one."><span class="ch-n">02</span><span class="ch-name">Full Bloom Counseling Group</span><span class="ch-meta">Group practice · Denver</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="work/preview/apex/" data-url="https://apex-mhc.com/" data-blurb="Logo, type and site from scratch. The contour lines are real Colorado elevation data."><span class="ch-n">03</span><span class="ch-name">Apex Mental Health Counseling</span><span class="ch-meta">Brand &amp; website · Colorado</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="https://lovettcounselingandconsulting.com/" data-url="https://lovettcounselingandconsulting.com/" data-blurb="A trauma-informed counselor whose site reads the way her sessions feel."><span class="ch-n">04</span><span class="ch-name">Lovett Counseling &amp; Consulting</span><span class="ch-meta">Solo practice · Denver</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="https://goldenhourwellnesscolorado.com/" data-url="https://goldenhourwellnesscolorado.com/" data-blurb="Off Squarespace, with a blog and self-edit access for group dates that keep changing."><span class="ch-n">05</span><span class="ch-name">Golden Hour Wellness</span><span class="ch-meta">Group practice · Colorado</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="https://cbc-preview.therapistweb.design/" data-url="https://coolbirdcounseling.com/" data-blurb="A pixel-for-pixel rebuild of an existing design, finally off its old CMS."><span class="ch-n">06</span><span class="ch-name">Cool Bird Counseling</span><span class="ch-meta">Rebuild &amp; migration · Denver</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="https://rootedresonancetherapy.com/" data-url="https://rootedresonancetherapy.com/" data-blurb="New name, new domain, and 301 redirects so Google kept up."><span class="ch-n">07</span><span class="ch-name">Rooted Resonance Therapy</span><span class="ch-meta">Full rebrand · Colorado</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="https://safersoundsclub.com/" data-url="https://safersoundsclub.com/" data-blurb="Misophonia education with a quiz, a workshop and an identity all its own."><span class="ch-n">08</span><span class="ch-name">The Safer Sounds Club</span><span class="ch-meta">Specialty brand · Online</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="https://www.sanare-colorado.com/" data-url="https://www.sanare-colorado.com/" data-blurb="Stayed on Squarespace. Got new type, new color and 21 rewritten service pages."><span class="ch-n">09</span><span class="ch-name">Sanare Psychosocial Rehab</span><span class="ch-meta">Squarespace redesign · Denver</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="https://workwithbrunson.com/" data-url="https://workwithbrunson.com/" data-blurb="Owner's rep and project management for multifamily property. Zero clinical language required."><span class="ch-n">10</span><span class="ch-name">BrunsonWorks</span><span class="ch-meta">Not therapy · Denver</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="https://logdogtimberworks.com/" data-url="https://logdogtimberworks.com/" data-blurb="Hand-cut timber frame pergolas, and a service-area page covering sixteen towns."><span class="ch-n">11</span><span class="ch-name">Log Dog Timberworks</span><span class="ch-meta">Not therapy · Denver metro</span></button></li>
+          <li><button type="button" class="ch is-on" aria-pressed="true" data-src="https://fullbloomcounseling.com/" data-url="https://fullbloomcounseling.com/" data-still="images/tv/fullbloom.webp" data-blurb="Seven clinicians, one site that routes each client to the right one."><span class="ch-n">02</span><span class="ch-name">Full Bloom Counseling Group</span><span class="ch-meta">Group practice · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="work/preview/apex/" data-url="https://apex-mhc.com/" data-still="images/tv/apex.webp" data-blurb="Logo, type and site from scratch. The contour lines are real Colorado elevation data."><span class="ch-n">03</span><span class="ch-name">Apex Mental Health Counseling</span><span class="ch-meta">Brand &amp; website · Colorado</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://lovettcounselingandconsulting.com/" data-url="https://lovettcounselingandconsulting.com/" data-still="images/tv/lovett.webp" data-blurb="A trauma-informed counselor whose site reads the way her sessions feel."><span class="ch-n">04</span><span class="ch-name">Lovett Counseling &amp; Consulting</span><span class="ch-meta">Solo practice · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://goldenhourwellnesscolorado.com/" data-url="https://goldenhourwellnesscolorado.com/" data-still="images/tv/goldenhour.webp" data-blurb="Off Squarespace, with a blog and self-edit access for group dates that keep changing."><span class="ch-n">05</span><span class="ch-name">Golden Hour Wellness</span><span class="ch-meta">Group practice · Colorado</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://cbc-preview.therapistweb.design/" data-url="https://coolbirdcounseling.com/" data-still="images/tv/coolbird.webp" data-blurb="A pixel-for-pixel rebuild of an existing design, finally off its old CMS."><span class="ch-n">06</span><span class="ch-name">Cool Bird Counseling</span><span class="ch-meta">Rebuild &amp; migration · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://rootedresonancetherapy.com/" data-url="https://rootedresonancetherapy.com/" data-still="images/tv/rooted.webp" data-blurb="New name, new domain, and 301 redirects so Google kept up."><span class="ch-n">07</span><span class="ch-name">Rooted Resonance Therapy</span><span class="ch-meta">Full rebrand · Colorado</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://safersoundsclub.com/" data-url="https://safersoundsclub.com/" data-still="images/tv/safersounds.webp" data-blurb="Misophonia education with a quiz, a workshop and an identity all its own."><span class="ch-n">08</span><span class="ch-name">The Safer Sounds Club</span><span class="ch-meta">Specialty brand · Online</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://www.sanare-colorado.com/" data-url="https://www.sanare-colorado.com/" data-still="images/tv/sanare.webp" data-blurb="Stayed on Squarespace. Got new type, new color and 21 rewritten service pages."><span class="ch-n">09</span><span class="ch-name">Sanare Psychosocial Rehab</span><span class="ch-meta">Squarespace redesign · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://workwithbrunson.com/" data-url="https://workwithbrunson.com/" data-still="images/tv/brunson.webp" data-blurb="Owner's rep and project management for multifamily property. Zero clinical language required."><span class="ch-n">10</span><span class="ch-name">BrunsonWorks</span><span class="ch-meta">Not therapy · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="https://logdogtimberworks.com/" data-url="https://logdogtimberworks.com/" data-still="images/tv/logdog.webp" data-blurb="Hand-cut timber frame pergolas, and a service-area page covering sixteen towns."><span class="ch-n">11</span><span class="ch-name">Log Dog Timberworks</span><span class="ch-meta">Not therapy · Denver metro</span></button></li>
         </ol>
         <a class="cs-link guide-more" href="work/">Read the full case studies</a>
       </div>
@@ -689,6 +689,18 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
       chs=[].slice.call(document.querySelectorAll('#guide .ch')),
       reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       cur=0,raf=0,osdT=0,tuneT=0,token=0;
+  /* Touch devices get a still of each site instead of a live frame. Live frames at 1280px
+     scaled into a 200px screen were enough to crash Safari on iPhone (Rooted's page did it
+     every time), and a phone has no hover to show off a live page anyway. */
+  var still=document.getElementById('tvStill'),
+      useStill=(window.matchMedia&&window.matchMedia('(hover:none) and (pointer:coarse)').matches)
+        ||/iPhone|iPad|iPod/.test(navigator.userAgent)
+        ||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  if(useStill){
+    tv.classList.add('is-still');
+    frame.removeAttribute('src');frame.setAttribute('aria-hidden','true');
+    still.src=chs[0].dataset.still;
+  }else{frame.src=chs[0].dataset.src;}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function noise(){
     var w=cv.width,h=cv.height,img=ctx.createImageData(w,h),d=img.data,roll=(Math.random()*h)|0;
@@ -735,8 +747,8 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
       if(my!==token)return;my=-1;
       setTimeout(function(){tune(false);},Math.max(0,450-(Date.now()-t0)));
     }
-    frame.onload=finish;setTimeout(finish,2400);
-    frame.src=b.dataset.src;
+    if(useStill){var im=new Image();im.onload=function(){still.src=im.src;finish();};im.onerror=finish;im.src=b.dataset.still;setTimeout(finish,2400);}
+    else{frame.onload=finish;setTimeout(finish,2400);frame.src=b.dataset.src;}
   }
   chs.forEach(function(b,i){b.addEventListener('click',function(){go(i);});});
   fit();window.addEventListener('resize',fit);settle();
