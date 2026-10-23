@@ -6,7 +6,7 @@
 
   <url>
     <loc>https://therapistweb.design/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -55,7 +55,7 @@
 
   <url>
     <loc>https://therapistweb.design/journal/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -126,6 +126,20 @@
   <url>
     <loc>https://therapistweb.design/journal/psychology-today-vs-your-own-website/</loc>
     <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://therapistweb.design/journal/what-search-engines-and-ai-actually-see-on-your-site/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://therapistweb.design/journal/how-to-tell-if-your-website-looks-ai-generated/</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

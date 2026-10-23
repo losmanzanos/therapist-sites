@@ -265,10 +265,6 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   line-height:1.05;letter-spacing:.04em;text-transform:uppercase;
   color:#2c2d36;margin-bottom:clamp(20px,2.5vw,32px);
 }
-.hero-h1 em{
-  font-family:var(--serif);font-style:italic;font-weight:500;
-  color:var(--forest-2);text-transform:none;letter-spacing:0;font-size:1.1em;
-}
 .hero-sub{
   font-size:15px;line-height:1.75;color:#4b4d59;
   margin-bottom:clamp(24px,3vw,38px);max-width:420px;
@@ -842,7 +838,6 @@ footer{background:var(--ink)}
   font-size:clamp(34px,4.6vw,68px);line-height:1.04;color:#fff;
   max-width:680px;
 }
-.ft-tagline em{color:var(--forest-l)}
 .ft-cols{
   max-width:var(--maxw);margin:0 auto;
   padding:clamp(32px,4vw,52px) var(--gut);
@@ -1127,7 +1122,6 @@ footer{background:var(--ink)}
   font-size:clamp(40px,5.4vw,76px);line-height:1.02;color:var(--ink);
   margin:12px 0 0;max-width:16ch;
 }
-.subhero h1 em{color:var(--forest-2);font-style:italic}
 .subhero-sub{
   font-size:clamp(15px,1.5vw,18px);line-height:1.7;color:var(--ink-s);
   max-width:600px;margin-top:22px;
