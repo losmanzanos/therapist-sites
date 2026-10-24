@@ -10,6 +10,7 @@
 cd "$(dirname "$0")/.." || exit 1
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 [ -x "$CHROME" ] || { echo "Chrome not found at $CHROME"; exit 1; }
+python3 -c "import PIL" 2>/dev/null || { echo "Pillow is missing. Run:  pip3 install pillow   then try again."; exit 1; }
 
 SITES="
 fullbloom   https://fullbloomcounseling.com/
@@ -32,11 +33,12 @@ echo "$SITES" | while read -r slug url; do
   "$CHROME" --headless=new --disable-gpu --hide-scrollbars \
     --window-size=1280,1013 --virtual-time-budget=6000 \
     --screenshot="$tmp" "$url" >/dev/null 2>&1
-  python3 - "$tmp" "images/tv/$slug.webp" <<'PY'
+  [ -s "$tmp" ] || { echo "  $slug: Chrome produced no screenshot"; continue; }
+  if python3 - "$tmp" "images/tv/$slug.webp" <<'PY'
 import sys
 from PIL import Image
 Image.open(sys.argv[1]).convert("RGB").save(sys.argv[2], quality=78, method=6)
 PY
-  echo "  $slug -> images/tv/$slug.webp"
+  then echo "  $slug -> images/tv/$slug.webp"; else echo "  $slug: WebP conversion failed"; fi
 done
 echo "Done. Review the images, then: git add images/tv && git commit -m 'Recapture TV stills' && git push"
