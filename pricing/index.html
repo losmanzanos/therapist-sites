@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=202610241143"/>
+<link rel="stylesheet" href="../assets/site.css?v=202610250349"/>
 </head>
 <body>
 
@@ -167,7 +167,7 @@
       <div class="sh-foot">
         <p><strong>Terms.</strong> Half up front, half when the site goes live. One payment at the end is fine too if you'd rather. No deposit is taken until we've talked.</p>
         <p><strong>Not on this sheet.</strong> Hosting ($0), platform fees ($0), SEO (it's inside lines 1 and 2, not a thing you add), and anything that renews.</p>
-        <p class="sh-sign">Bigger idea, or something that doesn't fit a line? <a href="../contact/">Tell me about it</a> and I'll scope it honestly.</p>
+        <p class="sh-sign">Bigger idea, or something that doesn't fit a line? <a href="../contact/">Tell me about it</a> and I'll scope it.</p>
       </div>
     </div>
   </div>
@@ -184,6 +184,9 @@
       <div class="fitem"><button class="fq" type="button">Do I own the website after it's built?<div class="fplus">+</div></button><div class="fa"><div class="fai">Completely. Your domain, your hosting account, your code in a repository in your name. It stays yours if we stop working together. This is the opposite of Brighter Vision or TherapySites, where the site disappears the day you stop paying.</div></div></div>
       <div class="fitem"><button class="fq" type="button">Why hand-coded instead of Squarespace or WordPress?<div class="fplus">+</div></button><div class="fa"><div class="fai">Two reasons. It looks like nothing else, because it started from a blank file instead of a theme. And it's smaller, faster and harder to break, with no plugins to update and no monthly bill. The trade: you can't drag and drop pages yourself. For small text changes there's a login (line 6 on the sheet); for anything bigger, you call me. Most clients decide that's a feature.</div></div></div>
       <div class="fitem"><button class="fq" type="button">How long does it take, and do I have to write the copy?<div class="fplus">+</div></button><div class="fa"><div class="fai">Three to five weeks from deposit to launch for most builds; five to eight for a group with a blog. And no, you don't have to write anything. I ask questions, you answer them out loud, I write the first draft of every page in your voice. Most clients say it's their favorite part.</div></div></div>
+      <div class="fitem"><button class="fq" type="button">Is the contact form HIPAA compliant?<div class="fplus">+</div></button><div class="fa"><div class="fai">Your website mostly isn't where HIPAA lives. There's no database and no client records on a site I build. The contact form is the exception: a message from someone looking for therapy can count as protected health information once it reaches you. So every build gets one of two setups, and we pick on the first call. One is a short form that asks for a name, a way to reach them and a brief note, and tells people plainly not to share clinical details there. That keeps clinical details out of your inbox as much as a form can. The other runs through a service that signs a Business Associate Agreement, usually your EHR's own contact widget or a secure form service like Hushmail. That one carries a monthly fee from that company, not from me, and I'll tell you the number before we start. I'm not a lawyer. <a href="../journal/is-your-therapy-website-contact-form-hipaa-compliant/">Here's the longer version.</a></div></div></div>
+      <div class="fitem"><button class="fq" type="button">What does it cost after launch?<div class="fplus">+</div></button><div class="fa"><div class="fai">The first 30 days of questions and fixes are included. After that, changes are $150 an hour, billed only when you ask for one. There's no maintenance plan you're required to buy, and nothing renews. If you'd rather make small text changes yourself, that's the self-edit login on line 6.</div></div></div>
+      <div class="fitem"><button class="fq" type="button">What happens if you disappear?<div class="fplus">+</div></button><div class="fa"><div class="fai">Then you're fine, and that's on purpose. The domain, the hosting account and the code repository are in your name from day one, not mine. Every site is plain HTML and CSS with notes on how it's put together, so any web developer can open it and keep going. Nothing about it depends on me, or on a platform staying in business.</div></div></div>
       <div class="fitem"><button class="fq" type="button">Do you only build therapist sites?<div class="fplus">+</div></button><div class="fa"><div class="fai">Nope. Therapists are the specialty, my wife runs a group practice, so I know that world from the inside, but the hand-coded, no-platform-fee approach works for anyone tired of renting their web presence. Recent proof: <a href="../work/#brunson">BrunsonWorks</a>, a Denver property-management outfit, and <a href="../work/#logdog">Log Dog Timberworks</a>, who build pergolas. And if what you actually need isn't a website but a web application, a client portal, a booking system, that's a different build and I do those under a separate studio: <a href="https://studionull.io/" target="_blank" rel="noopener">studionull.io</a>. Current resident project over there: a site whose entire HTML is generated live by PostgreSQL, because apparently that's a thing I find relaxing.</div></div></div>
     </div>
   </div>
@@ -202,7 +205,7 @@
       <p class="ft-blurb"><span data-nosnippet>Custom, hand-coded websites for therapists and counselors in private practice. No templates. No platform fees. No two sites alike.</span></p>
     </div>
     <div>
-      <p class="ft-col-lbl">Navigate</p>
+      <p class="ft-col-lbl">Pages</p>
       <ul class="ft-nav">
         <li><a href="../work/">Work</a></li>
         <li><a href="../services/">Services</a></li>
@@ -276,6 +279,30 @@
     },
     {
       "@type": "Question",
+      "name": "Is a therapist website contact form HIPAA compliant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mostly the website isn't where HIPAA applies, since a static site has no database and no client records. The contact form is the exception, because a message from someone seeking therapy can count as protected health information once the practice receives it. Each build uses either a minimal form that tells people not to share clinical details, or a form routed through a service that signs a Business Associate Agreement, such as the practice's EHR contact widget or a secure form service like Hushmail. The second option carries a monthly fee from that provider."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a therapist website cost after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first 30 days of questions and fixes after launch are included. After that, changes are $150 an hour, billed only when requested. There is no required maintenance plan and nothing renews. An optional self-edit login covers small text changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to the website if the developer disappears?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The domain, hosting account and code repository are in the client's name from day one. Each site is plain HTML and CSS with documentation, so any web developer can take it over. Nothing depends on Chad Moravec or on a platform staying in business."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Do you only build websites for therapists?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -303,6 +330,6 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KSDGGVPW0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6KSDGGVPW0');</script>
-<script src="../assets/site.js?v=202610241143" defer></script>
+<script src="../assets/site.js?v=202610250349" defer></script>
 </body>
 </html>
