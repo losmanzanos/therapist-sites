@@ -5,7 +5,7 @@
 #   tools/stills.sh rooted     just one (slug from the list below)
 #
 # Needs: Google Chrome, and Pillow for the WebP step (pip3 install pillow).
-# Output: images/tv/<slug>.webp, 1280 wide. Then commit and push.
+# Output: images/tv/<slug>.webp, 1280 wide, plus <slug>-720.webp for phones. Then commit and push.
 
 cd "$(dirname "$0")/.." || exit 1
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -38,6 +38,8 @@ echo "$SITES" | while read -r slug url; do
 import sys
 from PIL import Image
 Image.open(sys.argv[1]).convert("RGB").save(sys.argv[2], quality=78, method=6)
+im = Image.open(sys.argv[2])
+im.resize((720, round(im.height * 720 / im.width)), Image.LANCZOS).save(sys.argv[2][:-5] + "-720.webp", quality=80, method=6)
 PY
   then echo "  $slug -> images/tv/$slug.webp"; else echo "  $slug: WebP conversion failed"; fi
 done
