@@ -388,7 +388,7 @@ footer .crisis{flex-basis:100%;font-size:12.5px}
   .rows li p{transform:translate(calc(var(--dx) * .35 * (1 - var(--q))),0) rotate(calc(var(--r) * (1 - var(--q))))}
   .rows .thr{flex-basis:calc(var(--in) * .5)}
   .note{position:static;width:auto;margin:6px 0 0 14%;font-size:32px;display:flex;flex-direction:column-reverse}
-  .note svg{transform:scaleY(-1);margin:0 0 8px -8px;width:90px;height:56px}
+  .note svg{transform:rotate(-28deg) scale(-1,-1);margin:4px 0 14px 46px;width:90px;height:56px}
   .pack-head,.leaders,.turn{grid-template-columns:1fr}
   .leader{padding:30px 0}
   .leader+.leader{padding-left:0;border-left:0;border-top:1px solid var(--rule-light)}
