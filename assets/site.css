@@ -917,6 +917,8 @@ footer{background:var(--ink)}
 }
 .stk-name::before{content:'';width:6px;height:6px;background:var(--forest-l);border-radius:50%;flex-shrink:0}
 .stk-desc{font-size:.92rem;line-height:1.7;color:var(--ink-s)}
+.stk-desc a{color:var(--forest);border-bottom:1px solid var(--forest-l)}
+.stk-desc a:hover{color:var(--forest-2)}
 .stk-tag{margin-top:auto;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-m)}
 
 /* ═══════════════════════════════
@@ -1744,6 +1746,38 @@ footer{background:var(--ink)}
 @media (max-width:720px){
   .cstrip .contact-snake{width:78%;right:-24%;bottom:0;opacity:.3}
   .cstrip-row{flex-direction:column;align-items:flex-start;gap:18px}
+}
+
+/* inline text links added with the booking link */
+.step-body p a,.contact-info p a,.cstrip-inner > p a{color:var(--forest);border-bottom:1px solid var(--forest-l);transition:color .2s,border-color .2s}
+.step-body p a:hover,.contact-info p a:hover,.cstrip-inner > p a:hover{color:var(--forest-2);border-color:var(--forest-2)}
+
+/* ═══════════════════════════════
+   VIEWER MAIL: real Google reviews on the homepage
+   ═══════════════════════════════ */
+.mail{position:relative;padding:var(--sy) 0;background:var(--cream-s)}
+.mail-inner{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+.mail-head{max-width:620px}
+.mail-head h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(34px,4vw,58px);line-height:1.04;margin:12px 0 16px}
+.mail-head p{font-size:15px;line-height:1.7;color:var(--ink-s)}
+.mail-head a,.mail-foot a{color:var(--forest);border-bottom:1px solid var(--forest-l);transition:color .2s,border-color .2s}
+.mail-head a:hover,.mail-foot a:hover{color:var(--forest-2);border-color:var(--forest-2)}
+.mail-lead{margin:clamp(40px,5vw,64px) 0 0;padding-left:clamp(20px,3vw,40px);border-left:2px solid var(--forest);max-width:980px}
+.mail-lead blockquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(23px,2.7vw,36px);line-height:1.28;color:var(--ink)}
+.mail-lead figcaption{margin-top:20px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.mail-lead figcaption strong,.mail-who strong{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink)}
+.mail-lead figcaption span{font-size:14px;color:var(--ink-m)}
+.mail-list{list-style:none;margin:clamp(44px,5vw,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,32px);align-items:start}
+.mail-list li{position:relative;background:var(--cream);padding:34px 28px 26px;border:1px solid var(--border);box-shadow:0 1px 0 rgba(44,45,54,.04),0 18px 40px -28px rgba(44,45,54,.35)}
+.mail-list li::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:repeating-linear-gradient(90deg,var(--forest-l) 0 10px,transparent 10px 16px)}
+.mail-list li:nth-child(2){transform:translateY(18px)}
+.mail-list blockquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(19px,1.6vw,22px);line-height:1.38;color:var(--ink)}
+.mail-who{margin-top:20px;padding-top:14px;border-top:1px dashed rgba(44,45,54,.25);display:flex;flex-direction:column;gap:4px}
+.mail-who span{font-size:14px;color:var(--ink-m)}
+.mail-foot{margin-top:clamp(40px,4vw,56px);font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase}
+@media (max-width:900px){
+  .mail-list{grid-template-columns:1fr;max-width:560px}
+  .mail-list li:nth-child(2){transform:none}
 }
 
 /* ═══════════════════════════════

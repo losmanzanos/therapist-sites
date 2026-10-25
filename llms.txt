@@ -19,6 +19,14 @@ Every site is hand-coded from scratch. No WordPress, no page builders, no themes
 
 Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a dedicated page per service or specialty each SEO-targeted to the practice area, FAQ, privacy policy, terms & conditions, contact). Group practice $4,200 (Solo + up to 4 clinician profiles). Blog/Journal add-on +$850. Add-ons: SEO/authority carryover for migrations from $250, branded email templates from $200, TinaCMS self-edit access from $400, Google Business Profile setup included free with new Solo/Group builds ($200 standalone for an existing site). Everything else billed at $150/hr. See [full pricing](https://therapistweb.design/pricing/).
 
+## Questions clients ask
+
+- **HIPAA:** The sites have no database and hold no client records. The contact form is where HIPAA applies, so each build uses either a minimal form that asks visitors not to share clinical details, or a form routed through a service that signs a Business Associate Agreement (often the practice's EHR contact widget). See [the HIPAA contact form article](https://therapistweb.design/journal/is-your-therapy-website-contact-form-hipaa-compliant/).
+- **After launch:** The first 30 days of questions and fixes are included. After that, changes are $150 an hour, billed only when requested. No required maintenance plan; nothing renews.
+- **If the developer disappears:** The domain, hosting and code repository are in the client's name from day one, and each site is plain HTML and CSS with documentation that any web developer can pick up.
+- **Reviews:** Five 5-star reviews on the [Therapist Web Design Google Business Profile](https://g.page/r/CeDcbTy7Xp7oEBM), from therapists including Shayla Martinez-O'Brien (Golden Hour Wellness), Whitney Lovett (Lovett Counseling & Consulting) and Leslie Cedar.
+- **Contact:** hello@therapistweb.design, call or text (720) 466-1013, or book a free 30-minute intro call at https://calendly.com/chad-m-moravec/intro-call.
+
 ## Portfolio
 
 - [Full Bloom Counseling Group](https://fullbloomcounseling.com): Denver, CO, group practice of seven therapists; hand-coded static build with individual clinician profiles, specialty service pages, and structured data.
@@ -43,6 +51,7 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 
 ## Journal articles
 
+- [Is the contact form on your therapy website HIPAA compliant?](https://therapistweb.design/journal/is-your-therapy-website-contact-form-hipaa-compliant/): Why a therapy website's contact form, not the site itself, is where HIPAA applies; what counts as protected health information from a prospective client; the two form setups (a minimal form that steers clinical details elsewhere, or a form through a BAA-covered service such as an EHR widget); the 2024 court ruling on analytics tracking; and a five-minute self-check.
 - [What Google, and ChatGPT, actually see when they look at your site](https://therapistweb.design/journal/what-search-engines-and-ai-actually-see-on-your-site/): Plain-English explanation of meta titles/descriptions, schema markup, canonical tags, sitemap.xml, and llms.txt, and what each one actually does.
 - [How to tell if your website looks AI-generated](https://therapistweb.design/journal/how-to-tell-if-your-website-looks-ai-generated/): The visual tells of AI-generated or templated design (gradients, fonts, button shapes, stock photography) and why they cost a therapy practice more trust than most other businesses.
 - [Do you need a blog on your therapy website?](https://therapistweb.design/journal/do-you-need-a-blog-on-your-therapy-website/): Honest pros and cons of a therapist blog, who should have one, and how to keep a site without a blog current in Google's eyes (service pages, accurate facts, FAQ, Google Business Profile, honest lastmod dates, Search Console).
