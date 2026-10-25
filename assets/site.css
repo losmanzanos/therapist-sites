@@ -1748,6 +1748,10 @@ footer{background:var(--ink)}
   .cstrip-row{flex-direction:column;align-items:flex-start;gap:18px}
 }
 
+/* inline text links added with the booking link */
+.step-body p a,.contact-info p a,.cstrip-inner > p a{color:var(--forest);border-bottom:1px solid var(--forest-l);transition:color .2s,border-color .2s}
+.step-body p a:hover,.contact-info p a:hover,.cstrip-inner > p a:hover{color:var(--forest-2);border-color:var(--forest-2)}
+
 /* ═══════════════════════════════
    VIEWER MAIL: real Google reviews on the homepage
    ═══════════════════════════════ */
