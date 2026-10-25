@@ -78,6 +78,9 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 .btn-forest{border-color:var(--forest)}
 .btn-forest::before{background:var(--forest)}
 .btn-forest:hover{color:#fff}
+.btn-solid{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+.btn-solid::before{background:var(--forest-2)}
+.btn-solid:hover{color:#fff}
 
 /* scroll-reveal */
 /* No fade-up on scroll. Things are just there, like a page. The one exception is the
@@ -1742,10 +1745,14 @@ footer{background:var(--ink)}
 .cstrip-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
 .cstrip h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(36px,4.6vw,66px);line-height:1.02;margin:12px 0 18px}
 .cstrip-inner > p{font-size:16px;line-height:1.75;color:var(--ink-s);max-width:440px}
-.cstrip-row{display:flex;flex-wrap:wrap;align-items:center;gap:22px 32px;margin-top:34px}
+.cstrip-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 16px;margin-top:34px}
+.cstrip-alt{margin-top:22px;font-size:15px;line-height:1.7;color:var(--ink-m);max-width:520px}
+.cstrip-alt a{color:var(--ink-s);border-bottom:1px solid var(--border);transition:color .2s,border-color .2s;white-space:nowrap}
+.cstrip-alt a:hover{color:var(--forest);border-color:var(--forest-l)}
 @media (max-width:720px){
   .cstrip .contact-snake{width:78%;right:-24%;bottom:0;opacity:.3}
-  .cstrip-row{flex-direction:column;align-items:flex-start;gap:18px}
+  .cstrip-row{flex-direction:column;align-items:stretch;gap:12px;max-width:340px}
+  .cstrip-row .btn{text-align:center}
 }
 
 /* inline text links added with the booking link */
