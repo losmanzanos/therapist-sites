@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Pre-commit housekeeping for therapistweb.design.
 
-1. Writes today's date into the homepage footer ("Last changed ...").
+1. Writes today's date into the footer ("Last changed ...") on every page.
 2. Puts a fresh ?v= on every assets/site.css and assets/site.js link, so a
    push shows up immediately instead of after GitHub Pages' 10-minute cache.
 
@@ -16,14 +16,17 @@ stamp = f"{now.strftime('%B')} {now.day}, {now.year}"
 ver = now.strftime("%Y%m%d%H%M")
 changed = []
 
-# 1. footer date on the homepage
+# 1. footer date, on the homepage and every page that shares its footer
 page = root / "index.html"
-html = page.read_text(encoding="utf-8")
-new, n = re.subn(r'(<span id="ftStamp">)[^<]*(</span>)', lambda m: m.group(1) + stamp + m.group(2), html)
-if n != 1:
-    sys.exit("stamp.py: expected one #ftStamp span in index.html, found %d" % n)
-if new != html:
-    page.write_text(new, encoding="utf-8"); changed.append("index.html footer -> " + stamp)
+if len(re.findall(r'<span id="ftStamp">', page.read_text(encoding="utf-8"))) != 1:
+    sys.exit("stamp.py: expected one #ftStamp span in index.html")
+for f in sorted(root.rglob("*.html")):
+    if "work/preview" in f.as_posix() or "/.git/" in f.as_posix():
+        continue
+    html = f.read_text(encoding="utf-8")
+    new = re.sub(r'(<span id="ftStamp">)[^<]*(</span>)', lambda m: m.group(1) + stamp + m.group(2), html)
+    if new != html:
+        f.write_text(new, encoding="utf-8"); changed.append(str(f.relative_to(root)) + " footer -> " + stamp)
 
 # 2. cache-busting version on shared css/js, every page (client previews under work/preview/ left alone)
 pat = re.compile(r'((?:href|src)="(?:\.\./)*/?assets/site\.(?:css|js))(?:\?v=\d+)?(")')

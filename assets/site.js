@@ -65,3 +65,18 @@
     });
   });
 })();
+
+/* ── footer receipt, on every page, and a note for whoever opens dev tools ── */
+(function(){
+  var el=document.getElementById('ftSpeed');
+  function stamp(){
+    var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+    var ms=nav?nav.domContentLoadedEventEnd:0;
+    if(el&&ms>0)el.textContent=' Ready in '+(ms/1000).toFixed(2)+' seconds on your connection.';
+  }
+  if(document.readyState==='complete')stamp();else window.addEventListener('load',stamp);
+  try{
+    console.log('%cHand-written, start to finish.','font:italic 22px Georgia,serif;color:#2d4a35;padding:6px 0');
+    console.log('No framework, no page builder, no build step. View source all you like, it reads the way it was typed.\n\nIf you are a therapist and you opened the console: you are already more technical than most of my clients. Say hi.\nhello@therapistweb.design');
+  }catch(e){}
+})();
