@@ -1965,3 +1965,20 @@ footer{background:var(--ink)}
   .hero-btns{flex-direction:column;align-items:flex-start;gap:16px}
   .hero-btns .btn{width:auto;padding:14px 22px}
 }
+
+/* ═══════════════════════════════════════════════
+   INNER PAGE TOPS: same treatment as the new hero. The floral ground
+   instead of the dot grid, the on-air dot on the eyebrow, and on phones
+   the breadcrumb folds away so the first screen opens on the headline.
+   ═══════════════════════════════════════════════ */
+.subhero{
+  background:url('../images/bg-floral.jpg') center/cover no-repeat;
+  background:image-set(url('../images/bg-floral.webp') type('image/webp'),url('../images/bg-floral.jpg') type('image/jpeg')) center/cover no-repeat;
+}
+.subhero::before{background-image:none;background:rgba(241,235,224,.84);mix-blend-mode:normal;opacity:1}
+.subhero .eyebrow::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#b8432a;margin-right:10px;vertical-align:1px;animation:heroblink 1.6s steps(1) infinite}
+@media(max-width:750px){
+  .crumbs{display:none}
+  .subhero{padding-top:40px}
+  .subhero h1{font-size:clamp(36px,10.4vw,48px)}
+}
