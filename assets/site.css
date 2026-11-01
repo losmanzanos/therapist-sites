@@ -2070,3 +2070,5 @@ footer{background:var(--ink)}
 .offair-page h1{font-family:var(--serif-d);font-style:italic;font-weight:400;font-size:clamp(40px,5.4vw,76px);line-height:1.02;margin:12px 0 0;max-width:16ch}
 .offair-page .subhero-sub{color:rgba(255,255,255,.72);max-width:52ch;margin-top:20px}
 @media(prefers-reduced-motion:reduce){.hero-now{transition:none}}
+/* the guide table scrolls inside its own box; it must not widen the TV column */
+.guide-wrap,.tvg-wrap,.tvg-scroll{min-width:0;max-width:100%}
