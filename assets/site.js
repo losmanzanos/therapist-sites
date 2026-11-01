@@ -87,5 +87,13 @@
   try{
     var d=new Date(document.lastModified);
     if(!isNaN(d)&&d.getFullYear()>=2025)st.textContent=d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/Denver'});
+/* footer sign-off knows what time it is in Denver */
+(function(){
+  var el=document.querySelector('.ft-tagline span');
+  if(!el||!/tonight/i.test(el.textContent))return;
+  try{
+    var hr=+new Intl.DateTimeFormat('en-US',{hour:'numeric',hour12:false,timeZone:'America/Denver'}).format(new Date());
+    var line=hr<5?'You\u2019re up late.<br>So am I, usually.':hr<11?'Good morning.<br>Coffee\u2019s on.':hr<17?'That\u2019s the afternoon lineup.<br>Thanks for watching.':null;
+    if(line)el.innerHTML=line;
   }catch(e){}
 })();
