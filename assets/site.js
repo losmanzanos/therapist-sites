@@ -87,6 +87,9 @@
   try{
     var d=new Date(document.lastModified);
     if(!isNaN(d)&&d.getFullYear()>=2025)st.textContent=d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/Denver'});
+  }catch(e){}
+})();
+
 /* footer sign-off knows what time it is in Denver */
 (function(){
   var el=document.querySelector('.ft-tagline span');
@@ -96,4 +99,22 @@
     var line=hr<5?'You\u2019re up late.<br>So am I, usually.':hr<11?'Good morning.<br>Coffee\u2019s on.':hr<17?'That\u2019s the afternoon lineup.<br>Thanks for watching.':null;
     if(line)el.innerHTML=line;
   }catch(e){}
+})();
+
+/* contact: the dial picks the project type */
+(function(){
+  var dp=document.getElementById('dialpick');if(!dp)return;
+  var knob=document.getElementById('dpKnob'),lcd=document.getElementById('dpLcd'),
+      ins=[].slice.call(dp.querySelectorAll('input[type=radio]'));
+  function sync(){
+    var i=ins.map(function(r){return r.checked;}).indexOf(true);if(i<0)i=0;
+    knob.style.setProperty('--rot',(20+30*i)+'deg');
+    lcd.textContent=ins[i].parentNode.querySelector('.dp-t').textContent;
+  }
+  ins.forEach(function(r){r.addEventListener('change',sync);});
+  knob.addEventListener('click',function(){
+    var i=ins.map(function(r){return r.checked;}).indexOf(true);
+    ins[(i+1)%ins.length].checked=true;sync();
+  });
+  sync();
 })();

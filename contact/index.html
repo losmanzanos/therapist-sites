@@ -143,17 +143,28 @@
         <div class="frow"><label for="ph">Phone (optional)</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
         <div class="frow"><label for="site">Your current site, if you have one</label><input id="site" name="current_site" type="url" inputmode="url" autocomplete="url" placeholder="https://" spellcheck="false"></div>
         <div class="frow">
-          <span class="flabel" id="pl-l">What's the project? Press one.</span>
-          <div class="remote" role="radiogroup" aria-labelledby="pl-l">
-            <div class="rm-top" aria-hidden="true"><i class="rm-lens"></i><span class="rm-brand">TWD</span><i class="rm-led"></i></div>
-            <div class="rm-keys">
-              <label class="rk"><input type="radio" name="plan" value="Not sure yet, let's talk" checked><span class="rk-k"><b>1</b>Not sure yet</span></label>
-              <label class="rk"><input type="radio" name="plan" value="Door one: I need a website (solo practice)"><span class="rk-k"><b>2</b>Door one, solo</span></label>
-              <label class="rk"><input type="radio" name="plan" value="Door one: I need a website (group practice)"><span class="rk-k"><b>3</b>Door one, group</span></label>
-              <label class="rk"><input type="radio" name="plan" value="Door two: I have a site and it isn't working"><span class="rk-k"><b>4</b>Door two, fix mine</span></label>
-              <label class="rk"><input type="radio" name="plan" value="Something else"><span class="rk-k"><b>5</b>Something else</span></label>
+          <span class="flabel" id="pl-l">What's the project? Turn the dial.</span>
+          <div class="dialpick" id="dialpick" role="radiogroup" aria-labelledby="pl-l">
+            <div class="dp-set" aria-hidden="true">
+              <picture>
+                <source srcset="../images/tv-panel.webp" type="image/webp"/>
+                <img src="../images/tv-panel.png" alt="" width="226" height="378"/>
+              </picture>
+              <span class="dp-lcd" id="dpLcd">Not sure yet</span>
+              <button type="button" class="dp-knob" id="dpKnob" tabindex="-1" aria-label="Turn the dial to the next option">
+                <picture>
+                  <source srcset="../images/tv-knob.webp" type="image/webp"/>
+                  <img src="../images/tv-knob.png" alt="" width="74" height="74"/>
+                </picture>
+              </button>
             </div>
-            <div class="rm-foot" aria-hidden="true"><span>VOL</span><i></i><i></i><span>CH</span></div>
+            <ul class="dp-list">
+              <li><label class="dp-opt"><input type="radio" name="plan" value="Not sure yet, let's talk" checked><span class="dp-n">1</span><span class="dp-t">Not sure yet</span></label></li>
+              <li><label class="dp-opt"><input type="radio" name="plan" value="Door one: I need a website (solo practice)"><span class="dp-n">2</span><span class="dp-t">Door one, solo</span></label></li>
+              <li><label class="dp-opt"><input type="radio" name="plan" value="Door one: I need a website (group practice)"><span class="dp-n">3</span><span class="dp-t">Door one, group</span></label></li>
+              <li><label class="dp-opt"><input type="radio" name="plan" value="Door two: I have a site and it isn't working"><span class="dp-n">4</span><span class="dp-t">Door two, fix mine</span></label></li>
+              <li><label class="dp-opt"><input type="radio" name="plan" value="Something else"><span class="dp-n">5</span><span class="dp-t">Something else</span></label></li>
+            </ul>
           </div>
           <input type="hidden" name="_subject" value="Therapist Web Design: new note from the site">
         </div>
