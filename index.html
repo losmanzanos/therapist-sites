@@ -118,7 +118,7 @@
   <div class="hero-stripe"></div>
 
   <div class="hero-content" data-r>
-    <p class="eyebrow hero-eyebrow">Now showing</p>
+    <p class="eyebrow hero-eyebrow">Now showing:<a class="hero-now" id="heroNow" href="#work" hidden></a></p>
     <h1 class="hero-h1">Websites that don&rsquo;t look like <em>therapist websites.</em></h1>
     <p class="hero-sub">Every site here was written for one practice and coded from a blank file, so it finds the clients that practice is for. You own every line of it. No templates, no monthly platform fee, no price increase email from me, ever.</p>
     <div class="hero-btns">
@@ -175,6 +175,7 @@
               <img src="images/tv-knob.png" alt="" width="74" height="74"/>
             </picture>
           </button>
+          <button class="tv-scan" id="tvSurf" type="button" aria-label="Surf through every channel"><span>Scan</span></button>
           <span class="tv-tag" aria-hidden="true">turn me
             <svg viewBox="0 0 34 46" fill="none"><path d="M3 5 C 22 4, 30 18, 24 40" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M17 34 L 24 41 L 30 33" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
@@ -189,7 +190,7 @@
           <li><button type="button" class="ch" aria-pressed="false" data-src="work/preview/apex/" data-url="https://apex-mhc.com/" data-still="images/tv/apex.webp" data-blurb="Logo, type and site from scratch. The contour lines are real Colorado elevation data."><span class="ch-n">03</span><span class="ch-name">Apex Mental Health Counseling</span><span class="ch-meta">Brand &amp; website · Colorado</span></button></li>
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://lovettcounselingandconsulting.com/" data-url="https://lovettcounselingandconsulting.com/" data-still="images/tv/lovett.webp" data-blurb="A trauma-informed counselor whose site reads the way her sessions feel."><span class="ch-n">04</span><span class="ch-name">Lovett Counseling &amp; Consulting</span><span class="ch-meta">Solo practice · Denver</span></button></li>
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://goldenhourwellnesscolorado.com/" data-url="https://goldenhourwellnesscolorado.com/" data-still="images/tv/goldenhour.webp" data-blurb="Off Squarespace, with a blog and self-edit access for group dates that keep changing."><span class="ch-n">05</span><span class="ch-name">Golden Hour Wellness</span><span class="ch-meta">Group practice · Colorado</span></button></li>
-          <li><button type="button" class="ch" aria-pressed="false" data-src="" data-url="https://belongconsultingco.com/" data-still="images/tv/belong.webp" data-blurb="A custom Shopify theme, 47 restyled product photos, and a moon that shows tonight's real phase."><span class="ch-n">06</span><span class="ch-name">Belong Consulting</span><span class="ch-meta">Shopify redesign · Denver</span></button></li>
+          <li><button type="button" class="ch" aria-pressed="false" data-src="work/preview/belong/" data-url="https://belongconsultingco.com/" data-still="images/tv/belong.webp" data-blurb="A custom Shopify theme, 47 restyled product photos, and a moon that shows tonight's real phase."><span class="ch-n">06</span><span class="ch-name">Belong Consulting</span><span class="ch-meta">Shopify redesign · Denver</span></button></li>
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://rootedresonancetherapy.com/" data-url="https://rootedresonancetherapy.com/" data-still="images/tv/rooted.webp" data-blurb="New name, new domain, and 301 redirects so Google kept up."><span class="ch-n">07</span><span class="ch-name">Rooted Resonance Therapy</span><span class="ch-meta">Full rebrand · Colorado</span></button></li>
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://safersoundsclub.com/" data-url="https://safersoundsclub.com/" data-still="images/tv/safersounds.webp" data-blurb="Misophonia education with a quiz, a workshop and an identity all its own."><span class="ch-n">08</span><span class="ch-name">The Safer Sounds Club</span><span class="ch-meta">Specialty brand · Online</span></button></li>
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://www.sanare-colorado.com/" data-url="https://www.sanare-colorado.com/" data-still="images/tv/sanare.webp" data-blurb="Stayed on Squarespace. Got new type, new color and 21 rewritten service pages."><span class="ch-n">09</span><span class="ch-name">Sanare Psychosocial Rehab</span><span class="ch-meta">Squarespace redesign · Denver</span></button></li>
@@ -198,6 +199,7 @@
         </ol>
         <a class="cs-link guide-more" href="work/">Read the full case studies</a>
       </div>
+
     </div>
   </div>
 </section>
@@ -294,7 +296,9 @@
         <p class="rc-total"><span id="rcDiffL">Five-year difference</span><strong id="rcDiff">$1,925 yours</strong></p>
         <p class="rc-note" id="rcNote" aria-live="polite">Owning pulls ahead in month 36. Every month after that is money you keep.</p>
         <p class="rc-foot">Thank you for owning</p>
+        <p class="rc-contact">Therapist Web Design &middot; therapistweb.design &middot; (720) 466-1013 &middot; hello@therapistweb.design</p>
       </div>
+      <button type="button" class="cs-link rc-print" id="rcPrint">Print this receipt</button>
     </div>
   </div>
 </section>
@@ -714,7 +718,7 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
       cv=document.getElementById('tvStatic'),ctx=cv.getContext('2d'),
       chs=[].slice.call(document.querySelectorAll('#guide .ch')),
       reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-      cur=0,raf=0,osdT=0,tuneT=0,token=0;
+      cur=Math.max(0,chs.map(function(c){return c.classList.contains('is-on');}).indexOf(true)),raf=0,osdT=0,tuneT=0,token=0;
   /* Channels without a data-src (Shopify refuses to load in a frame) show their still everywhere. */
   /* Touch devices get a still of each site instead of a live frame. Live frames at 1280px
      scaled into a 200px screen were enough to crash Safari on iPhone (Rooted's page did it
@@ -726,9 +730,9 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
   if(useStill){
     tv.classList.add('is-still');
     frame.removeAttribute('src');frame.setAttribute('aria-hidden','true');
-    still.src=stillSrc(chs[0]);
-  }else if(!chs[0].dataset.src){tv.classList.add('is-still');still.src=stillSrc(chs[0]);}
-  else{frame.src=chs[0].dataset.src;}
+    still.src=stillSrc(chs[cur]);
+  }else if(!chs[cur].dataset.src){tv.classList.add('is-still');still.src=stillSrc(chs[cur]);}
+  else{frame.src=chs[cur].dataset.src;}
   function stillSrc(b){var s=b.dataset.still;return (tv.offsetWidth||400)*(window.devicePixelRatio||1)<=760?s.replace(/\.webp$/,'-720.webp'):s;}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function noise(){
@@ -799,6 +803,43 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
     if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();go(cur+1);}
     else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();go(cur-1);}
   });
+  /* TV guide listings tune the set too */
+  var tvg=document.getElementById('tvg');
+  if(tvg){tvg.querySelectorAll('tbody tr').forEach(function(tr){
+    tr.tabIndex=0;
+    function pick(){var i=chs.findIndex(function(c){return c.querySelector('.ch-n').textContent===tr.dataset.ch;});if(i>-1){go(i);tv.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});}}
+    tr.addEventListener('click',pick);tr.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick();}});
+  });}
+  /* hero: "Now showing" cycles through the lineup; a click tunes the set */
+  var now=document.getElementById('heroNow');
+  if(now){
+    var live=chs.slice(),ni=0,nt=0;
+    function show(){now.textContent=live[ni].querySelector('.ch-name').textContent;now.dataset.i=chs.indexOf(live[ni]);}
+    now.hidden=false;show();
+    if(!reduce){nt=setInterval(function(){now.classList.add('is-out');setTimeout(function(){ni=(ni+1)%live.length;show();now.classList.remove('is-out');},260);},2800);}
+    now.addEventListener('click',function(e){e.preventDefault();clearInterval(nt);go(+now.dataset.i);tv.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});});
+  }
+  /* channel surf: up up down down left right left right b a */
+  var kseq=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'],kpos=0,surfing=false;
+  function surfAll(){
+    if(surfing)return;surfing=true;tv.classList.add('is-surfing');
+    var n=chs.length,step=0,start=cur;
+    (function surf(){
+      step++;go((start+step)%n);
+      if(step<n+2){setTimeout(surf,reduce?60:420);}else{surfing=false;tv.classList.remove('is-surfing');}
+    })();
+  }
+  var sb=document.getElementById('tvSurf');
+  if(sb)sb.addEventListener('click',surfAll);
+  document.addEventListener('keydown',function(e){
+    if(e.target&&/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;
+    kpos=(e.key===kseq[kpos])?kpos+1:(e.key===kseq[0]?1:0);
+    if(kpos<kseq.length)return;kpos=0;
+    tv.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});surfAll();
+  });
+  /* hero stars drift a little as you scroll */
+  var hf=document.querySelector('.hero-figure');
+  if(hf&&!reduce)window.addEventListener('scroll',function(){var y=window.scrollY;if(y<900)hf.style.setProperty('--drift',(y*.12)+'px');},{passive:true});
   /* first time it scrolls into view: a little warm-up static, like an old set coming on */
   if('IntersectionObserver' in window&&!reduce){
     var io=new IntersectionObserver(function(es){
@@ -850,6 +891,8 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
     pio.observe(rc);
   }else{rc.classList.add('printed','done');}
   r.addEventListener('input',update);
+  var pb=document.getElementById('rcPrint');
+  if(pb)pb.addEventListener('click',function(){window.twdPrint&&window.twdPrint('#receipt');});
   pks.forEach(function(b){
     b.addEventListener('click',function(){
       build=+b.dataset.price;rcBuildL.textContent=b.dataset.label;
@@ -893,6 +936,92 @@ document.querySelectorAll('.fq').forEach(function(btn){
     var d=new Date(document.lastModified);
     if(!isNaN(d)&&d.getFullYear()>=2025)st.textContent=d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/Denver'});
   }catch(e){}
+})();
+</script>
+<script>
+/* footer sign-off knows what time it is in Denver */
+(function(){
+  var el=document.querySelector('.ft-tagline span');
+  if(!el||!/tonight/i.test(el.textContent))return;
+  try{
+    var hr=+new Intl.DateTimeFormat('en-US',{hour:'numeric',hour12:false,timeZone:'America/Denver'}).format(new Date());
+    var line=hr<5?'You\u2019re up late.<br>So am I, usually.':hr<11?'Good morning.<br>Coffee\u2019s on.':hr<17?'That\u2019s the afternoon lineup.<br>Thanks for watching.':null;
+    if(line)el.innerHTML=line;
+  }catch(e){}
+})();
+
+/* ── shared interactive bits ── */
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* print one element on its own page (the receipt, the quote sheet) */
+  window.twdPrint=function(sel){
+    var src=document.querySelector(sel);if(!src)return;
+    var box=document.createElement('div');box.id='printArea';box.appendChild(src.cloneNode(true));
+    document.body.appendChild(box);document.body.classList.add('is-printing');
+    var done=function(){document.body.classList.remove('is-printing');if(box.parentNode)box.parentNode.removeChild(box);window.removeEventListener('afterprint',done);};
+    window.addEventListener('afterprint',done);
+    setTimeout(function(){window.print();setTimeout(done,2000);},40);
+  };
+  document.querySelectorAll('[data-print]').forEach(function(b){b.addEventListener('click',function(){window.twdPrint(b.getAttribute('data-print'));});});
+
+  /* changing pages is changing the channel: a blink of static on the way out */
+  if(!reduce){
+    var ov=document.createElement('div');ov.className='chflip';ov.setAttribute('aria-hidden','true');
+    var cv=document.createElement('canvas');cv.width=160;cv.height=120;ov.appendChild(cv);
+    var osd=document.createElement('span');osd.className='chflip-osd';ov.appendChild(osd);
+    document.body.appendChild(ov);
+    var ctx=cv.getContext('2d'),raf=0;
+    function noise(){var w=cv.width,h=cv.height,img=ctx.createImageData(w,h),d=img.data;for(var i=0;i<d.length;i+=4){var v=(Math.random()*220)|0;d[i]=v;d[i+1]=v;d[i+2]=v+10;d[i+3]=255;}ctx.putImageData(img,0,0);raf=requestAnimationFrame(noise);}
+    document.addEventListener('click',function(e){
+      var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;
+      if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0)return;
+      if(a.target&&a.target!=='_self')return;
+      var href=a.getAttribute('href');if(!href||href.charAt(0)==='#'||/^(mailto:|tel:|javascript:)/i.test(href))return;
+      var u;try{u=new URL(a.href,location.href);}catch(x){return;}
+      if(u.origin!==location.origin)return;
+      if(u.pathname===location.pathname&&u.hash)return;
+      e.preventDefault();
+      var label=(a.textContent||'').trim().replace(/\s+/g,' ').slice(0,22);
+      osd.textContent=label?'CH · '+label.toUpperCase():'CH';
+      ov.classList.add('on');noise();
+      setTimeout(function(){location.href=a.href;},300);
+      setTimeout(function(){cancelAnimationFrame(raf);ov.classList.remove('on');},1400);
+    });
+    window.addEventListener('pageshow',function(){cancelAnimationFrame(raf);ov.classList.remove('on');});
+  }
+
+  /* Denver clock: is the line open? */
+  var dn=document.getElementById('denverNow');
+  if(dn){
+    function tick(){
+      try{
+        var now=new Date(),f=new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/Denver'}),
+            hr=+new Intl.DateTimeFormat('en-US',{hour:'numeric',hour12:false,timeZone:'America/Denver'}).format(now),
+            day=new Intl.DateTimeFormat('en-US',{weekday:'short',timeZone:'America/Denver'}).format(now),
+            wk=!/Sat|Sun/.test(day),open=wk&&hr>=9&&hr<17,t=f.format(now).replace(' AM',' a.m.').replace(' PM',' p.m.');
+        dn.innerHTML='<i class="'+(open?'is-open':'')+'"></i>It’s '+t+' in Denver. '+(open?'The line is open; if I don’t pick up, I’m on a call and I’ll ring back.':wk?'After hours. Leave a note and I’ll call in the morning.':'It’s the weekend. Leave a note and I’ll call Monday.');
+      }catch(e){}
+    }
+    tick();setInterval(tick,30000);
+  }
+
+  /* journal: topic chips filter the list */
+  var jl=document.querySelector('.jlist');
+  if(jl){
+    var cards=[].slice.call(jl.querySelectorAll('.jcard')),topics=[];
+    cards.forEach(function(c){var t=c.querySelector('.jtopic');if(t&&topics.indexOf(t.textContent.trim())<0)topics.push(t.textContent.trim());});
+    if(topics.length>1){
+      var bar=document.createElement('div');bar.className='jchips';bar.setAttribute('role','group');bar.setAttribute('aria-label','Filter by topic');
+      var mk=function(t){var b=document.createElement('button');b.type='button';b.className='jchip';b.textContent=t;b.setAttribute('aria-pressed',t==='All'?'true':'false');b.addEventListener('click',function(){
+        bar.querySelectorAll('.jchip').forEach(function(o){o.setAttribute('aria-pressed',o===b?'true':'false');});
+        cards.forEach(function(c){var m=t==='All'||c.querySelector('.jtopic').textContent.trim()===t;c.classList.toggle('is-hid',!m);});
+      });return b;};
+      bar.appendChild(mk('All'));topics.sort().forEach(function(t){bar.appendChild(mk(t));});
+      jl.parentNode.insertBefore(bar,jl);
+    }
+  }
+
 })();
 </script>
 </body>
