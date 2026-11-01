@@ -2096,15 +2096,15 @@ footer{background:var(--ink)}
 
 /* services: two real doors in a hallway, a plaque on the wall beside each */
 .door-photo{margin:4px 0 30px}
-.door-wall{position:relative;display:flex;align-items:flex-start;gap:20px;padding:26px 0 0 26px;background:linear-gradient(180deg,rgba(44,45,54,.045),rgba(44,45,54,0) 70%)}
-.door-wall picture{flex:none;width:min(44%,230px);position:relative;z-index:1;transition:transform .5s cubic-bezier(.3,1.2,.4,1)}
+.door-wall{position:relative;display:flex;align-items:flex-start;gap:16px;padding:18px 0 0 18px;background:linear-gradient(180deg,rgba(44,45,54,.045),rgba(44,45,54,0) 70%)}
+.door-wall picture{flex:none;width:min(34%,150px);position:relative;z-index:1;transition:transform .5s cubic-bezier(.3,1.2,.4,1)}
 .door-wall img{display:block;width:100%;height:auto;box-shadow:14px 0 0 -8px rgba(44,45,54,.12),0 22px 28px -16px rgba(44,45,54,.55)}
 .door-floor{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(44,45,54,.45)}
 .door-floor::after{content:"";position:absolute;left:0;right:0;top:2px;height:14px;background:linear-gradient(180deg,rgba(44,45,54,.08),transparent)}
-.door-sign{display:inline-flex;align-items:center;gap:8px;margin-top:38%;padding:8px 12px;background:linear-gradient(170deg,#e3c270,#b98f31 55%,#d6b35a);color:#3a2a0d;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.26em;text-transform:uppercase;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.25);text-shadow:0 1px 0 rgba(255,255,255,.35);transform:rotate(-1.5deg);white-space:nowrap}
+.door-sign{display:inline-flex;align-items:center;gap:8px;margin-top:26%;padding:7px 10px;background:linear-gradient(170deg,#e3c270,#b98f31 55%,#d6b35a);color:#3a2a0d;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.26em;text-transform:uppercase;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.25);text-shadow:0 1px 0 rgba(255,255,255,.35);transform:rotate(-1.5deg);white-space:nowrap}
 .door-sign i{width:4px;height:4px;border-radius:50%;background:#6b4f12;box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
 .door:hover .door-wall picture{transform:translateY(-3px)}
-@media(max-width:750px){.door-wall{padding-left:16px;gap:14px}.door-wall picture{width:min(50%,190px)}.door-sign{margin-top:46%}}
+@media(max-width:750px){.door-wall picture{width:min(42%,150px)}.door-sign{margin-top:34%}}
 @media(prefers-reduced-motion:reduce){.door-wall picture{transition:none}.door:hover .door-wall picture{transform:none}}
 
 /* Denver clock */
@@ -2163,13 +2163,3 @@ footer{background:var(--ink)}
 .cstudy-frame{border-top:0}
 
 
-/* work: plain contents list */
-.wk-index-section{padding-bottom:0}
-.wk-index ol{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,4vw,64px);border-top:1px solid var(--ink)}
-.wk-index li{border-bottom:1px dotted rgba(44,45,54,.35)}
-.wk-index a{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:12px;padding:13px 0;color:var(--ink)}
-.wk-index span{font-family:var(--serif-d);font-style:italic;font-size:15px;color:var(--ink-m)}
-.wk-index strong{font-family:var(--serif-d);font-weight:400;font-size:17px;line-height:1.25;transition:color .2s}
-.wk-index em{font-style:normal;font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-m);white-space:nowrap}
-.wk-index a:hover strong{color:var(--forest-2)}
-@media(max-width:700px){.wk-index ol{grid-template-columns:1fr}.wk-index em{display:none}}
