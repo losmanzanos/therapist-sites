@@ -80,3 +80,12 @@
     console.log('No framework, no page builder, no build step. View source all you like, it reads the way it was typed.\n\nIf you are a therapist and you opened the console: you are already more technical than most of my clients. Say hi.\nhello@therapistweb.design');
   }catch(e){}
 })();
+
+/* footer: 'Last changed' reads the date the page was last published, so nobody has to type it */
+(function(){
+  var st=document.getElementById('ftStamp');if(!st)return;
+  try{
+    var d=new Date(document.lastModified);
+    if(!isNaN(d)&&d.getFullYear()>=2025)st.textContent=d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/Denver'});
+  }catch(e){}
+})();
