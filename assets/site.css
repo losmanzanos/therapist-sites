@@ -1989,22 +1989,6 @@ footer{background:var(--ink)}
 @media(max-width:750px){.hero-now{display:block;margin:6px 0 0 18px;font-size:16px}}
 
 /* 2. TV guide: printed listings */
-.tvg-wrap{margin-top:40px}
-.tvg-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.tvg{width:100%;border-collapse:collapse;font-size:13.5px}
-.tvg th{text-align:left;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-m);font-weight:600;padding:12px 10px 10px 0;border-bottom:1px solid var(--ink)}
-.tvg td{padding:12px 10px 12px 0;border-bottom:1px dotted rgba(44,45,54,.35);vertical-align:top;color:var(--ink-s)}
-.tvg tbody tr{cursor:pointer;transition:background .18s}
-.tvg tbody tr:hover,.tvg tbody tr:focus-visible{background:rgba(45,74,53,.06);outline:none}
-.tvg-t{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink-m);width:52px}
-.tvg-n{font-family:var(--serif-d);font-style:italic;font-size:17px;color:var(--ink-m);width:36px}
-.tvg-p strong{display:block;font-family:var(--serif-d);font-weight:400;font-size:16px;color:var(--ink);line-height:1.2}
-.tvg-p a{color:inherit;border-bottom:1px solid transparent}.tvg-p a:hover strong{color:var(--forest)}
-.tvg-p span{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-m);margin-top:4px}
-.tvg-l{max-width:34ch;line-height:1.5}
-.tvg-note{font-size:12px;color:var(--ink-m);margin-top:10px;font-style:italic;font-family:var(--serif)}
-.tvg-section{padding-bottom:0}
-.tvg-section .tvg-wrap{margin-top:0}
 
 /* 3. contact: the plan picker is the set's own control panel. Turn the dial. */
 .flabel{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-m);margin-bottom:.9rem;font-weight:600}
@@ -2064,7 +2048,7 @@ footer{background:var(--ink)}
 .offair-page .subhero-sub{color:rgba(255,255,255,.72);max-width:52ch;margin-top:20px}
 @media(prefers-reduced-motion:reduce){.hero-now{transition:none}}
 /* the guide table scrolls inside its own box; it must not widen the TV column */
-.guide-wrap,.tvg-wrap,.tvg-scroll{min-width:0;max-width:100%}
+.guide-wrap{min-width:0;max-width:100%}
 
 /* ═══════════════════════════════════════════════
    FUN IDEAS, round two
@@ -2178,4 +2162,14 @@ footer{background:var(--ink)}
 .cstudy-media,.spotlight-card .cstudy-media{border:1px solid var(--ink);border-radius:0;box-shadow:3px 3px 0 var(--ink)}
 .cstudy-frame{border-top:0}
 
-@media(max-width:700px){.tvg-l,.tvg th:last-child{display:none}}
+
+/* work: plain contents list */
+.wk-index-section{padding-bottom:0}
+.wk-index ol{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,4vw,64px);border-top:1px solid var(--ink)}
+.wk-index li{border-bottom:1px dotted rgba(44,45,54,.35)}
+.wk-index a{display:grid;grid-template-columns:34px 1fr auto;align-items:baseline;gap:12px;padding:13px 0;color:var(--ink)}
+.wk-index span{font-family:var(--serif-d);font-style:italic;font-size:15px;color:var(--ink-m)}
+.wk-index strong{font-family:var(--serif-d);font-weight:400;font-size:17px;line-height:1.25;transition:color .2s}
+.wk-index em{font-style:normal;font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-m);white-space:nowrap}
+.wk-index a:hover strong{color:var(--forest-2)}
+@media(max-width:700px){.wk-index ol{grid-template-columns:1fr}.wk-index em{display:none}}
