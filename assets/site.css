@@ -1421,8 +1421,8 @@ footer{background:var(--ink)}
 }
 .tv-note{font-size:15px;line-height:1.75;color:var(--ink-s);max-width:340px;justify-self:end}
 .tv-wrap{
-  display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
-  gap:clamp(36px,6vw,96px);align-items:start;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  gap:clamp(32px,5vw,72px);align-items:start;
 }
 .tv-stage{position:relative}
 .tv{
@@ -1499,15 +1499,15 @@ footer{background:var(--ink)}
   font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-m);
   padding-bottom:14px;border-bottom:1px solid var(--ink);
 }
-.guide{list-style:none}
+.guide{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
 .guide li{border-bottom:1px solid var(--border)}
 .ch{
-  display:grid;grid-template-columns:40px 1fr;column-gap:14px;width:100%;
-  text-align:left;padding:13px 0;align-items:baseline;transition:padding .25s ease;
+  display:grid;grid-template-columns:28px 1fr;column-gap:10px;width:100%;
+  text-align:left;padding:11px 0;align-items:baseline;transition:padding .25s ease;
 }
-.ch-n{font-family:var(--serif-d);font-style:italic;font-size:19px;color:var(--ink-m);grid-row:span 2;transition:color .2s}
-.ch-name{font-family:var(--serif-d);font-size:clamp(17px,1.5vw,21px);line-height:1.2;color:var(--ink);transition:color .2s}
-.ch-meta{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-m);margin-top:5px}
+.ch-n{font-family:var(--serif-d);font-style:italic;font-size:16px;color:var(--ink-m);grid-row:span 2;transition:color .2s}
+.ch-name{font-family:var(--serif-d);font-size:16px;line-height:1.2;color:var(--ink);transition:color .2s}
+.ch-meta{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-m);margin-top:4px}
 .ch:hover{padding-left:8px}
 .ch:hover .ch-name{color:var(--forest-2)}
 .ch:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
@@ -1519,6 +1519,9 @@ footer{background:var(--ink)}
   .tvwork-head{grid-template-columns:1fr;gap:16px}
   .tv-note{justify-self:start}
   .tv-wrap{grid-template-columns:1fr}
+  .guide{grid-template-columns:1fr}
+  .ch{grid-template-columns:36px 1fr;padding:13px 0}
+  .ch-name{font-size:18px}
   .tv{transform:rotate(-1deg)}
   .tv-stage{max-width:640px}
   .tv-tag{top:-14%;left:66%}
@@ -1722,8 +1725,7 @@ footer{background:var(--ink)}
    ═══════════════════════════════ */
 .doors .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5vw,72px);align-items:start}
 .door{border-top:1px solid var(--ink);padding-top:22px}
-.door-n{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-m)}
-.door h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(28px,2.6vw,38px);line-height:1.08;margin:10px 0 14px}
+.door h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(28px,2.6vw,38px);line-height:1.08;margin:0 0 14px}
 .door-head p{font-size:15.5px;line-height:1.75;color:var(--ink-s)}
 .door-list{list-style:none;margin:28px 0 0;padding:0}
 .door-list li{padding:16px 0 18px;border-top:1px dashed rgba(44,45,54,.3)}
@@ -2094,18 +2096,14 @@ footer{background:var(--ink)}
 .jcard{transition:opacity .25s,transform .25s}
 .jcard.is-hid{display:none}
 
-/* services: two real doors in a hallway, a plaque on the wall beside each */
-.door-photo{margin:4px 0 30px}
-.door-wall{position:relative;display:flex;align-items:flex-start;gap:16px;padding:18px 0 0 18px;background:linear-gradient(180deg,rgba(44,45,54,.045),rgba(44,45,54,0) 70%)}
-.door-wall picture{flex:none;width:min(34%,150px);position:relative;z-index:1;transition:transform .5s cubic-bezier(.3,1.2,.4,1)}
-.door-wall img{display:block;width:100%;height:auto;box-shadow:14px 0 0 -8px rgba(44,45,54,.12),0 22px 28px -16px rgba(44,45,54,.55)}
-.door-floor{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(44,45,54,.45)}
-.door-floor::after{content:"";position:absolute;left:0;right:0;top:2px;height:14px;background:linear-gradient(180deg,rgba(44,45,54,.08),transparent)}
-.door-sign{display:inline-flex;align-items:center;gap:8px;margin-top:26%;padding:7px 10px;background:linear-gradient(170deg,#e3c270,#b98f31 55%,#d6b35a);color:#3a2a0d;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.26em;text-transform:uppercase;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.25);text-shadow:0 1px 0 rgba(255,255,255,.35);transform:rotate(-1.5deg);white-space:nowrap}
-.door-sign i{width:4px;height:4px;border-radius:50%;background:#6b4f12;box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
-.door:hover .door-wall picture{transform:translateY(-3px)}
-@media(max-width:750px){.door-wall picture{width:min(42%,150px)}.door-sign{margin-top:34%}}
-@media(prefers-reduced-motion:reduce){.door-wall picture{transition:none}.door:hover .door-wall picture{transform:none}}
+/* services: a small door beside each heading, brass plaque under it */
+.door-top{display:grid;grid-template-columns:88px minmax(0,1fr);gap:22px;align-items:start}
+.door-photo{margin:4px 0 0}
+.door-photo img{display:block;width:100%;height:auto;box-shadow:0 14px 18px -12px rgba(44,45,54,.5)}
+.door-sign{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:12px;padding:6px 4px;background:linear-gradient(170deg,#e3c270,#b98f31 55%,#d6b35a);color:#3a2a0d;font-family:var(--sans);font-weight:600;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.25);text-shadow:0 1px 0 rgba(255,255,255,.35);white-space:nowrap}
+.door-sign i{width:3px;height:3px;border-radius:50%;background:#6b4f12}
+.door h2{margin-top:0}
+@media(max-width:750px){.door-top{grid-template-columns:72px minmax(0,1fr);gap:16px}}
 
 /* Denver clock */
 .denver{display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-m);margin-top:14px}
@@ -2163,3 +2161,10 @@ footer{background:var(--ink)}
 .cstudy-frame{border-top:0}
 
 
+
+/* work: jump strip under the hero */
+.wk-jump{border-bottom:1px solid var(--border);background:var(--cream)}
+.wk-jump .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:16px;padding-bottom:16px}
+.wk-jump-h{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-m);margin-right:8px}
+.wk-jump a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-s);border:1px solid var(--border);padding:7px 11px;transition:border-color .15s,color .15s}
+.wk-jump a:hover{border-color:var(--ink);color:var(--ink)}
