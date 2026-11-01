@@ -1253,11 +1253,6 @@ footer{background:var(--ink)}
 .jcard h2 a:hover{color:var(--forest)}
 .jcard p{font-size:15px;line-height:1.75;color:var(--ink-s);max-width:60ch;margin-bottom:16px}
 .jcard .cs-link{font-size:.7rem}
-.jsoon{
-  text-align:center;padding:clamp(40px,5vw,64px) var(--gut);
-  border:1px dashed var(--border);margin-top:28px;
-  font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink-m);
-}
 
 /* ── ARTICLE / PROSE ── */
 .article{padding:clamp(48px,6vw,80px) 0}
@@ -1381,13 +1376,13 @@ footer{background:var(--ink)}
 .ba-copy p:first-child{font-size:18px;color:var(--ink)}
 .ba-hint{font-size:13px !important;color:var(--ink-m) !important}
 .ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px)}
-.ba-pane{margin:0;border:1px solid var(--border);background:var(--cream-w)}
+.ba-pane{margin:0;border:1px solid var(--ink);background:var(--cream-w)}
 .ba-pane figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 14px;border-bottom:1px solid var(--border);background:var(--cream)}
 .ba-tag{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-m)}
 .ba-tag--now{color:var(--forest-2)}
 .ba-url{font-size:12px;color:var(--ink-m);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ba-frame{position:relative;overflow:hidden;aspect-ratio:16/10;height:auto}
-.ba-shot{position:absolute;inset:0;overflow-y:auto;background:#fff}
+.ba-frame{position:relative;overflow:hidden;aspect-ratio:5/4;height:auto}
+.ba-shot{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;background:#fff;scrollbar-width:thin}
 .ba-shot img{width:100%;height:auto;display:block}
 .ba-frame iframe{position:absolute;top:0;left:0;width:200%;height:200%;border:0;transform:scale(.5);transform-origin:top left}
 .ba-link{margin-top:22px}
@@ -1996,7 +1991,7 @@ footer{background:var(--ink)}
 /* 2. TV guide: printed listings */
 .tvg-wrap{margin-top:40px}
 .tvg-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.tvg{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px}
+.tvg{width:100%;border-collapse:collapse;font-size:13.5px}
 .tvg th{text-align:left;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-m);font-weight:600;padding:12px 10px 10px 0;border-bottom:1px solid var(--ink)}
 .tvg td{padding:12px 10px 12px 0;border-bottom:1px dotted rgba(44,45,54,.35);vertical-align:top;color:var(--ink-s)}
 .tvg tbody tr{cursor:pointer;transition:background .18s}
@@ -2037,8 +2032,6 @@ footer{background:var(--ink)}
 .fsub-power i::after{content:"";position:absolute;left:50%;top:-5px;width:2px;height:11px;background:#fff;transform:translateX(-50%)}
 
 /* 4. the "before" channel: a rerun card in the lineup */
-.ch-before .ch-n{color:#9a4a2e}
-.ch-before .ch-meta::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#9a4a2e;margin-right:7px;vertical-align:1px}
 
 /* 5. print this receipt */
 .rc-print{display:inline-block;margin-top:18px;background:none;border:0;border-bottom:1px solid currentColor;padding:0 0 2px;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink-s)}
@@ -2130,23 +2123,6 @@ footer{background:var(--ink)}
 @media(max-width:750px){.door-wall{padding-left:16px;gap:14px}.door-wall picture{width:min(50%,190px)}.door-sign{margin-top:46%}}
 @media(prefers-reduced-motion:reduce){.door-wall picture{transition:none}.door:hover .door-wall picture{transform:none}}
 
-/* before/after slider */
-.cmp{position:relative;aspect-ratio:1280/1013;overflow:hidden;border:1px solid var(--border);background:var(--cream-w);user-select:none;margin-top:8px}
-.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.cmp-before,.cmp-after{position:absolute;inset:0}
-.cmp-before{clip-path:inset(0 calc(100% - var(--cut)) 0 0)}
-.cmp-tag{position:absolute;top:12px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;padding:6px 10px;background:rgba(44,45,54,.85);color:#fff}
-.cmp-before .cmp-tag{left:12px}
-.cmp-after .cmp-tag{right:12px;background:var(--forest)}
-.cmp-bar{position:absolute;top:0;bottom:0;left:var(--cut);width:2px;background:#fff;transform:translateX(-1px);box-shadow:0 0 0 1px rgba(0,0,0,.25)}
-.cmp-bar i{position:absolute;left:50%;top:50%;width:40px;height:40px;transform:translate(-50%,-50%);border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.35)}
-.cmp-bar i::before,.cmp-bar i::after{content:"";position:absolute;top:50%;width:7px;height:7px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
-.cmp-bar i::before{left:9px;transform:translateY(-50%) rotate(-45deg)}
-.cmp-bar i::after{right:9px;transform:translateY(-50%) rotate(135deg)}
-.cmp input[type=range]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none}
-.cmp input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:44px;height:100%}
-.cmp input[type=range]::-moz-range-thumb{width:44px;height:100%;border:0;background:transparent}
-
 /* Denver clock */
 .denver{display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-m);margin-top:14px}
 .denver:empty{display:none}
@@ -2201,3 +2177,5 @@ footer{background:var(--ink)}
 .wurl{position:relative;z-index:1;flex:1;text-align:center;font-family:var(--sans);font-weight:600;font-size:.6rem;letter-spacing:.08em;color:var(--ink);background:#e9e4d8;padding:0 .5rem;margin:0 .4rem}
 .cstudy-media,.spotlight-card .cstudy-media{border:1px solid var(--ink);border-radius:0;box-shadow:3px 3px 0 var(--ink)}
 .cstudy-frame{border-top:0}
+
+@media(max-width:700px){.tvg-l,.tvg th:last-child{display:none}}

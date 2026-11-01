@@ -192,16 +192,4 @@
   }
 
   /* services: the doors open as they come into view */
-  var doors=document.querySelectorAll('.door');
-  if(doors.length&&'IntersectionObserver' in window){
-    var dio=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-open');dio.unobserve(en.target);}});},{threshold:.25});
-    doors.forEach(function(d){if(reduce)d.classList.add('is-open');else dio.observe(d);});
-  }
-
-  /* before/after slider */
-  document.querySelectorAll('.cmp').forEach(function(c){
-    var r=c.querySelector('input[type=range]');if(!r)return;
-    var set=function(){c.style.setProperty('--cut',r.value+'%');};
-    r.addEventListener('input',set);set();
-  });
 })();

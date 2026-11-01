@@ -196,7 +196,6 @@
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://www.sanare-colorado.com/" data-url="https://www.sanare-colorado.com/" data-still="images/tv/sanare.webp" data-blurb="Stayed on Squarespace. Got new type, new color and 21 rewritten service pages."><span class="ch-n">09</span><span class="ch-name">Sanare Psychosocial Rehab</span><span class="ch-meta">Squarespace redesign · Denver</span></button></li>
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://workwithbrunson.com/" data-url="https://workwithbrunson.com/" data-still="images/tv/brunson.webp" data-blurb="Owner's rep and project management for multifamily property. Zero clinical language required."><span class="ch-n">10</span><span class="ch-name">BrunsonWorks</span><span class="ch-meta">Not therapy · Denver</span></button></li>
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://logdogtimberworks.com/" data-url="https://logdogtimberworks.com/" data-still="images/tv/logdog.webp" data-blurb="Hand-cut timber frame pergolas, and a service-area page covering sixteen towns."><span class="ch-n">11</span><span class="ch-name">Log Dog Timberworks</span><span class="ch-meta">Not therapy · Denver metro</span></button></li>
-          <li><button type="button" class="ch ch-before" aria-pressed="false" data-src="" data-url="work/#sanare" data-still="images/tv/sanare-before.webp" data-blurb="Late rerun: the Sanare homepage before the redesign. Channel 09 is the after."><span class="ch-n">00</span><span class="ch-name">Sanare, the before</span><span class="ch-meta">Rerun &middot; the old site</span></button></li>
         </ol>
         <a class="cs-link guide-more" href="work/">Read the full case studies</a>
       </div>
@@ -814,7 +813,7 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
   /* hero: "Now showing" cycles through the lineup; a click tunes the set */
   var now=document.getElementById('heroNow');
   if(now){
-    var live=chs.filter(function(c){return !c.classList.contains('ch-before');}),ni=0,nt=0;
+    var live=chs.slice(),ni=0,nt=0;
     function show(){now.textContent=': '+live[ni].querySelector('.ch-name').textContent;now.dataset.i=chs.indexOf(live[ni]);}
     now.hidden=false;show();
     if(!reduce){nt=setInterval(function(){now.classList.add('is-out');setTimeout(function(){ni=(ni+1)%live.length;show();now.classList.remove('is-out');},260);},2800);}
