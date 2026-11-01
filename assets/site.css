@@ -1005,6 +1005,8 @@ footer{background:var(--ink)}
   .stats-inner{grid-template-columns:1fr;gap:20px}
   /* process */
   .process-inner{grid-template-columns:1fr;gap:36px}
+  .process-left{display:contents}
+  .pstrip-mini{order:2;margin-top:8px;max-width:none}
   /* work */
   .work-grid{grid-template-columns:1fr}
   .wframe{height:220px}
@@ -1750,18 +1752,17 @@ footer{background:var(--ink)}
 /* ═══════════════════════════════
    HOMEPAGE STRIPS, pricing + contact
    ═══════════════════════════════ */
-.pstrip{padding:var(--sy) 0;background:var(--cream-s)}
-.pstrip-inner{max-width:760px;margin:0 auto;padding:0 var(--gut)}
-.pstrip-head h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(34px,4vw,58px);line-height:1.04;margin:12px 0 34px}
+.pstrip-mini{margin-top:40px;max-width:400px}
+.pstrip-mini .eyebrow{margin-bottom:14px}
 .pstrip-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
 .pstrip-list li{border-bottom:1px dashed rgba(44,45,54,.3)}
-.pstrip-list a{display:flex;align-items:baseline;gap:14px;padding:18px 0;transition:padding .25s}
+.pstrip-list a{display:flex;align-items:baseline;gap:12px;padding:14px 0;transition:padding .25s}
 .pstrip-list a:hover{padding-left:8px}
-.ps-name{font-family:var(--serif-d);font-size:clamp(19px,2.2vw,26px);color:var(--ink);transition:color .2s}
+.ps-name{font-family:var(--serif-d);font-size:18px;color:var(--ink);transition:color .2s}
 .pstrip-list a:hover .ps-name{color:var(--forest-2)}
 .pstrip-list i{flex:1;border-bottom:1px dotted rgba(44,45,54,.45);transform:translateY(-6px);min-width:24px}
-.ps-price{font-family:var(--serif-d);font-size:clamp(22px,2.4vw,30px);color:var(--forest);white-space:nowrap;font-variant-numeric:tabular-nums}
-.pstrip-foot{margin-top:22px;font-size:15px;line-height:1.7;color:var(--ink-s)}
+.ps-price{font-family:var(--serif-d);font-size:20px;color:var(--forest);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pstrip-foot{margin-top:16px;font-size:14px;line-height:1.7;color:var(--ink-s)}
 .pstrip-foot a{color:var(--forest);border-bottom:1px solid var(--forest-l)}
 .pstrip-foot a:hover{color:var(--forest-2);border-color:var(--forest-2)}
 
