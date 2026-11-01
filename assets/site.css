@@ -1931,3 +1931,37 @@ footer{background:var(--ink)}
   .csx-table th,.csx-table td{padding-right:10px}
   .csx-table tbody th{width:auto}
 }
+
+/* ═══════════════════════════════════════════════
+   HERO v2: a sentence in the site's own serif, the stars as a real
+   element, one line of actions. Mobile: first screen is the hero.
+   ═══════════════════════════════════════════════ */
+.hero-eyebrow{margin-bottom:18px}
+.hero-eyebrow::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#b8432a;margin-right:10px;vertical-align:1px;animation:heroblink 1.6s steps(1) infinite}
+@keyframes heroblink{50%{opacity:.25}}
+.hero-h1{
+  font-family:var(--serif-d);font-weight:400;font-style:normal;text-transform:none;letter-spacing:-.01em;
+  font-size:clamp(40px,4.6vw,68px);line-height:1.02;color:var(--ink);max-width:12ch;
+}
+.hero-h1 em{font-style:italic;color:var(--forest)}
+.hero-sub{font-size:16px;max-width:46ch}
+.hero-btns{gap:22px}
+.hero-btns .btn{width:auto}
+@media(max-width:750px){
+  /* header: tighter rows, hamburger shares its row with the contact link */
+  .header-inner{padding:14px var(--gut) 12px}
+  .hdr-brand-rule{margin:8px auto 10px}
+  .subnav-inner{padding:12px var(--gut)}
+  .snav-cta{display:block;font-size:11px}
+  /* hero fills the first screen, stars sit top-right at full strength */
+  .hero{min-height:calc(100svh - 150px);display:flex;align-items:flex-end;padding:0}
+  .hero::after{background:rgba(241,235,224,.84)}
+  .hero-figure{opacity:.9;right:-16%;top:-7%;width:58%;transform:rotate(9deg);z-index:2}
+  .hero-figure img{filter:saturate(.35) contrast(.95) brightness(1.04)}
+  .hero-content{padding:150px var(--gut) 44px}
+  .hero-eyebrow{margin-bottom:14px}
+  .hero-h1{font-size:clamp(38px,11vw,52px);max-width:none}
+  .hero-sub{font-size:15.5px;margin-bottom:26px}
+  .hero-btns{flex-direction:column;align-items:flex-start;gap:16px}
+  .hero-btns .btn{width:auto;padding:14px 22px}
+}
