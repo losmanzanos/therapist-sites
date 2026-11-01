@@ -140,7 +140,7 @@
     <div class="fcard" data-r data-d="1">
       <form id="cform" aria-label="Start a project" action="https://formspree.io/f/maqpokge" method="POST">
         <div class="frow"><label for="nm">Your name</label><input id="nm" name="Name" type="text" autocomplete="name" required></div>
-        <div class="frow"><label for="em">Email address</label><input id="em" name="Email" type="email" autocomplete="email" required></div>
+        <div class="frow"><label for="em">Email address</label><input id="em" name="email" type="email" autocomplete="email" required></div>
         <div class="frow"><label for="ph">Phone (optional)</label><input id="ph" name="Phone" type="tel" autocomplete="tel"></div>
         <div class="frow">
           <span class="flabel" id="pl-l">What's the project? Turn the dial.</span>
@@ -167,7 +167,6 @@
             </ul>
           </div>
           <input type="hidden" name="_subject" value="Therapist Web Design: new note from the site">
-          <input type="hidden" name="_replyto" value="">
         </div>
         <div class="frow"><label for="site">Your current site, if you have one</label><input id="site" name="Current site" type="url" inputmode="url" autocomplete="url" placeholder="https://" spellcheck="false"></div>
         <div class="frow"><label for="msg">Tell me about your practice</label><textarea id="msg" name="Message" required placeholder="What kind of practice, who you want to reach, and what you love or hate about your current setup. If you pasted a link above, tell me what bugs you about it."></textarea></div>
@@ -249,9 +248,8 @@ var suc=document.getElementById('fsuc');
 if(form){
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var subj=form.querySelector('[name=_subject]'),pl=form.querySelector('[name=Project]:checked'),cs=form.querySelector('#site'),nm=form.querySelector('#nm'),rt=form.querySelector('[name=_replyto]'),em=form.querySelector('#em');
+    var subj=form.querySelector('[name=_subject]'),pl=form.querySelector('[name=Project]:checked'),cs=form.querySelector('#site'),nm=form.querySelector('#nm');
     if(subj&&pl)subj.value='New note from '+(nm&&nm.value?nm.value.trim():'the site')+' \u00b7 '+pl.value+(cs&&cs.value?' \u00b7 '+cs.value.replace(/^https?:\/\//,'').replace(/\/$/,''):'');
-    if(rt&&em)rt.value=em.value;
     var btn=form.querySelector('.fsub');
     btn.disabled=true;
     btn.textContent='Sending…';
