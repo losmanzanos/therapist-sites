@@ -2166,3 +2166,19 @@ footer{background:var(--ink)}
 .smpte{animation:barsflicker 7s steps(1) infinite}
 @keyframes barsflicker{0%,96%{filter:none}97%{filter:brightness(1.25) contrast(1.1)}98%{filter:none}99%{filter:brightness(.85)}}
 @media(prefers-reduced-motion:reduce){.smpte,.upnext-k i{animation:none}.door-leaf{transition:none}.chflip{display:none}}
+
+/* About: the one team photo, printed and taped up */
+.photo-print{position:relative;margin:28px 0 0 auto;max-width:420px;background:#f6f1e6;padding:14px 14px 18px;box-shadow:0 1px 2px rgba(44,45,54,.18),0 18px 34px rgba(44,45,54,.16);transform:rotate(-2.2deg);transition:transform .5s cubic-bezier(.3,1.3,.4,1)}
+.photo-print:hover{transform:rotate(-.6deg) scale(1.01)}
+.pp-img{position:relative;overflow:hidden;background:#e7e0d2}
+.pp-img img{display:block;width:100%;height:auto;filter:sepia(.32) contrast(1.04) saturate(.85) brightness(1.02)}
+.pp-img::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(60,40,20,.22) 100%),repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+.pp-tape{position:absolute;left:50%;top:-14px;width:110px;height:30px;transform:translateX(-50%) rotate(-3deg);background:rgba(232,214,170,.75);box-shadow:0 1px 2px rgba(0,0,0,.12);backdrop-filter:blur(1px)}
+.pp-tape::before,.pp-tape::after{content:"";position:absolute;top:0;bottom:0;width:6px;background:repeating-linear-gradient(180deg,transparent 0 3px,rgba(246,241,230,.9) 3px 5px)}
+.pp-tape::before{left:0}.pp-tape::after{right:0}
+.photo-print figcaption{padding:14px 4px 0}
+.pp-cap{display:block;font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.35;color:var(--ink)}
+.pp-note{display:block;margin-top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-m)}
+@media(max-width:750px){.mission-img:has(.photo-print){display:block;margin:34px 0 0}.photo-print{margin:0 auto;transform:rotate(-1.4deg)}}
+@media(prefers-reduced-motion:reduce){.photo-print,.photo-print:hover{transform:none;transition:none}}
+.mission .denver{margin-top:22px;padding-top:16px;border-top:1px solid var(--border)}
