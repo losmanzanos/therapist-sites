@@ -139,10 +139,9 @@
     </div>
     <div class="fcard" data-r data-d="1">
       <form id="cform" aria-label="Start a project" action="https://formspree.io/f/maqpokge" method="POST">
-        <div class="frow"><label for="nm">Your name</label><input id="nm" name="name" type="text" autocomplete="name" required></div>
-        <div class="frow"><label for="em">Email address</label><input id="em" name="email" type="email" autocomplete="email" required></div>
-        <div class="frow"><label for="ph">Phone (optional)</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="frow"><label for="site">Your current site, if you have one</label><input id="site" name="current_site" type="url" inputmode="url" autocomplete="url" placeholder="https://" spellcheck="false"></div>
+        <div class="frow"><label for="nm">Your name</label><input id="nm" name="Name" type="text" autocomplete="name" required></div>
+        <div class="frow"><label for="em">Email address</label><input id="em" name="Email" type="email" autocomplete="email" required></div>
+        <div class="frow"><label for="ph">Phone (optional)</label><input id="ph" name="Phone" type="tel" autocomplete="tel"></div>
         <div class="frow">
           <span class="flabel" id="pl-l">What's the project? Turn the dial.</span>
           <div class="dialpick" id="dialpick" role="radiogroup" aria-labelledby="pl-l">
@@ -160,16 +159,18 @@
               </button>
             </div>
             <ul class="dp-list">
-              <li><label class="dp-opt"><input type="radio" name="plan" value="Not sure yet, let's talk" checked><span class="dp-n">2</span><span class="dp-t">Not sure yet</span></label></li>
-              <li><label class="dp-opt"><input type="radio" name="plan" value="New website, solo practice"><span class="dp-n">3</span><span class="dp-t">New site, solo practice</span></label></li>
-              <li><label class="dp-opt"><input type="radio" name="plan" value="New website, group practice"><span class="dp-n">4</span><span class="dp-t">New site, group practice</span></label></li>
-              <li><label class="dp-opt"><input type="radio" name="plan" value="Fix the site I already have"><span class="dp-n">5</span><span class="dp-t">Fix the site I have</span></label></li>
-              <li><label class="dp-opt"><input type="radio" name="plan" value="Something else"><span class="dp-n">6</span><span class="dp-t">Something else</span></label></li>
+              <li><label class="dp-opt"><input type="radio" name="Project" value="Not sure yet, let's talk" checked><span class="dp-n">2</span><span class="dp-t">Not sure yet</span></label></li>
+              <li><label class="dp-opt"><input type="radio" name="Project" value="New website, solo practice"><span class="dp-n">3</span><span class="dp-t">New site, solo practice</span></label></li>
+              <li><label class="dp-opt"><input type="radio" name="Project" value="New website, group practice"><span class="dp-n">4</span><span class="dp-t">New site, group practice</span></label></li>
+              <li><label class="dp-opt"><input type="radio" name="Project" value="Fix the site I already have"><span class="dp-n">5</span><span class="dp-t">Fix the site I have</span></label></li>
+              <li><label class="dp-opt"><input type="radio" name="Project" value="Something else"><span class="dp-n">6</span><span class="dp-t">Something else</span></label></li>
             </ul>
           </div>
           <input type="hidden" name="_subject" value="Therapist Web Design: new note from the site">
+          <input type="hidden" name="_replyto" value="">
         </div>
-        <div class="frow"><label for="msg">Tell me about your practice</label><textarea id="msg" name="message" required placeholder="What kind of practice, who you want to reach, and what you love or hate about your current setup. If you pasted a link above, tell me what bugs you about it."></textarea></div>
+        <div class="frow"><label for="site">Your current site, if you have one</label><input id="site" name="Current site" type="url" inputmode="url" autocomplete="url" placeholder="https://" spellcheck="false"></div>
+        <div class="frow"><label for="msg">Tell me about your practice</label><textarea id="msg" name="Message" required placeholder="What kind of practice, who you want to reach, and what you love or hate about your current setup. If you pasted a link above, tell me what bugs you about it."></textarea></div>
         <button class="fsub fsub-power" type="submit"><i aria-hidden="true"></i>Send my message</button>
         <p class="fnote">I'll respond within one business day, and your email goes on no list.</p>
       </form>
@@ -248,8 +249,9 @@ var suc=document.getElementById('fsuc');
 if(form){
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var subj=form.querySelector('[name=_subject]'),pl=form.querySelector('#pl'),cs=form.querySelector('#site');
-    if(subj&&pl)subj.value='TWD: '+pl.value+(cs&&cs.value?' · '+cs.value.replace(/^https?:\/\//,''):'');
+    var subj=form.querySelector('[name=_subject]'),pl=form.querySelector('[name=Project]:checked'),cs=form.querySelector('#site'),nm=form.querySelector('#nm'),rt=form.querySelector('[name=_replyto]'),em=form.querySelector('#em');
+    if(subj&&pl)subj.value='New note from '+(nm&&nm.value?nm.value.trim():'the site')+' \u00b7 '+pl.value+(cs&&cs.value?' \u00b7 '+cs.value.replace(/^https?:\/\//,'').replace(/\/$/,''):'');
+    if(rt&&em)rt.value=em.value;
     var btn=form.querySelector('.fsub');
     btn.disabled=true;
     btn.textContent='Sending…';
