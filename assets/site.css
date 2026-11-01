@@ -1983,10 +1983,10 @@ footer{background:var(--ink)}
    ═══════════════════════════════════════════════ */
 
 /* 1. hero: "Now showing: <channel>" cycles through the lineup */
-.hero-now{font-family:var(--serif-d);font-style:italic;text-transform:none;letter-spacing:0;font-size:15px;color:var(--ink);margin-left:2px;border-bottom:1px solid transparent;transition:opacity .26s,transform .26s,border-color .2s;display:inline-block}
+.hero-now{font-family:var(--serif-d);font-style:italic;text-transform:none;letter-spacing:0;font-size:15px;color:var(--ink);margin-left:6px;border-bottom:1px solid transparent;transition:opacity .26s,transform .26s,border-color .2s;display:inline-block}
 .hero-now.is-out{opacity:0;transform:translateY(-4px)}
 .hero-now:hover{border-color:var(--forest);color:var(--forest)}
-@media(max-width:750px){.hero-now{display:block;margin:6px 0 0 18px;font-size:16px}}
+@media(max-width:750px){.hero-now{display:block;margin:6px 0 0 0;font-size:16px}}
 
 /* 2. TV guide: printed listings */
 
@@ -2167,7 +2167,7 @@ footer{background:var(--ink)}
 .wk-index-section{padding-bottom:0}
 .wk-index ol{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,4vw,64px);border-top:1px solid var(--ink)}
 .wk-index li{border-bottom:1px dotted rgba(44,45,54,.35)}
-.wk-index a{display:grid;grid-template-columns:34px 1fr auto;align-items:baseline;gap:12px;padding:13px 0;color:var(--ink)}
+.wk-index a{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:12px;padding:13px 0;color:var(--ink)}
 .wk-index span{font-family:var(--serif-d);font-style:italic;font-size:15px;color:var(--ink-m)}
 .wk-index strong{font-family:var(--serif-d);font-weight:400;font-size:17px;line-height:1.25;transition:color .2s}
 .wk-index em{font-style:normal;font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-m);white-space:nowrap}
