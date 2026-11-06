@@ -1,0 +1,454 @@
+/*
+Theme Name: CoSALT
+Theme URI: https://cosaltconsulting.com/
+Author: Chad Moravec
+Author URI: https://therapistweb.design/
+Description: Custom block theme for CoSALT Consulting Ltd. Built on core blocks only, so pages stay editable in the standard WordPress editor and plugins such as Ninja Forms keep working.
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 7.4
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: cosalt
+*/
+
+/* ---------- Base ---------- */
+:root {
+	--cosalt-rule: 1px solid var(--wp--preset--color--rule);
+	--cosalt-ink-rule: 1px solid var(--wp--preset--color--ink);
+	--cosalt-gutter: clamp(1.5rem, 4vw, 4rem);
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-variant-numeric: lining-nums;
+}
+
+::selection { background: var(--wp--preset--color--oxblood); color: var(--wp--preset--color--paper); }
+
+a { text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:where(a, button, input, textarea, select):focus-visible { outline: 2px solid var(--wp--preset--color--oxblood); outline-offset: 3px; }
+
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+.skip-link.screen-reader-text:focus { background: var(--wp--preset--color--paper); color: var(--wp--preset--color--ink); }
+
+/* ---------- Header ---------- */
+.cosalt-header {
+	border-bottom: var(--cosalt-rule);
+	padding-top: 1.15rem;
+	padding-bottom: 1.15rem;
+}
+.cosalt-header > .wp-block-group { gap: 1.5rem; }
+.cosalt-brand { gap: 0.9rem !important; }
+.cosalt-brand .wp-block-image { margin: 0; }
+.cosalt-brand .wp-block-image img { width: 64px; height: auto; display: block; }
+.cosalt-brand__name {
+	margin: 0 !important;
+	font-family: var(--wp--preset--font-family--caslon);
+	font-size: 1.6rem;
+	line-height: 1;
+	letter-spacing: 0.01em;
+}
+.cosalt-brand__name a { text-decoration: none; }
+.cosalt-brand__sub {
+	margin: 0.3rem 0 0 !important;
+	font-size: var(--wp--preset--font-size--x-small);
+	color: var(--wp--preset--color--ink-soft);
+	letter-spacing: 0.04em;
+	line-height: 1.2;
+}
+.cosalt-header .wp-block-navigation { gap: 1.75rem; }
+.cosalt-header .wp-block-navigation a { text-decoration: none; }
+.cosalt-header .wp-block-navigation a:hover,
+.cosalt-header .wp-block-navigation .current-menu-item > a { text-decoration: underline; text-decoration-thickness: 1px; }
+.cosalt-header__phone {
+	margin: 0 !important;
+	font-size: var(--wp--preset--font-size--small);
+	font-variant-numeric: tabular-nums;
+	padding-left: 1.75rem;
+	border-left: var(--cosalt-rule);
+}
+.cosalt-header__phone a { text-decoration: none; }
+@media (max-width: 781px) {
+	.cosalt-header__phone { display: none; }
+	.cosalt-brand .wp-block-image img { width: 48px; }
+	.cosalt-brand__name { font-size: 1.35rem; }
+}
+.wp-block-navigation__responsive-container.is-menu-open {
+	background: var(--wp--preset--color--paper) !important;
+	padding: 1.5rem clamp(1rem, 4vw, 3rem);
+}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
+	gap: 1.1rem;
+	font-family: var(--wp--preset--font-family--caslon);
+	font-size: 1.75rem;
+	font-weight: 400;
+}
+
+/* ---------- Shared section rhythm ---------- */
+.cosalt-section { padding-top: var(--wp--preset--spacing--60); padding-bottom: var(--wp--preset--spacing--60); }
+.cosalt-section--tight { padding-top: var(--wp--preset--spacing--50); padding-bottom: var(--wp--preset--spacing--50); }
+.cosalt-section--top-only { padding-top: var(--wp--preset--spacing--60); padding-bottom: 0; }
+.cosalt-rule-top { border-top: var(--cosalt-ink-rule); }
+
+.cosalt-label {
+	font-family: var(--wp--preset--font-family--public-sans) !important;
+	font-size: var(--wp--preset--font-size--x-small) !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.08em !important;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--oxblood);
+	line-height: 1.4 !important;
+	margin-top: 0.35rem !important;
+}
+
+.cosalt-gutter.wp-block-columns { gap: var(--cosalt-gutter); margin-bottom: 0; }
+
+.is-style-lead,
+.cosalt-lead {
+	font-size: var(--wp--preset--font-size--large) !important;
+	line-height: 1.5;
+	max-width: 38rem;
+}
+
+.cosalt-more { font-size: var(--wp--preset--font-size--small); font-weight: 500; }
+
+/* ---------- Home: hero ---------- */
+.cosalt-hero { padding-top: var(--wp--preset--spacing--60); padding-bottom: var(--wp--preset--spacing--50); }
+.cosalt-hero > .wp-block-columns { gap: clamp(2rem, 5vw, 5.5rem); align-items: end; margin-bottom: 0; }
+.cosalt-hero h1 { max-width: 13ch; margin-top: 0; margin-bottom: 1.75rem; }
+.cosalt-hero__reach {
+	margin-top: 2rem !important;
+	padding-top: 1.1rem;
+	border-top: var(--cosalt-ink-rule);
+	max-width: 30rem;
+	font-size: var(--wp--preset--font-size--small);
+	font-variant-numeric: tabular-nums;
+}
+.cosalt-hero__reach strong { font-weight: 600; }
+
+.cosalt-figure { margin: 0; }
+.cosalt-figure img { display: block; width: 100%; height: auto; }
+.cosalt-figure figcaption {
+	margin-top: 0.85rem;
+	padding-top: 0.7rem;
+	border-top: var(--cosalt-rule);
+	max-width: 34rem;
+}
+
+/* ---------- Ledger (service lines) ---------- */
+.cosalt-ledger { border-top: var(--cosalt-ink-rule); }
+.cosalt-ledger > * { margin-block-start: 0 !important; }
+.cosalt-ledger__row {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+	column-gap: 2rem;
+	row-gap: 0.4rem;
+	padding-top: 1.3rem;
+	padding-bottom: 1.3rem;
+	border-bottom: var(--cosalt-rule);
+}
+.cosalt-ledger__row > * { margin: 0 !important; }
+.cosalt-ledger__row h3 { font-size: 1.3rem; line-height: 1.3; }
+.cosalt-ledger__row p { color: var(--wp--preset--color--ink-soft); }
+@media (max-width: 781px) {
+	.cosalt-ledger__row { grid-template-columns: 1fr; }
+}
+.cosalt-aside-note {
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--ink-soft);
+	max-width: 42rem;
+	margin-top: 1.75rem !important;
+}
+
+/* ---------- Statement band ---------- */
+.cosalt-band { background: var(--wp--preset--color--paper-deep); }
+.cosalt-statement { padding-top: var(--wp--preset--spacing--60); padding-bottom: var(--wp--preset--spacing--60); }
+.cosalt-statement__lede {
+	font-family: var(--wp--preset--font-family--caslon);
+	font-size: var(--wp--preset--font-size--xx-large) !important;
+	line-height: 1.16;
+	letter-spacing: -0.01em;
+	max-width: 18ch;
+	margin: 0 !important;
+}
+.cosalt-statement__body {
+	max-width: 33rem;
+	margin-top: 1.75rem !important;
+	font-size: var(--wp--preset--font-size--large);
+	line-height: 1.55;
+}
+@media (min-width: 900px) {
+	.cosalt-statement > .wp-block-group { margin-left: calc(25% + 1rem) !important; }
+}
+
+/* ---------- Docket (projects) ---------- */
+.cosalt-docket { border-top: var(--cosalt-ink-rule); }
+.cosalt-docket > * { margin-block-start: 0 !important; }
+.cosalt-docket__entry {
+	display: grid;
+	grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+	grid-auto-flow: row dense;
+	column-gap: clamp(1.5rem, 4vw, 4rem);
+	padding-top: 1.75rem;
+	padding-bottom: 1.9rem;
+	border-bottom: var(--cosalt-rule);
+}
+.cosalt-docket__entry > * { grid-column: 2; margin: 0 !important; }
+.cosalt-docket__entry > * + * { margin-top: 0.75rem !important; }
+.cosalt-docket__entry > .cosalt-docket__meta,
+.cosalt-docket__entry > .cosalt-docket__date {
+	grid-column: 1;
+	grid-row: 1 / span 30;
+	align-self: start;
+	margin-top: 0.3rem !important;
+}
+.cosalt-docket__meta > * { margin: 0 !important; }
+.cosalt-docket__entry > .cosalt-docket__meta + * { margin-top: 0 !important; }
+@media (max-width: 781px) { .cosalt-docket__entry > .cosalt-docket__meta + * { margin-top: 0.75rem !important; } }
+.cosalt-docket__date {
+	font-size: var(--wp--preset--font-size--small);
+	font-variant-numeric: tabular-nums;
+	font-weight: 500;
+}
+.cosalt-docket__type {
+	font-size: var(--wp--preset--font-size--x-small);
+	color: var(--wp--preset--color--ink-soft);
+	margin-top: 0.35rem !important;
+}
+.cosalt-docket__entry h2,
+.cosalt-docket__entry h3 { font-size: var(--wp--preset--font-size--x-large); line-height: 1.2; max-width: 30ch; }
+.cosalt-docket--compact .cosalt-docket__entry h3 { font-size: 1.35rem; }
+.cosalt-docket__entry p:not(.cosalt-docket__date):not(.cosalt-docket__type),
+.cosalt-docket__entry ul { max-width: 40rem; }
+.cosalt-docket__entry ul { padding-left: 1.1rem; }
+.cosalt-docket__entry li + li { margin-top: 0.35rem; }
+.cosalt-docket__entry li::marker { color: var(--wp--preset--color--oxblood); }
+@media (max-width: 781px) {
+	.cosalt-docket__entry { grid-template-columns: 1fr; }
+	.cosalt-docket__entry > *,
+	.cosalt-docket__entry > .cosalt-docket__meta,
+	.cosalt-docket__entry > .cosalt-docket__date { grid-column: 1; grid-row: auto; }
+	.cosalt-docket__entry > .cosalt-docket__meta { margin-bottom: 0.4rem !important; }
+}
+.cosalt-docket__ongoing { color: var(--wp--preset--color--oxblood); }
+
+/* ---------- Specimens (town shapes) ---------- */
+.wp-block-gallery.cosalt-specimens { gap: 1.5rem 1.25rem !important; margin-top: 0; }
+.wp-block-gallery.cosalt-specimens .wp-block-image { display: flex; flex-direction: column !important; align-items: flex-start; }
+.wp-block-gallery.cosalt-specimens .wp-block-image img { width: 100% !important; height: auto !important; aspect-ratio: 1; object-fit: contain !important; flex: none !important; }
+.wp-block-gallery.cosalt-specimens.has-nested-images figure.wp-block-image figcaption {
+	position: static !important;
+	background: none !important;
+	color: var(--wp--preset--color--ink-soft) !important;
+	padding: 0.45rem 0 0 !important;
+	margin: 0.4rem 0 0 !important;
+	border-top: var(--cosalt-rule);
+	width: 100%;
+	text-align: left !important;
+	font-size: var(--wp--preset--font-size--x-small) !important;
+	max-height: none !important;
+	overflow: visible !important;
+	text-shadow: none !important;
+	-webkit-mask-image: none !important;
+	mask-image: none !important;
+	backdrop-filter: none !important;
+}
+.wp-block-gallery.cosalt-specimens.has-nested-images figure.wp-block-image::before { display: none !important; }
+.wp-block-gallery.cosalt-specimens > .blocks-gallery-caption { text-align: left; margin-top: 0.75rem; font-size: var(--wp--preset--font-size--x-small); color: var(--wp--preset--color--ink-soft); max-width: 34rem; }
+
+/* ---------- Index list (areas of expertise) ---------- */
+.cosalt-index {
+	list-style: none;
+	padding: 0 !important;
+	margin: 0;
+	columns: 2;
+	column-gap: clamp(1.5rem, 4vw, 4rem);
+	border-top: var(--cosalt-ink-rule);
+}
+.cosalt-index li {
+	break-inside: avoid;
+	padding: 0.7rem 0;
+	border-bottom: var(--cosalt-rule);
+	margin: 0 !important;
+}
+@media (max-width: 640px) { .cosalt-index { columns: 1; } }
+
+/* ---------- Callout (contact strip) ---------- */
+.cosalt-callout { border-top: var(--cosalt-ink-rule); border-bottom: var(--cosalt-ink-rule); padding-top: var(--wp--preset--spacing--50); padding-bottom: var(--wp--preset--spacing--50); }
+.cosalt-callout > .wp-block-columns { gap: var(--cosalt-gutter); margin-bottom: 0; }
+.cosalt-callout h2 { margin-top: 0; font-size: var(--wp--preset--font-size--xx-large); line-height: 1.1; }
+.cosalt-callout__line {
+	margin: 0 !important;
+	font-family: var(--wp--preset--font-family--caslon);
+	font-size: var(--wp--preset--font-size--x-large);
+	line-height: 1.3;
+	font-variant-numeric: lining-nums tabular-nums;
+}
+.cosalt-callout__line a { overflow-wrap: anywhere; }
+@media (max-width: 1100px) { .cosalt-callout__line { font-size: var(--wp--preset--font-size--large); } }
+.cosalt-callout__line + .cosalt-callout__line { margin-top: 0.4rem !important; }
+.cosalt-callout__note { margin-top: 1.25rem !important; font-size: var(--wp--preset--font-size--small); color: var(--wp--preset--color--ink-soft); }
+
+/* ---------- Page heads ---------- */
+.cosalt-pagehead { padding-top: var(--wp--preset--spacing--60); padding-bottom: var(--wp--preset--spacing--50); border-bottom: var(--cosalt-rule); }
+.cosalt-pagehead > .wp-block-columns { gap: clamp(2rem, 5vw, 5.5rem); margin-bottom: 0; align-items: end; }
+.cosalt-pagehead h1 { margin-top: 0; margin-bottom: 1.5rem; }
+
+/* ---------- Prose sections ---------- */
+.cosalt-prose h2 { margin-top: 0; }
+.cosalt-prose > * + h3 { margin-top: 2.5rem; }
+.cosalt-prose p { max-width: 40rem; }
+
+/* ---------- Details list (contact) ---------- */
+.cosalt-details { border-top: var(--cosalt-ink-rule); }
+.cosalt-details > * { margin-block-start: 0 !important; }
+.cosalt-details__row {
+	display: grid;
+	grid-template-columns: 8rem minmax(0, 1fr);
+	column-gap: 1.5rem;
+	padding: 1rem 0;
+	border-bottom: var(--cosalt-rule);
+}
+.cosalt-details__row > * { margin: 0 !important; }
+.cosalt-details__row > :first-child { font-size: var(--wp--preset--font-size--x-small); color: var(--wp--preset--color--ink-soft); padding-top: 0.3rem; }
+.cosalt-details__row > :last-child { font-family: var(--wp--preset--font-family--caslon); font-size: var(--wp--preset--font-size--large); font-variant-numeric: lining-nums tabular-nums; }
+.cosalt-details__row > :last-child small { display: block; font-family: var(--wp--preset--font-family--public-sans); font-size: var(--wp--preset--font-size--x-small); color: var(--wp--preset--color--ink-soft); margin-top: 0.15rem; }
+
+.cosalt-espanol { font-style: italic; color: var(--wp--preset--color--ink-soft); }
+
+/* ---------- Sample marker ---------- */
+.cosalt-sample {
+	border: 1px dashed var(--wp--preset--color--oxblood);
+	padding: 1.25rem;
+	aspect-ratio: 4 / 5;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	max-width: 22rem;
+}
+.cosalt-sample > * { margin: 0 !important; }
+.cosalt-sample__tag {
+	font-size: var(--wp--preset--font-size--x-small);
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--oxblood);
+}
+.cosalt-sample__text { font-size: var(--wp--preset--font-size--small); color: var(--wp--preset--color--ink-soft); margin-top: 0.3rem !important; }
+
+/* ---------- Footer ---------- */
+.cosalt-footer {
+	border-top: 3px solid var(--wp--preset--color--ink);
+	margin-top: var(--wp--preset--spacing--60);
+	padding-top: var(--wp--preset--spacing--50);
+	padding-bottom: var(--wp--preset--spacing--40);
+	font-size: var(--wp--preset--font-size--small);
+}
+.cosalt-footer .wp-block-columns { gap: var(--cosalt-gutter); margin-bottom: 0; }
+.cosalt-footer p { margin: 0 !important; }
+.cosalt-footer p + p { margin-top: 0.35rem !important; }
+.cosalt-footer__name { font-family: var(--wp--preset--font-family--caslon); font-size: 1.6rem !important; line-height: 1.1; }
+.cosalt-footer__blurb { color: var(--wp--preset--color--ink-soft); max-width: 22rem; margin-top: 0.75rem !important; }
+.cosalt-footer__head { font-size: var(--wp--preset--font-size--x-small); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--wp--preset--color--oxblood); margin-bottom: 0.6rem !important; }
+.cosalt-footer__base {
+	margin-top: var(--wp--preset--spacing--50) !important;
+	padding-top: 1rem;
+	border-top: var(--cosalt-rule);
+	font-size: var(--wp--preset--font-size--x-small);
+	color: var(--wp--preset--color--ink-soft);
+	gap: 0.75rem 2rem;
+}
+.cosalt-footer__base a { color: inherit; }
+
+/* ---------- Default page template (new pages Phia creates) ---------- */
+.cosalt-default-head { padding-top: var(--wp--preset--spacing--60); padding-bottom: var(--wp--preset--spacing--40); }
+.cosalt-default-head h1 { font-size: var(--wp--preset--font-size--xx-large); }
+.cosalt-default-body { padding-bottom: var(--wp--preset--spacing--60); }
+
+/* ---------- 404 ---------- */
+.cosalt-404 { padding-top: var(--wp--preset--spacing--70); padding-bottom: var(--wp--preset--spacing--60); }
+
+/* ---------- Ninja Forms (live contact form plugin) ---------- */
+.cosalt-form { max-width: 40rem; }
+.cosalt-form .nf-form-content { padding: 0; max-width: none; }
+.cosalt-form .nf-form-fields-required { font-size: var(--wp--preset--font-size--x-small); color: var(--wp--preset--color--ink-soft); margin-bottom: 1rem; }
+.cosalt-form .nf-field-container { margin-bottom: 1.25rem; }
+.cosalt-form .nf-field-label label,
+.cosalt-form .nf-field-label .nf-label-span {
+	font-family: var(--wp--preset--font-family--public-sans);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 500;
+	color: var(--wp--preset--color--ink);
+}
+.cosalt-form .ninja-forms-req-symbol { color: var(--wp--preset--color--oxblood); }
+.cosalt-form .nf-form-content input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio]),
+.cosalt-form .nf-form-content textarea,
+.cosalt-form .nf-form-content select {
+	background: transparent !important;
+	border: 0 !important;
+	border-bottom: 1px solid var(--wp--preset--color--ink) !important;
+	border-radius: 0 !important;
+	color: var(--wp--preset--color--ink) !important;
+	font-family: var(--wp--preset--font-family--public-sans);
+	font-size: var(--wp--preset--font-size--medium) !important;
+	padding: 0.55rem 0 !important;
+	height: auto !important;
+	box-shadow: none !important;
+}
+.cosalt-form .nf-form-content textarea { min-height: 9rem; height: 9rem !important; resize: vertical; border: 1px solid var(--wp--preset--color--ink) !important; padding: 0.7rem !important; }
+.cosalt-form .nf-form-content input:focus,
+.cosalt-form .nf-form-content textarea:focus { outline: 2px solid var(--wp--preset--color--oxblood); outline-offset: 2px; }
+.cosalt-form .nf-form-content input[type=button],
+.cosalt-form .nf-form-content input[type=submit],
+.cosalt-form .nf-form-content button {
+	background: var(--wp--preset--color--ink) !important;
+	color: var(--wp--preset--color--paper) !important;
+	border: 1px solid var(--wp--preset--color--ink) !important;
+	border-radius: 0 !important;
+	font-family: var(--wp--preset--font-family--public-sans);
+	font-size: var(--wp--preset--font-size--small) !important;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	padding: 0.85rem 1.6rem !important;
+	height: auto !important;
+	cursor: pointer;
+}
+.cosalt-form .nf-form-content input[type=button]:hover { background: var(--wp--preset--color--oxblood) !important; border-color: var(--wp--preset--color--oxblood) !important; }
+.cosalt-form .nf-error-msg,
+.cosalt-form .ninja-forms-req-symbol { color: var(--wp--preset--color--oxblood) !important; }
+.cosalt-form .nf-error .ninja-forms-field { border-color: var(--wp--preset--color--oxblood) !important; }
+.cosalt-form .nf-response-msg { font-family: var(--wp--preset--font-family--caslon); font-size: var(--wp--preset--font-size--large); }
+.cosalt-form .nf-loading-spinner { display: none; }
+.cosalt-form-fallback { border-top: var(--cosalt-ink-rule); padding-top: 1rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+	a { transition: color 120ms ease; }
+}
+
+/* ---------- Spacing refinements ---------- */
+.cosalt-prose > * + h2 { margin-top: 2.75rem !important; }
+.cosalt-prose h2 { font-size: var(--wp--preset--font-size--x-large); }
+.cosalt-band + .cosalt-callout { margin-top: var(--wp--preset--spacing--60) !important; }
+.cosalt-form .nf-form-title { display: none; }
+
+/* ---------- Mobile menu overlay ---------- */
+.cosalt-header .wp-block-navigation__responsive-container.is-menu-open {
+	padding: 1.25rem clamp(1rem, 4vw, 3rem) 2rem !important;
+}
+.cosalt-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content,
+.cosalt-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	align-items: stretch !important;
+	padding-top: 2.5rem;
+}
+.cosalt-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
+	border-bottom: 1px solid var(--wp--preset--color--rule);
+	padding-bottom: 0.7rem;
+	width: 100%;
+}
