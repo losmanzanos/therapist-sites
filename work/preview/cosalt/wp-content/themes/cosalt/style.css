@@ -452,3 +452,35 @@ p { text-wrap: pretty; }
 	padding-bottom: 0.7rem;
 	width: 100%;
 }
+
+/* ---------- Photographs ---------- */
+.cosalt-band > .cosalt-photo.alignfull { margin-top: 0 !important; margin-bottom: 0 !important; }
+.cosalt-photo img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 2400 / 1160;
+	object-fit: cover;
+	object-position: 30% 60%;
+}
+.cosalt-photo figcaption {
+	box-sizing: border-box;
+	width: min(calc(100% - 2 * clamp(1rem, 4vw, 3rem)), var(--wp--style--global--wide-size));
+	margin: 0 auto !important;
+	padding: 0.85rem 0 0;
+	text-align: left;
+	font-size: var(--wp--preset--font-size--x-small);
+	color: var(--wp--preset--color--ink-soft);
+}
+@media (max-width: 781px) {
+	.cosalt-photo img { aspect-ratio: 4 / 3; object-position: 22% 70%; }
+}
+.cosalt-portrait { margin: 0; max-width: 22rem; }
+.cosalt-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.cosalt-portrait figcaption {
+	margin-top: 0.7rem;
+	padding-top: 0.6rem;
+	border-top: 1px solid var(--wp--preset--color--rule);
+	font-size: var(--wp--preset--font-size--x-small);
+	color: var(--wp--preset--color--ink-soft);
+}
