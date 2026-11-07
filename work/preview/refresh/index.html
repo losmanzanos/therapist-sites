@@ -120,10 +120,10 @@
   <div class="hero-content" data-r>
     <p class="eyebrow hero-eyebrow">Now showing:<a class="hero-now" id="heroNow" href="#work" hidden></a></p>
     <h1 class="hero-h1">A website that keeps your caseload full.</h1>
-    <p class="hero-sub">Therapist Web Design is a Denver studio that builds custom, hand-coded websites for therapists and counselors in private practice. Each one is built to get found on Google and turn a search into a first appointment. You own every line of it, and nothing is billed monthly.</p>
+    <p class="hero-sub">Therapist Web Design is a Denver studio that builds custom, hand-coded websites for therapists and counselors in private practice. Each one is built to get found and turn a search into a first appointment. You own every line of it. Nothing monthly.</p>
     <div class="hero-btns">
-      <a href="https://calendly.com/chad-m-moravec/intro-call" class="btn btn-solid" target="_blank" rel="noopener"><span>Book a free 30-minute call</span></a>
-      <a href="contact/#check" class="hero-link">or send me your current site</a>
+      <a href="https://calendly.com/chad-m-moravec/intro-call" class="btn btn-solid" target="_blank" rel="noopener"><span>Book a free call</span></a>
+      <a href="contact/#check" class="hero-link">or send me your site</a>
     </div>
   </div>
 <!--
@@ -158,6 +158,10 @@
             <canvas class="tv-static" id="tvStatic" width="160" height="120" aria-hidden="true"></canvas>
             <div class="tv-glass" aria-hidden="true"></div>
             <span class="tv-osd" id="tvOsd" aria-hidden="true">CH 02</span>
+            <div class="tv-offair" id="tvOff" aria-hidden="true">
+              <div class="tv-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="tv-card"><span class="tv-card-k">CH 00 &middot; Off the air</span><strong>Please stand by.</strong><span>Click the screen.</span></div>
+            </div>
           </div>
           <picture>
             <source srcset="/images/tv-set-700.webp 700w, /images/tv-set.webp 994w" sizes="(max-width: 750px) 94vw, 640px" type="image/webp"/>
@@ -193,6 +197,7 @@
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://workwithbrunson.com/" data-url="https://workwithbrunson.com/" data-still="/images/tv/brunson.webp" data-blurb="Owner's rep and project management for multifamily property. Zero clinical language required."><span class="ch-n">10</span><span class="ch-name">BrunsonWorks</span><span class="ch-meta">Not therapy · Denver</span></button></li>
           <li><button type="button" class="ch" aria-pressed="false" data-src="https://logdogtimberworks.com/" data-url="https://logdogtimberworks.com/" data-still="/images/tv/logdog.webp" data-blurb="Hand-cut timber frame pergolas, and a service-area page covering sixteen towns."><span class="ch-n">11</span><span class="ch-name">Log Dog Timberworks</span><span class="ch-meta">Not therapy · Denver metro</span></button></li>
         </ol>
+        <p class="guide-zero" aria-hidden="true"><span class="ch-n">00</span><span>sign-off &middot; hold the dial</span></p>
         <a class="cs-link guide-more" href="work/">Read the full case studies</a>
       </div>
 
@@ -242,22 +247,32 @@
     <div class="look-text" data-r>
       <p class="eyebrow">Already have a site?</p>
       <h2 id="look-h">Send me the link. I&rsquo;ll tell you what&rsquo;s wrong with it, for free.</h2>
-      <p>Most therapists have no idea whether their site shows up on Google, what it looks like to the AI engines people ask now, or where the contact form sends what people type into it. I check all of that by hand and send you a short, plain note within one business day.</p>
+      <p>Most therapists have no idea whether their site shows up on Google, or where the contact form sends what people type into it. I check by hand and send you a short, plain note within one business day.</p>
       <p>Sometimes the note says your site is fine and you should leave it alone. When it isn&rsquo;t, you get the specific problems and what each one would cost to fix, whether that&rsquo;s an hour inside Squarespace or a rebuild. Nobody follows up unless you write back.</p>
       <div class="look-row">
         <a href="contact/#check" class="btn btn-forest"><span>Send me your site</span></a>
         <a href="https://calendly.com/chad-m-moravec/intro-call" class="hero-link" target="_blank" rel="noopener">or talk it through on a call</a>
       </div>
     </div>
-    <div data-r data-d="1">
-      <ul class="look-list">
-        <li><b>01</b><div><strong>Is it indexed at all?</strong>Whether Google has your pages, and which ones, which is where a surprising number of therapist sites fail.</div></li>
-        <li><b>02</b><div><strong>What searchers see first</strong>Your title tags and descriptions as they read in results, next to Psychology Today&rsquo;s.</div></li>
-        <li><b>03</b><div><strong>Speed on a phone</strong>Real load time on a mid-range phone on cellular, since that&rsquo;s where clients look you up.</div></li>
-        <li><b>04</b><div><strong>Where the form goes</strong>What your contact form does with a message once someone hits send, and whether that&rsquo;s a HIPAA problem.</div></li>
-        <li><b>05</b><div><strong>Your Google Business Profile</strong>Claimed or not, filled in or not, pointing at the right page or not.</div></li>
-      </ul>
-      <p class="look-cap">Takes me about twenty minutes. A Psychology Today profile counts as a site, if that&rsquo;s all there is.</p>
+    <div class="ticket-wrap" data-r data-d="1">
+      <div class="ticket" aria-label="What the free look covers">
+        <div class="tk-head">
+          <div><span class="tk-k">Service ticket</span><strong class="tk-t">Set brought in for a look</strong></div>
+          <dl class="tk-meta"><div><dt>No.</dt><dd>TWD-LOOK</dd></div><div><dt>Labor</dt><dd>About 20 min</dd></div><div><dt>Parts</dt><dd>None</dd></div></dl>
+        </div>
+        <ul class="look-list tk-list">
+          <li><i class="tk-box" aria-hidden="true"></i><div><strong>Is it indexed at all?</strong>Whether Google has your pages, and which ones, which is where a surprising number of therapist sites fail.</div></li>
+          <li><i class="tk-box" aria-hidden="true"></i><div><strong>What searchers see first</strong>Your title and description as they read in results, next to Psychology Today&rsquo;s, and what the AI answers say about you.</div></li>
+          <li><i class="tk-box" aria-hidden="true"></i><div><strong>Speed on a phone</strong>Real load time on a mid-range phone on cellular, since that&rsquo;s where clients look you up.</div></li>
+          <li><i class="tk-box" aria-hidden="true"></i><div><strong>Where the form goes</strong>What your contact form does with a message once someone hits send, and whether that&rsquo;s a HIPAA problem.</div></li>
+          <li><i class="tk-box" aria-hidden="true"></i><div><strong>Your Google Business Profile</strong>Claimed or not, filled in or not, pointing at the right page or not.</div></li>
+        </ul>
+        <div class="tk-foot">
+          <span class="tk-total"><span>Amount due</span><strong>$0.00</strong></span>
+          <span class="tk-stamp" aria-hidden="true">No charge</span>
+        </div>
+        <p class="tk-note">A Psychology Today profile counts, if that&rsquo;s all you&rsquo;ve got.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -492,7 +507,8 @@
       {"@type":"Offer","priceSpecification":{"@type":"UnitPriceSpecification","price":"2800","priceCurrency":"USD"},"itemOffered":{"@type":"Service","name":"Custom Website Design for Solo Practices","description":"Bespoke, hand-coded website for a therapist in solo private practice: homepage, about, services, FAQ, privacy policy, terms & conditions, and contact. No templates, no platform fees."}},
       {"@type":"Offer","priceSpecification":{"@type":"UnitPriceSpecification","price":"4200","priceCurrency":"USD"},"itemOffered":{"@type":"Service","name":"Custom Website Design for Group Practices","description":"Multi-page hand-coded website for group therapy practices, with up to 4 additional clinician profiles and individual schema markup per clinician."}},
       {"@type":"Offer","priceSpecification":{"@type":"UnitPriceSpecification","price":"850","priceCurrency":"USD"},"itemOffered":{"@type":"Service","name":"Blog / Journal Add-On","description":"Self-service blog functionality added to a Solo or Group build, with password-protected admin login to write, edit, and delete posts."}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Website Refresh & Copywriting","description":"Design refreshes, SEO improvements, copy rewrites, monthly blog posts, and platform migrations for existing therapy practice websites."}}
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Website Refresh & Copywriting","description":"Design refreshes, SEO improvements, copy rewrites, monthly blog posts, and platform migrations for existing therapy practice websites."}},
+      {"@type":"Offer","price":"0","priceCurrency":"USD","itemOffered":{"@type":"Service","name":"Free Website Review for Therapists","description":"A free, no-obligation look at an existing therapy practice website: indexing, title tags and descriptions, phone load speed, contact form handling, and Google Business Profile, returned as a short written note within one business day.","url":"https://therapistweb.design/contact/#check"}}
     ]
   },
   "makesOffer":{
@@ -503,9 +519,9 @@
   "knowsAbout":["Therapist Website Design","Private Practice SEO","Mental Health Marketing","Counselor Web Development","Group Practice Websites","Trauma-Informed Practice Websites","Static Site Development","Squarespace Migration","WordPress Alternatives for Therapists","HIPAA-Aware Contact Forms for Therapists"],
   "review":{
     "@type":"Review",
-    "author":{"@type":"Person","name":"Becca Moravec","affiliation":{"@type":"Organization","name":"Full Bloom Counseling Group","url":"https://fullbloomcounseling.com"}},
+    "author":{"@type":"Person","name":"Shayla Martinez-O'Brien","affiliation":{"@type":"Organization","name":"Golden Hour Wellness","url":"https://goldenhourwellnesscolorado.com"}},
     "reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},
-    "reviewBody":"Chad built our whole group-practice site and I still get compliments on it, from clients and from other therapists asking who made it. It sounds like us, it's fast, and I've never once worried about a monthly fee or losing access. He gets this field in a way most web people simply don't."
+    "reviewBody":"I was literally moved to tears when I first saw the finished site. It was exactly what I would have created myself if I had the skillset."
   },
   "sameAs":["https://studionull.io","https://www.google.com/maps?cid=16761939021385293024"]
 }
@@ -801,7 +817,33 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
   chs.forEach(function(b,i){b.addEventListener('click',function(){go(i);});});
   fit();window.addEventListener('resize',fit);settle();
   if('ResizeObserver' in window)new ResizeObserver(fit).observe(scr);
-  knob.addEventListener('click',function(){go(cur+1);});
+  /* channel 00: hold the dial, or type 00. Not in the guide on purpose. */
+  var zeroOn=false,holdT=0,held=false;
+  function goZero(){
+    if(zeroOn)return;zeroOn=true;
+    tune(true);flashOsd();
+    setTimeout(function(){
+      tv.classList.add('is-off');tune(false);
+      lcd.textContent='CH 00';osd.textContent='CH 00';
+      hit.href='channel-0/';hit.target='_self';hit.firstChild.textContent='Channel 00, off the air. Open it.';
+      cap.innerHTML='<strong>Channel 00</strong><span>Off the air. Please stand by.</span><a href="channel-0/">Open the channel</a>';
+      chs.forEach(function(c){c.classList.remove('is-on');c.setAttribute('aria-pressed','false');});
+    },520);
+  }
+  function leaveZero(){
+    if(!zeroOn)return;zeroOn=false;tv.classList.remove('is-off');hit.target='_blank';
+    var i=cur;cur=-1;go(i);
+  }
+  knob.addEventListener('pointerdown',function(e){if(e.button&&e.button!==0)return;held=false;clearTimeout(holdT);holdT=setTimeout(function(){held=true;goZero();},1500);});
+  ['pointerup','pointerleave','pointercancel'].forEach(function(ev){knob.addEventListener(ev,function(){clearTimeout(holdT);});});
+  knob.addEventListener('contextmenu',function(e){e.preventDefault();});
+  knob.addEventListener('click',function(e){if(held){held=false;e.preventDefault();return;}if(zeroOn){leaveZero();return;}go(cur+1);});
+  chs.forEach(function(b,i){b.addEventListener('click',function(){if(zeroOn){zeroOn=false;tv.classList.remove('is-off');hit.target='_blank';cur=-1;go(i);}});});
+  var z0=0;
+  document.addEventListener('keydown',function(e){
+    if(e.target&&/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;
+    if(e.key==='0'){var now=Date.now();if(now-z0<900){z0=0;goZero();tv.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});}else z0=now;}
+  });
   knob.addEventListener('keydown',function(e){
     if(e.key==='ArrowRight'||e.key==='ArrowUp'){e.preventDefault();go(cur+1);}
     else if(e.key==='ArrowLeft'||e.key==='ArrowDown'){e.preventDefault();go(cur-1);}
