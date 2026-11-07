@@ -14,17 +14,18 @@ Every site is hand-coded from scratch. No WordPress, no page builders, no themes
 - **[Group practice websites](https://therapistweb.design/services/group-practice/)**: up to 4 additional clinician profiles with individual schema markup, $4,200
 - **[Blog / Journal setup](https://therapistweb.design/services/blog-journal/)**: self-service posting, $850 add-on to either package
 - **[SEO](https://therapistweb.design/services/seo/)**: schema.org markup, sitemaps, llms.txt, and Google Business Profile setup, built in from day one
+- **Free website review**: send the link to an existing practice site (or a Psychology Today profile) and get a short written note within one business day covering indexing, title tags, phone load speed, contact form handling and Google Business Profile. No obligation. Request it at https://therapistweb.design/contact/#check
 - **Website refreshes & platform migrations** for practices on existing platforms (WordPress, Squarespace, Wix)
 - Also: **web applications** (client portals, booking systems, internal tools) via [Studio Null](https://studionull.io)
 
-Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a dedicated page per service or specialty each SEO-targeted to the practice area, FAQ, privacy policy, terms & conditions, contact). Group practice $4,200 (Solo + up to 4 clinician profiles). Blog/Journal add-on +$850. Add-ons: SEO/authority carryover for migrations from $250, branded email templates from $200, TinaCMS self-edit access from $400, Google Business Profile setup included free with new Solo/Group builds ($200 standalone for an existing site). Everything else billed at $150/hr. See [full pricing](https://therapistweb.design/pricing/).
+Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a dedicated page per service or specialty each SEO-targeted to the practice area, FAQ, privacy policy, terms & conditions, contact). Group practice $4,200 (Solo + up to 4 clinician profiles). Blog/Journal add-on +$850. Add-ons: SEO/authority carryover for migrations from $250, branded email templates from $200, TinaCMS self-edit access from $400, Google Business Profile setup included free with new Solo/Group builds ($200 standalone for an existing site). Everything else billed at $150/hr. First-draft copy for every page is included in the Solo and Group builds. Payment is half up front and half at launch, or three payments (start, preview, launch). See [full pricing](https://therapistweb.design/pricing/).
 
 ## Questions clients ask
 
 - **HIPAA:** The sites have no database and hold no client records. The contact form is where HIPAA applies, so each build uses either a minimal form that asks visitors not to share clinical details, or a form routed through a service that signs a Business Associate Agreement (often the practice's EHR contact widget). See [the HIPAA contact form article](https://therapistweb.design/journal/is-your-therapy-website-contact-form-hipaa-compliant/).
 - **After launch:** The first 30 days of questions and fixes are included. After that, changes are $150 an hour, billed only when requested. No required maintenance plan; nothing renews.
 - **If the developer disappears:** The domain, hosting and code repository are in the client's name from day one, and each site is plain HTML and CSS with documentation that any web developer can pick up.
-- **Reviews:** Five 5-star reviews on the [Therapist Web Design Google Business Profile](https://g.page/r/CeDcbTy7Xp7oEBM), from therapists including Shayla Martinez-O'Brien (Golden Hour Wellness), Whitney Lovett (Lovett Counseling & Consulting) and Leslie Cedar.
+- **Reviews:** Nine 5-star reviews on the [Therapist Web Design Google Business Profile](https://g.page/r/CeDcbTy7Xp7oEBM), from therapists including Shayla Martinez-O'Brien (Golden Hour Wellness), Whitney Lovett (Lovett Counseling & Consulting) and Leslie Cedar.
 - **Contact:** hello@therapistweb.design, call or text (720) 466-1013, or book a free 30-minute intro call at https://calendly.com/chad-m-moravec/intro-call.
 
 ## Portfolio
@@ -42,7 +43,7 @@ Pricing is published, not quoted blind: Solo practice $2,800 (homepage, about, a
 
 ## Pages
 
-- [Home](https://therapistweb.design/): A live preview of all ten portfolio sites, a renting-vs-owning cost calculator, the four-step process, a three-line pricing summary, and contact. The full price sheet and FAQ are on the Pricing page.
+- [Home](https://therapistweb.design/): A live preview of all ten portfolio sites, Google reviews, the free website review offer, the four-step process with a three-line pricing summary, a renting-vs-owning cost calculator, and contact. The full price sheet and FAQ are on the Pricing page.
 - [Pricing](https://therapistweb.design/pricing/): The full price sheet (solo $2,800, group $4,200, blog +$850, add-ons, existing-site work, terms) and the FAQ.
 - [About](https://therapistweb.design/about/): Who Chad Moravec is, how he works, and the technical stack every site is built on.
 - [Work](https://therapistweb.design/work/): Case studies of the builds above.
