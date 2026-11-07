@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Channel 00 · Therapist Web Design</title>
+<meta name="description" content="Off the air. Please stand by."/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="theme-color" content="#14181a"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"/>
+<link rel="preload" href="../fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css?v=202611071637"/>
+<style>
+  body{background:#14181a;color:#e9e4d6}
+  .z-top{display:flex;justify-content:space-between;align-items:center;padding:18px var(--gut);font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#a6ff9f}
+  .z-top a{color:#c9c4b6;border-bottom:1px solid rgba(201,196,182,.35);padding-bottom:2px}
+  .z-top a:hover{color:#fff;border-color:#fff}
+  .z-pattern{position:relative;height:min(62vh,560px);display:flex;flex-direction:column}
+  .z-bars{display:flex;height:58%}
+  .z-bars i{flex:1}
+  .z-bars i:nth-child(1){background:#c8c3b4}.z-bars i:nth-child(2){background:#c9b24c}.z-bars i:nth-child(3){background:#3f9c9a}
+  .z-bars i:nth-child(4){background:#3e7a4f}.z-bars i:nth-child(5){background:#8e4b7f}.z-bars i:nth-child(6){background:#a9412f}.z-bars i:nth-child(7){background:#2d4a9a}
+  .z-sub{display:flex;height:10%}
+  .z-sub i{flex:1}
+  .z-sub i:nth-child(1){background:#2d4a9a}.z-sub i:nth-child(2){background:#14181a}.z-sub i:nth-child(3){background:#8e4b7f}.z-sub i:nth-child(4){background:#14181a}.z-sub i:nth-child(5){background:#3f9c9a}.z-sub i:nth-child(6){background:#14181a}.z-sub i:nth-child(7){background:#c8c3b4}
+  .z-low{flex:1;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gut);gap:20px}
+  .z-low .z-ch{font-family:var(--serif-d);font-size:clamp(44px,8vw,110px);line-height:1;color:#e9e4d6;letter-spacing:-.02em}
+  .z-low .z-k{font-family:var(--sans);font-size:clamp(9px,1vw,12px);letter-spacing:.34em;text-transform:uppercase;color:#a6ff9f;text-align:right;line-height:2}
+  .z-scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(180deg,rgba(0,0,0,.14) 0 2px,transparent 2px 4px);mix-blend-mode:multiply}
+  .z-glow{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 140px rgba(0,0,0,.55)}
+  .z-main{max-width:820px;margin:0 auto;padding:clamp(56px,8vw,110px) var(--gut) clamp(72px,9vw,130px)}
+  .z-main .eyebrow{color:#a6ff9f}
+  .z-main h1{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(36px,5vw,66px);line-height:1.02;margin:14px 0 22px;color:#f1ebe0}
+  .z-main p{font-family:var(--serif);font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:#d6d1c3;max-width:62ch}
+  .z-main p+p{margin-top:18px}
+  .z-main a{color:#f1ebe0;border-bottom:1px solid rgba(241,235,224,.4)}
+  .z-main a:hover{border-color:#f1ebe0}
+  .z-h2{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:#a6ff9f;margin:clamp(48px,6vw,72px) 0 18px;padding-top:22px;border-top:1px solid rgba(233,228,214,.18)}
+  .z-notes{list-style:none;margin:0;padding:0}
+  .z-notes li{display:grid;grid-template-columns:44px 1fr;gap:0 16px;padding:16px 0;border-bottom:1px dashed rgba(233,228,214,.2);font-family:var(--serif);font-size:clamp(17px,1.4vw,19px);line-height:1.55;color:#d6d1c3}
+  .z-notes li b{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.22em;color:#a6ff9f;padding-top:6px}
+  .z-notes li strong{display:block;font-weight:500;color:#f1ebe0;margin-bottom:2px;font-family:var(--sans);font-size:15px;letter-spacing:.02em}
+  .z-card{margin-top:clamp(48px,6vw,72px);background:#f1ebe0;color:var(--ink);padding:clamp(26px,3.5vw,44px);position:relative}
+  .z-card::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:repeating-linear-gradient(90deg,var(--forest-l) 0 10px,transparent 10px 16px)}
+  .z-card .eyebrow{color:var(--forest-2)}
+  .z-card h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(28px,3.4vw,44px);line-height:1.05;margin:12px 0 16px;color:var(--ink)}
+  .z-card p{font-family:var(--sans);font-size:16px;line-height:1.75;color:var(--ink-s);max-width:56ch}
+  .z-card p+p{margin-top:12px}
+  .z-card a{color:var(--forest);border-bottom-color:var(--forest-l)}
+  .z-card .btn-solid{color:var(--cream);border-bottom:0}
+  .z-card .btn-solid:hover{color:#fff}
+  .z-card .z-code{display:inline-block;font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#b8432a;border:2px solid #b8432a;outline:1px solid #b8432a;outline-offset:2px;padding:6px 12px;transform:rotate(-3deg);margin:6px 0 18px}
+  .z-row{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin-top:22px}
+  .z-row .hero-link{color:var(--ink-s)}
+  .z-fine{margin-top:18px;font-size:13px;color:var(--ink-m);line-height:1.6}
+  .z-foot{padding:0 var(--gut) 40px;text-align:center;font-family:var(--serif);font-style:italic;font-size:15px;color:#8f8b80}
+  .z-foot a{color:#c9c4b6;border-bottom:1px solid rgba(201,196,182,.35)}
+  @media(max-width:750px){.z-pattern{height:52vh}.z-low{flex-direction:column;align-items:flex-start;justify-content:center;gap:6px}.z-low .z-k{text-align:left}}
+  @media(prefers-reduced-motion:no-preference){.z-low .z-k b{animation:heroblink 1.6s steps(1) infinite}}
+</style>
+</head>
+<body class="no-stickbar">
+
+<div class="z-top">
+  <span>Therapist Web Design</span>
+  <a href="../#work">Back to the broadcast</a>
+</div>
+
+<div class="z-pattern" aria-hidden="true">
+  <div class="z-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="z-sub"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="z-low">
+    <span class="z-ch">CH 00</span>
+    <span class="z-k"><b>&#9679;</b> Off the air<br>Please stand by</span>
+  </div>
+  <div class="z-scan"></div>
+  <div class="z-glow"></div>
+</div>
+
+<main class="z-main" id="main-content">
+  <p class="eyebrow">You found the test pattern</p>
+  <h1>Nobody was supposed to turn the dial that far.</h1>
+  <p>Channel 00 isn&rsquo;t in the guide. It&rsquo;s where I keep the notes on how this site is put together, and one small thing for the people curious enough to get here.</p>
+  <p>If you&rsquo;re a therapist, skip to the bottom. If you&rsquo;re a developer, the notes are for you.</p>
+
+  <h2 class="z-h2">How this site is built</h2>
+  <ul class="z-notes">
+    <li><b>01</b><div><strong>Typed, not generated</strong>Every page is plain HTML, one stylesheet and a little JavaScript, written by hand. No framework, no page builder, no build step. View source and it reads the way it was typed.</div></li>
+    <li><b>02</b><div><strong>The television is real</strong>Each channel on the homepage is the live site, loaded in a frame at desktop width and scaled down to fit the screen. Phones get a still of each site instead, because a scaled frame of a whole website crashed Safari on an iPhone more than once.</div></li>
+    <li><b>03</b><div><strong>The static is drawn</strong>The snow between channels is random noise painted onto a small canvas every frame, with a rolling band so it looks like a set from before you were born. Changing pages gets the same blink.</div></li>
+    <li><b>04</b><div><strong>The receipt is CSS</strong>The rent-versus-own receipt and the quote sheet are ordinary text styled to look like paper. The print button prints only that element, centered, with nothing else on the page.</div></li>
+    <li><b>05</b><div><strong>Fonts live here</strong>Cormorant Garamond, DM Serif Display and Jost are self-hosted as woff2 files, so nothing is fetched from a font service and the text shows up in one paint.</div></li>
+    <li><b>06</b><div><strong>The footer knows what time it is</strong>The sign-off changes by the hour in Denver, and the &ldquo;last changed&rdquo; date reads the file&rsquo;s own modified date, so nobody has to remember to update it.</div></li>
+    <li><b>07</b><div><strong>Hosted for nothing</strong>The site is a folder in a Git repository, served by GitHub Pages. No server, no database, no monthly bill, which is the same deal every client gets.</div></li>
+    <li><b>08</b><div><strong>Other things to try</strong>The old up-up-down-down code surfs every channel. The Scan button does the same, politely. Holding the dial is how you got here.</div></li>
+  </ul>
+
+  <section class="z-card" aria-labelledby="z-offer">
+    <p class="eyebrow">Off-air special</p>
+    <h2 id="z-offer">You turned the dial past the end. That&rsquo;s worth something.</h2>
+    <span class="z-code" aria-hidden="true">Channel zero</span>
+    <p>Say <strong>channel zero</strong> on our first call, or write it in the note, and the branded email templates (line 5 on the sheet, $200) come with your build at no charge. That&rsquo;s the contact and intake notifications styled to match your site instead of a default form email.</p>
+    <p>It applies to any solo or group build booked in the same month you found this. No other strings.</p>
+    <div class="z-row">
+      <a href="https://calendly.com/chad-m-moravec/intro-call" class="btn btn-solid" target="_blank" rel="noopener"><span>Book the free call</span></a>
+      <a href="../contact/#note" class="hero-link">or send a note</a>
+    </div>
+    <p class="z-fine">This page isn&rsquo;t linked from anywhere and search engines are asked to leave it alone. Tell a therapist friend if you like; that&rsquo;s the whole point.</p>
+  </section>
+</main>
+
+<p class="z-foot">That&rsquo;s all for tonight. <a href="../">Back to the beginning</a>.</p>
+
+<script src="../assets/convert.js?v=202611071637" defer></script>
+</body>
+</html>

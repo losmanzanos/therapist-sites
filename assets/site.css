@@ -2245,3 +2245,9 @@ footer{background:var(--ink)}
 @media(max-width:900px){.ticket{transform:none;padding:22px 18px 18px}.tk-total{gap:10px;font-size:9px;letter-spacing:.22em}.tk-total strong{font-size:22px}.tk-stamp{font-size:10px;letter-spacing:.22em;padding:5px 9px}.tk-head{flex-direction:column;align-items:flex-start}.tk-meta{text-align:left}.tk-meta div{justify-content:flex-start}}
 @media(prefers-reduced-motion:reduce){.ticket{transform:none}}
 @media print{.ticket{transform:none;box-shadow:none}}
+
+/* channel 00 */
+.guide-zero{display:flex;align-items:baseline;gap:14px;margin:10px 0 0;padding:12px 0 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dusty);opacity:.7;user-select:none}
+.guide-zero .ch-n{font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;color:var(--dusty)}
+.tv-knob{touch-action:manipulation;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none}
+.tv.is-off .tv-hit{cursor:pointer}
