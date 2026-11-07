@@ -64,6 +64,7 @@
   /* 3a. the booking bar on phones: appears after the hero, hides when the footer is in view */
   (function () {
     if (document.querySelector(".stickbar") || document.body.classList.contains("no-stickbar")) return;
+    if (!document.querySelector('link[rel="stylesheet"][href*="assets/site.css"]')) return; /* pages with their own styles (the colophon) have no bar styles */
     var bar = document.createElement("div");
     bar.className = "stickbar";
     bar.setAttribute("aria-label", "Book a call");
