@@ -958,7 +958,8 @@ footer{background:var(--ink)}
    ═══════════════════════════════ */
 @media(max-width:1080px){
   .stack-grid{grid-template-columns:repeat(2,1fr)}
-  .snav-links,.snav-cta{display:none}
+  .snav-links{display:none}
+  .snav-cta{font-size:11px}
   .ham{display:flex;flex-direction:column;justify-content:space-between}
   .mission-inner{grid-template-columns:1fr;gap:32px}
   .process-inner,.refresh-inner,.contact-inner,.faq-inner{grid-template-columns:1fr;gap:40px}
@@ -2065,7 +2066,10 @@ footer{background:var(--ink)}
 #printArea{display:none}
 @media print{
   body.is-printing>*{display:none!important}
-  body.is-printing #printArea{display:block!important;position:static;width:380px;margin:0 auto}
+  html,body{width:auto!important;min-width:0!important;margin:0!important;padding:0!important;overflow:visible!important}
+  body.is-printing #printArea{display:flex!important;justify-content:center;align-items:flex-start;position:static;width:100%;margin:0;padding:0;text-align:initial}
+  body.is-printing #printArea>*{position:static!important;left:auto!important;right:auto!important;top:auto!important;margin:0 auto!important;float:none!important}
+  body.is-printing #printArea .receipt{width:380px;max-width:100%}
   body.is-printing #printArea .receipt,body.is-printing #printArea .sheet{transform:none!important;-webkit-mask:none!important;mask:none!important;box-shadow:none!important;background:#fff!important;filter:none!important;break-inside:avoid;page-break-inside:avoid}
   body.is-printing #printArea .receipt>*{opacity:1!important;transform:none!important}
   body.is-printing #printArea .rc-contact{display:block;margin-top:18px;text-align:center;font-size:10px;letter-spacing:.08em;color:#555}
