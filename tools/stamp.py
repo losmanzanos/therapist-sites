@@ -2,7 +2,7 @@
 """Pre-commit housekeeping for therapistweb.design.
 
 1. Writes today's date into the footer ("Last changed ...") on every page.
-2. Puts a fresh ?v= on every assets/site.css and assets/site.js link, so a
+2. Puts a fresh ?v= on every assets/site.css, site.js and convert.js link, so a
    push shows up immediately instead of after GitHub Pages' 10-minute cache.
 
 Runs from .githooks/pre-commit, or by hand:  python3 tools/stamp.py
@@ -29,7 +29,7 @@ for f in sorted(root.rglob("*.html")):
         f.write_text(new, encoding="utf-8"); changed.append(str(f.relative_to(root)) + " footer -> " + stamp)
 
 # 2. cache-busting version on shared css/js, every page (client previews under work/preview/ left alone)
-pat = re.compile(r'((?:href|src)="(?:\.\./)*/?assets/site\.(?:css|js))(?:\?v=\d+)?(")')
+pat = re.compile(r'((?:href|src)="(?:\.\./)*/?assets/(?:site\.(?:css|js)|convert\.js))(?:\?v=\d+)?(")')
 for f in root.rglob("*.html"):
     if "work/preview" in f.as_posix() or "/.git/" in f.as_posix():
         continue
