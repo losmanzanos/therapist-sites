@@ -2221,3 +2221,27 @@ footer{background:var(--ink)}
 .frow.is-check{border:1px solid var(--forest-l);background:var(--forest-bg);padding:12px 14px 2px}
 .cta-strip .btn + .btn{margin-left:14px}
 @media(max-width:520px){.cta-strip .btn{display:block;text-align:center}.cta-strip .btn + .btn{margin:12px 0 0}}
+
+/* the service ticket: same paper family as the receipt and the quote sheet */
+.ticket-wrap{position:relative}
+.ticket{position:relative;background:var(--cream);border:1px solid var(--border);padding:26px 26px 22px;box-shadow:0 1px 0 rgba(44,45,54,.04),0 22px 44px -30px rgba(44,45,54,.4);transform:rotate(-.6deg)}
+.ticket::before{content:"";position:absolute;left:0;right:0;top:-1px;height:4px;background:repeating-linear-gradient(90deg,var(--forest-l) 0 10px,transparent 10px 16px)}
+.tk-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+.tk-k{display:block;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--forest-2);margin-bottom:6px}
+.tk-t{display:block;font-family:var(--serif-d);font-weight:400;font-size:clamp(20px,1.8vw,24px);line-height:1.1;color:var(--ink)}
+.tk-meta{display:grid;gap:4px;margin:0;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-m);text-align:right;flex-shrink:0}
+.tk-meta div{display:flex;gap:8px;justify-content:flex-end}
+.tk-meta dt{color:var(--dusty)}
+.tk-meta dd{margin:0;color:var(--ink-s)}
+.tk-list{border-top:0}
+.tk-list li{grid-template-columns:22px 1fr;gap:0 14px;padding:14px 0 13px}
+.tk-box{display:block;width:14px;height:14px;margin-top:4px;border:1.5px solid var(--ink);background:transparent}
+.tk-list li:first-child .tk-box{position:relative}
+.tk-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:16px;border-top:1px solid var(--ink)}
+.tk-total{display:flex;align-items:baseline;gap:12px;white-space:nowrap;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-m)}
+.tk-total strong{font-family:var(--serif-d);font-size:26px;letter-spacing:0;color:var(--forest)}
+.tk-stamp{display:inline-block;white-space:nowrap;padding:6px 12px;border:2px solid #b8432a;outline:1px solid #b8432a;outline-offset:2px;color:#b8432a;font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.32em;text-transform:uppercase;transform:rotate(-8deg);opacity:.82;mix-blend-mode:multiply}
+.tk-note{margin:16px 0 0;font-size:13px;color:var(--ink-m);line-height:1.6;font-style:italic;font-family:var(--serif)}
+@media(max-width:900px){.ticket{transform:none;padding:22px 18px 18px}.tk-total{gap:10px;font-size:9px;letter-spacing:.22em}.tk-total strong{font-size:22px}.tk-stamp{font-size:10px;letter-spacing:.22em;padding:5px 9px}.tk-head{flex-direction:column;align-items:flex-start}.tk-meta{text-align:left}.tk-meta div{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){.ticket{transform:none}}
+@media print{.ticket{transform:none;box-shadow:none}}
