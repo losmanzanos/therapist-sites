@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  if (/\/work\/preview\//.test(location.pathname)) return;
+  var PREVIEW = /\/work\/preview\//.test(location.pathname); /* previews are looked at, not measured */
   var CAL = "https://calendly.com/chad-m-moravec/intro-call";
   var root = (function () {
     var s = document.currentScript && document.currentScript.getAttribute("src") || "";
@@ -17,7 +17,7 @@
   })();
 
   /* 1. Cloudflare Web Analytics */
-  (function () {
+  if (!PREVIEW) (function () {
     var s = document.createElement("script");
     s.type = "module";
     s.src = "https://static.cloudflareinsights.com/beacon.min.js";
@@ -37,7 +37,8 @@
     s.src = "https://www.googletagmanager.com/gtag/js?id=G-6KSDGGVPW0";
     document.head.appendChild(s);
   }
-  if (document.readyState === "complete") setTimeout(loadGa, 1500);
+  if (PREVIEW) { /* no GA on previews */ }
+  else if (document.readyState === "complete") setTimeout(loadGa, 1500);
   else window.addEventListener("load", function () { setTimeout(loadGa, 1500); });
 
   function track(name, params) {
