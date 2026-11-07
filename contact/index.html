@@ -287,10 +287,14 @@ if(form){
   function syncCheck(){var on=proj&&/free look/i.test(proj.value);if(siteRow)siteRow.classList.toggle('is-check',!!on);var lab=siteRow&&siteRow.querySelector('label');if(lab)lab.textContent=on?'The link to your site (or your Psychology Today profile)':'Your current site, if you have one';}
   if(proj){proj.addEventListener('change',syncCheck);}
   function fromHash(){
-    if(location.hash==='#check'&&proj){proj.value='Free look at my current site';syncCheck();setTimeout(function(){document.getElementById('note').scrollIntoView({behavior:'smooth',block:'start'});if(siteIn)siteIn.focus({preventScroll:true});},60);}
+    if(location.hash==='#check'&&proj){proj.value='Free look at my current site';syncCheck();setTimeout(function(){document.getElementById('note').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){if(siteIn)siteIn.focus({preventScroll:true});},650);},60);}
     else if(location.hash==='#note'){setTimeout(function(){document.getElementById('note').scrollIntoView({behavior:'smooth',block:'start'});},60);}
   }
   fromHash();window.addEventListener('hashchange',fromHash);
+  /* the calendar grows after it loads and shoves the note down; land again once, early on */
+  var t0=Date.now();function settle(){if(Date.now()-t0<5000&&/^#(check|note)$/.test(location.hash))fromHash();}
+  window.addEventListener('load',function(){setTimeout(settle,250);});
+  window.addEventListener('message',function h(e){if(e.data&&typeof e.data.event==='string'&&e.data.event.indexOf('calendly.')===0){window.removeEventListener('message',h);setTimeout(settle,300);}});
 }
 /* ── Calendly, loaded when the calendar scrolls into view ── */
 (function(){

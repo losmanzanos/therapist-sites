@@ -1099,7 +1099,7 @@ footer{background:var(--ink)}
 .subhero{
   position:relative;background:var(--cream-s);
   border-bottom:1px solid var(--border);
-  padding:clamp(56px,8vw,104px) 0 clamp(48px,6vw,72px);
+  padding:clamp(48px,6vw,80px) 0 clamp(40px,5vw,56px);
   overflow:hidden;
 }
 .subhero::before{
@@ -2251,3 +2251,9 @@ footer{background:var(--ink)}
 .guide-zero .ch-n{font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;color:var(--dusty)}
 .tv-knob{touch-action:manipulation;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none}
 .tv.is-off .tv-hit{cursor:pointer}
+
+/* a quiet next step under every interior page intro */
+.subhero-go{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;font-size:14px;color:var(--ink-m)}
+.subhero-go a{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest);border-bottom:1px solid var(--forest-l);padding-bottom:3px;transition:color .2s,border-color .2s}
+.subhero-go a:hover{color:var(--forest-2);border-color:var(--forest-2)}
+@media(max-width:750px){.subhero-go{margin-top:20px}}
