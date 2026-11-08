@@ -983,6 +983,7 @@ footer{background:var(--ink)}
   .hero-sub{color:#4b4d59}
 }
 .snav-brand,.hero-sub-m{display:none}
+.snav-brand,.snav-brand:hover{text-decoration:none!important}
 @media(max-width:750px){
   /* header: one row. wordmark left, contact and menu right */
   .site-header{display:none}
