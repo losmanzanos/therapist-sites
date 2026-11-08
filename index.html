@@ -44,7 +44,7 @@
 <link rel="preload" href="fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/site.css?v=202611081239"/>
+<link rel="stylesheet" href="assets/site.css?v=202611081248"/>
 </head>
 <body>
 
@@ -709,8 +709,8 @@
   var tr=hp.querySelector('.hp-track'),set=tr.querySelector('.hp-set');
   var dup=set.cloneNode(true);dup.className='hp-set hp-dup';dup.setAttribute('aria-hidden','true');
   dup.querySelectorAll('a').forEach(function(a){a.tabIndex=-1;});tr.appendChild(dup);
-  function speed(){var w=set.getBoundingClientRect().width;if(w)tr.style.setProperty('--hpdur',Math.round(w/38)+'s');}
-  speed();window.addEventListener('load',speed);window.addEventListener('resize',speed);
+  function speed(){var w=set.getBoundingClientRect().width;if(!w)return;tr.style.setProperty('--hpw',w+'px');tr.style.setProperty('--hpdur',Math.round(w/38)+'s');}
+  speed();window.addEventListener('load',speed);window.addEventListener('resize',speed);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(speed);
   hp.addEventListener('click',function(e){
     var a=e.target.closest('a[data-ch]');if(!a)return;e.preventDefault();
     var w=document.getElementById('work');if(w)w.scrollIntoView({behavior:'smooth'});
@@ -720,7 +720,7 @@
   });
 })();
 </script>
-<script src="assets/convert.js?v=202611081239" defer></script>
+<script src="assets/convert.js?v=202611081248" defer></script>
 
 <script>
 (function(){
