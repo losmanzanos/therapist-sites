@@ -2288,7 +2288,13 @@ footer{background:var(--ink)}
 .book-cal{justify-self:end;margin-top:0;margin-right:-99px;width:900px;height:596px;min-height:0}
 .book-cal .calendly-inline-widget{transform:scale(.9);transform-origin:top right}
 .contact-inner{grid-template-columns:minmax(0,1fr) 612px;column-gap:48px}
-.contact-info p{max-width:420px}
+.contact-info p{max-width:440px;font-size:17px;line-height:1.85;margin-bottom:30px}
+.ct-details{gap:22px;margin-top:6px}
+.ctline{font-size:1rem}
+/* Calendly's frame has ~59px of empty space above its card (at this scale); pull it up so the card's top edge sits on the eyebrow, like the form card below */
+.book-cal{margin-top:-51px}
+.book-text p{font-size:17.5px;line-height:1.9}
+.book-text p + p{margin-top:20px}
 }
 .note-or{text-align:center;padding:0 var(--gut) clamp(28px,4vw,48px);background:var(--cream);font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2)}
 .contact{padding-top:clamp(40px,5vw,64px)}
