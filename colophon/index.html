@@ -121,8 +121,7 @@
   .cr-view{position:relative;--crh:min(64svh,680px);height:var(--crh);overflow:hidden;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 86%,transparent 100%)}
   .cr-roll{width:min(720px,calc(100% - 80px));margin:0 auto;text-align:center;padding-top:var(--crh);animation:crRoll 90s linear infinite;will-change:transform}
   @keyframes crRoll{from{transform:translateY(0)}to{transform:translateY(-100%)}}
-  .cr-view.is-paused .cr-roll,.cr-view:focus-within .cr-roll{animation-play-state:paused}
-  @media(hover:hover) and (pointer:fine){.cr-view:hover .cr-roll{animation-play-state:paused}}
+  .cr-view.is-paused .cr-roll{animation-play-state:paused}
   .cr-pre{font-family:'Jost',sans-serif;font-weight:600;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#a6ff9f;margin-bottom:22px}
   .cr-title{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-style:italic;font-size:clamp(44px,7vw,96px);line-height:1;color:#f1ebe0;margin:0 0 22px;letter-spacing:-.01em}
   .cr-lede{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(18px,1.6vw,22px);line-height:1.5;color:#c9c4b6;max-width:52ch;margin:0 auto 56px}
@@ -220,15 +219,26 @@
 
   /* ---------------- CREDENTIALS (flip) ---------------- */
   .creds{padding:90px 0}
-  .cred-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .flip{perspective:1200px;cursor:pointer}
+  .cred-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr;gap:24px}
+  .flip{perspective:1200px;cursor:pointer;display:grid}
   /* faces share one grid cell so the card grows to fit the taller face; nothing clips */
   .flip-in{position:relative;width:100%;min-height:230px;transition:transform .7s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d;display:grid}
   @media(hover:hover){.flip:hover .flip-in{transform:rotateY(180deg)}}
   .flip.tapped .flip-in{transform:rotateY(180deg)}
   .face{grid-area:1/1;backface-visibility:hidden;border:2px solid var(--ink);border-radius:6px;padding:26px;display:flex;flex-direction:column;justify-content:space-between}
   .back{justify-content:flex-start;gap:12px}
-  .front{background:var(--bg2);box-shadow:5px 5px 0 var(--ink)}
+  /* the front is a till receipt: paper, faint rule lines, a torn bottom edge */
+  .front{border-radius:0;border:1px solid var(--ink);padding:0 0 22px;gap:0;justify-content:flex-start;
+    background:#f8f2e4 repeating-linear-gradient(0deg,transparent 0 27px,rgba(44,45,54,.055) 27px 28px);
+    box-shadow:none;filter:drop-shadow(5px 5px 0 var(--ink));
+    clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),97.5% 100%,95% calc(100% - 8px),92.5% 100%,90% calc(100% - 8px),87.5% 100%,85% calc(100% - 8px),82.5% 100%,80% calc(100% - 8px),77.5% 100%,75% calc(100% - 8px),72.5% 100%,70% calc(100% - 8px),67.5% 100%,65% calc(100% - 8px),62.5% 100%,60% calc(100% - 8px),57.5% 100%,55% calc(100% - 8px),52.5% 100%,50% calc(100% - 8px),47.5% 100%,45% calc(100% - 8px),42.5% 100%,40% calc(100% - 8px),37.5% 100%,35% calc(100% - 8px),32.5% 100%,30% calc(100% - 8px),27.5% 100%,25% calc(100% - 8px),22.5% 100%,20% calc(100% - 8px),17.5% 100%,15% calc(100% - 8px),12.5% 100%,10% calc(100% - 8px),7.5% 100%,5% calc(100% - 8px),2.5% 100%,0 calc(100% - 8px))}
+  .front .tag{display:flex;justify-content:space-between;align-items:baseline;padding:14px 22px 12px;border-bottom:1px dashed var(--ink);color:var(--ink)}
+  .front .tag::after{content:"No. " attr(data-n);letter-spacing:.08em;color:var(--moss)}
+  .front > div{padding:22px 22px 18px;flex:1}
+  .front h3{margin-bottom:6px}
+  .front .where{display:block;padding-top:10px;border-top:1px dashed rgba(44,45,54,.35)}
+  .front .hint{padding:12px 22px 0;border-top:1px dashed var(--ink);display:flex;justify-content:space-between}
+  .front .hint::after{content:"paid in full";color:var(--pop)}
   .back{background:var(--forest);color:var(--bg);transform:rotateY(180deg);box-shadow:5px 5px 0 var(--pop)}
   .face .tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pop)}
   .back .tag{color:var(--gold)}
@@ -268,7 +278,8 @@
     .tape{display:none}
     .hero{min-height:auto;padding:44px 0 70px}
     .cards{grid-template-columns:1fr}
-    .cred-grid{grid-template-columns:1fr}
+    .cred-grid{grid-template-columns:1fr;grid-auto-rows:auto}
+    .flip-in{min-height:0}
     .stats{grid-template-columns:1fr 1fr;gap:28px 20px}
     .card{box-shadow:4px 4px 0 var(--ink)}
     .foot-meta{justify-content:flex-start}
@@ -315,7 +326,8 @@
     .face{position:relative;grid-area:auto;inset:auto;backface-visibility:visible;height:auto;box-shadow:none!important;
       border:1.5px solid var(--ink);margin-bottom:8px;padding:14px 16px;gap:8px}
     .face h3{font-size:1.15rem}
-    .front{background:var(--bg2)}
+    .front{background:var(--bg2);clip-path:none;filter:none;padding:14px 16px}
+    .front .tag,.front .hint,.front > div{padding-left:0;padding-right:0}
     .back{background:var(--forest);color:var(--bg);transform:none!important;display:flex}
     .back .tag{color:var(--gold)}
     .back p{font-size:.74rem}
@@ -485,7 +497,7 @@
       <div class="flip rv">
         <div class="flip-in">
           <div class="face front">
-            <span class="tag">MA · Graduate</span>
+            <span class="tag" data-n="0001">MA · Graduate</span>
             <div><h3>Mathematics Education</h3><span class="where">CU Denver</span></div>
             <span class="hint">tap or hover to flip ↺</span>
           </div>
@@ -498,7 +510,7 @@
       <div class="flip rv">
         <div class="flip-in">
           <div class="face front">
-            <span class="tag">BA · Undergraduate</span>
+            <span class="tag" data-n="0002">BA · Undergraduate</span>
             <div><h3>Psychology &amp; Neuroscience</h3><span class="where">CU Boulder · Pre-Health</span></div>
             <span class="hint">tap or hover to flip ↺</span>
           </div>
@@ -511,7 +523,7 @@
       <div class="flip rv">
         <div class="flip-in">
           <div class="face front">
-            <span class="tag">Full-Stack Bootcamp</span>
+            <span class="tag" data-n="0003">Full-Stack Bootcamp</span>
             <div><h3>Software Engineering</h3><span class="where">Thinkful → Chegg Skills</span></div>
             <span class="hint">tap or hover to flip ↺</span>
           </div>
@@ -524,7 +536,7 @@
       <div class="flip rv">
         <div class="flip-in">
           <div class="face front">
-            <span class="tag">Professional License</span>
+            <span class="tag" data-n="0004">Professional License</span>
             <div><h3>K-6 Educator</h3><span class="where">State of Colorado · Secondary Math Endorsement</span></div>
             <span class="hint">tap or hover to flip ↺</span>
           </div>
