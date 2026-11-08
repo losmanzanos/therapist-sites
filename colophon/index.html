@@ -191,6 +191,30 @@
   .sec-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,5vw,3.4rem);line-height:1;margin-bottom:12px;letter-spacing:-.01em}
   .sec-note{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--moss);margin-bottom:48px}
 
+  /* the desk calculator: a real photo, real keys, a seven-segment display (DSEG7, OFL) */
+  @font-face{font-family:'DSEG7';src:url(../fonts/dseg7-bold.woff2) format('woff2');font-display:swap}
+  .desk-calc{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:56px;align-items:center;margin-top:84px;max-width:760px;margin-left:auto}
+  .dc-k{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .dc-p{font-size:1rem;line-height:1.65;color:rgba(241,235,224,.86);max-width:40ch}
+  .dc-flip{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);background:none;border:0;border-bottom:1px solid rgba(241,235,224,.5);padding:0 0 4px;cursor:pointer}
+  .dc-flip:hover{border-color:var(--gold);color:var(--gold)}
+  .dc-msg{margin-top:16px;font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;color:#9ef7cf}
+  .calc{container-type:inline-size;width:230px;justify-self:end;transform:rotate(4deg);transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+  .calc.is-flipped{transform:rotate(184deg)}
+  .calc-body{position:relative;filter:drop-shadow(0 22px 24px rgba(0,0,0,.5)) drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+  .calc-body img{display:block;width:100%;height:auto}
+  .calc-lcd{position:absolute;left:0;right:0;top:29.4%;height:7.8%;pointer-events:none}
+  .calc-lcd span{position:absolute;top:50%;transform:translate(-50%,-46%);font-family:'DSEG7',monospace;font-size:8.6cqw;line-height:1;color:#7dffd0;
+    text-shadow:0 0 4px rgba(90,255,200,.85),0 0 12px rgba(60,240,180,.45)}
+  .calc-lcd span.dp::after{content:".";position:absolute;right:-.42em;bottom:.02em}
+  .calc.is-off .calc-lcd{opacity:0}
+  .calc-keys button,.calc-pow{position:absolute;transform:translate(-50%,-50%);width:12.6%;height:5.8%;border:0;padding:0;background:transparent;border-radius:9px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .calc-keys button:active,.calc-keys button.is-down{background:rgba(0,0,0,.22);box-shadow:inset 0 2px 4px rgba(0,0,0,.35)}
+  .calc-keys button:focus-visible,.calc-pow:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .calc-pow{left:75.2%;top:59%;width:6%;height:3.3%;border-radius:50%}
+  @media(max-width:900px){.desk-calc{grid-template-columns:1fr;gap:34px;margin:64px auto 0;max-width:420px;text-align:center}.dc-p{margin:0 auto}.calc{justify-self:center}}
+  @media(prefers-reduced-motion:reduce){.calc{transition:none}}
+  @media print{.desk-calc{display:none}}
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .card{
     background:var(--bg2);border:2px solid var(--ink);border-radius:6px;overflow:visible;position:relative;
@@ -460,6 +484,7 @@
         <div><dt>Playwright</dt><dd>Every page screenshotted at nine screen sizes before it ships</dd></div>
         <div><dt>The desk</dt><dd>Photograph by Nathan Dumlao, via Unsplash</dd></div>
         <div><dt>Index card, receipts, ticket and tape</dt><dd>Photographs via Canva, cut and taped together here</dd></div>
+        <div><dt>The calculator</dt><dd>A Sanyo Thames Terminal, photographed by <a href="https://www.flickr.com/photos/57347595@N04/51679243375" rel="noopener">irombeach</a> (public domain); display set in <a href="https://www.keshikan.net/fonts-e.html" rel="noopener">DSEG7</a> by Keshikan (SIL Open Font License)</dd></div>
       </dl>
 
       <p class="cr-fine">No templates were harmed in the making of this website.</p>
@@ -509,6 +534,22 @@
           <div class="stack"><span>Next.js</span><span>Supabase</span><span>Self-hosting</span><span>Docker</span><span>Automation</span></div>
         </div>
       </a>
+    </div>
+    <div class="desk-calc rv">
+      <div class="dc-text">
+        <p class="dc-k">Also on the desk</p>
+        <p class="dc-p">The calculator from my seventh-grade backpack, more or less. It still adds. It also does the other thing everyone did with one in seventh grade.</p>
+        <button type="button" class="dc-flip" id="calcFlip" aria-pressed="false">Turn it over</button>
+        <p class="dc-msg" id="calcMsg" aria-live="polite" hidden></p>
+      </div>
+      <div class="calc" id="calc">
+        <div class="calc-body">
+          <img src="../images/desk-calculator.webp" alt="A 1970s Sanyo Thames Terminal pocket calculator" width="483" height="930" loading="lazy" decoding="async"/>
+          <div class="calc-lcd" id="calcLcd" aria-live="polite" aria-label="Display"></div>
+          <button type="button" class="calc-pow" id="calcPow" aria-label="Power" aria-pressed="true"></button>
+          <div class="calc-keys" id="calcKeys"></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -659,6 +700,54 @@
     if(snav){snav.querySelectorAll('.mob-menu a').forEach(function(a){a.addEventListener('click',function(){snav.classList.remove('open');});});}
   })();
 </script>
-<script src="../assets/convert.js?v=202611080901" defer></script>
+<script>
+/* desk calculator: adds, subtracts, and spells hELLO upside down */
+(function(){
+  var calc=document.getElementById('calc');if(!calc)return;
+  var lcd=document.getElementById('calcLcd'),keysEl=document.getElementById('calcKeys'),flip=document.getElementById('calcFlip'),msg=document.getElementById('calcMsg'),pow=document.getElementById('calcPow');
+  var X=[16.36,32.71,49.28,65.84,82.4],Y=[67.96,75.91,83.87,91.83],DX=[26.92,34.16,41.41,48.65,55.9,63.15,70.39,77.64];
+  var layout=[['C','7','8','9','*'],['%','4','5','6','/'],['K','1','2','3','+'],['A','0','.','-','=']];
+  var names={C:'Clear entry','%':'Percent',K:'Constant',A:'Clear all','*':'Times','/':'Divided by','+':'Plus','-':'Minus','=':'Equals','.':'Decimal point'};
+  layout.forEach(function(row,r){row.forEach(function(k,c){var b=document.createElement('button');b.type='button';b.dataset.k=k;b.style.left=X[c]+'%';b.style.top=Y[r]+'%';b.setAttribute('aria-label',names[k]||k);keysEl.appendChild(b);});});
+  var cur='0',acc=null,op=null,fresh=true,on=true,err=false;
+  function fmt(n){if(!isFinite(n))return 'E';var s=String(+n.toPrecision(8));if(s.indexOf('e')>-1){if(Math.abs(n)<1e-7)return '0';return 'E';}var digits=s.replace(/[-.]/g,'');if(digits.length>8){var intLen=String(Math.floor(Math.abs(n))).length;if(intLen>8)return 'E';s=String(+n.toFixed(8-intLen));}return s;}
+  function render(){
+    lcd.innerHTML='';if(!on)return;
+    var t=err?'E':cur,cells=[],i;
+    for(i=0;i<t.length;i++){var ch=t[i];if(ch==='.'){if(cells.length)cells[cells.length-1].dp=true;else cells.push({c:'0',dp:true});}else cells.push({c:ch,dp:false});}
+    cells=cells.slice(-8);
+    var off=8-cells.length;
+    cells.forEach(function(cell,i){var sp=document.createElement('span');sp.textContent=cell.c;if(cell.dp)sp.className='dp';sp.style.left=DX[off+i]+'%';lcd.appendChild(sp);});
+    lcd.setAttribute('aria-label','Display '+t);check();
+  }
+  function compute(a,b,o){switch(o){case '+':return a+b;case '-':return a-b;case '*':return a*b;case '/':return b===0?NaN:a/b;}return b;}
+  function press(k){
+    if(!on)return;
+    if(err&&k!=='A'&&k!=='C')return;
+    if(/[0-9]/.test(k)){if(fresh){cur=k;fresh=false;}else if(cur.replace(/[-.]/g,'').length<8){cur=cur==='0'?k:cur+k;}}
+    else if(k==='.'){if(fresh){cur='0.';fresh=false;}else if(cur.indexOf('.')<0)cur+='.';}
+    else if(k==='A'){cur='0';acc=null;op=null;fresh=true;err=false;}
+    else if(k==='C'){cur='0';fresh=true;err=false;}
+    else if(k==='%'){cur=fmt(parseFloat(cur)/100);fresh=true;}
+    else if(k==='K'){}
+    else if(k==='='){if(op!==null){var r=compute(acc,parseFloat(cur),op);cur=fmt(r);err=cur==='E';acc=null;op=null;fresh=true;}}
+    else{var v=parseFloat(cur);if(op!==null&&!fresh){var r2=compute(acc,v,op);cur=fmt(r2);err=cur==='E';acc=parseFloat(cur);}else acc=v;op=k;fresh=true;}
+    render();
+  }
+  keysEl.addEventListener('click',function(e){var b=e.target.closest('button');if(b)press(b.dataset.k);});
+  pow.addEventListener('click',function(){on=!on;calc.classList.toggle('is-off',!on);pow.setAttribute('aria-pressed',on);if(on){cur='0';acc=null;op=null;fresh=true;err=false;}render();});
+  var said=false;
+  function check(){
+    var flipped=calc.classList.contains('is-flipped'),hello=on&&!err&&/^0?\.7734$/.test(cur);
+    if(flipped&&hello){msg.textContent='hELLO to you too.';msg.hidden=false;if(!said&&window.gtag){said=true;try{gtag('event','calculator_hello');}catch(x){}}}
+    else if(flipped){msg.textContent='Upside down. Now type something it can spell.';msg.hidden=false;}
+    else msg.hidden=true;
+  }
+  flip.addEventListener('click',function(){var f=calc.classList.toggle('is-flipped');flip.setAttribute('aria-pressed',f);flip.textContent=f?'Turn it back':'Turn it over';setTimeout(check,f?700:0);});
+  document.addEventListener('keydown',function(e){var r=calc.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;if(e.target.closest('input,textarea,select'))return;var m={Enter:'=',Escape:'A',Backspace:'C',x:'*','*':'*','/':'/','+':'+','-':'-','.':'.','%':'%','=':'='};var k=/^[0-9]$/.test(e.key)?e.key:m[e.key];if(!k)return;var b=keysEl.querySelector('[data-k="'+(k==='*'?'*':k)+'"]');if(b){b.classList.add('is-down');setTimeout(function(){b.classList.remove('is-down');},120);}press(k);});
+  render();
+})();
+</script>
+<script src="../assets/convert.js?v=202611080907" defer></script>
 </body>
 </html>
