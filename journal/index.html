@@ -23,7 +23,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"/>
 <link rel="preload" href="../fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/site.css?v=202611080851"/>
+<link rel="stylesheet" href="../assets/site.css?v=202611080852"/>
 </head>
 <body>
 
@@ -282,6 +282,31 @@
   </div>
 </section>
 
+<section class="jlook" aria-labelledby="jlook-h">
+  <div class="jlook-inner">
+    <div class="jlook-text" data-r>
+      <p class="eyebrow">Already have a site?</p>
+      <h2 id="jlook-h">Most of these pieces end with &ldquo;check yours.&rdquo; I can do that for you.</h2>
+      <p>Paste the link and you&rsquo;ll get a short note back within a business day, written by me, about the things these articles cover: what Google shows for your name, whether the AI answers can read you, and where your form sends what people type.</p>
+    </div>
+    <form class="look-card" id="heroLook" action="../contact/" method="get" data-r data-d="1">
+      <span class="hl-tape" aria-hidden="true"></span>
+      <p class="hl-k">The free look</p>
+      <p class="hl-h">Paste your site. I&rsquo;ll tell you what&rsquo;s wrong with it.</p>
+      <p class="hl-p">Free, and nobody follows up unless you write back.</p>
+      <div class="hl-row">
+        <label class="sr-only" for="hlSite">Your website or Psychology Today link</label>
+        <input id="hlSite" name="site" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="yourpractice.com" required/>
+        <button type="submit">Send it</button>
+      </div>
+      <p class="hl-s">A Psychology Today link works too.</p>
+    </form>
+  </div>
+</section>
+<script>
+(function(){var hl=document.getElementById('heroLook');if(!hl)return;hl.addEventListener('submit',function(e){e.preventDefault();var v=(hl.site.value||'').trim();if(!v)return;if(window.gtag){try{gtag('event','free_look_start',{placement:'journal'});}catch(x){}}location.href='../contact/?site='+encodeURIComponent(v)+'#check';});})();
+</script>
+
 <section class="cta-strip">
   <div class="cta-strip-inner">
     <h2>Have a question I haven't written about yet?</h2>
@@ -369,7 +394,7 @@
 }
 </script>
 
-<script src="../assets/site.js?v=202611080851" defer></script>
-<script src="../assets/convert.js?v=202611080851" defer></script>
+<script src="../assets/site.js?v=202611080852" defer></script>
+<script src="../assets/convert.js?v=202611080852" defer></script>
 </body>
 </html>
