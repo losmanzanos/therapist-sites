@@ -2012,8 +2012,8 @@ footer{background:var(--ink)}
 @media(min-width:1281px){.hero-content{right:calc((100% - var(--maxw))/2)}}
 /* hero: the free look, an index card with a real input */
 .hero-look{position:absolute;left:max(6%,calc((100% - var(--maxw))/2 + var(--gut)));top:calc(10% + 96px);width:min(38%,450px);z-index:5;
-  transform:rotate(-1.6deg);background:#e9dcc0 url(../images/index-card-1100.webp) center/100% 100% no-repeat;
-  padding:30px 40px 30px;box-shadow:0 34px 70px -18px rgba(44,45,54,.22),0 12px 28px -10px rgba(44,45,54,.12),0 1px 3px rgba(44,45,54,.06)}
+  transform:rotate(-1.6deg);background:url(../images/index-card-1100.webp) center/100% 100% no-repeat;
+  padding:30px 40px 30px;border-radius:4px;box-shadow:0 34px 70px -18px rgba(44,45,54,.22),0 12px 28px -10px rgba(44,45,54,.12),0 1px 3px rgba(44,45,54,.06)}
 
 .hl-tape{position:absolute;left:31%;top:0;width:37.3%;aspect-ratio:500/154;transform:translateY(-40%);background:url(../images/tape-yellow.webp) center/100% 100% no-repeat;filter:drop-shadow(0 1px 1px rgba(44,45,54,.14))}
 .hl-k{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#a53c25;margin:0 0 22px;line-height:1}
