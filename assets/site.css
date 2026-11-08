@@ -2397,3 +2397,17 @@ footer{background:var(--ink)}
 .jlook-text p{font-size:16px;line-height:1.75;color:var(--ink-s);max-width:46ch}
 @media(max-width:900px){.jlook-text h2{max-width:none}.jlook-text p{font-size:15.5px}}
 @media(max-width:900px){.jlook-inner{grid-template-columns:1fr}.look-card{margin-top:8px}}
+
+/* wide screens: the headline takes the width in two lines; the stars sit in the sky above its end */
+.hbr{display:none}
+@media(min-width:1181px){
+  .hbr{display:inline}
+  .hero-h1{font-size:clamp(60px,6.6vw,104px);max-width:none;line-height:.98}
+  .hero-sub{max-width:60ch}
+  .hero-figure.hero-sky{width:clamp(170px,15vw,240px);top:5%}
+  .hero-proof{max-width:none;flex-wrap:nowrap;white-space:nowrap}
+}
+@media(min-width:1181px) and (max-width:1340px){.hero-proof{flex-wrap:wrap;white-space:normal}}
+@media(min-width:1181px) and (max-height:820px){
+  .hero-h1{font-size:clamp(54px,5.4vw,78px)}
+}
