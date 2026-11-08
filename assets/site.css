@@ -2011,8 +2011,8 @@ footer{background:var(--ink)}
 /* 1. hero: "Now showing: <channel>" cycles through the lineup */
 @media(min-width:1281px){.hero-content{right:calc((100% - var(--maxw))/2)}}
 /* hero: the free look, an index card with a real input */
-.hero-look{position:absolute;left:max(6%,calc((100% - var(--maxw))/2 + var(--gut)));top:calc(10% + 18px);width:min(42%,500px);z-index:5;
-  transform:rotate(-2.2deg);background:#e9dcc0 url(../images/index-card-1100.webp) center/100% 100% no-repeat;
+.hero-look{position:absolute;left:max(6%,calc((100% - var(--maxw))/2 + var(--gut)));top:calc(10% + 96px);width:min(38%,450px);z-index:5;
+  transform:rotate(-1.6deg);background:#e9dcc0 url(../images/index-card-1100.webp) center/100% 100% no-repeat;
   padding:30px 40px 30px;box-shadow:0 34px 70px -18px rgba(44,45,54,.22),0 12px 28px -10px rgba(44,45,54,.12),0 1px 3px rgba(44,45,54,.06)}
 
 .hl-tape{position:absolute;left:31%;top:0;width:37.3%;aspect-ratio:500/154;transform:translateY(-40%);background:url(../images/tape-yellow.webp) center/100% 100% no-repeat;filter:drop-shadow(0 1px 1px rgba(44,45,54,.14))}
@@ -2028,8 +2028,8 @@ footer{background:var(--ink)}
 .hl-row button:hover{color:var(--forest-2)}
 .hl-s{font-size:12.5px;color:#5b5c66;margin:12px 0 0;line-height:1.5}
 /* hero sky: the stars open the page's top-to-bottom story (stars, moon, people, snake), small and quiet */
-.hero-figure.hero-sky{bottom:auto;right:auto;top:18px;width:150px;z-index:2;opacity:.4;pointer-events:none;
-  left:calc(max(6%,calc((100% - var(--maxw))/2 + var(--gut))) + min(40%,440px) + clamp(24px,4vw,64px));transform:rotate(-8deg)}
+.hero-figure.hero-sky{bottom:auto;right:auto;top:-10px;width:250px;z-index:4;opacity:.5;pointer-events:none;
+  left:calc(max(6%,calc((100% - var(--maxw))/2 + var(--gut))) + min(38%,450px) - 150px);transform:rotate(-8deg)}
 .hero-figure.hero-sky img{filter:saturate(.2) contrast(.9) brightness(1.08);mix-blend-mode:multiply;transform:translateY(var(--drift,0))}
 @media(max-width:1180px) and (min-width:751px){.hero-figure.hero-sky{left:auto;right:-10px;top:-24px;width:110px;transform:rotate(12deg)}}
 @media(max-width:1100px) and (min-width:751px){.hero-look{width:min(44%,420px);padding:30px 28px 24px}.hl-h{font-size:22px}}
