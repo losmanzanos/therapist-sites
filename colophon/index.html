@@ -717,7 +717,7 @@
   })();
 </script>
 <script>
-/* desk calculator: adds, subtracts, and spells hELLO upside down */
+/* desk calculator: adds, subtracts, and spells upside down like it's 1995 */
 (function(){
   var calc=document.getElementById('calc');if(!calc)return;
   var lcd=document.getElementById('calcLcd'),keysEl=document.getElementById('calcKeys'),flip=document.getElementById('calcFlip'),msg=document.getElementById('calcMsg'),pow=document.getElementById('calcPow');
@@ -752,10 +752,17 @@
   }
   keysEl.addEventListener('click',function(e){var b=e.target.closest('button');if(b)press(b.dataset.k);});
   pow.addEventListener('click',function(){on=!on;calc.classList.toggle('is-off',!on);pow.setAttribute('aria-pressed',on);if(on){cur='0';acc=null;op=null;fresh=true;err=false;}render();});
-  var said=false;
+  var said={};
+  var words=[
+    [/^0?\.7734$/,'hELLO to you too.','calculator_hello'],
+    [/^58008$/,'Classic. Don\u2019t worry, this stays between us. It\u2019s confidential.','calculator_classic'],
+    [/^5318008$/,'Seven digits. Overachiever. Still confidential.','calculator_classic'],
+    [/^7734$/,'hELL. Some weeks are like that. Add a decimal point up front and try again.','calculator_hell']
+  ];
   function check(){
-    var flipped=calc.classList.contains('is-flipped'),hello=on&&!err&&/^0?\.7734$/.test(cur);
-    if(flipped&&hello){msg.textContent='hELLO to you too.';msg.hidden=false;if(!said&&window.gtag){said=true;try{gtag('event','calculator_hello');}catch(x){}}}
+    var flipped=calc.classList.contains('is-flipped'),hit=null;
+    if(on&&!err)for(var i=0;i<words.length;i++)if(words[i][0].test(cur)){hit=words[i];break;}
+    if(flipped&&hit){msg.textContent=hit[1];msg.hidden=false;if(!said[hit[2]]&&window.gtag){said[hit[2]]=true;try{gtag('event',hit[2]);}catch(x){}}}
     else if(flipped){msg.textContent='Upside down. Now type something it can spell.';msg.hidden=false;}
     else msg.hidden=true;
   }
@@ -764,6 +771,6 @@
   render();
 })();
 </script>
-<script src="../assets/convert.js?v=202611080935" defer></script>
+<script src="../assets/convert.js?v=202611080954" defer></script>
 </body>
 </html>
