@@ -2276,7 +2276,7 @@ footer{background:var(--ink)}
 
 
 /* contact page: book first, write second */
-.book{position:relative;padding:var(--sy) 0 clamp(40px,5vw,64px);background:var(--cream)}
+.book{position:relative;padding:var(--sy) 0 clamp(40px,5vw,64px);background:var(--cream-s)}
 .book-inner{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(28px,4vw,72px);align-items:start}
 .book h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(32px,3.8vw,54px);line-height:1.04;margin:12px 0 18px}
 .book-text p{font-size:16px;line-height:1.78;color:var(--ink-s);max-width:420px}
@@ -2285,7 +2285,7 @@ footer{background:var(--ink)}
 .book-alt{margin-top:26px;font-size:14px;line-height:1.75;color:var(--ink-m)}
 .book-alt a{color:var(--ink-s);border-bottom:1px solid var(--border);white-space:nowrap}
 .book-alt a:hover{color:var(--forest);border-color:var(--forest-l)}
-.book-cal{position:relative;border:1px solid var(--border);background:#f1ebe0;min-height:500px;max-width:680px;width:100%;justify-self:center}
+.book-cal{position:relative;border:1px solid var(--border);background:var(--cream);min-height:500px;max-width:680px;width:100%;justify-self:center}
 .book-cal .calendly-inline-widget{min-width:0;height:560px;overflow:hidden;transition:height .2s}
 .book-cal .calendly-inline-widget iframe{display:block}
 .book-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:32px;z-index:1;color:var(--ink-m);font-size:14px;line-height:1.6;transition:opacity .35s ease,visibility 0s .35s}
@@ -2332,7 +2332,7 @@ footer{background:var(--ink)}
 .book-text p + p{margin-top:16px}
 .book-alt{margin-top:28px;font-size:15px}
 .book-cal{justify-self:end;margin-top:0;margin-right:-99px;width:900px;height:596px;min-height:0}
-.book-cal .calendly-inline-widget{transform:scale(.9);transform-origin:top right}
+.book-cal .calendly-inline-widget iframe{transform:scale(.9);transform-origin:top right}
 .contact-inner{grid-template-columns:minmax(0,1fr) 612px;column-gap:48px}
 .contact-info p{max-width:440px;font-size:17px;line-height:1.8;margin-bottom:18px}
 .ct-details{gap:13px;margin-top:22px}
@@ -2346,7 +2346,8 @@ footer{background:var(--ink)}
 .book-text p{font-size:17px;line-height:1.85}
 .book-text p + p{margin-top:22px}
 }
-.note-or{text-align:center;padding:0 var(--gut) clamp(28px,4vw,48px);background:var(--cream);font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2)}
+.note-or::before,.note-or::after{content:"";width:clamp(48px,8vw,96px);height:1px;background:rgba(44,45,54,.16)}
+.note-or{display:flex;align-items:center;justify-content:center;gap:18px;margin:0;padding:0 var(--gut) clamp(28px,4vw,48px);background:var(--cream-s);font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2)}
 .contact{padding-top:clamp(40px,5vw,64px)}
 .frow select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-s) 50%),linear-gradient(135deg,var(--ink-s) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:40px;cursor:pointer}
 .frow.is-check{border:1px solid var(--forest-l);background:var(--forest-bg);padding:12px 14px 2px}
