@@ -86,11 +86,15 @@
 <section class="book" id="book" aria-labelledby="book-h">
   <div class="book-inner">
     <div class="book-text" data-r>
+      <div class="book-head">
       <p class="eyebrow">The fast way</p>
       <h2 id="book-h">Book the call.</h2>
+      </div>
+      <div class="book-body">
       <p>Thirty minutes on Zoom or the phone. You tell me about your practice and who you want to reach. I tell you whether I'm the right person, what it would cost, and once in a while that you don't need me yet. It isn't a pitch, and nothing is owed afterward.</p>
       <p>Bring the link to your current site, or your Psychology Today profile if that's all there is. I'll have looked before we talk.</p>
       <p class="book-alt">Calendar not loading? <a href="https://calendly.com/chad-m-moravec/intro-call" target="_blank" rel="noopener">Open it in a new tab</a>, or call or text <a href="tel:7204661013">(720) 466-1013</a>.</p>
+      </div>
     </div>
     <div class="book-cal" id="bookCal" data-r data-d="1">
       <div class="calendly-inline-widget" data-resize="true" data-url="https://calendly.com/chad-m-moravec/intro-call?hide_gdpr_banner=1&hide_event_type_details=1&background_color=f1ebe0&text_color=2c2d36&primary_color=2d4a35"></div>
@@ -303,7 +307,7 @@ if(form){
     document.head.appendChild(s);
     /* Calendly pads the bottom of its month view more than the top. Trim the wrapper on that step only; later steps keep their full height. */
     var wrap=box.querySelector('.calendly-inline-widget'),onCal=true,lastH=0,TRIM=92;
-    function fit(){if(!lastH)return;wrap.style.height=((onCal&&lastH<670)?lastH-TRIM:lastH)+'px';}
+    function fit(){if(lastH<300)return;var f=wrap.querySelector('iframe');if(f){f.style.height=lastH+'px';f.setAttribute('scrolling','no');}wrap.style.height=((onCal&&lastH<670)?lastH-TRIM:lastH)+'px';}
     window.addEventListener('message',function(e){
       if(!e.data||typeof e.data.event!=='string'||e.data.event.indexOf('calendly.')!==0)return;
       var ev=e.data.event;box.classList.add('is-loaded');

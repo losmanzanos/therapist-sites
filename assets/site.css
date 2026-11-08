@@ -2218,6 +2218,17 @@ footer{background:var(--ink)}
 .book-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:32px;z-index:1;color:var(--ink-s);font-size:15px;line-height:1.7}
 .book-cal.is-loaded .book-fallback{display:none}
 @media(max-width:900px){.book-inner{grid-template-columns:1fr}.book-cal{min-height:520px}.book-cal .calendly-inline-widget{height:620px}}
+/* wide screens: intro across the top, calendar full width below, so Calendly can show the day and the times side by side */
+@media(min-width:1000px){
+.book-inner{grid-template-columns:1fr;row-gap:0}
+.book-text{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(32px,5vw,96px);align-items:start}
+.book h2{margin-bottom:0}
+.book-body{padding-top:14px}
+.book-text p{max-width:560px}
+.book-alt{margin-top:18px}
+.book-cal{max-width:none;border:0;background:transparent;min-height:709px}
+.book-cal .calendly-inline-widget{height:709px;transition:none}
+}
 .note-or{text-align:center;padding:0 var(--gut) clamp(28px,4vw,48px);background:var(--cream);font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2)}
 .contact{padding-top:clamp(40px,5vw,64px)}
 .frow select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-s) 50%),linear-gradient(135deg,var(--ink-s) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:40px;cursor:pointer}
