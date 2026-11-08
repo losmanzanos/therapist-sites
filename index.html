@@ -44,7 +44,7 @@
 <link rel="preload" href="fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/site.css?v=202611080832"/>
+<link rel="stylesheet" href="assets/site.css?v=202611080837"/>
 </head>
 <body>
 
@@ -392,6 +392,8 @@
         <p class="rc-total"><span id="rcDiffL">Five-year difference</span><strong id="rcDiff">$1,925 yours</strong></p>
         <p class="rc-note" id="rcNote" aria-live="polite">Owning pulls ahead in month 36. Every month after that is money you keep.</p>
         <p class="rc-foot">Thank you for owning</p>
+        <button type="button" class="rc-bar" id="rcBar" aria-label="Scan the barcode"><svg class="rc-bar-svg" viewBox="0 0 198 50" preserveAspectRatio="none" role="img" aria-label="Barcode: Yours Forever" shape-rendering="crispEdges"><rect x="10" y="0" width="2" height="50"/><rect x="13" y="0" width="1" height="50"/><rect x="16" y="0" width="1" height="50"/><rect x="21" y="0" width="3" height="50"/><rect x="25" y="0" width="2" height="50"/><rect x="28" y="0" width="1" height="50"/><rect x="32" y="0" width="1" height="50"/><rect x="36" y="0" width="3" height="50"/><rect x="40" y="0" width="2" height="50"/><rect x="43" y="0" width="2" height="50"/><rect x="46" y="0" width="3" height="50"/><rect x="50" y="0" width="3" height="50"/><rect x="54" y="0" width="2" height="50"/><rect x="59" y="0" width="1" height="50"/><rect x="61" y="0" width="3" height="50"/><rect x="65" y="0" width="2" height="50"/><rect x="68" y="0" width="3" height="50"/><rect x="72" y="0" width="1" height="50"/><rect x="76" y="0" width="2" height="50"/><rect x="79" y="0" width="2" height="50"/><rect x="83" y="0" width="2" height="50"/><rect x="87" y="0" width="1" height="50"/><rect x="91" y="0" width="2" height="50"/><rect x="96" y="0" width="1" height="50"/><rect x="98" y="0" width="1" height="50"/><rect x="102" y="0" width="3" height="50"/><rect x="106" y="0" width="2" height="50"/><rect x="109" y="0" width="2" height="50"/><rect x="114" y="0" width="1" height="50"/><rect x="116" y="0" width="3" height="50"/><rect x="120" y="0" width="1" height="50"/><rect x="124" y="0" width="2" height="50"/><rect x="127" y="0" width="1" height="50"/><rect x="131" y="0" width="3" height="50"/><rect x="135" y="0" width="1" height="50"/><rect x="137" y="0" width="2" height="50"/><rect x="142" y="0" width="1" height="50"/><rect x="146" y="0" width="2" height="50"/><rect x="149" y="0" width="1" height="50"/><rect x="153" y="0" width="2" height="50"/><rect x="158" y="0" width="1" height="50"/><rect x="160" y="0" width="3" height="50"/><rect x="164" y="0" width="2" height="50"/><rect x="168" y="0" width="2" height="50"/><rect x="172" y="0" width="2" height="50"/><rect x="175" y="0" width="2" height="50"/><rect x="180" y="0" width="3" height="50"/><rect x="184" y="0" width="1" height="50"/><rect x="186" y="0" width="2" height="50"/></svg><span class="rc-bar-n" aria-hidden="true">Tap to scan</span></button>
+        <p class="rc-scan" id="rcScan" aria-live="polite" hidden></p>
         <p class="rc-contact">Therapist Web Design &middot; therapistweb.design &middot; (720) 466-1013 &middot; hello@therapistweb.design</p>
       </div>
       <button type="button" class="cs-link rc-print" id="rcPrint">Print this receipt</button>
@@ -710,7 +712,7 @@
 }
 </script>
 
-<script src="assets/convert.js?v=202611080832" defer></script>
+<script src="assets/convert.js?v=202611080837" defer></script>
 
 <script>
 (function(){
@@ -943,6 +945,20 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
     pio.observe(rc);
   }else{rc.classList.add('printed','done');}
   r.addEventListener('input',update);
+  /* the barcode is real Code 128 ("YOURS FOREVER"); tapping it rings it up */
+  var bar=document.getElementById('rcBar'),scan=document.getElementById('rcScan'),rung=0;
+  if(bar&&scan){bar.addEventListener('click',function(){
+    if(bar.classList.contains('is-scanning'))return;
+    bar.classList.add('is-scanning');
+    try{var A=window.AudioContext||window.webkitAudioContext;if(A){var ac=new A(),o=ac.createOscillator(),g=ac.createGain();o.type='square';o.frequency.value=1760;g.gain.setValueAtTime(.0001,ac.currentTime);g.gain.exponentialRampToValueAtTime(.08,ac.currentTime+.01);g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+.14);o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+.16);}}catch(x){}
+    setTimeout(function(){
+      rung++;
+      var lines=['Scanned: one website. Paid in full. Yours forever.','Scanned again: still yours. Still $0 a month.','Third scan: it is not going anywhere. Neither is your money.'];
+      scan.textContent=lines[Math.min(rung,lines.length)-1];scan.hidden=false;
+      bar.classList.remove('is-scanning');
+      if(window.gtag){try{gtag('event','receipt_scan',{count:rung});}catch(x){}}
+    },650);
+  });}
   var pb=document.getElementById('rcPrint');
   if(pb)pb.addEventListener('click',function(){window.twdPrint&&window.twdPrint('#receipt');});
   pks.forEach(function(b){
