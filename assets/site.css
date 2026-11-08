@@ -52,6 +52,9 @@
 /* ── RESET ── */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
+/* viewport-fit=cover lets the page run under the iPhone home indicator, so Safari never fills that strip with a sampled color.
+   In landscape, keep content clear of the notch the same way Safari did before. */
+body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
 [id]{scroll-margin-top:90px}
 body{
   background:var(--cream);color:var(--ink);
@@ -836,7 +839,7 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
 /* ═══════════════════════════════
    FOOTER: editorial redesign
    ═══════════════════════════════ */
-footer{background:var(--ink)}
+footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .ft-top{
   max-width:var(--maxw);margin:0 auto;
   padding:clamp(56px,7vw,96px) var(--gut) clamp(40px,5vw,64px);
@@ -2267,7 +2270,7 @@ footer{background:var(--ink)}
 @media(max-width:900px){.look-inner{grid-template-columns:1fr;gap:40px}}
 
 /* the booking bar on phones */
-.stickbar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:60;display:none;grid-template-columns:1fr auto;align-items:stretch;background:linear-gradient(var(--forest),var(--forest));border-radius:3px;box-shadow:0 10px 28px rgba(20,24,22,.28),0 2px 6px rgba(20,24,22,.18);transform:translateY(calc(100% + 24px + env(safe-area-inset-bottom)));transition:transform .32s cubic-bezier(.7,0,.2,1)}
+.stickbar{position:fixed;left:calc(10px + env(safe-area-inset-left));right:calc(10px + env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));z-index:60;display:none;grid-template-columns:1fr auto;align-items:stretch;background:linear-gradient(var(--forest),var(--forest));border-radius:3px;box-shadow:0 10px 28px rgba(20,24,22,.28),0 2px 6px rgba(20,24,22,.18);transform:translateY(calc(100% + 24px + env(safe-area-inset-bottom)));transition:transform .32s cubic-bezier(.7,0,.2,1)}
 .stickbar.is-on{transform:translateY(0)}
 /* The green is a gradient layer, not background-color, on purpose: iPhone Safari copies the background-color of a
    fixed bar near the bottom into the strip under its toolbar. It can't read one color from an image layer, so the strip stays clear.
