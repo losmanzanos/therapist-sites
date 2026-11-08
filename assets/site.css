@@ -2269,17 +2269,18 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .look-cap{margin-top:14px;font-size:13px;color:var(--ink-m);line-height:1.6}
 @media(max-width:900px){.look-inner{grid-template-columns:1fr;gap:40px}}
 
-/* the booking bar on phones */
-.stickbar{position:fixed;left:calc(10px + env(safe-area-inset-left));right:calc(10px + env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));z-index:60;display:none;grid-template-columns:1fr auto;align-items:stretch;background:linear-gradient(var(--forest),var(--forest));border-radius:3px;box-shadow:0 10px 28px rgba(20,24,22,.28),0 2px 6px rgba(20,24,22,.18);transform:translateY(calc(100% + 24px + env(safe-area-inset-bottom)));transition:transform .32s cubic-bezier(.7,0,.2,1)}
+/* the booking bar on phones.
+   iPhone browsers (Safari, DuckDuckGo, anything on Apple's engine) copy the color of a fixed element near the bottom
+   into the strip under their own toolbar. So the bar sits in a page-colored dock that touches the bottom edge: the
+   browser copies cream, the page's own color, and the only thing that reads is the green bar. The dock leaves the
+   page entirely (display:none) when the bar is hidden. */
+.stickbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;background:var(--cream);padding:10px calc(10px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(10px + env(safe-area-inset-left));transform:translateY(100%);transition:transform .32s cubic-bezier(.7,0,.2,1)}
+.stickbar::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:18px;background:linear-gradient(rgba(241,235,224,0),var(--cream));pointer-events:none}
 .stickbar.is-on{transform:translateY(0)}
-/* The green is a gradient layer, not background-color, on purpose: iPhone Safari copies the background-color of a
-   fixed bar near the bottom into the strip under its toolbar. It can't read one color from an image layer, so the strip stays clear.
-   The bar floats just above the bottom edge instead of touching it. iPhone Safari extends the color of anything
-   pinned to the bottom edge down under its own toolbar, which left the words high in a tall green block.
-   Floating, the bar is exactly what you see: equal padding above and below, text centered. */
+.sb-in{display:grid;grid-template-columns:1fr auto;align-items:stretch;background:var(--forest);border-radius:3px;box-shadow:0 6px 18px rgba(20,24,22,.18),0 1px 4px rgba(20,24,22,.14)}
 .stickbar a{display:flex;align-items:center;justify-content:center;min-height:52px;font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none}
 .stickbar .sb-text{border-left:1px solid rgba(255,255,255,.2);padding:0 22px;color:rgba(255,255,255,.85)}
-@media(max-width:750px){.stickbar.is-shown{display:grid}body{padding-bottom:0}}
+@media(max-width:750px){.stickbar.is-shown{display:block}body{padding-bottom:0}}
 @media print{.stickbar{display:none!important}}
 
 

@@ -73,8 +73,8 @@
     bar.className = "stickbar";
     bar.setAttribute("aria-label", "Book a call");
     bar.innerHTML =
-      '<a href="' + CAL + '" target="_blank" rel="noopener" class="sb-book">Book a free 30-minute call</a>' +
-      '<a href="sms:+17204661013" class="sb-text" aria-label="Text (720) 466-1013">Text</a>';
+      '<div class="sb-in"><a href="' + CAL + '" target="_blank" rel="noopener" class="sb-book">Book a free 30-minute call</a>' +
+      '<a href="sms:+17204661013" class="sb-text" aria-label="Text (720) 466-1013">Text</a></div>';
     document.body.appendChild(bar);
     var ft = document.querySelector("footer"), onCal = /calendly/.test(location.hostname);
     var footerIn = false, typing = false, on = false, offT = 0;
