@@ -2334,14 +2334,16 @@ footer{background:var(--ink)}
 
 /* the service ticket: same paper family as the receipt and the quote sheet */
 .ticket-wrap{position:relative}
-.ticket{position:relative;background:var(--cream);border:1px solid var(--border);padding:26px 26px 22px;box-shadow:0 1px 0 rgba(44,45,54,.04),0 22px 44px -30px rgba(44,45,54,.4);transform:rotate(-.6deg)}
-.ticket::before{content:"";position:absolute;left:0;right:0;top:-1px;height:4px;background:repeating-linear-gradient(90deg,var(--forest-l) 0 10px,transparent 10px 16px)}
+.ticket-wrap{container-type:inline-size;filter:drop-shadow(0 18px 20px rgba(44,45,54,.16)) drop-shadow(0 1px 1px rgba(44,45,54,.1))}
+/* a real perforated ticket (photo): taped top and perforated bottom hold their shape, the middle stretches */
+.ticket{position:relative;padding:calc(15.8cqw + 4px) 30px calc(4.2cqw + 22px);transform:rotate(-.6deg);
+  border-style:solid;border-width:0;border-image:url(../images/ticket-paper.webp) 98 0 26 0 fill / 15.8cqw 0 4.2cqw 0 stretch}
 .tk-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;padding-bottom:14px;border-bottom:1px solid var(--ink)}
 .tk-k{display:block;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--forest-2);margin-bottom:6px}
 .tk-t{display:block;font-family:var(--serif-d);font-weight:400;font-size:clamp(20px,1.8vw,24px);line-height:1.1;color:var(--ink)}
 .tk-meta{display:grid;gap:4px;margin:0;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-m);text-align:right;flex-shrink:0}
 .tk-meta div{display:flex;gap:8px;justify-content:flex-end}
-.tk-meta dt{color:var(--dusty)}
+.tk-meta dt{color:#7d7e88}
 .tk-meta dd{margin:0;color:var(--ink-s)}
 .tk-list{border-top:0}
 .tk-list li{grid-template-columns:22px 1fr;gap:0 14px;padding:14px 0 13px}
@@ -2352,9 +2354,9 @@ footer{background:var(--ink)}
 .tk-total strong{font-family:var(--serif-d);font-size:26px;letter-spacing:0;color:var(--forest)}
 .tk-stamp{display:inline-block;white-space:nowrap;padding:6px 12px;border:2px solid #b8432a;outline:1px solid #b8432a;outline-offset:2px;color:#b8432a;font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.32em;text-transform:uppercase;transform:rotate(-8deg);opacity:.82;mix-blend-mode:multiply}
 .tk-note{margin:16px 0 0;font-size:13px;color:var(--ink-m);line-height:1.6;font-style:italic;font-family:var(--serif)}
-@media(max-width:900px){.ticket{transform:none;padding:22px 18px 18px}.tk-total{gap:10px;font-size:9px;letter-spacing:.22em}.tk-total strong{font-size:22px}.tk-stamp{font-size:10px;letter-spacing:.22em;padding:5px 9px}.tk-head{flex-direction:column;align-items:flex-start}.tk-meta{text-align:left}.tk-meta div{justify-content:flex-start}}
+@media(max-width:900px){.ticket{transform:none;padding:calc(15.8cqw + 2px) 20px calc(4.2cqw + 18px)}.tk-total{gap:10px;font-size:9px;letter-spacing:.22em}.tk-total strong{font-size:22px}.tk-stamp{font-size:10px;letter-spacing:.22em;padding:5px 9px}.tk-head{flex-direction:column;align-items:flex-start}.tk-meta{text-align:left}.tk-meta div{justify-content:flex-start}}
 @media(prefers-reduced-motion:reduce){.ticket{transform:none}}
-@media print{.ticket{transform:none;box-shadow:none}}
+@media print{.ticket{transform:none;box-shadow:none;border-image:none;padding:20px}.ticket-wrap{filter:none}}
 
 /* channel 00 */
 .guide-zero{display:flex;align-items:baseline;gap:14px;margin:10px 0 0;padding:12px 0 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dusty);opacity:.7;user-select:none}
