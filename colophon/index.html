@@ -181,10 +181,10 @@
   .desk .wrap{position:relative}
   .card{box-shadow:6px 6px 0 var(--ink),0 26px 40px -16px rgba(0,0,0,.55)}
   /* a strip of tape holds each card to the mat */
-  .card .tapebit{position:absolute;top:-16px;left:50%;width:96px;height:30px;transform:translateX(-50%) rotate(-2deg);z-index:5;pointer-events:none;
-    background:url(../images/tape-yellow.webp) center/100% 100% no-repeat;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
-  .card:nth-child(2) .tapebit{transform:translateX(-50%) rotate(3deg)}
-  .card:nth-child(3) .tapebit{transform:translateX(-50%) rotate(-1deg)}
+  .card .tapebit{position:absolute;top:0;left:30%;width:118px;aspect-ratio:240/130;transform:translate(-50%,-55%) rotate(-5deg);z-index:5;pointer-events:none;
+    background:url(../images/tape-b.webp) center/100% 100% no-repeat;filter:drop-shadow(0 2px 2px rgba(0,0,0,.28))}
+  .card:nth-child(2) .tapebit{left:56%;width:128px;aspect-ratio:262/130;background-image:url(../images/tape-c.webp);transform:translate(-50%,-52%) rotate(3.5deg)}
+  .card:nth-child(3) .tapebit{left:40%;width:150px;aspect-ratio:430/130;background-image:url(../images/tape-a.webp);transform:translate(-50%,-50%) rotate(-1.5deg)}
   .sec-label{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--forest);
     margin-bottom:14px;display:flex;align-items:center;gap:12px}
   .sec-label::before{content:"";width:30px;height:2px;background:var(--pop)}
@@ -214,8 +214,6 @@
   /* picking the polaroid up makes the mini-site live: scroll it, click around */
   .card .polaroid:hover{transform:rotate(0deg) scale(2.7);box-shadow:8px 14px 30px rgba(44,45,54,.4);z-index:30}
   .card .polaroid:hover .shot iframe{pointer-events:auto}
-  .card .polaroid::after{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-3deg);
-    width:54px;height:17px;background:url(../images/tape-yellow.webp) center/100% 100% no-repeat}
   .card .polaroid .shot{width:106px;height:80px;overflow:hidden;background:#fff}
   .card .polaroid .shot iframe{width:1200px;height:906px;border:0;transform:scale(.08833);transform-origin:0 0;pointer-events:none}
   .card .polaroid .cap{display:block;font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:#6b6f66;text-align:center;padding-top:5px}
@@ -661,6 +659,6 @@
     if(snav){snav.querySelectorAll('.mob-menu a').forEach(function(a){a.addEventListener('click',function(){snav.classList.remove('open');});});}
   })();
 </script>
-<script src="../assets/convert.js?v=202611080841" defer></script>
+<script src="../assets/convert.js?v=202611080849" defer></script>
 </body>
 </html>
