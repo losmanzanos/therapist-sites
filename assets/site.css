@@ -1677,11 +1677,10 @@ footer{background:var(--ink)}
   box-shadow:0 1px 0 rgba(44,45,54,.08),0 30px 60px -28px rgba(44,45,54,.3),0 10px 22px -12px rgba(44,45,54,.12);
   font-variant-numeric:tabular-nums;position:relative;
 }
-/* two pieces of the same yellow tape as the homepage card hold the sheet up */
-.sheet::before,.sheet::after{content:"";position:absolute;top:0;width:clamp(78px,11vw,110px);aspect-ratio:500/154;
-  background:url(../images/tape-yellow.webp) center/100% 100% no-repeat;filter:drop-shadow(0 1px 1px rgba(44,45,54,.14));pointer-events:none}
-.sheet::before{left:clamp(14px,4vw,40px);transform:translateY(-45%) rotate(-4deg)}
-.sheet::after{right:clamp(14px,4vw,40px);transform:translateY(-45%) rotate(3.5deg) scaleX(-1)}
+/* one strip of tape across the top-left corner holds the sheet up */
+.sheet::before{content:"";position:absolute;top:0;left:0;width:clamp(120px,17vw,170px);aspect-ratio:430/130;pointer-events:none;
+  background:url(../images/tape-a.webp) center/100% 100% no-repeat;filter:drop-shadow(0 2px 2px rgba(44,45,54,.16));
+  transform:translate(-26%,-10%) rotate(-31deg)}
 .sh-head{
   display:grid;grid-template-columns:1fr auto;gap:24px 40px;align-items:end;
   padding-bottom:22px;border-bottom:1px solid var(--ink);margin-bottom:8px;
@@ -1855,7 +1854,7 @@ footer{background:var(--ink)}
   .crumbs{display:none}
   .pricing{padding:0}
   .sheet{max-width:none;margin:0;padding:0;box-shadow:none;background:#fff}
-  .sheet::before,.sheet::after{display:none}
+  .sheet::before{display:none}
   .sh-item{break-inside:avoid;padding:12px 0 13px}
   .sh-inc{gap:3px 20px;font-size:11.5px}
   .sh-desc{font-size:11.5px}
@@ -2035,7 +2034,7 @@ footer{background:var(--ink)}
   background:repeating-linear-gradient(to bottom,transparent 0 calc(var(--rule) - 1.6px),rgba(132,178,160,.72) calc(var(--rule) - 1.6px) var(--rule))}
 .hero-look::after{content:"";position:absolute;left:0;right:0;height:1.8px;top:calc(var(--pt) + var(--rule) - var(--lift) - 1px);z-index:0;pointer-events:none;background:rgba(228,86,112,.82)}
 .hero-look>*{position:relative;z-index:1}
-.hl-tape{position:absolute!important;left:31%;top:0;width:37.3%;aspect-ratio:500/154;transform:translateY(-40%);background:url(../images/tape-yellow.webp) center/100% 100% no-repeat;filter:drop-shadow(0 1px 1px rgba(44,45,54,.14));z-index:2!important}
+.hl-tape{position:absolute!important;left:13%;top:0;width:29%;aspect-ratio:240/130;transform:translateY(-56%) rotate(-7deg);background:url(../images/tape-b.webp) center/100% 100% no-repeat;filter:drop-shadow(0 2px 2px rgba(44,45,54,.16));z-index:2!important}
 .hl-k{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#a53c25;margin:0;line-height:var(--rule);height:var(--rule)}
 .hl-h{font-family:var(--serif-d);font-style:italic;font-weight:400;font-size:24px;line-height:var(--rule);color:var(--ink);margin:0;top:-2px}
 .hl-p{font-size:14.5px;line-height:var(--rule);color:#3d3e48;margin:0}
@@ -2145,7 +2144,7 @@ footer{background:var(--ink)}
   body.is-printing #printArea .rc-contact{display:block;margin-top:18px;text-align:center;font-size:10px;letter-spacing:.08em;color:#555}
   body.is-printing #printArea .rc-print,body.is-printing #printArea .sh-print{display:none}
   body.is-printing #printArea .sheet{width:640px}
-  body.is-printing #printArea .sheet::before,body.is-printing #printArea .sheet::after{display:none}
+  body.is-printing #printArea .sheet::before,body.is-printing #printArea .ticket::before{display:none}
   @page{margin:14mm}
 }
 .sh-print{margin-top:18px}
@@ -2339,8 +2338,9 @@ footer{background:var(--ink)}
 .ticket-wrap{position:relative}
 .ticket-wrap{container-type:inline-size;filter:drop-shadow(0 18px 20px rgba(44,45,54,.16)) drop-shadow(0 1px 1px rgba(44,45,54,.1))}
 /* a real perforated ticket (photo): taped top and perforated bottom hold their shape, the middle stretches */
-.ticket{position:relative;padding:calc(15.8cqw + 4px) 30px calc(4.2cqw + 22px);transform:rotate(-.6deg);
-  border-style:solid;border-width:0;border-image:url(../images/ticket-paper.webp) 98 0 26 0 fill / 15.8cqw 0 4.2cqw 0 stretch}
+.ticket{position:relative;padding:calc(4.2cqw + 30px) 30px calc(4.2cqw + 22px);transform:rotate(-.6deg);
+  border-style:solid;border-width:0;border-image:url(../images/ticket-paper.webp) 26 0 26 0 fill / 4.2cqw 0 4.2cqw 0 stretch}
+.ticket::before{content:"";position:absolute;top:0;right:13%;width:36%;max-width:170px;aspect-ratio:262/130;transform:translateY(-58%) rotate(5deg);background:url(../images/tape-c.webp) center/100% 100% no-repeat;pointer-events:none}
 .tk-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;padding-bottom:14px;border-bottom:1px solid var(--ink)}
 .tk-k{display:block;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--forest-2);margin-bottom:6px}
 .tk-t{display:block;font-family:var(--serif-d);font-weight:400;font-size:clamp(20px,1.8vw,24px);line-height:1.1;color:var(--ink)}
@@ -2357,7 +2357,7 @@ footer{background:var(--ink)}
 .tk-total strong{font-family:var(--serif-d);font-size:26px;letter-spacing:0;color:var(--forest)}
 .tk-stamp{display:inline-block;white-space:nowrap;padding:6px 12px;border:2px solid #b8432a;outline:1px solid #b8432a;outline-offset:2px;color:#b8432a;font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.32em;text-transform:uppercase;transform:rotate(-8deg);opacity:.82;mix-blend-mode:multiply}
 .tk-note{margin:16px 0 0;font-size:13px;color:var(--ink-m);line-height:1.6;font-style:italic;font-family:var(--serif)}
-@media(max-width:900px){.ticket{transform:none;padding:calc(15.8cqw + 2px) 20px calc(4.2cqw + 18px)}.tk-total{gap:10px;font-size:9px;letter-spacing:.22em}.tk-total strong{font-size:22px}.tk-stamp{font-size:10px;letter-spacing:.22em;padding:5px 9px}.tk-head{flex-direction:column;align-items:flex-start}.tk-meta{text-align:left}.tk-meta div{justify-content:flex-start}}
+@media(max-width:900px){.ticket{transform:none;padding:calc(4.2cqw + 26px) 20px calc(4.2cqw + 18px)}.tk-total{gap:10px;font-size:9px;letter-spacing:.22em}.tk-total strong{font-size:22px}.tk-stamp{font-size:10px;letter-spacing:.22em;padding:5px 9px}.tk-head{flex-direction:column;align-items:flex-start}.tk-meta{text-align:left}.tk-meta div{justify-content:flex-start}}
 @media(prefers-reduced-motion:reduce){.ticket{transform:none}}
 @media print{.ticket{transform:none;box-shadow:none;border-image:none;padding:20px}.ticket-wrap{filter:none}}
 

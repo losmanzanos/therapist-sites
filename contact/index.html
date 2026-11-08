@@ -22,9 +22,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"/>
 <link rel="preload" href="../fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://calendly.com"/>
 <link rel="preconnect" href="https://assets.calendly.com" crossorigin/>
-<link rel="dns-prefetch" href="//calendly.com"/>
-<link rel="stylesheet" href="../assets/site.css?v=202611080841"/>
+<link rel="stylesheet" href="../assets/site.css?v=202611080849"/>
 </head>
 <body>
 
@@ -299,15 +299,21 @@ if(form){
   try{var q=new URLSearchParams(location.search).get('site');if(q&&siteIn){q=q.trim();if(!/^https?:\/\//i.test(q))q='https://'+q;siteIn.value=q;if(proj){proj.value='Free look at my current site';syncCheck();}setTimeout(function(){var n=form.querySelector('input[name="Name"]');if(n)n.focus({preventScroll:true});},120);}}catch(x){}
   fromHash();window.addEventListener('hashchange',fromHash);
 }
-/* ── Calendly, loaded when the calendar scrolls into view ── */
+/* ── Calendly: the iframe goes in right away (no widget script to fetch first, no waiting for scroll) ── */
 (function(){
   var box=document.getElementById('bookCal');if(!box)return;
   var done=false;
   function load(){
     if(done)return;done=true;
-    var s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;
-    s.onload=function(){box.classList.add('is-loaded');};
-    document.head.appendChild(s);
+    var w=box.querySelector('.calendly-inline-widget'),u=w&&w.getAttribute('data-url');
+    if(u&&!w.querySelector('iframe')){
+      var f=document.createElement('iframe');
+      f.src=u+(u.indexOf('?')>-1?'&':'?')+'embed_domain='+encodeURIComponent(location.host)+'&embed_type=Inline';
+      f.title='Book a free 30-minute call';f.width='100%';f.height='100%';f.setAttribute('frameborder','0');f.setAttribute('scrolling','no');
+      f.style.cssText='width:100%;height:100%;border:0;display:block';
+      f.addEventListener('load',function(){box.classList.add('is-loaded');});
+      w.appendChild(f);
+    }
     /* Calendly pads the bottom of its month view more than the top. Trim the wrapper on that step only; later steps keep their full height. */
     var wrap=box.querySelector('.calendly-inline-widget'),onCal=true,lastH=0,TRIM=92;
     var wideMQ=window.matchMedia('(min-width:1000px)');
@@ -322,16 +328,14 @@ if(form){
       if(ev==='calendly.event_scheduled'&&window.gtag){try{gtag('event','call_booked',{page:location.pathname});}catch(x){}}
     });
   }
-  if('IntersectionObserver' in window){new IntersectionObserver(function(es,o){if(es[0].isIntersecting){o.disconnect();load();}},{rootMargin:'300px'}).observe(box);}
-  else load();
-  setTimeout(load,2500);
+  load();
 })();
 })();
 </script>
 
 
 
-<script src="../assets/site.js?v=202611080841" defer></script>
-<script src="../assets/convert.js?v=202611080841" defer></script>
+<script src="../assets/site.js?v=202611080849" defer></script>
+<script src="../assets/convert.js?v=202611080849" defer></script>
 </body>
 </html>
