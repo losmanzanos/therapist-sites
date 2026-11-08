@@ -2021,9 +2021,15 @@ footer{background:var(--ink)}
 .hl-row:focus-within{border-color:var(--forest)}
 .hl-row button:hover{color:var(--forest-2)}
 .hl-s{font-size:12.5px;color:var(--ink-m);margin:12px 0 0;line-height:1.5}
+/* hero sky: the stars open the page's top-to-bottom story (stars, moon, people, snake), small and quiet */
+.hero-figure.hero-sky{bottom:auto;right:auto;top:18px;width:150px;z-index:2;opacity:.4;pointer-events:none;
+  left:calc(max(6%,calc((100% - var(--maxw))/2 + var(--gut))) + min(40%,440px) + clamp(24px,4vw,64px));transform:rotate(-8deg)}
+.hero-figure.hero-sky img{filter:saturate(.2) contrast(.9) brightness(1.08);mix-blend-mode:multiply;transform:translateY(var(--drift,0))}
+@media(max-width:1180px) and (min-width:751px){.hero-figure.hero-sky{left:auto;right:-10px;top:-24px;width:110px;transform:rotate(12deg)}}
 @media(max-width:1100px) and (min-width:751px){.hero-look{width:min(42%,400px);padding:28px 26px 22px}.hl-h{font-size:22px}}
 @media(max-width:750px){
   .hero{display:block}
+  .hero-figure.hero-sky{display:block;left:auto;right:-18px;top:-42px;width:28%;opacity:.36;transform:rotate(14deg)}
   .hero-look{position:relative;left:auto;top:auto;width:auto;margin:4px var(--gut) 48px;transform:rotate(-1.2deg);padding:30px 24px 22px}
   .hl-h{font-size:25px}
   .hl-p{font-size:15px}
