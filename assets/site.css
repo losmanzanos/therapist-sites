@@ -2401,7 +2401,9 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .hero-proof .hp-k::before{content:"";width:6px;height:6px;border-radius:50%;background:#e0644a;box-shadow:0 0 0 2px rgba(224,100,74,.25)}
 .hp-crawl{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 36px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 36px),transparent 100%)}
 .hp-track{display:flex;width:max-content;animation:hpcrawl var(--hpdur,24s) linear infinite}
-.hero-proof:hover .hp-track,.hero-proof:focus-within .hp-track{animation-play-state:paused}
+/* pause for a real mouse or keyboard focus only: phones keep :hover and :focus after a tap, which froze the crawl */
+@media(hover:hover){.hero-proof:hover .hp-track{animation-play-state:paused}}
+.hero-proof:has(a:focus-visible) .hp-track{animation-play-state:paused}
 .hp-set{display:flex;align-items:baseline;flex:none;padding-left:18px}
 .hero-proof a{display:inline-flex;align-items:baseline;gap:8px;white-space:nowrap;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-s);transition:color .2s}
 .hero-proof a b{font-family:var(--sans);font-style:normal;font-weight:600;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest-2);transform:translateY(-2px)}
