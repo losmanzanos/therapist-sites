@@ -307,7 +307,9 @@ if(form){
     document.head.appendChild(s);
     /* Calendly pads the bottom of its month view more than the top. Trim the wrapper on that step only; later steps keep their full height. */
     var wrap=box.querySelector('.calendly-inline-widget'),onCal=true,lastH=0,TRIM=92;
-    function fit(){if(lastH<300)return;var f=wrap.querySelector('iframe');if(f){f.style.height=lastH+'px';f.setAttribute('scrolling','no');}wrap.style.height=((onCal&&lastH<670)?lastH-TRIM:lastH)+'px';}
+    var wideMQ=window.matchMedia('(min-width:1000px)');
+    function fit(){if(lastH<300)return;var f=wrap.querySelector('iframe');if(f){f.style.height=lastH+'px';}var trim=onCal&&!wideMQ.matches&&lastH<670;wrap.style.height=(trim?lastH-TRIM:lastH)+'px';}
+    wideMQ.addEventListener&&wideMQ.addEventListener('change',fit);
     window.addEventListener('message',function(e){
       if(!e.data||typeof e.data.event!=='string'||e.data.event.indexOf('calendly.')!==0)return;
       var ev=e.data.event;box.classList.add('is-loaded');

@@ -2218,7 +2218,9 @@ footer{background:var(--ink)}
 .book-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:32px;z-index:1;color:var(--ink-s);font-size:15px;line-height:1.7}
 .book-cal.is-loaded .book-fallback{display:none}
 @media(max-width:900px){.book-inner{grid-template-columns:1fr}.book-cal{min-height:520px}.book-cal .calendly-inline-widget{height:620px}}
-/* wide screens: intro across the top, calendar full width below, so Calendly can show the day and the times side by side */
+/* 1000px and up: Calendly gets a 900px frame, the width it needs to show the day and its times side by side.
+   1000-1279: intro row on top (heading left, copy right), frame centered below.
+   1280 and up: intro in a left column, frame on the right, like the form below it. */
 @media(min-width:1000px){
 .book-inner{grid-template-columns:1fr;row-gap:0}
 .book-text{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(32px,5vw,96px);align-items:start}
@@ -2226,8 +2228,17 @@ footer{background:var(--ink)}
 .book-body{padding-top:14px}
 .book-text p{max-width:560px}
 .book-alt{margin-top:18px}
-.book-cal{max-width:none;border:0;background:transparent;min-height:709px}
-.book-cal .calendly-inline-widget{height:709px;transition:none}
+.book-cal{max-width:900px;border:0;background:transparent;min-height:662px;justify-self:center}
+.book-cal .calendly-inline-widget{height:662px;overflow:visible;transition:none}
+}
+@media(min-width:1280px){
+.book-inner{max-width:1400px;grid-template-columns:minmax(0,1fr) 900px;column-gap:clamp(36px,4vw,72px);align-items:start}
+.book-text{display:block}
+.book h2{font-size:clamp(34px,3.3vw,50px);margin-bottom:18px}
+.book-body{padding-top:0}
+.book-text p{max-width:400px}
+.book-alt{margin-top:26px}
+.book-cal{justify-self:end;margin-top:4px}
 }
 .note-or{text-align:center;padding:0 var(--gut) clamp(28px,4vw,48px);background:var(--cream);font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2)}
 .contact{padding-top:clamp(40px,5vw,64px)}
