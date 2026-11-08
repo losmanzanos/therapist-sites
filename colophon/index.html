@@ -181,8 +181,8 @@
   .desk .wrap{position:relative}
   .card{box-shadow:6px 6px 0 var(--ink),0 26px 40px -16px rgba(0,0,0,.55)}
   /* a strip of tape holds each card to the mat */
-  .card .tapebit{position:absolute;top:-12px;left:50%;width:76px;height:22px;transform:translateX(-50%) rotate(-2deg);z-index:5;pointer-events:none;
-    background:rgba(138,171,147,.55);border:1px dashed rgba(44,45,54,.2);backdrop-filter:blur(1px)}
+  .card .tapebit{position:absolute;top:-16px;left:50%;width:96px;height:30px;transform:translateX(-50%) rotate(-2deg);z-index:5;pointer-events:none;
+    background:url(../images/tape-yellow.webp) center/100% 100% no-repeat;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
   .card:nth-child(2) .tapebit{transform:translateX(-50%) rotate(3deg)}
   .card:nth-child(3) .tapebit{transform:translateX(-50%) rotate(-1deg)}
   .sec-label{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--forest);
@@ -214,8 +214,8 @@
   /* picking the polaroid up makes the mini-site live: scroll it, click around */
   .card .polaroid:hover{transform:rotate(0deg) scale(2.7);box-shadow:8px 14px 30px rgba(44,45,54,.4);z-index:30}
   .card .polaroid:hover .shot iframe{pointer-events:auto}
-  .card .polaroid::after{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-3deg);
-    width:44px;height:16px;background:rgba(138,171,147,.55);border:1px dashed rgba(44,45,54,.2)}
+  .card .polaroid::after{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-3deg);
+    width:54px;height:17px;background:url(../images/tape-yellow.webp) center/100% 100% no-repeat}
   .card .polaroid .shot{width:106px;height:80px;overflow:hidden;background:#fff}
   .card .polaroid .shot iframe{width:1200px;height:906px;border:0;transform:scale(.08833);transform-origin:0 0;pointer-events:none}
   .card .polaroid .cap{display:block;font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:#6b6f66;text-align:center;padding-top:5px}
@@ -245,11 +245,9 @@
   .face{grid-area:1/1;backface-visibility:hidden;border:2px solid var(--ink);border-radius:6px;padding:26px;display:flex;flex-direction:column;justify-content:space-between}
   .back{justify-content:flex-start;gap:12px}
   /* the front is a receipt, the same paper as the one on the homepage */
-  .front{border:0;border-radius:0;padding:26px 26px 34px;gap:0;justify-content:flex-start;color:#34353d;
-    background:#fbf8f1 radial-gradient(rgba(44,45,54,.035) 1px,transparent 1px);background-size:4px 4px;
-    box-shadow:none;transform:rotate(-.6deg);
-    -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;
-            mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%}
+  .front{border:0;border-radius:0;padding:28px 28px 40px;gap:0;justify-content:flex-start;color:#34353d;
+    background:url(../images/receipt-sheet.webp) center/100% 100% no-repeat;
+    box-shadow:none;transform:rotate(-.6deg)}
   .flip:nth-child(2n) .front{transform:rotate(.7deg)}
   .front .rc-h{font-family:'Fraunces',serif;font-weight:600;font-size:1.45rem;line-height:1.1;text-align:center;color:var(--ink)}
   .front .rc-m{display:flex;justify-content:space-between;gap:12px;margin:12px 0 16px;padding-bottom:12px;border-bottom:1px dashed rgba(44,45,54,.4);
@@ -259,10 +257,9 @@
   .front .rc-r span:last-child{text-align:right;max-width:58%}
   .front .rc-f{margin-top:auto;padding-top:18px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--moss)}
   .front .rc-f::before,.front .rc-f::after{content:"*  *  *";white-space:pre;margin:0 10px;letter-spacing:0}
-  .back{border:0;border-radius:0;padding:26px 26px 34px;color:var(--bg);transform:rotateY(180deg) rotate(.6deg);box-shadow:none;
-    background:var(--forest) radial-gradient(rgba(241,235,224,.07) 1px,transparent 1px);background-size:4px 4px;
-    -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;
-            mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%}
+  .back{border:0;border-radius:0;padding:28px 28px 40px;color:var(--bg);transform:rotateY(180deg) rotate(.6deg);box-shadow:none;
+    background:var(--forest) url(../images/receipt-sheet.webp) center/100% 100% no-repeat;background-blend-mode:multiply;
+    -webkit-mask:url(../images/receipt-sheet.webp) center/100% 100% no-repeat;mask:url(../images/receipt-sheet.webp) center/100% 100% no-repeat}
   .flip:nth-child(2n) .back{transform:rotateY(180deg) rotate(-.7deg)}
   .back .tag{display:block;padding-bottom:12px;margin-bottom:4px;border-bottom:1px dashed rgba(241,235,224,.4)}
   .face .tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
@@ -464,7 +461,7 @@
         <div><dt>GitHub Pages &amp; Cloudflare</dt><dd>Hosting that costs the client nothing</dd></div>
         <div><dt>Playwright</dt><dd>Every page screenshotted at nine screen sizes before it ships</dd></div>
         <div><dt>The desk</dt><dd>Photograph by Nathan Dumlao, via Unsplash</dd></div>
-        <div><dt>The index card and tape</dt><dd>Photographs via Canva, put together for the free-look card</dd></div>
+        <div><dt>Index card, receipts and tape</dt><dd>Photographs via Canva, cut and taped together here</dd></div>
       </dl>
 
       <p class="cr-fine">No templates were harmed in the making of this website.</p>
@@ -664,6 +661,6 @@
     if(snav){snav.querySelectorAll('.mob-menu a').forEach(function(a){a.addEventListener('click',function(){snav.classList.remove('open');});});}
   })();
 </script>
-<script src="../assets/convert.js?v=202611080827" defer></script>
+<script src="../assets/convert.js?v=202611080829" defer></script>
 </body>
 </html>
