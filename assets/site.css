@@ -1828,17 +1828,19 @@ footer{background:var(--ink)}
 .mail-lead figcaption{margin-top:20px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
 .mail-lead figcaption strong,.mail-who strong{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink)}
 .mail-lead figcaption span{font-size:14px;color:var(--ink-m)}
-.mail-list{list-style:none;margin:clamp(44px,5vw,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,32px);align-items:start}
-.mail-list li{position:relative;background:var(--cream);padding:34px 28px 26px;border:1px solid var(--border);box-shadow:0 1px 0 rgba(44,45,54,.04),0 18px 40px -28px rgba(44,45,54,.35)}
-.mail-list li::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:repeating-linear-gradient(90deg,var(--forest-l) 0 10px,transparent 10px 16px)}
-.mail-list li:nth-child(2){transform:translateY(18px)}
+.mail-list{list-style:none;margin:clamp(48px,5vw,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;align-items:stretch;border-top:1px solid rgba(44,45,54,.22)}
+.mail-list li{position:relative;padding:30px clamp(22px,2.6vw,40px) 6px;display:flex;flex-direction:column}
+.mail-list li:first-child{padding-left:0}
+.mail-list li:last-child{padding-right:0}
+.mail-list li+li{border-left:1px solid rgba(44,45,54,.14)}
 .mail-list blockquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(19px,1.6vw,22px);line-height:1.38;color:var(--ink)}
-.mail-who{margin-top:20px;padding-top:14px;border-top:1px dashed rgba(44,45,54,.25);display:flex;flex-direction:column;gap:4px}
+.mail-who{margin-top:auto;padding-top:22px;display:flex;flex-direction:column;gap:4px}
 .mail-who span{font-size:14px;color:var(--ink-m)}
 .mail-foot{margin-top:clamp(40px,4vw,56px);font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase}
 @media (max-width:900px){
   .mail-list{grid-template-columns:1fr;max-width:560px}
-  .mail-list li:nth-child(2){transform:none}
+  .mail-list li,.mail-list li:first-child,.mail-list li:last-child{padding:26px 0 24px}
+  .mail-list li+li{border-left:0;border-top:1px solid rgba(44,45,54,.14)}
 }
 
 /* ═══════════════════════════════
@@ -2338,7 +2340,6 @@ footer{background:var(--ink)}
 /* a real perforated ticket (photo): taped top and perforated bottom hold their shape, the middle stretches */
 .ticket{position:relative;padding:calc(4.2cqw + 30px) 30px calc(4.2cqw + 22px);transform:rotate(-.6deg);
   border-style:solid;border-width:0;border-image:url(../images/ticket-paper.webp) 26 0 26 0 fill / 4.2cqw 0 4.2cqw 0 stretch}
-.ticket::before{content:"";position:absolute;top:0;right:13%;width:36%;max-width:170px;aspect-ratio:262/130;transform:translateY(-58%) rotate(5deg);background:url(../images/tape-c.webp) center/100% 100% no-repeat;pointer-events:none}
 .tk-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;padding-bottom:14px;border-bottom:1px solid var(--ink)}
 .tk-k{display:block;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--forest-2);margin-bottom:6px}
 .tk-t{display:block;font-family:var(--serif-d);font-weight:400;font-size:clamp(20px,1.8vw,24px);line-height:1.1;color:var(--ink)}
