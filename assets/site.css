@@ -1587,15 +1587,17 @@ footer{background:var(--ink)}
   justify-self:center;width:100%;max-width:400px;
   filter:drop-shadow(0 16px 18px rgba(44,45,54,.14)) drop-shadow(0 1px 1px rgba(44,45,54,.12));
 }
+.receipt-wrap{container-type:inline-size}
+/* a real crumpled receipt (photo): taped top and barcode/torn bottom keep their shape, the middle stretches to fit */
 .receipt{
   transform:rotate(1.8deg);
-  background:#fbf8f1;color:#34353d;padding:34px 30px 46px;
+  color:#34353d;padding:calc(11.8cqw + 22px) 34px calc(43.2cqw + 10px);
   font-family:var(--sans);font-size:13px;font-variant-numeric:tabular-nums;
-  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;
-          mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;
-  background-image:
-    radial-gradient(rgba(44,45,54,.035) 1px,transparent 1px);
-  background-size:4px 4px;
+  border-style:solid;border-width:0;
+  border-image-source:url(../images/receipt-paper.webp);
+  border-image-slice:90 0 328 0 fill;
+  border-image-width:11.8cqw 0 43.2cqw 0;
+  border-image-repeat:stretch;
 }
 .rc-head{
   text-align:center;font-family:var(--serif-d);font-size:24px;line-height:1.1;color:var(--ink);
@@ -2083,7 +2085,7 @@ footer{background:var(--ink)}
 @media print{
   body.print-receipt *{visibility:hidden!important}
   body.print-receipt #receipt,body.print-receipt #receipt *{visibility:visible!important}
-  body.print-receipt #receipt{position:absolute;left:0;top:0;width:360px;transform:none;-webkit-mask:none;mask:none;background:#fff;box-shadow:none;padding:24px}
+  body.print-receipt #receipt{position:absolute;left:0;top:0;width:360px;transform:none;-webkit-mask:none;mask:none;background:#fff;box-shadow:none;padding:24px;border-image:none}
   body.print-receipt #receipt>*{opacity:1!important;transform:none!important}
   body.print-receipt .rc-contact{display:block;margin-top:18px;text-align:center;font-size:10px;letter-spacing:.08em;color:#555}
 }
@@ -2118,7 +2120,7 @@ footer{background:var(--ink)}
   html,body{width:auto!important;min-width:0!important;margin:0!important;padding:0!important;overflow:visible!important}
   body.is-printing #printArea{display:flex!important;justify-content:center;align-items:flex-start;position:static;width:100%;margin:0;padding:0;text-align:initial}
   body.is-printing #printArea>*{position:static!important;left:auto!important;right:auto!important;top:auto!important;margin:0 auto!important;float:none!important}
-  body.is-printing #printArea .receipt{width:380px;max-width:100%}
+  body.is-printing #printArea .receipt{width:380px;max-width:100%;border-image:none!important;padding:24px!important}
   body.is-printing #printArea .receipt,body.is-printing #printArea .sheet{transform:none!important;-webkit-mask:none!important;mask:none!important;box-shadow:none!important;background:#fff!important;filter:none!important;break-inside:avoid;page-break-inside:avoid}
   body.is-printing #printArea .receipt>*{opacity:1!important;transform:none!important}
   body.is-printing #printArea .rc-contact{display:block;margin-top:18px;text-align:center;font-size:10px;letter-spacing:.08em;color:#555}
