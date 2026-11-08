@@ -167,24 +167,19 @@
   .chips{display:flex;flex-wrap:wrap;gap:10px}
 
   /* ---------------- DESK / CARDS ---------------- */
-  .desk{padding:100px 0 110px;position:relative;isolation:isolate}
-  /* the desk itself: a wide mat in a deeper paper tone, faint grain, a soft vignette at the edges */
-  .desk::before{content:"";position:absolute;inset:60px 0 40px;z-index:-1;background:
-      radial-gradient(ellipse at 50% 40%,rgba(255,255,255,.22),transparent 70%),
-      repeating-linear-gradient(92deg,rgba(44,45,54,.035) 0 1px,transparent 1px 7px),
-      repeating-linear-gradient(0deg,rgba(44,45,54,.02) 0 1px,transparent 1px 11px),
-      linear-gradient(180deg,#e2d6c0,#d9cbb2);
-    box-shadow:inset 0 0 120px rgba(44,45,54,.14)}
-  /* a coffee ring and a pencil mark, because it is a desk */
-  .desk::after{content:"";position:absolute;right:8%;top:70px;width:92px;height:92px;border-radius:50%;z-index:-1;pointer-events:none;
-    border:7px solid rgba(120,80,40,.16);box-shadow:inset 0 0 0 2px rgba(120,80,40,.08),0 0 0 1px rgba(120,80,40,.05);
-    transform:rotate(-8deg) scaleX(1.04)}
+  /* the desk is a desk: a real walnut top, photographed from above */
+  .desk{padding:100px 0 110px;position:relative;isolation:isolate;color:var(--bg);
+    background:#3a2a1e url(desk-wood-900.webp) center/cover no-repeat}
+  @media(min-width:900px){.desk{background-image:url(desk-wood.webp)}}
+  .desk::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(20,14,10,.38),rgba(20,14,10,.18) 30%,rgba(20,14,10,.3)),
+               radial-gradient(ellipse at 50% 0%,rgba(255,235,200,.14),transparent 60%)}
+  .desk .sec-label{color:var(--gold)}
+  .desk .sec-label::before{background:var(--gold)}
+  .desk .sec-title{color:var(--bg);text-shadow:0 2px 14px rgba(0,0,0,.35)}
+  .desk .sec-note{color:rgba(241,235,224,.7)}
   .desk .wrap{position:relative}
-  .desk .pencil{position:absolute;left:4%;bottom:-18px;width:220px;height:5px;z-index:-1;
-    background:linear-gradient(90deg,#c9b48a 0 6%,#e5c56a 6% 10%,#f3d27a 10% 88%,#d7a7a0 88% 94%,#9c9c9c 94%);
-    border-radius:3px;transform:rotate(-12deg);box-shadow:1px 2px 3px rgba(44,45,54,.25)}
-  .desk .pencil::before{content:"";position:absolute;left:-14px;top:-1px;border-right:14px solid #c9b48a;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
-  .card{box-shadow:6px 6px 0 var(--ink),0 18px 30px -18px rgba(44,45,54,.45)}
+  .card{box-shadow:6px 6px 0 var(--ink),0 26px 40px -16px rgba(0,0,0,.55)}
   /* a strip of tape holds each card to the mat */
   .card .tapebit{position:absolute;top:-12px;left:50%;width:76px;height:22px;transform:translateX(-50%) rotate(-2deg);z-index:5;pointer-events:none;
     background:rgba(138,171,147,.55);border:1px dashed rgba(44,45,54,.2);backdrop-filter:blur(1px)}
@@ -357,7 +352,10 @@
     .face h3{font-size:1.15rem}
     .front,.back{-webkit-mask:none;mask:none;transform:none!important;padding:14px 16px;border:1.5px solid var(--ink)}
     .front{background:var(--bg2)}
-    .desk::before,.desk::after,.pencil,.tapebit{display:none}
+    .desk{background:none;color:var(--ink)}
+    .desk .sec-title{color:var(--ink);text-shadow:none}
+    .desk .sec-note{color:var(--moss)}
+    .desk::before,.tapebit{display:none}
     .back{background:var(--forest);color:var(--bg);transform:none!important;display:flex}
     .back .tag{color:var(--gold)}
     .back p{font-size:.74rem}
@@ -464,6 +462,7 @@
         <div><dt>JSON-LD</dt><dd>So search engines and AI answers know who you are</dd></div>
         <div><dt>GitHub Pages &amp; Cloudflare</dt><dd>Hosting that costs the client nothing</dd></div>
         <div><dt>Playwright</dt><dd>Every page screenshotted at nine screen sizes before it ships</dd></div>
+        <div><dt>The desk</dt><dd>Photograph by Nathan Dumlao, via Unsplash</dd></div>
       </dl>
 
       <p class="cr-fine">No templates were harmed in the making of this website.</p>
@@ -482,7 +481,6 @@
     <div class="sec-label rv">Selected Work</div>
     <div class="sec-title rv">On the desk.</div>
     <div class="sec-note rv">// hover to pick a card up</div>
-    <span class="pencil" aria-hidden="true"></span>
     <div class="cards">
       <a class="card rv" href="https://therapistweb.design" target="_blank" rel="noopener" style="--rot:-1.5deg;--phc:#2d4a35;--phr:#8aab93">
         <span class="tapebit" aria-hidden="true"></span><div class="ph"><span class="idx">01</span>
