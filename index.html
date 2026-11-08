@@ -119,18 +119,20 @@
     <p class="hero-sub hero-sub-m">Custom, hand-coded websites for therapists in private practice. Built to get found and turn a search into a first appointment. You own every line. Nothing monthly.</p>
     <div class="hero-btns">
       <a href="https://calendly.com/chad-m-moravec/intro-call" class="btn btn-solid" target="_blank" rel="noopener"><span>Book a free call</span></a>
-      <a href="contact/#check" class="hero-link">or send me your site</a>
     </div>
   </div>
-  <div class="hero-proof" aria-label="Recent work">
-    <a class="hp-card hp-back2" href="#work" tabindex="-1" aria-hidden="true"><img src="images/tv/rooted-720.webp" alt="" width="720" height="570" loading="eager" decoding="async"/></a>
-    <a class="hp-card hp-back1" href="#work" tabindex="-1" aria-hidden="true"><img src="images/tv/apex-720.webp" alt="" width="720" height="570" loading="eager" decoding="async"/></a>
-    <a class="hp-card hp-front" href="#work" id="heroCard">
-      <img class="hp-img" id="heroImg" src="images/tv/fullbloom-720.webp" alt="Full Bloom Counseling Group homepage, a site by Therapist Web Design" width="720" height="570" fetchpriority="high" decoding="async"/>
-      <span class="hp-tape" aria-hidden="true"></span>
-      <span class="hp-cap"><span class="hp-dot" aria-hidden="true"></span><span class="hp-lbl">Now showing</span><b id="heroNow">Full Bloom Counseling Group</b></span>
-    </a>
-  </div>
+  <form class="hero-look" id="heroLook" action="contact/" method="get" aria-labelledby="look-h">
+    <span class="hl-tape" aria-hidden="true"></span>
+    <p class="hl-k">The free look</p>
+    <h2 class="hl-h" id="look-h">Paste your site. I&rsquo;ll tell you what&rsquo;s wrong with it.</h2>
+    <p class="hl-p">Within a business day you get a plain note: what Google sees, and where your contact form really sends people&rsquo;s messages. Free. Nobody follows up unless you write back.</p>
+    <div class="hl-row">
+      <label class="sr-only" for="hlSite">Your website or Psychology Today link</label>
+      <input id="hlSite" name="site" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="yourpractice.com" required/>
+      <button type="submit">Send it</button>
+    </div>
+    <p class="hl-s">A Psychology Today link works too.</p>
+  </form>
 <!--
   <button class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
     <svg width="16" height="26" viewBox="0 0 16 26" fill="none">
@@ -860,18 +862,9 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
     function pick(){var i=chs.findIndex(function(c){return c.querySelector('.ch-n').textContent===tr.dataset.ch;});if(i>-1){go(i);tv.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});}}
     tr.addEventListener('click',pick);tr.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick();}});
   });}
-  /* hero: the front print cycles through the lineup; a click tunes the set */
-  var now=document.getElementById('heroNow'),card=document.getElementById('heroCard'),himg=document.getElementById('heroImg');
-  if(now&&card&&himg){
-    var live=chs.slice(),ni=0,nt=0;
-    function still(c){return (c.dataset.still||'').replace(/\.webp$/,'-720.webp');}
-    var b1=document.querySelector('.hp-back1 img'),b2=document.querySelector('.hp-back2 img');
-    function show(){var c=live[ni];now.textContent=c.querySelector('.ch-name').textContent;himg.src=still(c);himg.alt=c.querySelector('.ch-name').textContent+' homepage, a site by Therapist Web Design';card.dataset.i=chs.indexOf(c);if(b1)b1.src=still(live[(ni+1)%live.length]);if(b2)b2.src=still(live[(ni+2)%live.length]);}
-    live.forEach(function(c){var im=new Image();im.src=still(c);});
-    if(!reduce){nt=setInterval(function(){card.classList.add('is-out');setTimeout(function(){ni=(ni+1)%live.length;show();card.classList.remove('is-out');},320);},3400);}
-    card.addEventListener('click',function(e){e.preventDefault();clearInterval(nt);go(+card.dataset.i);tv.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});});
-    card.addEventListener('mouseenter',function(){clearInterval(nt);});
-  }
+  /* hero: the free-look card hands the link to the contact form */
+  var hl=document.getElementById('heroLook');
+  if(hl){hl.addEventListener('submit',function(e){e.preventDefault();var v=(hl.site.value||'').trim();if(!v)return;if(window.gtag){try{gtag('event','free_look_start',{placement:'hero'});}catch(x){}}location.href='contact/?site='+encodeURIComponent(v)+'#check';});}
   /* channel surf: up up down down left right left right b a */
   var kseq=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'],kpos=0,surfing=false;
   function surfAll(){

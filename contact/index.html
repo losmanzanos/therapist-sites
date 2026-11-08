@@ -295,6 +295,8 @@ if(form){
     if(location.hash==='#check'&&proj){proj.value='Free look at my current site';syncCheck();setTimeout(function(){document.getElementById('note').scrollIntoView({behavior:'smooth',block:'start'});if(siteIn)siteIn.focus({preventScroll:true});},60);}
     else if(location.hash==='#note'){setTimeout(function(){document.getElementById('note').scrollIntoView({behavior:'smooth',block:'start'});},60);}
   }
+  /* arriving from the homepage card: the link is already filled in */
+  try{var q=new URLSearchParams(location.search).get('site');if(q&&siteIn){q=q.trim();if(!/^https?:\/\//i.test(q))q='https://'+q;siteIn.value=q;if(proj){proj.value='Free look at my current site';syncCheck();}setTimeout(function(){var n=form.querySelector('input[name="Name"]');if(n)n.focus({preventScroll:true});},120);}}catch(x){}
   fromHash();window.addEventListener('hashchange',fromHash);
 }
 /* ── Calendly, loaded when the calendar scrolls into view ── */
