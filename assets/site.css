@@ -2012,11 +2012,11 @@ footer{background:var(--ink)}
 @media(min-width:1281px){.hero-content{right:calc((100% - var(--maxw))/2)}}
 /* hero: the free look, an index card with a real input */
 .hero-look{position:absolute;left:max(6%,calc((100% - var(--maxw))/2 + var(--gut)));top:calc(10% + 18px);width:min(42%,500px);z-index:5;
-  transform:rotate(-2.2deg);background:#efe6cf url(../images/index-card-1000.webp) center/100% 100% no-repeat;
-  padding:40px 40px 30px;box-shadow:0 22px 44px -22px rgba(44,45,54,.4),0 2px 6px rgba(44,45,54,.08)}
+  transform:rotate(-2.2deg);background:#e9dcc0 url(../images/index-card-1100.webp) center/100% 100% no-repeat;
+  padding:30px 40px 30px;box-shadow:0 22px 44px -22px rgba(44,45,54,.4),0 2px 6px rgba(44,45,54,.08)}
 
-.hl-tape{position:absolute;left:50%;top:-20px;width:124px;height:48px;transform:translateX(-50%) rotate(2.5deg);background:url(../images/tape-amber.webp) center/contain no-repeat;opacity:.94;filter:drop-shadow(0 1px 1px rgba(44,45,54,.18))}
-.hl-k{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#a53c25;margin:0 0 18px;line-height:1}
+.hl-tape{position:absolute;left:31%;top:0;width:37.3%;aspect-ratio:500/154;transform:translateY(-40%);background:url(../images/tape-yellow.webp) center/100% 100% no-repeat;filter:drop-shadow(0 1px 1px rgba(44,45,54,.14))}
+.hl-k{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#a53c25;margin:0 0 22px;line-height:1}
 .hl-h{font-family:var(--serif-d);font-style:italic;font-weight:400;font-size:clamp(24px,2vw,30px);line-height:1.08;color:var(--ink);margin:0 0 14px}
 .hl-p{font-size:14.5px;line-height:1.75;color:#3d3e48;margin:0 0 18px}
 .hl-row{display:flex;border-bottom:1.5px solid var(--ink);align-items:stretch}
@@ -2036,7 +2036,7 @@ footer{background:var(--ink)}
 @media(max-width:750px){
   .hero{display:block}
   .hero-figure.hero-sky{display:block;left:auto;right:-18px;top:-42px;width:28%;opacity:.36;transform:rotate(14deg)}
-  .hero-look{position:relative;left:auto;top:auto;width:auto;margin:14px var(--gut) 48px;transform:rotate(-1.2deg);padding:34px 24px 24px;background-image:url(../images/index-card-640.webp)}
+  .hero-look{position:relative;left:auto;top:auto;width:auto;margin:14px var(--gut) 48px;transform:rotate(-1.2deg);padding:34px 24px 24px;background-image:url(../images/index-card-700.webp)}
   .hl-h{font-size:25px}
   .hl-p{font-size:15px}
 }
