@@ -2267,11 +2267,12 @@ footer{background:var(--ink)}
 @media(max-width:900px){.look-inner{grid-template-columns:1fr;gap:40px}}
 
 /* the booking bar on phones */
-.stickbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr auto;background:var(--forest);border-top:1px solid rgba(255,255,255,.18);transform:translateY(102%);transition:transform .32s cubic-bezier(.7,0,.2,1);padding-bottom:env(safe-area-inset-bottom)}
+.stickbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr auto;background:var(--forest);border-top:1px solid rgba(255,255,255,.18);transform:translateY(102%);transition:transform .32s cubic-bezier(.7,0,.2,1)}
 .stickbar.is-on{transform:translateY(0)}
-.stickbar a{display:flex;align-items:center;justify-content:center;min-height:54px;font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none}
-.stickbar .sb-text{padding:0 22px;border-left:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.82)}
-@media(max-width:750px){.stickbar{display:grid}body{padding-bottom:0}}
+/* the home-indicator space lives inside each button, so the divider runs to the bottom edge; text sits just above the indicator */
+.stickbar a{display:flex;align-items:center;justify-content:center;min-height:50px;box-sizing:content-box;padding-bottom:max(0px,calc(env(safe-area-inset-bottom) - 12px));font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none}
+.stickbar .sb-text{padding-left:22px;padding-right:22px;border-left:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.82)}
+@media(max-width:750px){.stickbar.is-shown{display:grid}body{padding-bottom:0}}
 @media print{.stickbar{display:none!important}}
 
 
