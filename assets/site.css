@@ -2232,16 +2232,20 @@ footer{background:var(--ink)}
 .book-cal .calendly-inline-widget{height:662px;overflow:visible;transition:none}
 }
 @media(min-width:1280px){
-.book-inner{max-width:1400px;grid-template-columns:minmax(0,1fr) 900px;column-gap:clamp(36px,4vw,72px);align-items:start}
+/* Both halves of the page share one geometry: copy on the left, a 612px card on the right, flush with the container edge.
+   Calendly's frame is 900px scaled to .9 (810px) with its 612px card centered, so the frame hangs 99px past the edge; that overhang is empty frame. */
+.book{overflow:hidden}
+.book-inner{grid-template-columns:minmax(0,1fr) 711px;column-gap:48px;align-items:start}
 .book-text{display:block;padding-top:8px}
 .book h2{font-size:clamp(40px,3.8vw,58px);margin-bottom:22px}
 .book-body{padding-top:0}
-.book-text p{max-width:440px;font-size:17px;line-height:1.8}
+.book-text p{max-width:420px;font-size:17px;line-height:1.8}
 .book-text p + p{margin-top:16px}
 .book-alt{margin-top:28px;font-size:15px}
-/* Calendly's frame needs 900px to lay out day and times side by side; scaled down a touch so it doesn't crowd the copy */
-.book-cal{justify-self:end;margin-top:0;width:900px;height:596px;min-height:0}
+.book-cal{justify-self:end;margin-top:0;margin-right:-99px;width:900px;height:596px;min-height:0}
 .book-cal .calendly-inline-widget{transform:scale(.9);transform-origin:top right}
+.contact-inner{grid-template-columns:minmax(0,1fr) 612px;column-gap:48px}
+.contact-info p{max-width:420px}
 }
 .note-or{text-align:center;padding:0 var(--gut) clamp(28px,4vw,48px);background:var(--cream);font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2)}
 .contact{padding-top:clamp(40px,5vw,64px)}
