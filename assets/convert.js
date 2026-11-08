@@ -4,6 +4,7 @@
    1. Cloudflare Web Analytics (counts at the edge, not blocked by ad blockers)
    2. GA4, loaded late so it never slows the page, with real conversion events
    3. The small "book a call" bar on phones, and the end-of-post nudge on journal articles
+   4. Warming Calendly's files after load, so the contact page calendar comes up faster
    ───────────────────────────────────────────── */
 (function () {
   "use strict";
@@ -87,4 +88,32 @@
     window.addEventListener("scroll", upd, { passive: true });
     upd();
   })();
+
+  /* Calendly is slow on a cold cache. Once this page has finished loading, quietly load the booking page
+     in a hidden frame so its files are already cached when someone gets to /contact/. Skipped on the contact
+     page itself, on Save-Data and slow connections, and at most once a day. */
+  if(!PREVIEW&&window.top===window&&!/^\/contact/.test(location.pathname)){
+    var CAL_K='twdCalWarm';
+    function calWarm(){
+      var c=navigator.connection;if(c&&(c.saveData||/(^|-)(2g|3g)$/.test(c.effectiveType||'')))return;
+      try{if(Date.now()-(+localStorage.getItem(CAL_K)||0)<864e5)return;localStorage.setItem(CAL_K,Date.now());}catch(e){}
+      var f=document.createElement('iframe'),gone=false;
+      f.src='https://calendly.com/chad-m-moravec/intro-call?hide_gdpr_banner=1&hide_event_type_details=1&background_color=f1ebe0&text_color=2c2d36&primary_color=2d4a35&embed_domain='+encodeURIComponent(location.host)+'&embed_type=Inline';
+      f.tabIndex=-1;f.title='';f.setAttribute('aria-hidden','true');
+      f.style.cssText='position:fixed;left:-10000px;top:0;width:900px;height:700px;border:0;visibility:hidden;pointer-events:none';
+      function drop(){if(gone)return;gone=true;window.removeEventListener('message',onMsg);f.remove();}
+      function onMsg(e){if(e.source===f.contentWindow&&e.data&&e.data.event==='calendly.event_type_viewed')setTimeout(drop,1500);}
+      window.addEventListener('message',onMsg);setTimeout(drop,30000);
+      document.body.appendChild(f);
+    }
+    function calWarmSoon(){setTimeout(function(){(window.requestIdleCallback||function(fn){setTimeout(fn,1)})(calWarm,{timeout:3000});},1200);}
+    if(document.readyState==='complete')calWarmSoon();else window.addEventListener('load',calWarmSoon);
+
+    /* and let Chrome start loading the contact page itself the moment a contact link is hovered */
+    try{if(HTMLScriptElement.supports&&HTMLScriptElement.supports('speculationrules')){
+      var sr=document.createElement('script');sr.type='speculationrules';
+      sr.textContent=JSON.stringify({prerender:[{where:{href_matches:'/contact/*'},eagerness:'moderate'}]});
+      document.head.appendChild(sr);
+    }}catch(e){}
+  }
 })();

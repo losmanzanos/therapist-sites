@@ -24,7 +24,7 @@
 <link rel="preload" href="../fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://calendly.com"/>
 <link rel="preconnect" href="https://assets.calendly.com" crossorigin/>
-<link rel="stylesheet" href="../assets/site.css?v=202611080954"/>
+<link rel="stylesheet" href="../assets/site.css?v=202611081008"/>
 </head>
 <body>
 
@@ -99,7 +99,11 @@
     </div>
     <div class="book-cal" id="bookCal" data-r data-d="1">
       <div class="calendly-inline-widget" data-resize="true" data-url="https://calendly.com/chad-m-moravec/intro-call?hide_gdpr_banner=1&hide_event_type_details=1&background_color=f1ebe0&text_color=2c2d36&primary_color=2d4a35"></div>
-      <div class="book-fallback"><span>Loading the calendar&hellip;</span><a class="btn btn-solid" href="https://calendly.com/chad-m-moravec/intro-call" target="_blank" rel="noopener"><span>Book a free 30-minute call</span></a></div>
+      <div class="book-fallback" role="status">
+        <div class="bk-skel" aria-hidden="true"><i class="bk-t"></i><div class="bk-m"><i></i><b></b><b></b></div><i class="bk-w"></i><i class="bk-g"></i></div>
+        <p class="bk-msg">Pulling up open times&hellip;</p>
+        <a class="btn btn-solid bk-btn" href="https://calendly.com/chad-m-moravec/intro-call" target="_blank" rel="noopener"><span>Open the calendar in a new tab</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -312,9 +316,12 @@ if(form){
       f.title='Book a free 30-minute call';f.width='100%';f.height='100%';f.setAttribute('frameborder','0');f.setAttribute('scrolling','no');
       f.style.cssText='width:100%;height:100%;border:0;display:block';
       f.addEventListener('load',function(){box.classList.add('is-loaded');});
+      /* keep our placeholder up until Calendly has actually drawn the calendar, so its loading dots never show */
+      setTimeout(ready,9000);
       w.appendChild(f);
     }
     /* Calendly pads the bottom of its month view more than the top. Trim the wrapper on that step only; later steps keep their full height. */
+    function ready(){box.classList.add('is-ready');}
     var wrap=box.querySelector('.calendly-inline-widget'),onCal=true,lastH=0,TRIM=92;
     var wideMQ=window.matchMedia('(min-width:1000px)');
     function fit(){if(lastH<300)return;var f=wrap.querySelector('iframe');if(f){f.style.height=lastH+'px';}var trim=onCal&&!wideMQ.matches&&lastH<670;wrap.style.height=(trim?lastH-TRIM:lastH)+'px';}
@@ -323,8 +330,8 @@ if(form){
       if(!e.data||typeof e.data.event!=='string'||e.data.event.indexOf('calendly.')!==0)return;
       var ev=e.data.event;box.classList.add('is-loaded');
       if(ev==='calendly.page_height'){lastH=parseInt(e.data.payload&&e.data.payload.height,10)||0;setTimeout(fit,0);}
-      else if(ev==='calendly.event_type_viewed'||ev==='calendly.profile_page_viewed'){onCal=true;fit();}
-      else if(ev==='calendly.date_and_time_selected'||ev==='calendly.event_scheduled'){onCal=false;fit();}
+      else if(ev==='calendly.event_type_viewed'||ev==='calendly.profile_page_viewed'){onCal=true;fit();setTimeout(ready,120);}
+      else if(ev==='calendly.date_and_time_selected'||ev==='calendly.event_scheduled'){onCal=false;fit();ready();}
       if(ev==='calendly.event_scheduled'&&window.gtag){try{gtag('event','call_booked',{page:location.pathname});}catch(x){}}
     });
   }
@@ -335,7 +342,7 @@ if(form){
 
 
 
-<script src="../assets/site.js?v=202611080954" defer></script>
-<script src="../assets/convert.js?v=202611080954" defer></script>
+<script src="../assets/site.js?v=202611081008" defer></script>
+<script src="../assets/convert.js?v=202611081008" defer></script>
 </body>
 </html>

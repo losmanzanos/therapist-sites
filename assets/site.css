@@ -2288,8 +2288,24 @@ footer{background:var(--ink)}
 .book-cal{position:relative;border:1px solid var(--border);background:#f1ebe0;min-height:500px;max-width:680px;width:100%;justify-self:center}
 .book-cal .calendly-inline-widget{min-width:0;height:560px;overflow:hidden;transition:height .2s}
 .book-cal .calendly-inline-widget iframe{display:block}
-.book-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:32px;z-index:1;color:var(--ink-s);font-size:15px;line-height:1.7}
-.book-cal.is-loaded .book-fallback{display:none}
+.book-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:32px;z-index:1;color:var(--ink-m);font-size:14px;line-height:1.6;transition:opacity .35s ease,visibility 0s .35s}
+.book-cal .calendly-inline-widget iframe{opacity:0;transition:opacity .45s ease}
+.book-cal.is-ready .calendly-inline-widget iframe{opacity:1}
+.book-cal.is-ready .book-fallback{opacity:0;visibility:hidden;pointer-events:none}
+.bk-skel{width:min(100%,420px);display:grid;gap:18px;--sk:rgba(44,45,54,.07);animation:bkpulse 1.6s ease-in-out infinite}
+.bk-skel i,.bk-skel b{display:block}
+.bk-t{height:14px;width:46%;background:var(--sk);border-radius:7px}
+.bk-m{display:flex;align-items:center;gap:10px}
+.bk-m i{height:12px;width:34%;background:var(--sk);border-radius:6px;margin:0 auto 0 31%}
+.bk-m b{width:26px;height:26px;border-radius:50%;background:var(--sk)}
+.bk-w{height:8px;background:repeating-linear-gradient(90deg,var(--sk) 0 calc(100%/7 - 26px),transparent 0 calc(100%/7));background-size:100% 8px;margin:0 13px}
+.bk-g{height:220px;background:radial-gradient(circle,var(--sk) 0 17px,transparent 18px) 0 0/calc(100%/7) 44px}
+.bk-msg{margin:4px 0 0;font-style:italic;font-family:var(--serif);font-size:17px;color:var(--ink-s)}
+.bk-btn{opacity:0;animation:bkshow .4s ease 7s forwards}
+@keyframes bkpulse{50%{opacity:.55}}
+@keyframes bkshow{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.bk-skel{animation:none}.bk-btn{animation:none;opacity:1}}
+@media(min-width:1280px){.book-fallback{left:90px}}
 @media(max-width:900px){.book-inner{grid-template-columns:1fr}.book-cal{min-height:520px}.book-cal .calendly-inline-widget{height:620px}}
 /* 1000px and up: Calendly gets a 900px frame, the width it needs to show the day and its times side by side.
    1000-1279: intro row on top (heading left, copy right), frame centered below.
