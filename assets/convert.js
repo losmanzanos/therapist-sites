@@ -62,7 +62,10 @@
     track("form_submit", { project: (e.detail && e.detail.project) || "", page: location.pathname });
   });
 
-  /* 3a. the booking bar on phones: appears after the hero, hides when the footer is in view */
+  /* 3a. the booking bar on phones: appears once the first section (the hero) has scrolled away, hides again
+     when you scroll back into it or reach the footer. When hidden it is taken out of the page entirely
+     (display:none), because iPhone Safari tints its toolbar to match any fixed element at the bottom edge,
+     even one slid out of view, which left a bare green strip over the hero. */
   (function () {
     if (document.querySelector(".stickbar") || document.body.classList.contains("no-stickbar")) return;
     if (!document.querySelector('link[rel="stylesheet"][href*="assets/site.css"]')) return; /* pages with their own styles (the colophon) have no bar styles */
@@ -74,10 +77,29 @@
       '<a href="sms:+17204661013" class="sb-text" aria-label="Text (720) 466-1013">Text</a>';
     document.body.appendChild(bar);
     var ft = document.querySelector("footer"), onCal = /calendly/.test(location.hostname);
-    var footerIn = false, typing = false;
+    var footerIn = false, typing = false, on = false, offT = 0;
+    var first = document.querySelector("main > section, main > div, .hero, section");
+    function trigger() {
+      if (!first) return 520;
+      var r = first.getBoundingClientRect(), bottom = r.bottom + (window.scrollY || 0);
+      return Math.max(320, bottom - 120);
+    }
+    var at = 520;
+    function measure() { at = trigger(); upd(); }
+    function setOn(v) {
+      if (v === on) return;
+      on = v; clearTimeout(offT);
+      if (v) {
+        bar.classList.add("is-shown");
+        requestAnimationFrame(function () { requestAnimationFrame(function () { if (on) bar.classList.add("is-on"); }); });
+      } else {
+        bar.classList.remove("is-on");
+        offT = setTimeout(function () { if (!on) bar.classList.remove("is-shown"); }, 340);
+      }
+    }
     function upd() {
       var y = window.scrollY || 0;
-      bar.classList.toggle("is-on", y > 520 && !footerIn && !onCal && !typing);
+      setOn(y > at && !footerIn && !onCal && !typing);
     }
     /* out of the way while someone is typing into a field, so it never sits on the input */
     document.addEventListener("focusin", function (e) { if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) { typing = true; upd(); } });
@@ -86,7 +108,9 @@
       new IntersectionObserver(function (es) { footerIn = es[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(ft);
     }
     window.addEventListener("scroll", upd, { passive: true });
-    upd();
+    window.addEventListener("resize", measure);
+    window.addEventListener("load", measure);
+    measure();
   })();
 
   /* Calendly is slow on a cold cache. Once this page has finished loading, quietly load the booking page
