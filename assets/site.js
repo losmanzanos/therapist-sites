@@ -78,6 +78,7 @@
   try{
     console.log('%cHand-written, start to finish.','font:italic 22px Georgia,serif;color:#2d4a35;padding:6px 0');
     console.log('No framework, no page builder, no build step. View source all you like, it reads the way it was typed.\n\nIf you are a therapist and you opened the console: you are already more technical than most of my clients. Say hi.\nhello@therapistweb.design');
+    if(/^\/contact/.test(location.pathname))console.log('%cAnything below this from calendly.com or recaptcha.net is Calendly talking to itself inside the booking frame. Their frame, their logs.','color:#6b6d78;font-style:italic');
   }catch(e){}
 })();
 
