@@ -44,7 +44,7 @@
 <link rel="preload" href="fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/site.css?v=202611081248"/>
+<link rel="stylesheet" href="assets/site.css?v=202611081250"/>
 </head>
 <body>
 
@@ -127,7 +127,7 @@
       <a href="https://calendly.com/chad-m-moravec/intro-call" class="btn btn-solid" target="_blank" rel="noopener"><span>Book a free call</span></a>
       <a href="#look" class="hero-link">or send me your site first</a>
     </div>
-    <div class="hero-proof" role="group" aria-label="Recent builds"><span class="hp-k">Recent builds</span><div class="hp-crawl"><div class="hp-track"><span class="hp-set"><a href="#work" data-ch="02"><b>Ch 02</b>Full Bloom Counseling</a><i aria-hidden="true">&middot;</i><a href="#work" data-ch="06"><b>Ch 06</b>Belong Consulting</a><i aria-hidden="true">&middot;</i><a href="#work" data-ch="04"><b>Ch 04</b>Lovett Counseling</a><i aria-hidden="true">&middot;</i><a href="#work" data-ch="10"><b>Ch 10</b>BrunsonWorks</a><i aria-hidden="true">&middot;</i></span></div></div></div>
+    <div class="hero-proof" role="group" aria-label="Recent builds"><span class="hp-k">Recent builds</span><div class="hp-crawl"><div class="hp-track"><span class="hp-set"><a href="#work" data-ch="02"><b>Ch 02</b>Full Bloom Counseling<em class="hp-r">+82% clicks from Google</em></a><i aria-hidden="true">&middot;</i><a href="#work" data-ch="06"><b>Ch 06</b>Belong Consulting<em class="hp-r">images 4.7 MB &rarr; 0.8 MB</em></a><i aria-hidden="true">&middot;</i><a href="#work" data-ch="04"><b>Ch 04</b>Lovett Counseling</a><i aria-hidden="true">&middot;</i><a href="#work" data-ch="10"><b>Ch 10</b>BrunsonWorks</a><i aria-hidden="true">&middot;</i><a href="contact/" class="hp-you"><b>Ch 12</b>Your practice here &rarr;</a><i aria-hidden="true">&middot;</i></span></div></div></div>
   </div>
 <!--
   <button class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
@@ -707,9 +707,11 @@
 (function(){
   var hp=document.querySelector('.hero-proof');if(!hp)return;
   var tr=hp.querySelector('.hp-track'),set=tr.querySelector('.hp-set');
-  var dup=set.cloneNode(true);dup.className='hp-set hp-dup';dup.setAttribute('aria-hidden','true');
-  dup.querySelectorAll('a').forEach(function(a){a.tabIndex=-1;});tr.appendChild(dup);
-  function speed(){var w=set.getBoundingClientRect().width;if(!w)return;tr.style.setProperty('--hpw',w+'px');tr.style.setProperty('--hpdur',Math.round(w/38)+'s');}
+  var crawl=hp.querySelector('.hp-crawl');
+  function copy(){var d=set.cloneNode(true);d.className='hp-set hp-dup';d.setAttribute('aria-hidden','true');d.querySelectorAll('a').forEach(function(a){a.tabIndex=-1;});tr.appendChild(d);}
+  copy();
+  /* enough copies that the strip never runs out on a wide screen; the loop always moves exactly one set */
+  function speed(){var w=set.getBoundingClientRect().width;if(!w)return;while(tr.querySelectorAll('.hp-set').length*w<crawl.clientWidth+w)copy();tr.style.setProperty('--hpw',w+'px');tr.style.setProperty('--hpdur',Math.round(w/40)+'s');}
   speed();window.addEventListener('load',speed);window.addEventListener('resize',speed);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(speed);
   hp.addEventListener('click',function(e){
     var a=e.target.closest('a[data-ch]');if(!a)return;e.preventDefault();
@@ -720,7 +722,7 @@
   });
 })();
 </script>
-<script src="assets/convert.js?v=202611081248" defer></script>
+<script src="assets/convert.js?v=202611081250" defer></script>
 
 <script>
 (function(){
