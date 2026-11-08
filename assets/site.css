@@ -774,6 +774,12 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   font-weight:400;font-style:italic;line-height:1.05;margin:14px 0 18px;
 }
 .contact-info p{font-size:15px;line-height:1.82;color:var(--ink-s);max-width:360px;margin-bottom:28px}
+.fl-intro{margin-bottom:12px!important}
+.fl-list{list-style:none;margin:0 0 22px;padding:0;max-width:440px}
+.fl-list li{position:relative;padding:5px 0 5px 26px;font-size:15px;line-height:1.5;color:var(--ink-s);border-top:1px dashed var(--border)}
+.fl-list li:last-child{border-bottom:1px dashed var(--border)}
+.contact-info .fl-after{font-size:15px;color:var(--ink-m)}
+.fl-list li::before{content:"";position:absolute;left:3px;top:12px;width:9px;height:5px;border-left:1.6px solid var(--forest);border-bottom:1.6px solid var(--forest);transform:rotate(-45deg)}
 .ct-details{display:flex;flex-direction:column;gap:18px}
 .ctline{display:flex;gap:14px;align-items:center;font-size:.9rem;color:var(--ink-s);line-height:1.5}
 .cti{
@@ -2288,13 +2294,17 @@ footer{background:var(--ink)}
 .book-cal{justify-self:end;margin-top:0;margin-right:-99px;width:900px;height:596px;min-height:0}
 .book-cal .calendly-inline-widget{transform:scale(.9);transform-origin:top right}
 .contact-inner{grid-template-columns:minmax(0,1fr) 612px;column-gap:48px}
-.contact-info p{max-width:440px;font-size:17px;line-height:1.85;margin-bottom:30px}
-.ct-details{gap:22px;margin-top:6px}
+.contact-info p{max-width:440px;font-size:17px;line-height:1.8;margin-bottom:18px}
+.ct-details{gap:13px;margin-top:22px}
 .ctline{font-size:1rem}
+/* both halves share one heading rhythm: eyebrow, 14px, headline, 22px, copy */
+.book-text{padding-top:0}
+.book-text .eyebrow,.contact-info .eyebrow{margin:0;line-height:1.6}
+.book h2,.contact-info h2{font-size:clamp(40px,3.8vw,58px);line-height:1.04;margin:14px 0 22px}
 /* Calendly's frame has ~59px of empty space above its card (at this scale); pull it up so the card's top edge sits on the eyebrow, like the form card below */
-.book-cal{margin-top:-51px}
-.book-text p{font-size:17.5px;line-height:1.9}
-.book-text p + p{margin-top:20px}
+.book-cal{margin-top:-59px}
+.book-text p{font-size:17px;line-height:1.85}
+.book-text p + p{margin-top:22px}
 }
 .note-or{text-align:center;padding:0 var(--gut) clamp(28px,4vw,48px);background:var(--cream);font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2)}
 .contact{padding-top:clamp(40px,5vw,64px)}
