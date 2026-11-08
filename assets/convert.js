@@ -73,11 +73,14 @@
       '<a href="sms:+17204661013" class="sb-text" aria-label="Text (720) 466-1013">Text</a>';
     document.body.appendChild(bar);
     var ft = document.querySelector("footer"), onCal = /calendly/.test(location.hostname);
-    var footerIn = false;
+    var footerIn = false, typing = false;
     function upd() {
       var y = window.scrollY || 0;
-      bar.classList.toggle("is-on", y > 520 && !footerIn && !onCal);
+      bar.classList.toggle("is-on", y > 520 && !footerIn && !onCal && !typing);
     }
+    /* out of the way while someone is typing into a field, so it never sits on the input */
+    document.addEventListener("focusin", function (e) { if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) { typing = true; upd(); } });
+    document.addEventListener("focusout", function () { setTimeout(function () { var a = document.activeElement; typing = !!a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName); upd(); }, 50); });
     if ("IntersectionObserver" in window && ft) {
       new IntersectionObserver(function (es) { footerIn = es[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(ft);
     }
