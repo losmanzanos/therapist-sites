@@ -2408,11 +2408,12 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .hero-proof a{display:inline-flex;align-items:baseline;gap:8px;white-space:nowrap;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-s);transition:color .2s}
 .hero-proof a b{font-family:var(--sans);font-style:normal;font-weight:600;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest-2);transform:translateY(-2px)}
 .hero-proof a:hover{color:var(--forest)}
+.hp-r{font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.04em;color:var(--forest);margin-left:4px;padding-left:10px;border-left:1px solid rgba(44,45,54,.18);transform:translateY(-1px)}
+.hero-proof a.hp-you{color:var(--forest);font-style:italic}
+.hero-proof a.hp-you b{color:#c4553d}
 .hero-proof i{font-style:normal;color:rgba(44,45,54,.3);padding:0 14px}
 /* the loop distance is one set's exact width (set by script once fonts load), so the wrap lands on the same pixel */
 @keyframes hpcrawl{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-1 * var(--hpw,50%)),0,0)}}
-/* wide screens: everything fits, so it holds still */
-@media(min-width:1341px){.hp-track{animation:none}.hp-dup{display:none}.hp-crawl{-webkit-mask-image:none;mask-image:none}.hp-set>i:last-child{display:none}.hp-set{padding-left:0}}
 @media(prefers-reduced-motion:reduce){.hp-track{animation:none}.hp-dup{display:none}.hp-crawl{overflow-x:auto;scrollbar-width:none}.hp-crawl::-webkit-scrollbar{display:none}}
 @media(min-width:751px){
   .hero{min-height:0;display:flex;align-items:center}
