@@ -100,7 +100,8 @@
       var f=document.createElement('iframe'),gone=false;
       f.src='https://calendly.com/chad-m-moravec/intro-call?hide_gdpr_banner=1&hide_event_type_details=1&background_color=f1ebe0&text_color=2c2d36&primary_color=2d4a35&embed_domain='+encodeURIComponent(location.host)+'&embed_type=Inline';
       f.tabIndex=-1;f.title='';f.setAttribute('aria-hidden','true');
-      f.style.cssText='position:fixed;left:-10000px;top:0;width:900px;height:700px;border:0;visibility:hidden;pointer-events:none';
+      /* on screen but invisible: Chrome pauses frames that are off screen or hidden, and a paused frame never fetches Calendly's app */
+      f.style.cssText='position:fixed;right:0;bottom:0;width:1px;height:1px;border:0;opacity:0;pointer-events:none';
       function drop(){if(gone)return;gone=true;window.removeEventListener('message',onMsg);f.remove();}
       function onMsg(e){if(e.source===f.contentWindow&&e.data&&e.data.event==='calendly.event_type_viewed')setTimeout(drop,1500);}
       window.addEventListener('message',onMsg);setTimeout(drop,30000);
