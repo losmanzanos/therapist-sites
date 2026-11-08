@@ -2121,14 +2121,16 @@ footer{background:var(--ink)}
 .denver i.is-open{background:#2f8f4e;box-shadow:0 0 6px rgba(47,143,78,.6)}
 
 /* journal: up next */
-.upnext{margin:48px 0 8px;border-top:1px solid var(--ink);padding-top:18px}
-.upnext-k{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-m);margin-bottom:14px}
-.upnext-k i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#b8432a;margin-right:10px;vertical-align:1px;animation:heroblink 1.6s steps(1) infinite}
-.upnext-card{display:grid;gap:8px;padding:22px 24px;border:1px solid var(--border);background:var(--cream-s);transition:background .2s,transform .2s}
-.upnext-card:hover{background:var(--cream-w);transform:translateX(4px)}
+.upnext{max-width:720px;margin:56px auto 0;padding:0 var(--gut)}
+.upnext-k{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-m);margin-bottom:16px;padding-top:22px;border-top:1px solid var(--ink)}
+.upnext-k i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#b8432a;flex:none;animation:heroblink 1.6s steps(1) infinite}
+.upnext-card{display:grid;gap:10px;padding:26px 28px 24px;border:1px solid var(--border);border-left:3px solid var(--forest);background:var(--cream-s);transition:background .2s,border-color .2s}
+.upnext-card:hover{background:var(--cream-w);border-color:var(--forest);border-left-color:var(--forest-2)}
 .upnext-topic{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--forest-2);font-weight:600}
-.upnext-card strong{font-family:var(--serif-d);font-weight:400;font-size:clamp(20px,2.2vw,26px);line-height:1.15;color:var(--ink)}
-.upnext-blurb{font-size:14.5px;line-height:1.6;color:var(--ink-s)}
+.upnext-card strong{font-family:var(--serif-d);font-weight:400;font-size:clamp(21px,2.2vw,27px);line-height:1.15;color:var(--ink)}
+.upnext-blurb{font-size:15px;line-height:1.65;color:var(--ink-s);max-width:56ch}
+.upnext-card .cs-link{margin-top:4px}
+.upnext+.article-foot{margin-top:28px;padding-top:0;border-top:0}
 
 /* 404: the bars flicker like a set warming up */
 .smpte{animation:barsflicker 7s steps(1) infinite}
