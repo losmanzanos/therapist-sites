@@ -167,7 +167,29 @@
   .chips{display:flex;flex-wrap:wrap;gap:10px}
 
   /* ---------------- DESK / CARDS ---------------- */
-  .desk{padding:100px 0 90px;position:relative}
+  .desk{padding:100px 0 110px;position:relative;isolation:isolate}
+  /* the desk itself: a wide mat in a deeper paper tone, faint grain, a soft vignette at the edges */
+  .desk::before{content:"";position:absolute;inset:60px 0 40px;z-index:-1;background:
+      radial-gradient(ellipse at 50% 40%,rgba(255,255,255,.22),transparent 70%),
+      repeating-linear-gradient(92deg,rgba(44,45,54,.035) 0 1px,transparent 1px 7px),
+      repeating-linear-gradient(0deg,rgba(44,45,54,.02) 0 1px,transparent 1px 11px),
+      linear-gradient(180deg,#e2d6c0,#d9cbb2);
+    box-shadow:inset 0 0 120px rgba(44,45,54,.14)}
+  /* a coffee ring and a pencil mark, because it is a desk */
+  .desk::after{content:"";position:absolute;right:8%;top:70px;width:92px;height:92px;border-radius:50%;z-index:-1;pointer-events:none;
+    border:7px solid rgba(120,80,40,.16);box-shadow:inset 0 0 0 2px rgba(120,80,40,.08),0 0 0 1px rgba(120,80,40,.05);
+    transform:rotate(-8deg) scaleX(1.04)}
+  .desk .wrap{position:relative}
+  .desk .pencil{position:absolute;left:4%;bottom:-18px;width:220px;height:5px;z-index:-1;
+    background:linear-gradient(90deg,#c9b48a 0 6%,#e5c56a 6% 10%,#f3d27a 10% 88%,#d7a7a0 88% 94%,#9c9c9c 94%);
+    border-radius:3px;transform:rotate(-12deg);box-shadow:1px 2px 3px rgba(44,45,54,.25)}
+  .desk .pencil::before{content:"";position:absolute;left:-14px;top:-1px;border-right:14px solid #c9b48a;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
+  .card{box-shadow:6px 6px 0 var(--ink),0 18px 30px -18px rgba(44,45,54,.45)}
+  /* a strip of tape holds each card to the mat */
+  .card .tapebit{position:absolute;top:-12px;left:50%;width:76px;height:22px;transform:translateX(-50%) rotate(-2deg);z-index:5;pointer-events:none;
+    background:rgba(138,171,147,.55);border:1px dashed rgba(44,45,54,.2);backdrop-filter:blur(1px)}
+  .card:nth-child(2) .tapebit{transform:translateX(-50%) rotate(3deg)}
+  .card:nth-child(3) .tapebit{transform:translateX(-50%) rotate(-1deg)}
   .sec-label{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--forest);
     margin-bottom:14px;display:flex;align-items:center;gap:12px}
   .sec-label::before{content:"";width:30px;height:2px;background:var(--pop)}
@@ -242,7 +264,12 @@
   .front .rc-r span:last-child{text-align:right;max-width:58%}
   .front .rc-f{margin-top:auto;padding-top:18px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--moss)}
   .front .rc-f::before,.front .rc-f::after{content:"*  *  *";white-space:pre;margin:0 10px;letter-spacing:0}
-  .back{background:var(--forest);color:var(--bg);transform:rotateY(180deg);box-shadow:5px 5px 0 var(--pop)}
+  .back{border:0;border-radius:0;padding:26px 26px 34px;color:var(--bg);transform:rotateY(180deg) rotate(.6deg);box-shadow:none;
+    background:var(--forest) radial-gradient(rgba(241,235,224,.07) 1px,transparent 1px);background-size:4px 4px;
+    -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;
+            mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%}
+  .flip:nth-child(2n) .back{transform:rotateY(180deg) rotate(-.7deg)}
+  .back .tag{display:block;padding-bottom:12px;margin-bottom:4px;border-bottom:1px dashed rgba(241,235,224,.4)}
   .face .tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
   .face h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.7rem;line-height:1.05}
   .face .where{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--moss)}
@@ -328,7 +355,9 @@
     .face{position:relative;grid-area:auto;inset:auto;backface-visibility:visible;height:auto;box-shadow:none!important;
       border:1.5px solid var(--ink);margin-bottom:8px;padding:14px 16px;gap:8px}
     .face h3{font-size:1.15rem}
-    .front{background:var(--bg2);-webkit-mask:none;mask:none;transform:none!important;padding:14px 16px;border:1.5px solid var(--ink)}
+    .front,.back{-webkit-mask:none;mask:none;transform:none!important;padding:14px 16px;border:1.5px solid var(--ink)}
+    .front{background:var(--bg2)}
+    .desk::before,.desk::after,.pencil,.tapebit{display:none}
     .back{background:var(--forest);color:var(--bg);transform:none!important;display:flex}
     .back .tag{color:var(--gold)}
     .back p{font-size:.74rem}
@@ -453,9 +482,10 @@
     <div class="sec-label rv">Selected Work</div>
     <div class="sec-title rv">On the desk.</div>
     <div class="sec-note rv">// hover to pick a card up</div>
+    <span class="pencil" aria-hidden="true"></span>
     <div class="cards">
       <a class="card rv" href="https://therapistweb.design" target="_blank" rel="noopener" style="--rot:-1.5deg;--phc:#2d4a35;--phr:#8aab93">
-        <div class="ph"><span class="idx">01</span>
+        <span class="tapebit" aria-hidden="true"></span><div class="ph"><span class="idx">01</span>
           <div class="overhead"><h3>therapistweb.design</h3><div class="role">Founder · Web Engineer</div></div>
         </div>
         <div class="polaroid" aria-hidden="true"><div class="shot"><iframe src="https://therapistweb.design" title="Live preview of therapistweb.design" loading="lazy" tabindex="-1"></iframe></div><span class="cap">live · scroll me</span></div>
@@ -465,7 +495,7 @@
         </div>
       </a>
       <a class="card rv" href="https://fullbloomcounseling.com" target="_blank" rel="noopener" style="--rot:1.2deg;--phc:#a8724e;--pht:#f8f4ee;--phr:#e8b898">
-        <div class="ph"><span class="idx">02</span>
+        <span class="tapebit" aria-hidden="true"></span><div class="ph"><span class="idx">02</span>
           <div class="overhead"><h3>Full Bloom Counseling</h3><div class="role">Lead Engineer</div></div>
         </div>
         <div class="polaroid" aria-hidden="true" style="--prot:-4deg"><div class="shot"><iframe src="https://fullbloomcounseling.com" title="Live preview of fullbloomcounseling.com" loading="lazy" tabindex="-1"></iframe></div><span class="cap">live · scroll me</span></div>
@@ -475,7 +505,7 @@
         </div>
       </a>
       <a class="card rv" href="https://studionull.io" target="_blank" rel="noopener" style="--rot:-.8deg;--phc:#0d0d10;--pht:#f0ede6;--phr:#c8a96e">
-        <div class="ph"><span class="idx">03</span>
+        <span class="tapebit" aria-hidden="true"></span><div class="ph"><span class="idx">03</span>
           <div class="overhead"><h3>Studio Null</h3><div class="role">Founder · R&amp;D</div></div>
         </div>
         <div class="polaroid" aria-hidden="true" style="--prot:6deg"><div class="shot"><iframe src="https://studionull.io" title="Live preview of studionull.io" loading="lazy" tabindex="-1"></iframe></div><span class="cap">live · scroll me</span></div>
