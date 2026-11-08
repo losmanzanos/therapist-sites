@@ -2212,11 +2212,12 @@ footer{background:var(--ink)}
 .book-alt{margin-top:26px;font-size:14px;line-height:1.75;color:var(--ink-m)}
 .book-alt a{color:var(--ink-s);border-bottom:1px solid var(--border);white-space:nowrap}
 .book-alt a:hover{color:var(--forest);border-color:var(--forest-l)}
-.book-cal{position:relative;border:1px solid var(--border);background:#f1ebe0;min-height:640px}
-.book-cal .calendly-inline-widget{min-width:0;height:700px;max-width:660px;margin:0 auto}
+.book-cal{position:relative;border:1px solid var(--border);background:#f1ebe0;min-height:560px;max-width:680px;width:100%;justify-self:center}
+.book-cal .calendly-inline-widget{min-width:0;height:560px}
+.book-cal .calendly-inline-widget iframe{display:block}
 .book-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:32px;z-index:1;color:var(--ink-s);font-size:15px;line-height:1.7}
 .book-cal.is-loaded .book-fallback{display:none}
-@media(max-width:900px){.book-inner{grid-template-columns:1fr}.book-cal{min-height:560px}.book-cal .calendly-inline-widget{height:620px}}
+@media(max-width:900px){.book-inner{grid-template-columns:1fr}.book-cal{min-height:520px}.book-cal .calendly-inline-widget{height:620px}}
 .note-or{text-align:center;padding:0 var(--gut) clamp(28px,4vw,48px);background:var(--cream);font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2)}
 .contact{padding-top:clamp(40px,5vw,64px)}
 .frow select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-s) 50%),linear-gradient(135deg,var(--ink-s) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:40px;cursor:pointer}
