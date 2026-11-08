@@ -334,65 +334,81 @@
     .cursor{display:none}
   }
 
+  .print-head{display:none}
   @media print{
-    @page{margin:12mm}
-    *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
-    body{background:#fff;color:var(--ink)}
-    body::after,.cursor,.printbtn,.scroll-hint,.marquee,.tape,.polaroid,
-    .site-header,.subnav,.mob-menu,.sec-note,.hint{display:none!important}
-    /* hero: compact but still branded */
-    .hero{min-height:auto;padding:0 0 20px}
-    .kick{margin-bottom:12px}
-    .mega{font-size:2.8rem;line-height:.92}
-    .mega .stroke{-webkit-text-stroke:1.5px var(--ink);color:transparent}
-    .subhero{margin-top:18px;gap:14px 24px}
-    .subhero p{font-size:.95rem}
-    .subhero .chip{border-width:1px;padding:5px 12px;font-size:.62rem}
-    .desk,.creds{padding:18px 0}
-    .sec-title{font-size:1.7rem}
-    /* work cards: keep the brand-color header bands */
-    .cards{grid-template-columns:repeat(3,1fr)!important;gap:12px}
-    .card{box-shadow:none!important;border:1.5px solid var(--ink);break-inside:avoid;transform:none!important;overflow:hidden}
-    .card .ph{aspect-ratio:auto;border-bottom:1.5px solid var(--ink);border-radius:0;padding:14px 14px 12px}
-    .card .ph .idx{display:none}
-    .card .overhead{position:static}
-    .card .overhead h3{font-size:1.05rem}
-    .card .overhead .role{font-size:.58rem}
-    .card .body{padding:12px 14px 14px}
-    .card p{font-size:.72rem;line-height:1.45}
-    .card .stack{gap:4px;margin-top:10px}
-    .card .stack span{font-size:.52rem;padding:2px 5px}
-    /* creds: both faces flat, front cream / back forest like on screen */
-    .cred-grid{grid-template-columns:1fr 1fr;gap:12px}
-    .flip{height:auto;perspective:none;break-inside:avoid}
-    .flip-in{transform:none!important;min-height:0;height:auto;display:block;transform-style:flat}
-    .face{position:relative;grid-area:auto;inset:auto;backface-visibility:visible;height:auto;box-shadow:none!important;
-      border:1.5px solid var(--ink);margin-bottom:8px;padding:14px 16px;gap:8px}
-    .face h3{font-size:1.15rem}
-    .front,.back{-webkit-mask:none;mask:none;transform:none!important;padding:14px 16px;border:1.5px solid var(--ink)}
-    .front{background:var(--bg2)}
-    .desk{background:none;color:var(--ink)}
-    .desk .sec-title{color:var(--ink);text-shadow:none}
-    .desk .sec-note{color:var(--moss)}
-    .desk::before,.tapebit{display:none}
-    .back{background:var(--forest);color:var(--bg);transform:none!important;display:flex}
-    .back .tag{color:var(--gold)}
-    .back p{font-size:.74rem}
-    .face .where{font-size:.66rem}
-    /* footer: slim ink band with brand accents */
-    footer{background:var(--ink);color:var(--bg);padding:18px 0 12px;border-radius:6px}
-    footer .wrap{padding:0 16px}
-    .foot-mega{font-size:1.5rem;margin-bottom:10px}
-    .foot-cta{gap:8px;margin-bottom:14px}
-    .btn{padding:7px 14px;font-size:.66rem;border-width:1px}
-    .foot-meta{font-size:.56rem;padding-top:10px}
+    @page{size:letter;margin:13mm 14mm}
+    *{print-color-adjust:exact;-webkit-print-color-adjust:exact;animation:none!important;transition:none!important}
+    html,body{background:#fff!important;color:var(--ink)}
+    body::after,.cursor,.printbtn,.scroll-hint,.marquee,.tape,.polaroid,.site-header,.subnav,.mob-menu,.sec-note,.hint,
+    .desk-calc,.cr-ctl,.cr-pre,.cr-title,.cr-lede,.cr-fine,.cr-end,.cr-fun,.cr-photo,.tapebit,.desk::before,.credits::before,.credits::after,.front .rc-f,.stickbar{display:none!important}
     .rv{opacity:1!important;transform:none!important}
-    .wrap{max-width:100%;padding:0}
+    .wrap{max-width:100%!important;padding:0!important}
+    /* masthead */
+    .print-head{display:block;padding-bottom:12px;margin-bottom:14px;border-bottom:2px solid var(--ink)}
+    .ph-name{font-family:'Fraunces',serif;font-weight:600;font-size:30px;line-height:1;color:var(--ink)}
+    .ph-role{margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--forest)}
+    .ph-contact{margin-top:5px;font-size:10px;color:var(--moss)}
+    /* credits become a quiet two-column fact sheet */
+    .credits{min-height:0!important;display:block!important;padding:0!important;background:none!important;color:var(--ink)!important;overflow:visible!important}
+    .cr-view{height:auto!important;overflow:visible!important;-webkit-mask:none!important;mask:none!important;-webkit-mask-image:none!important;mask-image:none!important;padding:0!important}
+    .cr-roll{position:static!important;transform:none!important;width:auto!important;margin:0!important;padding:0!important;text-align:left!important;columns:2;column-gap:28px}
+    .cr-list>div.cr-photo{display:none!important}
+    .cr-sec{break-after:avoid;margin:0 0 4px!important;padding-top:6px;font-family:'JetBrains Mono',monospace;font-size:8.5px!important;letter-spacing:.2em;text-transform:uppercase;color:var(--forest)!important}
+    .cr-list{margin:0 0 8px!important;break-inside:avoid}
+    .cr-list>div{display:block!important;padding:2px 0!important;text-align:left!important;line-height:1.5!important;font-size:10px!important}
+    .cr-list dt{display:inline!important;font-family:'Jost',sans-serif!important;font-weight:600!important;font-size:10px!important;letter-spacing:0!important;text-transform:none!important;margin:0!important;color:var(--ink)!important;text-align:left!important}
+    .cr-list dt::after{content:"\00a0\00b7\00a0";color:var(--moss)}
+    .cr-list dd{display:inline!important;font-family:'Jost',sans-serif!important;font-size:10px!important;line-height:1.5!important;color:#4b4d59!important;text-align:left!important}
+    .cr-list a{color:inherit;text-decoration:none}
+    /* work */
+    .desk,.creds{padding:14px 0 0!important;background:none!important;color:var(--ink)!important}
+    .sec-label{font-size:8.5px!important;margin-bottom:4px!important;color:var(--forest)!important}
+    .sec-label::before{background:var(--forest)!important}
+    .sec-title{font-size:17px!important;margin-bottom:10px!important;color:var(--ink)!important;text-shadow:none!important;break-after:avoid}
+    .cards{grid-template-columns:repeat(3,1fr)!important;gap:10px!important}
+    .card{box-shadow:none!important;border:1px solid var(--ink)!important;break-inside:avoid;transform:none!important;overflow:hidden}
+    .card .ph{aspect-ratio:auto!important;border-bottom:1px solid var(--ink)!important;border-radius:0!important;padding:10px 12px 9px!important}
+    .card .ph .idx,.card .ph iframe{display:none!important}
+    .card .overhead{position:static!important}
+    .card .overhead h3{font-size:13px!important}
+    .card .overhead .role{font-size:7.5px!important}
+    .card .body{padding:9px 12px 10px!important}
+    .card p{font-size:9px!important;line-height:1.45!important}
+    .card .stack{gap:3px!important;margin-top:7px!important}
+    .card .stack span{font-size:7px!important;padding:1px 4px!important}
+    /* credentials: one compact row each, the why underneath */
+    .creds{break-before:page}
+    .creds .wrap{break-before:auto}
+    .creds .sec-title{font-size:20px!important}
+    .cred-grid{display:grid!important;grid-template-columns:1fr 1fr!important;grid-auto-rows:auto!important;gap:14px 16px!important}
+    .flip{padding:14px 16px!important}
+    .back p{font-size:9.6px!important;line-height:1.55!important}
+    .flip{display:block!important;height:auto!important;perspective:none!important;break-inside:avoid;border:1px solid var(--ink);padding:10px 12px}
+    .flip-in{transform:none!important;min-height:0!important;height:auto!important;display:block!important;transform-style:flat!important}
+    .face{position:static!important;grid-area:auto!important;backface-visibility:visible!important;height:auto!important;box-shadow:none!important;border:0!important;padding:0!important;margin:0!important;background:none!important;-webkit-mask:none!important;mask:none!important;transform:none!important;filter:none!important;color:var(--ink)!important;display:block!important}
+    .front .rc-h{font-size:12.5px!important;text-align:left!important}
+    .front .rc-m{margin:3px 0 5px!important;padding-bottom:4px!important;font-size:7.5px!important}
+    .front .rc-r{font-size:8.5px!important;padding:1px 0!important}
+    .back{margin-top:6px!important;padding-top:6px!important;border-top:1px dashed rgba(44,45,54,.35)!important}
+    .back .tag{font-size:7.5px!important;color:var(--forest)!important;border:0!important;padding:0!important;margin:0 0 2px!important}
+    .back p{font-size:8.8px!important;line-height:1.45!important;color:#3d3e48!important}
+    .back .where{color:var(--moss)!important}
+    /* footer: a plain closing line, no ink slab */
+    footer{background:none!important;color:var(--ink)!important;padding:12px 0 0!important;margin-top:14px;border-top:2px solid var(--ink);border-radius:0!important;break-inside:avoid}
+    .foot-mega{font-size:15px!important;margin-bottom:6px!important;color:var(--ink)!important}
+    .foot-mega br{display:none}
+    .foot-cta{display:none!important}
+    .foot-meta{font-size:8px!important;padding-top:4px!important;color:var(--moss)!important;border:0!important}
   }
 </style>
 </head>
 <body>
 <div class="cursor" id="cursor"></div>
+<header class="print-head" aria-hidden="true">
+  <div class="ph-name">Chad Moravec</div>
+  <div class="ph-role">Web engineer &amp; technical SEO &middot; founder, Therapist Web Design</div>
+  <div class="ph-contact">therapistweb.design &nbsp;&middot;&nbsp; hello@therapistweb.design &nbsp;&middot;&nbsp; (720) 466-1013 &nbsp;&middot;&nbsp; Denver, Colorado</div>
+</header>
 
 <!-- SITE HEADER (brought over from the main site) -->
 <header class="site-header">
@@ -447,7 +463,7 @@
       <h1 class="cr-title">The credits.</h1>
       <p class="cr-lede">Everything on this site, and on every site this studio ships, was done by the person below. Scroll past if you want the resume. Stay if you like credits.</p>
 
-      <dl class="cr-list">
+      <dl class="cr-list cr-fun">
         <div><dt>Written by</dt><dd>Chad Moravec</dd></div>
         <div><dt>Designed by</dt><dd>Chad Moravec</dd></div>
         <div><dt>Coded by</dt><dd>Chad Moravec, by hand</dd></div>
@@ -482,9 +498,9 @@
         <div><dt>JSON-LD</dt><dd>So search engines and AI answers know who you are</dd></div>
         <div><dt>GitHub Pages &amp; Cloudflare</dt><dd>Hosting that costs the client nothing</dd></div>
         <div><dt>Playwright</dt><dd>Every page screenshotted at nine screen sizes before it ships</dd></div>
-        <div><dt>The desk</dt><dd>Photograph by Nathan Dumlao, via Unsplash</dd></div>
-        <div><dt>Index card, receipts, ticket and tape</dt><dd>Photographs via Canva, cut and taped together here</dd></div>
-        <div><dt>The calculator</dt><dd>A Sanyo Thames Terminal, photographed by <a href="https://www.flickr.com/photos/57347595@N04/51679243375" rel="noopener">irombeach</a> (public domain); display set in <a href="https://www.keshikan.net/fonts-e.html" rel="noopener">DSEG7</a> by Keshikan (SIL Open Font License)</dd></div>
+        <div class="cr-photo"><dt>The desk</dt><dd>Photograph by Nathan Dumlao, via Unsplash</dd></div>
+        <div class="cr-photo"><dt>Index card, receipts, ticket and tape</dt><dd>Photographs via Canva, cut and taped together here</dd></div>
+        <div class="cr-photo"><dt>The calculator</dt><dd>A Sanyo Thames Terminal, photographed by <a href="https://www.flickr.com/photos/57347595@N04/51679243375" rel="noopener">irombeach</a> (public domain); display set in <a href="https://www.keshikan.net/fonts-e.html" rel="noopener">DSEG7</a> by Keshikan (SIL Open Font License)</dd></div>
       </dl>
 
       <p class="cr-fine">No templates were harmed in the making of this website.</p>
@@ -632,7 +648,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="foot-mega rv">Yours should be<br>the one they trust.</div>
+    <div class="foot-mega rv">Yours should be <br>the one they trust.</div>
     <div class="foot-cta rv">
       <a class="btn fill" href="https://calendly.com/chad-m-moravec/intro-call" target="_blank" rel="noopener">Book a free call →</a>
       <a class="btn line" href="mailto:hello@therapistweb.design">Say hello</a>
@@ -748,6 +764,6 @@
   render();
 })();
 </script>
-<script src="../assets/convert.js?v=202611080907" defer></script>
+<script src="../assets/convert.js?v=202611080913" defer></script>
 </body>
 </html>
