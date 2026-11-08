@@ -301,7 +301,17 @@ if(form){
     var s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;
     s.onload=function(){box.classList.add('is-loaded');};
     document.head.appendChild(s);
-    window.addEventListener('message',function(e){if(e.data&&typeof e.data.event==='string'&&e.data.event.indexOf('calendly.')===0){box.classList.add('is-loaded');if(e.data.event==='calendly.event_scheduled'&&window.gtag){try{gtag('event','call_booked',{page:location.pathname});}catch(x){}}}});
+    /* Calendly pads the bottom of its month view more than the top. Trim the wrapper on that step only; later steps keep their full height. */
+    var wrap=box.querySelector('.calendly-inline-widget'),onCal=true,lastH=0,TRIM=92;
+    function fit(){if(!lastH)return;wrap.style.height=((onCal&&lastH<670)?lastH-TRIM:lastH)+'px';}
+    window.addEventListener('message',function(e){
+      if(!e.data||typeof e.data.event!=='string'||e.data.event.indexOf('calendly.')!==0)return;
+      var ev=e.data.event;box.classList.add('is-loaded');
+      if(ev==='calendly.page_height'){lastH=parseInt(e.data.payload&&e.data.payload.height,10)||0;setTimeout(fit,0);}
+      else if(ev==='calendly.event_type_viewed'||ev==='calendly.profile_page_viewed'){onCal=true;fit();}
+      else if(ev==='calendly.date_and_time_selected'||ev==='calendly.event_scheduled'){onCal=false;fit();}
+      if(ev==='calendly.event_scheduled'&&window.gtag){try{gtag('event','call_booked',{page:location.pathname});}catch(x){}}
+    });
   }
   if('IntersectionObserver' in window){new IntersectionObserver(function(es,o){if(es[0].isIntersecting){o.disconnect();load();}},{rootMargin:'300px'}).observe(box);}
   else load();
