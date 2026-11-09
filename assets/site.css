@@ -2014,7 +2014,7 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
   /* hero fills the first screen, stars sit top-right at full strength */
   .hero{min-height:calc(100svh - 150px);display:flex;align-items:flex-end;padding:0}
   /* light enough that the peonies and green show at the edges; the words sit over the pale center */
-  .hero::after{background:rgba(241,235,224,.62)}
+  .hero::after{background:rgba(241,235,224,.67)}
   .hero-figure{opacity:.9;right:-16%;top:-7%;width:58%;transform:rotate(9deg);z-index:2}
   .hero-figure img{filter:saturate(.35) contrast(.95) brightness(1.04)}
   .hero{min-height:calc(100svh - 56px);background-position:center top}
