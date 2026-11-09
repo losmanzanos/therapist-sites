@@ -2078,13 +2078,20 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
 .hl-row button:hover{color:var(--forest-2)}
 .hl-s{font-size:12.5px;color:#5b5c66;margin:0;line-height:var(--rule)}
 /* hero sky: the stars open the page's top-to-bottom story (stars, moon, people, snake), small and quiet */
-.hero-figure.hero-sky{bottom:auto;top:7%;width:clamp(150px,15vw,230px);z-index:4;opacity:.48;pointer-events:none;
+.hero-figure.hero-sky{bottom:auto;top:7%;width:clamp(150px,15vw,230px);z-index:4;opacity:.86;pointer-events:none;
   left:auto;right:max(calc((100% - var(--maxw))/2 + var(--gut)),4%);transform:rotate(-8deg)}
 .hero-figure.hero-sky img{filter:saturate(.2) contrast(.9) brightness(1.08);mix-blend-mode:multiply;transform:translateY(var(--drift,0))}
+/* five separate paper stars, each drifting on its own clock, lifted off the page by a soft shadow */
+.sky-stars{position:relative;aspect-ratio:2/3;transform:translateY(var(--drift,0))}
+.hero-figure.hero-sky .sky-stars img{position:absolute;height:auto;mix-blend-mode:normal;
+  filter:saturate(.7) contrast(1.12) brightness(1.03) drop-shadow(0 8px 9px rgba(44,45,54,.2)) drop-shadow(0 1px 1.5px rgba(44,45,54,.22));
+  animation:starfloat var(--d,7s) ease-in-out var(--dl,0s) infinite alternate;will-change:transform}
+@keyframes starfloat{from{transform:translate3d(0,0,0) rotate(var(--r0,-1.5deg))}to{transform:translate3d(2px,-7px,0) rotate(var(--r1,1.5deg))}}
+@media(prefers-reduced-motion:reduce){.hero-figure.hero-sky .sky-stars img{animation:none}}
 @media(max-width:1180px) and (min-width:751px){.hero-figure.hero-sky{left:auto;right:-10px;top:-24px;width:110px;transform:rotate(12deg)}}
 @media(max-width:750px){
   .hero{display:block}
-  .hero-figure.hero-sky{display:block;left:auto;right:-7%;top:-58px;width:37%;opacity:.5;transform:rotate(14deg)}
+  .hero-figure.hero-sky{display:block;left:auto;right:-7%;top:-58px;width:37%;opacity:.86;transform:rotate(14deg)}
   .hero-content{padding-bottom:40px}
   .look-card{transform:rotate(-1.2deg);--pt:30px;padding:var(--pt) 22px 14px;background-image:url(../images/card-plain-700.webp)}
   .hl-h{font-size:23px}
