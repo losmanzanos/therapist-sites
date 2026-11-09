@@ -2082,6 +2082,21 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
 @media(max-width:750px){
   .hero{display:block}
   .hero-figure.hero-sky{display:block;left:auto;right:-18px;top:-42px;width:28%;opacity:.36;transform:rotate(14deg)}
+  /* the hero as a broadcast viewfinder: three corner brackets (the stars sit over the fourth like a sticker),
+     a blinking LIVE tag and a running timecode. Phones only. */
+  .vf{display:block;position:absolute;left:12px;right:12px;top:12px;bottom:12px;pointer-events:none;z-index:3}
+  .vf i{position:absolute;width:22px;height:22px;border:0 solid rgba(44,45,54,.42)}
+  .vf i:nth-child(1){left:0;top:0;border-left-width:1.5px;border-top-width:1.5px}
+  .vf i:nth-child(2){display:none}
+  .vf i:nth-child(3){left:0;bottom:0;border-left-width:1.5px;border-bottom-width:1.5px}
+  .vf i:nth-child(4){right:0;bottom:0;border-right-width:1.5px;border-bottom-width:1.5px}
+  .vf b{position:absolute;font:600 9.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:rgba(44,45,54,.62)}
+  .vf .vf-live{left:32px;top:6px;display:flex;align-items:center;gap:7px}
+  .vf .vf-live::before{content:"";width:7px;height:7px;border-radius:50%;background:#c4553d;box-shadow:0 0 0 3px rgba(196,85,61,.18);animation:heroblink 1.6s steps(1) infinite}
+  .vf .vf-tc{right:32px;bottom:6px;font-variant-numeric:tabular-nums;letter-spacing:.14em}
+  .hero-eyebrow::before{display:none}
+  .hero-content{padding-bottom:50px}
+  .hero-figure.hero-sky{z-index:4}
   .look-card{transform:rotate(-1.2deg);--pt:30px;padding:var(--pt) 22px 14px;background-image:url(../images/card-plain-700.webp)}
   .hl-h{font-size:23px}
   .hl-p{font-size:15px}
@@ -2292,6 +2307,7 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
 .look-cap{margin-top:14px;font-size:13px;color:var(--ink-m);line-height:1.6}
 @media(max-width:900px){.look-inner{grid-template-columns:1fr;gap:40px}}
 
+@media(min-width:751px){.vf{display:none}}
 /* the booking bar on phones.
    iPhone browsers (Safari, DuckDuckGo, anything on Apple's engine) copy the color of a fixed element near the bottom
    into the strip under their own toolbar. So the bar sits in a page-colored dock that touches the bottom edge: the
