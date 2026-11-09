@@ -977,7 +977,6 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
   .snav-links{display:none}
   .snav-cta{font-size:11px}
   .ham{display:flex;flex-direction:column;justify-content:space-between}
-  .mission-inner{grid-template-columns:1fr;gap:32px}
   .process-inner,.refresh-inner,.contact-inner,.faq-inner{grid-template-columns:1fr;gap:40px}
   .tech-list{grid-template-columns:1fr}
   .faq-anchor{position:static}
@@ -2078,8 +2077,14 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
   animation:starfloat var(--d,7s) ease-in-out var(--dl,0s) infinite alternate;will-change:transform}
 @keyframes starfloat{from{transform:translate3d(0,0,0) rotate(var(--r0,-1.5deg))}to{transform:translate3d(2px,-7px,0) rotate(var(--r1,1.5deg))}}
 @media(prefers-reduced-motion:reduce){.hero-figure.hero-sky .sky-stars img{animation:none}}
-@media(max-width:1180px) and (min-width:751px){.hero-figure.hero-sky{left:auto;right:-10px;top:-24px;width:110px;transform:rotate(12deg)}}
+/* tablet: the stars keep the right half company instead of hiding in the corner */
+@media(max-width:1080px) and (min-width:751px){.mission-inner{grid-template-columns:minmax(0,1.5fr) 240px;gap:36px}.mission p{max-width:none}.mission-img{margin-left:0}.booth{margin-top:8px}}
+@media(max-width:1180px) and (min-width:751px){.hero-figure.hero-sky{left:auto;right:3%;top:12%;width:clamp(150px,21vw,230px);transform:rotate(10deg)}}
+/* a wide phone layout (small tablet portrait, phones turned sideways, a half-width desktop window) is not a phone screen:
+   the copy is short there, so the hero ends where the copy ends instead of stretching to the fold */
+@media(max-width:750px) and (min-width:601px),(max-width:750px) and (orientation:landscape){.hero{min-height:0!important}}
 @media(max-width:750px){
+  .mission-inner{grid-template-columns:1fr;gap:32px}
   .hero{display:block}
   .hero-figure.hero-sky{display:block;left:auto;right:-7%;top:-58px;width:37%;opacity:.86;transform:rotate(14deg)}
   .hero-content{padding-bottom:40px}
@@ -2353,13 +2358,15 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 /* 1000px and up: Calendly gets a 900px frame, the width it needs to show the day and its times side by side.
    1000-1279: intro row on top (heading left, copy right), frame centered below.
    1280 and up: intro in a left column, frame on the right, like the form below it. */
-@media(min-width:1000px){
-.book-inner{grid-template-columns:1fr;row-gap:0}
+@media(min-width:751px){
 .book-text{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(32px,5vw,96px);align-items:start}
 .book h2{margin-bottom:0}
 .book-body{padding-top:14px}
 .book-text p{max-width:560px}
 .book-alt{margin-top:18px}
+}
+@media(min-width:1000px){
+.book-inner{grid-template-columns:1fr;row-gap:0}
 .book-cal{max-width:900px;border:0;background:transparent;min-height:662px;justify-self:center}
 .book-cal .calendly-inline-widget{height:662px;overflow:visible;transition:none}
 }

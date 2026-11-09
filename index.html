@@ -45,7 +45,7 @@
 <link rel="preload" href="fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/site.css?v=202611091026"/>
+<link rel="stylesheet" href="assets/site.css?v=202611091554"/>
 </head>
 <body>
 
@@ -741,13 +741,13 @@
 /* phone hero: size it to the screen once, in pixels. Phone toolbars collapse on scroll and change the viewport
    height, which made the hero grow. Re-measure only when the width changes (rotation). */
 (function(){
-  if(!window.matchMedia||!matchMedia('(max-width:750px)').matches)return;
+  if(!window.matchMedia||!matchMedia('(max-width:600px) and (orientation:portrait)').matches)return;
   var hero=document.getElementById('hero'),sn=document.getElementById('subnav'),lastW=0;if(!hero)return;
   function lock(){if(innerWidth===lastW)return;lastW=innerWidth;var top=sn?sn.getBoundingClientRect().height:56;hero.style.minHeight=Math.round(innerHeight-top)+'px';}
   lock();addEventListener('resize',lock);
 })();
 </script>
-<script src="assets/convert.js?v=202611091026" defer></script>
+<script src="assets/convert.js?v=202611091554" defer></script>
 
 <script>
 (function(){
