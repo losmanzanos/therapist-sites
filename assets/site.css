@@ -853,6 +853,23 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
   font-size:clamp(34px,4.6vw,68px);line-height:1.04;color:#fff;
   max-width:680px;
 }
+/* the sign-off: the station's test card across the top of the footer (tap it for channel 00),
+   and an old set switching off at the end of "Thanks for watching." */
+.ft-bars{display:block;height:6px;background:linear-gradient(90deg,#c8c3b4 0 14.28%,#c9b24c 0 28.57%,#3f9c9a 0 42.85%,#3e7a4f 0 57.14%,#8e4b7f 0 71.42%,#a9412f 0 85.71%,#2d4a9a 0);opacity:.85;transition:height .25s ease,opacity .25s ease}
+.ft-bars:hover,.ft-bars:focus-visible{height:12px;opacity:1}
+.ft-tagline .ft-off{display:inline-block;position:relative;width:.7em;height:.5em;vertical-align:.05em}
+.ft-off::before{content:"";position:absolute;left:.24em;top:50%;width:7px;height:7px;border-radius:50%;background:#f4f1ea;transform:translateY(-50%);opacity:.5;box-shadow:0 0 8px 2px rgba(244,241,234,.35)}
+footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s both}
+/* a line flashes on, pulls back into the dot, the dot flares, then settles to a faint afterglow */
+@keyframes ftoff{
+  0%{width:0;height:2px;border-radius:1px;opacity:0;box-shadow:0 0 0 rgba(244,241,234,0)}
+  10%{width:2.4em;height:2px;border-radius:1px;opacity:1;box-shadow:0 0 16px 3px rgba(244,241,234,.75)}
+  32%{width:2.4em;height:2px;border-radius:1px;opacity:1;box-shadow:0 0 16px 3px rgba(244,241,234,.75)}
+  50%{width:7px;height:7px;border-radius:50%;opacity:1;box-shadow:0 0 24px 8px rgba(244,241,234,.8)}
+  62%{width:8px;height:8px;border-radius:50%;opacity:1;box-shadow:0 0 34px 12px rgba(244,241,234,.6)}
+  100%{width:7px;height:7px;border-radius:50%;opacity:.5;box-shadow:0 0 8px 2px rgba(244,241,234,.35)}
+}
+@media(prefers-reduced-motion:reduce){footer.is-in .ft-off::before{animation:none}}
 .ft-cols{
   max-width:var(--maxw);margin:0 auto;
   padding:clamp(32px,4vw,52px) var(--gut);
