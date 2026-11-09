@@ -2327,19 +2327,26 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .book-cal .calendly-inline-widget iframe{opacity:0;transition:opacity .45s ease}
 .book-cal.is-ready .calendly-inline-widget iframe{opacity:1}
 .book-cal.is-ready .book-fallback{opacity:0;visibility:hidden;pointer-events:none}
-.bk-skel{width:min(100%,420px);display:grid;gap:18px;--sk:rgba(44,45,54,.07);animation:bkpulse 1.6s ease-in-out infinite}
-.bk-skel i,.bk-skel b{display:block}
-.bk-t{height:14px;width:46%;background:var(--sk);border-radius:7px}
-.bk-m{display:flex;align-items:center;gap:10px}
-.bk-m i{height:12px;width:34%;background:var(--sk);border-radius:6px;margin:0 auto 0 31%}
-.bk-m b{width:26px;height:26px;border-radius:50%;background:var(--sk)}
-.bk-w{height:8px;background:repeating-linear-gradient(90deg,var(--sk) 0 calc(100%/7 - 26px),transparent 0 calc(100%/7));background-size:100% 8px;margin:0 13px}
-.bk-g{height:220px;background:radial-gradient(circle,var(--sk) 0 17px,transparent 18px) 0 0/calc(100%/7) 44px}
-.bk-msg{margin:4px 0 0;font-style:italic;font-family:var(--serif);font-size:17px;color:var(--ink-s)}
+/* loading screen: a beige CRT dials in, then the screen "zooms" into the live calendar */
+.crt{position:relative;width:min(400px,78%);margin:0 auto;transform-origin:50% 33%;transition:transform .6s cubic-bezier(.6,0,.35,1),opacity .3s ease .32s}
+.crt::after{content:"";position:absolute;left:4%;right:4%;bottom:-14px;height:28px;border-radius:50%;background:radial-gradient(closest-side,rgba(44,45,54,.28),rgba(44,45,54,0));z-index:-1}
+.crt img{display:block;width:100%;height:auto;filter:saturate(.85) sepia(.08)}
+.crt-scr{position:absolute;left:18.2%;top:10.6%;width:65.6%;height:47.4%;border-radius:9% / 12%;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#1d3a28 0%,#10221a 62%,#0a1510 100%);box-shadow:inset 0 0 22px rgba(0,0,0,.7),inset 0 0 3px rgba(0,0,0,.9)}
+.crt-scr::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);pointer-events:none;z-index:2}
+.crt-scr::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.13) 0%,rgba(255,255,255,0) 38%);pointer-events:none;z-index:3;animation:crtflick 3.2s steps(1) infinite}
+.crt-txt{position:relative;z-index:1;margin:0;padding:11% 9%;font:600 clamp(10px,3.3cqw,15px)/1.55 "SFMono-Regular",ui-monospace,Menlo,Consolas,"Courier New",monospace;color:#b8f0c4;text-shadow:0 0 6px rgba(120,230,150,.55);white-space:pre-wrap;text-align:left;letter-spacing:.02em}
+.crt{container-type:inline-size}
+.crt-txt.is-typing::after{content:"";display:inline-block;width:.6em;height:1.05em;margin-left:2px;vertical-align:-.18em;background:#b8f0c4;box-shadow:0 0 6px rgba(120,230,150,.6);animation:crtblink 1s steps(1) infinite}
+.crt-scr{transition:box-shadow .3s ease}.crt-txt{transition:opacity .15s ease}
+.book-cal.is-ready .crt{transform:scale(2.1);opacity:0}
+.book-cal.is-ready .crt-scr{box-shadow:inset 0 0 0 300px #f1ebe0}
+.book-cal.is-ready .crt-txt{opacity:0}
 .bk-btn{opacity:0;animation:bkshow .4s ease 7s forwards}
-@keyframes bkpulse{50%{opacity:.55}}
+@keyframes crtblink{50%{opacity:0}}
+@keyframes crtflick{0%,100%{opacity:1}48%{opacity:.86}50%{opacity:1}}
 @keyframes bkshow{to{opacity:1}}
-@media(prefers-reduced-motion:reduce){.bk-skel{animation:none}.bk-btn{animation:none;opacity:1}}
+@media(max-width:750px){.crt{width:min(280px,78%)}}
+@media(prefers-reduced-motion:reduce){.crt,.crt-scr::after,.crt-txt::after{animation:none;transition:none}.book-cal.is-ready .crt{transform:none}.bk-btn{animation:none;opacity:1}}
 @media(min-width:1280px){.book-fallback{left:90px}}
 @media(max-width:900px){.book-inner{grid-template-columns:1fr}.book-cal{min-height:520px}.book-cal .calendly-inline-widget{height:620px}}
 /* 1000px and up: Calendly gets a 900px frame, the width it needs to show the day and its times side by side.

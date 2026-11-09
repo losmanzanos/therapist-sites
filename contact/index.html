@@ -24,7 +24,7 @@
 <link rel="preload" href="../fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://calendly.com"/>
 <link rel="preconnect" href="https://assets.calendly.com" crossorigin/>
-<link rel="stylesheet" href="../assets/site.css?v=202611090742"/>
+<link rel="stylesheet" href="../assets/site.css?v=202611090756"/>
 </head>
 <body>
 
@@ -100,8 +100,14 @@
     <div class="book-cal" id="bookCal" data-r data-d="1">
       <div class="calendly-inline-widget" data-resize="true" data-url="https://calendly.com/chad-m-moravec/intro-call?hide_gdpr_banner=1&hide_event_type_details=1&background_color=f1ebe0&text_color=2c2d36&primary_color=2d4a35"></div>
       <div class="book-fallback" role="status">
-        <div class="bk-skel" aria-hidden="true"><i class="bk-t"></i><div class="bk-m"><i></i><b></b><b></b></div><i class="bk-w"></i><i class="bk-g"></i></div>
-        <p class="bk-msg">Pulling up open times&hellip;</p>
+        <div class="crt" aria-hidden="true">
+          <img src="../images/crt.webp" srcset="../images/crt-600.webp 600w, ../images/crt.webp 900w" sizes="(max-width:750px) 280px, 400px" width="900" height="902" alt="" decoding="async" fetchpriority="high"/>
+          <div class="crt-scr"><pre class="crt-txt" id="crtTxt">C:\&gt; dial chad
+ATDT 720 466 1013
+CONNECT 56000
+Loading calendar...</pre></div>
+        </div>
+        <p class="sr-only">Loading the calendar&hellip;</p>
         <a class="btn btn-solid bk-btn" href="https://calendly.com/chad-m-moravec/intro-call" target="_blank" rel="noopener"><span>Open the calendar in a new tab</span></a>
       </div>
     </div>
@@ -306,6 +312,26 @@ if(form){
   try{var q=new URLSearchParams(location.search).get('site');if(q&&siteIn){q=q.trim();if(!/^https?:\/\//i.test(q))q='https://'+q;siteIn.value=q;if(proj){proj.value='Free look at my current site';syncCheck();}setTimeout(function(){var n=form.querySelector('input[name="Name"]');if(n)n.focus({preventScroll:true});},120);}}catch(x){}
   fromHash();window.addEventListener('hashchange',fromHash);
 }
+/* ── The loading screen: an old modem dials in while Calendly loads behind it ── */
+(function(){
+  var box=document.getElementById('bookCal'),t=document.getElementById('crtTxt');if(!box||!t)return;
+  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  box._minT=calm?0:Date.now()+2200;
+  if(calm)return;
+  var seq=[['C:\\> ',0],['dial chad',45],['\n',260],['ATDT 720 466 1013',18],['\n',420],['CONNECT 56000',0],['\n',300],['Loading calendar',0]];
+  var out='',i=0,j=0;t.textContent='';t.classList.add('is-typing');
+  function step(){
+    if(box.classList.contains('is-ready'))return;
+    var s=seq[i];if(!s){dots();return;}
+    if(!s[1]){out+=s[0];i++;t.textContent=out;setTimeout(step,s[0]==='\n'?0:120);return;}
+    if(s[0]==='\n'){out+='\n';i++;t.textContent=out;setTimeout(step,s[1]);return;}
+    out+=s[0].charAt(j++);t.textContent=out;
+    if(j>=s[0].length){i++;j=0;}
+    setTimeout(step,s[1]+(Math.random()*s[1]*.6|0));
+  }
+  var n=0;function dots(){if(box.classList.contains('is-ready'))return;n=(n+1)%4;t.textContent=out+'...'.slice(0,n);setTimeout(dots,380);}
+  setTimeout(step,250);
+})();
 /* ── Calendly: the iframe goes in right away (no widget script to fetch first, no waiting for scroll) ── */
 (function(){
   var box=document.getElementById('bookCal');if(!box)return;
@@ -329,7 +355,7 @@ if(form){
       w.appendChild(f);
     }
     /* Calendly pads the bottom of its month view more than the top. Trim the wrapper on that step only; later steps keep their full height. */
-    function ready(){var f=box.querySelector('.calendly-inline-widget iframe');if(f){f.style.position='';f.style.left='';f.style.bottom='';f.style.width='100%';f.style.pointerEvents='';f.style.zIndex='';if(lastH>=300)f.style.height=lastH+'px';else f.style.height='100%';}box.classList.add('is-ready');}
+    function ready(){var wait=box._minT-Date.now();if(wait>0){clearTimeout(box._rt);box._rt=setTimeout(ready,wait);return;}var f=box.querySelector('.calendly-inline-widget iframe');if(f){f.style.position='';f.style.left='';f.style.bottom='';f.style.width='100%';f.style.pointerEvents='';f.style.zIndex='';if(lastH>=300)f.style.height=lastH+'px';else f.style.height='100%';}box.classList.add('is-ready');}
     var wrap=box.querySelector('.calendly-inline-widget'),onCal=true,lastH=0,TRIM=92;
     var wideMQ=window.matchMedia('(min-width:1000px)');
     function fit(){if(lastH<300)return;var f=wrap.querySelector('iframe');if(f){f.style.height=lastH+'px';}var trim=onCal&&!wideMQ.matches&&lastH<670;wrap.style.height=(trim?lastH-TRIM:lastH)+'px';}
@@ -350,7 +376,7 @@ if(form){
 
 
 
-<script src="../assets/site.js?v=202611090742" defer></script>
-<script src="../assets/convert.js?v=202611090742" defer></script>
+<script src="../assets/site.js?v=202611090756" defer></script>
+<script src="../assets/convert.js?v=202611090756" defer></script>
 </body>
 </html>
