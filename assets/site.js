@@ -21,7 +21,7 @@
       snav.classList.toggle("is-stuck", window.scrollY > 10);
     }, { passive: true });
     var ham = document.getElementById("ham");
-    if (ham) ham.addEventListener("click", function () { snav.classList.toggle("open"); });
+    if (ham) ham.addEventListener("click", function () { snav.classList.toggle("open"); ham.setAttribute("aria-expanded", snav.classList.contains("open") ? "true" : "false"); });
     snav.querySelectorAll(".mob-menu a").forEach(function (a) {
       a.addEventListener("click", function () { snav.classList.remove("open"); });
     });

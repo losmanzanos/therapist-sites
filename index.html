@@ -38,13 +38,14 @@
 <link rel="shortcut icon" href="favicon.ico"/>
 <!-- Preload the hero background for LCP. WebP first; the type attribute makes
      browsers without WebP support skip it and fall back to the JPEG in site.css. -->
-<link rel="preload" as="image" href="images/bg-floral.webp" type="image/webp" fetchpriority="high"/>
+<link rel="preload" as="image" href="images/bg-floral-900.webp" type="image/webp" media="(max-width: 750px)" fetchpriority="high"/>
+<link rel="preload" as="image" href="images/bg-floral.webp" type="image/webp" media="(min-width: 751px)" fetchpriority="high"/>
 <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
 <link rel="dns-prefetch" href="//formspree.io"/>
 <link rel="preload" href="fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/site.css?v=202611090340"/>
+<link rel="stylesheet" href="assets/site.css?v=202611090358"/>
 </head>
 <body>
 
@@ -83,7 +84,7 @@
       <a href="journal/">Journal</a>
     </div>
     <a href="contact/" class="snav-cta">Contact &#8594;</a>
-    <button class="ham" id="ham" aria-label="Menu">
+    <button class="ham" id="ham" aria-label="Menu" aria-controls="subnav" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -175,7 +176,7 @@
               <img src="images/tv-knob.png" alt="" width="74" height="74"/>
             </picture>
           </button>
-          <button class="tv-scan" id="tvSurf" type="button" aria-label="Surf through every channel"><span>Scan</span></button>
+          <button class="tv-scan" id="tvSurf" type="button" aria-label="Scan through every channel"><span>Scan</span></button>
           <span class="tv-tag" aria-hidden="true">turn me
             <svg viewBox="0 0 34 46" fill="none"><path d="M3 5 C 22 4, 30 18, 24 40" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M17 34 L 24 41 L 30 33" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
@@ -729,7 +730,7 @@
   lock();addEventListener('resize',lock);
 })();
 </script>
-<script src="assets/convert.js?v=202611090340" defer></script>
+<script src="assets/convert.js?v=202611090358" defer></script>
 
 <script>
 (function(){
@@ -749,6 +750,7 @@ window.addEventListener('scroll',function(){
 },{passive:true});
 document.getElementById('ham').addEventListener('click',function(){
   snav.classList.toggle('open');
+  this.setAttribute('aria-expanded',snav.classList.contains('open')?'true':'false');
 });
 snav.querySelectorAll('.mob-menu a').forEach(function(a){
   a.addEventListener('click',function(){snav.classList.remove('open');});
