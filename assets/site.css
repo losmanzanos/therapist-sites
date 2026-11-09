@@ -2013,7 +2013,8 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
   .snav-cta{display:block;font-size:11px}
   /* hero fills the first screen, stars sit top-right at full strength */
   .hero{min-height:calc(100svh - 150px);display:flex;align-items:flex-end;padding:0}
-  .hero::after{background:rgba(241,235,224,.84)}
+  /* light enough that the peonies and green show at the edges; the words sit over the pale center */
+  .hero::after{background:rgba(241,235,224,.62)}
   .hero-figure{opacity:.9;right:-16%;top:-7%;width:58%;transform:rotate(9deg);z-index:2}
   .hero-figure img{filter:saturate(.35) contrast(.95) brightness(1.04)}
   .hero{min-height:calc(100svh - 56px);background-position:center top}
@@ -2083,7 +2084,7 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
 @media(max-width:1180px) and (min-width:751px){.hero-figure.hero-sky{left:auto;right:-10px;top:-24px;width:110px;transform:rotate(12deg)}}
 @media(max-width:750px){
   .hero{display:block}
-  .hero-figure.hero-sky{display:block;left:auto;right:-18px;top:-42px;width:28%;opacity:.36;transform:rotate(14deg)}
+  .hero-figure.hero-sky{display:block;left:auto;right:-7%;top:-58px;width:37%;opacity:.5;transform:rotate(14deg)}
   .hero-content{padding-bottom:40px}
   .look-card{transform:rotate(-1.2deg);--pt:30px;padding:var(--pt) 22px 14px;background-image:url(../images/card-plain-700.webp)}
   .hl-h{font-size:23px}
@@ -2423,7 +2424,8 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
 
 /* ═══ HERO v3: type only. Headline, one line of help, the call, and proof by name ═══ */
 .hero-proof{display:flex;align-items:center;gap:14px;margin:clamp(34px,4vw,52px) 0 0;padding:14px 0;border-top:1px solid rgba(44,45,54,.16);border-bottom:1px solid rgba(44,45,54,.16);max-width:900px}
-.hero-proof .hp-k{flex:none;display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--cream);background:var(--forest);padding:6px 9px 6px 8px;border-radius:2px;line-height:1}
+/* a plain label, not a chip: a filled green tag read like a second button next to Book a free call */
+.hero-proof .hp-k{flex:none;display:inline-flex;align-items:center;font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--forest-2);line-height:1}
 .hp-crawl{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 36px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 36px),transparent 100%)}
 .hp-track{display:flex;width:max-content;animation:hpcrawl var(--hpdur,24s) linear infinite;will-change:transform;backface-visibility:hidden;transform:translate3d(0,0,0)}
 /* pause for a real mouse or keyboard focus only: phones keep :hover and :focus after a tap, which froze the crawl */
