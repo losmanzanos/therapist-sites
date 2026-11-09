@@ -2011,10 +2011,11 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
   .snav-cta{display:block;font-size:11px}
   /* hero fills the first screen, stars sit top-right at full strength */
   .hero{min-height:calc(100svh - 150px);display:flex;align-items:flex-end;padding:0}
-  .hero::after{background:rgba(241,235,224,.84)}
+  /* the flowers show through: a light wash, a little denser behind the words in the middle */
+  .hero::after{background:linear-gradient(180deg,rgba(241,235,224,.24) 0%,rgba(241,235,224,.5) 28%,rgba(241,235,224,.5) 72%,rgba(241,235,224,.26) 100%)}
   .hero-figure{opacity:.9;right:-16%;top:-7%;width:58%;transform:rotate(9deg);z-index:2}
   .hero-figure img{filter:saturate(.35) contrast(.95) brightness(1.04)}
-  .hero{min-height:0}
+  .hero{min-height:calc(100svh - 56px);background-position:center top}
   .hero-content{padding:56px var(--gut) 28px}
   .hero-eyebrow{margin-bottom:14px}
   .hero-h1{font-size:clamp(38px,11vw,52px);line-height:1.02;max-width:none;margin-bottom:18px}
@@ -2084,8 +2085,8 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
   .hero-figure.hero-sky{display:block;left:auto;right:-18px;top:-42px;width:28%;opacity:.36;transform:rotate(14deg)}
   /* the hero as a broadcast viewfinder: three corner brackets (the stars sit over the fourth like a sticker),
      a blinking LIVE tag and a running timecode. Phones only. */
-  .vf{display:block;position:absolute;left:12px;right:12px;top:12px;bottom:12px;pointer-events:none;z-index:3}
-  .vf i{position:absolute;width:22px;height:22px;border:0 solid rgba(44,45,54,.42)}
+  .vf{display:block;position:absolute;left:12px;right:12px;top:12px;bottom:12px;pointer-events:none;z-index:20}
+  .vf i{position:absolute;width:22px;height:22px;border:0 solid rgba(44,45,54,.55)}
   .vf i:nth-child(1){left:0;top:0;border-left-width:1.5px;border-top-width:1.5px}
   .vf i:nth-child(2){display:none}
   .vf i:nth-child(3){left:0;bottom:0;border-left-width:1.5px;border-bottom-width:1.5px}
