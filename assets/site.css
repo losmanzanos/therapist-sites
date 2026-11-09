@@ -2079,7 +2079,7 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 @media(prefers-reduced-motion:reduce){.hero-figure.hero-sky .sky-stars img{animation:none}}
 /* tablet: the stars keep the right half company instead of hiding in the corner */
 @media(max-width:1080px) and (min-width:751px){.mission-inner{grid-template-columns:minmax(0,1.5fr) 240px;gap:36px}.mission p{max-width:none}.mission-img{margin-left:0}.booth{margin-top:8px}}
-@media(max-width:1180px) and (min-width:751px){.hero-figure.hero-sky{left:auto;right:3%;top:12%;width:clamp(150px,21vw,230px);transform:rotate(10deg)}}
+@media(max-width:1180px) and (min-width:751px){.hero-figure.hero-sky{left:auto;right:4%;top:9%;width:clamp(200px,27vw,300px);transform:rotate(10deg)}}
 /* a wide phone layout (small tablet portrait, phones turned sideways, a half-width desktop window) is not a phone screen:
    the copy is short there, so the hero ends where the copy ends instead of stretching to the fold */
 @media(max-width:750px) and (min-width:601px),(max-width:750px) and (orientation:landscape){.hero{min-height:0!important}}
