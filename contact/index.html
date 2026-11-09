@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<title>Contact · Start a Project · Therapist Web Design</title>
+<title>Contact · Book a free call · Therapist Web Design</title>
 <meta name="description" content="Book a free 30-minute call, or send a note and hear back within one business day. Already have a site? Send the link for a free look. Denver and nationwide."/>
 <meta name="author" content="Chad Moravec"/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
-<meta property="og:title" content="Contact · Start a Project · Therapist Web Design"/>
+<meta property="og:title" content="Contact · Book a free call · Therapist Web Design"/>
 <meta property="og:description" content="Book a free 30-minute call, or send a note and hear back within one business day. Already have a site? Send the link for a free look. Denver and nationwide."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://therapistweb.design/contact/"/>
@@ -24,7 +24,7 @@
 <link rel="preload" href="../fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://calendly.com"/>
 <link rel="preconnect" href="https://assets.calendly.com" crossorigin/>
-<link rel="stylesheet" href="../assets/site.css?v=202611090358"/>
+<link rel="stylesheet" href="../assets/site.css?v=202611090657"/>
 </head>
 <body>
 
@@ -162,7 +162,7 @@
               <circle cx="12" cy="9" r="2.5"/>
             </svg>
           </div>
-          <span>Denver, CO, building nationwide</span>
+          <span>Denver, CO &middot; practices nationwide</span>
         </div>
       </div>
     </div>
@@ -185,7 +185,8 @@
         </div>
         <div class="frow" id="siteRow"><label for="site">Your current site, if you have one</label><input id="site" name="Current site" type="url" inputmode="url" autocomplete="url" placeholder="https://" spellcheck="false"></div>
         <div class="frow"><label for="msg">Tell me about your practice</label><textarea id="msg" name="Message" placeholder="What kind of practice, who you want to reach, and what you love or hate about your current setup. If you pasted a link above, tell me what bugs you about it. For a free look, a sentence is plenty."></textarea></div>
-        <button class="fsub fsub-power" type="submit"><i aria-hidden="true"></i>Send my message</button>
+        <button class="fsub fsub-power" type="submit"><i aria-hidden="true"></i><span class="fsub-l">Send my message</span></button>
+        <p class="ferr" id="ferr" role="alert" hidden>That didn&rsquo;t go through. Try once more, or call or text <a href="tel:7204661013">(720) 466-1013</a>.</p>
         <p class="fnote">I'll respond within one business day, and your email goes on no list.</p>
       </form>
       <div class="fsuc" id="fsuc">
@@ -202,7 +203,7 @@
 <footer>
   <a class="ft-bars" href="/channel-0/" aria-label="Channel 00, the test pattern" title="Channel 00"></a>
   <div class="ft-top">
-    <p class="ft-tagline"><span data-nosnippet>That&rsquo;s all for tonight.<br>Thanks for watching.<span class="ft-off" aria-hidden="true"></span></span></p>
+    <p class="ft-tagline"><span data-nosnippet>That&rsquo;s all for tonight.<br>Thanks for watching.</span></p>
   </div>
   <div class="ft-cols">
     <div>
@@ -269,8 +270,10 @@ if(form){
     if(!isCheck&&msg&&!msg.value.trim()){msg.focus();msg.setCustomValidity('A sentence or two is plenty.');msg.reportValidity&&msg.reportValidity();msg.setCustomValidity('');return;}
     if(subj&&pl)subj.value='New note from '+(nm&&nm.value?nm.value.trim():'the site')+' \u00b7 '+pl.value+(cs&&cs.value?' \u00b7 '+cs.value.replace(/^https?:\/\//,'').replace(/\/$/,''):'');
     var btn=form.querySelector('.fsub');
+    var lbl=btn.querySelector('.fsub-l')||btn,ferr=document.getElementById('ferr');
+    if(ferr)ferr.hidden=true;
     btn.disabled=true;
-    btn.textContent='Sending…';
+    lbl.textContent='Sending…';
     fetch(form.action,{
       method:'POST',
       body:new FormData(form),
@@ -282,13 +285,13 @@ if(form){
         try{document.dispatchEvent(new CustomEvent('twd:formsent',{detail:{project:pl?pl.value:''}}));}catch(x){}
       } else {
         btn.disabled=false;
-        btn.textContent='Send my message';
-        alert('Something went wrong, please call or try again.');
+        lbl.textContent='Send my message';
+        if(ferr)ferr.hidden=false;
       }
     }).catch(function(){
       btn.disabled=false;
-      btn.textContent='Send my message';
-      alert('Something went wrong, please call or try again.');
+      lbl.textContent='Send my message';
+      if(ferr)ferr.hidden=false;
     });
   });
   /* the free look: #check preselects it and asks for the link first */
@@ -347,7 +350,7 @@ if(form){
 
 
 
-<script src="../assets/site.js?v=202611090358" defer></script>
-<script src="../assets/convert.js?v=202611090358" defer></script>
+<script src="../assets/site.js?v=202611090657" defer></script>
+<script src="../assets/convert.js?v=202611090657" defer></script>
 </body>
 </html>
