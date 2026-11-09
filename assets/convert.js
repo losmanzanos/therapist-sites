@@ -26,21 +26,28 @@
     document.head.appendChild(s);
   })();
 
-  /* 2. GA4, after load, so it costs the visitor nothing */
+  /* 2. GA4, loaded on the visitor's first scroll, tap or keypress, or 4 seconds after load if they do nothing.
+     Calls made before then (page view, events) queue in dataLayer and send once it arrives, so nothing is lost;
+     the page just never pays for it while it's still drawing. */
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = window.gtag || gtag;
   gtag("js", new Date());
   gtag("config", "G-6KSDGGVPW0");
+  var gaLoaded = false, GA_WAKE = ["scroll", "pointerdown", "keydown", "touchstart"];
   function loadGa() {
+    if (gaLoaded) return; gaLoaded = true;
+    GA_WAKE.forEach(function (ev) { window.removeEventListener(ev, loadGa, true); });
     var s = document.createElement("script");
     s.async = true;
     s.src = "https://www.googletagmanager.com/gtag/js?id=G-6KSDGGVPW0";
     document.head.appendChild(s);
   }
-  if (PREVIEW) { /* no GA on previews */ }
-  else if (document.readyState === "complete") setTimeout(loadGa, 1500);
-  else window.addEventListener("load", function () { setTimeout(loadGa, 1500); });
+  if (!PREVIEW) {
+    GA_WAKE.forEach(function (ev) { window.addEventListener(ev, loadGa, { capture: true, passive: true }); });
+    if (document.readyState === "complete") setTimeout(loadGa, 4000);
+    else window.addEventListener("load", function () { setTimeout(loadGa, 4000); });
+  }
 
   function track(name, params) {
     try { gtag("event", name, params || {}); } catch (e) {}
@@ -61,16 +68,6 @@
   document.addEventListener("twd:formsent", function (e) {
     track("form_submit", { project: (e.detail && e.detail.project) || "", page: location.pathname });
   });
-
-  /* the footer sign-off plays once, when the footer comes into view */
-  (function () {
-    var ft = document.querySelector("footer");
-    if (!ft || !("IntersectionObserver" in window)) return;
-    var io = new IntersectionObserver(function (es) {
-      if (es[0].isIntersecting) { ft.classList.add("is-in"); io.disconnect(); }
-    }, { threshold: 0.35 });
-    io.observe(ft);
-  })();
 
   /* 3a. the booking bar on phones: appears once the first section (the hero) has scrolled away, hides again
      when you scroll back into it or reach the footer. When hidden it is taken out of the page entirely

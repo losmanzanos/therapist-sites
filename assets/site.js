@@ -98,8 +98,7 @@
   try{
     var hr=+new Intl.DateTimeFormat('en-US',{hour:'numeric',hour12:false,timeZone:'America/Denver'}).format(new Date());
     var line=hr<5?'You\u2019re up late.<br>So am I, usually.':hr<11?'Good morning.<br>Coffee\u2019s on.':hr<17?'That\u2019s the afternoon lineup.<br>Thanks for watching.':null;
-    /* keep the power-off dot at the end of whichever line is showing */
-    if(line)el.innerHTML=line+'<span class="ft-off" aria-hidden="true"></span>';
+    if(line)el.innerHTML=line;
   }catch(e){}
 })();
 
