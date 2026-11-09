@@ -2081,7 +2081,8 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 @media(max-width:1080px) and (min-width:751px){.mission-inner{grid-template-columns:minmax(0,1.5fr) 240px;gap:36px}.mission p{max-width:none}.mission-img{margin-left:0}.booth{margin-top:8px}}
 /* a wide phone layout (small tablet portrait, phones turned sideways, a half-width desktop window) is not a phone screen:
    the copy is short there, so the hero ends where the copy ends instead of stretching to the fold */
-@media(max-width:750px) and (min-width:601px),(max-width:750px) and (orientation:landscape){.hero{min-height:0!important}}
+/* phones sideways: no screen-height lock, the copy is the hero */
+@media(max-width:600px) and (orientation:landscape){.hero{min-height:0!important}}
 @media(max-width:750px){
   .mission-inner{grid-template-columns:1fr;gap:32px}
   .hero{display:block}
@@ -2464,6 +2465,16 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 @media(max-width:750px){
   .hero-proof{gap:10px;margin-top:30px;padding:12px 0}
   .hero-proof a{font-size:16px}
+}
+/* 601-750px (a half-width desktop window, small tablets, big phones sideways): the phone layout, but the copy keeps to the
+   left and the stars take the right, and the hero fills the first screen like it does on a phone */
+@media(max-width:750px) and (min-width:601px){
+  .hero{min-height:calc(100svh - 56px)!important;display:flex;align-items:center}
+  .hero-content{padding-right:clamp(220px,36vw,280px);padding-top:40px;padding-bottom:40px}
+  .hero-h1{font-size:clamp(36px,6.2vw,46px)}
+  .hero-sub-m{max-width:none}
+  .hero-figure.hero-sky{right:3%;top:50%;width:clamp(190px,max(28vw,24svh),270px);transform:translateY(-56%) rotate(10deg)}
+  .hero-proof{margin-right:calc(-1 * clamp(220px,36vw,280px))}
 }
 @media(max-width:1180px) and (min-width:751px){
   /* the hero takes the first screen (header is about 150px tall here); copy keeps to the left, stars own the right */
