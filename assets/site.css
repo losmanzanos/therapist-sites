@@ -1453,6 +1453,8 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
   font-size:clamp(36px,4.4vw,64px);line-height:1.02;margin-top:12px;max-width:16ch;
 }
 .tv-note{font-size:15px;line-height:1.75;color:var(--ink-s);max-width:340px;justify-self:end}
+.tv-note a{color:var(--forest);border-bottom:1px solid var(--forest-l)}
+.tv-note a:hover{border-color:var(--forest)}
 .tv-wrap{
   display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
   gap:clamp(32px,5vw,72px);align-items:start;
