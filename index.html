@@ -44,7 +44,7 @@
 <link rel="preload" href="fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/site.css?v=202611090313"/>
+<link rel="stylesheet" href="assets/site.css?v=202611090316"/>
 </head>
 <body>
 
@@ -117,10 +117,9 @@
     </picture>
   </div>
   <div class="hero-stripe"></div>
-  <div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i><b class="vf-live">Live &middot; Ch 01</b><b class="vf-tc" id="vfTc">00:00:00:00</b></div>
 
   <div class="hero-content" data-r>
-    <p class="eyebrow hero-eyebrow">A Denver studio</p>
+    <p class="eyebrow hero-eyebrow">Live from Denver</p>
     <h1 class="hero-h1">A website that keeps<br class="hbr"> your caseload full.</h1>
     <p class="hero-sub">Therapist Web Design is a Denver studio that builds custom, hand-coded websites for therapists and counselors in private practice. Each one is built to get found and turn a search into a first appointment. You own every line of it. Nothing monthly.</p>
     <p class="hero-sub hero-sub-m">Custom, hand-coded websites for therapists in private practice. Built to get found and turn a search into a first appointment. You own every line. Nothing monthly.</p>
@@ -724,23 +723,16 @@
 })();
 </script>
 <script>
-/* phone hero viewfinder: the timecode runs from the moment the page opens (30 frames a second), only while the hero is on screen */
+/* phone hero: size it to the screen once, in pixels. Phone toolbars collapse on scroll and change the viewport
+   height, which made the hero grow. Re-measure only when the width changes (rotation). */
 (function(){
-  var tc=document.getElementById('vfTc');if(!tc||!window.matchMedia||!matchMedia('(max-width:750px)').matches)return;
-  /* size the hero to the screen once, in pixels: phone toolbars collapse on scroll and change the viewport height,
-     which made the hero (and the bottom brackets) grow. Re-measure only when the width changes (rotation). */
-  var hero=document.getElementById('hero'),sn=document.getElementById('subnav'),lastW=0;
+  if(!window.matchMedia||!matchMedia('(max-width:750px)').matches)return;
+  var hero=document.getElementById('hero'),sn=document.getElementById('subnav'),lastW=0;if(!hero)return;
   function lock(){if(innerWidth===lastW)return;lastW=innerWidth;var top=sn?sn.getBoundingClientRect().height:56;hero.style.minHeight=Math.round(innerHeight-top)+'px';}
   lock();addEventListener('resize',lock);
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches){tc.textContent='00:00:07:12';return;}
-  var t0=performance.now(),on=true,raf=0,last='';
-  function p(n){return n<10?'0'+n:''+n;}
-  function tick(now){var f=Math.floor((now-t0)/1000*30),ff=f%30,s=Math.floor(f/30),txt=p(Math.floor(s/3600))+':'+p(Math.floor(s/60)%60)+':'+p(s%60)+':'+p(ff);if(txt!==last){tc.textContent=txt;last=txt;}if(on)raf=requestAnimationFrame(tick);}
-  raf=requestAnimationFrame(tick);
-  if('IntersectionObserver' in window)new IntersectionObserver(function(es){on=es[0].isIntersecting;cancelAnimationFrame(raf);if(on)raf=requestAnimationFrame(tick);}).observe(document.getElementById('hero'));
 })();
 </script>
-<script src="assets/convert.js?v=202611090313" defer></script>
+<script src="assets/convert.js?v=202611090316" defer></script>
 
 <script>
 (function(){
