@@ -44,7 +44,7 @@
 <link rel="preload" href="fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/site.css?v=202611082100"/>
+<link rel="stylesheet" href="assets/site.css?v=202611082121"/>
 </head>
 <body>
 
@@ -117,6 +117,7 @@
     </picture>
   </div>
   <div class="hero-stripe"></div>
+  <div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i><b class="vf-live">Live &middot; Ch 01</b><b class="vf-tc" id="vfTc">00:00:00:00</b></div>
 
   <div class="hero-content" data-r>
     <p class="eyebrow hero-eyebrow">A Denver studio</p>
@@ -722,7 +723,19 @@
   });
 })();
 </script>
-<script src="assets/convert.js?v=202611082100" defer></script>
+<script>
+/* phone hero viewfinder: the timecode runs from the moment the page opens (30 frames a second), only while the hero is on screen */
+(function(){
+  var tc=document.getElementById('vfTc');if(!tc||!window.matchMedia||!matchMedia('(max-width:750px)').matches)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){tc.textContent='00:00:07:12';return;}
+  var t0=performance.now(),on=true,raf=0,last='';
+  function p(n){return n<10?'0'+n:''+n;}
+  function tick(now){var f=Math.floor((now-t0)/1000*30),ff=f%30,s=Math.floor(f/30),txt=p(Math.floor(s/3600))+':'+p(Math.floor(s/60)%60)+':'+p(s%60)+':'+p(ff);if(txt!==last){tc.textContent=txt;last=txt;}if(on)raf=requestAnimationFrame(tick);}
+  raf=requestAnimationFrame(tick);
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){on=es[0].isIntersecting;cancelAnimationFrame(raf);if(on)raf=requestAnimationFrame(tick);}).observe(document.getElementById('hero'));
+})();
+</script>
+<script src="assets/convert.js?v=202611082121" defer></script>
 
 <script>
 (function(){
