@@ -29,7 +29,7 @@ for f in sorted(root.rglob("*.html")):
         f.write_text(new, encoding="utf-8"); changed.append(str(f.relative_to(root)) + " footer -> " + stamp)
 
 # 2. cache-busting version on shared css/js, every page (client previews under work/preview/ left alone)
-pat = re.compile(r'((?:href|src)="(?:\.\./)*/?assets/(?:site\.(?:css|js)|convert\.js))(?:\?v=\d+)?(")')
+pat = re.compile(r'((?:href|src)="(?:\.\./)*/?assets/(?:site\.(?:css|js)|convert\.js|jchart\.js))(?:\?v=\d+)?(")')
 for f in root.rglob("*.html"):
     if "work/preview" in f.as_posix() or "/.git/" in f.as_posix():
         continue
