@@ -91,6 +91,9 @@ button{font:inherit;cursor:pointer;border:none;background:transparent;color:inhe
   font-family:var(--sans);font-weight:600;font-size:11px;
   letter-spacing:.35em;text-transform:uppercase;color:var(--forest-2);
 }
+/* section labels are paragraphs, and some sections size their paragraphs at 15 to 17px, which blew labels up to
+   16px with very wide tracking. This keeps every label the same 11px, in the label color, wherever it sits. */
+main p.eyebrow:where(:not(.hero-eyebrow)){font-size:11px;color:var(--forest-2);line-height:1.6}
 
 /* btn: fill-up from bottom */
 .btn{
@@ -1042,6 +1045,9 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
   /* footer */
   .ft-cols{grid-template-columns:1fr;gap:28px}
   .ft-base{flex-direction:column;align-items:flex-start}
+  /* phones and tablets: the studio blurb repeats the hero, and the page list goes three across instead of six tall */
+  .ft-cols>div:first-child{display:none}
+  .ft-nav{display:grid;grid-template-columns:repeat(3,max-content);gap:.9rem 2rem}
 }
 @media(max-width:420px){
   .header-inner{padding:14px var(--gut)}
@@ -1392,7 +1398,7 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .ba-inner{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
 .ba-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:clamp(32px,5vw,80px);align-items:start;margin-bottom:clamp(32px,4vw,52px)}
 .ba-kicker{grid-column:1/-1;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-m);margin:0 0 18px}
-.ba-head h2{font-family:var(--serif-d);font-weight:400;font-size:clamp(34px,4.2vw,60px);line-height:1;margin:0;color:var(--ink)}
+.ba-head h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(34px,4.2vw,60px);line-height:1;margin:0;color:var(--ink)}
 .ba-copy p{font-size:15.5px;line-height:1.8;color:var(--ink-s);margin:0 0 14px;max-width:56ch}
 .ba-copy p:first-child{font-size:18px;color:var(--ink)}
 .ba-hint{font-size:13px !important;color:var(--ink-m) !important}
@@ -1908,7 +1914,7 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .csx-sec{padding:var(--sy) 0;border-top:1px solid var(--border)}
 .csx-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(32px,5vw,80px);row-gap:28px;align-items:start}
 .csx-kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-m);margin:0 0 16px}
-.csx-sec h2{font-family:var(--serif-d);font-weight:400;font-size:clamp(32px,3.8vw,54px);line-height:1.04;margin:0 0 22px;color:var(--ink)}
+.csx-sec h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(32px,3.8vw,54px);line-height:1.04;margin:0 0 22px;color:var(--ink)}
 .csx-sec h3{font-family:var(--serif-d);font-weight:400;font-size:24px;line-height:1.15;margin:0 0 10px;color:var(--ink)}
 .csx-copy p,.csx-copy li{font-size:15.5px;line-height:1.8;color:var(--ink-s);max-width:58ch}
 .csx-copy p{margin:0 0 14px}
@@ -2436,7 +2442,7 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .jlook{padding:clamp(56px,7vw,96px) var(--gut) clamp(64px,8vw,110px);background:var(--cream)}
 .jlook-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:clamp(36px,5vw,72px);align-items:center}
 .jlook-text .eyebrow{margin-bottom:14px}
-.jlook-text h2{font-family:var(--serif-d);font-weight:400;font-size:clamp(28px,3vw,42px);line-height:1.1;color:var(--ink);margin:0 0 16px;max-width:19ch}
+.jlook-text h2{font-family:var(--serif-d);font-weight:400;font-style:italic;font-size:clamp(28px,3vw,42px);line-height:1.1;color:var(--ink);margin:0 0 16px;max-width:19ch}
 .jlook-text p{font-size:16px;line-height:1.75;color:var(--ink-s);max-width:46ch}
 @media(max-width:900px){.jlook-text h2{max-width:none}.jlook-text p{font-size:15.5px}}
 @media(max-width:900px){.jlook-inner{grid-template-columns:1fr}.look-card{margin-top:8px}}
