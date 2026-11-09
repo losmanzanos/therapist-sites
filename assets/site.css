@@ -2011,8 +2011,7 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
   .snav-cta{display:block;font-size:11px}
   /* hero fills the first screen, stars sit top-right at full strength */
   .hero{min-height:calc(100svh - 150px);display:flex;align-items:flex-end;padding:0}
-  /* the flowers show through: a light wash, a little denser behind the words in the middle */
-  .hero::after{background:linear-gradient(180deg,rgba(241,235,224,.24) 0%,rgba(241,235,224,.5) 28%,rgba(241,235,224,.5) 72%,rgba(241,235,224,.26) 100%)}
+  .hero::after{background:rgba(241,235,224,.84)}
   .hero-figure{opacity:.9;right:-16%;top:-7%;width:58%;transform:rotate(9deg);z-index:2}
   .hero-figure img{filter:saturate(.35) contrast(.95) brightness(1.04)}
   .hero{min-height:calc(100svh - 56px);background-position:center top}
