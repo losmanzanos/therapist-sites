@@ -2323,7 +2323,7 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .book-cal{position:relative;border:1px solid var(--border);background:var(--cream);min-height:500px;max-width:680px;width:100%;justify-self:center}
 .book-cal .calendly-inline-widget{min-width:0;height:560px;overflow:hidden;transition:height .2s}
 .book-cal .calendly-inline-widget iframe{display:block}
-.book-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:32px;z-index:1;color:var(--ink-m);font-size:14px;line-height:1.6;transition:opacity .35s ease,visibility 0s .35s}
+.book-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:32px;z-index:1;overflow:hidden;color:var(--ink-m);font-size:14px;line-height:1.6;transition:opacity .3s ease .3s,visibility 0s .6s}
 .book-cal .calendly-inline-widget iframe{opacity:0;transition:opacity .45s ease}
 .book-cal.is-ready .calendly-inline-widget iframe{opacity:1}
 .book-cal.is-ready .book-fallback{opacity:0;visibility:hidden;pointer-events:none}
@@ -2339,6 +2339,7 @@ footer{background:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
 .crt-txt.is-typing::after{content:"";display:inline-block;width:.6em;height:1.05em;margin-left:2px;vertical-align:-.18em;background:#b8f0c4;box-shadow:0 0 6px rgba(120,230,150,.6);animation:crtblink 1s steps(1) infinite}
 .crt-scr{transition:box-shadow .3s ease}.crt-txt{transition:opacity .15s ease}
 .book-cal.is-ready .crt{transform:scale(2.1);opacity:0}
+.book-cal.is-ready .bk-btn{visibility:hidden}
 .book-cal.is-ready .crt-scr{box-shadow:inset 0 0 0 300px #f1ebe0}
 .book-cal.is-ready .crt-txt{opacity:0}
 .bk-btn{opacity:0;animation:bkshow .4s ease 7s forwards}
