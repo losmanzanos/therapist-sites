@@ -1225,6 +1225,8 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
   color:var(--forest-2);display:inline-flex;align-items:center;gap:.45rem;transition:gap .2s,color .2s;
 }
 .cs-link::after{content:'→'}
+/* print is an action, not a destination: no arrow */
+.cs-link.rc-print::after{content:none}
 .cs-link:hover{color:var(--forest);gap:.7rem}
 
 /* ═══════════════════════════════
@@ -2422,7 +2424,6 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
 /* ═══ HERO v3: type only. Headline, one line of help, the call, and proof by name ═══ */
 .hero-proof{display:flex;align-items:center;gap:14px;margin:clamp(34px,4vw,52px) 0 0;padding:14px 0;border-top:1px solid rgba(44,45,54,.16);border-bottom:1px solid rgba(44,45,54,.16);max-width:900px}
 .hero-proof .hp-k{flex:none;display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--cream);background:var(--forest);padding:6px 9px 6px 8px;border-radius:2px;line-height:1}
-.hero-proof .hp-k::before{content:"";width:6px;height:6px;border-radius:50%;background:#e0644a;box-shadow:0 0 0 2px rgba(224,100,74,.25)}
 .hp-crawl{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 36px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 36px),transparent 100%)}
 .hp-track{display:flex;width:max-content;animation:hpcrawl var(--hpdur,24s) linear infinite;will-change:transform;backface-visibility:hidden;transform:translate3d(0,0,0)}
 /* pause for a real mouse or keyboard focus only: phones keep :hover and :focus after a tap, which froze the crawl */
@@ -2434,7 +2435,7 @@ footer.is-in .ft-off::before{animation:ftoff 2.2s cubic-bezier(.3,0,.2,1) .4s bo
 .hero-proof a:hover{color:var(--forest)}
 .hp-r{font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.04em;color:var(--forest);margin-left:4px;padding-left:10px;border-left:1px solid rgba(44,45,54,.18);transform:translateY(-1px)}
 .hero-proof a.hp-you{color:var(--forest);font-style:italic}
-.hero-proof a.hp-you b{color:#c4553d}
+.hero-proof a.hp-you b{color:var(--forest-2)}
 .hero-proof i{font-style:normal;color:rgba(44,45,54,.3);padding:0 14px}
 /* the loop distance is one set's exact width (set by script once fonts load), so the wrap lands on the same pixel */
 @keyframes hpcrawl{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-1 * var(--hpw,50%)),0,0)}}
