@@ -44,7 +44,7 @@
 <link rel="preload" href="fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/site.css?v=202611082124"/>
+<link rel="stylesheet" href="assets/site.css?v=202611090306"/>
 </head>
 <body>
 
@@ -457,7 +457,7 @@
   </div>
   <div class="ft-base">
     <p class="ft-copy">&copy; 2026 Chad Moravec &middot; therapistweb.design</p>
-    <p class="ft-made" id="ftMade">Written by hand in Denver. Last changed <span id="ftStamp">November 8, 2026</span>.<span id="ftSpeed"></span></p>
+    <p class="ft-made" id="ftMade">Written by hand in Denver. Last changed <span id="ftStamp">November 9, 2026</span>.<span id="ftSpeed"></span></p>
     <p class="ft-extra">Creative work &amp; web apps: <a href="https://studionull.io/" target="_blank" rel="noopener noreferrer">studionull.io</a> &middot; <a href="/colophon/">Colophon</a></p>
   </div>
 </footer>
@@ -735,7 +735,7 @@
   if('IntersectionObserver' in window)new IntersectionObserver(function(es){on=es[0].isIntersecting;cancelAnimationFrame(raf);if(on)raf=requestAnimationFrame(tick);}).observe(document.getElementById('hero'));
 })();
 </script>
-<script src="assets/convert.js?v=202611082124" defer></script>
+<script src="assets/convert.js?v=202611090306" defer></script>
 
 <script>
 (function(){
@@ -1032,7 +1032,8 @@ document.querySelectorAll('.fq').forEach(function(btn){
   try{
     var hr=+new Intl.DateTimeFormat('en-US',{hour:'numeric',hour12:false,timeZone:'America/Denver'}).format(new Date());
     var line=hr<5?'You\u2019re up late.<br>So am I, usually.':hr<11?'Good morning.<br>Coffee\u2019s on.':hr<17?'That\u2019s the afternoon lineup.<br>Thanks for watching.':null;
-    if(line)el.innerHTML=line;
+    /* keep the power-off dot at the end of whichever line is showing */
+    if(line)el.innerHTML=line+'<span class="ft-off" aria-hidden="true"></span>';
   }catch(e){}
 })();
 
