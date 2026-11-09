@@ -44,7 +44,7 @@
 <link rel="preload" href="fonts/jost-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/site.css?v=202611090306"/>
+<link rel="stylesheet" href="assets/site.css?v=202611090308"/>
 </head>
 <body>
 
@@ -735,7 +735,7 @@
   if('IntersectionObserver' in window)new IntersectionObserver(function(es){on=es[0].isIntersecting;cancelAnimationFrame(raf);if(on)raf=requestAnimationFrame(tick);}).observe(document.getElementById('hero'));
 })();
 </script>
-<script src="assets/convert.js?v=202611090306" defer></script>
+<script src="assets/convert.js?v=202611090308" defer></script>
 
 <script>
 (function(){
@@ -877,6 +877,27 @@ document.querySelectorAll('[data-r]').forEach(function(el){obs.observe(el);});
   knob.addEventListener('contextmenu',function(e){e.preventDefault();});
   knob.addEventListener('click',function(e){if(held){held=false;e.preventDefault();return;}if(zeroOn){leaveZero();return;}go(cur+1);});
   chs.forEach(function(b,i){b.addEventListener('click',function(){if(zeroOn){zeroOn=false;tv.classList.remove('is-off');hit.target='_blank';cur=-1;go(i);}});});
+  /* after midnight in Denver the set opens off the air, with the local time, until someone turns the dial,
+     picks a channel or taps the screen. The first tap on the screen wakes it instead of leaving the page. */
+  try{
+    var lateHr=+new Intl.DateTimeFormat('en-US',{hour:'numeric',hour12:false,timeZone:'America/Denver'}).format(new Date());
+    if(lateHr>=0&&lateHr<6){
+      var card=tv.querySelector('.tv-card'),cardWas=card.innerHTML,late=true;
+      var clock=new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/Denver'}).format(new Date()).replace(/\s?AM$/,' a.m.');
+      card.innerHTML='<span class="tv-card-k">'+clock+' in Denver</span><strong>The station signed off at midnight.</strong><span>Turn the dial to wake it up.</span>';
+      tv.classList.add('is-off');
+      var wake=function(e){
+        if(!late)return;late=false;
+        if(e&&e.currentTarget===hit)e.preventDefault();
+        card.innerHTML=cardWas;tv.classList.remove('is-off');
+        tune(true);flashOsd();setTimeout(function(){tune(false);},700);
+        if(window.gtag){try{gtag('event','tv_wake_late');}catch(x){}}
+      };
+      knob.addEventListener('click',wake,true);
+      hit.addEventListener('click',wake,true);
+      chs.forEach(function(c){c.addEventListener('click',wake,true);});
+    }
+  }catch(e){}
   var z0=0;
   document.addEventListener('keydown',function(e){
     if(e.target&&/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;
