@@ -62,6 +62,16 @@
     track("form_submit", { project: (e.detail && e.detail.project) || "", page: location.pathname });
   });
 
+  /* the footer sign-off plays once, when the footer comes into view */
+  (function () {
+    var ft = document.querySelector("footer");
+    if (!ft || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { ft.classList.add("is-in"); io.disconnect(); }
+    }, { threshold: 0.35 });
+    io.observe(ft);
+  })();
+
   /* 3a. the booking bar on phones: appears once the first section (the hero) has scrolled away, hides again
      when you scroll back into it or reach the footer. When hidden it is taken out of the page entirely
      (display:none), because iPhone Safari tints its toolbar to match any fixed element at the bottom edge,
