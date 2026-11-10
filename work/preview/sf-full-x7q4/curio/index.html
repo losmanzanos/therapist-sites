@@ -6,6 +6,17 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Curio | Psychotherapy in Denver | Sarah Freeze, LCSW</title>
 <meta name="description" content="Curio is the Denver psychotherapy practice of Sarah Freeze, LCSW. Her associate Lora Hope, LSW, is taking new clients for trauma therapy, EMDR, perfectionism, and big life changes.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Curio">
+<meta property="og:title" content="Curio | Psychotherapy in Denver | Sarah Freeze, LCSW">
+<meta property="og:description" content="Curio is the Denver psychotherapy practice of Sarah Freeze, LCSW. Her associate Lora Hope, LSW, is taking new clients for trauma therapy, EMDR, perfectionism, and big life changes.">
+<meta property="og:url" content="https://therapistweb.design/work/preview/sf-full-x7q4/curio/">
+<meta property="og:image" content="https://therapistweb.design/work/preview/sf-full-x7q4/curio/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A lit mahogany curio cabinet full of small antiques beside a Tiffany floor lamp, with the Curio sign.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://therapistweb.design/work/preview/sf-full-x7q4/curio/img/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
@@ -27,9 +38,9 @@
     <details class="menu"><summary><span class="o">Menu</span><span class="c">Close</span></summary><nav class="menu-sheet" aria-label="All pages"><span class="mono">The curiosities</span><a href="anxiety-and-stress/">Why can’t I relax when everything is fine?</a><a href="perfectionism/">Why is good never good enough?</a><a href="life-transitions/">Who am I after the divorce?</a><a href="trauma-therapy/">Was it bad enough to count as trauma?</a><a href="relationships-and-self-worth/">Why do I keep ending up here?</a><a href="depression/">Why does everything feel so heavy?</a><a href="emdr-therapy/">What is EMDR, really?</a><a href="emdr-intensives/">Could I do the work in a few days?</a><a href="sand-tray-therapy/">What do you do with a tray of sand?</a><a href="mindfulness-group/">Could eight weeks make my brain quieter?</a><span class="mono">The practice</span><a class="plain" href="sarah-freeze/">Sarah Freeze</a><a class="plain" href="lora-hope/">Lora Hope</a><a class="plain" href="fees-and-insurance/">Fees and insurance</a><a class="plain" href="contact/">Contact</a><a class="plain" href="./">Home</a></nav></details>
   </div>
 
-  <div class="wallbox" aria-hidden="true"></div>
-  <div class="baseboard" aria-hidden="true"></div>
-  <div class="floorbox" aria-hidden="true"><i></i><b></b></div>
+  <div class="wallbox" aria-hidden="true"><span class="dim" style="--dim:.3"></span></div>
+  <div class="baseboard" aria-hidden="true"><span class="dim" style="--dim:.48"></span></div>
+  <div class="floorbox" aria-hidden="true"><div class="plane"><i></i></div><span class="dim" style="--dim:.34"></span><b></b></div>
   <img class="rug" src="img/rug.webp" alt="" aria-hidden="true" width="1000" height="150">
 
   <div class="wrap hero-grid">
@@ -173,6 +184,12 @@
     btnText.textContent=open?'Close the cabinet':'Open the cabinet';
     if(open && window.matchMedia('(max-width:900px)').matches){ stage.scrollIntoView({behavior:'smooth',block:'center'}); }
   }
+  function aimLight(){
+    var hr=hero.getBoundingClientRect(), cr=stage.getBoundingClientRect(), lp=hero.querySelector('.lamp');
+    hero.style.setProperty('--pool-x',((cr.left+cr.width/2-hr.left)/hr.width*100).toFixed(1)+'%');
+    var lr=lp?lp.getBoundingClientRect():null; hero.style.setProperty('--lamp-x',lr&&lr.width?((lr.left+lr.width/2-hr.left)/hr.width*100).toFixed(1)+'%':'-60%');
+  }
+  aimLight(); window.addEventListener('resize',aimLight); window.addEventListener('load',aimLight);
   function toggle(){ set(!hero.classList.contains('is-open')); }
   btn.addEventListener('click',toggle);
   stage.addEventListener('click',function(e){ if(!e.target.closest('a')) toggle(); });
