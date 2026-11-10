@@ -38,7 +38,8 @@ img{max-width:100%;height:auto;display:block}
 
 /* ---------- top bar ---------- */
 .bar{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding:26px clamp(20px,4vw,56px)}
-.bar nav{display:flex;gap:10px 28px;flex-wrap:wrap}
+.bar nav{display:flex;gap:10px 28px;flex-wrap:wrap;margin-left:auto;justify-content:flex-end}
+h1,h2,.ask{text-wrap:balance}
 .bar a{text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
 .bar > span{padding:6px 0;border-bottom:1px solid transparent}
 .bar a:hover,.bar a:focus-visible{border-bottom-color:var(--gilt)}
@@ -113,18 +114,24 @@ span.thing{cursor:pointer}
 .is-open .lamp{filter:brightness(1.18) saturate(1.15) drop-shadow(-16px 4px 14px rgba(0,0,0,.45)) drop-shadow(0 0 46px rgba(255,170,120,.5))}
 .hint{position:absolute;z-index:5;left:108%;top:18%;white-space:nowrap;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--cream);transition:opacity .4s}
 .is-open .hint{opacity:0}
+.shelf-hint{position:absolute;z-index:6;left:0;right:0;top:calc(100% + 18px);margin:0;text-align:center;color:var(--gilt);opacity:0;pointer-events:none;transition:opacity .5s ease .6s}
+.shelf-hint a{color:var(--cream);text-decoration:underline;text-underline-offset:.3em}
+.is-open .shelf-hint{opacity:1;pointer-events:auto}
+@media (min-width:901px){ .shelf-hint{display:none} }
 
 /* ---------- the curiosities ---------- */
 .index{background:var(--paper);color:var(--ink);padding:clamp(72px,10vw,140px) 0}
 .index-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 56px;align-items:end;margin-bottom:clamp(36px,5vw,72px)}
 .index h2,.who h2,.visit h2{font-family:var(--didot);font-weight:400;font-size:clamp(44px,6.4vw,104px);line-height:.95;letter-spacing:-.015em;margin:0}
 .index-head p{margin:0;max-width:30em}
-.row{display:grid;grid-template-columns:64px minmax(0,6fr) minmax(0,5fr);gap:8px 40px;align-items:baseline;padding:26px 0;border-top:1px solid var(--ink);text-decoration:none;position:relative}
+.row{display:grid;grid-template-columns:40px 76px minmax(0,6fr) minmax(0,5fr);gap:8px 32px;align-items:center;padding:26px 0;border-top:1px solid var(--ink);text-decoration:none;position:relative}
 .row:last-child{border-bottom:1px solid var(--ink)}
 .row .q{font-style:italic;font-size:clamp(26px,3vw,44px);line-height:1.1;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .row .a{font-size:19px}
 .row .a b{display:block;font-weight:500;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;color:var(--tortoise)}
 .row:hover .q,.row:focus-visible .q{transform:translateX(18px)}
+.row .ob{display:block;width:76px;height:64px;object-fit:contain;filter:drop-shadow(0 8px 6px rgba(0,0,0,.35));transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.row:hover .ob,.row:focus-visible .ob{transform:rotate(-6deg) scale(1.1)}
 .row:hover .a b,.row:focus-visible .a b{text-decoration:underline}
 
 /* ---------- people ---------- */
@@ -178,7 +185,7 @@ figure{margin:0}
   .pitch{max-width:330px}
   .pitch h1{font-size:clamp(24px,2.5vw,30px)}
   .hero-grid{grid-template-columns:minmax(0,5fr) minmax(0,8fr)}
-  .stage{justify-self:center}
+  .stage{justify-self:start;margin-left:4%}
 }
 @media (max-width:900px){
   .note{grid-template-columns:1fr}
@@ -203,8 +210,15 @@ figure{margin:0}
   .stand .tag{display:none}
   .hint{display:none}
   .index-head,.person,.person.flip,.visit-grid{grid-template-columns:1fr}
-  .row{grid-template-columns:40px minmax(0,1fr)}
+  .row{grid-template-columns:56px minmax(0,1fr);gap:6px 16px}
+  .row .mono{display:none}
+  .row .ob{width:56px;height:52px;grid-row:span 2;align-self:start}
   .row .a{grid-column:2}
+  .stand.sel .tag{display:block;font-size:11px;bottom:-2.6em;background:#fff6df;z-index:5}
+  .stand.sel .tag::after{content:"Tap again to open";display:block;font-size:8px;opacity:.65;margin-top:3px}
+  .stand.sel .thing img{transform:translateY(-6px) scale(1.1)}
+  .is-open .stage{margin-bottom:46px}
+  .shelf-hint .sh-t::before{content:"Tap anything on the shelves.";} .shelf-hint .sh-t{font-size:0} .shelf-hint .sh-t::before{font-size:11px}
   .frame.r{justify-self:start}
   .person.flip .frame{order:-1}
   .facts div{grid-template-columns:1fr}
@@ -247,7 +261,7 @@ figure{margin:0}
       <h1>Psychotherapy in Denver for people who are curious about themselves.</h1>
       <p>Sarah Freeze opened this practice on Harlan Street and still runs it. Her associate, Lora Hope, LSW, is taking new clients now.</p>
       <button class="open-btn" type="button" id="opener" aria-expanded="false" aria-controls="shelves"><span id="opener-text">Open the cabinet</span></button>
-      <p class="asking" id="asking" aria-live="polite"><span id="asking-q">Everything in here is a question somebody walked in with.</span><small class="mono" id="asking-a">Pick one up</small></p>
+      <p class="asking" id="asking" aria-live="polite"><span id="asking-q">Everything in here is a question somebody walked in with.</span><small class="mono" id="asking-a">Pick one up, or scroll down for the whole list</small></p>
     </div>
 
     <div class="stage" id="stage">
@@ -279,6 +293,7 @@ figure{margin:0}
       <div class="doors" aria-hidden="true"><img class="door l" src="img/door-l.webp" width="525" height="1386" alt=""><img class="door r" src="img/door-r.webp" width="524" height="1386" alt=""></div>
       <img class="lamp" src="img/lamp.webp" width="543" height="1500" alt="A stained glass floor lamp with a peony shade.">
       <span class="hint" aria-hidden="true">&#8601; It opens</span>
+      <p class="shelf-hint mono"><span class="sh-t">Pick anything up.</span> <a href="#curiosities">Or see the whole list</a></p>
     </div>
   </div>
 </header>
@@ -290,14 +305,14 @@ figure{margin:0}
       <h2>The curiosities</h2>
       <p>Most people don&rsquo;t walk in with a diagnosis. They walk in with a question they&rsquo;ve been turning over for a while. Here are the ones we hear most.</p>
     </div>
-    <a class="row" href="#lora"><span class="mono">01</span><span class="q">Why can&rsquo;t I relax when everything is fine?</span><span class="a"><b>Therapy with Lora Hope</b>For women whose lives look put-together from the outside.</span></a>
-    <a class="row" href="#lora"><span class="mono">02</span><span class="q">Why is good never good enough?</span><span class="a"><b>Perfectionism</b>When the standard keeps moving and so do you.</span></a>
-    <a class="row" href="#lora"><span class="mono">03</span><span class="q">Who am I after the divorce?</span><span class="a"><b>Life transitions</b>Divorce, a new career, menopause, the last kid leaving home.</span></a>
-    <a class="row" href="#lora"><span class="mono">04</span><span class="q">Was it bad enough to count as trauma?</span><span class="a"><b>Trauma and PTSD</b>If you are still carrying it, it counts.</span></a>
-    <a class="row" href="#lora"><span class="mono">05</span><span class="q">What is EMDR, really?</span><span class="a"><b>EMDR therapy</b>A way to work through a memory without retelling every detail of it.</span></a>
-    <a class="row" href="#sarah"><span class="mono">06</span><span class="q">Could I do the work in a few days?</span><span class="a"><b>EMDR intensives</b>Consecutive days of EMDR, alongside your regular therapist.</span></a>
-    <a class="row" href="#lora"><span class="mono">07</span><span class="q">What do you do with a tray of sand?</span><span class="a"><b>Sand tray therapy</b>You build a scene with miniatures. It often says what words can&rsquo;t reach.</span></a>
-    <a class="row" href="#visit"><span class="mono">08</span><span class="q">Do you take my insurance?</span><span class="a"><b>Fees and insurance</b>Kaiser, UnitedHealthcare, Colorado Medicaid, and several more.</span></a>
+    <a class="row" href="#lora"><span class="mono">01</span><img class="ob" src="img/dancer.webp" alt="" loading="lazy"><span class="q">Why can&rsquo;t I relax when everything is fine?</span><span class="a"><b>Therapy with Lora Hope</b>For women whose lives look put-together from the outside.</span></a>
+    <a class="row" href="#lora"><span class="mono">02</span><img class="ob" src="img/teapot.webp" alt="" loading="lazy"><span class="q">Why is good never good enough?</span><span class="a"><b>Perfectionism</b>When the standard keeps moving and so do you.</span></a>
+    <a class="row" href="#lora"><span class="mono">03</span><img class="ob" src="img/music-box.webp" alt="" loading="lazy"><span class="q">Who am I after the divorce?</span><span class="a"><b>Life transitions</b>Divorce, a new career, menopause, the last kid leaving home.</span></a>
+    <a class="row" href="#lora"><span class="mono">04</span><img class="ob" src="img/marble-head.webp" alt="" loading="lazy"><span class="q">Was it bad enough to count as trauma?</span><span class="a"><b>Trauma and PTSD</b>If you are still carrying it, it counts.</span></a>
+    <a class="row" href="#lora"><span class="mono">05</span><img class="ob" src="img/inkwell.webp" alt="" loading="lazy"><span class="q">What is EMDR, really?</span><span class="a"><b>EMDR therapy</b>A way to work through a memory without retelling every detail of it.</span></a>
+    <a class="row" href="#sarah"><span class="mono">06</span><img class="ob" src="img/potpourri.webp" alt="" loading="lazy"><span class="q">Could I do the work in a few days?</span><span class="a"><b>EMDR intensives</b>Consecutive days of EMDR, alongside your regular therapist.</span></a>
+    <a class="row" href="#lora"><span class="mono">07</span><img class="ob" src="img/chair.webp" alt="" loading="lazy"><span class="q">What do you do with a tray of sand?</span><span class="a"><b>Sand tray therapy</b>You build a scene with miniatures. It often says what words can&rsquo;t reach.</span></a>
+    <a class="row" href="#visit"><span class="mono">08</span><img class="ob" src="img/agatebox.webp" alt="" loading="lazy"><span class="q">Do you take my insurance?</span><span class="a"><b>Fees and insurance</b>Kaiser, UnitedHealthcare, Colorado Medicaid, and several more.</span></a>
   </div>
 </section>
 
@@ -386,8 +401,15 @@ figure{margin:0}
   function toggle(){ set(!hero.classList.contains('is-open')); }
   btn.addEventListener('click',toggle);
   stage.addEventListener('click',function(e){ if(!e.target.closest('a')) toggle(); });
+  var touchy=window.matchMedia('(hover: none)').matches, sel=null;
   document.querySelectorAll('.shelves a').forEach(function(el){
     function show(){ q.textContent=el.getAttribute('data-q'); a.textContent=el.getAttribute('data-a'); }
+    el.addEventListener('click',function(e){
+      if(!touchy || sel===el) return;
+      e.preventDefault(); e.stopPropagation();
+      if(sel) sel.parentNode.classList.remove('sel');
+      sel=el; el.parentNode.classList.add('sel'); show();
+    });
     function rest(){ q.textContent=restQ; a.textContent=restA; }
     el.addEventListener('mouseenter',show); el.addEventListener('focus',show);
     el.addEventListener('mouseleave',rest); el.addEventListener('blur',rest);
