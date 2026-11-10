@@ -436,6 +436,14 @@ footer{padding:36px 0 56px}
   .paste.flyer.photo{width:58%!important;justify-self:start}
 }
 
+.x::after{display:none}
+.x .scr{position:absolute;left:-5%;top:4%;width:110%;height:92%;overflow:visible;pointer-events:none;clip-path:inset(-20% 105% -20% -5%);transition:clip-path .7s cubic-bezier(.45,.05,.35,1) .5s}
+.x .scr path{fill:none;stroke:#c8412b;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.nywall.seen .x .scr,.intro .x .scr{clip-path:inset(-20% -5% -20% -5%)}
+.intro .x .scr{transition-delay:.3s}
+.intro .x .scr path{stroke-width:10px!important}
+@media (prefers-reduced-motion:reduce){ .x .scr{transition:none} }
+
 .sidepiece{display:grid;justify-items:center;padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(40px,5vw,72px)}
 .sidepiece > *{justify-self:center!important}
 .pghead.solo{grid-template-columns:1fr}
