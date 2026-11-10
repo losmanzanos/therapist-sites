@@ -273,7 +273,8 @@ figure{margin:0}
 .small{font-size:16px}
 .lost{min-height:100svh;display:flex;align-items:center}
 @media (max-width:900px){
-  .menu{display:block}
+  .menu{display:block;margin-left:auto;flex:none}
+  .bar{flex-wrap:nowrap;align-items:flex-start}
   .sign.mini{position:static;transform:none;--t:24px}
   .phead-grid,.blk{grid-template-columns:1fr}
   .phead-copy{padding-bottom:20px}
@@ -282,3 +283,55 @@ figure{margin:0}
   .also{display:block;margin:22px 0 0}
   .blk{gap:14px}
 }
+
+/* ---------- variation: shelves, lamps, pictures ---------- */
+.onshelf{cursor:pointer;position:relative;outline:none}
+.things{display:flex;align-items:flex-end;justify-content:center;gap:5%;width:100%}
+.onshelf img.main{max-height:clamp(170px,25vw,350px);width:auto;max-width:62%}
+.onshelf img.side{max-height:clamp(70px,10vw,140px);width:auto;max-width:22%;filter:drop-shadow(0 8px 8px rgba(0,0,0,.6)) brightness(.8)}
+.onshelf:hover img.side{transform:none}
+.onshelf.up img.main{transform:translateY(-22px) rotate(-7deg) scale(1.04)}
+.onshelf:focus-visible .plank{outline:2px solid var(--gilt);outline-offset:4px}
+.prov{position:absolute;left:0;top:4%;width:min(230px,80%);transform:translateY(-14px) rotate(2deg);background:var(--paper);color:var(--ink);padding:12px 14px 10px;line-height:1.45;font-size:11.5px;box-shadow:0 12px 22px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .3s ease, transform .4s cubic-bezier(.2,.8,.2,1);z-index:3}
+.onshelf.up .prov{opacity:1;transform:translateY(0) rotate(-2.5deg)}
+.phead.flipx .phead-grid{grid-template-columns:minmax(0,4fr) minmax(0,7fr)}
+.phead.flipx .phead-copy{order:2;max-width:640px}
+.phead.flipx::after{right:auto;left:0}
+.plamp{position:absolute;right:max(2%,calc(50% - 700px));bottom:-6px;height:min(78%,560px);width:auto;z-index:1;cursor:pointer;filter:brightness(1.15) saturate(1.1) drop-shadow(0 0 46px rgba(255,170,120,.45));transition:filter .8s ease}
+.phead::after,.phead .onshelf img,.phead .frame{transition:opacity .8s ease, filter .8s ease, transform .45s cubic-bezier(.2,.8,.2,1)}
+.phead:not(.lit)::after{opacity:.12}
+.phead:not(.lit) .plamp{filter:brightness(.4) saturate(.7)}
+.phead:not(.lit) .onshelf img{filter:brightness(.5) drop-shadow(0 10px 10px rgba(0,0,0,.6))}
+.gallery{position:relative;isolation:isolate;background:var(--wall);padding:clamp(72px,9vw,130px) 0;overflow:hidden}
+.gallery::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/wall.jpg) center/760px;mix-blend-mode:multiply;opacity:.7}
+.gallery.moss{background:#27453b}
+.gal-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px 80px;align-items:center}
+.gallery.right .hang{order:2}
+.hang{margin:0;justify-self:center;max-width:min(100%,440px);transform:rotate(-1.2deg);transition:transform .6s cubic-bezier(.2,.8,.2,1);cursor:pointer;outline:none;position:relative}
+.gallery.right .hang{transform:rotate(1.4deg)}
+.hang::before{content:"";position:absolute;left:10%;right:10%;top:-12%;height:60%;z-index:-1;background:radial-gradient(ellipse at 50% 0,rgba(255,214,140,.55),transparent 70%);opacity:0;transition:opacity .9s ease}
+.mat{background:var(--paper);padding:clamp(12px,1.8vw,24px);box-shadow:0 30px 50px rgba(0,0,0,.55)}
+.framed .mat{background:none;padding:0;box-shadow:none}
+.framed .mat img{filter:brightness(.5) saturate(.7) drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.mat img{width:100%;filter:brightness(.48) saturate(.6);transition:filter 1s ease}
+.hang:hover,.hang:focus-visible,.hang.on{transform:rotate(0)}
+.hang:hover::before,.hang:focus-visible::before,.hang.on::before{opacity:1}
+.hang:hover .mat img,.hang:focus-visible .mat img,.hang.on .mat img{filter:none}
+.framed .hang:hover .mat img,.framed .hang.on .mat img{filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.hang figcaption{color:var(--cream);opacity:.75;padding-top:16px;font-size:11px}
+.galline{font-style:italic;font-size:clamp(32px,4.4vw,68px);line-height:1.06;margin:0 0 24px;max-width:10.5em}
+.galhint{color:var(--gilt)}
+@media (max-width:1180px){.plamp{display:none}}
+@media (max-width:900px){
+  .gal-grid{grid-template-columns:1fr}
+  .gallery.right .hang{order:0}
+  .hang{max-width:340px;justify-self:start}
+  .phead.flipx .phead-grid{grid-template-columns:1fr}
+  .phead.flipx .phead-copy{order:0}
+  .onshelf img.main{max-height:190px}
+  .onshelf img.side{max-height:80px}
+  .prov{position:static;transform:none;display:none;margin:0 0 30px;width:auto}
+  .onshelf.up .prov{display:block;transform:none}
+  .onshelf .tag{margin-bottom:16px}
+}
+@media (pointer:coarse){.galhint{font-size:0}.galhint::after{content:"Tap the picture to light it";font-size:12px}}
