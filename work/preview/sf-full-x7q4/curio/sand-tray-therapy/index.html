@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../site.css">
+
 </head>
 <body>
-<header class="phead lit">
+<header class="phead room r-tray">
   <div class="bar mono">
     <a class="brand" href="../" aria-label="Curio, home"><span class="sign mini" aria-hidden="true"><b style="--r:-3deg;--y:0em">C</b><b style="--r:2deg;--y:.05em">U</b><b style="--r:-1.5deg;--y:-.03em">R</b><b style="--r:3deg;--y:.04em">I</b><b style="--r:-2deg;--y:-.01em">O</b></span></a>
     <nav aria-label="Main">
@@ -24,7 +25,6 @@
     </nav>
     <details class="menu"><summary><span class="o">Menu</span><span class="c">Close</span></summary><nav class="menu-sheet" aria-label="All pages"><span class="mono">The curiosities</span><a href="../anxiety-and-stress/">Why can’t I relax when everything is fine?</a><a href="../perfectionism/">Why is good never good enough?</a><a href="../life-transitions/">Who am I after the divorce?</a><a href="../trauma-therapy/">Was it bad enough to count as trauma?</a><a href="../relationships-and-self-worth/">Why do I keep ending up here?</a><a href="../depression/">Why does everything feel so heavy?</a><a href="../emdr-therapy/">What is EMDR, really?</a><a href="../emdr-intensives/">Could I do the work in a few days?</a><a href="../sand-tray-therapy/">What do you do with a tray of sand?</a><a href="../mindfulness-group/">Could eight weeks make my brain quieter?</a><span class="mono">The practice</span><a class="plain" href="../sarah-freeze/">Sarah Freeze</a><a class="plain" href="../lora-hope/">Lora Hope</a><a class="plain" href="../fees-and-insurance/">Fees and insurance</a><a class="plain" href="../contact/">Contact</a><a class="plain" href="../">Home</a></nav></details>
   </div>
-  
   <div class="wrap phead-grid">
     <div class="phead-copy">
       <span class="mono eyebrow">Curiosity no. 09 &middot; Sand tray therapy</span>
@@ -32,24 +32,34 @@
       <h1>Sand tray therapy in Denver</h1>
       <p class="lede">You build a scene. There’s a tray of sand and shelves of miniature figures: people, animals, houses, fences, monsters, a tiny chair. You pick what catches you and put it where it wants to go.</p>
       <a class="btn" href="../contact/">Ask about sand tray</a>
+      <p class="mono hintline">Build a scene. Something is already in the tray.</p>
     </div>
-    <div class="onshelf" tabindex="0" role="button" aria-expanded="false" aria-label="Pick up the object"><span class="things"><img class="side" src="../img/agatebox.webp" alt=""><img class="main" src="../img/chair.webp" alt=""></span><span class="plank"></span><span class="tag">Sand tray therapy</span><span class="prov mono">A very small chair, kept on the sand tray shelf. Cleveland Museum of Art.</span></div>
+    
   </div>
+  
+<div class="tray-stage" id="tray">
+  <div class="tray"><div class="sand"></div></div>
+  <button class="key tr-key" type="button" data-key="sand" aria-label="An old key. Pick it up."><img src="../img/key.webp" alt="" width="172" height="360"></button>
+  <div class="tray-shelf"><span class="plank"></span></div>
+  <img class="tmini" data-x="22" data-y="34" data-w="5.2" src="../img/chair.webp" alt="A miniature chair">
+  <img class="tmini" data-x="8" data-y="84" data-w="6.4" src="../img/horse.webp" alt="A miniature horse">
+  <img class="tmini" data-x="17" data-y="84" data-w="5.4" src="../img/dancer.webp" alt="A porcelain dancer">
+  <img class="tmini" data-x="26" data-y="84" data-w="6" src="../img/bird-charmer.webp" alt="A porcelain bird charmer">
+  <img class="tmini" data-x="35" data-y="84" data-w="6" src="../img/marble-head.webp" alt="A small marble head">
+  <img class="tmini" data-x="44" data-y="84" data-w="3.6" src="../img/globe.webp" alt="A pocket globe">
+  <img class="tmini" data-x="52" data-y="84" data-w="4" src="../img/thimble.webp" alt="A thimble">
+  <img class="tmini" data-x="60" data-y="84" data-w="3.6" src="../img/ewer.webp" alt="A silver ewer">
+  <img class="tmini" data-x="68" data-y="84" data-w="2.4" src="../img/perfume-blue.webp" alt="A blue perfume bottle">
+  <img class="tmini" data-x="75" data-y="84" data-w="3.6" src="../img/glass-vase.webp" alt="A glass vase">
+  <img class="tmini" data-x="84" data-y="84" data-w="6" src="../img/music-box.webp" alt="A music box">
+  <img class="tmini" data-x="93" data-y="84" data-w="4.6" src="../img/agatebox.webp" alt="A small jeweled box">
+  <div class="tray-ui"><button class="mono tr-smooth" type="button">Smooth the sand</button><span class="mono">There&rsquo;s no wrong way to do this.</span></div>
+</div>
 </header>
 <main>
 <section class="sheet">
   <div class="wrap">
     <div class="blk"><h2>Why it works</h2><div><p>Some things are hard to say because you don’t have the words yet, or because the words have been said so many times they’ve gone flat. A scene in the sand skips past that. You see the whole situation at once, from above, with your hands still in it.</p><p>Then you and your therapist look at it together. Who is close to whom. What’s buried. What is facing the wrong way. People are often surprised by what they made.</p></div></div>
-  </div>
-</section>
-<section class="gallery right">
-  <div class="wrap gal-grid">
-    <figure class="hang" tabindex="0" role="button" aria-label="Turn on the picture light"><div class="mat"><img src="../img/art/flowers-glass.jpg" alt="A small, exact painting of tulips and other flowers in a glass." loading="lazy"></div><figcaption class="mono">Ambrosius Bosschaert, Flowers in a Glass, 1606. Cleveland Museum of Art.</figcaption></figure>
-    <div><p class="galline">Small things, placed with care, say a great deal.</p><span class="mono galhint">Hover the picture to light it</span></div>
-  </div>
-</section>
-<section class="sheet">
-  <div class="wrap">
     <div class="blk"><h2>Who it’s for</h2><div><p>Sand tray is for adults as much as children. It helps when talking has stalled, when a memory is too much to approach head on, or when you tend to think your way around feelings. It can sit alongside EMDR and psychodynamic work.</p><p>It’s one of Sarah Freeze’s specialties, and the practice’s collection of miniatures lives at the Harlan Street office. Because it’s hands-on, it happens in person.</p></div></div>
     <div class="blk"><h2>Questions people ask</h2><div><div class="faq"><details><summary>Do I need to be creative?</summary><p>No. There’s no good or bad tray.</p></details><details><summary>Is this play therapy?</summary><p>It’s related. Adults use it because it gets to things that talking can’t.</p></details></div></div></div>
   </div>
@@ -111,6 +121,7 @@
       <p>Clinicians: Sarah&rsquo;s EMDR consultation and training are at <a href="../../sarah-freeze/">sarahfreezelcsw.com</a>.</p>
       <p class="mono">Cabinet: Mus&eacute;e Carnavalet, Paris, c. 1785. Lamp, rug, and small objects: Cleveland Museum of Art. Open access.</p>
     </div>
+    <p class="mono hunt">Five old keys are hidden around this house. <span class="keyrow" aria-label="Keys found"></span><a href="../back-room/">The back room</a></p>
   </div>
 </section>
 <script src="../site.js"></script>

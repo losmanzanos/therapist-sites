@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../site.css">
+
 </head>
 <body>
-<header class="phead lit flipx">
+<header class="phead room r-breathe">
   <div class="bar mono">
     <a class="brand" href="../" aria-label="Curio, home"><span class="sign mini" aria-hidden="true"><b style="--r:-3deg;--y:0em">C</b><b style="--r:2deg;--y:.05em">U</b><b style="--r:-1.5deg;--y:-.03em">R</b><b style="--r:3deg;--y:.04em">I</b><b style="--r:-2deg;--y:-.01em">O</b></span></a>
     <nav aria-label="Main">
@@ -24,7 +25,6 @@
     </nav>
     <details class="menu"><summary><span class="o">Menu</span><span class="c">Close</span></summary><nav class="menu-sheet" aria-label="All pages"><span class="mono">The curiosities</span><a href="../anxiety-and-stress/">Why can’t I relax when everything is fine?</a><a href="../perfectionism/">Why is good never good enough?</a><a href="../life-transitions/">Who am I after the divorce?</a><a href="../trauma-therapy/">Was it bad enough to count as trauma?</a><a href="../relationships-and-self-worth/">Why do I keep ending up here?</a><a href="../depression/">Why does everything feel so heavy?</a><a href="../emdr-therapy/">What is EMDR, really?</a><a href="../emdr-intensives/">Could I do the work in a few days?</a><a href="../sand-tray-therapy/">What do you do with a tray of sand?</a><a href="../mindfulness-group/">Could eight weeks make my brain quieter?</a><span class="mono">The practice</span><a class="plain" href="../sarah-freeze/">Sarah Freeze</a><a class="plain" href="../lora-hope/">Lora Hope</a><a class="plain" href="../fees-and-insurance/">Fees and insurance</a><a class="plain" href="../contact/">Contact</a><a class="plain" href="../">Home</a></nav></details>
   </div>
-  <img class="plamp" src="../img/lamp.webp" alt="A stained glass floor lamp. Click it to dim the room." tabindex="0" role="button" width="543" height="1500">
   <div class="wrap phead-grid">
     <div class="phead-copy">
       <span class="mono eyebrow">Curiosity no. 10 &middot; Mindfulness skills group</span>
@@ -32,9 +32,17 @@
       <h1>Mindfulness skills group, online in Colorado</h1>
       <p class="lede">Stress Relief: Mindfulness Skills for Everyday Life is an eight-week online group led by Lora Hope. It’s closer to a class than a therapy group. You learn skills, practice them, and take them home.</p>
       <a class="btn" href="https://forms.gle/MmSwwHPH2WY3ERHG6">Fill out the interest form</a>
+      <p class="mono hintline">Breathe with the lamp. In while it brightens, out while it fades.</p>
     </div>
-    <div class="onshelf" tabindex="0" role="button" aria-expanded="false" aria-label="Pick up the object"><span class="things"><img class="side" src="../img/snuffbox.webp" alt=""><img class="main" src="../img/globe.webp" alt=""></span><span class="plank"></span><span class="tag">Mindfulness skills group</span><span class="prov mono">A pocket globe on its stand. Cleveland Museum of Art.</span></div>
+    
+<div class="breathe" id="breathe">
+  <span class="br-glow" aria-hidden="true"></span>
+  <img class="br-lamp" src="../img/lamp.webp" alt="A Tiffany stained glass floor lamp with a peony shade." width="543" height="1500">
+  <button class="key br-key" type="button" data-key="breathe" aria-label="An old key. Pick it up."><img src="../img/key.webp" alt="" width="172" height="360"></button>
+  <div class="br-ui"><button class="btn br-go" type="button">Breathe with the lamp</button><p class="br-say" role="status"></p></div>
+</div>
   </div>
+  
 </header>
 <main>
 <section class="sheet">
@@ -47,16 +55,6 @@
           <div><dt class="mono">Start date</dt><dd>Being scheduled now. Tell us whether mornings, afternoons, or evenings suit you.</dd></div>
         </dl></div></div>
     <div class="blk"><h2>What happens in a session</h2><div><p>Each week has a short teaching piece, a guided practice, and time to try the skill and ask questions. You’ll learn how your own stress response works and build a small set of tools you can use in the middle of a regular day.</p><p>Nobody is asked to share more than they want to. Plenty of people mostly listen.</p></div></div>
-  </div>
-</section>
-<section class="gallery moss">
-  <div class="wrap gal-grid">
-    <figure class="hang" tabindex="0" role="button" aria-label="Turn on the picture light"><div class="mat"><img src="../img/art/spring-flowers.jpg" alt="A heap of peonies, lilacs, and other spring flowers." loading="lazy"></div><figcaption class="mono">Claude Monet, Spring Flowers, 1864. Cleveland Museum of Art.</figcaption></figure>
-    <div><p class="galline">Eight weeks of noticing what is already on the table.</p><span class="mono galhint">Hover the picture to light it</span></div>
-  </div>
-</section>
-<section class="sheet">
-  <div class="wrap">
     <div class="blk"><h2>This might be for you if</h2><div><ul class="signs"><li>You feel stressed, overwhelmed, or worn out most days.</li><li>You get stuck in worry, overthinking, or self-criticism.</li><li>You react first and wish you’d paused.</li><li>You want something practical.</li></ul></div></div>
     <div class="blk"><h2>How to join</h2><div><p>Fill out the short <a href="https://forms.gle/MmSwwHPH2WY3ERHG6">interest form</a>. It asks which start date and time of day suit you, and it doesn’t commit you to anything. Lora will follow up about scheduling and registration.</p><p>Questions? Write to <a href="mailto:lora@sarahfreezelcsw.com">lora@sarahfreezelcsw.com</a> or call <a href="tel:+17204651253">(720) 465-1253</a>.</p></div></div>
     <div class="blk"><h2>Questions people ask</h2><div><div class="faq"><details><summary>Is this group therapy?</summary><p>No. It’s skills-based and closer to a class.</p></details><details><summary>Do I need to have meditated before?</summary><p>No.</p></details></div></div></div>
@@ -105,6 +103,7 @@
       <p>Clinicians: Sarah&rsquo;s EMDR consultation and training are at <a href="../../sarah-freeze/">sarahfreezelcsw.com</a>.</p>
       <p class="mono">Cabinet: Mus&eacute;e Carnavalet, Paris, c. 1785. Lamp, rug, and small objects: Cleveland Museum of Art. Open access.</p>
     </div>
+    <p class="mono hunt">Five old keys are hidden around this house. <span class="keyrow" aria-label="Keys found"></span><a href="../back-room/">The back room</a></p>
   </div>
 </section>
 <script src="../site.js"></script>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
 
   <div class="wallbox" aria-hidden="true"></div>
   <div class="baseboard" aria-hidden="true"></div>
-  <div class="floorbox" aria-hidden="true"><i></i></div>
+  <div class="floorbox" aria-hidden="true"><i></i><b></b></div>
   <img class="rug" src="img/rug.webp" alt="" aria-hidden="true" width="1000" height="150">
 
   <div class="wrap hero-grid">
@@ -131,11 +131,12 @@
   </div>
 </section>
 
-<section class="quote">
+<section class="quote" style="position:relative">
   <div class="wrap">
     <figure>
       <blockquote>The quest for certainty blocks the search for meaning.</blockquote>
       <cite class="mono">Erich Fromm</cite>
+    <button class="key tucked" type="button" data-key="quote" aria-label="An old key. Pick it up."><img src="img/key.webp" alt="" width="172" height="360"></button>
     </figure>
   </div>
 </section>
@@ -156,6 +157,7 @@
       <p>Clinicians: Sarah&rsquo;s EMDR consultation and training are at <a href="../sarah-freeze/">sarahfreezelcsw.com</a>.</p>
       <p class="mono">Cabinet: Mus&eacute;e Carnavalet, Paris, c. 1785. Lamp, rug, and small objects: Cleveland Museum of Art. Open access.</p>
     </div>
+    <p class="mono hunt">Five old keys are hidden around this house. <span class="keyrow" aria-label="Keys found"></span><a href="back-room/">The back room</a></p>
   </div>
 </section>
 </main>
@@ -189,5 +191,6 @@
   }
 })();
 </script>
+<script src="site.js"></script>
 </body>
 </html>

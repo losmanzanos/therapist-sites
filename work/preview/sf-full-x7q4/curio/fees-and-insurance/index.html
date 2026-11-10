@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../site.css">
+
 </head>
 <body>
-<header class="phead ">
+<header class="phead room ">
   <div class="bar mono">
     <a class="brand" href="../" aria-label="Curio, home"><span class="sign mini" aria-hidden="true"><b style="--r:-3deg;--y:0em">C</b><b style="--r:2deg;--y:.05em">U</b><b style="--r:-1.5deg;--y:-.03em">R</b><b style="--r:3deg;--y:.04em">I</b><b style="--r:-2deg;--y:-.01em">O</b></span></a>
     <nav aria-label="Main">
@@ -32,7 +33,11 @@
       <p class="lede">Probably. Curio is in network with most of the large plans in Colorado, and we can give you a superbill for the rest.</p>
       <a class="btn" href="mailto:lora@sarahfreezelcsw.com">Book a 15-minute call with Lora</a>
     </div>
-    <div class="onshelf" aria-hidden="true"><img src="../img/agatebox.webp" alt=""><span class="plank"></span><span class="tag">Insurance</span></div>
+    <div class="catalog" id="catalog">
+  <p class="mono cat-ask">Pull your plan&rsquo;s card</p>
+  <div class="cat-tabs"><button type="button" data-in="1">Kaiser</button><button type="button" data-in="1">UnitedHealthcare</button><button type="button" data-in="1">Oxford</button><button type="button" data-in="1">Optum</button><button type="button" data-in="1">Oscar</button><button type="button" data-in="1">Surest</button><button type="button" data-in="1">UMR</button><button type="button" data-in="1">UHC Student Resources</button><button type="button" data-in="1">Colorado Medicaid</button><button type="button" data-in="0">Aetna</button><button type="button" data-in="0">Cigna</button><button type="button" data-in="0">Anthem</button><button type="button" data-in="0">Something else</button></div>
+  <div class="cat-card" role="status"><span class="cat-name"></span><span class="stamp"></span><span class="cat-say">Pick a plan above.</span></div>
+</div>
   </div>
 </header>
 <main>
@@ -67,7 +72,9 @@
       <p>Clinicians: Sarah&rsquo;s EMDR consultation and training are at <a href="../../sarah-freeze/">sarahfreezelcsw.com</a>.</p>
       <p class="mono">Cabinet: Mus&eacute;e Carnavalet, Paris, c. 1785. Lamp, rug, and small objects: Cleveland Museum of Art. Open access.</p>
     </div>
+    <p class="mono hunt">Five old keys are hidden around this house. <span class="keyrow" aria-label="Keys found"></span><a href="../back-room/">The back room</a></p>
   </div>
 </section>
+<script src="../site.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../site.css">
+
 </head>
 <body>
-<header class="phead bio">
+<header class="phead room bio">
   <div class="bar mono">
     <a class="brand" href="../" aria-label="Curio, home"><span class="sign mini" aria-hidden="true"><b style="--r:-3deg;--y:0em">C</b><b style="--r:2deg;--y:.05em">U</b><b style="--r:-1.5deg;--y:-.03em">R</b><b style="--r:3deg;--y:.04em">I</b><b style="--r:-2deg;--y:-.01em">O</b></span></a>
     <nav aria-label="Main">
@@ -31,7 +32,13 @@
       <p class="lede">Lora works with women whose lives look put-together from the outside and feel like too much from the inside.</p>
       <a class="btn" href="mailto:lora@sarahfreezelcsw.com">Book a 15-minute call with Lora</a>
     </div>
-    <figure class="frame"><img src="../img/lora.jpg" alt="Lora Hope, a therapist at Curio in Denver, smiling outdoors." width="900" height="900"><figcaption>Lora Hope, LSW</figcaption></figure>
+    <div class="turnc" id="flip">
+  <button class="flip-in" type="button" aria-label="Turn the photo over">
+    <figure class="frame flip-front"><img src="../img/lora.jpg" alt="Lora Hope, a therapist at Curio in Denver, smiling outdoors." width="900" height="900"><figcaption>Lora Hope, LSW</figcaption></figure>
+    <div class="flip-back"><span class="mono">On the back, in pencil</span><p>Lora Hope. Fordham MSW, clinical track. More than 900 supervised hours before she ever had her own office.</p><p>Licensed in Colorado. Training in EMDR now, under Sarah.</p><p>Still curious about why people do what they do.</p></div>
+  </button>
+  <p class="mono hintline">Turn the photo over.</p>
+</div>
   </div>
 </header>
 <main>
@@ -66,7 +73,9 @@
       <p>Clinicians: Sarah&rsquo;s EMDR consultation and training are at <a href="../../sarah-freeze/">sarahfreezelcsw.com</a>.</p>
       <p class="mono">Cabinet: Mus&eacute;e Carnavalet, Paris, c. 1785. Lamp, rug, and small objects: Cleveland Museum of Art. Open access.</p>
     </div>
+    <p class="mono hunt">Five old keys are hidden around this house. <span class="keyrow" aria-label="Keys found"></span><a href="../back-room/">The back room</a></p>
   </div>
 </section>
+<script src="../site.js"></script>
 </body>
 </html>

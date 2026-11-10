@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="../">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../site.css">
+
 </head>
 <body>
-<header class="phead bio">
+<header class="phead room bio">
   <div class="bar mono">
     <a class="brand" href="../" aria-label="Curio, home"><span class="sign mini" aria-hidden="true"><b style="--r:-3deg;--y:0em">C</b><b style="--r:2deg;--y:.05em">U</b><b style="--r:-1.5deg;--y:-.03em">R</b><b style="--r:3deg;--y:.04em">I</b><b style="--r:-2deg;--y:-.01em">O</b></span></a>
     <nav aria-label="Main">
@@ -31,7 +32,20 @@
       <p class="lede">Curio is my practice. For years it went by my name, and I renamed it when it stopped being only me.</p>
       <a class="btn" href="../emdr-intensives/">About EMDR intensives</a>
     </div>
-    <figure class="frame r"><img src="../img/sarah.jpg" alt="Sarah Freeze, owner of Curio, smiling outdoors." width="900" height="900"><figcaption>Sarah Freeze, LCSW</figcaption></figure>
+    <div class="drawer" id="drawer">
+  <figure class="frame r"><img src="../img/sarah.jpg" alt="Sarah Freeze, owner of Curio, smiling outdoors." width="900" height="900"><figcaption>Sarah Freeze, LCSW</figcaption></figure>
+  <div class="dr-box">
+    <div class="dr-cards" aria-live="polite">
+      <div class="dr-card"><span class="mono">2024</span>Two-year Adult Psychodynamic Training Program, Denver Institute for Psychoanalysis.</div>
+      <div class="dr-card"><span class="mono">2018</span>Began EMDR training. Now an Evergreen approved consultant.</div>
+      <div class="dr-card"><span class="mono">Before Curio</span>Clinical director, Create Outcomes Psychological Services.</div>
+      <div class="dr-card"><span class="mono">Licenses</span>LCSW in Colorado and New York.</div>
+      <div class="dr-card"><span class="mono">School</span>MSW, Silberman School of Social Work at Hunter College. BA, SUNY Geneseo.</div>
+    </div>
+    <button class="dr-front" type="button" aria-expanded="false"><span class="mono">S.F. &middot; Records</span><i class="dr-pull" aria-hidden="true"></i></button>
+  </div>
+  <p class="mono hintline">There&rsquo;s a drawer under the photo. Pull it open.</p>
+</div>
   </div>
 </header>
 <main>
@@ -65,7 +79,9 @@
       <p>Clinicians: Sarah&rsquo;s EMDR consultation and training are at <a href="../../sarah-freeze/">sarahfreezelcsw.com</a>.</p>
       <p class="mono">Cabinet: Mus&eacute;e Carnavalet, Paris, c. 1785. Lamp, rug, and small objects: Cleveland Museum of Art. Open access.</p>
     </div>
+    <p class="mono hunt">Five old keys are hidden around this house. <span class="keyrow" aria-label="Keys found"></span><a href="../back-room/">The back room</a></p>
   </div>
 </section>
+<script src="../site.js"></script>
 </body>
 </html>
