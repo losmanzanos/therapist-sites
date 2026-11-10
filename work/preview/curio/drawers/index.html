@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<!-- Preview build for Curio. Not the live site. -->
+<title>Curio | Psychotherapy in Denver | Sarah Freeze, LCSW</title>
+<meta name="description" content="Curio is the Denver psychotherapy practice of Sarah Freeze, LCSW. Her associate Lora Hope, LSW, is taking new clients for trauma therapy, EMDR, perfectionism, and big life changes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=GFS+Didot&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../img/cabinet-closed.webp">
+<style>
+:root{
+  --wall:#16293a; --wall-deep:#0d1b28; --lamp:#e9b25a; --cream:#edf1ee; --paper:#dbe4e6;
+  --gilt:#e2c98c; --tortoise:#2b6384; --ink:#0f1b27; --band:#d9a93e;
+  --didot:'GFS Didot','Didot','Bodoni 72',serif; --text:'EB Garamond',Georgia,serif; --mono:'Cutive Mono','Courier New',monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--wall);color:var(--cream);font-family:var(--text);font-size:20px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+img{max-width:100%;height:auto;display:block}
+.mono{font-family:var(--mono);font-size:.68em;letter-spacing:.06em;text-transform:uppercase}
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+
+/* ---------- top bar ---------- */
+.bar{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding:26px clamp(20px,4vw,56px)}
+.bar nav{display:flex;gap:10px 28px;flex-wrap:wrap}
+.bar a{text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
+.bar a:hover,.bar a:focus-visible{border-bottom-color:var(--gilt)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:max(100svh,780px);overflow:hidden;display:flex;align-items:flex-end;
+  background:
+    radial-gradient(ellipse 44% 56% at 66% 50%, rgba(233,178,90,.42), rgba(233,178,90,.1) 55%, transparent 78%),
+    linear-gradient(180deg,var(--wall-deep) 0%,var(--wall) 60%,#1e3447 100%)}
+.wallbox{position:absolute;left:0;right:0;top:0;height:89%;z-index:0;pointer-events:none;background:url(../img/wall.jpg) center/760px;mix-blend-mode:multiply;opacity:.7}
+.wallbox::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 90% at 60% 55%,transparent 40%,rgba(3,5,8,.55) 100%)}
+.baseboard{position:absolute;left:0;right:0;top:calc(89% - 38px);height:38px;z-index:0;pointer-events:none;background:linear-gradient(180deg,#0a141d 0,#0a141d 2px,#2c4558 2px,#263c4e 5px,#1d3142 9px,#1a2d3d 30px,#0d1820 34px,#060a0e 38px)}
+.floorbox{position:absolute;left:0;right:0;top:89%;bottom:0;z-index:0;overflow:hidden;perspective:340px;perspective-origin:50% 0}
+.floorbox i{position:absolute;left:-90%;right:-90%;top:0;height:900%;background:url(../img/floor.jpg) center top/720px 360px;transform-origin:50% 0;transform:rotateX(76deg);filter:brightness(.55) saturate(.8)}
+.is-open .floorbox::after{opacity:.5}
+.floorbox::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,3,2,.78) 0%,rgba(4,3,2,.3) 40%,rgba(4,3,2,.55) 100%);transition:opacity 1.1s ease}
+.wordmark{position:absolute;left:61%;top:clamp(34px,5vh,80px);transform:translateX(-50%) translate(var(--px,0),var(--py,0));
+  font-family:var(--didot);font-size:clamp(150px,31vw,520px);line-height:.8;letter-spacing:-.02em;color:#7f7350;opacity:.5;white-space:nowrap;pointer-events:none;user-select:none;z-index:1;transition:opacity 1s ease, color 1s ease, text-shadow 1s ease, margin 1s cubic-bezier(.2,.7,.2,1)}
+.is-open .wordmark{margin-top:-3.5vh;opacity:1;color:#f2cb7c;text-shadow:0 0 70px rgba(242,190,100,.5)}
+.hero-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,8fr);gap:clamp(20px,3vw,56px);align-items:end;padding-bottom:clamp(28px,5vh,64px)}
+.pitch{padding-bottom:clamp(40px,6vh,60px);max-width:400px}
+.pitch h1{font-family:var(--didot);font-weight:400;font-size:clamp(28px,2.6vw,42px);line-height:1.1;margin:0 0 18px}
+.pitch .by{color:var(--cream);margin:0 0 16px}
+.pitch p{margin:0 0 22px;max-width:27em}
+.open-btn{font-family:var(--mono);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--paper);border:0;padding:16px 22px 14px;min-height:48px;cursor:pointer;position:relative;transform:rotate(-1.5deg);box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .25s ease}
+.open-btn::before{content:"";position:absolute;left:12px;top:50%;width:9px;height:9px;border-radius:50%;background:var(--wall);transform:translateY(-50%)}
+.open-btn span{padding-left:20px}
+.open-btn:hover,.open-btn:focus-visible{transform:rotate(1deg) translateY(-3px)}
+.asking{min-height:4.4em;margin:24px 0 0;font-style:italic;font-size:clamp(24px,2.2vw,34px);line-height:1.18;color:var(--cream);opacity:0;transition:opacity .5s ease}
+.is-open .asking{opacity:1}
+.asking small{display:block;font-style:normal;margin-top:12px;color:var(--gilt)}
+
+.stage{position:relative;width:100%;max-width:920px;justify-self:end;aspect-ratio:1366/1175;transform:translate(var(--cx,0),var(--cy,0));cursor:pointer}
+.stage::before{content:"";position:absolute;left:-7%;right:1%;top:5%;bottom:5%;z-index:0;background:rgba(0,0,0,.6);filter:blur(26px);pointer-events:none}
+.stage::after{content:"";position:absolute;left:4%;right:4%;bottom:-1.5%;height:7%;background:radial-gradient(ellipse at center,rgba(0,0,0,.6),transparent 70%);z-index:0}
+.stage img.cab{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1;transition:opacity .9s ease, transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.cab.open{opacity:0}
+.is-open .cab.open{opacity:1}
+.is-open .cab.closed{opacity:0;transform:scale(1.012)}
+.shelves{position:absolute;inset:0;z-index:3;list-style:none;margin:0;padding:0}
+.shelves li{position:absolute;left:var(--x);top:var(--y);width:var(--w,19%);transform:translate(-50%,-100%) translateY(14px);opacity:0;pointer-events:none;transition:opacity .45s ease, transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:0s}
+.is-open .shelves li{opacity:1;pointer-events:auto;transform:translate(-50%,-100%);transition-delay:calc(.45s + var(--i) * 70ms)}
+.tag{display:block;text-align:center;font-family:var(--mono);font-size:clamp(9px,.92vw,13.5px);line-height:1.15;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:var(--paper);padding:.7em .5em .55em;box-shadow:0 5px 10px rgba(0,0,0,.45);transform:rotate(var(--r,0deg));transition:transform .2s ease, background .2s ease}
+.tag:hover,.tag:focus-visible{transform:rotate(0) translateY(-5px) scale(1.06);background:#f4f8f8;outline:none}
+.thing{display:block;transition:transform .3s ease;filter:drop-shadow(0 6px 6px rgba(0,0,0,.55))}
+.thing img{width:100%;height:auto}
+.thing:hover,.thing:focus-visible{transform:translateY(-6px) rotate(-4deg);outline:none}
+.hint{position:absolute;z-index:4;right:2%;top:3%;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--cream);transition:opacity .4s}
+.is-open .hint{opacity:0}
+
+/* ---------- the curiosities ---------- */
+.index{background:var(--paper);color:var(--ink);padding:clamp(72px,10vw,140px) 0}
+.index-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 56px;align-items:end;margin-bottom:clamp(36px,5vw,72px)}
+.index h2,.who h2,.visit h2{font-family:var(--didot);font-weight:400;font-size:clamp(44px,6.4vw,104px);line-height:.95;letter-spacing:-.015em;margin:0}
+.index-head p{margin:0;max-width:30em}
+.row{display:grid;grid-template-columns:64px minmax(0,6fr) minmax(0,5fr);gap:8px 40px;align-items:baseline;padding:26px 0;border-top:1px solid var(--ink);text-decoration:none;position:relative}
+.row:last-child{border-bottom:1px solid var(--ink)}
+.row .q{font-style:italic;font-size:clamp(26px,3vw,44px);line-height:1.1;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.row .a{font-size:19px}
+.row .a b{display:block;font-weight:500;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;color:var(--tortoise)}
+.row:hover .q,.row:focus-visible .q{transform:translateX(18px)}
+.row:hover .a b,.row:focus-visible .a b{text-decoration:underline}
+
+/* ---------- people ---------- */
+.who{padding:clamp(80px,10vw,150px) 0;position:relative;overflow:hidden}
+.who .snuff{position:absolute;width:clamp(150px,19vw,290px);right:-3%;top:44px;transform:rotate(9deg);filter:drop-shadow(0 30px 30px rgba(0,0,0,.5));pointer-events:none}
+.person{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:32px 72px;align-items:start}
+.who.two{background:#2a4c66}
+.person + .person{margin-top:clamp(72px,9vw,130px)}
+.person.flip{grid-template-columns:minmax(0,7fr) minmax(0,3fr)}
+.frame{position:relative;background:var(--paper);padding:14px 14px 46px;transform:rotate(-2deg);box-shadow:0 24px 40px rgba(0,0,0,.45);max-width:400px}
+.frame.r{transform:rotate(2.5deg);justify-self:end;max-width:300px}
+.frame img{width:100%;filter:sepia(.18) contrast(1.02)}
+.frame figcaption{position:absolute;left:14px;bottom:13px;color:var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+figure{margin:0}
+.who .status{color:var(--gilt);margin:0 0 18px;display:block}
+.who h2{font-size:clamp(44px,5.6vw,88px);margin-bottom:28px}
+.who .lede{font-size:clamp(23px,2.1vw,30px);line-height:1.3;max-width:24em;margin:0 0 20px}
+.who p{max-width:32em;margin:0 0 20px}
+.note{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:24px 72px;align-items:start;padding-bottom:clamp(56px,7vw,100px);margin-bottom:clamp(56px,7vw,100px);border-bottom:1px solid rgba(237,241,238,.4)}
+.note .sig{color:var(--gilt);margin:28px 0 0}
+.who .snuff{top:auto;bottom:40px}
+.facts{margin:36px 0;max-width:680px;padding:0}
+.facts div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 24px;padding:15px 0;border-top:1px solid rgba(237,241,238,.4)}
+.facts div:last-child{border-bottom:1px solid rgba(237,241,238,.4)}
+.facts dt{color:var(--gilt);padding-top:5px}
+.facts dd{margin:0}
+.cta{font-size:22px;font-weight:500;color:var(--cream)}
+.cta:hover{color:var(--gilt)}
+
+/* ---------- quote ---------- */
+.quote{background:var(--band);color:var(--ink);padding:clamp(80px,11vw,160px) 0}
+.quote blockquote{margin:0;font-family:var(--didot);font-size:clamp(34px,5.4vw,88px);line-height:1.04;max-width:13em}
+.quote cite{display:block;margin-top:28px;font-style:normal}
+
+/* ---------- visit ---------- */
+.visit{background:var(--paper);color:var(--ink);padding:clamp(72px,9vw,130px) 0 40px}
+.visit-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:40px 72px;align-items:end}
+.visit p{margin:0 0 14px;max-width:28em}
+.visit .cta{color:var(--ink)}
+.visit .cta:hover{color:var(--tortoise)}
+.foot{margin-top:clamp(56px,7vw,100px);padding-top:20px;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:10px 40px;justify-content:space-between;font-size:16px}
+.foot p{margin:0;max-width:none}
+
+@media (max-width:900px){
+  .note{grid-template-columns:1fr}
+  body{font-size:18px}
+  .hero{align-items:flex-start;min-height:0}
+  .bar nav{display:none}
+  .floorbox{top:430px}
+  .wallbox{height:430px}
+  .baseboard{top:calc(430px - 26px);height:26px}
+  .wordmark{left:50%;top:54px;font-size:39vw}
+  .hero-grid{padding-bottom:56px}
+  .asking{display:none}
+  .is-open .asking{display:block}
+  .hero-grid{grid-template-columns:1fr;padding-top:clamp(150px,40vw,330px)}
+  .stage{justify-self:center;order:-1}
+  .pitch{max-width:none;padding-bottom:0}
+  .asking{min-height:0}
+  .shelves li{display:none}
+  .hint{display:none}
+  .index-head,.person,.person.flip,.visit-grid{grid-template-columns:1fr}
+  .row{grid-template-columns:40px minmax(0,1fr)}
+  .row .a{grid-column:2}
+  .frame.r{justify-self:start}
+  .person.flip .frame{order:-1}
+  .facts div{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="bar mono">
+    <span>Curio &middot; The practice of Sarah Freeze, LCSW &middot; Denver</span>
+    <nav aria-label="Main">
+      <a href="#curiosities">The curiosities</a>
+      <a href="#sarah">Sarah Freeze</a>
+      <a href="#lora">Lora Hope</a>
+      <a href="#visit">Fees and insurance</a>
+      <a href="#visit">Contact</a>
+    </nav>
+  </div>
+
+  <div class="wallbox" aria-hidden="true"></div>
+  <div class="baseboard" aria-hidden="true"></div>
+  <div class="floorbox" aria-hidden="true"><i></i></div>
+  <div class="wordmark" aria-hidden="true">Curio</div>
+
+  <div class="wrap hero-grid">
+    <div class="pitch">
+      <h1>Psychotherapy in Denver for people who are curious about themselves.</h1>
+      <p>Sarah Freeze opened this practice on Harlan Street and still runs it. Her associate, Lora Hope, LSW, is taking new clients now.</p>
+      <button class="open-btn" type="button" id="opener" aria-expanded="false" aria-controls="shelves"><span id="opener-text">Open the cabinet</span></button>
+      <p class="asking" id="asking" aria-live="polite"><span id="asking-q">Everything in here is a question somebody walked in with.</span><small class="mono" id="asking-a">Pick one up</small></p>
+    </div>
+
+    <div class="stage" id="stage">
+      <img class="cab closed" src="../img/cabinet-closed.webp" width="1366" height="1175" alt="A French cabinet from about 1690, ebony with brass and tortoiseshell inlay, its drawers closed.">
+      <img class="cab open" src="../img/cabinet-open.webp" width="1366" height="1175" alt="" aria-hidden="true">
+      <span class="hint" aria-hidden="true">&#8601; It opens</span>
+      <ul class="shelves" id="shelves">
+        <li style="--x:19.5%;--y:41.5%;--i:0"><a class="tag" style="--r:-2deg" href="#lora" data-q="Why can&rsquo;t I relax when everything is fine?" data-a="Meet Lora Hope">Lora Hope</a></li>
+        <li style="--x:19.5%;--y:51%;--i:1"><a class="tag" style="--r:1.5deg" href="#curiosities" data-q="Why is good never good enough?" data-a="Perfectionism">Perfectionism</a></li>
+        <li style="--x:19.5%;--y:60.3%;--i:2"><a class="tag" style="--r:-1deg" href="#curiosities" data-q="Who am I after the divorce?" data-a="Life transitions">Life changes</a></li>
+        <li style="--x:19.5%;--y:69.6%;--i:3;--w:3.9%"><a class="thing" href="#curiosities" aria-label="Sand tray therapy" data-q="What do you do with a tray of sand?" data-a="Sand tray therapy"><img src="../img/chair.webp" alt="" width="355" height="700"></a></li>
+        <li style="--x:19.5%;--y:79%;--i:4"><a class="tag" style="--r:2deg" href="#curiosities" data-q="Could eight weeks make my brain quieter?" data-a="Mindfulness skills group">The group</a></li>
+
+        <li style="--x:50%;--y:50%;--i:2;--w:13%"><a class="thing" href="#sarah" aria-label="Sarah Freeze, owner" data-q="Whose practice is this?" data-a="Sarah Freeze, LCSW, owner"><img src="../img/snuffbox.webp" alt="" width="800" height="333"></a></li>
+        <li style="--x:50%;--y:58.5%;--i:3;--w:17%"><a class="tag" style="--r:1.5deg" href="#sarah" data-q="Whose practice is this?" data-a="Sarah Freeze, LCSW, owner">Sarah Freeze</a></li>
+        <li style="--x:50%;--y:66.5%;--i:4;--w:17%"><a class="tag" style="--r:-1.5deg" href="#visit" data-q="Where is this place?" data-a="4704 Harlan St, Denver">Visit</a></li>
+
+        <li style="--x:80%;--y:41.5%;--i:1"><a class="tag" style="--r:1.5deg" href="#curiosities" data-q="Was it bad enough to count as trauma?" data-a="Trauma and PTSD">Trauma</a></li>
+        <li style="--x:80%;--y:51%;--i:2"><a class="tag" style="--r:-2deg" href="#curiosities" data-q="What is EMDR, really?" data-a="EMDR therapy">EMDR</a></li>
+        <li style="--x:80%;--y:60.3%;--i:3;--w:5.4%"><a class="thing" href="#curiosities" aria-label="EMDR intensives" data-q="Could I do the work in a few days?" data-a="EMDR intensives"><img src="../img/thimble.webp" alt="" width="471" height="600"></a></li>
+        <li style="--x:80%;--y:69.6%;--i:4"><a class="tag" style="--r:1deg" href="#curiosities" data-q="Could I do the work in a few days?" data-a="EMDR intensives">Intensives</a></li>
+        <li style="--x:80%;--y:79%;--i:5"><a class="tag" style="--r:-1.5deg" href="#visit" data-q="Do you take my insurance?" data-a="Fees and insurance">Insurance</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="index" id="curiosities">
+  <div class="wrap">
+    <div class="index-head">
+      <h2>The curiosities</h2>
+      <p>Most people don&rsquo;t walk in with a diagnosis. They walk in with a question they&rsquo;ve been turning over for a while. Here are the ones we hear most.</p>
+    </div>
+    <a class="row" href="#lora"><span class="mono">01</span><span class="q">Why can&rsquo;t I relax when everything is fine?</span><span class="a"><b>Therapy with Lora Hope</b>For women whose lives look put-together from the outside.</span></a>
+    <a class="row" href="#"><span class="mono">02</span><span class="q">Why is good never good enough?</span><span class="a"><b>Perfectionism</b>When the standard keeps moving and so do you.</span></a>
+    <a class="row" href="#"><span class="mono">03</span><span class="q">Who am I after the divorce?</span><span class="a"><b>Life transitions</b>Divorce, a new career, menopause, the last kid leaving home.</span></a>
+    <a class="row" href="#"><span class="mono">04</span><span class="q">Was it bad enough to count as trauma?</span><span class="a"><b>Trauma and PTSD</b>If you are still carrying it, it counts.</span></a>
+    <a class="row" href="#"><span class="mono">05</span><span class="q">What is EMDR, really?</span><span class="a"><b>EMDR therapy</b>A way to work through a memory without retelling every detail of it.</span></a>
+    <a class="row" href="#"><span class="mono">06</span><span class="q">Could I do the work in a few days?</span><span class="a"><b>EMDR intensives</b>Consecutive days of EMDR, alongside your regular therapist.</span></a>
+    <a class="row" href="#"><span class="mono">07</span><span class="q">What do you do with a tray of sand?</span><span class="a"><b>Sand tray therapy</b>You build a scene with miniatures. It often says what words can&rsquo;t reach.</span></a>
+    <a class="row" href="#visit"><span class="mono">08</span><span class="q">Do you take my insurance?</span><span class="a"><b>Fees and insurance</b>Kaiser, UnitedHealthcare, Colorado Medicaid, and several more.</span></a>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <div class="person flip" id="sarah">
+      <div>
+        <span class="mono status">Owner and clinical director</span>
+        <h2>Sarah Freeze</h2>
+        <p class="lede">Curio is my practice. For years it went by my name.</p>
+        <p>I renamed it when it stopped being only me. I specialize in EMDR and in adults who were abused or neglected as children, and I supervise the clinical work here.</p>
+        <p>My weekly practice is full right now. I still offer EMDR intensives, and I brought on Lora Hope so the door could stay open.</p>
+        <a class="cta" href="#curiosities">Ask about an intensive</a>
+      </div>
+      <figure class="frame r"><img src="../img/sarah.jpg" alt="Sarah Freeze, owner of Curio, smiling outdoors." width="900" height="900" loading="lazy"><figcaption>Sarah Freeze, LCSW</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="who two" id="lora">
+  <img class="snuff" src="../img/snuffbox.webp" alt="" aria-hidden="true" width="800" height="333" loading="lazy">
+  <div class="wrap">
+    <div class="person">
+      <figure class="frame"><img src="../img/lora.jpg" alt="Lora Hope, a therapist at Curio in Denver, smiling outdoors." width="900" height="900" loading="lazy"><figcaption>Lora Hope, LSW</figcaption></figure>
+      <div>
+        <span class="mono status">Associate therapist &middot; Taking new clients</span>
+        <h2>Lora Hope</h2>
+        <p class="lede">Lora works with women whose lives look put-together from the outside and feel like too much from the inside.</p>
+        <p>Many of them find her in the middle of a change: a divorce, a new career, menopause, the last kid leaving home. The work is closing the distance between &ldquo;everything&rsquo;s fine&rdquo; and what is really going on underneath.</p>
+        <dl class="facts">
+          <div><dt class="mono">Sessions</dt><dd>$130 for 45 minutes, $170 for 60</dd></div>
+          <div><dt class="mono">Insurance</dt><dd>Kaiser, UnitedHealthcare, Oxford, Optum, Oscar, Surest, UMR, and Colorado Medicaid</dd></div>
+          <div><dt class="mono">Where</dt><dd>4704 Harlan St, Suite 440, Denver. For clients in Colorado.</dd></div>
+        </dl>
+        <a class="cta" href="#visit">Book a 15-minute call with Lora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <figure>
+      <blockquote>The quest for certainty blocks the search for meaning.</blockquote>
+      <cite class="mono">Erich Fromm</cite>
+    </figure>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="visit-grid">
+      <h2>Come see what&rsquo;s in here.</h2>
+      <div>
+        <p>4704 Harlan St, Suite 440<br>Denver, CO 80212</p>
+        <p><a href="tel:+17204651253">(720) 465-1253</a></p>
+        <p><a class="cta" href="#">Book a 15-minute call with Lora</a></p>
+      </div>
+    </div>
+    <div class="foot">
+      <p>Curio is owned and directed by Sarah Freeze, LCSW.</p>
+      <p>Clinicians: Sarah&rsquo;s EMDR consultation and training are at <a href="../../sarah-freeze/">sarahfreezelcsw.com</a>.</p>
+      <p class="mono">Cabinet, France, c. 1690. Cleveland Museum of Art, Open Access.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+(function(){
+  var hero=document.querySelector('.hero'), stage=document.getElementById('stage'), btn=document.getElementById('opener'),
+      btnText=document.getElementById('opener-text'), q=document.getElementById('asking-q'), a=document.getElementById('asking-a');
+  var restQ=q.textContent, restA=a.textContent;
+  function set(open){
+    hero.classList.toggle('is-open',open);
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btnText.textContent=open?'Close the cabinet':'Open the cabinet';
+  }
+  function toggle(){ set(!hero.classList.contains('is-open')); }
+  btn.addEventListener('click',toggle);
+  stage.addEventListener('click',function(e){ if(!e.target.closest('a')) toggle(); });
+  document.querySelectorAll('.shelves a').forEach(function(el){
+    function show(){ q.textContent=el.getAttribute('data-q'); a.textContent=el.getAttribute('data-a'); }
+    function rest(){ q.textContent=restQ; a.textContent=restA; }
+    el.addEventListener('mouseenter',show); el.addEventListener('focus',show);
+    el.addEventListener('mouseleave',rest); el.addEventListener('blur',rest);
+  });
+  if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches && window.matchMedia('(pointer:fine)').matches){
+    hero.addEventListener('mousemove',function(e){
+      var r=hero.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      hero.style.setProperty('--px',(x*-26)+'px'); hero.style.setProperty('--py',(y*-14)+'px');
+      hero.style.setProperty('--cx',(x*10)+'px'); hero.style.setProperty('--cy',(y*6)+'px');
+    });
+  }
+})();
+</script>
+</body>
+</html>

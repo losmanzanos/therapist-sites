@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<!-- Preview build for sarahfreezelcsw.com (consultation and training). Not the live site. -->
+<title>Sarah Freeze, LCSW | EMDR Consultation and Training for Therapists</title>
+<meta name="description" content="Sarah Freeze, LCSW, is an Evergreen-approved EMDR consultant and PESI presenter. Online consultation groups, individual consultation, practice days, and training for clinical teams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cotton:#f4efe3;--ink:#121934;--indigo:#1f2f6b;--madder:#c8412b;--peach:#f2a36e;--lilac:#b9a4dc;
+  --sans:'Archivo',Helvetica,Arial,sans-serif;--mono:'Azeret Mono','Courier New',monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cotton);color:var(--ink);font-family:var(--sans);font-size:19px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
+a:hover{color:var(--madder)}
+.wide{font-stretch:125%;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:.92}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(18px,3.4vw,48px)}
+
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 32px;padding:22px 0;align-items:center}
+.bar nav{display:flex;flex-wrap:wrap;gap:8px 26px}
+.bar a{text-decoration:none;padding:6px 0}
+.bar a:hover{text-decoration:underline}
+
+/* ---------- loom ---------- */
+.loom{position:relative;aspect-ratio:7/4;touch-action:pan-y;user-select:none}
+.sw{position:absolute;background-size:cover;background-position:center;cursor:grab;box-shadow:0 0 0 1px rgba(18,25,52,.25);transition:box-shadow .2s ease, transform .2s ease;will-change:left,top}
+.sw:hover{box-shadow:0 0 0 2px var(--ink), 10px 10px 0 rgba(18,25,52,.9)}
+.sw.hop{transition:left .45s cubic-bezier(.2,.8,.2,1), top .45s cubic-bezier(.2,.8,.2,1), box-shadow .2s ease}
+.sw.drag{cursor:grabbing;transition:none;box-shadow:0 0 0 2px var(--ink), 16px 16px 0 rgba(18,25,52,.9)}
+.sw:focus-visible{outline:4px solid var(--madder);outline-offset:3px}
+.s1{left:0;top:8%;width:40%;height:74%;background-image:url(img/weave-indigo.jpg)}
+.s2{left:31%;top:0;width:33%;height:52%;background-image:url(img/weave-red.jpg)}
+.s4{left:60%;top:16%;width:24%;height:80%;background-image:url(img/weave-binakol.jpg)}
+.sw i{position:absolute;left:8px;bottom:8px;font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);background:#fbf8f0;padding:4px 7px 3px;box-shadow:0 2px 4px rgba(18,25,52,.3);transform:rotate(-1.5deg);pointer-events:none}
+.sw.raw{background-size:100% 100%;box-shadow:none;filter:drop-shadow(0 6px 10px rgba(18,25,52,.3))}
+.sw.raw:hover,.sw.raw.drag{box-shadow:none;filter:drop-shadow(12px 12px 0 rgba(18,25,52,.85))}
+.sw.g{box-shadow:none}
+.sw.g:hover,.sw.g.drag{box-shadow:10px 10px 0 rgba(18,25,52,.9)}
+.g1{left:78%;top:2%;width:22%;height:50%;background:var(--lilac)}
+.g2{left:84%;top:50%;width:16%;height:44%;border:2px solid var(--indigo);background:var(--cotton) url(img/lines-weave.svg) 0 0/54px}
+.g3{left:20%;top:58%;width:28%;height:40%;background:#f0672f}
+.g4{left:1%;top:66%;width:17%;height:33%;border:2px solid #f0672f;background:var(--cotton) url(img/lines-fan.svg) 0 0/72px}
+.g5{left:64%;top:0;width:13%;height:24%;border:2px solid #8f74c9;background:var(--cotton) url(img/lines-arcs.svg) 0 0/66px}
+.g6{left:44%;top:46%;width:19%;height:30%;background:var(--indigo)}
+.name{position:absolute;left:3%;bottom:5%;margin:0;z-index:50;pointer-events:none;font-size:clamp(54px,12.6vw,196px);color:var(--cotton);text-shadow:.045em .045em 0 var(--ink), -1px -1px 0 var(--ink), 1px -1px 0 var(--ink), -1px 1px 0 var(--ink)}
+.name span{display:block}
+.name span + span{margin-left:.9em}
+.caption{display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;padding:14px 0 0}
+
+.intro{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px 72px;padding:clamp(44px,6vw,88px) 0 clamp(72px,9vw,130px);align-items:start}
+.intro h1{margin:0;font-stretch:112%;font-weight:800;font-size:clamp(30px,4vw,60px);line-height:1.02;letter-spacing:-.02em}
+.intro p{margin:0 0 18px;max-width:30em}
+.links{display:flex;flex-wrap:wrap;gap:12px 32px;font-weight:700;margin-top:26px}
+
+/* ---------- sections ---------- */
+h2{margin:0;font-size:clamp(27px,4.5vw,66px);padding:.04em .06em .06em 0;overflow-wrap:normal}
+.sec{padding:clamp(72px,9vw,130px) 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:20px 56px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.sec-head p{margin:0;max-width:30em}
+.offer{display:grid;grid-template-columns:104px minmax(0,1fr) 150px 170px;gap:14px 36px;align-items:center;padding:26px 0;border-top:2px solid var(--ink)}
+.offer:last-of-type{border-bottom:2px solid var(--ink)}
+.offer .chip{width:104px;height:104px;background-size:cover;background-position:center;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.offer:hover .chip{transform:rotate(-6deg) scale(1.12)}
+.offer h3{margin:0 0 4px;font-size:27px;font-weight:800;font-stretch:108%;line-height:1.1;letter-spacing:-.01em}
+.offer p{margin:0;max-width:34em}
+.offer .price{font-size:30px;font-weight:900;font-stretch:125%}
+.offer .price small{display:block;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+.offer a{font-weight:700;white-space:nowrap;justify-self:end}
+
+.courses{background:var(--ink);color:var(--cotton);position:relative;overflow:hidden}
+.courses .wrap{position:relative}
+.courses a:hover{color:var(--peach)}
+.course{display:flex;justify-content:space-between;gap:12px 32px;align-items:baseline;padding:22px 0;border-top:1px solid rgba(244,239,227,.45);text-decoration:none;font-size:clamp(21px,2.4vw,34px);font-weight:700;font-stretch:104%;line-height:1.15;letter-spacing:-.01em;transition:padding .3s ease}
+.course:last-child{border-bottom:1px solid rgba(244,239,227,.45)}
+.course:hover{padding-left:20px}
+.course .mono{flex:0 0 auto;font-weight:400}
+.new{display:inline-block;background:var(--peach);color:var(--ink);font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:4px 8px;margin-right:12px;vertical-align:middle}
+
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px 72px;align-items:stretch}
+.split .cloth{min-height:420px;background:url(img/weave-red.jpg) center/cover;box-shadow:14px 14px 0 var(--ink)}
+.split h2{font-size:clamp(30px,4.6vw,70px);margin-bottom:28px}
+.split p{margin:0 0 18px;max-width:31em}
+
+.about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:32px 72px;align-items:start}
+.about figure{margin:0;position:relative}
+.about figure img{position:relative;z-index:1;width:100%;box-shadow:-14px 14px 0 var(--lilac)}
+.me{margin:0 0 26px;display:flex;align-items:flex-end;gap:16px}
+.me img{width:132px;height:132px;object-fit:cover;box-shadow:-8px 8px 0 var(--lilac)}
+.prints{position:relative;padding-bottom:58%}
+.print{margin:0;background:#fbf8f0;padding:10px 10px 0;box-shadow:0 14px 30px rgba(18,25,52,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.print figcaption{padding:10px 2px 12px}
+.about .print img{width:100%;box-shadow:none}
+.print.ny{width:66%;transform:rotate(-3deg)}
+.print.co{position:absolute;right:0;bottom:0;width:64%;transform:rotate(2.5deg)}
+.print:hover{transform:rotate(0) scale(1.03);z-index:2}
+.about .big{font-size:clamp(23px,2.3vw,32px);line-height:1.28;font-weight:500;margin:0 0 22px;max-width:25em}
+.about p{max-width:32em;margin:0 0 18px}
+.creds{list-style:none;margin:32px 0 0;padding:0;max-width:640px}
+.creds li{padding:13px 0;border-top:1px solid var(--ink)}
+.creds li:last-child{border-bottom:1px solid var(--ink)}
+
+.bw{filter:grayscale(1) contrast(1.06);transition:filter .7s ease}
+.bw:hover,.bw:focus{filter:none}
+figure.ph{margin:0;position:relative}
+figure.ph img{width:100%;display:block}
+figure.ph figcaption{padding-top:10px}
+.cities{padding:clamp(80px,10vw,150px) 0}
+.cities-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:20px 72px;align-items:end;margin-bottom:clamp(40px,5vw,72px)}
+.cities-head h2{font-size:clamp(34px,6.6vw,104px)}
+.cities-head p{margin:0;max-width:27em}
+.wall{display:grid;grid-template-columns:minmax(0,30fr) minmax(0,38fr) minmax(0,32fr);gap:clamp(16px,2.4vw,36px);align-items:start}
+.wall > div{display:grid;gap:clamp(16px,2.4vw,36px)}
+.wall .c{margin-top:clamp(40px,7vw,110px)}
+.wall .tile{aspect-ratio:5/2;border:2px solid #f0672f;background:var(--cotton) url(img/lines-fan.svg) 0 0/72px}
+.wall .block{aspect-ratio:3/1;background:var(--lilac)}
+.split .shot{position:relative;align-self:start}
+.split .shot::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:#f0672f}
+.split .shot figure{position:relative}
+.about2{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px 72px;align-items:start}
+.about2 .big{font-size:clamp(24px,2.7vw,40px);line-height:1.2;font-weight:600;letter-spacing:-.01em;margin:0 0 24px;max-width:22em}
+.about2 p{max-width:32em;margin:0 0 18px}
+.about2 .creds{margin-top:0}
+.book{background:var(--peach)}
+.book .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px 72px;align-items:end}
+.book h2{font-size:clamp(30px,4.6vw,70px)}
+.book p{margin:18px 0 0;max-width:28em}
+form{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+label{flex:1 1 220px;display:flex;flex-direction:column;gap:6px}
+input{font:inherit;padding:12px 0;min-height:48px;background:transparent;border:0;border-bottom:3px solid var(--ink);color:var(--ink);border-radius:0}
+input:focus{outline:none;border-bottom-color:var(--madder)}
+button{font:inherit;font-weight:800;min-height:52px;padding:0 26px;background:var(--ink);color:var(--cotton);border:0;cursor:pointer}
+button:hover{background:var(--madder)}
+
+footer{padding:36px 0 56px}
+.foot{display:flex;flex-wrap:wrap;gap:16px 56px;justify-content:space-between;font-size:16px}
+.foot p{margin:0;max-width:30em}
+
+@media (max-width:860px){
+  body{font-size:18px}
+  .bar nav{display:none}
+  .loom{aspect-ratio:5/6}
+  .intro,.sec-head,.split,.about,.about2,.cities-head,.book .wrap{grid-template-columns:1fr}
+  .wall{grid-template-columns:1fr 1fr}
+  .wall .c{grid-column:1/-1;margin-top:0;grid-template-columns:1fr 1fr}
+  .wall .tile{grid-column:1/-1}
+  .split .shot{margin-right:18px}
+  .offer{grid-template-columns:72px minmax(0,1fr)}
+  .offer a{justify-self:start}
+  .offer .chip{width:72px;height:72px}
+  .offer .price,.offer a{grid-column:2}
+  .course{flex-direction:column;gap:6px}
+  .name span + span{margin-left:.3em}
+  .split .cloth{min-height:240px}
+  .prints{max-width:360px}
+  .sw i{display:none}
+}
+@media (max-width:860px) and (orientation:landscape){
+  .loom{aspect-ratio:7/4}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms !important;scroll-behavior:auto !important}}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="bar">
+    <span class="mono">Consultation and training &middot; Denver and online</span>
+    <nav class="mono" aria-label="Main">
+      <a href="#consultation">Consultation</a>
+      <a href="#courses">Courses</a>
+      <a href="#teams">For teams</a>
+      <a href="#about">About</a>
+      <a href="#book">The book</a>
+    </nav>
+  </div>
+
+  <div class="loom" id="loom">
+    <div class="sw g g1" tabindex="0" role="img" aria-label="Lilac block"></div>
+    <div class="sw g g3" tabindex="0" role="img" aria-label="Orange block"></div>
+    <div class="sw g g4" tabindex="0" role="img" aria-label="Orange line drawing"></div>
+    <div class="sw g g2" tabindex="0" role="img" aria-label="Indigo line drawing"></div>
+    <div class="sw s1" tabindex="0" role="img" aria-label="Indigo and white woven coverlet from 1825"><i>Coverlet, 1825</i></div>
+    <div class="sw s2" tabindex="0" role="img" aria-label="Red and white woven coverlet from 1852"><i>Coverlet, 1852</i></div>
+    <div class="sw s4" tabindex="0" role="img" aria-label="Black and white binakol weaving with red stripes"><i>Binakol, c. 1900</i></div>
+    <div class="sw g g5" tabindex="0" role="img" aria-label="Lilac line drawing"></div>
+    <div class="sw g g6" tabindex="0" role="img" aria-label="Indigo block"></div>
+    <p class="name wide" aria-hidden="true"><span>Sarah</span><span>Freeze</span></p>
+  </div>
+  <div class="caption mono">
+    <span>Sarah Freeze, LCSW</span>
+    <span id="loom-hint">Go ahead, move the swatches around</span>
+  </div>
+
+  <div class="intro">
+    <h1>EMDR consultation and training for therapists who treat complex trauma.</h1>
+    <div>
+      <figure class="me"><img src="img/sarah.jpg" alt="Sarah Freeze, LCSW, smiling outdoors." width="900" height="900"><figcaption class="mono">Sarah Freeze, LCSW</figcaption></figure>
+      <p>I&rsquo;m an Evergreen-approved EMDR consultant and a PESI presenter. Most of my own clients are adults who were abused or neglected as children.</p>
+      <p>I can help you run the standard protocol well. I can also help when a case needs more than the standard protocol.</p>
+      <div class="links"><a href="#consultation">See consultation options</a><a href="#teams">Bring me to your team</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="wrap" id="consultation" style="padding-bottom:clamp(72px,9vw,130px)">
+  <div class="sec-head">
+    <h2 class="wide">Consultation</h2>
+    <p>Every group meets on Zoom, so you can join from any state. If you trained through PESI and want Evergreen certification, start with the first one.</p>
+  </div>
+
+  <div class="offer">
+    <div class="chip" style="border:2px solid var(--indigo);background:var(--cotton) url(img/lines-weave.svg) 0 0/40px"></div>
+    <div><h3>Evergreen certification group</h3><p>Six monthly meetings, Tuesdays 3 to 5 pm Mountain. Covers the 10 consultation hours Evergreen requires.</p></div>
+    <div class="price">$480</div>
+    <a href="mailto:sf@sarahfreezelcsw.com">Reserve a seat</a>
+  </div>
+  <div class="offer">
+    <div class="chip" style="background:#f0672f"></div>
+    <div><h3>Individual consultation</h3><p>Forty-five minutes, one on one, on the case that&rsquo;s keeping you up.</p></div>
+    <div class="price">$150</div>
+    <a href="mailto:sf@sarahfreezelcsw.com">Book a time</a>
+  </div>
+  <div class="offer">
+    <div class="chip" style="border:2px solid #8f74c9;background:var(--cotton) url(img/lines-arcs.svg) 0 0/52px"></div>
+    <div><h3>Trauma consultation group</h3><p>Monthly, ongoing, and open to every modality. EMDR, psychodynamic, and sand tray thinking all come into the room.</p></div>
+    <div class="price">$75<small>a session</small></div>
+    <a href="mailto:sf@sarahfreezelcsw.com">Join the group</a>
+  </div>
+  <div class="offer">
+    <div class="chip" style="background:var(--lilac)"></div>
+    <div><h3>EMDR live practice day</h3><p>A day of role-play with feedback as you go. Counts for the 6 clinical practice hours.</p></div>
+    <div class="price"><small>Next date to come</small></div>
+    <a href="mailto:sf@sarahfreezelcsw.com">Get on the list</a>
+  </div>
+</section>
+
+<section class="sec courses" id="courses">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="wide">Courses</h2>
+      <p>I teach these through PESI, which handles registration and CE credit.</p>
+    </div>
+    <a class="course" href="https://www.pesi.com/item/rejection-trauma-workshop-179648"><span><span class="new">New</span>Rejection Trauma Workshop</span><span class="mono">About 6 hours</span></a>
+    <a class="course" href="https://www.pesi.com/speaker/sarah-freeze-2083437/"><span>EMDR for Adult Survivors of Childhood Abuse and Neglect</span><span class="mono">Digital seminar</span></a>
+    <a class="course" href="https://www.pesi.com/speaker/sarah-freeze-2083437/"><span>EMDR for Complex Trauma</span><span class="mono">Online course</span></a>
+    <a class="course" href="https://www.pesi.com/item/virtual-emdr-safe-simple-straightforward-approaches-adapting-emdr-telehealth-134578"><span>Virtual EMDR: Adapting EMDR to Telehealth</span><span class="mono">Digital seminar</span></a>
+    <a class="course" href="https://www.pesi.com/speaker/sarah-freeze-2083437/"><span>12-Month Online EMDR Certification Course</span><span class="mono">Online course</span></a>
+    <a class="course" href="https://www.pesi.com/speaker/sarah-freeze-2083437/"><span>See all nine at PESI</span><span class="mono">pesi.com</span></a>
+  </div>
+</section>
+
+<section class="cities wrap" id="cities">
+  <div class="cities-head">
+    <h2 class="wide">New York, then Denver</h2>
+    <p>I trained in New York and I practice in Denver. Consultation happens wherever you are.</p>
+  </div>
+  <div class="wall">
+    <div>
+      <figure class="ph"><img class="bw" tabindex="0" src="img/ny-flatiron.jpg" alt="The Flatiron Building in Manhattan, seen from the street." width="704" height="1024" loading="lazy"><figcaption class="mono">Flatiron Building, New York</figcaption></figure>
+      <div class="block" aria-hidden="true"></div>
+    </div>
+    <div>
+      <figure class="ph"><img class="bw" tabindex="0" src="img/ny-bridge.jpg" alt="The Manhattan skyline through the cables of the Brooklyn Bridge." width="1024" height="768" loading="lazy"><figcaption class="mono">Brooklyn Bridge, New York</figcaption></figure>
+      <figure class="ph"><img class="bw" tabindex="0" src="img/denver-station.jpg" alt="Union Station in Denver at dusk with its neon sign lit." width="1024" height="615" loading="lazy"><figcaption class="mono">Union Station, Denver</figcaption></figure>
+    </div>
+    <div class="c">
+      <div class="tile" aria-hidden="true"></div>
+      <figure class="ph"><img class="bw" tabindex="0" src="img/ny-soho.jpg" alt="Fire escapes on cast-iron buildings in SoHo." width="1024" height="807" loading="lazy"><figcaption class="mono">SoHo, New York</figcaption></figure>
+      <figure class="ph"><img class="bw" tabindex="0" src="img/denver-canopy.jpg" alt="The white train canopy behind Denver&rsquo;s Union Station." width="1024" height="768" loading="lazy"><figcaption class="mono">Union Station platforms, Denver</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="teams" style="padding-top:0">
+  <div class="split">
+    <div class="shot"><figure class="ph"><img class="bw" tabindex="0" src="img/denver-museum.jpg" alt="The angular Hamilton Building of the Denver Art Museum at dusk." width="1024" height="744" loading="lazy"><figcaption class="mono">Denver Art Museum</figcaption></figure></div>
+    <div>
+      <h2 class="wide">Training for your team</h2>
+      <p>I train agencies and group practices on EMDR, attachment trauma, and working with adults who were abused or neglected as children.</p>
+      <p>Tell me about your clinicians and what they&rsquo;re running into. I&rsquo;ll write back with what a day or a series could look like.</p>
+      <div class="links"><a href="mailto:sf@sarahfreezelcsw.com">Ask about a training</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="about" style="padding-bottom:clamp(72px,9vw,130px)">
+  <div class="about2">
+    <div>
+      <p class="big">I trained in EMDR in 2018 and was mentored by Arielle Schwartz. Since then I&rsquo;ve brought parts work, the body, and psychodynamic thinking into it.</p>
+      <p>In consultation I pay attention to the parts of therapy that are harder to name, like what you feel toward a client and what that might be telling you.</p>
+    </div>
+    <ul class="creds">
+      <li>Evergreen Certified EMDR Clinician and approved consultant</li>
+      <li>PESI presenter, nine programs</li>
+      <li>LCSW in Colorado and New York</li>
+      <li>Adult Psychodynamic Training Program, Denver Institute for Psychoanalysis, 2024</li>
+      <li>MSW, Silberman School of Social Work at Hunter College</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec book" id="book">
+  <div class="wrap">
+    <div>
+      <h2 class="wide">A book is in the works</h2>
+      <p>Leave your email and I&rsquo;ll write when there is something to read. A few notes a year.</p>
+    </div>
+    <form onsubmit="return false">
+      <label class="mono">Email address<input type="email" name="email" autocomplete="email"></label>
+      <button type="submit">Keep me posted</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p>Sarah Freeze, LCSW &middot; Denver, Colorado<br><a href="mailto:sf@sarahfreezelcsw.com">sf@sarahfreezelcsw.com</a></p>
+    <p>Looking for a therapist? My clinical practice is now <a href="../curio/">Curio</a>, in northwest Denver.</p>
+    <p class="mono">Textiles: Cleveland Museum of Art, Open Access. City photographs: Carol M. Highsmith, Library of Congress.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var loom=document.getElementById('loom'), z=10, active=null, sx, sy, ox, oy;
+  var coarse=window.matchMedia('(pointer:coarse)').matches;
+  if(coarse) document.getElementById('loom-hint').textContent='Tap a swatch to shuffle the stack';
+  loom.querySelectorAll('.sw').forEach(function(el){
+    el.addEventListener('pointerdown',function(e){
+      if(e.pointerType==='touch') return;
+      active=el; el.setPointerCapture(e.pointerId); el.classList.add('drag'); el.style.zIndex=++z;
+      var r=el.getBoundingClientRect(), p=loom.getBoundingClientRect();
+      sx=e.clientX; sy=e.clientY; ox=r.left-p.left; oy=r.top-p.top;
+    });
+    el.addEventListener('pointermove',function(e){
+      if(active!==el) return;
+      var p=loom.getBoundingClientRect();
+      var nx=Math.max(-el.offsetWidth*.5,Math.min(p.width-el.offsetWidth*.5,ox+e.clientX-sx));
+      var ny=Math.max(-el.offsetHeight*.3,Math.min(p.height-el.offsetHeight*.6,oy+e.clientY-sy));
+      el.style.left=(nx/p.width*100)+'%'; el.style.top=(ny/p.height*100)+'%';
+    });
+    function end(){ if(active===el){ active=null; el.classList.remove('drag'); } }
+    el.addEventListener('pointerup',end); el.addEventListener('pointercancel',end);
+    el.addEventListener('click',function(){
+      if(!coarse) return;
+      var p=loom.getBoundingClientRect();
+      el.classList.add('hop'); el.style.zIndex=++z;
+      var nx=Math.max(0,Math.min(p.width-el.offsetWidth,el.offsetLeft+(Math.random()-.5)*p.width*.16));
+      var ny=Math.max(0,Math.min(p.height-el.offsetHeight,el.offsetTop+(Math.random()-.5)*p.height*.14));
+      el.style.left=(nx/p.width*100)+'%'; el.style.top=(ny/p.height*100)+'%';
+    });
+    el.addEventListener('keydown',function(e){
+      var d={ArrowLeft:[-2,0],ArrowRight:[2,0],ArrowUp:[0,-2],ArrowDown:[0,2]}[e.key]; if(!d) return;
+      e.preventDefault(); el.style.zIndex=++z;
+      var p=loom.getBoundingClientRect();
+      el.style.left=((el.offsetLeft/p.width*100)+d[0])+'%'; el.style.top=((el.offsetTop/p.height*100)+d[1])+'%';
+    });
+  });
+})();
+</script>
+</body>
+</html>
