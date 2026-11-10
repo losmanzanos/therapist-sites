@@ -44,10 +44,13 @@
       <p class="lede">Probably. Curio is in network with most of the large plans in Colorado, and we can give you a superbill for the rest.</p>
       <a class="btn" href="mailto:lora@sarahfreezelcsw.com">Book a 15-minute call with Lora</a>
     </div>
-    <div class="catalog" id="catalog">
-  <p class="mono cat-ask">Pull your plan&rsquo;s card</p>
-  <div class="cat-tabs"><button type="button" data-in="1">Kaiser</button><button type="button" data-in="1">UnitedHealthcare</button><button type="button" data-in="1">Oxford</button><button type="button" data-in="1">Optum</button><button type="button" data-in="1">Oscar</button><button type="button" data-in="1">Surest</button><button type="button" data-in="1">UMR</button><button type="button" data-in="1">UHC Student Resources</button><button type="button" data-in="1">Colorado Medicaid</button><button type="button" data-in="0">Aetna</button><button type="button" data-in="0">Cigna</button><button type="button" data-in="0">Anthem</button><button type="button" data-in="0">Something else</button></div>
-  <div class="cat-card" role="status"><span class="cat-name"></span><span class="stamp"></span><span class="cat-say">Pick a plan above.</span></div>
+    <div class="plans" id="plans">
+  <div class="pl-cols">
+    <div><p class="mono pl-h">In network</p><ul><li>Kaiser</li><li>UnitedHealthcare</li><li>Oxford</li><li>Optum</li><li>Oscar</li><li>Surest</li><li>UMR</li><li>UHC Student Resources</li><li>Colorado Medicaid</li></ul></div>
+    <div><p class="mono pl-h">Out of network</p><ul><li>Aetna</li><li>Cigna</li><li>Anthem</li><li>Any other plan</li></ul><p class="pl-note">You pay the session fee and get a superbill to send your insurer.</p></div>
+  </div>
+  <label class="pl-find"><span class="mono">Look up your plan</span><input type="text" autocomplete="off" spellcheck="false" placeholder="Start typing"></label>
+  <p class="pl-say" role="status" aria-live="polite"></p>
 </div>
   </div>
 </header>

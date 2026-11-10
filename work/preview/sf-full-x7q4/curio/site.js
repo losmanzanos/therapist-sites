@@ -147,12 +147,14 @@
     });
   }
 
-  // calendar
-  var cal=document.getElementById('cal');
-  if(cal){
-    var pages=[].slice.call(cal.querySelectorAll('.cal-pg')).reverse();
-    pages.forEach(function(pg,i){ if(i<pages.length-1) act(pg,function(){ pg.classList.add('torn'); }); pg.tabIndex=0; });
-    cal.querySelector('.cal-reset').addEventListener('click',function(){ pages.forEach(function(pg){ pg.classList.remove('torn'); }); });
+  // almanac
+  var alm=document.getElementById('alm');
+  if(alm){
+    var SAY=['A consultation, a call with your therapist, and dates you pick together.','You and Sarah map out what you&rsquo;ll work on, and how you&rsquo;ll know when to stop.','Most of the processing happens here, with breaks built in.','Bringing it to a close. Time to settle before you leave, and a plan for going home.','Home, with time set aside to rest, and your own therapist waiting on the other side.'];
+    var tabs=[].slice.call(alm.querySelectorAll('.alm-days button')), say=alm.querySelector('.alm-say'), book=alm.querySelector('.alm-book'), ai=0;
+    function show(i){ ai=(i+tabs.length)%tabs.length; tabs.forEach(function(t,j){ t.setAttribute('aria-selected',j===ai?'true':'false'); }); say.innerHTML=SAY[ai]; book.classList.remove('turn'); void book.offsetWidth; book.classList.add('turn'); }
+    tabs.forEach(function(t,j){ t.addEventListener('click',function(){ show(j); }); });
+    book.addEventListener('click',function(){ show(ai+1); });
   }
 
   // sand tray
@@ -187,29 +189,47 @@
     bgo.addEventListener('click',function(){ if(on){ stop('You can stop whenever you like.'); return; } on=true; cnt2=0; bgo.textContent='Stop'; cycle(); });
   }
 
-  // flip
-  var fl=document.getElementById('flip');
-  if(fl) fl.querySelector('.flip-in').addEventListener('click',function(){ fl.classList.toggle('over'); });
-
-  // drawer
-  var dr=document.getElementById('drawer');
-  if(dr){
-    var cards=[].slice.call(dr.querySelectorAll('.dr-card')), front=dr.querySelector('.dr-front'), top=0;
-    function lay(){ cards.forEach(function(c,i){ var k=(i-top+cards.length)%cards.length; c.style.zIndex=10-k; c.style.setProperty('--k',k); c.classList.toggle('top',k===0); }); }
-    lay();
-    front.addEventListener('click',function(){ var o=dr.classList.toggle('open'); front.setAttribute('aria-expanded',o?'true':'false'); });
-    cards.forEach(function(c){ c.addEventListener('click',function(){ if(!dr.classList.contains('open')) return; top=(top+1)%cards.length; lay(); }); });
+  // union case
+  var uc=document.getElementById('ucase');
+  if(uc){
+    var ucs=uc.querySelector('.uc-stage');
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(es,o){ es.forEach(function(e){ if(e.isIntersecting){ setTimeout(function(){ uc.classList.add('open'); },250); o.disconnect(); } }); },{threshold:.45}).observe(uc); } else uc.classList.add('open');
+    ucs.addEventListener('pointermove',function(e){ if(e.pointerType!=='mouse'||!uc.classList.contains('open')) return; var r=ucs.getBoundingClientRect(), f=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width)); uc.classList.add('held'); uc.style.setProperty('--lid',(-44-f*22).toFixed(1)+'deg'); });
+    ucs.addEventListener('pointerleave',function(){ uc.style.removeProperty('--lid'); });
   }
 
-  // insurance catalog
-  var cat=document.getElementById('catalog');
-  if(cat){
-    var nm=cat.querySelector('.cat-name'), st=cat.querySelector('.stamp'), sy=cat.querySelector('.cat-say');
-    cat.querySelectorAll('.cat-tabs button').forEach(function(b){ b.addEventListener('click',function(){
-      cat.querySelectorAll('.cat-tabs button').forEach(function(x){ x.setAttribute('aria-pressed','false'); }); b.setAttribute('aria-pressed','true');
-      var yes=b.getAttribute('data-in')==='1'; nm.textContent=b.textContent;
-      st.className='stamp'; void st.offsetWidth; st.textContent=yes?'In network':'Superbill'; st.classList.add('on',yes?'yes':'maybe');
-      sy.textContent=yes?'Curio is in network with this plan. Your cost depends on your deductible and copay, and the practice can check your benefits before the first session.':'Curio isn’t in network with this plan, but you may still get money back. The practice gives you a superbill to send in for out-of-network reimbursement. The questions to ask your insurer are below.';
-    }); });
+  // card case
+  var ccw=document.getElementById('cardcase');
+  if(ccw){
+    var cc=ccw.querySelector('.cc'), cds=[].slice.call(cc.querySelectorAll('.cc-card')), ci=-1, busy=false;
+    cds.forEach(function(c,i){ c.style.zIndex=1+i; c.setAttribute('aria-hidden','true'); });
+    function take(){
+      if(busy) return; busy=true;
+      var prev=ci>=0?cds[ci]:null;
+      if(prev){ prev.classList.add('gone'); setTimeout(function(){ prev.classList.remove('out','up','gone'); prev.setAttribute('aria-hidden','true'); },320); }
+      cc.classList.add('open'); ci=(ci+1)%cds.length; var c=cds[ci];
+      setTimeout(function(){ c.classList.add('up'); c.removeAttribute('aria-hidden'); setTimeout(function(){ c.classList.add('out'); busy=false; },420); }, prev?240:420);
+    }
+    cc.addEventListener('click',take);
+  }
+
+  // plan lookup
+  var pl=document.getElementById('plans');
+  if(pl){
+    var inp=pl.querySelector('input'), plsay=pl.querySelector('.pl-say'), lis=[].slice.call(pl.querySelectorAll('li'));
+    var IN=[].slice.call(pl.querySelectorAll('.pl-cols > div:first-child li')).map(function(l){ return l.textContent; });
+    function norm(t){ return t.toLowerCase().replace(/[^a-z]/g,''); }
+    var ALIAS={uhc:'UnitedHealthcare',united:'UnitedHealthcare',unitedhealth:'UnitedHealthcare',medicaid:'Colorado Medicaid',healthfirst:'Colorado Medicaid',kp:'Kaiser',kaiserpermanente:'Kaiser',bcbs:'Anthem',bluecross:'Anthem',anthembluecross:'Anthem'};
+    inp.addEventListener('input',function(){
+      var q=norm(inp.value); pl.classList.toggle('looking',q.length>0);
+      lis.forEach(function(l){ l.classList.remove('hit'); });
+      if(!q){ plsay.textContent=''; return; }
+      var name=null;
+      Object.keys(ALIAS).forEach(function(k){ if(!name && q.length>=2 && k.indexOf(q)===0) name=ALIAS[k]; });
+      lis.forEach(function(l){ var n=norm(l.textContent); if(!name && q.length>=2 && n.indexOf(q)===0) name=l.textContent; });
+      lis.forEach(function(l){ if(l.textContent===name) l.classList.add('hit'); });
+      if(!name || name==='Any other plan'){ plsay.textContent=q.length<3?'':'Not on the list, so Curio is out of network for that one. You pay the session fee and get a superbill, and many plans pay some of it back.'; if(q.length>=3) lis[lis.length-1].classList.add('hit'); return; }
+      plsay.textContent = IN.indexOf(name)>=0 ? name+' is in network. You pay your usual copay or coinsurance, and the office can check your benefits before your first session.' : name+' is out of network. You pay the session fee and get a superbill to send in, and many plans pay some of it back.';
+    });
   }
 })();
