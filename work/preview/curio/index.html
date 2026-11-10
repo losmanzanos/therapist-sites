@@ -151,6 +151,12 @@ figure{margin:0}
 .foot{margin-top:clamp(56px,7vw,100px);padding-top:20px;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:10px 40px;justify-content:space-between;font-size:16px}
 .foot p{margin:0;max-width:none}
 
+@media (min-width:901px){
+  .hero-grid{padding-top:84px}
+}
+@media (min-width:901px) and (max-height:840px){
+  .sign{--t:clamp(44px,4.5vw,64px);margin-bottom:22px}
+}
 @media (min-width:901px) and (max-width:1240px){
   .pitch{max-width:330px}
   .pitch h1{font-size:clamp(24px,2.5vw,30px)}
