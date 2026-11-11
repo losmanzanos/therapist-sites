@@ -148,9 +148,11 @@
   var list=document.querySelector('.courses');
   if(list && window.matchMedia('(hover:hover)').matches){
     var tile=document.createElement('div'); tile.className='ctile'; tile.setAttribute('aria-hidden','true'); document.body.appendChild(tile);
-    var TC=['#c8412b','#1f2f6b','#f0672f','#b9a4dc','#121934','#f2a36e','#1f2f6b'];
+    var TC=(getComputedStyle(document.documentElement).getPropertyValue('--tiles')||'').trim().split(/\s+/).filter(Boolean);
+    if(!TC.length) TC=['#c8412b','#1f2f6b','#f0672f','#b9a4dc','#121934','#f2a36e','#1f2f6b'];
+    function lum(h){ h=h.replace('#',''); var r=parseInt(h.substr(0,2),16),g=parseInt(h.substr(2,2),16),b=parseInt(h.substr(4,2),16); return (r*299+g*587+b*114)/1000; }
     list.querySelectorAll('.course').forEach(function(a,i){
-      a.addEventListener('mouseenter',function(){ tile.style.background=TC[i%TC.length]; tile.style.color=(TC[i%TC.length]==='#b9a4dc'||TC[i%TC.length]==='#f2a36e')?'#121934':'#f4efe3'; tile.textContent=(a.querySelector('.mono')||{}).textContent||''; tile.classList.add('on'); });
+      a.addEventListener('mouseenter',function(){ var c=TC[i%TC.length]; tile.style.background=c; tile.style.color=lum(c)>150?'#141414':'#f4f4f1'; tile.textContent=(a.querySelector('.mono')||{}).textContent||''; tile.classList.add('on'); });
       a.addEventListener('mouseleave',function(){ tile.classList.remove('on'); });
       a.addEventListener('mousemove',function(e){ tile.style.left=(e.clientX+110)+'px'; tile.style.top=e.clientY+'px'; });
     });
@@ -164,39 +166,4 @@
   document.querySelectorAll('.tab').forEach(function(t){
     t.addEventListener('click',function(){ setTimeout(function(){ t.classList.add('torn'); },60); });
   });
-})();
-
-(function(){
-  // home: tap to see why something is there (hover does it on a mouse)
-  var nb=document.getElementById('notes');
-  if(nb){ var ps=[].slice.call(nb.querySelectorAll('.piece'));
-    var out=document.querySelector('.pn-out');
-    ps.forEach(function(p){ p.addEventListener('click',function(e){ var on=!p.classList.contains('on'); ps.forEach(function(q){ q.classList.remove('on'); }); if(on) p.classList.add('on'); if(out) out.innerHTML=on?p.querySelector('.pn').innerHTML:''; e.stopPropagation(); }); });
-    document.addEventListener('click',function(){ ps.forEach(function(q){ q.classList.remove('on'); }); });
-  }
-  // consultation: which one do I need
-  var wh=document.getElementById('which');
-  if(wh){ var bs=[].slice.call(wh.querySelectorAll('.wh-opts button')), as=[].slice.call(wh.querySelectorAll('.wh-a')), hand=wh.querySelector('.wh-hand');
-    bs.forEach(function(b,i){ b.addEventListener('click',function(){
-      bs.forEach(function(x){ x.setAttribute('aria-selected','false'); }); b.setAttribute('aria-selected','true');
-      as.forEach(function(a){ a.classList.toggle('on',a.getAttribute('data-i')==i); });
-      var hr=hand.getBoundingClientRect(), br=b.getBoundingClientRect(), ox=hr.left+hr.width*.85, oy=hr.top+hr.height*.5;
-      var ang=Math.atan2((br.top+br.height/2)-oy,(br.right)-ox)*180/Math.PI-180;
-      hand.style.setProperty('--rot',Math.max(-60,Math.min(60,ang))+'deg');
-    }); });
-  }
-  // individual: the case in one line becomes an email
-  var nf=document.getElementById('nb');
-  if(nf) nf.addEventListener('submit',function(e){ e.preventDefault(); var t=nf.querySelector('textarea').value.trim();
-    location.href='mailto:sf@sarahfreezelcsw.com?subject='+encodeURIComponent('Individual consultation')+'&body='+encodeURIComponent((t?'The case, in one line: '+t+'\n\n':'')+'A few times that work for me:\n'); });
-  // evergreen: tear the stub and the email opens
-  var tk=document.getElementById('ticket');
-  if(tk) tk.addEventListener('click',function(){ tk.classList.add('torn'); setTimeout(function(){ tk.classList.remove('torn'); },2500); });
-  // courses: go through the deck
-  var dk=document.getElementById('deck');
-  if(dk){ var cs=[].slice.call(dk.querySelectorAll('.dk-card')), top=0;
-    function lay(){ cs.forEach(function(c,i){ var p=(i-top+cs.length)%cs.length; c.style.setProperty('--p',Math.min(p,4)); c.style.opacity=p>4?0:1; c.setAttribute('aria-hidden',p?'true':'false'); }); }
-    lay();
-    dk.querySelector('.dk-next').addEventListener('click',function(){ var c=cs[top]; c.classList.add('gone'); setTimeout(function(){ c.classList.remove('gone'); top=(top+1)%cs.length; lay(); },280); });
-  }
 })();
