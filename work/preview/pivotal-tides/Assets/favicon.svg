@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#f3f0ea"/>
+  
+  <!-- Tide wave shape - elegant, minimal -->
+  <path d="M 30 100 Q 50 80, 70 100 T 110 100 T 150 100 T 190 100 L 190 180 Q 190 190 180 190 L 20 190 Q 10 190 10 180 L 10 100 Q 10 90 20 90 L 30 100" 
+        fill="none" stroke="#3a2e24" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Small accent dot (pivot point) -->
+  <circle cx="100" cy="60" r="4" fill="#b39b88"/>
+</svg>
