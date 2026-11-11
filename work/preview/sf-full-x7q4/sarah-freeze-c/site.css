@@ -563,6 +563,7 @@ button.cbtn{cursor:pointer}
 .c-board.home{max-width:none;aspect-ratio:16/8.2;justify-self:stretch}
 .c-name{position:absolute;left:4%;top:24%;margin:0;z-index:6;font-size:clamp(46px,8.6vw,138px);pointer-events:none;width:92%}
 .c-name .ransom b{pointer-events:none}
+.c-name .rw{display:block;width:max-content;margin:0 0 .08em}
 .hn{position:absolute;left:5%;top:84%;z-index:7;font-size:clamp(20px,2.2vw,32px);color:#c8412b;transform:rotate(-2deg);pointer-events:none}
 .c-board.home .hc{width:13%;left:58%;top:-2%;z-index:2}
 .c-board.home .he{width:15%;left:5%;top:5%;z-index:3}
@@ -620,6 +621,13 @@ button.cbtn{cursor:pointer}
   .courses-c{grid-template-columns:1fr}
   .polas{grid-template-columns:1fr 1fr}
   .polas .p3{grid-column:1/-1;max-width:70%;justify-self:center}
+  .piece .pn{display:none}
+  .pn-out{display:block;min-height:1.2em;margin:4px 0 0;font-size:26px;line-height:1.05;color:#1c1c1c;text-align:center}
+  .c-book form{flex-direction:column;align-items:stretch}
+  .c-book .cbtn{align-self:flex-start}
+  .stk{width:120px;font-size:21px}
+}
+@media (max-width:900px) and (orientation:portrait){
   .c-board.home{aspect-ratio:4/5}
   .c-name{top:30%;font-size:clamp(40px,14vw,90px)}
   .hn{top:82%;left:4%}
@@ -630,15 +638,10 @@ button.cbtn{cursor:pointer}
   .c-board.home .hr,.c-board.home .h3s{display:none}
   .c-board.home .h1s{left:26%;top:6%}
   .c-board.home .h2s{left:76%;top:46%}
-  .c-board.home .hs{left:58%;top:70%;width:108px}
+  .c-board.home .hs{left:60%;top:61%;width:108px}
   .c-name{top:32%}
   .hn{top:91%}
-  .piece .pn{display:none}
-  .pn-out{display:block;min-height:1.2em;margin:4px 0 0;font-size:26px;line-height:1.05;color:#1c1c1c;text-align:center}
   .c-board.home .hs2{display:none}
-  .c-book form{flex-direction:column;align-items:stretch}
-  .c-book .cbtn{align-self:flex-start}
-  .stk{width:120px;font-size:21px}
 }
 @media (max-width:520px){ .card-art{height:140px} .card-p{display:none} }
 @media (max-width:900px){ .ticket{position:relative;top:auto;width:100%;margin-top:40%} .c-board.tix{aspect-ratio:auto;padding-bottom:20px} .wh-hand{width:110px} }
