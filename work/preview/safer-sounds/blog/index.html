@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="/work/preview/safer-sounds/images/favicon.png">
+  <link rel="preload" href="/work/preview/safer-sounds/fonts/CoreBandiFace.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/work/preview/safer-sounds/fonts/MeowScript.woff2" as="font" type="font/woff2" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misophonia Blog | The Safer Sounds Club</title>
+  <meta name="description" content="Why someone&#x27;s breathing gets under your skin, and why misophonia is worse on hard days. Posts by Megan Carlson, a licensed therapist with misophonia.">
+  <meta name="keywords" content="misophonia blog, misophonia articles, misophonia research, misophonia therapy blog, somatic therapy misophonia">
+  <meta property="og:title" content="Misophonia Blog | The Safer Sounds Club">
+  <meta property="og:description" content="Misophonia articles written by a licensed therapist who has it, grounded in research and real clinical experience.">
+  <meta property="og:site_name" content="The Safer Sounds Club">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.safersoundsclub.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Safer Sounds Club: misophonia help and resources, with a drawing of a striped beach chair">
+  <meta property="og:url" content="https://www.safersoundsclub.com/blog">
+  <link rel="canonical" href="https://www.safersoundsclub.com/blog">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.safersoundsclub.com/images/og-image.jpg">
+  <meta name="twitter:image:alt" content="The Safer Sounds Club: misophonia help and resources, with a drawing of a striped beach chair">
+  <meta name="twitter:title" content="Misophonia Blog | The Safer Sounds Club">
+  <meta name="twitter:description" content="Misophonia articles written by a licensed therapist who has it, grounded in research and real clinical experience.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/work/preview/safer-sounds/css/site.css">
+  <style>
+    @font-face {
+      font-family: 'CoreBandiFace';
+      src: url('/work/preview/safer-sounds/fonts/CoreBandiFace.woff2') format('woff2'),
+           url('/work/preview/safer-sounds/fonts/CoreBandiFace.woff') format('woff'),
+           url('/work/preview/safer-sounds/fonts/CoreBandiFace.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'MeowScript';
+      src: url('/work/preview/safer-sounds/fonts/MeowScript.woff2') format('woff2'),
+           url('/work/preview/safer-sounds/fonts/MeowScript.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: block;
+    }
+    html { font-size: 20px;  overflow-x: hidden; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; }
+    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.55;  }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 1; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { color: var(--sage); opacity: 1; }
+    .page-hero { text-align: center; padding: 72px 32px 48px; }
+    .page-hero h1 { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.8rem, 7vw, 5rem); margin-bottom: 12px; }
+    .page-hero p { font-family: 'CoreBandiFace', cursive; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.6; }
+    .full-dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.25); }
+
+    /* ── FEATURED POST ── */
+    .featured-post { max-width: 1100px; margin: 0 auto; padding: 56px 32px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .featured-post-img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f0e9dc; padding: 16px; display: block; }
+    .featured-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 16px; }
+    .featured-post-title { font-family: 'CoreBandiFace', cursive; font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-weight: 700; line-height: 1.35; margin-bottom: 20px; }
+    .featured-post-excerpt { font-size: 0.97rem; line-height: 1.65; opacity: 1; margin-bottom: 28px; }
+    .featured-post-date { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 12px; }
+    .featured-post a { text-decoration: none; color: var(--ink); }
+    .featured-post a:hover .featured-post-title { opacity: 0.7; }
+    @media (max-width: 1024px) {
+      .featured-post { grid-template-columns: 1fr; gap: 24px; padding: 40px 20px 32px; }
+    }
+
+    .blog-grid { max-width: 1100px; margin: 0 auto; padding: 64px 32px 96px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 48px; }
+    .post-card { display: flex; flex-direction: column; }
+    .post-card a { text-decoration: none; color: var(--ink); }
+    .post-thumb { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f0e9dc; padding: 14px; display: block; margin-bottom: 20px; transition: opacity 0.2s; }
+    .post-card:hover .post-thumb { opacity: 0.85; }
+    .post-date { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 8px; }
+    .post-title { font-family: 'CoreBandiFace', cursive; font-size: 1.05rem; font-weight: 700; line-height: 1.45; margin-bottom: 12px; transition: opacity 0.2s; }
+    .post-card:hover .post-title { opacity: 0.7; }
+    .post-excerpt { font-size: 0.9rem; line-height: 1.6; opacity: 1; margin-bottom: 16px; }
+    .read-more { font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; color: var(--sage); opacity: 0.85; transition: opacity 0.2s; }
+    .post-card:hover .read-more { opacity: 1; }
+    footer { text-align: center; padding: 8px 32px 48px; }
+    .footer-disclaimer { font-size: 0.75rem; font-family: 'CoreBandiFace', cursive; opacity: 0.5; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.1em; margin-top: 16px; }
+    .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
+    .footer-links a:hover { opacity: 0.9; }
+    .btn-painted {
+      position: relative; display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; color: var(--ink); font-family: 'CoreBandiFace', cursive;
+      font-size: 0.78rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 20px 56px; cursor: pointer; border: none; background: none;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+    .btn-painted:hover { transform: translateY(-2px); opacity: 0.9; }
+    .paint-bg-img { position: absolute; inset: 0; overflow: visible; transform: scaleX(1.1) scaleY(1.15); }
+    .paint-bg-img img { width: 100%; height: 100%; object-fit: fill; opacity: 0.95; }
+    .btn-label { position: relative; z-index: 2; }
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      .page-hero { padding: 48px 20px 32px; }
+      .blog-grid { display: block; padding: 8px 24px 64px; }
+      .post-card { display: block; padding: 28px 0; border-bottom: 1.5px dashed rgba(26,26,26,0.18); }
+      .post-card:last-child { border-bottom: none; }
+      .post-thumb { display: none; }
+      .post-excerpt { display: none; }
+      .post-date { margin-bottom: 6px; }
+      .post-title { font-size: 1rem; line-height: 1.4; margin-bottom: 10px; }
+      .read-more { font-size: 0.68rem; }
+    }
+  
+    /* ── HAMBURGER NAV ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-direction: column;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    @media (max-width: 1024px) {
+      .nav-toggle { display: flex; }
+      nav { position: relative; flex-wrap: wrap; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1.5px solid rgba(26,26,26,0.15);
+        padding: 20px 24px 24px;
+        flex-direction: column;
+        gap: 18px;
+        z-index: 200;
+        box-shadow: 0 8px 24px rgba(26,26,26,0.06);
+      }
+      nav.open .nav-links { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      footer { padding: 24px 16px 40px; }
+      .footer-links { gap: 12px; font-size: 0.9rem; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 12px 16px; }
+      .nav-links { gap: 12px; }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://www.safersoundsclub.com/blog",
+      "name": "The Safer Sounds Club Blog",
+      "url": "https://www.safersoundsclub.com/blog",
+      "description": "Articles on misophonia and what is happening in your nervous system, from Megan Carlson, a licensed therapist who has misophonia.",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.safersoundsclub.com/#organization",
+        "name": "The Safer Sounds Club",
+        "url": "https://www.safersoundsclub.com/"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://www.safersoundsclub.com/about#megan-carlson",
+        "name": "Megan Carlson",
+        "url": "https://www.safersoundsclub.com/about"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.safersoundsclub.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="/work/preview/safer-sounds/" class="nav-brand">the Safer Sounds Club</a>
+  <ul class="nav-links">
+    <li><a href="/work/preview/safer-sounds/about/">About</a></li>
+    <li><a href="/work/preview/safer-sounds/products/">Workshop</a></li><li><a href="https://the-safer-sounds-club.kit.com/awayback" target="_blank" rel="noopener">Group</a></li>
+    <li><a href="/work/preview/safer-sounds/quiz/">Quiz</a></li>
+    <li><a href="/work/preview/safer-sounds/faq/">FAQ</a></li>
+    <li><a href="/work/preview/safer-sounds/blog/" class="active">Blog</a></li>
+    <li><a href="/work/preview/safer-sounds/contact/">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <h1>the Blog</h1>
+  <p>What's actually happening in your nervous system, and why it makes sense</p>
+</section>
+
+<hr class="full-dashes">
+
+<!-- ── FEATURED POST ── -->
+<div class="featured-post">
+  <a href="/work/preview/safer-sounds/blog/why-does-the-sound-of-breathing-bother-me/">
+    <img class="featured-post-img" src="/work/preview/safer-sounds/images/seagull.png" alt="Why Does The Sound of Breathing Bother Me?">
+  </a>
+  <div class="featured-post-body">
+    <a href="/work/preview/safer-sounds/blog/why-does-the-sound-of-breathing-bother-me/">
+      <p class="featured-eyebrow">Latest post</p>
+      <p class="featured-post-date">May 5, 2026</p>
+      <h2 class="featured-post-title">Why Does The Sound of Breathing Bother Me?</h2>
+      <p class="featured-post-excerpt">The slight catch in someone's inhale. The rhythm of their exhale. The particular quality of their breathing that, to everyone else in the room, registers as nothing at all, and to you, registers as something you cannot stop tracking.</p>
+      <span class="read-more">Read full post →</span>
+    </a>
+  </div>
+</div>
+
+<hr class="full-dashes">
+
+<div class="blog-grid">
+<!-- POSTS:START -->
+
+  <article class="post-card">
+    <a href="/work/preview/safer-sounds/blog/why-does-the-sound-of-breathing-bother-me/">
+      <img class="post-thumb" src="/work/preview/safer-sounds/images/seagull.png" alt="" loading="lazy" decoding="async">
+      <p class="post-date">May 5, 2026</p>
+      <h2 class="post-title">Why Does The Sound of Breathing Bother Me?</h2>
+      <p class="post-excerpt">If the sound of someone breathing drives you crazy, you're not too sensitive and you're not alone. Here's the real neurological reason, and what actually helps.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="/work/preview/safer-sounds/blog/misophonia-worse-when-stressed/">
+      <img class="post-thumb" src="/work/preview/safer-sounds/images/coral-blue.png" alt="" loading="lazy" decoding="async">
+      <p class="post-date">May 1, 2026</p>
+      <h2 class="post-title">Why Misophonia Feels Worse When You're Tired, Stressed, or Already Overwhelmed</h2>
+      <p class="post-excerpt">If your misophonia reactions are worse on hard days, there's a real neurological reason. Here's what's actually happening and what helps.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="/work/preview/safer-sounds/blog/why-cant-i-ignore-chewing-sounds/">
+      <img class="post-thumb" src="/work/preview/safer-sounds/images/fish-school.png" alt="" loading="lazy" decoding="async">
+      <p class="post-date">April 29, 2026</p>
+      <h2 class="post-title">Why Can't I Ignore Chewing Sounds?</h2>
+      <p class="post-excerpt">If you can't ignore chewing sounds no matter how hard you try, there's a real neurological reason. Here's what's actually going on.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="/work/preview/safer-sounds/blog/do-i-overreact-to-chewing/">
+      <img class="post-thumb" src="/work/preview/safer-sounds/images/silverware.png" alt="" loading="lazy" decoding="async">
+      <p class="post-date">April 25, 2026</p>
+      <h2 class="post-title">Do I Overreact to Chewing?</h2>
+      <p class="post-excerpt">The rage and panic you feel about chewing isn't really about the chewing. Here's what your nervous system is actually responding to.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="/work/preview/safer-sounds/blog/why-coping-strategies-dont-change-misophonia/">
+      <img class="post-thumb" src="/work/preview/safer-sounds/images/shell.png" alt="" loading="lazy" decoding="async">
+      <p class="post-date">April 19, 2026</p>
+      <h2 class="post-title">Why Coping Strategies Don't Change Misophonia, and What Actually Does</h2>
+      <p class="post-excerpt">Earplugs. White noise. Breathing through it. None of it changes the pattern. Here's what's actually happening, and what does.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="/work/preview/safer-sounds/blog/misophonia-and-relationships/">
+      <img class="post-thumb" src="/work/preview/safer-sounds/images/chairs-umbrella.png" alt="" loading="lazy" decoding="async">
+      <p class="post-date">April 13, 2026</p>
+      <h2 class="post-title">Misophonia and Relationships: Why the People You Love Trigger You Most</h2>
+      <p class="post-excerpt">The nervous system monitors the people it needs most, and that's why your partner's chewing is so much worse than a stranger's.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="/work/preview/safer-sounds/blog/why-does-misophonia-feel-so-out-of-control/">
+      <img class="post-thumb" src="/work/preview/safer-sounds/images/wave-big.png" alt="" loading="lazy" decoding="async">
+      <p class="post-date">March 18, 2026</p>
+      <h2 class="post-title">Why Does Misophonia Feel So Out Of Control?</h2>
+      <p class="post-excerpt">The sound itself is almost never the original source of threat. Here's what your nervous system actually learned, and why the reaction runs faster than control.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+    <!-- POSTS:END -->
+</div>
+
+<img src="/work/preview/safer-sounds/images/squiggle-line.png" class="squiggle-footer" aria-hidden="true" alt="" loading="lazy" decoding="async">
+<footer>
+  <div class="footer-links">
+    <a href="/work/preview/safer-sounds/about/">About</a>
+    <a href="/work/preview/safer-sounds/products/">Workshop</a>
+    <a href="https://the-safer-sounds-club.kit.com/awayback" target="_blank" rel="noopener">Group</a>
+    <a href="/work/preview/safer-sounds/quiz/">Quiz</a>
+    <a href="/work/preview/safer-sounds/faq/">FAQ</a>
+    <a href="/work/preview/safer-sounds/blog/">Blog</a>
+    <a href="/work/preview/safer-sounds/contact/">Contact</a>
+  </div>
+  <div style="margin-top:24px;margin-bottom:16px;">
+    <a href="https://the-safer-sounds-club.kit.com/0bb51426e7" target="_blank" style="font-family:'CoreBandiFace',cursive;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);text-decoration:none;opacity:0.85;">Join the email list →</a>
+  </div>
+  <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
+  <p class="footer-attribution" style="text-align:center;font-family:'CoreBandiFace',cursive;font-size:0.7rem;margin-top:14px;opacity:0.5;">made with &#9825; by chad at <a href="https://therapistweb.design/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Therapist Web Design</a></p>
+</footer>
+
+
+<script src="/work/preview/safer-sounds/js/site.js" defer></script>
+
+</body>
+</html>
