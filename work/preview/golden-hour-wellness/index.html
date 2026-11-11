@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trauma, EMDR &amp; Addiction Therapy | Golden Hour Wellness CO</title>
+<meta name="description" content="Therapist-owned counseling in Colorado. EMDR and trauma therapy, addiction counseling, and a virtual group for mothers. In-network with Aetna, UHC and Cigna.">
+<link rel="icon" href="/work/preview/golden-hour-wellness/assets/favicon-v2.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.goldenhourwellnesscolorado.com/">
+<meta property="og:site_name" content="Golden Hour Wellness Colorado">
+<meta property="og:title" content="Trauma, EMDR &amp; Addiction Therapy | Golden Hour Wellness CO">
+<meta property="og:description" content="Therapist-owned counseling in Colorado. EMDR and trauma therapy, addiction counseling, and a virtual group for mothers. In-network with Aetna, UHC and Cigna.">
+<meta property="og:image" content="https://www.goldenhourwellnesscolorado.com/assets/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trauma, EMDR &amp; Addiction Therapy | Golden Hour Wellness CO">
+<meta name="twitter:description" content="Therapist-owned counseling in Colorado. EMDR and trauma therapy, addiction counseling, and a virtual group for mothers. In-network with Aetna, UHC and Cigna.">
+<meta name="twitter:image" content="https://www.goldenhourwellnesscolorado.com/assets/img/hero.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/work/preview/golden-hour-wellness/assets/brand.css">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"MedicalBusiness",
+  "@id":"https://www.goldenhourwellnesscolorado.com/#business",
+  "name":"Golden Hour Wellness Colorado, LLC",
+  "url":"https://www.goldenhourwellnesscolorado.com/",
+  "email":"goldenhourwellco@gmail.com","telephone":"+1-303-736-9822",
+  "image":"https://www.goldenhourwellnesscolorado.com/assets/img/hero.jpg",
+  "logo":"https://www.goldenhourwellnesscolorado.com/assets/img/email-mark.png",
+  "description":"Therapist-owned counseling practice serving clients across Colorado in person and by telehealth: trauma and EMDR therapy, addiction counseling, anxiety and depression, couples therapy, and a virtual group for mothers.",
+  "founder":{"@type":"Person","@id":"https://www.goldenhourwellnesscolorado.com/shayla#person","name":"Shayla Martinez-O'Brien","jobTitle":"LPC, Founder"},
+  "areaServed":{"@type":"State","name":"Colorado"},
+  "sameAs":["https://www.instagram.com/goldenhourwellnesscolorado","https://www.psychologytoday.com/profile/1406337"],
+  "availableService":[
+    {"@type":"MedicalTherapy","name":"EMDR Therapy","url":"https://www.goldenhourwellnesscolorado.com/trauma-emdr"},
+    {"@type":"MedicalTherapy","name":"Trauma Therapy","url":"https://www.goldenhourwellnesscolorado.com/trauma-emdr"},
+    {"@type":"MedicalTherapy","name":"Trauma and Addiction Therapy","url":"https://www.goldenhourwellnesscolorado.com/trauma-and-addiction"},
+    {"@type":"MedicalTherapy","name":"Substance Use and Addiction Counseling","url":"https://www.goldenhourwellnesscolorado.com/substance-use"},
+    {"@type":"MedicalTherapy","name":"Therapy for Anxiety and Depression","url":"https://www.goldenhourwellnesscolorado.com/anxiety-depression"},
+    {"@type":"MedicalTherapy","name":"Couples Therapy","url":"https://www.goldenhourwellnesscolorado.com/couples-therapy"},
+    {"@type":"MedicalTherapy","name":"Life Transitions Therapy","url":"https://www.goldenhourwellnesscolorado.com/life-transitions-therapy"},
+    {"@type":"MedicalTherapy","name":"Group Therapy for Mothers","url":"https://www.goldenhourwellnesscolorado.com/mamas-golden-hour"}
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   v2: page-specific styles. Design system lives in brand.css.
+   ============================================================ */
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative; overflow:hidden; isolation:isolate; background:var(--plum-deep);
+  min-height:calc(100vh - var(--header-h)); min-height:calc(100svh - var(--header-h));
+  display:flex; flex-direction:column;
+}
+.hero__media{position:absolute; inset:0; z-index:-2}
+/* Pushed right so the sun flare sits behind the empty half of the hero
+   rather than directly under the headline. */
+.hero__media img{width:100%; height:100%; object-fit:cover; object-position:56% 56%}
+
+/* Three stacked scrims. This photo has a bright sun flare roughly where the
+   copy sits, so the left-hand gradient is deliberately heavy and there's a
+   soft radial pool under the text block as well. Measured white-on-scrim
+   contrast comes out above 7:1, which clears WCAG AAA for large text and AA
+   for the body paragraph. */
+.hero::after{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    radial-gradient(120% 90% at 22% 52%, rgba(30,20,34,.62) 0%, rgba(30,20,34,.34) 42%, transparent 72%),
+    linear-gradient(95deg, rgba(38,26,43,.88) 0%, rgba(38,26,43,.70) 34%, rgba(38,26,43,.34) 60%, rgba(38,26,43,.08) 84%, transparent 100%),
+    linear-gradient(180deg, rgba(38,26,43,.46) 0%, transparent 30%, rgba(130,67,31,.26) 86%, rgba(38,26,43,.60) 100%);
+}
+/* belt and braces against the flare's brightest pixels */
+.hero h1, .hero p{text-shadow:0 1px 18px rgba(24,16,28,.45)}
+/* very fine grain; stops the gradient banding and adds a printed quality */
+.hero__grain{
+  position:absolute; inset:0; z-index:-1; opacity:.16; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+.hero__inner{padding:clamp(1.5rem,4vh,3.5rem) 0 clamp(1.5rem,3vh,3rem); color:#fff; max-width:46rem; margin-block:auto}
+.hero .eyebrow{color:var(--gold)}
+.hero .eyebrow::after{opacity:.5}
+.hero h1{color:#fff; letter-spacing:-.022em}
+.hero h1 .nb{white-space:nowrap}
+.hero h1 em{font-style:italic; color:var(--gold); font-weight:400}
+.hero p{color:rgba(255,255,255,.9); font-size:clamp(1.02rem,1.5vw,1.2rem); max-width:38rem}
+.hero__actions{display:flex; flex-wrap:wrap; gap:.7rem; margin-top:2rem}
+
+/* trust strip; a single hairline row, not a stack of floating pills */
+.trust{position:relative; z-index:2; background:var(--shell); border-top:1px solid var(--hair)}
+.trust__inner{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  font-size:.83rem; font-weight:500; color:var(--plum);
+}
+.trust__item{
+  display:flex; align-items:center; gap:.6rem; justify-content:center;
+  padding:1.05rem .9rem; text-align:left;
+}
+.trust__item + .trust__item{border-left:1px solid var(--hair)}
+.trust__item svg{flex:none; color:var(--clay)}
+
+/* ---------- stat band ---------- */
+.stats{background:var(--sand); border-bottom:1px solid var(--hair)}
+.stats__inner{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--hair)}
+.stat{background:var(--sand); padding:2.1rem 1.25rem; text-align:center}
+.stat b{display:block; font-family:var(--serif); font-size:clamp(1.9rem,3.2vw,2.5rem); font-weight:600; color:var(--clay); line-height:1; letter-spacing:-.02em}
+.stat span{display:block; margin-top:.5rem; font-size:.76rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft)}
+
+/* ---------- welcome ---------- */
+.welcome__grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2.5rem,6vw,5rem); align-items:center}
+/* Same problem in the About section: once the two columns stack, the 4:5
+   portrait went full-bleed and towered over the copy. Cap and center it. */
+@media (max-width:880px){
+  .welcome__grid{grid-template-columns:1fr}
+  /* the stacked view swaps to the 3:2 crop, so widen the cap and retire the
+     4:5 ratio; otherwise the wide file gets cropped straight back to tall */
+  /* Doubled class on purpose. `.figure{margin:0}` is declared further down
+     with the same specificity, so a plain `.figure--portrait` selector loses
+     the cascade on source order and margin-inline silently reverts to 0;
+     the photo capped at 34rem but stayed hard left. `.figure.figure--portrait`
+     is 0,0,2,0 and wins regardless of where it sits in the sheet. */
+  .figure.figure--portrait{max-width:34rem; margin-inline:auto}
+  /* Same cascade trap, same fix. `.figure--portrait img{aspect-ratio:4/5}`
+     further down is also 0,0,1,1 and was winning on source order, so the
+     3:2 file was being poured into a 4:5 box and object-fit:cover cropped
+     it straight back to a tall portrait; the exact thing the wide crop
+     exists to avoid. 0,0,2,1 here settles it. */
+  .figure.figure--portrait img{aspect-ratio:3/2}
+}
+.figure{margin:0; position:relative}
+/* height:auto is load-bearing. Adding width/height attributes to the <img>
+   (good practice; they reserve space and stop layout shift) also sets the
+   CSS height as a presentational hint. With width:100% and height left at
+   the 1357px attribute value, the photo rendered 352x1357 instead of 352x440.
+   height:auto hands control back to aspect-ratio below. */
+.figure img{border-radius:var(--r-lg); box-shadow:var(--shadow-md); width:100%; height:auto; object-fit:cover}
+.figure figcaption{margin-top:.7rem; font-size:.74rem; color:var(--ink-soft); letter-spacing:.04em}
+.figure--portrait img{aspect-ratio:4/5}
+.pullquote{
+  margin:2rem 0 0; padding-left:1.4rem; border-left:2px solid var(--clay);
+  font-family:var(--serif); font-size:1.22rem; font-style:italic; line-height:1.45; color:var(--plum);
+}
+.pullquote cite{display:block; margin-top:.7rem; font-family:var(--sans); font-style:normal; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft)}
+
+/* ---------- services: no gradient tiles ---------- */
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem}
+@media (max-width:980px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.grid-3{grid-template-columns:1fr}}
+
+/* ── Orphan-row centering ─────────────────────────────────────────────
+   With 5 cards in a 3-across grid the last row holds 2 and hangs left.
+   Switching to a 6-column track and spanning each card 2 columns lets
+   the final pair start at column 2 and 4, which centers them under the
+   row above. The :nth-child/:nth-last-child pair means this only fires
+   when there are exactly 5 cards, so 3- and 6-card grids are untouched. */
+@media (min-width:981px){
+  .grid-3, .cards{grid-template-columns:repeat(6,1fr)}
+  .grid-3 > *, .cards > *{grid-column:span 2}
+  .grid-3 > :nth-child(4):nth-last-child(2),
+  .cards  > :nth-child(4):nth-last-child(2){grid-column:2 / span 2}
+  .grid-3 > :nth-child(5):nth-last-child(1),
+  .cards  > :nth-child(5):nth-last-child(1){grid-column:4 / span 2}
+}
+/* Same trick one breakpoint down. In the 2-across band a trailing odd card
+   hangs left. A 4-column track with span 2 lets that lone last card sit
+   across columns 2–3. :nth-child(odd):nth-last-child(1) means "last card,
+   odd-numbered"; in a 2-col grid, exactly the alone-in-its-row case. */
+@media (min-width:621px) and (max-width:980px){
+  .grid-3, .cards{grid-template-columns:repeat(4,1fr)}
+  .grid-3 > *, .cards > *{grid-column:span 2}
+  .grid-3 > :nth-child(odd):nth-last-child(1),
+  .cards  > :nth-child(odd):nth-last-child(1){grid-column:2 / span 2}
+}
+/* single column: the span must be released or each card fills half a row */
+@media (max-width:620px){
+  .grid-3 > *, .cards > *{grid-column:auto}
+}
+
+.svc{
+  text-decoration:none; color:inherit;
+  background:var(--shell); border:1px solid var(--line); border-radius:var(--r);
+  padding:1.9rem 1.6rem 1.7rem; box-shadow:var(--shadow-xs);
+  transition:border-color .22s ease, box-shadow .22s ease, transform .22s ease;
+  display:flex; flex-direction:column;
+}
+.svc:hover{border-color:rgba(168,88,50,.32); box-shadow:var(--shadow-sm); transform:translateY(-2px)}
+.svc__top{display:flex; align-items:center; gap:.75rem; margin-bottom:1.1rem}
+.svc__top svg{color:var(--clay); flex:none}
+.svc__no{font-family:var(--serif); font-size:.9rem; color:var(--ink-soft); letter-spacing:.02em}
+.svc__rule{height:1px; flex:1 1 auto; background:var(--hair)}
+.svc h3{color:var(--plum); margin-bottom:.45rem}
+.svc p{font-size:.94rem; color:var(--ink-mid); margin:0}
+
+/* ---------- team ---------- */
+/* The team grid used to drop 3 columns straight to 1 at 980px, which made a
+   4:5 portrait roughly 540px wide and 680px tall on a tablet; one card
+   swallowing most of the viewport. Two columns bridge that range, and the
+   single-column case is capped so it can't balloon either. */
+.people{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem}
+@media (max-width:980px){.people{grid-template-columns:repeat(2,1fr); gap:1.25rem}}
+@media (max-width:620px){.people{grid-template-columns:1fr; max-width:26rem; margin-inline:auto}}
+/* Three therapists in a 2-across tablet grid leave one hanging left. Same
+   4-column span-2 trick as the service cards; the maths works out to exactly
+   the same card width, so nothing else shifts. Declared after the rules above
+   because both media queries match at tablet and the later one wins. */
+@media (min-width:621px) and (max-width:980px){
+  .people{grid-template-columns:repeat(4,1fr)}
+  .people > *{grid-column:span 2}
+  .people > :nth-child(odd):nth-last-child(1){grid-column:2 / span 2}
+}
+.person{background:var(--shell); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column}
+.person__frame{aspect-ratio:4/5; overflow:hidden; background:linear-gradient(150deg,var(--petal),var(--lilac-mist))}
+.person__frame img{width:100%; height:100%; object-fit:cover; object-position:center 22%}
+/* Per-photo crops. The sources are inconsistent: Shayla's is a wide full-body
+   shot, Ashley's studio headshot has white margins baked into the file which
+   show as pale edges inside the card. Scaling past them is cheaper than
+   re-editing the originals, and it's reversible once real headshots arrive. */
+.person__frame img.zoom{transform:scale(2.05); transform-origin:41% 42%}
+.person__frame img.zoom-sm{transform:scale(1.22); transform-origin:50% 20%}
+.person__ph{width:100%; height:100%; display:grid; place-items:center; font-family:var(--serif); font-size:2.8rem; color:var(--clay-deep); opacity:.5}
+.person__body{padding:1.5rem 1.5rem 1.7rem; display:flex; flex-direction:column; flex:1}
+.person__name{margin:0 0 .15rem; color:var(--plum); font-size:1.2rem}
+.person__cred{font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--clay); margin:0 0 .95rem}
+.tags{display:flex; flex-wrap:wrap; gap:.35rem; margin:0 0 1rem; padding:0; list-style:none}
+.tags li{font-size:.7rem; font-weight:600; background:var(--lilac-mist); color:var(--plum); border-radius:var(--r-xs); padding:.28rem .6rem}
+.person__body p{font-size:.92rem; color:var(--ink-mid)}
+details.more{margin-top:auto}
+details.more summary{cursor:pointer; list-style:none; font-size:.84rem; font-weight:600; color:var(--clay-deep); display:inline-flex; align-items:center; gap:.4rem; padding:.5rem 0; min-height:44px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"↓"; font-size:.9em; transition:transform .2s ease}
+details.more[open] summary::after{transform:rotate(180deg)}
+details.more p{margin-top:.6rem; font-size:.9rem}
+
+/* ---------- editorial quote band ---------- */
+.quote{position:relative; overflow:hidden; isolation:isolate; background:var(--plum-deep); color:#fff}
+.quote__media{position:absolute; inset:0; z-index:-2}
+.quote__media img{width:100%; height:100%; object-fit:cover}
+.quote::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(100deg, rgba(46,32,52,.9) 10%, rgba(46,32,52,.68) 55%, rgba(130,67,31,.42) 100%)}
+.quote blockquote{margin:0; max-width:46rem; font-family:var(--serif); font-size:clamp(1.4rem,2.8vw,2.05rem); line-height:1.38; font-weight:400}
+.quote .mark{display:block; font-size:3rem; line-height:.6; color:var(--gold); opacity:.55; margin-bottom:.9rem}
+.quote cite{display:block; margin-top:1.5rem; font-style:normal; font-family:var(--sans); font-size:.74rem; font-weight:600; letter-spacing:.17em; text-transform:uppercase; color:var(--gold)}
+
+/* ---------- process ---------- */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:var(--r); overflow:hidden; background:var(--shell)}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+.step{padding:2.1rem 1.7rem}
+.step + .step{border-left:1px solid var(--hair)}
+@media (max-width:820px){.step + .step{border-left:0; border-top:1px solid var(--hair)}}
+.step b{display:block; font-family:var(--serif); font-size:.85rem; letter-spacing:.14em; color:var(--clay); margin-bottom:.9rem}
+.step h3{color:var(--plum); font-size:1.15rem; margin-bottom:.35rem}
+.step p{font-size:.93rem; color:var(--ink-mid); margin:0}
+
+/* ---------- insurance ---------- */
+.ins-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2.5rem,6vw,4.5rem); align-items:center}
+@media (max-width:880px){.ins-grid{grid-template-columns:1fr}}
+.carriers{display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; margin:1.5rem 0 0; padding:0; list-style:none}
+.carriers li{
+  background:var(--shell); border:1px solid var(--line); border-radius:var(--r-sm);
+  padding:.95rem .6rem; text-align:center;
+  font-family:var(--serif); font-size:1rem; font-weight:600; color:var(--plum);
+}
+.note{background:var(--lilac-mist); border-left:2px solid var(--lilac); border-radius:0 var(--r-sm) var(--r-sm) 0; padding:1.05rem 1.2rem; font-size:.88rem; color:var(--plum); margin-top:1.5rem}
+.note p:last-child{margin:0}
+
+/* ---------- booking tabs ---------- */
+.tabs{display:flex; gap:.3rem; padding:.3rem; list-style:none; margin:0; background:var(--sand); border:1px solid var(--line); border-radius:var(--r); width:fit-content; max-width:100%}
+.tabs button{
+  font-family:var(--sans); font-size:.9rem; font-weight:600; color:var(--plum);
+  background:transparent; border:none; border-radius:var(--r-sm); padding:.75rem 1.5rem;
+  cursor:pointer; min-height:48px; transition:background .2s ease, color .2s ease;
+}
+.tabs button:hover{background:rgba(255,255,255,.6)}
+.tabs button[aria-selected="true"]{background:var(--clay); color:#fff}
+.tabpanel{margin-top:1.75rem}
+.tabpanel[hidden]{display:none}
+.embed-shell{background:var(--shell); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow-sm); padding:clamp(.5rem,1.4vw,1.15rem); overflow:hidden}
+.embed-shell iframe{width:100%; border:0; display:block; border-radius:var(--r-sm)}
+.benefits-clip{overflow:hidden; border-radius:var(--r-sm); height:464px}
+.frame-benefits{display:block; width:100%; border:0; height:488px}
+.embed-note{display:flex; gap:.6rem; align-items:flex-start; font-size:.9rem; line-height:1.6; color:var(--ink-mid); margin:1.3rem 0 0; max-width:66ch}
+.embed-note svg{flex:none; margin-top:.3rem; color:var(--clay)}
+.embed-note span{flex:1 1 auto; min-width:0}
+.embed-note a{font-weight:600; white-space:nowrap}
+
+/* ---------- CTA ---------- */
+.cta{position:relative; overflow:hidden; isolation:isolate; background:var(--clay); color:#fff; text-align:center}
+.cta__media{position:absolute; inset:0; z-index:-2}
+.cta__media img{width:100%; height:100%; object-fit:cover}
+.cta::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(160deg, rgba(168,88,50,.9), rgba(130,67,31,.86) 55%, rgba(66,48,73,.9))}
+.cta h2{color:#fff}
+.cta p{color:rgba(255,255,255,.9); max-width:42rem; margin-inline:auto}
+.cta .eyebrow{color:rgba(255,255,255,.8)}
+.cta__actions{display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; margin-top:2rem}
+
+/* ---------- v2 mobile ---------- */
+@media (max-width:640px){
+  .hero .eyebrow{font-size:.62rem; letter-spacing:.14em}
+  .hero h1{font-size:clamp(1.95rem,7.6vw,2.6rem)}
+  .hero p{font-size:1rem}
+  /* Two identical full-width slabs gave the eye no hierarchy; both buttons
+     read as equally important. Primary stays solid; secondary drops to a
+     quiet text link, which also reclaims ~55px of vertical space. */
+  .hero__actions{gap:.9rem; width:100%; margin-top:1.6rem; align-items:center; flex-direction:column}
+  .hero__actions .btn-primary{width:100%}
+  /* Looks like a text link, still hits the 44px WCAG 2.5.8 target. The padding
+     is vertical only, so the underline stays tight to the text. */
+  .hero__actions .btn-ghost{
+    border:0; background:none; min-height:44px; padding:.4rem 0;
+    display:inline-flex; align-items:center;
+    text-decoration:underline; text-underline-offset:5px;
+    text-decoration-color:rgba(255,255,255,.4); font-weight:500;
+  }
+  .hero__actions .btn-ghost:hover{background:none; text-decoration-color:var(--gold); color:var(--gold)}
+  
+  /* THE TRUST STRIP WAS THE PROBLEM ON MOBILE.
+     Three stacked rows ran ~150px; roughly a quarter of the first screen;
+     and formed a heavy white slab hard against the dark photo. It was also
+     the least important content on screen fighting the headline for weight.
+     On phones only the insurance line survives here; the other two points
+     already appear further down (EMDR in services, availability in the CTA),
+     so nothing is actually lost. */
+  .trust__inner{grid-template-columns:1fr}
+  .trust__item{justify-content:center; padding:.8rem var(--gutter); font-size:.82rem}
+  .trust__item + .trust__item{display:none}
+
+  .stats__inner{grid-template-columns:1fr 1fr}
+  .stat{padding:1.5rem .9rem}
+
+  .tabs{display:grid; grid-template-columns:1fr 1fr; width:100%; gap:.3rem}
+  .tabs li{display:contents}
+  .tabs button{width:100%; padding:.8rem .5rem; font-size:.83rem; line-height:1.25; white-space:normal}
+
+  /* all three carriers identical; no spanning first item */
+  .carriers{grid-template-columns:1fr}
+
+  .cta__actions{flex-direction:column}
+  .cta__actions .btn{width:100%}
+  .step{padding:1.65rem 1.35rem}
+  .svc{padding:1.6rem 1.35rem}
+}
+@media (max-width:380px){
+  .tabs{grid-template-columns:1fr}
+}
+@media (max-height:800px){
+  .hero h1{font-size:clamp(1.95rem,4.3vw,2.9rem)}
+  .hero p{font-size:1rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="header" id="header">
+  <div class="wrap header__inner">
+    <a class="brand" href="/work/preview/golden-hour-wellness/" aria-label="Golden Hour Wellness Colorado home">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="s1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F3CB80"/><stop offset="100%" stop-color="#DE9855"/></linearGradient>
+          <linearGradient id="r1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B4623A"/><stop offset="100%" stop-color="#8A4623"/></linearGradient>
+          <clipPath id="c1"><circle cx="32" cy="32" r="29"/></clipPath>
+        </defs>
+        <circle cx="32" cy="32" r="29" fill="#FBF7F2"/>
+        <g clip-path="url(#c1)">
+          <circle cx="32" cy="27.5" r="12.5" fill="url(#s1)"/>
+          <path d="M-4 51 L17 36.5 L27.5 46 L41 27 L55 47 L68 51 Z" fill="url(#r1)"/>
+          <path d="M34.8 35.73 L41 27 L47.6 36.43 C45.6 34.5 43.9 33.9 42.5 34.7 C41.8 35.1 41.2 35.1 40.5 34.7 C38.9 33.8 36.9 34.5 34.8 35.73 Z" fill="#FBF7F2" opacity=".95"/>
+          <rect x="0" y="51" width="64" height="13" fill="#423049"/>
+        </g>
+        <circle cx="32" cy="32" r="29" fill="none" stroke="#A85832" stroke-width="2.5"/>
+      </svg>
+      <span class="brand__text">
+        <span class="brand__name">Golden Hour Wellness</span>
+        <span class="brand__sub">Colorado</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="/work/preview/golden-hour-wellness/" aria-current="page">Home</a>
+      <a href="/work/preview/golden-hour-wellness/about/">About</a>
+      <a href="/work/preview/golden-hour-wellness/services/">Services</a>
+      <a href="/work/preview/golden-hour-wellness/team/">Our Team</a>
+      <a href="/work/preview/golden-hour-wellness/blog/">Journal</a>
+      <a href="/work/preview/golden-hour-wellness/faq/">FAQ</a>
+      <a href="/work/preview/golden-hour-wellness/contact/">Contact</a>
+      <a class="btn btn-primary" href="/work/preview/golden-hour-wellness/#book">Book Now</a>
+    </nav>
+    <a class="btn btn-primary header__cta" href="/work/preview/golden-hour-wellness/#book">Book Now</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__media">
+    <img src="/work/preview/golden-hour-wellness/assets/img/hero.jpg" width="2000" height="1334"
+         alt="Sunrise over a still mountain lake, framed by evergreens and snow-covered peaks." fetchpriority="high">
+  </div>
+  <div class="hero__grain" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <p class="eyebrow" data-cms="hero.eyebrow">Colorado &middot; In-person &amp; telehealth</p>
+    <h1 data-cms="hero.headline" data-cms-rich="1">Healing happens in the <span class="nb"><em>golden hour</em>,</span><br>and we'll walk it with you.</h1>
+    <p data-cms="hero.intro">A therapist-owned practice specializing in trauma, EMDR and substance use. Come as you are; leave with a little more room to breathe.</p>
+    <div class="hero__actions">
+      <a class="btn btn-primary" href="#book" data-cms="hero.button1">Book a free consultation</a>
+      <a class="btn btn-ghost" href="#team" data-cms="hero.button2">Meet our therapists</a>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div class="wrap trust__inner">
+      <div class="trust__item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span data-cms="trust.item1">In-network with Aetna, UHC &amp; Cigna</span>
+      </div>
+      <div class="trust__item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span data-cms="trust.item2">EMDR-trained, in person or virtual</span>
+      </div>
+      <div class="trust__item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span data-cms="trust.item3">Accepting new clients statewide</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="wrap stats__inner">
+    <div class="stat"><b>34</b><span>Years combined</span></div>
+    <div class="stat"><b>3</b><span>Licensed clinicians</span></div>
+    <div class="stat"><b>3</b><span>Insurance panels</span></div>
+    <div class="stat"><b>100%</b><span>Colorado telehealth</span></div>
+  </div>
+</section>
+
+<!-- ============ WELCOME ============ -->
+<section class="section" id="welcome">
+  <div class="wrap welcome__grid">
+    <div class="reveal">
+      <p class="eyebrow">Welcome</p>
+      <h2 data-cms="about.headline">A practice built around the person in the room.</h2>
+      <p class="lede" data-cms="about.intro">Golden Hour Wellness Colorado was founded by Shayla Martinez-O&rsquo;Brien, a Licensed Professional Counselor with 11 years of clinical practice. What began as one clinician is now a small, hand-picked team.</p>
+      <p>We believe true healing comes from an increased ability to tolerate challenging emotion, paired with a clearer understanding of your own value system. That work is slow, human, and worth it, and you don&rsquo;t have to do it alone.</p>
+      <blockquote class="pullquote">
+        You can expect a co-pilot on your journey.
+        <cite>Shayla Martinez-O&rsquo;Brien, LPC &middot; Founder</cite>
+      </blockquote>
+    </div>
+    <figure class="figure figure--portrait reveal">
+      <!-- Two crops of the same photograph. Below 880px this portrait and the
+           team card stack one after the other, and running the identical 4:5
+           image twice read as a mistake. The 3:2 crop looks like a different
+           shot and is far shallower, so it stops dominating the column. -->
+      <picture>
+        <source media="(max-width:880px)" srcset="/work/preview/golden-hour-wellness/assets/img/shayla-wide.jpg" width="1086" height="724">
+        <img src="/work/preview/golden-hour-wellness/assets/img/shayla.jpg" width="1086" height="1357"
+             alt="Shayla Martinez-O'Brien outdoors on a wooden deck surrounded by trees." loading="lazy">
+      </picture>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services" style="background:var(--sand)">
+  <div class="wrap">
+    <div class="measure" style="margin-bottom:3rem">
+      <p class="eyebrow">How we help</p>
+      <h2 data-cms="services.headline">Specialized care, without the clinical chill.</h2>
+      <p class="lede">Every therapist here brings a different lane of expertise. We&rsquo;ll help you find the right fit on your first call, even if that fit turns out to be somewhere else.</p>
+    </div>
+    <div class="grid-3">
+
+      <a class="svc reveal" href="/work/preview/golden-hour-wellness/trauma-emdr/">
+        <div class="svc__top">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="2.75"/></svg>
+          <span class="svc__no">01</span><span class="svc__rule"></span>
+        </div>
+        <h3>Trauma &amp; EMDR</h3>
+        <p>Eye Movement Desensitization and Reprocessing alongside other trauma-focused approaches, in person or via telehealth.</p>
+      </a>
+
+      <a class="svc reveal" href="/work/preview/golden-hour-wellness/anxiety-depression/">
+        <div class="svc__top">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21C7 17.5 4 14.5 4 11a4 4 0 0 1 8-1.4A4 4 0 0 1 20 11c0 3.5-3 6.5-8 10Z"/></svg>
+          <span class="svc__no">02</span><span class="svc__rule"></span>
+        </div>
+        <h3>Anxiety &amp; Depression</h3>
+        <p>Solution-oriented, CBT-informed work on how mood, thoughts and behavior shape one another, plus tools you can actually use.</p>
+      </a>
+
+      <a class="svc reveal" href="/work/preview/golden-hour-wellness/substance-use/">
+        <div class="svc__top">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+          <span class="svc__no">03</span><span class="svc__rule"></span>
+        </div>
+        <h3>Substance Use &amp; Recovery</h3>
+        <p>Licensed addiction counseling for people living with substance use disorders, or anyone feeling stuck and disconnected.</p>
+      </a>
+
+      <a class="svc reveal" href="/work/preview/golden-hour-wellness/couples-therapy/">
+        <div class="svc__top">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="2.5"/><circle cx="16" cy="9" r="2.5"/><path d="M3.5 19a4.5 4.5 0 0 1 9 0M11.5 19a4.5 4.5 0 0 1 9 0"/></svg>
+          <span class="svc__no">04</span><span class="svc__rule"></span>
+        </div>
+        <h3>Couples &amp; Relationships</h3>
+        <p>Family stress, work stress, and the big pivots. Getting through change with more clarity and a stronger sense of purpose.</p>
+      </a>
+
+      <a class="svc reveal" href="/work/preview/golden-hour-wellness/life-transitions-therapy/">
+        <div class="svc__top">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c0-5 3.5-8 8-8s8-3 8-8"/><path d="M15.5 4H20v4.5"/></svg>
+          <span class="svc__no">05</span><span class="svc__rule"></span>
+        </div>
+        <h3>Life Transitions</h3>
+        <p>A move, a new job, a new baby, an illness or a separation. Individual sessions for whatever the change shakes loose.</p>
+      </a>
+
+      <a class="svc reveal" href="/work/preview/golden-hour-wellness/mamas-golden-hour/">
+        <div class="svc__top">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="9" r="2.2"/><path d="M7.5 17a4.6 4.6 0 0 1 9 0"/></svg>
+          <span class="svc__no">06</span><span class="svc__rule"></span>
+        </div>
+        <h3>Mama&rsquo;s Golden Hour</h3>
+        <p>A six-week virtual group for Colorado mothers. Fertility, pregnancy, postpartum and every stage of parenting.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="measure" style="margin-bottom:3rem">
+      <p class="eyebrow">Meet the team</p>
+      <h2 data-cms="team.headline">Three clinicians. Roughly 34 years of practice between them.</h2>
+    </div>
+    <div class="people">
+
+      <article class="person reveal">
+        <div class="person__frame">
+          <img src="/work/preview/golden-hour-wellness/assets/img/shayla.jpg" width="1086" height="1357" alt="Portrait of Shayla Martinez-O’Brien" loading="lazy">
+        </div>
+        <div class="person__body">
+          <h3 class="person__name">Shayla Martinez-O&rsquo;Brien</h3>
+          <p class="person__cred">LPC &middot; Founder</p>
+          <ul class="tags"><li>EMDR</li><li>Trauma</li><li>Addiction</li></ul>
+          <p>A Licensed Professional Counselor specializing in trauma therapy, with 11 years of practice. She founded Golden Hour Wellness Colorado and works as both clinician and business manager.</p>
+          <details class="more"><summary>Read more</summary>
+            <p>I use EMDR among other trauma-focused approaches to help clients better tolerate emotion related to past and present traumas and stressors. I believe true healing comes from an increased ability to tolerate challenging emotion along with a better understanding of one&rsquo;s own value system.</p>
+            <p>I&rsquo;m a Colorado native and do my very best to live up to the stereotype. I&rsquo;m married, a mother of two, with two lab mixes at home.</p>
+          </details>
+        </div>
+      </article>
+
+      <!-- NOTE: confirm "headshot 3" is Ashley before launch; source site doesn't label it -->
+      <article class="person reveal">
+        <div class="person__frame">
+          <img src="/work/preview/golden-hour-wellness/assets/img/ashley.jpg" width="1103" height="1378" alt="Portrait of Ashley LeRossignol" loading="lazy">
+        </div>
+        <div class="person__body">
+          <h3 class="person__name">Ashley LeRossignol</h3>
+          <p class="person__cred">LPC &middot; Consultant &amp; group facilitator</p>
+          <ul class="tags"><li>Group facilitation</li><li>CBT</li><li>Consulting</li></ul>
+          <p>Ashley co-facilitates <a href="/work/preview/golden-hour-wellness/mamas-golden-hour/">Mama&rsquo;s Golden Hour</a> with Shayla and consults on clinical practice. <strong>She does not take individual clients through Golden Hour Wellness</strong>, so scheduling here is for the group only.</p>
+          <details class="more"><summary>Read more</summary>
+            <p>Working from a solution-oriented framework, Ashley brings over 10 years of experience with anxiety, depression, relationship challenges, and family and work stressors. She uses Cognitive Behavioral Therapy, highlighting the ways mood, thoughts and behaviors shape one another.</p>
+            <p>Master&rsquo;s in counseling psychology from the University of San Francisco. Outside of therapy you&rsquo;ll find her outdoors, traveling, cooking and exploring new places.</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="person reveal">
+        <!-- Self-hosted, pre-cropped to the 4:5 frame so no CSS zoom is needed. -->
+        <div class="person__frame">
+          <img src="/work/preview/golden-hour-wellness/assets/img/chrissie.jpg" width="1086" height="1357"
+               alt="Portrait of Chrissie Flynn-Weirich" loading="lazy">
+        </div>
+        <div class="person__body">
+          <h3 class="person__name">Chrissie Flynn-Weirich</h3>
+          <p class="person__cred">LAC &middot; Wellness Facilitator</p>
+          <ul class="tags"><li>Substance Use</li><li>Mindfulness</li></ul>
+          <p>A Licensed Addiction Counselor and Wellness Facilitator with 13+ years supporting people living with substance use disorders and those who feel &ldquo;stuck&rdquo; or disconnected.</p>
+          <details class="more"><summary>Read more</summary>
+            <p>Together we&rsquo;ll identify your strengths and passions, assess what&rsquo;s working and what&rsquo;s not, and set meaningful goals that align with your vision of your best self. Each session will envelop empathy and unconditional regard.</p>
+          </details>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="section quote">
+  <div class="quote__media">
+    <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=2000&q=70&auto=format&fit=crop" alt="" loading="lazy" aria-hidden="true">
+  </div>
+  <div class="wrap">
+    <blockquote>
+      <span class="mark" aria-hidden="true">&ldquo;</span>
+      True healing comes from an increased ability to tolerate challenging emotion, along with a better understanding of one&rsquo;s own value system.
+      <cite>Shayla Martinez-O&rsquo;Brien, LPC</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="measure" style="margin-bottom:2.75rem">
+      <p class="eyebrow">Getting started</p>
+      <h2>Three steps, no mystery.</h2>
+      <p class="lede">The hardest part is the first message. Everything after that, we handle together.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><b>01</b><h3>Reach out</h3><p>Call, email, or book online. Tell us as much or as little as you want. A sentence is plenty.</p></div>
+      <div class="step"><b>02</b><h3>Free consultation</h3><p>A short, no-pressure conversation about what you&rsquo;re looking for and which therapist fits best.</p></div>
+      <div class="step"><b>03</b><h3>First session</h3><p>In person or by telehealth anywhere in Colorado. We&rsquo;ll set the pace together from there.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSURANCE ============ -->
+<section class="section" id="insurance" style="background:var(--sand)">
+  <div class="wrap ins-grid">
+    <div class="reveal">
+      <p class="eyebrow">Insurance &amp; rates</p>
+      <h2 data-cms="insurance.headline">In-network with three major plans.</h2>
+      <p>If you don&rsquo;t see your carrier, reach out anyway. We can talk through out-of-network reimbursement and self-pay options. <a href="/work/preview/golden-hour-wellness/insurance/">How insurance works here</a>.</p>
+      <ul class="carriers"><li>Aetna</li><li>United Healthcare</li><li>Cigna</li></ul>
+      <div class="note"><p><strong>Good Faith Estimate:</strong> under the No Surprises Act you have the right to a written estimate of expected charges before your first session. Ask us and we&rsquo;ll send one over.</p></div>
+    </div>
+    <figure class="figure reveal">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1400&q=72&auto=format&fit=crop"
+           alt="Sunlight filtering through a stand of tall trees." loading="lazy" style="aspect-ratio:5/4">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ BOOK & VERIFY ============ -->
+<section class="section" id="book">
+  <div class="wrap">
+    <div class="measure" style="margin-bottom:2.4rem">
+      <p class="eyebrow">Book &amp; verify</p>
+      <h2>Schedule a session, or check your benefits first.</h2>
+      <p class="lede">No phone tag. Pick a time that works, or run your insurance in about 30 seconds to see what you&rsquo;d actually pay.</p>
+    </div>
+
+    <ul class="tabs" role="tablist" aria-label="Booking and insurance tools">
+      <li role="presentation"><button role="tab" id="tab-book" aria-controls="panel-book" aria-selected="true">Book an appointment</button></li>
+      <li role="presentation"><button role="tab" id="tab-benefits" aria-controls="panel-benefits" aria-selected="false" tabindex="-1">Check your benefits</button></li>
+    </ul>
+
+    <div class="tabpanel" id="panel-book" role="tabpanel" aria-labelledby="tab-book" tabindex="0">
+      <div class="embed-shell">
+        <iframe data-src="https://app.acuityscheduling.com/schedule.php?owner=35696713&amp;ref=embedded_csp"
+                title="Schedule an appointment with Golden Hour Wellness Colorado" height="1000" loading="lazy"></iframe>
+      </div>
+      <p class="embed-note">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span>Prefer to talk first? Call <a href="tel:+13037369822">(303)&nbsp;736-9822</a> or <a href="/work/preview/golden-hour-wellness/contact/">send us a message</a> and we&rsquo;ll find a time together.</span>
+      </p>
+    </div>
+
+    <div class="tabpanel" id="panel-benefits" role="tabpanel" aria-labelledby="tab-benefits" tabindex="0" hidden>
+      <div class="embed-shell">
+        <div class="benefits-clip">
+          <iframe class="frame-benefits" data-src="https://eligibility.thrizer.com/facility/thrizerpei0crb?type=iframe"
+                  title="Check your out-of-network insurance benefits" referrerpolicy="no-referrer-when-downgrade" loading="lazy"></iframe>
+        </div>
+      </div>
+      <p class="embed-note">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+        <span>We&rsquo;re in-network with Aetna, United Healthcare and Cigna. If your plan isn&rsquo;t one of those, this checker estimates your out-of-network reimbursement so there are no surprises.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta">
+  <div class="cta__media"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=2000&q=70&auto=format&fit=crop" alt="" loading="lazy" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow eyebrow--center">Accepting new clients</p>
+    <h2 data-cms="cta.headline">Your golden hour starts with one message.</h2>
+    <p>Book online, or reach us directly at <strong>(303)&nbsp;736-9822</strong>. We typically respond within one business day.</p>
+    <div class="cta__actions">
+      <a class="btn btn-light" href="#book">Book an appointment</a>
+      <a class="btn btn-ghost" href="/work/preview/golden-hour-wellness/contact/">Send a message</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__ridge" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,90 L0,66 L150,38 L268,58 L392,22 L520,52 L648,34 L790,64 L920,30 L1064,56 L1200,26 L1330,50 L1440,34 L1440,90 Z" fill="#7C5F76" opacity=".42"/>
+      <path d="M0,90 L0,74 L128,52 L246,70 L378,40 L500,66 L636,50 L772,76 L900,46 L1046,70 L1186,44 L1320,66 L1440,52 L1440,90 Z" fill="#2E2034"/>
+    </svg>
+  </div>
+  <div class="wrap footer__grid">
+    <div>
+      <span class="brand__text" style="display:block">
+        <span class="brand__name" style="font-size:1.25rem">Golden Hour Wellness</span>
+        <span class="brand__sub" style="display:block">Colorado</span>
+      </span>
+      <p style="margin-top:1.15rem; max-width:32ch">Therapist-owned counseling for trauma, EMDR and addiction. Serving clients across Colorado.</p>
+      <div class="social">
+        <a href="https://www.instagram.com/goldenhourwellnesscolorado" aria-label="Instagram" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4.5"/><circle cx="12" cy="12" r="3.75"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.psychologytoday.com/profile/1406337" aria-label="Psychology Today profile" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h8a5 5 0 0 1 0 10H9v6H5z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+      <ul class="footer__links">
+        <li><a href="/work/preview/golden-hour-wellness/about/">About</a></li>
+        <li><a href="/work/preview/golden-hour-wellness/services/">Services</a></li>
+        <li><a href="/work/preview/golden-hour-wellness/team/">Our Team</a></li>
+        <li><a href="/work/preview/golden-hour-wellness/blog/">Journal</a></li>
+        <li><a href="/work/preview/golden-hour-wellness/faq/">FAQ</a></li>
+        <li><a href="/work/preview/golden-hour-wellness/insurance/">Insurance &amp; rates</a></li>
+        <li><a href="/work/preview/golden-hour-wellness/telehealth-therapy-colorado/">Telehealth in Colorado</a></li>
+        <li><a href="/work/preview/golden-hour-wellness/contact/">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Get in touch</h4>
+      <ul class="footer__contact">
+        <li><a href="mailto:goldenhourwellco@gmail.com">goldenhourwellco@gmail.com</a></li>
+        <li><a href="tel:+13037369822">(303) 736-9822</a></li>
+      </ul>
+      <div class="crisis">
+        <strong>In crisis?</strong> This site is not for emergencies. Call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline), or <strong>Colorado Crisis Services at 1-844-493-8255</strong>. Both available 24/7.
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="goldenhour">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
+      Today&rsquo;s golden hour in Colorado <span class="gh-sep">&middot;</span> <b id="ghTime">calculating</b>
+    </p>
+  </div>
+  <div class="wrap footer__bar">
+    <span>&copy; <span id="yr">2026</span> Golden Hour Wellness Colorado, LLC</span>
+    <span>Licensed in the State of Colorado &middot; <a href="/work/preview/golden-hour-wellness/privacy/">Privacy</a> &middot; <a href="/work/preview/golden-hour-wellness/terms/">Terms</a> &middot; <a href="/work/preview/golden-hour-wellness/good-faith-estimate/">Good Faith Estimate</a> &middot; Website by <a href="https://therapistweb.design/" rel="noopener">Therapist Web Design</a></span>
+  </div>
+</footer>
+
+<script src="/work/preview/golden-hour-wellness/assets/site.js"></script>
+</body>
+</html>

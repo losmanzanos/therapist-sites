@@ -1,0 +1,297 @@
+/* ============================================================
+   GOLDEN HOUR WELLNESS: v2 design system
+   Shared by v2.html, contact.html and 404.html.
+
+   What changed from v1, and why:
+
+   RADIUS: v1 used 18/28px cards with fully-round pill buttons.
+   At that scale it reads app-like: friendly, but closer to a
+   consumer product than a clinical practice. v2 uses a tighter,
+   more architectural scale (6/10/14px) with 8px buttons. Still
+   soft (nothing is a hard corner) but it reads tailored rather
+   than bubbly. Warmth now comes from color, photography and
+   type, not from corner radius.
+
+   ICONS: v1 put line icons inside gradient-filled rounded
+   squares. Those tiles were the single most "template" element
+   on the page. v2 drops the tile: a 1.25px-stroke mark in clay
+   sits directly on the card above a hairline rule. Lighter, and
+   it stops competing with the photography.
+   ============================================================ */
+
+:root{
+  /* warm core */
+  --clay:      #A85832;
+  --clay-deep: #82431F;
+  --ember:     #C0703F;
+  --apricot:   #E2A05B;
+  --gold:      #F0C579;
+  --blush:     #E4B4A1;
+  --petal:     #F1D2C6;
+
+  /* cool counterweight */
+  --plum:      #423049;
+  --plum-deep: #2E2034;
+  --lilac:     #A995B4;
+  --lilac-mist:#EFE9F2;
+
+  /* neutrals; slightly cooler + less yellow than v1 */
+  --cream:  #FBF7F2;
+  --sand:   #F4EBE1;
+  --shell:  #FFFDFB;
+  --ink:    #2E262B;
+  --ink-mid:#665A61;
+  --ink-soft:#8A7C83;
+  --line:   rgba(66,48,73,.13);
+  --hair:   rgba(66,48,73,.10);
+
+  /* restrained radius scale */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r:    10px;
+  --r-lg: 14px;
+  --r-xl: 18px;
+
+  --shadow-xs: 0 1px 2px rgba(46,38,43,.05);
+  --shadow-sm: 0 1px 2px rgba(46,38,43,.05), 0 6px 18px rgba(130,67,31,.05);
+  --shadow-md: 0 2px 6px rgba(46,38,43,.05), 0 22px 48px rgba(130,67,31,.10);
+
+  --wrap: 1180px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  --serif: "Fraunces", "Playfair Display", Georgia, serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --header-h: 76px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; scroll-padding-top:calc(var(--header-h) + 1rem)}
+body{
+  margin:0; background:var(--cream); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.68;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; display:block}
+a{color:var(--clay-deep); text-decoration-thickness:1px; text-underline-offset:3px}
+
+h1,h2,h3,h4{font-family:var(--serif); font-weight:600; line-height:1.1; margin:0 0 .5em; letter-spacing:-.015em}
+h1{font-size:clamp(2.4rem,5.4vw,3.9rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.75rem)}
+h3{font-size:clamp(1.12rem,1.8vw,1.35rem); letter-spacing:-.005em}
+p{margin:0 0 1.15em}
+
+.wrap{width:min(100% - (var(--gutter) * 2), var(--wrap)); margin-inline:auto}
+.section{padding:clamp(4.5rem,9vw,7.5rem) 0}
+.measure{max-width:44rem}
+
+/* Plain caps label. An earlier pass had a decorative hairline trailing each
+   eyebrow; it read as filler once the page had real photography in it. */
+.eyebrow{
+  font-size:.7rem; font-weight:600; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--clay); margin:0 0 1.15rem;
+}
+.eyebrow--center{text-align:center}
+
+.lede{font-size:clamp(1.06rem,1.5vw,1.2rem); color:var(--ink-mid); max-width:60ch}
+
+.skip{position:absolute; left:-9999px; top:0; background:var(--plum); color:#fff; padding:.75rem 1.25rem; z-index:999; border-radius:0 0 var(--r-sm) 0}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--plum); outline-offset:3px; border-radius:var(--r-xs)}
+
+/* ---------- buttons: 8px, not pills ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  font-family:var(--sans); font-size:.93rem; font-weight:600; letter-spacing:.005em;
+  padding:.88rem 1.6rem; border-radius:var(--r-sm); border:1px solid transparent;
+  text-decoration:none; cursor:pointer; min-height:48px;
+  transition:background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.btn-primary{background:var(--clay); color:#fff; box-shadow:var(--shadow-xs)}
+.btn-primary:hover{background:var(--clay-deep); box-shadow:var(--shadow-sm); transform:translateY(-1px)}
+.btn-ghost{background:transparent; border-color:rgba(255,255,255,.45); color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.75)}
+.btn-outline{background:var(--shell); border-color:var(--line); color:var(--plum)}
+.btn-outline:hover{border-color:var(--clay); color:var(--clay-deep)}
+.btn-light{background:#fff; color:var(--clay-deep)}
+.btn-light:hover{background:var(--sand); transform:translateY(-1px)}
+.btn[disabled]{opacity:.45; cursor:not-allowed; transform:none}
+
+/* ---------- utility bar ----------
+   Sits above the header on every page. Two jobs: put the insurance panels
+   (the thing most people filter on first) in front of every visitor, and
+   make the phone number one tap away on mobile, where click-to-call is by
+   far the highest-converting element on a practice site. */
+.utility{background:var(--plum-deep); color:rgba(255,255,255,.7); font-size:.78rem}
+.utility__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1rem; padding:.55rem 0; flex-wrap:wrap;
+}
+.utility p{margin:0}
+.utility a{
+  color:#fff; text-decoration:none; font-weight:600;
+  display:inline-flex; align-items:center; gap:.45rem;
+}
+.utility a:hover{color:var(--gold)}
+.utility svg{opacity:.8}
+.utility .sep{opacity:.3; margin:0 .65rem}
+.utility .dot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:#8FB08A; margin-right:.5rem; vertical-align:middle;
+}
+@media (max-width:820px){
+  .utility__inner{justify-content:center; gap:.5rem; padding:0}
+  .utility__left{display:none}   /* phone stays: it's the useful half on a phone */
+  /* it's the primary mobile CTA, so give it a real tap target */
+  .utility a{min-height:46px; padding:.35rem .75rem}
+}
+
+/* ---------- header ---------- */
+.header{
+  position:sticky; top:0; z-index:60;
+  background:rgba(251,247,242,.88); backdrop-filter:saturate(150%) blur(16px);
+  border-bottom:1px solid transparent; transition:border-color .25s ease, box-shadow .25s ease;
+}
+.header.is-stuck{border-bottom-color:var(--hair); box-shadow:0 4px 20px rgba(130,67,31,.05)}
+.header__inner{display:flex; align-items:center; gap:1.5rem; padding:.8rem 0}
+
+.brand{display:flex; align-items:center; gap:.7rem; text-decoration:none; margin-right:auto; min-width:0}
+.brand__mark{width:42px; height:42px; flex:none}
+.brand__text{display:flex; flex-direction:column; line-height:1; min-width:0}
+.brand__name{font-family:var(--serif); font-size:1.1rem; font-weight:600; color:var(--clay-deep); white-space:nowrap}
+.brand__sub{font-size:.55rem; font-weight:700; letter-spacing:.32em; color:var(--plum); text-transform:uppercase; margin-top:.34rem; white-space:nowrap}
+
+.nav{display:flex; align-items:center; gap:1.75rem}
+.nav a{font-size:.9rem; font-weight:500; color:var(--plum); text-decoration:none; position:relative; padding:.3rem 0; white-space:nowrap}
+.nav a::after{content:""; position:absolute; left:0; right:100%; bottom:0; height:1px; background:var(--clay); transition:right .25s ease}
+.nav a:hover::after, .nav a[aria-current="page"]::after{right:0}
+
+.nav-toggle{display:none; background:none; border:1px solid var(--line); border-radius:var(--r-sm); padding:.55rem .65rem; cursor:pointer; min-width:44px; min-height:44px}
+.nav-toggle span{display:block; width:20px; height:1.5px; background:var(--plum); border-radius:2px}
+.nav-toggle span+span{margin-top:5px}
+
+@media (min-width:1041px){ .nav .btn{display:none} }
+@media (min-width:1141px) and (max-width:1400px){
+  .header__inner{gap:1rem}
+  .nav{gap:1.1rem}
+  .nav a{font-size:.85rem}
+  .header__cta{padding:.78rem 1.2rem; font-size:.85rem}
+}
+@media (max-width:1140px){
+  .nav-toggle{display:grid; place-content:center; order:3}
+  .nav{
+    position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
+    background:var(--cream); border-bottom:1px solid var(--line); padding:.25rem var(--gutter) 1.25rem;
+    box-shadow:var(--shadow-md); display:none;
+  }
+  .nav.is-open{display:flex}
+  .nav a{padding:1rem 0; border-bottom:1px solid var(--hair)}
+  /* `.nav a` (0,0,1,1) outranks `.btn-primary` (0,0,1,0), so the Book Now
+     button in the mobile menu was inheriting plum text on a clay fill.
+     These two rules win it back. */
+  .nav a.btn{border-bottom:0; margin-top:1rem}
+  .nav a.btn-primary{color:#fff}
+  .nav a.btn::after{display:none}
+  .header__cta{display:none}
+}
+
+/* ---------- footer ---------- */
+.footer{background:var(--plum-deep); color:rgba(255,255,255,.74); font-size:.92rem; position:relative}
+
+/* Ridgeline that rises out of the footer into the section above, echoing the
+   two overlapping ridges in the logo mark. Purely decorative, hidden from
+   assistive tech, and it scales with the viewport via preserveAspectRatio. */
+.footer__ridge{
+  position:absolute; left:0; right:0;
+  /* Sit 1px INTO the footer rather than exactly on its top edge. At
+     fractional scroll offsets the browser was rounding the boundary and
+     letting a hairline of the orange CTA gradient show through between the
+     ridge and the footer; the thin orange line you saw while scrolling. */
+  bottom:calc(100% - 1px);
+  height:clamp(48px, 6vw, 88px); line-height:0; pointer-events:none;
+}
+.footer__ridge svg{width:100%; height:calc(100% + 1px); display:block}
+
+/* Live golden-hour readout. The practice is named for it, so showing today's
+   actual window in Colorado is a small, factual piece of delight that changes
+   every day. Computed locally (NOAA solar equations); no API, no key. */
+.goldenhour{
+  display:flex; align-items:center; justify-content:center; gap:.7rem;
+  flex-wrap:wrap; text-align:center;
+  border-top:1px solid rgba(255,255,255,.1);
+  /* symmetric padding so the line sits optically centered between its own
+     top rule and the footer bar's rule below it */
+  padding:1.1rem 0; margin:1.5rem 0 0;
+  font-size:.86rem; color:rgba(255,255,255,.62);
+}
+.goldenhour svg{flex:none; color:var(--gold); opacity:.9}
+.goldenhour b{color:var(--gold); font-weight:600; letter-spacing:.01em}
+.goldenhour .gh-sep{opacity:.4}
+/* No underlines. In a dark footer they turn a tidy list into a stack of
+   ruled lines and add visual noise; the hover state carries the affordance. */
+.footer a{color:rgba(255,255,255,.86); text-decoration:none}
+.footer a:hover{color:var(--gold); text-decoration:underline; text-underline-offset:4px}
+.footer__grid{display:grid; grid-template-columns:1.5fr 1fr 1.4fr; gap:3rem; padding:4.5rem 0 3rem}
+@media (max-width:860px){.footer__grid{grid-template-columns:1fr; gap:2.5rem}}
+.footer h4{color:#fff; font-family:var(--sans); font-size:.7rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; margin:0 0 1.1rem}
+.footer ul{list-style:none; margin:0; padding:0}
+.footer li{margin-bottom:.55rem}
+.footer .brand__name{color:#fff}
+.footer .brand__sub{color:var(--gold)}
+.crisis{
+  border:1px solid rgba(240,197,121,.35); background:rgba(240,197,121,.07);
+  border-radius:var(--r); padding:1rem 1.15rem; font-size:.85rem; line-height:1.6; margin-top:1.4rem;
+}
+.crisis strong{color:var(--gold)}
+.footer__bar{
+  border-top:1px solid rgba(255,255,255,.1); padding:1.5rem 0 2.5rem;
+  display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; font-size:.79rem; color:rgba(255,255,255,.5);
+}
+/* Privacy / Terms / GFE sit inline in a sentence, so they render at ~15px.
+   A transparent centered overlay grows the touch target to 36px without
+   changing a single visible pixel or nudging the baseline. */
+.footer__bar a{position:relative}
+.footer__bar a::after{content:""; position:absolute; left:-2px; right:-2px; top:50%; height:36px; transform:translateY(-50%)}
+.social{display:flex; gap:.6rem; margin-top:1.2rem}
+.social a{
+  width:44px; height:44px; border-radius:var(--r-sm); display:grid; place-items:center;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); color:#fff;
+  transition:background .2s ease, border-color .2s ease;
+}
+.social a:hover{background:var(--clay); border-color:var(--clay)}
+
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1; transform:none; transition:none}
+  .btn:hover{transform:none}
+}
+
+/* ---------- shared mobile ---------- */
+@media (max-width:640px){
+  .section{padding:clamp(3.25rem,8vw,4.5rem) 0}
+  /* MOBILE FOOTER
+     Previously every column stacked into one long single-file column and each
+     link claimed a 44px row, so the footer ran on for screens. Explore now
+     sits as a two-column grid of tap targets, which halves its height and
+     reads as a deliberate block rather than a list that won't end. */
+  .footer__grid{padding:2.75rem 0 1.75rem; gap:2rem}
+  .footer h4{margin-bottom:.75rem}
+  .footer__bar{flex-direction:column; gap:.5rem; padding:1.25rem 0 2rem; font-size:.75rem}
+
+  .footer__links{display:grid; grid-template-columns:1fr 1fr; gap:.15rem .75rem}
+  .footer__links li{margin:0}
+  .footer__links a{
+    display:flex; align-items:center; min-height:42px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+
+  .footer__contact li{margin-bottom:0}
+  .footer__contact a{display:flex; align-items:center; min-height:42px}
+
+  .crisis{margin-top:1rem; padding:.9rem 1rem; font-size:.82rem}
+  .social{margin-top:1rem}
+}
