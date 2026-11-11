@@ -167,19 +167,36 @@
 })();
 
 (function(){
-  // move the pieces around; positions are percentages so they hold on resize
-  if(!window.matchMedia('(pointer:fine)').matches) return;
-  document.querySelectorAll('[data-drag]').forEach(function(board){
-    var z=20;
-    board.querySelectorAll('.cut,.scrap,.stk,.pola').forEach(function(el){
-      var on=false, sx, sy, ox, oy;
-      el.addEventListener('pointerdown',function(e){ on=true; el.setPointerCapture(e.pointerId); el.classList.add('dragging'); el.style.zIndex=++z;
-        var r=board.getBoundingClientRect(); sx=e.clientX; sy=e.clientY; ox=el.offsetLeft; oy=el.offsetTop; e.preventDefault(); });
-      el.addEventListener('pointermove',function(e){ if(!on) return; var r=board.getBoundingClientRect();
-        var nx=Math.max(-el.offsetWidth*.4,Math.min(r.width-el.offsetWidth*.6,ox+e.clientX-sx)), ny=Math.max(-el.offsetHeight*.3,Math.min(r.height-el.offsetHeight*.5,oy+e.clientY-sy));
-        el.style.left=(nx/r.width*100)+'%'; el.style.top=(ny/r.height*100)+'%'; el.style.right='auto'; el.style.bottom='auto'; });
-      function up(){ on=false; el.classList.remove('dragging'); }
-      el.addEventListener('pointerup',up); el.addEventListener('pointercancel',up);
-    });
-  });
+  // home: tap to see why something is there (hover does it on a mouse)
+  var nb=document.getElementById('notes');
+  if(nb){ var ps=[].slice.call(nb.querySelectorAll('.piece'));
+    var out=document.querySelector('.pn-out');
+    ps.forEach(function(p){ p.addEventListener('click',function(e){ var on=!p.classList.contains('on'); ps.forEach(function(q){ q.classList.remove('on'); }); if(on) p.classList.add('on'); if(out) out.innerHTML=on?p.querySelector('.pn').innerHTML:''; e.stopPropagation(); }); });
+    document.addEventListener('click',function(){ ps.forEach(function(q){ q.classList.remove('on'); }); });
+  }
+  // consultation: which one do I need
+  var wh=document.getElementById('which');
+  if(wh){ var bs=[].slice.call(wh.querySelectorAll('.wh-opts button')), as=[].slice.call(wh.querySelectorAll('.wh-a')), hand=wh.querySelector('.wh-hand');
+    bs.forEach(function(b,i){ b.addEventListener('click',function(){
+      bs.forEach(function(x){ x.setAttribute('aria-selected','false'); }); b.setAttribute('aria-selected','true');
+      as.forEach(function(a){ a.classList.toggle('on',a.getAttribute('data-i')==i); });
+      var hr=hand.getBoundingClientRect(), br=b.getBoundingClientRect(), ox=hr.left+hr.width*.85, oy=hr.top+hr.height*.5;
+      var ang=Math.atan2((br.top+br.height/2)-oy,(br.right)-ox)*180/Math.PI-180;
+      hand.style.setProperty('--rot',Math.max(-60,Math.min(60,ang))+'deg');
+    }); });
+  }
+  // individual: the case in one line becomes an email
+  var nf=document.getElementById('nb');
+  if(nf) nf.addEventListener('submit',function(e){ e.preventDefault(); var t=nf.querySelector('textarea').value.trim();
+    location.href='mailto:sf@sarahfreezelcsw.com?subject='+encodeURIComponent('Individual consultation')+'&body='+encodeURIComponent((t?'The case, in one line: '+t+'\n\n':'')+'A few times that work for me:\n'); });
+  // evergreen: tear the stub and the email opens
+  var tk=document.getElementById('ticket');
+  if(tk) tk.addEventListener('click',function(){ tk.classList.add('torn'); setTimeout(function(){ tk.classList.remove('torn'); },2500); });
+  // courses: go through the deck
+  var dk=document.getElementById('deck');
+  if(dk){ var cs=[].slice.call(dk.querySelectorAll('.dk-card')), top=0;
+    function lay(){ cs.forEach(function(c,i){ var p=(i-top+cs.length)%cs.length; c.style.setProperty('--p',Math.min(p,4)); c.style.opacity=p>4?0:1; c.setAttribute('aria-hidden',p?'true':'false'); }); }
+    lay();
+    dk.querySelector('.dk-next').addEventListener('click',function(){ var c=cs[top]; c.classList.add('gone'); setTimeout(function(){ c.classList.remove('gone'); top=(top+1)%cs.length; lay(); },280); });
+  }
 })();
