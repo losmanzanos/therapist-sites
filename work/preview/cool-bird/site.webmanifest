@@ -1,0 +1,29 @@
+{
+  "name": "Cool Bird Counseling",
+  "short_name": "Cool Bird",
+  "description": "Addiction, grief, and mental health counseling by telehealth throughout Colorado.",
+  "start_url": "/work/preview/cool-bird/",
+  "scope": "/work/preview/cool-bird/",
+  "display": "browser",
+  "background_color": "#f8f7f6",
+  "theme_color": "#2f4038",
+  "icons": [
+    {
+      "src": "/work/preview/cool-bird/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/work/preview/cool-bird/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/work/preview/cool-bird/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
