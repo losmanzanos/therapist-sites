@@ -151,6 +151,7 @@ footer{padding:36px 0 56px}
 @media (max-width:860px) and (orientation:landscape){
   .loom{aspect-ratio:7/4}
 }
+@media (orientation:landscape) and (max-height:520px){ .loom{container-type:inline-size;width:min(100%,calc((100svh - 100px) * 7 / 4));margin-left:auto;margin-right:auto} .name{font-size:13cqw} }
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
 /* ---------- shared across inner pages ---------- */
@@ -747,7 +748,7 @@ body{background:var(--paper)}
   .c-board.home .l6{display:none}
   .c-board.home .hc{width:17%;left:74%;top:0}
   .c-board.home .hw{width:32%;left:4%;top:2%}
-  .c-board.home .hr{display:block;width:22%;left:41%;top:5%}
+  .c-board.home .hr{display:block;width:21%;left:41%;top:2%}
   .c-board.home .hk{width:24%;left:6%;top:66%}
   .c-board.home .sq1{width:42%;left:-1%;top:-2%}
   .c-board.home .hs{left:60%;top:62%;width:112px}
@@ -916,6 +917,26 @@ body{font-family:var(--sans);font-optical-sizing:auto}
 .nb label{font-size:18px;color:var(--ink)}
 .tk-stub .hand{font-size:14px;color:var(--ink)}
 @media (max-width:900px) and (orientation:portrait){ .hn{font-size:15px;max-width:92%} .c-tip{font-size:14px} }
+/* phones and small tablets: the tagline sits inside the collage, anchored to its bottom edge, so a tapped note below never runs into it */
+.hn-m{display:none}
+@media (max-width:900px){
+  .c-board.home .hn{display:none}
+  .hn.hn-m{display:inline-block;position:relative;left:auto;top:auto;bottom:auto;z-index:8;margin:-22px 0 0 3%;max-width:92%;white-space:normal}
+  .pn-out{margin:18px 0 0;font-size:24px;line-height:1.15;min-height:0}
+  .pn-out:empty{display:none}
+}
+/* sideways phones: shrink the whole collage so the name fits on the first screen */
+@media (orientation:landscape) and (max-height:520px){
+  .c-board.home{container-type:inline-size;width:min(100%,calc((100svh - 150px) * 16 / 8.4));margin-left:auto;margin-right:auto}
+  .c-board.home .c-name{font-size:8.6cqw}
+  .c-board.home .stk.hs,.c-board.home .stk.hs2{width:15cqw}
+  .c-board.home .stk{font-size:2.4cqw}
+  .c-board.home .hs{top:66%}
+}
+@media (max-width:900px) and (orientation:portrait){
+  .c-board.home .hk{top:64%}
+  .c-board.home .hs{top:66%}
+}
 
 
 .sidepiece{display:grid;justify-items:center;padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(40px,5vw,72px)}
