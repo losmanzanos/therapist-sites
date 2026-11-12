@@ -66,6 +66,15 @@
   .menu a:hover::after{right:0;}
   .mast-r{display:flex;align-items:center;gap:28px;}
   .mast-tel{font-size:13px;letter-spacing:.08em;}
+  .menu a,.mast-tel{white-space:nowrap;}
+  
+  @media (min-width:1021px) and (max-width:1240px){
+    .mast-in{gap:18px;}
+    .menu{gap:16px;}
+    .menu a{letter-spacing:.17em;}
+    .mast-r{gap:18px;}
+    .mast-tel{font-size:12px;letter-spacing:.04em;}
+  }
   .bgr{display:none;width:36px;height:36px;background:none;border:0;padding:0;cursor:pointer;align-items:center;justify-content:center;}
   .bgr i{display:block;width:20px;height:1px;background:var(--ink);position:relative;}
   .bgr i::before,.bgr i::after{content:"";position:absolute;left:0;width:20px;height:1px;background:var(--ink);transition:transform .28s,top .28s;}

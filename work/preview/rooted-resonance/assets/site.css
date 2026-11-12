@@ -713,6 +713,10 @@ a.mt-row:hover{background:rgba(124,154,115,.07);padding-left:16px}
   padding-bottom:13px;margin-bottom:7px;border-bottom:1px solid var(--rule);
 }
 .sub-all:hover{color:var(--cream) !important}
+.sub-h{
+  display:block;padding:13px 24px 7px;margin-top:7px;border-top:1px solid var(--rule);
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-faint);
+}
 
 @media(max-width:900px){
   .navgrp{width:100%}
@@ -726,6 +730,7 @@ a.mt-row:hover{background:rgba(124,154,115,.07);padding-left:16px}
   .submenu a{padding:7px 0;font-size:11px;letter-spacing:.16em;color:var(--cream-faint)}
   .submenu a:hover,.submenu a.on{background:none;color:var(--moss-soft)}
   .sub-all{display:none}
+  .sub-h{padding:12px 0 4px;margin-top:4px;border-top:0;font-size:10px}
 }
 
 
