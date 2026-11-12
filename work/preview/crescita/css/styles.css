@@ -1176,3 +1176,8 @@ details,.faq-item{border-color:var(--line)}
 
 /* hero portrait: clean image, matching the rest of the site */
 .hero__img-wrap picture::before{content:none}
+
+/* Services has outgrown a single column: two columns keep the whole list on a
+   1024x768 screen, where the sticky header would otherwise hide the bottom. */
+.nav-dropdown--cols{display:grid;grid-template-columns:repeat(2,minmax(210px,1fr));column-gap:.25rem;min-width:470px}
+.nav-dropdown--cols .nav-dropdown__link--all{grid-column:1/-1}
