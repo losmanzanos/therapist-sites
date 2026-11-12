@@ -1,0 +1,61 @@
+name: Publish journal posts
+
+# Builds Journal posts whose publish date has arrived and pushes them to main.
+
+on:
+  schedule:
+    - cron: "5 13 * * *"   # 13:05 UTC = 7:05 am MDT / 6:05 am MST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-journal
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build journal for today (America/Denver)
+        id: build
+        env:
+          TZ: America/Denver
+        run: |
+          python3 scripts/journal.py --today "$(date +%F)" | tee build.log
+          if [ -z "$(git status --porcelain -- journal sitemap.xml)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.build.outputs.changed == 'true'
+        run: |
+          git config user.name "Chad Moravec"
+          git config user.email "chad.m.moravec@gmail.com"
+          git add journal sitemap.xml
+          titles=$(git diff --cached --name-only --diff-filter=A -- 'journal/*.html' | xargs -r -n1 basename | sed 's/\.html$//' | paste -sd ', ' -)
+          git commit -m "Journal: ${titles:-index update}"
+          git push origin HEAD:main
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Journal publisher"
+            if [ "${{ steps.build.outputs.changed }}" = "true" ]; then echo "Published and pushed to main."; else echo "No post due today."; fi
+            echo
+            echo '```'
+            cat build.log 2>/dev/null || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
