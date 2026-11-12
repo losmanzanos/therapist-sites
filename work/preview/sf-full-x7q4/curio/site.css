@@ -210,12 +210,26 @@ figure{margin:0}
   *{transition-duration:.01ms !important;scroll-behavior:auto !important}
 }
 
+/* nameplate under the sign */
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.plaque{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:6px;white-space:nowrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#d9b468;text-shadow:0 1px 0 rgba(0,0,0,.7);pointer-events:none}
+.plaque span:first-child{font-size:.82em;letter-spacing:.24em;opacity:.75}
+.plaque::before{content:"";width:34px;height:1px;background:rgba(216,176,96,.55);margin-bottom:2px}
+.bar .call{letter-spacing:.12em}
+.bar-m{display:none}
+@media (min-width:901px){ .plaque{display:none} }
+@media (max-width:900px){ .bar-full{display:none} .bar-m{display:inline} }
+@media (max-width:900px){ .sign{top:56px} .plaque{margin-top:12px;font-size:10px;gap:4px} }
+@media (min-width:600px) and (max-width:900px) and (orientation:portrait){ .sign{top:56px;--t:48px} }
+@media (max-width:900px) and (orientation:landscape){ .sign{top:56px;--t:min(7vw,40px)} .plaque{margin-top:9px;font-size:9px} }
+
 /* ---------- shared across inner pages ---------- */
 .brand{text-decoration:none}
 .bar .brand:hover{border-bottom-color:transparent}
 .sign.mini{--t:26px;margin:0;padding:7px 8px 6px;box-shadow:0 6px 12px rgba(0,0,0,.5), inset 0 0 0 1px rgba(216,176,96,.4)}
 .sign.mini b{animation:none;box-shadow:0 2px 3px rgba(0,0,0,.5)}
 .menu{display:none}
+@media (max-width:900px){ .home-bar{padding-top:14px} .home-bar .menu summary{padding:6px 11px 5px} }
 .menu summary{list-style:none;cursor:pointer;padding:10px 14px 8px;border:1px solid rgba(243,233,211,.5)}
 .menu summary::-webkit-details-marker{display:none}
 .menu .c{display:none}

@@ -181,9 +181,10 @@
   (function(){
     if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var els=[].slice.call(document.querySelectorAll('[data-sp]')), root=document.documentElement, tick=false;
+    var k=innerWidth<900?2.6:1.4;
     function run(){ tick=false; var vh=innerHeight; root.style.setProperty('--sy',scrollY);
       els.forEach(function(e){ var r=e.getBoundingClientRect(); if(r.bottom<-200||r.top>vh+200) return;
-        var d=(r.top+r.height/2)-vh/2; e.style.setProperty('--py',(-d*parseFloat(e.getAttribute('data-sp')||0)).toFixed(1)+'px'); }); }
+        var d=(r.top+r.height/2)-vh/2; e.style.setProperty('--py',(-d*k*parseFloat(e.getAttribute('data-sp')||0)).toFixed(1)+'px'); }); }
     addEventListener('scroll',function(){ if(!tick){ tick=true; requestAnimationFrame(run); } },{passive:true});
     addEventListener('resize',run); run();
   })();

@@ -234,13 +234,25 @@ figure{margin:0}
   .sign b{animation:none}
   *{transition-duration:.01ms !important;scroll-behavior:auto !important}
 }
+
+/* nameplate under the sign */
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.plaque{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:6px;white-space:nowrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#d9b468;text-shadow:0 1px 0 rgba(0,0,0,.7);pointer-events:none}
+.plaque span:first-child{font-size:.82em;letter-spacing:.24em;opacity:.75}
+.plaque::before{content:"";width:34px;height:1px;background:rgba(216,176,96,.55);margin-bottom:2px}
+.bar .call{letter-spacing:.12em}
+@media (min-width:901px){ .plaque{display:none} }
+@media (max-width:900px){ .bar-full{display:none} }
+@media (max-width:900px){ .sign{top:56px} .plaque{margin-top:12px;font-size:10px;gap:4px} }
+@media (min-width:600px) and (max-width:900px) and (orientation:portrait){ .sign{top:56px;--t:48px} }
+@media (max-width:900px) and (orientation:landscape){ .sign{top:56px;--t:min(7vw,40px)} .plaque{margin-top:9px;font-size:9px} }
 </style>
 </head>
 <body>
 
 <header class="hero" id="top">
   <div class="bar mono">
-    <span>Curio &middot; The practice of Sarah Freeze, LCSW &middot; Denver</span>
+    <span class="bar-full">Curio &middot; The practice of Sarah Freeze, LCSW &middot; Denver</span>
     <nav aria-label="Main">
       <a href="#curiosities">The curiosities</a>
       <a href="#sarah">Sarah Freeze</a>
@@ -257,7 +269,7 @@ figure{margin:0}
 
   <div class="wrap hero-grid">
     <div class="pitch">
-      <div class="sign" aria-hidden="true"><b style="--r:-3deg;--y:0em">C</b><b style="--r:2deg;--y:.05em">U</b><b style="--r:-1.5deg;--y:-.03em">R</b><b style="--r:3deg;--y:.04em">I</b><b style="--r:-2deg;--y:-.01em">O</b></div>
+      <div class="sign"><span class="vh">Curio</span><b aria-hidden="true" style="--r:-3deg;--y:0em">C</b><b aria-hidden="true" style="--r:2deg;--y:.05em">U</b><b aria-hidden="true" style="--r:-1.5deg;--y:-.03em">R</b><b aria-hidden="true" style="--r:3deg;--y:.04em">I</b><b aria-hidden="true" style="--r:-2deg;--y:-.01em">O</b><span class="plaque"><span>The practice of</span><span>Sarah Freeze, LCSW &middot; Denver</span></span></div>
       <h1>Psychotherapy in Denver for people who are curious about themselves.</h1>
       <p>Sarah Freeze opened this practice on Harlan Street and still runs it. Her associate, Lora Hope, LSW, is taking new clients now.</p>
       <button class="open-btn" type="button" id="opener" aria-expanded="false" aria-controls="shelves"><span id="opener-text">Open the cabinet</span></button>
