@@ -2,7 +2,8 @@ name: Client form health
 
 # Every morning, send one health check through each client contact form.
 # Each check lands in Chad's inbox only (the site's HEALTH_TO), never the
-# client's. If any site fails twice in a row, an issue is opened on this repo,
+# client's. Every site's home page is also loaded to confirm the site is up.
+# If any form or site fails twice in a row, an issue is opened on this repo,
 # which emails the repo owner.
 #
 # To switch a site on: add its health token as a repository secret with the
@@ -41,7 +42,7 @@ jobs:
           LOVETT|Lovett Counseling|https://lovettcounselingandconsulting.com
           BLOOM|Bloom and Rise|https://www.bloomandrisetherapy.com
           CRESCITA|Crescita|https://www.crescitacounseling.com
-          DENVERFORWARD|Denver Forward|https://denverforwardtherapy-com.pages.dev
+          DENVERFORWARD|Denver Forward|https://denverforwardtherapy.com
           COOLBIRD|Cool Bird|https://www.coolbirdcounseling.com
           ROSEN|Rosen Psychology|https://rosenpsych.com
           APEX|Apex|https://apex-mhc.com
@@ -54,6 +55,16 @@ jobs:
           failed=""
           while IFS='|' read -r key label url; do
             key=$(echo "$key" | xargs); [ -z "$key" ] && continue
+            up=""
+            for attempt in 1 2; do
+              code=$(curl -sS -L -m 30 -o /dev/null -w '%{http_code}' "$url/" || echo 000)
+              if [ "$code" = "200" ]; then up=1; break; fi
+              [ "$attempt" = 1 ] && sleep 60
+            done
+            if [ -n "$up" ]; then echo "up    $label"; else
+              echo "DOWN  $label (HTTP $code)"
+              failed="$failed- $label: site did not load, $url/ (HTTP $code)\n"
+            fi
             var="HEALTH_$key"; token="${!var}"
             if [ -z "$token" ]; then echo "skip  $label (no secret yet)"; continue; fi
             ok=""
@@ -65,7 +76,7 @@ jobs:
             done
             if [ -n "$ok" ]; then echo "ok    $label"; else
               echo "FAIL  $label (HTTP $out: $(head -c 200 /tmp/resp 2>/dev/null))"
-              failed="$failed- $label: $url/contact (HTTP $out)\n"
+              failed="$failed- $label: contact form, $url/contact (HTTP $out)\n"
             fi
           done <<< "$sites"
           if [ -n "$failed" ]; then
@@ -76,11 +87,11 @@ jobs:
       - name: Open an issue if a form failed
         if: env.any_failed == '1'
         run: |
-          text="@${{ github.repository_owner }} a contact form health check failed twice in a row on $(date -u '+%B %-d, %Y %H:%M UTC').
+          text="@${{ github.repository_owner }} a site or contact form check failed twice in a row on $(date -u '+%B %-d, %Y %H:%M UTC').
 
           $(cat /tmp/failed)
 
-          Check that site's Resend dashboard (API key, domain still verified) and its Cloudflare Pages variables, then run this workflow again from the Actions tab. Until it passes, treat that form as down."
+          Check that site's Resend dashboard (API key, domain still verified) and its Cloudflare Pages variables, then run this workflow again from the Actions tab. Until it passes, treat that site or form as down."
           n=$(gh issue list -R "$GITHUB_REPOSITORY" --state open --search "Contact form health check failed in:title" --json number --jq '.[0].number')
           if [ -n "$n" ]; then gh issue comment "$n" -R "$GITHUB_REPOSITORY" --body "$text"
           else gh issue create -R "$GITHUB_REPOSITORY" --title "Contact form health check failed" --body "$text"; fi
