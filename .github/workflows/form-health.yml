@@ -1,0 +1,87 @@
+name: Client form health
+
+# Every morning, send one health check through each client contact form.
+# Each check lands in Chad's inbox only (the site's HEALTH_TO), never the
+# client's. If any site fails twice in a row, an issue is opened on this repo,
+# which emails the repo owner.
+#
+# To switch a site on: add its health token as a repository secret with the
+# name shown below (Settings > Secrets and variables > Actions). A site with
+# no secret is skipped.
+
+on:
+  schedule:
+    - cron: "17 13 * * *"   # 6:17 AM Denver in winter, 7:17 AM in summer
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      HEALTH_LOVETT: ${{ secrets.HEALTH_LOVETT }}
+      HEALTH_BLOOM: ${{ secrets.HEALTH_BLOOM }}
+      HEALTH_CRESCITA: ${{ secrets.HEALTH_CRESCITA }}
+      HEALTH_DENVERFORWARD: ${{ secrets.HEALTH_DENVERFORWARD }}
+      HEALTH_COOLBIRD: ${{ secrets.HEALTH_COOLBIRD }}
+      HEALTH_ROSEN: ${{ secrets.HEALTH_ROSEN }}
+      HEALTH_APEX: ${{ secrets.HEALTH_APEX }}
+      HEALTH_PIVOTAL: ${{ secrets.HEALTH_PIVOTAL }}
+      HEALTH_ROOTED: ${{ secrets.HEALTH_ROOTED }}
+      HEALTH_GHW: ${{ secrets.HEALTH_GHW }}
+      HEALTH_SAFERSOUNDS: ${{ secrets.HEALTH_SAFERSOUNDS }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Send a health check through every form
+        run: |
+          sites="
+          LOVETT|Lovett Counseling|https://lovettcounselingandconsulting.com
+          BLOOM|Bloom and Rise|https://www.bloomandrisetherapy.com
+          CRESCITA|Crescita|https://www.crescitacounseling.com
+          DENVERFORWARD|Denver Forward|https://denverforwardtherapy-com.pages.dev
+          COOLBIRD|Cool Bird|https://www.coolbirdcounseling.com
+          ROSEN|Rosen Psychology|https://rosenpsych.com
+          APEX|Apex|https://apex-mhc.com
+          PIVOTAL|Pivotal Tides|https://pivotaltides.com
+          ROOTED|Rooted Resonance|https://rootedresonancetherapy.com
+          GHW|Golden Hour Wellness|https://www.goldenhourwellnesscolorado.com
+          SAFERSOUNDS|Safer Sounds Club|https://www.safersoundsclub.com
+          "
+          body='{"name":"Form Check","first":"Form","last":"Check","email":"chad.m.moravec@gmail.com","message":"Daily form check."}'
+          failed=""
+          while IFS='|' read -r key label url; do
+            key=$(echo "$key" | xargs); [ -z "$key" ] && continue
+            var="HEALTH_$key"; token="${!var}"
+            if [ -z "$token" ]; then echo "skip  $label (no secret yet)"; continue; fi
+            ok=""
+            for attempt in 1 2; do
+              out=$(curl -sS -m 30 -o /tmp/resp -w '%{http_code}' -X POST "$url/api/contact" \
+                -H 'content-type: application/json' -H "x-health-token: $token" -d "$body" || echo 000)
+              if [ "$out" = "200" ] && grep -q '"ok":true' /tmp/resp; then ok=1; break; fi
+              [ "$attempt" = 1 ] && sleep 60
+            done
+            if [ -n "$ok" ]; then echo "ok    $label"; else
+              echo "FAIL  $label (HTTP $out: $(head -c 200 /tmp/resp 2>/dev/null))"
+              failed="$failed- $label: $url/contact (HTTP $out)\n"
+            fi
+          done <<< "$sites"
+          if [ -n "$failed" ]; then
+            printf '%b' "$failed" > /tmp/failed
+            echo "any_failed=1" >> "$GITHUB_ENV"
+          fi
+
+      - name: Open an issue if a form failed
+        if: env.any_failed == '1'
+        run: |
+          text="@${{ github.repository_owner }} a contact form health check failed twice in a row on $(date -u '+%B %-d, %Y %H:%M UTC').
+
+          $(cat /tmp/failed)
+
+          Check that site's Resend dashboard (API key, domain still verified) and its Cloudflare Pages variables, then run this workflow again from the Actions tab. Until it passes, treat that form as down."
+          n=$(gh issue list -R "$GITHUB_REPOSITORY" --state open --search "Contact form health check failed in:title" --json number --jq '.[0].number')
+          if [ -n "$n" ]; then gh issue comment "$n" -R "$GITHUB_REPOSITORY" --body "$text"
+          else gh issue create -R "$GITHUB_REPOSITORY" --title "Contact form health check failed" --body "$text"; fi
+          exit 1
