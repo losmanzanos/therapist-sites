@@ -1,0 +1,32 @@
+[
+ {
+  "name": "Is It Physical or Neuroplastic? Recognizing Mind-Body Symptoms in Clinical Practice",
+  "start": "2026-11-18T23:00:00.000Z",
+  "end": "2026-11-19T00:30:00.000Z",
+  "tz": "America/New_York",
+  "url": "https://luma.com/8rsrmlsf",
+  "place": "96 Park St",
+  "city": "Montclair, NJ",
+  "cents": 1500,
+  "flexible": true,
+  "free": false,
+  "spots": 3,
+  "near": true,
+  "sold_out": false
+ },
+ {
+  "name": "MTC Networking Event",
+  "start": "2026-12-03T23:00:00.000Z",
+  "end": "2026-12-04T01:00:00.000Z",
+  "tz": "America/New_York",
+  "url": "https://luma.com/y63bbfro",
+  "place": "The MC Hotel, Autograph Collection",
+  "city": "Montclair, NJ",
+  "cents": 1000,
+  "flexible": true,
+  "free": false,
+  "spots": 25,
+  "near": false,
+  "sold_out": false
+ }
+]
