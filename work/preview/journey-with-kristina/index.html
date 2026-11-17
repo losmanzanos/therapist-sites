@@ -356,13 +356,13 @@ body.mm-lock{overflow:hidden}
 
 /* ============ PASS 6: structure (overrides above) ============ */
 /* header clock */
-.hdr-clock{--d:1/10/2/16;align-self:center;display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--muted);white-space:nowrap}
+.hdr-clock{--d:2/2/3/12;align-self:start;display:flex;align-items:center;gap:6px;margin-top:9px;font-size:12.5px;letter-spacing:.02em;color:var(--muted);white-space:nowrap}
 .hdr-clock .dot{width:7px;height:7px;border-radius:50%;background:var(--clay);animation:pulse 3s ease-in-out infinite}
-.nav{--d:1/16/2/26}
-@media (max-width:1359px){.hdr-clock{display:none}.nav{--d:1/11/2/26}}
+.nav{--d:1/11/2/26}
+@media (max-width:767px){.hdr-clock{display:none}}
 .nav a{white-space:nowrap}
 /* hero: portrait bleeds off the top and right edge, headline overlaps its faded edge */
-.hero{margin-top:-86px;padding:0 0 9vw}
+.hero{margin-top:-97px;padding:0 0 9vw}
 .hero-photo{--d:1/15/2/full-end;--m:1/full-start/2/full-end;margin:0;position:relative;z-index:1}
 .hero-photo .ph{border-radius:0}
 .hero-photo img{aspect-ratio:4/5;object-position:50% 25%}
@@ -467,7 +467,7 @@ body.mm-lock{overflow:hidden}
 <!-- HEADER (Squarespace header: site title left, nav right, button styled as underlined link via Custom CSS) -->
 <header class="hdr fe">
   <a class="wordmark" href="#">Kristina Shimokawa<span>LMFT &nbsp;·&nbsp; IFS &amp; somatic therapy</span></a>
-  <p class="hdr-clock" aria-live="off"><span class="dot" aria-hidden="true"></span><span data-tz="America/Los_Angeles">6:00 PM</span>&nbsp;in San Francisco</p>
+  <p class="hdr-clock" aria-live="off"><span class="dot" aria-hidden="true"></span><span data-tz="America/Los_Angeles">6:00 PM</span><span>in San Francisco</span></p>
   <nav class="nav" aria-label="Main">
     <a href="#">About</a><a href="#">Specialties</a><a href="#">Services</a><a href="#">Fees</a><a href="#">Blog</a>
     <a class="cta" href="#">Book a free consult</a>
@@ -632,7 +632,7 @@ body.mm-lock{overflow:hidden}
 </section>
 </main>
 <!-- PHONE BAR (Squarespace: code block + footer script; phones only) -->
-<div class="mbar" id="mbar"><span class="mbar-t"><span class="dot" aria-hidden="true"></span><span data-tz="America/Los_Angeles">6:00 PM</span>&nbsp;in San Francisco</span><a href="#">Book a free consult</a></div>
+<div class="mbar" id="mbar"><span class="mbar-t"><span class="dot" aria-hidden="true"></span><span data-tz="America/Los_Angeles">6:00 PM</span><span>in San Francisco</span></span><a href="#">Book a free consult</a></div>
 
 <!-- FOOTER -->
 <footer class="ftr fe">
