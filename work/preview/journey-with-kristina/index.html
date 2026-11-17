@@ -563,6 +563,7 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
     try{localStorage.setItem('jwk-type',b.dataset.type)}catch(e){}
   })});
   pv.querySelector('.x').addEventListener('click',function(){pv.classList.add('min')});
+  if(window.innerWidth<768)pv.classList.add('min');
   pv.querySelector('.open').addEventListener('click',function(){pv.classList.remove('min')});
   try{var t=localStorage.getItem('jwk-type');if(t){var b=pv.querySelector('[data-type="'+t+'"]');b&&b.click()}}catch(e){}
 })();
