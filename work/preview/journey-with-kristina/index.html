@@ -211,7 +211,7 @@ body.mm-lock{overflow:hidden}
 .art{display:block;width:100%;height:auto}
 
 /* ============ FAMILIAR ============ */
-.familiar{padding:9vw 0 8vw;background:var(--fog)}
+.familiar{padding:5vw 0 8vw;background:var(--fog)}
 .fam-h{--d:1/2/2/10;--m:1/2/2/10}
 .fam-art{--d:2/2/4/9;--m:3/6/4/10;align-self:start;margin-top:64px;max-width:170px;position:relative}
 .fam-art img{position:relative;z-index:1}
@@ -380,18 +380,18 @@ body.mm-lock{overflow:hidden}
 }
 /* familiar: big heading, numbered two-column list, drawing as a margin note */
 .fam-h{--d:1/2/2/19;--m:1/2/2/10;font-size:clamp(40px,5.2vw,84px);line-height:1.02;max-width:13ch}
-.fam-art{--d:1/20/2/25;--m:2/2/3/5;align-self:end;justify-self:end;margin:0;max-width:128px}
+.fam-art{--d:1/12/2/18;--m:2/2/3/5;align-self:center;justify-self:start;margin:0;width:100%;max-width:230px}
 .fam-list{--d:2/2/3/26;--m:3/2/4/10;margin-top:70px;border-top:0;columns:2;column-gap:calc(var(--gutter)*6);counter-reset:f}
 .fam-list li{break-inside:avoid;border-top:1px solid rgba(30,39,37,.22);border-bottom:0;padding:22px 0 26px;grid-template-columns:58px 1fr}
 .fam-list li::before{content:counter(f,decimal-leading-zero);counter-increment:f;width:auto;height:auto;background:none;margin-top:6px;font-size:12.5px;letter-spacing:.14em;color:var(--clay-ink)}
 .fam-close{--d:3/2/4/14;--m:4/2/5/10;margin-top:40px}
-@media (min-width:768px) and (max-width:1099px){.fam-h{--d:1/2/2/20}.fam-list{columns:1}}
+@media (min-width:768px) and (max-width:1099px){.fam-h{--d:1/2/2/17}.fam-art{--d:1/18/2/26;max-width:170px}.fam-list{columns:1}}
 @media (max-width:767px){.fam-art{max-width:90px;margin-top:26px;justify-self:start}.fam-list{columns:1;margin-top:30px}.fam-list li{grid-template-columns:40px 1fr}.fam-list li::before{margin-top:5px}}
 /* evenings: one oversized time, topo rising behind the map, California folded in */
 .evenings{padding:1vw 0 8vw;position:relative;overflow:hidden}
 .topo{position:absolute;pointer-events:none;z-index:0;height:auto;max-width:none}
 .evenings > :not(.topo),.close > :not(.topo){position:relative;z-index:1}
-.topo-ev{width:min(86vw,1300px);right:-40vw;top:-18%;opacity:.16;transform:rotate(-8deg)}
+.topo-ev{width:640px;left:-330px;right:auto;top:44%;opacity:.16;transform:rotate(-8deg)}
 .ev-kicker{--d:1/2/2/14;--m:1/2/2/10;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#C98A6C}
 .ev-clock{--d:2/2/3/26;--m:2/2/3/10;margin-top:calc(14px + 2.6vw)}
 .ev-big{font-family:var(--f-display);font-weight:var(--display-weight);letter-spacing:-0.04em;font-size:clamp(84px,16.5vw,290px);line-height:.86;color:#F1F3EF;white-space:nowrap}
@@ -409,7 +409,7 @@ body.mm-lock{overflow:hidden}
 .ev-cities-l{display:block;font-family:var(--f-body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9FAAA3;margin-bottom:6px}
 .ev-cities i{font-style:normal;color:#C98A6C;padding:0 .12em}
 @media (min-width:768px) and (max-width:1099px){.ev-copy{--d:3/2/4/22}.ev-art{--d:4/2/5/26;max-width:150px;margin-top:56px;justify-self:center}.ev-ca{--d:5/2/6/26;grid-template-columns:1fr}.ev-ca > *,.ev-ca > :not(.ev-ca-h){grid-column:1}.ev-ca-h{grid-row:auto;margin-bottom:12px}}
-@media (max-width:767px){.ev-big{font-size:23vw}.ev-copy{margin-top:48px}.ev-art{margin-top:48px}.ev-ca{grid-template-columns:1fr;margin-top:64px}.ev-ca > *,.ev-ca > :not(.ev-ca-h){grid-column:1}.ev-ca-h{grid-row:auto;margin-bottom:12px}.topo-ev{width:150vw;right:-90vw;top:2%}}
+@media (max-width:767px){.ev-big{font-size:23vw}.ev-copy{margin-top:48px}.ev-art{margin-top:48px}.ev-ca{grid-template-columns:1fr;margin-top:64px}.ev-ca > *,.ev-ca > :not(.ev-ca-h){grid-column:1}.ev-ca-h{grid-row:auto;margin-bottom:12px}.topo-ev{width:380px;left:-230px;right:auto;top:30%}}
 /* work: sticky photo beside numbered rows */
 .work{overflow:visible}
 .wk-photo{--d:2/2/4/10;position:sticky;top:110px;align-self:start;margin-top:56px}
