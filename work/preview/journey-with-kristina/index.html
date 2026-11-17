@@ -178,7 +178,6 @@ body.mm-lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.arch{animation:none;opacity:1}}
 @keyframes archin{from{opacity:0;transform:translate(10px,-10px)}to{opacity:1;transform:translate(26px,-26px)}}
 @media (max-width:767px){.arch{animation-name:archin-m}}@keyframes archin-m{from{opacity:0;transform:translate(6px,-6px)}to{opacity:1;transform:translate(14px,-14px)}}
-.sun-disc{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:var(--sand);z-index:0}
 .hero-photo .ph{overflow:hidden;clip-path:inset(100% 0 0 0);animation:unveil 1.5s cubic-bezier(.7,0,.2,1) .25s forwards}
 .hero-photo .ph img{transform:scale(1.08);transform-origin:50% 40%;transition:transform .2s linear}
 @keyframes unveil{to{clip-path:inset(0 0 0 0)}}
@@ -202,7 +201,7 @@ body.mm-lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.reveal{clip-path:none;transition:none}.hero-photo .ph{clip-path:none;animation:none}.hero-display .w > span{transform:none;animation:none}}
 /* the line-art story: knotted, connected, unwinding, at rest. Each drawing wipes in like it is being drawn. */
 .story{position:relative}
-.cap{font-family:var(--f-script);font-size:34px;line-height:1;color:var(--clay);margin-top:8px;transform:rotate(-3deg);transform-origin:left}
+.cap{font-family:var(--f-script);font-size:28px;line-height:1;color:var(--clay);margin-top:8px;transform:rotate(-3deg);transform-origin:left}
 .bg-thread .cap{text-align:right;transform-origin:right}
 .cl-art .cap{text-align:center}
 .draw-in{clip-path:inset(0 100% 0 0);transition:clip-path 2.2s cubic-bezier(.45,0,.2,1)}
@@ -214,25 +213,22 @@ body.mm-lock{overflow:hidden}
 /* ============ FAMILIAR ============ */
 .familiar{padding:9vw 0 8vw;background:var(--fog)}
 .fam-h{--d:1/2/2/10;--m:1/2/2/10}
-.fam-art{--d:2/2/4/9;--m:3/6/4/10;align-self:start;margin-top:56px;max-width:300px;position:relative;isolation:isolate}
-.fam-art .sun-disc{left:-14%;top:12%}
+.fam-art{--d:2/2/4/9;--m:3/6/4/10;align-self:start;margin-top:64px;max-width:170px;position:relative}
 .fam-art img{position:relative;z-index:1}
 .fam-list{--d:1/12/3/25;--m:2/2/3/10;list-style:none;border-top:1px solid rgba(30,39,37,.22)}
 .fam-list li{padding:20px 0 20px 0;border-bottom:1px solid rgba(30,39,37,.22);font-size:19px;line-height:1.5;display:grid;grid-template-columns:52px 1fr}
 .fam-list li::before{content:"";width:22px;height:1px;background:var(--clay);margin-top:15px}
 .fam-close{--d:3/12/4/24;--m:4/2/5/10;margin-top:44px;font-size:19px}
 .fam-close p{max-width:620px;margin-bottom:22px}
-@media (max-width:767px){.fam-list{margin-top:34px}.fam-list li{font-size:17px;grid-template-columns:34px 1fr}.fam-art{max-width:150px;margin-top:30px}}
+@media (max-width:767px){.fam-list{margin-top:34px}.fam-list li{font-size:17px;grid-template-columns:34px 1fr}.fam-art{max-width:118px;margin-top:30px}}
 
 /* ============ EVENINGS ============ */
-.dusk{position:relative;height:30vw;max-height:440px;min-height:200px;background:radial-gradient(ellipse 34% 46% at 79% 70%,rgba(176,106,79,.34),rgba(176,106,79,0) 70%),linear-gradient(180deg,var(--fog) 0%,#DCE0D9 24%,#B2BAB4 48%,#76837E 68%,#3C4946 86%,var(--spruce) 100%);overflow:hidden}
-.horizon{position:absolute;left:0;right:0;bottom:34%;height:1px;background:rgba(237,239,234,.35)}
-.sun{position:absolute;right:calc(4vw + 6%);bottom:34%;width:240px;height:120px;overflow:hidden}
-.sun circle{fill:none;stroke:#C98A6C;stroke-width:1.35;vector-effect:non-scaling-stroke}
-.sun-in{transform:translateY(0);will-change:transform}
+.dusk{position:relative;height:44vw;max-height:620px;min-height:260px;overflow:hidden;background:var(--spruce)}
+.dusk-img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;object-position:50% 55%;filter:saturate(.8);will-change:transform}
+.dusk::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--fog) 0%,rgba(237,239,234,0) 22%,rgba(36,48,46,0) 55%,rgba(36,48,46,.75) 82%,var(--spruce) 100%)}
 .dawn{height:11vw;max-height:160px;background:linear-gradient(180deg,var(--spruce) 0%,#4E5B57 30%,#AEB6B0 72%,var(--fog) 100%)}
 .evenings{background:var(--spruce);color:#D6DCD5;padding:4vw 0 7vw;overflow:hidden}
-@media (max-width:767px){.dusk{height:56vw}.sun{width:150px;height:75px;right:8vw}}
+@media (max-width:767px){.dusk{height:72vw}}
 .evenings h2{color:#F1F3EF}
 .ev-copy{--d:1/2/2/13;--m:1/2/2/10;align-self:center}
 .ev-body{margin-top:32px;font-size:18.5px;max-width:560px}
@@ -257,16 +253,11 @@ body.mm-lock{overflow:hidden}
 .wk-intro{margin-top:24px;font-size:18px;color:var(--muted)}
 .wk-photo{--d:2/2/3/9;--m:4/2/5/8;margin-top:56px;position:relative}
 .wk-photo img{width:100%;aspect-ratio:5/6;object-fit:cover;filter:saturate(.5) contrast(1.03);border-radius:999px;position:relative;z-index:1}
-.wk-photo{isolation:isolate}.wk-photo .sun-disc{width:52%;right:-18%;bottom:8%}
 .wk-rows{--d:1/12/3/26;--m:3/2/4/10}
 .row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:32px;padding:30px 0;border-top:1px solid rgba(30,39,37,.22)}
 .row h3{transition:transform .5s cubic-bezier(.2,.7,.1,1)}
 .row:hover h3{transform:translateX(12px)}
 .row{transition:border-color .4s}
-.peek{position:absolute;left:0;top:0;width:180px;height:180px;border-radius:50%;background:var(--sand);padding:34px;z-index:4;pointer-events:none;opacity:0;transform:translate3d(0,0,0) scale(.85) rotate(-3deg);transition:opacity .35s,transform .35s;display:flex;align-items:center;justify-content:center}
-.peek img{max-width:100%;max-height:100%;object-fit:contain}
-.peek.show{opacity:1}
-@media (hover:none),(max-width:1099px){.peek{display:none}}
 .row:last-child{border-bottom:1px solid rgba(30,39,37,.22)}
 .row p{font-size:16.5px}
 .row .link{font-size:15px;display:inline-block;margin-top:10px}
@@ -275,7 +266,7 @@ body.mm-lock{overflow:hidden}
 /* ============ BEGIN (thread) ============ */
 .begin{background:var(--mist);padding:8vw 0 7vw;overflow:hidden}
 .bg-h{--d:1/2/2/11;--m:1/2/2/10}
-.bg-thread{--d:1/14/2/25;--m:2/3/3/10;align-self:end}
+.bg-thread{--d:1/16/2/25;--m:2/4/3/10;align-self:end;max-width:400px;justify-self:end;width:100%}
 .steps{--d:2/2/3/26;--m:3/2/4/10;margin-top:70px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gutter);position:relative;padding-top:34px}
 .steps-line{position:absolute;left:0;top:-21.5px;height:46px;width:100%;overflow:visible}
 .steps-line path{fill:none;stroke:var(--clay);stroke-width:1.35;vector-effect:non-scaling-stroke;stroke-linecap:round}
@@ -292,23 +283,31 @@ body.mm-lock{overflow:hidden}
 .ab-photo img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:50% 45%}
 .ab-text{--d:1/17/2/25;--m:2/2/3/10;align-self:end;padding-top:40px}
 .ab-text p{margin-top:16px;font-size:17px}
-.ab-text .quiet{font-family:var(--f-display);font-size:24px;line-height:1.3;color:var(--ink);letter-spacing:var(--display-tracking);margin-top:26px}
-.ab-text .sig-ab{font-size:60px;line-height:1;margin:26px 0 12px;display:block;transform:rotate(-4deg);transform-origin:left center}
 .creds{--d:2/17/3/25;--m:3/2/4/10;margin-top:30px;font-size:13.5px;color:var(--muted);border-top:1px solid rgba(30,39,37,.22);padding-top:14px;line-height:1.7}
 @media (max-width:767px){.ab-text{padding-top:34px}}
+
+/* ============ QUOTE ============ */
+.still{position:relative;min-height:min(78vh,760px);overflow:hidden;align-items:end;padding:0 0 7vw;background:#D9D2C6}
+.still-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;filter:saturate(.85)}
+.still::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(237,234,228,.72) 0%,rgba(237,234,228,.35) 45%,rgba(237,234,228,0) 75%)}
+.still-copy{--d:1/2/2/16;--m:1/2/2/10;position:relative;z-index:1;padding-top:30vh}
+.still-q{font-size:clamp(40px,5.4vw,84px);max-width:13ch}
+.still-sig{font-size:58px;line-height:1;margin-top:38px;display:block;transform:rotate(-4deg);transform-origin:left center}
+@media (max-width:767px){.still{min-height:96vw}.still-copy{padding-top:40vw}.still-q{font-size:clamp(32px,9.6vw,44px)}.still-sig{font-size:46px}.still::after{background:linear-gradient(0deg,rgba(237,234,228,.8) 0%,rgba(237,234,228,.3) 60%,rgba(237,234,228,0) 100%)}}
 
 /* ============ AREAS ============ */
 .areas{padding:9vw 0 8vw;background:var(--fog);overflow:hidden}
 .ar-head{--d:1/2/2/11;--m:1/2/2/10}
 .ar-sub{margin-top:22px;max-width:440px;font-size:17.5px;color:var(--muted)}
-.ar-bay{--d:1/13/2/20;--m:2/2/3/10}
-.ar-state{--d:1/21/2/26;--m:3/2/4/10}
-.ar-art{--d:2/2/3/9;--m:4/2/5/8;margin-top:56px;max-width:250px}
+.ar-bay{--d:2/2/3/8;--m:2/2/3/10;margin-top:48px}
+.ar-state{--d:2/9/3/14;--m:3/2/4/10;margin-top:48px}
+.ar-photo{--d:1/15/3/26;--m:4/full-start/5/full-end;align-self:start}
+.ar-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 50%;filter:saturate(.7)}
 .ar-col h3{font-size:15px;font-family:var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .ar-col ul{list-style:none}
 .ar-col li{font-family:var(--f-display);letter-spacing:var(--display-tracking);font-size:clamp(22px,1.9vw,30px);line-height:1.45;color:var(--ink)}
 .ar-state li{font-size:clamp(19px,1.45vw,22px);color:var(--text)}
-@media (max-width:767px){.ar-bay{margin-top:34px}.ar-state{margin-top:30px}.ar-art{max-width:170px;margin-top:44px}}
+@media (max-width:767px){.ar-bay{margin-top:34px}.ar-state{margin-top:30px}.ar-photo{margin-top:44px}.ar-photo img{aspect-ratio:4/3}}
 
 /* ============ READ ============ */
 .read{padding:0 0 8vw;background:var(--fog)}
@@ -327,7 +326,7 @@ body.mm-lock{overflow:hidden}
 .cl-display{--d:1/2/2/18;--m:1/2/2/10;font-size:clamp(42px,5.2vw,80px)}
 .cl-body{--d:2/2/3/12;--m:2/2/3/10;margin-top:30px;font-size:18.5px}
 .cl-links{--d:3/2/4/18;--m:3/2/4/10;margin-top:30px;display:flex;flex-wrap:wrap;gap:34px;align-items:baseline}
-.cl-art{--d:1/19/4/25;--m:4/5/5/10;align-self:center}
+.cl-art{--d:1/19/4/25;--m:4/6/5/10;align-self:center;max-width:280px;justify-self:end;width:100%}
 @media (max-width:767px){.cl-art{margin-top:30px}}
 
 /* ============ FOOTER ============ */
@@ -346,7 +345,7 @@ body.mm-lock{overflow:hidden}
 @media (min-width:768px) and (max-width:1099px){
   .wordmark{--d:1/2/2/11}.nav{--d:1/11/2/26;gap:18px;font-size:14px;white-space:nowrap}
   .wk-head{--d:1/2/2/20}.wk-rows{--d:2/2/3/26;margin-top:40px}.wk-photo{--d:3/2/4/12;margin-top:50px}
-  .ar-head{--d:1/2/2/20}.ar-bay{--d:2/2/3/14;margin-top:40px}.ar-state{--d:2/15/3/26;margin-top:40px}
+  .ar-head{--d:1/2/2/20}.ar-bay{--d:2/2/3/14;margin-top:40px}.ar-state{--d:2/15/3/26;margin-top:40px}.ar-photo{--d:3/2/4/26;margin-top:50px}.ar-photo img{aspect-ratio:16/9}
   .fam-h{--d:1/2/2/12}.fam-list li{font-size:17px}
   .ev-copy{--d:1/2/2/22}.ev-art{--d:2/2/3/26;max-width:150px;margin-top:50px;justify-self:center}
   .f-brand{--d:1/2/2/26}.f-col{margin-top:40px}
@@ -409,7 +408,7 @@ body.mm-lock{overflow:hidden}
 <!-- SECTION 2 · FAMILIAR -->
 <section class="familiar fe">
   <h2 class="fam-h">This has all become too familiar.</h2>
-  <figure class="fam-art story"><span class="sun-disc" aria-hidden="true"></span><img class="draw-in art" src="img/line-woman.svg" alt="" width="346" height="412"><figcaption class="cap">knotted</figcaption></figure>
+  <figure class="fam-art story"><img class="art" src="img/line-woman.svg" alt="" width="346" height="412"><figcaption class="cap">knotted</figcaption></figure>
   <ul class="fam-list">
     <li>You found out about an affair, a secret, or a partner who suddenly wants to open the relationship, and now you question everything you thought you knew.</li>
     <li>You love your partner. Staying feels like betraying yourself, and leaving means losing the life you built.</li>
@@ -426,10 +425,7 @@ body.mm-lock{overflow:hidden}
 </section>
 
 <!-- SECTION 2b · DUSK (empty section, gradient background; the sun is a Code Block that sinks as you scroll) -->
-<div class="dusk" aria-hidden="true">
-  <div class="horizon"></div>
-  <div class="sun"><div class="sun-in"><svg viewBox="0 0 120 60"><circle cx="60" cy="60" r="57"/><circle cx="60" cy="60" r="42" opacity=".45"/></svg></div></div>
-</div>
+<div class="dusk" aria-hidden="true"><img class="dusk-img" src="img/fog-hills.webp" alt="" width="2400" height="1246" loading="lazy"></div>
 
 <!-- SECTION 3 · EVENINGS -->
 <section class="evenings fe" id="evenings">
@@ -445,7 +441,7 @@ body.mm-lock{overflow:hidden}
   </div>
   </div>
   <div class="ev-art">
-    <img class="draw-in art" src="img/line-pins.svg" alt="" width="760" height="1182">
+    <img class="art" src="img/line-pins.svg" alt="" width="760" height="1182">
     <p class="ev-tag sf">Bay Area<span>You</span></p>
     <p class="ev-tag maui">Maui<span>Kristina</span></p>
   </div>
@@ -459,14 +455,13 @@ body.mm-lock{overflow:hidden}
   <h2>What we work on</h2>
   <p class="wk-intro">Most of the women I see are leaders, partners and mothers who look fine from the outside.</p>
   </div>
-  <figure class="wk-photo"><span class="sun-disc" aria-hidden="true"></span><img class="reveal" src="img/evening-curtain.webp" alt="Evening light through linen curtains" width="900" height="1080" loading="lazy"></figure>
-  <div class="peek" aria-hidden="true"><img alt="" src="img/line-woman.svg"></div>
-  <div class="wk-rows">
-    <div class="row" data-art="img/line-woman.svg"><h3>Betrayal and relational trauma</h3><div><p>Affairs, hidden sexual behavior, dating apps, a partner who wants to open the relationship. We sort through the shock first, then whether to stay or go.</p><a class="link" href="#">Betrayal and infidelity therapy</a></div></div>
-    <div class="row" data-art="img/line-ripple-leaf.svg"><h3>Anxiety that passes for high functioning</h3><div><p>Racing thoughts, perfectionism, people-pleasing, and the exhaustion of always being the capable one.</p><a class="link" href="#">High-functioning anxiety</a></div></div>
-    <div class="row" data-art="img/line-thread.svg"><h3>Motherhood and matrescence</h3><div><p>The identity shift nobody warned you about. Mom rage, losing track of who you were, and wanting less sex than you used to.</p><a class="link" href="#">Therapy for mothers</a></div></div>
-    <div class="row" data-art="img/line-compass.svg"><h3>Therapists and clinicians</h3><div><p>Your own therapy, with someone who knows what it costs to sit in the chair all day.</p><a class="link" href="#">Therapy for therapists</a></div></div>
-    <div class="row" data-art="img/line-pins.svg"><h3>Ketamine-assisted therapy</h3><div><p>Online sessions with oral ketamine, through Journey Clinical, for anxiety or depression that hasn't shifted with talk therapy alone.</p><a class="link" href="#">Ketamine-assisted therapy</a></div></div>
+  <figure class="wk-photo"><img class="reveal" src="img/evening-curtain.webp" alt="Evening light through linen curtains" width="900" height="1080" loading="lazy"></figure>
+    <div class="wk-rows">
+    <div class="row"><h3>Betrayal and relational trauma</h3><div><p>Affairs, hidden sexual behavior, dating apps, a partner who wants to open the relationship. We sort through the shock first, then whether to stay or go.</p><a class="link" href="#">Betrayal and infidelity therapy</a></div></div>
+    <div class="row"><h3>Anxiety that passes for high functioning</h3><div><p>Racing thoughts, perfectionism, people-pleasing, and the exhaustion of always being the capable one.</p><a class="link" href="#">High-functioning anxiety</a></div></div>
+    <div class="row"><h3>Motherhood and matrescence</h3><div><p>The identity shift nobody warned you about. Mom rage, losing track of who you were, and wanting less sex than you used to.</p><a class="link" href="#">Therapy for mothers</a></div></div>
+    <div class="row"><h3>Therapists and clinicians</h3><div><p>Your own therapy, with someone who knows what it costs to sit in the chair all day.</p><a class="link" href="#">Therapy for therapists</a></div></div>
+    <div class="row"><h3>Ketamine-assisted therapy</h3><div><p>Online sessions with oral ketamine, through Journey Clinical, for anxiety or depression that hasn't shifted with talk therapy alone.</p><a class="link" href="#">Ketamine-assisted therapy</a></div></div>
   </div>
 </section>
 
@@ -488,11 +483,18 @@ body.mm-lock{overflow:hidden}
   <div class="ab-text">
     <h2>Hi, I'm Kristina.</h2>
     <p>I earned my master's in counseling psychology at the University of San Francisco, and I've spent years working with women through anxiety and relational trauma. I blend IFS, Brainspotting and somatic, attachment-based therapy, so we work with your body as well as your story.</p>
-    <p class="quiet">There's no filter necessary with me.</p>
-    <p class="sig sig-ab" aria-hidden="true">Kristina</p>
     <p><a class="link" href="#">Meet Kristina</a></p>
   </div>
   <p class="creds">Licensed Marriage and Family Therapist, California #LMFT133759 and Hawaii #MFT-601<br>IFS Level 2, IFS Institute · Ketamine-assisted therapy, Journey Clinical · Level 1 Brainspotting</p>
+</section>
+
+<!-- SECTION 6b · QUOTE (full-bleed image section with one large line of text) -->
+<section class="still fe">
+  <img class="still-img" src="img/leaf-shadow.webp" alt="" width="2200" height="1468" loading="lazy">
+  <div class="still-copy">
+    <p class="display still-q">There's no filter necessary with me.</p>
+    <p class="sig still-sig" aria-hidden="true">Kristina</p>
+  </div>
 </section>
 
 <!-- SECTION 7 · WHERE -->
@@ -502,7 +504,7 @@ body.mm-lock{overflow:hidden}
   <p class="ar-sub">Sessions happen by secure video, so you can be anywhere in the state. Most of my clients are in San Francisco and around the Bay.</p>
   </div>
   <div class="ar-col ar-bay"><h3>San Francisco and the Bay Area</h3><ul><li>San Francisco</li><li>Oakland</li><li>Berkeley</li><li>Marin County</li><li>San Mateo</li><li>Palo Alto</li><li>San Jose</li></ul></div>
-  <figure class="ar-art" aria-hidden="true"><img class="draw-in art" src="img/line-compass.svg" alt="" width="780" height="638" loading="lazy"></figure>
+  <figure class="ar-photo"><img class="reveal" src="img/eucalyptus.webp" alt="Tall eucalyptus trees with pale bark" width="1400" height="933" loading="lazy"></figure>
   <div class="ar-col ar-state"><h3>And statewide</h3><ul><li>Sonoma County</li><li>Santa Cruz</li><li>Sacramento</li><li>Los Angeles</li><li>Santa Barbara</li><li>San Diego</li></ul></div>
   
 </section>
@@ -526,7 +528,7 @@ body.mm-lock{overflow:hidden}
     <a class="link link-lg" href="#">Book a free consult</a>
     <a class="link" href="mailto:kshimokawa.lmft@gmail.com">kshimokawa.lmft@gmail.com</a>
   </div>
-  <figure class="cl-art story"><img class="draw-in art" src="img/line-ripple-leaf.svg" alt="" width="535" height="169" loading="lazy"><figcaption class="cap">at rest</figcaption></figure>
+  <figure class="cl-art story"><img class="art" src="img/line-ripple-leaf.svg" alt="" width="535" height="169" loading="lazy"><figcaption class="cap">at rest</figcaption></figure>
 </section>
 </main>
 
@@ -582,31 +584,22 @@ body.mm-lock{overflow:hidden}
   window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);frame();
 })();
 
-/* ===== Headline rise, reveals, sunset, portrait scale, row peeks (Squarespace: Footer Code Injection) ===== */
+/* ===== Headline rise, reveals, fog drift, portrait scale (Squarespace: Footer Code Injection) ===== */
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var h=document.querySelector('.hero-display');
   if(h&&!reduce){var i=0;h.innerHTML=h.textContent.trim().split(/\s+/).map(function(w){return '<span class="w"><span style="animation-delay:'+(0.15+0.07*i++).toFixed(2)+'s">'+w+'</span></span>'}).join(' ')}
   var rv=[].slice.call(document.querySelectorAll('.reveal,.draw-in'));
   if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var im=e.target.querySelector('.reveal,.draw-in');im&&im.classList.add('in');o.unobserve(e.target)}})},{threshold:.2});rv.forEach(function(r){o.observe(r.parentNode)})}else rv.forEach(function(r){r.classList.add('in')});
-  var dusk=document.querySelector('.dusk'),sun=document.querySelector('.sun-in'),ph=document.querySelector('.hero-photo .ph img');
+  var dusk=document.querySelector('.dusk'),sun=document.querySelector('.dusk-img'),ph=document.querySelector('.hero-photo .ph img');
   function frame(){var vh=window.innerHeight;
-    if(dusk&&sun&&!reduce){var r=dusk.getBoundingClientRect();var p=Math.min(1,Math.max(0,(vh*0.75-r.top)/(r.height+vh*0.35)));sun.style.transform='translateY('+(p*100).toFixed(1)+'%)'}
+    if(dusk&&sun&&!reduce){var r=dusk.getBoundingClientRect();var p=Math.min(1,Math.max(0,(vh*0.75-r.top)/(r.height+vh*0.35)));sun.style.transform='translateY('+(p*12-6).toFixed(2)+'%)'}
     if(ph&&!reduce){var y=Math.min(1,Math.max(0,window.scrollY/vh));ph.style.transform='scale('+(1.08-0.08*Math.min(1,y*1.6+0.6)).toFixed(3)+')'}
     t=false}
   var t=false;function q(){if(!t){t=true;requestAnimationFrame(frame)}}
   window.addEventListener('scroll',q,{passive:true});window.addEventListener('resize',q);frame();
   if(ph&&!reduce)setTimeout(function(){q()},900);
-  var peek=document.querySelector('.peek'),wk=document.querySelector('.work');
-  if(peek&&wk&&window.matchMedia('(hover:hover) and (min-width:1100px)').matches){
-    var img=peek.querySelector('img'),tx=0,ty=0,cx=0,cy=0,on=false;
-    document.querySelectorAll('.row[data-art]').forEach(function(r){
-      r.addEventListener('mouseenter',function(){img.src=r.dataset.art;peek.classList.add('show');on=true});
-      r.addEventListener('mouseleave',function(){peek.classList.remove('show');on=false});
-    });
-    wk.addEventListener('mousemove',function(e){var b=wk.getBoundingClientRect();tx=e.clientX-b.left+56;ty=e.clientY-b.top-80});
-    (function loop(){cx+=(tx-cx)*.14;cy+=(ty-cy)*.14;peek.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0) scale('+(on?1:.85)+') rotate('+(on?-2:-5)+'deg)';requestAnimationFrame(loop)})();
-  }
+
 })();
 
 /* ===== Mobile menu ===== */
