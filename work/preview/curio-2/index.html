@@ -33,25 +33,42 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1}
 .dark .k{color:var(--brass-l)}
 
 /* top */
-.top{display:flex;align-items:center;justify-content:space-between;padding:20px var(--pad);border-bottom:1px solid var(--rule-l)}
-.top .mark{font-family:var(--fd);font-weight:500;font-size:24px;letter-spacing:.14em;text-decoration:none;display:flex;align-items:center;gap:12px}
-.top .mark .wm{height:28px;width:auto;overflow:visible}
-.top nav{display:flex;gap:28px;font-family:var(--fd);font-size:14.5px;font-weight:500}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:18px var(--pad);border-bottom:1px solid var(--rule-l);line-height:1}
+.top .mark{display:inline-flex;align-items:center;text-decoration:none;justify-self:start}
+.top .mark .wm{height:26px;width:auto;overflow:visible;display:block}
+.top nav{display:flex;align-items:center;gap:28px;font-family:var(--fd);font-size:14.5px;font-weight:500}
 .top nav a{text-decoration:none;opacity:.85}
 .top nav a:hover{opacity:1;color:var(--brass-l)}
-.top .cta{border:1px solid var(--brass);padding:9px 14px;opacity:1}
+.top .cta{border:1px solid var(--brass);padding:10px 14px;opacity:1}
+.top .tel{justify-self:end;font-family:var(--fd);font-size:14.5px;font-weight:500;text-decoration:none;opacity:.85}
+.top .tel:hover{color:var(--brass-l);opacity:1}
 
 /* hero */
-.hero{padding:clamp(48px,6vw,96px) var(--pad) clamp(40px,5vw,80px);max-width:1520px;margin:0 auto;display:grid;grid-template-columns:8fr 4fr;gap:clamp(32px,5vw,90px);align-items:end}
+.hero{padding:clamp(40px,5vw,72px) var(--pad) clamp(40px,5vw,72px);max-width:1520px;margin:0 auto;display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,90px);align-items:center}
+.hero .side{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end}
+.hero .port{margin:0}
+.hero .port img{aspect-ratio:3/4;object-fit:cover;width:100%;filter:saturate(.9) contrast(1.02)}
+.hero .port figcaption{font-family:var(--fd);font-size:13px;margin-top:10px;color:rgba(241,235,221,.8)}
+.hero .port b{color:var(--cream);font-weight:500;display:block;font-size:15px}
 .hero h1{font-size:clamp(40px,6.2vw,104px);font-weight:300;max-width:14ch}
 .hero h1 b{font-weight:500}
 .hero .sub{margin-top:30px;font-size:clamp(18px,1.4vw,22px);max-width:30em;color:rgba(241,235,221,.82)}
 .hero .acts{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap}
 .hero .acts .u{font-size:16px}
-.hero .box{border:1px solid var(--rule-l);padding:22px 24px;font-size:16px;line-height:1.5}
+.hero .box{border:1px solid var(--rule-l);padding:20px 22px;font-size:15.5px;line-height:1.45}
 .hero .box p+p{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule-l)}
 .hero .box b{font-family:var(--fd);font-weight:500;display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-l);margin-bottom:4px}
 
+
+/* name */
+.name{background:var(--cream-2)}
+.name .wrap{display:grid;grid-template-columns:260px 1fr;gap:clamp(32px,5vw,80px);align-items:center;padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(48px,6vw,88px)}
+.name figure{margin:0;justify-self:center}
+.name img{width:240px;height:auto;box-shadow:0 18px 34px rgba(26,31,28,.22)}
+.name h2{max-width:14ch}
+.name .big{margin-top:22px;font-size:clamp(20px,1.7vw,24px);max-width:30em}
+.name p+p{margin-top:14px;color:var(--ink-2);max-width:38em}
+@media (max-width:1000px){.name .wrap{grid-template-columns:1fr}.name figure{justify-self:start}.name img{width:160px}}
 /* index */
 .index{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,90px);padding-top:clamp(56px,7vw,104px);padding-bottom:clamp(56px,7vw,104px)}
 .index .sticky{position:sticky;top:32px;align-self:start}
@@ -146,6 +163,8 @@ footer nav a:hover{color:var(--brass-l)}
 }
 @media (max-width:640px){
   body{font-size:17px}
+  .hero .side{grid-template-columns:1fr}
+  .hero .port img{aspect-ratio:4/3;object-position:50% 25%}
   .hero h1{font-size:clamp(38px,11.5vw,54px)}
   .qs li a,.qs li.m a{grid-template-columns:40px 1fr;gap:12px 16px}
   .qs .t{grid-column:2;white-space:normal}
@@ -159,9 +178,9 @@ footer nav a:hover{color:var(--brass-l)}
 <body>
 <div class="dark">
 <header class="top">
-  <a class="mark" href="#top"><svg class="wm" viewBox="0 0 440 110" role="img" aria-label="Curio"><path d="M97 32 A33 33 0 1 0 97 78" fill="none" stroke="#F1EBDD" stroke-width="12.5"/><circle cx="69" cy="48" r="6.2" fill="#B8893E"/><path d="M64.5 52.5 l9 0 l3.5 16 l-16 0 z" fill="#B8893E"/><text x="122" y="80" font-family="Bricolage Grotesque, system-ui, sans-serif" font-weight="500" font-size="88" letter-spacing="8" fill="#F1EBDD">URIO</text></svg></a>
-  <nav aria-label="Main"><a href="#questions">What we help with</a><a href="#practical">The practical part</a><a href="#team">Therapists</a><a href="#month">Your first month</a><a href="#faq">Questions</a><a class="cta" href="#contact">Book a free call</a></nav>
-  <a class="u" href="tel:+17204651253" style="border:0">(720) 465-1253</a>
+  <a class="mark" href="#top"><svg class="wm" viewBox="0 0 420 100" role="img" aria-label="Curio"><path d="M71 29 A26.5 26.5 0 1 0 71 69" fill="none" stroke="#F1EBDD" stroke-width="11"/><circle cx="50" cy="41.5" r="6.4" fill="#B8893E"/><path d="M45.3 46 l9.4 0 l3.8 16.5 l-17 0 z" fill="#B8893E"/><text x="93" y="80" font-family="Bricolage Grotesque, system-ui, sans-serif" font-weight="500" font-size="88" letter-spacing="8" fill="#F1EBDD">URIO</text></svg></a>
+  <nav aria-label="Main"><a href="#name">The name</a><a href="#questions">What we help with</a><a href="#practical">The practical part</a><a href="#team">Therapists</a><a href="#month">Your first month</a><a href="#faq">Questions</a><a class="cta" href="#contact">Book a free call</a></nav>
+  <a class="tel" href="tel:+17204651253">(720) 465-1253</a>
 </header>
 <section class="hero" id="top">
   <div>
@@ -170,15 +189,29 @@ footer nav a:hover{color:var(--brass-l)}
     <p class="sub">Two therapists. One office on Harlan Street. We work with adults on anxiety, perfectionism, the big life changes, and the old things that still get in the way, using EMDR, sand tray, and the kind of therapy that goes somewhere.</p>
     <p class="acts"><a class="u" href="#contact">Book a free 15-minute call</a><a class="u" href="#questions">Start with the list</a></p>
   </div>
-  <div class="box">
-    <p><b>Now accepting new clients</b>Lora Hope, LSW has weekday and evening openings. In person or by video.</p>
-    <p><b>In network with</b>Kaiser, UnitedHealthcare, Optum, Oscar, Surest, UMR, and Colorado Medicaid.</p>
-    <p><b>Owned and supervised by</b>Sarah Freeze, LCSW. EMDR certified since 2018, consultant and trainer.</p>
+  <div class="side">
+    <figure class="port"><img src="img/lora.webp" alt="Lora Hope, LSW" width="900" height="1125" fetchpriority="high"><figcaption><b>Lora Hope, LSW</b> Taking new clients now</figcaption></figure>
+    <div class="box">
+      <p><b>In network with</b>Kaiser, UnitedHealthcare, Optum, Oscar, Surest, UMR, and Colorado Medicaid.</p>
+      <p><b>Owned and supervised by</b>Sarah Freeze, LCSW. EMDR certified since 2018, consultant and trainer.</p>
+      <p><b>Where</b>4704 Harlan St, Suite 440, Denver, or by video anywhere in Colorado.</p>
+    </div>
   </div>
 </section>
 </div>
 
 <main>
+<section class="name" id="name">
+  <div class="wrap">
+    <figure><img src="img/cabinet.webp" alt="A tall wooden curio cabinet with its glass doors open, shelves lined with small objects" width="640" height="863" loading="lazy"></figure>
+    <div>
+      <p class="k">About the name</p>
+      <h2>A curio is a small thing worth a second look.</h2>
+      <p class="big">The word comes from the Latin <em>curiosus</em>: careful, inquiring, wanting to know more. A curio is an object you pick up and turn over in your hands. A curio cabinet is where you keep them, behind glass, where you can see them.</p>
+      <p>That is the whole idea of the work here. The pattern you've been carrying for years, the question you keep not asking, the thing that still catches: picked up, looked at in good light, and understood, sometimes for the first time, sometimes again. Nothing in the cabinet is broken. It's just been waiting for someone to look.</p>
+    </div>
+  </div>
+</section>
 <section class="wrap index" id="questions">
   <div class="sticky">
     <p class="k">What we help with</p>
@@ -187,7 +220,7 @@ footer nav a:hover{color:var(--brass-l)}
     <figure>
       <img src="img/interior.webp" alt="Gwen John, Interior: a small table with a teapot and a book in a quiet room" width="740" height="900" loading="lazy">
       <img src="img/window.webp" alt="Léon Cogniet, The Artist in His Room at the Villa Medici, 1817" width="740" height="900" loading="lazy">
-      <figcaption>Curio, from the Latin <em>curiosus</em>: careful, inquiring. A curio is a small thing worth picking up and looking at again. So is the question you keep not asking. Paintings: Cleveland Museum of Art, open access.</figcaption>
+      <figcaption>A quiet room and an open window. Two of the paintings from the Cleveland Museum of Art that run through the site.</figcaption>
     </figure>
   </div>
   <ul class="qs">
@@ -313,7 +346,7 @@ footer nav a:hover{color:var(--brass-l)}
   <footer>
     <div class="in">
       <nav aria-label="Footer"><a href="#questions">Anxiety</a><a href="#questions">Perfectionism</a><a href="#questions">Life transitions</a><a href="#questions">Trauma</a><a href="#questions">Relationships</a><a href="#questions">Depression</a><a href="#questions">EMDR</a><a href="#questions">Intensives</a><a href="#questions">Sand tray</a><a href="#questions">Group</a><a href="#team">Sarah Freeze</a><a href="#team">Lora Hope</a><a href="#practical">Fees</a></nav>
-      <span>© 2026 Curio · Owned and directed by Sarah Freeze, LCSW · Clinician training at sarahfreezelcsw.com</span>
+      <span>© 2026 Curio · Owned and directed by Sarah Freeze, LCSW · Clinician training at sarahfreezelcsw.com · Cabinet: Musée Carnavalet, Paris, c. 1785. Paintings: Cleveland Museum of Art. Open access.</span>
     </div>
   </footer>
 </section>
