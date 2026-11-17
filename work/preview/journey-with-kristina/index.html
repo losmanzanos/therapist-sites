@@ -425,7 +425,7 @@ body.mm-lock{overflow:hidden}
 /* work: sticky photo beside numbered rows */
 .work{overflow:visible}
 .wk-photo{--d:2/2/4/10;position:sticky;top:110px;align-self:start;margin-top:56px}
-.wk-photo img{border-radius:0;aspect-ratio:4/5;object-position:50% 50%;filter:saturate(.75)}
+.wk-photo img{border-radius:999px 999px 0 0/300px 300px 0 0;aspect-ratio:3/4;object-position:50% 50%;filter:saturate(.75)}
 .wk-rows{--d:1/12/4/26;counter-reset:r}
 .row h3::before{content:counter(r,decimal-leading-zero);counter-increment:r;display:block;font-family:var(--f-body);font-size:12px;letter-spacing:.14em;color:var(--clay-ink);margin-bottom:12px}
 @media (max-width:1099px){.wk-photo{position:relative;top:auto}}
@@ -548,6 +548,20 @@ body.mm-lock{overflow:hidden}
 
 /* desktop headline: wider measure so it reads in three even lines instead of a narrow six-line stack */
 @media (min-width:1100px){.hero-display{max-width:none;text-wrap:balance}.hero-copy{--d:1/2/2/19}}
+
+/* blog cards: rule, standfirst, read link */
+.rd-list a{border-top:1px solid var(--clay);padding-top:18px;transition:border-color .3s}
+.rd-list a h3{margin-top:10px;transition:color .3s}
+.rd-list a p{margin-top:12px;font-size:15px;line-height:1.55;color:var(--muted)}
+.rd-list a .rd-more{display:inline-block;margin-top:16px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid currentColor;padding-bottom:3px}
+.rd-list a:hover h3{color:var(--clay-ink)}
+@media (max-width:767px){.rd-list a{padding-top:16px;margin-bottom:28px}.rd-list a p{display:none}}
+/* about photo: a touch more depth against the sage */
+.ab-photo img{filter:contrast(1.06) saturate(.9) brightness(.97)}
+/* hero: signature carries the caption on desktop */
+@media (min-width:1100px){.hero-photo figcaption>span:first-child{display:none}.hero-photo figcaption{justify-content:flex-end}}
+
+@media (min-width:1100px){.hero{padding-bottom:4vw}.hero-photo figcaption{margin-top:6px}}
 </style>
 <script>
 /* intro plays once per visit; phone hero layout can be compared with ?hero=classic */
@@ -713,9 +727,9 @@ if(!sessionStorage.getItem('jwk-intro')&&!matchMedia('(prefers-reduced-motion: r
   <div class="rd-h"><h2>From the blog</h2></div>
   <a class="rd-all link" href="#">All posts</a>
   <div class="rd-list">
-    <a href="#"><span class="tag">Betrayal</span><h3>When trust is broken and anxiety takes over</h3></a>
-    <a href="#"><span class="tag">Anxiety</span><h3>Why high-functioning anxiety doesn't go away on its own</h3></a>
-    <a href="#"><span class="tag">Motherhood</span><h3>Matrescence and identity loss: why motherhood can feel like losing yourself</h3></a>
+    <a href="#"><span class="tag">Betrayal</span><h3>When trust is broken and anxiety takes over</h3><p>Why the shock of an affair shows up in your body first, and what helps in the first weeks.</p><span class="rd-more">Read</span></a>
+    <a href="#"><span class="tag">Anxiety</span><h3>Why high-functioning anxiety doesn't go away on its own</h3><p>Being good at coping is not the same as being okay. How IFS gets underneath it.</p><span class="rd-more">Read</span></a>
+    <a href="#"><span class="tag">Motherhood</span><h3>Matrescence and identity loss: why motherhood can feel like losing yourself</h3><p>The identity shift nobody names, and why rage and grief can sit right next to love.</p><span class="rd-more">Read</span></a>
   </div>
 </section>
 
