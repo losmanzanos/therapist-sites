@@ -12,9 +12,25 @@
 <meta property="og:image" content="https://therapistweb.design/work/preview/journey-with-kristina/og.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@300;400;500&family=Ms+Madi&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/gilda-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ms-madi.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Self-hosted and preloaded. font-display:block keeps text hidden for the moment the files take to arrive,
+   so it never paints in a fallback first and then re-wraps (that re-wrap was the jump on scroll). */
+@font-face{font-family:"Gilda Display";src:url(fonts/gilda-display.woff2) format("woff2");font-weight:400;font-style:normal;font-display:block}
+@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken-grotesk.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:block}
+@font-face{font-family:"Ms Madi";src:url(fonts/ms-madi.woff2) format("woff2");font-weight:400;font-style:normal;font-display:block}
+/* Page content waits for the fonts (usually a fraction of a second), then fades in already in its final layout. */
+html.fl .hdr,html.fl main,html.fl .ftr{opacity:0}
+.hdr,main,.ftr{transition:opacity .4s ease}
+</style>
+<script>
+(function(){var d=document.documentElement;d.classList.add('fl');function done(){d.classList.remove('fl')}
+try{if(!document.fonts||!document.fonts.load){done();return}
+var t=setTimeout(done,2500);
+Promise.all(['400 1em "Gilda Display"','400 1em "Hanken Grotesk"','500 1em "Hanken Grotesk"','300 1em "Hanken Grotesk"','400 1em "Ms Madi"'].map(function(f){return document.fonts.load(f)})).then(function(){clearTimeout(t);requestAnimationFrame(function(){requestAnimationFrame(done)})},done)}catch(e){done()}})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -516,6 +532,22 @@ body.mm-lock{overflow:hidden}
   .hm-byline .hero-h1{font-size:13.5px}
   .hm-byline .hero-by{margin-bottom:14px}
 }
+
+/* phone byline hero fills exactly the first screen; the big portrait is the first thing on scroll */
+@media (max-width:767px){
+  .hm-byline .hero{padding:0 0 14vw}
+  .hm-byline .hero-copy{display:flex;flex-direction:column;box-sizing:border-box;min-height:calc(100vh - var(--hdr-h,64px));min-height:calc(100svh - var(--hdr-h,64px));padding:6vw 0 8vw}
+  .hm-byline .hero-by{margin-bottom:0}
+  .hm-byline .hero-display{margin-top:auto;padding-top:26px;font-size:clamp(34px,13vw,60px);line-height:.97}
+  .hm-byline .hero-h1{margin-top:22px}
+  .hm-byline .hero-links{margin-top:auto;padding-top:26px}
+  .hm-byline .hero-photo{margin-top:0}
+}
+@media (max-width:767px) and (max-height:700px){.hm-byline .hero-display{font-size:clamp(30px,11.2vw,46px);padding-top:18px}.hm-byline .hero-links{padding-top:18px}}
+@media (max-width:767px) and (max-height:580px){.hm-byline .hero-display{font-size:clamp(26px,9.4vw,38px)}}
+
+/* desktop headline: wider measure so it reads in three even lines instead of a narrow six-line stack */
+@media (min-width:1100px){.hero-display{max-width:none;text-wrap:balance}.hero-copy{--d:1/2/2/19}}
 </style>
 <script>
 /* intro plays once per visit; phone hero layout can be compared with ?hero=classic */
@@ -725,6 +757,10 @@ if(!sessionStorage.getItem('jwk-intro')&&!matchMedia('(prefers-reduced-motion: r
   var done=false;function end(){if(done)return;done=true;el.classList.add('out');d.classList.remove('intro-on');setTimeout(function(){el.remove()},900)}
   setTimeout(end,2500);el.addEventListener('click',end);window.addEventListener('keydown',end,{once:true});
 })();
+
+
+/* ===== Phone hero: measure the header so the hero fills the first screen exactly ===== */
+(function(){var h=document.querySelector('.hdr');if(!h)return;function set(){document.documentElement.style.setProperty('--hdr-h',h.offsetHeight+'px')}set();window.addEventListener('resize',set);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(set)})();
 
 /* ===== Live clocks (Squarespace: Code Block JS) ===== */
 (function(){
