@@ -301,8 +301,8 @@ body.mm-lock{overflow:hidden}
 .still{position:relative;min-height:min(78vh,760px);overflow:hidden;align-items:end;padding:0 0 7vw;background:#D9D2C6}
 .still-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;filter:saturate(.85)}
 .still::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(237,234,228,.72) 0%,rgba(237,234,228,.35) 45%,rgba(237,234,228,0) 75%)}
-.still-copy{--d:1/2/2/16;--m:1/2/2/10;position:relative;z-index:1;padding-top:30vh}
-.still-q{font-size:clamp(40px,5.4vw,84px);max-width:13ch}
+.still-copy{--d:1/2/2/20;--m:1/2/2/10;position:relative;z-index:1;padding-top:30vh}
+.still-q{font-size:clamp(40px,5.4vw,84px);max-width:19ch}
 .still-sig{font-size:58px;line-height:1;margin-top:38px;display:block;transform:rotate(-4deg);transform-origin:left center}
 @media (max-width:767px){.still{min-height:96vw}.still-copy{padding-top:40vw}.still-q{font-size:clamp(32px,9.6vw,44px)}.still-sig{font-size:46px}.still::after{background:linear-gradient(0deg,rgba(237,234,228,.8) 0%,rgba(237,234,228,.3) 60%,rgba(237,234,228,0) 100%)}}
 
@@ -548,6 +548,7 @@ body.mm-lock{overflow:hidden}
 
 /* desktop headline: wider measure so it reads in three even lines instead of a narrow six-line stack */
 @media (min-width:1100px){.hero-copy{--d:1/2/2/16}.hero-display{max-width:none;font-size:clamp(46px,5.4vw,84px)}.hero-display .ln{display:block}.hero-h1{max-width:none}}
+@media (min-width:1700px){.hero-copy{--d:1/2/2/17}.hero-display{font-size:clamp(46px,5.4vw,92px)}.hero-h1{font-size:21px;max-width:none}}
 
 /* blog cards: rule, standfirst, read link */
 .rd-list a{border-top:1px solid var(--clay);padding-top:18px;transition:border-color .3s}
