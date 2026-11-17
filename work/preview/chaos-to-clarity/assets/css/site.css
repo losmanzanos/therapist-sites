@@ -161,9 +161,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .svc p{margin-top:12px;max-width:31em;color:var(--walnut-2);font-size:16px}
 .svc .more{display:inline-block;margin-top:10px;font-size:14.5px;text-decoration:underline;text-underline-offset:.32em;text-decoration-thickness:1px}
 .svc:nth-of-type(1){margin-left:0}
-.svc:nth-of-type(2){margin-left:12%}
-.svc:nth-of-type(3){margin-left:24%}
-.svc:nth-of-type(4){margin-left:36%}
+.svc:nth-of-type(2){margin-left:10%}
+.svc:nth-of-type(3){margin-left:20%}
+.svc:nth-of-type(4){margin-left:30%}
+.svc:nth-of-type(5){margin-left:40%}
 .affirm{margin-top:clamp(50px,6vw,80px);padding-top:28px;border-top:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:24px 60px;font-size:15px;color:var(--walnut-2)}
 
 /* ============ MAC ============ */
@@ -406,6 +407,7 @@ footer .crisis{flex-basis:100%;font-size:12.5px}
   .svc:nth-of-type(2){margin-left:6%}
   .svc:nth-of-type(3){margin-left:12%}
   .svc:nth-of-type(4){margin-left:18%}
+  .svc:nth-of-type(5){margin-left:24%}
   .affirm{grid-template-columns:1fr}
   .about figure{max-width:300px;margin-bottom:44px}
   .creds{grid-template-columns:1fr}
