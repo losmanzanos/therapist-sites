@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Curio | Therapy in Denver for Anxiety, Perfectionism, Trauma and Life Transitions</title>
 <meta name="description" content="Curio is a small Denver therapy practice. Sarah Freeze, LCSW and Lora Hope, LSW work with adults on anxiety, perfectionism, life transitions and trauma, with EMDR and sand tray. In network with Kaiser, UnitedHealthcare and Colorado Medicaid.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%231E2E27%27/%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2730%27 fill=%27none%27 stroke=%27%23F1EBDD%27 stroke-width=%275%27/%3E%3Crect x=%2770%27 y=%2746%27 width=%2718%27 height=%278%27 fill=%27%231E2E27%27/%3E%3Ccircle cx=%2750%27 cy=%2743%27 r=%276%27 fill=%27%23B8893E%27/%3E%3Cpath d=%27M46 47 l8 0 l3 14 l-14 0 z%27 fill=%27%23B8893E%27/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%231E2E27%27/%3E%3Cpath d=%27M20 6 L22.9 17.1 L34 20 L22.9 22.9 L20 34 L17.1 22.9 L6 20 L17.1 17.1 Z%27 fill=%27%23B8893E%27/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -34,8 +34,8 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1}
 
 /* top */
 .top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:18px var(--pad);border-bottom:1px solid var(--rule-l);line-height:1}
-.top .mark{display:inline-flex;align-items:center;text-decoration:none;justify-self:start}
-.top .mark .wm{height:26px;width:auto;overflow:visible;display:block}
+.top .mark{display:inline-flex;align-items:center;gap:11px;text-decoration:none;justify-self:start;font-family:var(--fd);font-weight:500;font-size:21px;letter-spacing:.16em;color:var(--cream)}
+.top .mark .spark{width:20px;height:20px;display:block}
 .top nav{display:flex;align-items:center;gap:28px;font-family:var(--fd);font-size:14.5px;font-weight:500}
 .top nav a{text-decoration:none;opacity:.85}
 .top nav a:hover{opacity:1;color:var(--brass-l)}
@@ -44,38 +44,31 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1}
 .top .tel:hover{color:var(--brass-l);opacity:1}
 
 /* hero */
-.hero{padding:clamp(40px,5vw,72px) var(--pad) clamp(40px,5vw,72px);max-width:1520px;margin:0 auto;display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,90px);align-items:center}
-.hero .side{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end}
-.hero .port{margin:0}
-.hero .port img{aspect-ratio:3/4;object-fit:cover;width:100%;filter:saturate(.9) contrast(1.02)}
-.hero .port figcaption{font-family:var(--fd);font-size:13px;margin-top:10px;color:rgba(241,235,221,.8)}
-.hero .port b{color:var(--cream);font-weight:500;display:block;font-size:15px}
-.hero h1{font-size:clamp(40px,6.2vw,104px);font-weight:300;max-width:14ch}
-.hero h1 b{font-weight:500}
-.hero .sub{margin-top:30px;font-size:clamp(18px,1.4vw,22px);max-width:30em;color:rgba(241,235,221,.82)}
-.hero .acts{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap}
+.hero{position:relative;overflow:hidden;padding:clamp(40px,5vw,72px) var(--pad) 0;max-width:1520px;margin:0 auto;display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,90px);align-items:end}
+.hero::before{content:"";position:absolute;right:-10%;top:10%;width:60%;height:90%;background:radial-gradient(ellipse at 50% 60%,rgba(216,176,106,.28),rgba(216,176,106,.06) 50%,transparent 72%);pointer-events:none}
+.hero-copy{position:relative;padding-bottom:clamp(40px,5vw,72px)}
+.hero h1{font-size:clamp(40px,5.2vw,84px);font-weight:300;max-width:14ch;margin-top:12px}
+.hero .sub{margin-top:22px;font-size:clamp(18px,1.4vw,22px);max-width:30em;color:rgba(241,235,221,.85)}
+.hero .why{margin-top:22px;padding-top:16px;border-top:1px solid var(--rule-l);max-width:30em;font-size:17.5px;color:rgba(241,235,221,.78)}
+.hero .why .k{display:block;margin-bottom:6px}
+.hero .acts{margin-top:28px;display:flex;gap:26px;flex-wrap:wrap}
 .hero .acts .u{font-size:16px}
-.hero .box{border:1px solid var(--rule-l);padding:20px 22px;font-size:15.5px;line-height:1.45}
-.hero .box p+p{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule-l)}
-.hero .box b{font-family:var(--fd);font-weight:500;display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-l);margin-bottom:4px}
+.hero .cab{position:relative;margin:0;align-self:end;justify-self:center}
+.hero .cab img{width:min(100%,470px);height:auto;display:block;filter:drop-shadow(0 30px 40px rgba(0,0,0,.5))}
+.hero .cab figcaption{font-family:var(--fd);font-size:13px;line-height:1.4;color:rgba(241,235,221,.7);max-width:30ch;margin:18px 0 28px}
+.trust{background:var(--cream-2);color:var(--ink)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust .wrap>div{padding:22px 24px 22px 0;font-size:15px;line-height:1.45;color:var(--ink-2)}
+.trust .wrap>div+div{border-left:1px solid var(--rule);padding-left:24px}
+.trust b{display:block;font-family:var(--fd);font-weight:500;color:var(--ink);font-size:14px;letter-spacing:.02em;margin-bottom:3px}
 
-
-/* name */
-.name{background:var(--cream-2)}
-.name .wrap{display:grid;grid-template-columns:260px 1fr;gap:clamp(32px,5vw,80px);align-items:center;padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(48px,6vw,88px)}
-.name figure{margin:0;justify-self:center}
-.name img{width:240px;height:auto;box-shadow:0 18px 34px rgba(26,31,28,.22)}
-.name h2{max-width:14ch}
-.name .big{margin-top:22px;font-size:clamp(20px,1.7vw,24px);max-width:30em}
-.name p+p{margin-top:14px;color:var(--ink-2);max-width:38em}
-@media (max-width:1000px){.name .wrap{grid-template-columns:1fr}.name figure{justify-self:start}.name img{width:160px}}
 /* index */
 .index{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,90px);padding-top:clamp(56px,7vw,104px);padding-bottom:clamp(56px,7vw,104px)}
 .index .sticky{position:sticky;top:32px;align-self:start}
 .index .sticky p{margin-top:18px;max-width:28em;color:var(--ink-2)}
-.index .sticky figure{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
+.index .sticky figure{margin:36px 0 0;max-width:340px}
 .index .sticky img{aspect-ratio:4/5;object-fit:cover;width:100%}
-.index .sticky figcaption{font-size:14px;color:var(--ink-2);grid-column:1/-1}
+.index .sticky figcaption{font-size:14px;color:var(--ink-2);margin-top:10px}
 .qs{list-style:none;border-top:1px solid var(--ink)}
 .qs li a{display:grid;grid-template-columns:54px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--rule);text-decoration:none}
 .qs li a:hover .q{color:var(--brass)}
@@ -152,6 +145,10 @@ footer nav a:hover{color:var(--brass-l)}
 
 @media (max-width:1000px){
   .hero,.index,.month .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero .cab{justify-self:start}
+  .hero .cab img{width:min(100%,360px)}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .trust .wrap>div:nth-child(3){border-left:0;padding-left:0}
   .index .sticky{position:static}
   .ledger .wrap{grid-template-columns:1fr}
   .ledger .col{border-left:0;padding:0;margin-top:40px}
@@ -163,12 +160,14 @@ footer nav a:hover{color:var(--brass-l)}
 }
 @media (max-width:640px){
   body{font-size:17px}
-  .hero .side{grid-template-columns:1fr}
-  .hero .port img{aspect-ratio:4/3;object-position:50% 25%}
+  .trust .wrap{grid-template-columns:1fr}
+  .trust .wrap>div{border-left:0!important;padding:14px 0!important}
+  .trust .wrap>div+div{border-top:1px solid var(--rule)}
+  .hero .cab img{width:min(100%,300px)}
   .hero h1{font-size:clamp(38px,11.5vw,54px)}
   .qs li a,.qs li.m a{grid-template-columns:40px 1fr;gap:12px 16px}
   .qs .t{grid-column:2;white-space:normal}
-  .index .sticky figure{grid-template-columns:1fr 1fr}
+  
   .team .row{grid-template-columns:1fr}
   .team img{max-width:220px}
   .two{grid-template-columns:1fr}
@@ -178,49 +177,44 @@ footer nav a:hover{color:var(--brass-l)}
 <body>
 <div class="dark">
 <header class="top">
-  <a class="mark" href="#top"><svg class="wm" viewBox="0 0 420 100" role="img" aria-label="Curio"><path d="M71 29 A26.5 26.5 0 1 0 71 69" fill="none" stroke="#F1EBDD" stroke-width="11"/><circle cx="50" cy="41.5" r="6.4" fill="#B8893E"/><path d="M45.3 46 l9.4 0 l3.8 16.5 l-17 0 z" fill="#B8893E"/><text x="93" y="80" font-family="Bricolage Grotesque, system-ui, sans-serif" font-weight="500" font-size="88" letter-spacing="8" fill="#F1EBDD">URIO</text></svg></a>
-  <nav aria-label="Main"><a href="#name">The name</a><a href="#questions">What we help with</a><a href="#practical">The practical part</a><a href="#team">Therapists</a><a href="#month">Your first month</a><a href="#faq">Questions</a><a class="cta" href="#contact">Book a free call</a></nav>
+  <a class="mark" href="#top"><svg class="spark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 L23.4 16.6 L37 20 L23.4 23.4 L20 37 L16.6 23.4 L3 20 L16.6 16.6 Z" fill="#B8893E"/></svg><span>CURIO</span></a>
+  <nav aria-label="Main"><a href="#questions">What we help with</a><a href="#practical">The practical part</a><a href="#team">Therapists</a><a href="#month">Your first month</a><a href="#faq">Questions</a><a class="cta" href="#contact">Book a free call</a></nav>
   <a class="tel" href="tel:+17204651253">(720) 465-1253</a>
 </header>
 <section class="hero" id="top">
-  <div>
+  <div class="hero-copy">
     <p class="k">Denver · In person and online across Colorado</p>
     <h1>Curio is a small therapy practice for people who look fine and aren't.</h1>
-    <p class="sub">Two therapists. One office on Harlan Street. We work with adults on anxiety, perfectionism, the big life changes, and the old things that still get in the way, using EMDR, sand tray, and the kind of therapy that goes somewhere.</p>
-    <p class="acts"><a class="u" href="#contact">Book a free 15-minute call</a><a class="u" href="#questions">Start with the list</a></p>
+    <p class="sub">Two therapists. One office on Harlan Street. We work with adults on anxiety, perfectionism, the big life changes, and the old things that still get in the way, with EMDR, sand tray, and the kind of therapy that goes somewhere.</p>
+    <p class="why"><span class="k">About the name</span>Curio, from the Latin <em>curiosus</em>: wanting to know more. A curio is a small thing worth picking up and looking at again. So is the question you keep not asking.</p>
+    <p class="acts"><a class="u" href="#contact">Book a free 15-minute call</a><a class="u" href="#questions">See what people come in with</a></p>
   </div>
-  <div class="side">
-    <figure class="port"><img src="img/lora.webp" alt="Lora Hope, LSW" width="900" height="1125" fetchpriority="high"><figcaption><b>Lora Hope, LSW</b> Taking new clients now</figcaption></figure>
-    <div class="box">
-      <p><b>In network with</b>Kaiser, UnitedHealthcare, Optum, Oscar, Surest, UMR, and Colorado Medicaid.</p>
-      <p><b>Owned and supervised by</b>Sarah Freeze, LCSW. EMDR certified since 2018, consultant and trainer.</p>
-      <p><b>Where</b>4704 Harlan St, Suite 440, Denver, or by video anywhere in Colorado.</p>
-    </div>
-  </div>
+  <figure class="cab">
+    <img src="img/cabinet.webp" alt="A tall wooden curio cabinet with its glass doors open, every shelf lined with small objects" width="640" height="863" fetchpriority="high">
+    <figcaption>Everything on these shelves is a question somebody walked in with. The list is just below.</figcaption>
+  </figure>
 </section>
+<div class="trust">
+  <div class="wrap">
+    <div><b>Now accepting new clients</b>Lora Hope, LSW has weekday and evening openings, in person or by video.</div>
+    <div><b>In network with</b>Kaiser, UnitedHealthcare, Optum, Oscar, Surest, UMR, and Colorado Medicaid.</div>
+    <div><b>Owned and supervised by</b>Sarah Freeze, LCSW. EMDR certified since 2018, consultant and trainer.</div>
+    <div><b>First step</b>A free 15-minute phone call. No intake forms until you decide.</div>
+  </div>
+</div>
+
 </div>
 
 <main>
-<section class="name" id="name">
-  <div class="wrap">
-    <figure><img src="img/cabinet.webp" alt="A tall wooden curio cabinet with its glass doors open, shelves lined with small objects" width="640" height="863" loading="lazy"></figure>
-    <div>
-      <p class="k">About the name</p>
-      <h2>A curio is a small thing worth a second look.</h2>
-      <p class="big">The word comes from the Latin <em>curiosus</em>: careful, inquiring, wanting to know more. A curio is an object you pick up and turn over in your hands. A curio cabinet is where you keep them, behind glass, where you can see them.</p>
-      <p>That is the whole idea of the work here. The pattern you've been carrying for years, the question you keep not asking, the thing that still catches: picked up, looked at in good light, and understood, sometimes for the first time, sometimes again. Nothing in the cabinet is broken. It's just been waiting for someone to look.</p>
-    </div>
-  </div>
-</section>
+
 <section class="wrap index" id="questions">
   <div class="sticky">
     <p class="k">What we help with</p>
     <h2>Nobody walks in with a diagnosis.</h2>
     <p>They walk in with a question they've been turning over for a while. If one of these is yours, you're in the right place. If it's close but not quite, call anyway. We'll tell you.</p>
     <figure>
-      <img src="img/interior.webp" alt="Gwen John, Interior: a small table with a teapot and a book in a quiet room" width="740" height="900" loading="lazy">
-      <img src="img/window.webp" alt="Léon Cogniet, The Artist in His Room at the Villa Medici, 1817" width="740" height="900" loading="lazy">
-      <figcaption>A quiet room and an open window. Two of the paintings from the Cleveland Museum of Art that run through the site.</figcaption>
+      <img src="img/window.webp" alt="Léon Cogniet, The Artist in His Room at the Villa Medici, 1817: a young man reads a letter beside an open window" width="740" height="900" loading="lazy">
+      <figcaption>Cogniet, 1817. One of the paintings from the Cleveland Museum of Art open access collection that run through the site.</figcaption>
     </figure>
   </div>
   <ul class="qs">
