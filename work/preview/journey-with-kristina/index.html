@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@300;400;500&family=Young+Serif&family=Albert+Sans:wght@300;400;500&family=Familjen+Grotesk:wght@400;500&family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=Ms+Madi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@300;400;500&family=Ms+Madi&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,13 +68,10 @@
   --f-script:"Ms Madi", "Snell Roundhand", cursive;
   --gutter:11px; --pad:4vw;
 }
-body.type-b{ --f-display:"Young Serif", Georgia, serif; --f-body:"Albert Sans", "Helvetica Neue", Arial, sans-serif; --display-tracking:-0.015em; }
-body.type-c{ --f-display:"Familjen Grotesk", "Helvetica Neue", Arial, sans-serif; --f-body:"Libre Caslon Text", Georgia, serif; --display-tracking:-0.03em; --display-weight:500; }
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--fog);color:var(--text);font-family:var(--f-body);font-size:17px;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body.type-c{font-size:16px;line-height:1.75}
 img{display:block;max-width:100%;height:auto}
 section{overflow:hidden}
 a{color:inherit}
@@ -98,15 +95,6 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 .link:hover{color:var(--slate);border-color:var(--clay)}
 .link-lg{font-size:19px}
 
-/* ============ PREVIEW-ONLY UI (not part of the Squarespace build) ============ */
-.pv{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--spruce);color:var(--fog);padding:14px 16px 12px;width:260px;font:13px/1.45 "Hanken Grotesk",Arial,sans-serif;box-shadow:0 1px 0 rgba(0,0,0,.08)}
-.pv b{display:block;font-weight:500;letter-spacing:.04em;margin-bottom:8px}
-.pv button{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid rgba(237,239,234,.18);color:inherit;padding:8px 0;cursor:pointer;font:inherit;opacity:.65}
-.pv button[aria-pressed="true"]{opacity:1}
-.pv button span{display:block;font-size:11.5px;opacity:.75}
-.pv .x{position:absolute;top:8px;right:10px;width:auto;border:0;padding:2px 4px;opacity:.6}
-.pv.min{width:auto;padding:10px 14px}.pv.min > *:not(.open){display:none}.pv .open{display:none}.pv.min .open{display:block;border:0;padding:0;opacity:1}
-@media (max-width:767px){.pv{left:10px;right:10px;width:auto;bottom:10px}}
 
 /* ============ HEADER ============ */
 .hdr{padding:26px 0 0;position:relative;z-index:5}
@@ -455,7 +443,6 @@ body.mm-lock{overflow:hidden}
   .mbar a{background:var(--clay-ink);color:#fff;text-decoration:none;border-radius:999px;padding:11px 16px;font-weight:500;white-space:nowrap}
   body{padding-bottom:84px}
   body.mm-lock .mbar{transform:translateY(150%)}
-  .pv{bottom:84px}
 }
 .wk-swipe{display:none;--m:2/2/3/10;align-items:center;gap:10px;margin-top:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-ink)}
 .wk-swipe::after{content:"";height:1px;width:46px;background:currentColor}
@@ -470,7 +457,6 @@ body.mm-lock{overflow:hidden}
   .hero-display{font-size:clamp(28px,8.6vw,38px);line-height:1.02;max-width:none}
   .hero-h1{margin-top:14px;font-size:15px;line-height:1.5}
   .hero-links{margin-top:18px;gap:12px 22px}
-  .pv.min{left:auto;right:10px;top:68px;bottom:auto}
 }
 @media (max-width:767px) and (max-height:600px){.hero-photo img{height:30vh;height:30svh;min-height:150px}.hero-h1{font-size:14px}.hero-display{font-size:clamp(26px,7.8vw,32px)}}
 @media (max-width:767px) and (max-height:500px){.hero-photo img{height:26vh;height:26svh;min-height:120px}}
@@ -482,9 +468,68 @@ body.mm-lock{overflow:hidden}
   .hero-h1{margin-top:12px;font-size:14.5px}
   .hero-links{margin-top:14px}
 }
+
+/* ============ INTRO: a thread draws, her name settles, then the page ============ */
+.intro{display:none}
+.intro-on .intro,.intro.out{display:flex;position:fixed;inset:0;z-index:200;background:var(--fog);align-items:center;justify-content:center;flex-direction:column;transition:opacity .8s ease,visibility .8s}
+.intro-on body{overflow:hidden}
+.intro.out{opacity:0;visibility:hidden}
+.intro-thread{position:absolute;inset:0;width:100%;height:100%}
+.intro-thread path{fill:none;stroke:var(--clay);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:introDraw 1.9s cubic-bezier(.55,0,.25,1) .1s forwards}
+@keyframes introDraw{to{stroke-dashoffset:0}}
+.intro-name{position:relative;margin-top:36vh;font-family:var(--f-display);font-size:clamp(24px,2.6vw,36px);letter-spacing:var(--display-tracking);color:var(--ink);text-align:center;opacity:0;transform:translateY(10px);animation:introName .9s ease 1.05s forwards}
+.intro-name span{display:block;margin-top:8px;font-family:var(--f-body);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+@keyframes introName{to{opacity:1;transform:none}}
+.intro-on .hero-display .w > span,.intro-on .hero-photo .ph{animation-play-state:paused}
+@media (max-width:767px){.intro-name{margin-top:38vh}}
+
+/* ============ PHONE HERO: byline layout (default). ?hero=classic shows the earlier one ============ */
+.hero-by{display:none}
+@media (max-width:767px){
+  .hm-byline .hero{margin-top:0;padding:9vw 0 0}
+  .hm-byline .hero-copy{--m:1/2/2/10;margin-top:0;padding-top:0}
+  .hm-byline .hero-by{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+  .hm-byline .hero-by img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 16%;flex:none}
+  .hm-byline .hero-by p{margin:0;font-size:15px;line-height:1.35}
+  .hm-byline .hero-by b{display:block;font-weight:500;color:var(--ink)}
+  .hm-byline .hero-by-t{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:13px;color:var(--muted)}
+  .hm-byline .hero-by-t .dot{width:7px;height:7px;border-radius:50%;background:var(--clay);animation:pulse 3s ease-in-out infinite}
+  .hm-byline .hero-display{font-size:clamp(36px,12vw,56px);line-height:.98;letter-spacing:-0.01em;max-width:none}
+  .hm-byline .hero-h1{margin-top:24px;font-size:15.5px;line-height:1.55}
+  .hm-byline .hero-links{margin-top:26px}
+  .hm-byline .hero-photo{--m:2/full-start/3/full-end;margin:12vw 0 0}
+  .hm-byline .hero-photo img{height:auto;aspect-ratio:4/5;min-height:0;max-height:none;object-position:50% 30%}
+  .hm-byline .hero-photo .ph{-webkit-mask-image:none;mask-image:none}
+  .hm-byline .hero-photo figcaption{display:flex;padding:0 6vw}
+  .hm-byline .hero{padding-bottom:12vw}
+}
+
+@media (max-width:767px) and (max-height:700px){
+  .hm-byline .hero{padding-top:6vw}
+  .hm-byline .hero-by{margin-bottom:20px}.hm-byline .hero-by img{width:54px;height:54px}
+  .hm-byline .hero-display{font-size:clamp(30px,10.2vw,44px)}
+  .hm-byline .hero-h1{margin-top:16px;font-size:14.5px;line-height:1.5}
+  .hm-byline .hero-links{margin-top:18px}
+}
+@media (max-width:767px) and (max-height:580px){
+  .hm-byline .hero-display{font-size:clamp(26px,8.8vw,36px)}
+  .hm-byline .hero-h1{font-size:13.5px}
+  .hm-byline .hero-by{margin-bottom:14px}
+}
 </style>
+<script>
+/* intro plays once per visit; phone hero layout can be compared with ?hero=classic */
+(function(){var d=document.documentElement;try{var q=new URLSearchParams(location.search).get('hero');d.classList.add(q==='classic'?'hm-classic':'hm-byline');
+if(new URLSearchParams(location.search).get('intro')==='1')sessionStorage.removeItem('jwk-intro');
+if(!sessionStorage.getItem('jwk-intro')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('intro-on')}catch(e){d.classList.add('hm-byline')}})();
+</script>
 </head>
 <body class="type-a">
+<!-- INTRO (Squarespace: Header Code Injection, home page only) -->
+<div class="intro" id="intro" aria-hidden="true">
+  <svg class="intro-thread" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice"><path pathLength="1" d="M-60 300 C 140 300, 300 262, 420 276 S 572 322, 616 270 S 626 148, 566 150 S 500 226, 586 266 S 760 316, 880 282 S 1090 248, 1260 262"/></svg>
+  <p class="intro-name">Kristina Shimokawa<span>LMFT &nbsp;·&nbsp; IFS &amp; somatic therapy</span></p>
+</div>
 
 <!-- HEADER (Squarespace header: site title left, nav right, button styled as underlined link via Custom CSS) -->
 <header class="hdr fe">
@@ -519,6 +564,7 @@ body.mm-lock{overflow:hidden}
     <figcaption><span>Kristina Shimokawa, LMFT</span><span class="sig" aria-hidden="true">Kristina</span></figcaption>
   </figure>
   <div class="hero-copy">
+  <div class="hero-by"><img src="img/kristina-portrait.webp" alt="" width="1000" height="1250"><p><b>Evening sessions, Pacific time</b><span class="hero-by-t"><span class="dot" aria-hidden="true"></span><span data-tz="America/Los_Angeles">6:00 PM</span><span>in San Francisco</span></span></p></div>
   <p class="display hero-display">Everyone counts on you. Privately, you're barely holding it together.</p>
   <h1 class="hero-h1">Online IFS and somatic therapy for women in San Francisco and the Bay Area who are carrying anxiety, burnout or the fallout of betrayal.</h1>
   <div class="hero-links">
@@ -665,17 +711,21 @@ body.mm-lock{overflow:hidden}
   <div class="f-legal"><span>California #LMFT133759 · Hawaii #MFT-601</span><span><a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Disclaimer</a> &nbsp;·&nbsp; <a href="#">Privacy</a></span></div>
 </footer>
 
-<!-- PREVIEW-ONLY: font options -->
-<div class="pv" id="pv">
-  <button class="x" type="button" aria-label="Hide panel">Hide</button>
-  <button class="open" type="button">Font options</button>
-  <b>Font options</b>
-  <button type="button" data-type="a" aria-pressed="true">Option 1<span>Gilda Display + Hanken Grotesk</span></button>
-  <button type="button" data-type="b" aria-pressed="false">Option 2<span>Young Serif + Albert Sans</span></button>
-  <button type="button" data-type="c" aria-pressed="false">Option 3<span>Familjen Grotesk + Libre Caslon</span></button>
-</div>
 
 <script>
+
+/* ===== Intro: thread draws, name fades in, then the page (once per visit) ===== */
+(function(){
+  var d=document.documentElement,el=document.getElementById('intro');if(!el)return;
+  if(!d.classList.contains('intro-on')){el.remove();return}
+  try{sessionStorage.setItem('jwk-intro','1')}catch(e){}
+  var svg=el.querySelector('svg'),path=el.querySelector('path');
+  function sw(){var s=Math.max(svg.clientWidth/1200,svg.clientHeight/500);path.style.strokeWidth=(1.6/s).toFixed(3)}
+  sw();
+  var done=false;function end(){if(done)return;done=true;el.classList.add('out');d.classList.remove('intro-on');setTimeout(function(){el.remove()},900)}
+  setTimeout(end,2500);el.addEventListener('click',end);window.addEventListener('keydown',end,{once:true});
+})();
+
 /* ===== Live clocks (Squarespace: Code Block JS) ===== */
 (function(){
   function fmt(tz,d){return new Intl.DateTimeFormat('en-US',{timeZone:tz,hour:'numeric',minute:'2-digit'}).format(d)}
@@ -739,19 +789,6 @@ body.mm-lock{overflow:hidden}
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))set(false)});
 })();
 
-/* ===== Preview-only font switcher ===== */
-(function(){
-  var pv=document.getElementById('pv');
-  pv.querySelectorAll('[data-type]').forEach(function(b){b.addEventListener('click',function(){
-    document.body.className='type-'+b.dataset.type;
-    pv.querySelectorAll('[data-type]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
-    try{localStorage.setItem('jwk-type',b.dataset.type)}catch(e){}
-  })});
-  pv.querySelector('.x').addEventListener('click',function(){pv.classList.add('min')});
-  if(window.innerWidth<768)pv.classList.add('min');
-  pv.querySelector('.open').addEventListener('click',function(){pv.classList.remove('min')});
-  try{var t=localStorage.getItem('jwk-type');if(t){var b=pv.querySelector('[data-type="'+t+'"]');b&&b.click()}}catch(e){}
-})();
 </script>
 </body>
 </html>
