@@ -222,7 +222,7 @@ body.mm-lock{overflow:hidden}
 .art{display:block;width:100%;height:auto}
 
 /* ============ FAMILIAR ============ */
-.familiar{padding:5vw 0 8vw;background:var(--fog)}
+.familiar{padding:5vw 0 8vw;background:var(--mist)}
 .fam-h{--d:1/2/2/10;--m:1/2/2/10}
 .fam-art{--d:2/2/4/9;--m:3/6/4/10;align-self:start;margin-top:64px;max-width:170px;position:relative}
 .fam-art img{position:relative;z-index:1}
@@ -236,7 +236,7 @@ body.mm-lock{overflow:hidden}
 /* ============ EVENINGS ============ */
 .dusk{position:relative;height:44vw;max-height:620px;min-height:260px;overflow:hidden;background:var(--spruce)}
 .dusk-img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;object-position:50% 55%;filter:saturate(.8);will-change:transform}
-.dusk::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--fog) 0%,rgba(237,239,234,0) 22%,rgba(36,48,46,0) 55%,rgba(36,48,46,.75) 82%,var(--spruce) 100%)}
+.dusk::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--mist) 0%,var(--mist) 4%,rgba(222,227,221,0) 36%,rgba(36,48,46,0) 55%,rgba(36,48,46,.75) 82%,var(--spruce) 100%)}
 .dawn{height:11vw;max-height:160px;background:linear-gradient(180deg,var(--spruce) 0%,#4E5B57 30%,#AEB6B0 72%,var(--fog) 100%)}
 .evenings{background:var(--spruce);color:#D6DCD5;padding:4vw 0 7vw;overflow:hidden}
 @media (max-width:767px){.dusk{height:72vw}}
@@ -391,14 +391,14 @@ body.mm-lock{overflow:hidden}
   .hero-copy{margin-top:-24vw;padding-top:0}
 }
 /* familiar: big heading, numbered two-column list, drawing as a margin note */
-.fam-h{--d:1/2/2/19;--m:1/2/2/10;font-size:clamp(40px,5.2vw,84px);line-height:1.02;max-width:13ch}
-.fam-art{--d:1/12/2/18;--m:2/2/3/5;align-self:center;justify-self:start;margin:0;width:100%;max-width:230px}
-.fam-list{--d:2/2/3/26;--m:3/2/4/10;margin-top:70px;border-top:0;columns:2;column-gap:calc(var(--gutter)*6);counter-reset:f}
+.fam-h{--d:1/2/2/19;--m:1/2/2/10;font-size:clamp(40px,5.6vw,90px);line-height:1.02;max-width:19ch;align-self:center}
+.fam-art{--d:1/20/2/26;--m:2/2/3/5;align-self:center;justify-self:end;margin:0;width:100%;max-width:250px}
+.fam-list{--d:2/2/3/26;--m:3/2/4/10;margin-top:70px;border-top:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);grid-auto-flow:column;column-gap:calc(var(--gutter)*6);counter-reset:f;margin-top:48px}
 .fam-list li{break-inside:avoid;border-top:1px solid rgba(30,39,37,.22);border-bottom:0;padding:22px 0 26px;grid-template-columns:58px 1fr}
 .fam-list li::before{content:counter(f,decimal-leading-zero);counter-increment:f;width:auto;height:auto;background:none;margin-top:6px;font-size:12.5px;letter-spacing:.14em;color:var(--clay-ink)}
-.fam-close{--d:3/2/4/14;--m:4/2/5/10;margin-top:40px}
-@media (min-width:768px) and (max-width:1099px){.fam-h{--d:1/2/2/17}.fam-art{--d:1/18/2/26;max-width:170px}.fam-list{columns:1}}
-@media (max-width:767px){.fam-art{max-width:90px;margin-top:26px;justify-self:start}.fam-list{columns:1;margin-top:30px}.fam-list li{grid-template-columns:40px 1fr}.fam-list li::before{margin-top:5px}}
+.fam-close{--d:3/2/4/26;--m:4/2/5/10;margin-top:56px;display:grid;grid-template-columns:1fr auto;align-items:end;column-gap:calc(var(--gutter)*6)}.fam-close p{max-width:none;margin:0;font-size:22px;line-height:1.5}.fam-close .link{margin-bottom:6px;white-space:nowrap}
+@media (min-width:768px) and (max-width:1099px){.fam-h{--d:1/2/2/17}.fam-art{--d:1/18/2/26;max-width:170px}.fam-list{display:block;columns:1}.fam-close{display:block}.fam-close p{margin-bottom:22px}}
+@media (max-width:767px){.fam-art{max-width:90px;margin-top:26px;justify-self:start}.fam-list{display:block;columns:1;margin-top:30px}.fam-close{display:block}.fam-close p{margin-bottom:22px;font-size:17px}.fam-list li{grid-template-columns:40px 1fr}.fam-list li::before{margin-top:5px}}
 /* evenings: one oversized time, topo rising behind the map, California folded in */
 .evenings{padding:1vw 0 8vw;position:relative;overflow:hidden}
 .topo{position:absolute;pointer-events:none;z-index:0;height:auto;max-width:none}
@@ -547,7 +547,7 @@ body.mm-lock{overflow:hidden}
 @media (max-width:767px){.vh-s.hm-byline .hero-display{font-size:clamp(30px,11.2vw,46px);padding-top:18px}.vh-s.hm-byline .hero-links{padding-top:18px}.vh-xs.hm-byline .hero-display{font-size:clamp(26px,9.4vw,38px)}}
 
 /* desktop headline: wider measure so it reads in three even lines instead of a narrow six-line stack */
-@media (min-width:1100px){.hero-copy{--d:1/2/2/14}.hero-display{max-width:none;text-wrap:balance}.hero-h1{max-width:none}}
+@media (min-width:1100px){.hero-copy{--d:1/2/2/16}.hero-display{max-width:none;font-size:clamp(46px,5.4vw,84px)}.hero-display .ln{display:block}.hero-h1{max-width:none}}
 
 /* blog cards: rule, standfirst, read link */
 .rd-list a{border-top:1px solid var(--clay);padding-top:18px;transition:border-color .3s}
@@ -626,7 +626,7 @@ if(!sessionStorage.getItem('jwk-intro')&&!matchMedia('(prefers-reduced-motion: r
   </figure>
   <div class="hero-copy">
   <div class="hero-by"><img src="img/kristina-portrait.webp" alt="" width="1000" height="1250"><p><b>Evening sessions, Pacific time</b><span class="hero-by-t"><span class="dot" aria-hidden="true"></span><span data-tz="America/Los_Angeles">6:00 PM</span><span>in San Francisco</span></span></p></div>
-  <p class="display hero-display">Everyone counts on you. Privately, you're barely holding it together.</p>
+  <p class="display hero-display"><span class="ln">Everyone counts</span> <span class="ln">on you. Privately,</span> <span class="ln">you're barely holding</span> <span class="ln">it together.</span></p>
   <h1 class="hero-h1">Online IFS and somatic therapy for women in San Francisco and the Bay Area who are carrying anxiety, burnout or the fallout of betrayal.</h1>
   <div class="hero-links">
     <a class="link link-lg" href="#">Book a free 30-minute consult</a>
@@ -827,7 +827,7 @@ if(!sessionStorage.getItem('jwk-intro')&&!matchMedia('(prefers-reduced-motion: r
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var h=document.querySelector('.hero-display');
-  if(h&&!reduce){var i=0;h.innerHTML=h.textContent.trim().split(/\s+/).map(function(w){return '<span class="w"><span style="animation-delay:'+(0.15+0.07*i++).toFixed(2)+'s">'+w+'</span></span>'}).join(' ')}
+  if(h&&!reduce){var i=0;[].forEach.call(h.querySelectorAll('.ln'),function(ln){ln.innerHTML=ln.textContent.trim().split(/\s+/).map(function(w){return '<span class="w"><span style="animation-delay:'+(0.15+0.07*i++).toFixed(2)+'s">'+w+'</span></span>'}).join(' ')})}
   var rv=[].slice.call(document.querySelectorAll('.reveal,.draw-in'));
   function show(im){if(!im)return;var go=function(){requestAnimationFrame(function(){im.classList.add('in')})};if(im.tagName==='IMG'&&!im.complete){im.addEventListener('load',go,{once:true});im.addEventListener('error',go,{once:true})}else go()}
   rv.forEach(function(r){if(r.tagName==='IMG')r.loading='eager'});
