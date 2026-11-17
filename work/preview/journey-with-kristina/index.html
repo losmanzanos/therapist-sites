@@ -460,6 +460,28 @@ body.mm-lock{overflow:hidden}
 .wk-swipe{display:none;--m:2/2/3/10;align-items:center;gap:10px;margin-top:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-ink)}
 .wk-swipe::after{content:"";height:1px;width:46px;background:currentColor}
 @media (max-width:359px){.mbar{font-size:12px;padding-left:14px}.mbar a{padding:10px 12px}}
+
+/* ============ phone hero: whole headline, intro and both links on the first screen ============ */
+@media (max-width:767px){
+  .hero{padding-bottom:12vw}
+  .hero-photo img{aspect-ratio:auto;height:36vh;height:36svh;min-height:190px;max-height:440px;object-position:50% 22%}
+  .hero-photo .ph{-webkit-mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%)}
+  .hero-copy{margin-top:-11vw}
+  .hero-display{font-size:clamp(28px,8.6vw,38px);line-height:1.02;max-width:none}
+  .hero-h1{margin-top:14px;font-size:15px;line-height:1.5}
+  .hero-links{margin-top:18px;gap:12px 22px}
+  .pv.min{left:auto;right:10px;top:68px;bottom:auto}
+}
+@media (max-width:767px) and (max-height:600px){.hero-photo img{height:30vh;height:30svh;min-height:150px}.hero-h1{font-size:14px}.hero-display{font-size:clamp(26px,7.8vw,32px)}}
+@media (max-width:767px) and (max-height:500px){.hero-photo img{height:26vh;height:26svh;min-height:120px}}
+/* landscape phones */
+@media (min-width:768px) and (max-height:520px){
+  .hero-photo img{min-height:0;height:calc(100vh - 20px)}
+  .hero-copy{padding-top:112px;align-self:start}
+  .hero-display{font-size:clamp(22px,6vh,32px);max-width:none}
+  .hero-h1{margin-top:12px;font-size:14.5px}
+  .hero-links{margin-top:14px}
+}
 </style>
 </head>
 <body class="type-a">
