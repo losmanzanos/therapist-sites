@@ -47,14 +47,14 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1}
 .hero{position:relative;overflow:hidden;padding:clamp(40px,5vw,72px) var(--pad) 0;max-width:1520px;margin:0 auto;display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,90px);align-items:end}
 .hero::before{content:"";position:absolute;right:-10%;top:10%;width:60%;height:90%;background:radial-gradient(ellipse at 50% 60%,rgba(216,176,106,.28),rgba(216,176,106,.06) 50%,transparent 72%);pointer-events:none}
 .hero-copy{position:relative;padding-bottom:clamp(40px,5vw,72px)}
-.hero h1{font-size:clamp(40px,5.2vw,84px);font-weight:300;max-width:14ch;margin-top:12px}
+.hero h1{font-size:clamp(38px,4.6vw,76px);font-weight:300;max-width:14ch;margin-top:12px}
 .hero .sub{margin-top:22px;font-size:clamp(18px,1.4vw,22px);max-width:30em;color:rgba(241,235,221,.85)}
-.hero .why{margin-top:22px;padding-top:16px;border-top:1px solid var(--rule-l);max-width:30em;font-size:17.5px;color:rgba(241,235,221,.78)}
+.hero .why{margin-top:22px;padding-top:16px;border-top:1px solid var(--rule-l);max-width:32em;font-size:17px;line-height:1.55;color:rgba(241,235,221,.8)}
 .hero .why .k{display:block;margin-bottom:6px}
 .hero .acts{margin-top:28px;display:flex;gap:26px;flex-wrap:wrap}
 .hero .acts .u{font-size:16px}
 .hero .cab{position:relative;margin:0;align-self:end;justify-self:center}
-.hero .cab img{width:min(100%,470px);height:auto;display:block;filter:drop-shadow(0 30px 40px rgba(0,0,0,.5))}
+.hero .cab img{width:min(100%,440px);height:auto;display:block;box-shadow:0 40px 60px rgba(0,0,0,.55),0 0 0 1px rgba(216,176,106,.45),0 0 0 7px var(--green),0 0 0 8px rgba(216,176,106,.25)}
 .hero .cab figcaption{font-family:var(--fd);font-size:13px;line-height:1.4;color:rgba(241,235,221,.7);max-width:30ch;margin:18px 0 28px}
 .trust{background:var(--cream-2);color:var(--ink)}
 .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
@@ -70,12 +70,13 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1}
 .index .sticky img{aspect-ratio:4/5;object-fit:cover;width:100%}
 .index .sticky figcaption{font-size:14px;color:var(--ink-2);margin-top:10px}
 .qs{list-style:none;border-top:1px solid var(--ink)}
-.qs li a{display:grid;grid-template-columns:54px 1fr auto;gap:22px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.qs li a{display:grid;grid-template-columns:54px 1fr;gap:22px;align-items:start;padding:22px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.qs .qt{display:grid;gap:6px}
 .qs li a:hover .q{color:var(--brass)}
 .qs .n{font-family:var(--fd);font-size:13px;color:var(--brass);letter-spacing:.1em}
 .qs .q{font-size:clamp(22px,2.1vw,32px);line-height:1.15;font-weight:300}
-.qs .t{font-family:var(--fd);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
-.qs li.m a{grid-template-columns:54px 1fr auto}
+.qs .t{font-family:var(--fd);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:500}
+.qs li.m a{grid-template-columns:54px 1fr auto;align-items:baseline}
 .qs li.m .q{font-family:var(--fd);font-size:clamp(18px,1.4vw,21px);font-weight:400;white-space:nowrap}
 .qs li.m .t{font-family:var(--fs);font-size:17px;text-transform:none;letter-spacing:0;white-space:normal;text-align:right;color:var(--ink-2)}
 .qs .lbl{padding:34px 0 10px}
@@ -166,7 +167,7 @@ footer nav a:hover{color:var(--brass-l)}
   .hero .cab img{width:min(100%,300px)}
   .hero h1{font-size:clamp(38px,11.5vw,54px)}
   .qs li a,.qs li.m a{grid-template-columns:40px 1fr;gap:12px 16px}
-  .qs .t{grid-column:2;white-space:normal}
+  .qs li.m .t{grid-column:2;white-space:normal;text-align:left}
   
   .team .row{grid-template-columns:1fr}
   .team img{max-width:220px}
@@ -185,13 +186,13 @@ footer nav a:hover{color:var(--brass-l)}
   <div class="hero-copy">
     <p class="k">Denver · In person and online across Colorado</p>
     <h1>Curio is a small therapy practice for people who look fine and aren't.</h1>
-    <p class="sub">Two therapists. One office on Harlan Street. We work with adults on anxiety, perfectionism, the big life changes, and the old things that still get in the way, with EMDR, sand tray, and the kind of therapy that goes somewhere.</p>
-    <p class="why"><span class="k">About the name</span>Curio, from the Latin <em>curiosus</em>: wanting to know more. A curio is a small thing worth picking up and looking at again. So is the question you keep not asking.</p>
+    <p class="sub">Two therapists. One office on Harlan Street. We work with adults on anxiety, perfectionism, the big life changes, and the old things that still get in the way.</p>
+    <p class="why"><span class="k">About the name</span>A curio cabinet holds curiosities: the things closest to us, kept behind glass. Sometimes it's where we put something away, meaning to come back to it, and years go by. Then one day it gets opened, and everything in it is exactly as heavy as the day we shut the door. That's what this practice is for. Taking things out, dusting them off, and looking at them again with someone in the room.</p>
     <p class="acts"><a class="u" href="#contact">Book a free 15-minute call</a><a class="u" href="#questions">See what people come in with</a></p>
   </div>
   <figure class="cab">
-    <img src="img/cabinet.webp" alt="A tall wooden curio cabinet with its glass doors open, every shelf lined with small objects" width="640" height="863" fetchpriority="high">
-    <figcaption>Everything on these shelves is a question somebody walked in with. The list is just below.</figcaption>
+    <img src="img/cabinet.webp" alt="A tall wooden curio cabinet with its glass doors closed" width="640" height="882" fetchpriority="high">
+    <figcaption>Curio, from the Latin <em>curiosus</em>: wanting to know more. What's behind the doors is below.</figcaption>
   </figure>
 </section>
 <div class="trust">
@@ -210,20 +211,20 @@ footer nav a:hover{color:var(--brass-l)}
 <section class="wrap index" id="questions">
   <div class="sticky">
     <p class="k">What we help with</p>
-    <h2>Nobody walks in with a diagnosis.</h2>
-    <p>They walk in with a question they've been turning over for a while. If one of these is yours, you're in the right place. If it's close but not quite, call anyway. We'll tell you.</p>
+    <h2>What's behind the doors.</h2>
+    <p>Nobody walks in with a diagnosis. They walk in with something they put away a long time ago and a question they've been turning over since. These are the ones we hear most. If yours is close but not quite, call anyway. We'll tell you.</p>
     <figure>
       <img src="img/window.webp" alt="Léon Cogniet, The Artist in His Room at the Villa Medici, 1817: a young man reads a letter beside an open window" width="740" height="900" loading="lazy">
       <figcaption>Cogniet, 1817. One of the paintings from the Cleveland Museum of Art open access collection that run through the site.</figcaption>
     </figure>
   </div>
   <ul class="qs">
-    <li><a href="#contact"><span class="n">01</span><span class="q">Why can't I relax when everything is fine?</span><span class="t">Anxiety and stress</span></a></li>
-    <li><a href="#contact"><span class="n">02</span><span class="q">Why is good never good enough?</span><span class="t">Perfectionism</span></a></li>
-    <li><a href="#contact"><span class="n">03</span><span class="q">Who am I after the divorce, the move, the last kid leaving?</span><span class="t">Life transitions</span></a></li>
-    <li><a href="#contact"><span class="n">04</span><span class="q">Was it bad enough to count as trauma?</span><span class="t">Trauma and PTSD</span></a></li>
-    <li><a href="#contact"><span class="n">05</span><span class="q">Why do I keep ending up in the same argument?</span><span class="t">Relationships and self-worth</span></a></li>
-    <li><a href="#contact"><span class="n">06</span><span class="q">Why does everything feel so heavy?</span><span class="t">Depression</span></a></li>
+    <li><a href="#contact"><span class="n">01</span><span class="qt"><span class="t">Anxiety and stress</span><span class="q">Why can't I relax when everything is fine?</span></span></a></li>
+    <li><a href="#contact"><span class="n">02</span><span class="qt"><span class="t">Perfectionism</span><span class="q">Why is good never good enough?</span></span></a></li>
+    <li><a href="#contact"><span class="n">03</span><span class="qt"><span class="t">Life transitions</span><span class="q">Who am I after the divorce, the move, the last kid leaving?</span></span></a></li>
+    <li><a href="#contact"><span class="n">04</span><span class="qt"><span class="t">Trauma and PTSD</span><span class="q">Was it bad enough to count as trauma?</span></span></a></li>
+    <li><a href="#contact"><span class="n">05</span><span class="qt"><span class="t">Relationships and self-worth</span><span class="q">Why do I keep ending up in the same argument?</span></span></a></li>
+    <li><a href="#contact"><span class="n">06</span><span class="qt"><span class="t">Depression</span><span class="q">Why does everything feel so heavy?</span></span></a></li>
     <li class="lbl"><span class="k">How we work</span></li>
     <li class="m"><a href="#contact"><span class="n">07</span><span class="q">EMDR therapy</span><span class="t">A way through a memory without retelling every detail</span></a></li>
     <li class="m"><a href="#contact"><span class="n">08</span><span class="q">EMDR intensives</span><span class="t">Consecutive days with Sarah, alongside your own therapist</span></a></li>
