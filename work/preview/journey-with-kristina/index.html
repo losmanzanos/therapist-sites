@@ -12,6 +12,14 @@
 <meta property="og:image" content="https://therapistweb.design/work/preview/journey-with-kristina/og.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<script>
+/* Phone layouts are sized once from the screen height at load and never re-measured while scrolling,
+   so the browser toolbar sliding away cannot resize or re-wrap anything. Re-measured only on rotation. */
+(function(){var d=document.documentElement,w=window.innerWidth;
+function lock(){var p=document.createElement('div');p.style.cssText='position:absolute;top:0;left:0;width:1px;height:100svh;visibility:hidden;pointer-events:none';d.appendChild(p);var h=p.offsetHeight;d.removeChild(p);if(!h||h<200)h=window.innerHeight;
+d.style.setProperty('--vh0',h+'px');var c={'vh-s':h<=700,'vh-600':h<=600,'vh-xs':h<=580,'vh-500':h<=500};for(var k in c)d.classList.toggle(k,c[k])}
+lock();window.addEventListener('resize',function(){if(window.innerWidth!==w){w=window.innerWidth;lock()}})})();
+</script>
 <link rel="preload" href="fonts/gilda-display.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ms-madi.woff2" as="font" type="font/woff2" crossorigin>
@@ -467,15 +475,15 @@ body.mm-lock{overflow:hidden}
 /* ============ phone hero: whole headline, intro and both links on the first screen ============ */
 @media (max-width:767px){
   .hero{padding-bottom:12vw}
-  .hero-photo img{aspect-ratio:auto;height:36vh;height:36svh;min-height:190px;max-height:440px;object-position:50% 22%}
+  .hero-photo img{aspect-ratio:auto;height:calc(var(--vh0,700px)*.36);min-height:190px;max-height:440px;object-position:50% 22%}
   .hero-photo .ph{-webkit-mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%)}
   .hero-copy{margin-top:-11vw}
   .hero-display{font-size:clamp(28px,8.6vw,38px);line-height:1.02;max-width:none}
   .hero-h1{margin-top:14px;font-size:15px;line-height:1.5}
   .hero-links{margin-top:18px;gap:12px 22px}
 }
-@media (max-width:767px) and (max-height:600px){.hero-photo img{height:30vh;height:30svh;min-height:150px}.hero-h1{font-size:14px}.hero-display{font-size:clamp(26px,7.8vw,32px)}}
-@media (max-width:767px) and (max-height:500px){.hero-photo img{height:26vh;height:26svh;min-height:120px}}
+@media (max-width:767px){.vh-600 .hero-photo img{height:calc(var(--vh0,600px)*.3);min-height:150px}.vh-600 .hero-h1{font-size:14px}.vh-600 .hero-display{font-size:clamp(26px,7.8vw,32px)}}
+@media (max-width:767px){.vh-500 .hero-photo img{height:calc(var(--vh0,500px)*.26);min-height:120px}}
 /* landscape phones */
 @media (min-width:768px) and (max-height:520px){
   .hero-photo img{min-height:0;height:calc(100vh - 20px)}
@@ -520,31 +528,23 @@ body.mm-lock{overflow:hidden}
   .hm-byline .hero{padding-bottom:12vw}
 }
 
-@media (max-width:767px) and (max-height:700px){
-  .hm-byline .hero{padding-top:6vw}
-  .hm-byline .hero-by{margin-bottom:20px}.hm-byline .hero-by img{width:54px;height:54px}
-  .hm-byline .hero-display{font-size:clamp(30px,10.2vw,44px)}
-  .hm-byline .hero-h1{margin-top:16px;font-size:14.5px;line-height:1.5}
-  .hm-byline .hero-links{margin-top:18px}
-}
-@media (max-width:767px) and (max-height:580px){
-  .hm-byline .hero-display{font-size:clamp(26px,8.8vw,36px)}
-  .hm-byline .hero-h1{font-size:13.5px}
-  .hm-byline .hero-by{margin-bottom:14px}
+@media (max-width:767px){
+  .vh-s.hm-byline .hero-by img{width:54px;height:54px}
+  .vh-s.hm-byline .hero-h1{font-size:14.5px;line-height:1.5}
+  .vh-xs.hm-byline .hero-h1{font-size:13.5px}
 }
 
 /* phone byline hero fills exactly the first screen; the big portrait is the first thing on scroll */
 @media (max-width:767px){
   .hm-byline .hero{padding:0 0 14vw}
-  .hm-byline .hero-copy{display:flex;flex-direction:column;box-sizing:border-box;min-height:calc(100vh - var(--hdr-h,64px));min-height:calc(100svh - var(--hdr-h,64px));padding:6vw 0 8vw}
+  .hm-byline .hero-copy{display:flex;flex-direction:column;box-sizing:border-box;min-height:calc(var(--vh0,100svh) - var(--hdr-h,64px));padding:6vw 0 8vw}
   .hm-byline .hero-by{margin-bottom:0}
   .hm-byline .hero-display{margin-top:auto;padding-top:26px;font-size:clamp(34px,13vw,60px);line-height:.97}
   .hm-byline .hero-h1{margin-top:22px}
   .hm-byline .hero-links{margin-top:auto;padding-top:26px}
   .hm-byline .hero-photo{margin-top:0}
 }
-@media (max-width:767px) and (max-height:700px){.hm-byline .hero-display{font-size:clamp(30px,11.2vw,46px);padding-top:18px}.hm-byline .hero-links{padding-top:18px}}
-@media (max-width:767px) and (max-height:580px){.hm-byline .hero-display{font-size:clamp(26px,9.4vw,38px)}}
+@media (max-width:767px){.vh-s.hm-byline .hero-display{font-size:clamp(30px,11.2vw,46px);padding-top:18px}.vh-s.hm-byline .hero-links{padding-top:18px}.vh-xs.hm-byline .hero-display{font-size:clamp(26px,9.4vw,38px)}}
 
 /* desktop headline: wider measure so it reads in three even lines instead of a narrow six-line stack */
 @media (min-width:1100px){.hero-display{max-width:none;text-wrap:balance}.hero-copy{--d:1/2/2/19}}
@@ -760,7 +760,7 @@ if(!sessionStorage.getItem('jwk-intro')&&!matchMedia('(prefers-reduced-motion: r
 
 
 /* ===== Phone hero: measure the header so the hero fills the first screen exactly ===== */
-(function(){var h=document.querySelector('.hdr');if(!h)return;function set(){document.documentElement.style.setProperty('--hdr-h',h.offsetHeight+'px')}set();window.addEventListener('resize',set);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(set)})();
+(function(){var h=document.querySelector('.hdr');if(!h)return;function set(){document.documentElement.style.setProperty('--hdr-h',h.offsetHeight+'px')}set();var hw=window.innerWidth;window.addEventListener('resize',function(){if(window.innerWidth!==hw){hw=window.innerWidth;set()}});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(set)})();
 
 /* ===== Live clocks (Squarespace: Code Block JS) ===== */
 (function(){
