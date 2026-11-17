@@ -178,9 +178,8 @@ body.mm-lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.arch{animation:none;opacity:1}}
 @keyframes archin{from{opacity:0;transform:translate(10px,-10px)}to{opacity:1;transform:translate(26px,-26px)}}
 @media (max-width:767px){.arch{animation-name:archin-m}}@keyframes archin-m{from{opacity:0;transform:translate(6px,-6px)}to{opacity:1;transform:translate(14px,-14px)}}
-.hero-photo .ph{overflow:hidden;clip-path:inset(100% 0 0 0);animation:unveil 1.5s cubic-bezier(.7,0,.2,1) .25s forwards}
-.hero-photo .ph img{transform:scale(1.08);transform-origin:50% 40%;transition:transform .2s linear}
-@keyframes unveil{to{clip-path:inset(0 0 0 0)}}
+.hero-photo .ph{overflow:hidden;animation:phin 1.2s cubic-bezier(.2,.7,.1,1) .1s both}
+@keyframes phin{from{opacity:0;transform:scale(1.025)}to{opacity:1;transform:none}}
 .hero-photo figcaption{font-size:12.5px;letter-spacing:.06em;color:var(--muted);margin-top:10px;display:flex;justify-content:space-between;align-items:flex-start}
 .sig{font-family:var(--f-script);font-size:52px;line-height:.6;letter-spacing:0;color:var(--clay);margin:-4px -6px 0 0;transform:rotate(-4deg)}
 @media (max-width:767px){
@@ -196,15 +195,15 @@ body.mm-lock{overflow:hidden}
 /* ============ FLOATING EMBELLISHMENTS (code blocks + footer script) ============ */
 .float{position:absolute;pointer-events:none;z-index:1;will-change:transform}
 .float svg{display:block;width:100%;height:auto;overflow:visible}
-.reveal{clip-path:inset(0 0 100% 0);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1)}
-.reveal.in{clip-path:inset(0 0 0 0)}
-@media (prefers-reduced-motion:reduce){.reveal{clip-path:none;transition:none}.hero-photo .ph{clip-path:none;animation:none}.hero-display .w > span{transform:none;animation:none}}
+.reveal{opacity:0;transform:translate3d(0,24px,0);transition:opacity .9s ease-out,transform 1.1s cubic-bezier(.2,.7,.1,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-photo .ph{animation:none}.hero-display .w > span{transform:none;animation:none}}
 /* the line-art story: knotted, connected, unwinding, at rest. Each drawing wipes in like it is being drawn. */
 .story{position:relative}
 .cap{font-family:var(--f-script);font-size:28px;line-height:1;color:var(--clay);margin-top:8px;transform:rotate(-3deg);transform-origin:left}
 .bg-thread .cap{text-align:right;transform-origin:right}
 .cl-art .cap{text-align:center}
-.draw-in{clip-path:inset(0 100% 0 0);transition:clip-path 2.2s cubic-bezier(.45,0,.2,1)}
+.draw-in{clip-path:inset(0 100% 0 0);transition:clip-path 1.6s cubic-bezier(.4,0,.2,1)}
 .draw-in.in{clip-path:inset(0 0 0 0)}
 @media (prefers-reduced-motion:reduce){.draw-in{clip-path:none;transition:none}}
 /* line art: every drawing is the same clay monoline at 1.35px (SVG, non-scaling stroke), so the weight never changes with size */
@@ -687,21 +686,21 @@ body.mm-lock{overflow:hidden}
   window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);frame();
 })();
 
-/* ===== Headline rise, reveals, fog drift, portrait scale (Squarespace: Footer Code Injection) ===== */
+/* ===== Headline rise, photo fades, fog drift (Squarespace: Footer Code Injection) ===== */
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var h=document.querySelector('.hero-display');
   if(h&&!reduce){var i=0;h.innerHTML=h.textContent.trim().split(/\s+/).map(function(w){return '<span class="w"><span style="animation-delay:'+(0.15+0.07*i++).toFixed(2)+'s">'+w+'</span></span>'}).join(' ')}
   var rv=[].slice.call(document.querySelectorAll('.reveal,.draw-in'));
-  if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var im=e.target.querySelector('.reveal,.draw-in');im&&im.classList.add('in');o.unobserve(e.target)}})},{threshold:.2});rv.forEach(function(r){o.observe(r.parentNode)})}else rv.forEach(function(r){r.classList.add('in')});
+  function show(im){if(!im)return;var go=function(){requestAnimationFrame(function(){im.classList.add('in')})};if(im.tagName==='IMG'&&!im.complete){im.addEventListener('load',go,{once:true});im.addEventListener('error',go,{once:true})}else go()}
+  rv.forEach(function(r){if(r.tagName==='IMG')r.loading='eager'});
+  if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target.querySelector('.reveal,.draw-in'));o.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:0});rv.forEach(function(r){o.observe(r.parentNode)})}else rv.forEach(function(r){r.classList.add('in')});
   var dusk=document.querySelector('.dusk'),sun=document.querySelector('.dusk-img'),ph=document.querySelector('.hero-photo .ph img');
   function frame(){var vh=window.innerHeight;
-    if(dusk&&sun&&!reduce){var r=dusk.getBoundingClientRect();var p=Math.min(1,Math.max(0,(vh*0.75-r.top)/(r.height+vh*0.35)));sun.style.transform='translateY('+(p*12-6).toFixed(2)+'%)'}
-    if(ph&&!reduce){var y=Math.min(1,Math.max(0,window.scrollY/vh));ph.style.transform='scale('+(1.08-0.08*Math.min(1,y*1.6+0.6)).toFixed(3)+')'}
+    if(dusk&&sun&&!reduce){var r=dusk.getBoundingClientRect();var p=Math.min(1,Math.max(0,(vh*0.75-r.top)/(r.height+vh*0.35)));sun.style.transform='translate3d(0,'+(p*12-6).toFixed(2)+'%,0)'}
     t=false}
   var t=false;function q(){if(!t){t=true;requestAnimationFrame(frame)}}
   window.addEventListener('scroll',q,{passive:true});window.addEventListener('resize',q);frame();
-  if(ph&&!reduce)setTimeout(function(){q()},900);
 
 })();
 
