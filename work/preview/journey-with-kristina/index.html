@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@300;400;500&family=Young+Serif&family=Albert+Sans:wght@300;400;500&family=Familjen+Grotesk:wght@400;500&family=Libre+Caslon+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@300;400;500&family=Young+Serif&family=Albert+Sans:wght@300;400;500&family=Familjen+Grotesk:wght@400;500&family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -64,6 +64,7 @@
   --f-display:"Gilda Display", Georgia, serif;
   --f-body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
   --display-tracking:-0.01em; --display-weight:400;
+  --f-script:"Herr Von Muellerhoff", "Snell Roundhand", cursive;
   --gutter:11px; --pad:4vw;
 }
 body.type-b{ --f-display:"Young Serif", Georgia, serif; --f-body:"Albert Sans", "Helvetica Neue", Arial, sans-serif; --display-tracking:-0.015em; }
@@ -128,6 +129,9 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 @keyframes fog{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
 .hero-copy{--d:1/2/2/15;--m:1/2/2/10;align-self:center;position:relative;z-index:2}
 .hero-display{font-size:clamp(46px,6vw,92px);position:relative;z-index:2}
+.hero-display .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.hero-display .w > span{display:inline-block;transform:translateY(105%);animation:rise 1s cubic-bezier(.2,.7,.1,1) forwards}
+@keyframes rise{to{transform:none}}
 .hero-h1{max-width:560px;font-family:var(--f-body);font-size:19px;line-height:1.55;font-weight:400;color:var(--text);margin-top:38px;position:relative;z-index:2}
 .hero-links{margin-top:34px;display:flex;gap:34px;flex-wrap:wrap;align-items:baseline;position:relative;z-index:2}
 .clock{max-width:560px;margin-top:60px;border-top:1px solid rgba(30,39,37,.25);padding-top:16px;display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:2px;position:relative;z-index:2}
@@ -137,7 +141,13 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 .clock p{font-size:14.5px;color:var(--muted)}
 .hero-photo{--d:1/16/2/25;--m:2/3/3/10;position:relative;z-index:2;margin-top:2vw}
 .hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
-.hero-photo figcaption{font-size:12.5px;letter-spacing:.06em;color:var(--muted);margin-top:10px}
+.hero-photo .ph-wrap{position:relative}
+.hero-photo .ph-wrap .mark{z-index:3;left:-66px;bottom:-1px;width:132px}
+.hero-photo .ph{overflow:hidden;clip-path:inset(100% 0 0 0);animation:unveil 1.5s cubic-bezier(.7,0,.2,1) .25s forwards}
+.hero-photo .ph img{transform:scale(1.08);transform-origin:50% 40%;transition:transform .2s linear}
+@keyframes unveil{to{clip-path:inset(0 0 0 0)}}
+.hero-photo figcaption{font-size:12.5px;letter-spacing:.06em;color:var(--muted);margin-top:10px;display:flex;justify-content:space-between;align-items:flex-start}
+.sig{font-family:var(--f-script);font-size:62px;line-height:.6;letter-spacing:0;color:var(--ink);margin:-4px -6px 0 0;transform:rotate(-4deg)}
 .hero-slab{--d:1/18/2/26;--m:2/4/3/11;background:var(--mist);margin:12vw 0 -3vw 0;z-index:1}
 @media (max-width:767px){
   .hero{padding:10vw 0 16vw}
@@ -151,12 +161,17 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 /* ============ FLOATING EMBELLISHMENTS (code blocks + footer script) ============ */
 .float{position:absolute;pointer-events:none;z-index:1;will-change:transform}
 .float svg{display:block;width:100%;height:auto;overflow:visible}
-/* collage pieces: photo clippings, torn paper, tape, cut-paper shapes */
-.clip img{width:100%;filter:saturate(.62) contrast(1.02);box-shadow:0 1px 1px rgba(30,39,37,.10),0 10px 18px -12px rgba(30,39,37,.45)}
-.clip.edge img{border:5px solid #F5F6F2}
-.tape{position:absolute;width:64px;height:20px;background:rgba(214,220,212,.82);mix-blend-mode:multiply;clip-path:polygon(0 8%,6% 0,12% 10%,18% 0,24% 8%,100% 0,94% 18%,100% 35%,95% 55%,100% 74%,96% 100%,0 92%,4% 70%,0 50%,5% 30%);z-index:2}
-.paper svg,.cut svg{display:block;width:100%;height:auto;overflow:visible}
-.cut .grass{fill:var(--grass)}.cut .euc{fill:var(--eucalyptus)}.cut .slate{fill:var(--slate)}
+.reveal{clip-path:inset(0 0 100% 0);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1)}
+.reveal.in{clip-path:inset(0 0 0 0)}
+@media (prefers-reduced-motion:reduce){.reveal{clip-path:none;transition:none}.hero-photo .ph{clip-path:none;animation:none}.hero-display .w > span{transform:none;animation:none}}
+/* string-art marks: straight threads between points, drawn in once when they scroll into view */
+.mark{position:absolute;pointer-events:none;z-index:1;will-change:transform}
+.mark svg{display:block;width:100%;height:auto;overflow:visible}
+.mark line{fill:none;stroke-width:.8;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.mark.block{padding:18px}
+.mark .t{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.3,.6,.2,1)}
+.mark.on .t{stroke-dashoffset:0}
+@media (prefers-reduced-motion:reduce){.mark .t{transition:none;stroke-dashoffset:0}}
 
 /* ============ FAMILIAR ============ */
 .familiar{padding:9vw 0 8vw;background:var(--fog)}
@@ -170,7 +185,14 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 @media (max-width:767px){.fam-list{margin-top:34px}.fam-list li{font-size:17px;grid-template-columns:34px 1fr}.fam-art{max-width:150px;margin-top:30px}}
 
 /* ============ EVENINGS ============ */
-.evenings{background:var(--spruce);color:#D6DCD5;padding:9vw 0 9vw;overflow:hidden}
+.dusk{position:relative;height:30vw;max-height:440px;min-height:200px;background:radial-gradient(ellipse 34% 46% at 79% 70%,rgba(178,154,116,.38),rgba(178,154,116,0) 70%),linear-gradient(180deg,var(--fog) 0%,#DCE0D9 24%,#B2BAB4 48%,#76837E 68%,#3C4946 86%,var(--spruce) 100%);overflow:hidden}
+.horizon{position:absolute;left:0;right:0;bottom:34%;height:1px;background:rgba(237,239,234,.35)}
+.sun{position:absolute;right:calc(4vw + 6%);bottom:34%;width:240px;height:120px;overflow:hidden}
+.sun line{stroke-width:1.1}
+.sun-in{transform:translateY(0);will-change:transform}
+.dawn{height:11vw;max-height:160px;background:linear-gradient(180deg,var(--spruce) 0%,#4E5B57 30%,#AEB6B0 72%,var(--fog) 100%)}
+.evenings{background:var(--spruce);color:#D6DCD5;padding:4vw 0 7vw;overflow:hidden}
+@media (max-width:767px){.dusk{height:56vw}.sun{width:150px;height:75px;right:8vw}}
 .evenings h2{color:#F1F3EF}
 .ev-copy{--d:1/2/2/13;--m:1/2/2/10;align-self:center}
 .ev-body{margin-top:32px;font-size:18.5px;max-width:560px}
@@ -179,14 +201,14 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 .ev-art{--d:1/16/2/21;--m:2/2/3/6;position:relative;align-self:center;max-width:250px;justify-self:center}
 .ev-art img{width:100%;opacity:.9}
 .ev-tag{position:absolute;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#F1F3EF;white-space:nowrap}
-.ev-tag span{display:block;font-family:var(--f-display);font-size:30px;letter-spacing:var(--display-tracking);text-transform:none;line-height:1.1;margin-top:4px}
+.ev-tag span{display:block;font-family:var(--f-script);font-size:52px;letter-spacing:0;text-transform:none;line-height:.9;margin-top:2px}
 .ev-tag.sf{top:3%;left:calc(100% + 18px)}
-.ev-tag.maui{bottom:3%;left:44%}
+.ev-tag.maui{bottom:3%;right:calc(100% + 18px);text-align:right}
 .ev-times{margin-top:48px;max-width:560px;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(214,220,213,.25)}
 .ev-times div{padding:18px 0 0}
-.ev-times b{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(30px,2.8vw,42px);color:#F1F3EF;letter-spacing:var(--display-tracking);line-height:1.1}
+.ev-times b{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(40px,4.4vw,68px);color:#F1F3EF;letter-spacing:var(--display-tracking);line-height:1.1}
 .ev-times small{font-size:13.5px;letter-spacing:.04em;opacity:.8}
-@media (max-width:767px){.ev-art{max-width:130px;margin-top:44px;justify-self:start}.ev-tag span{font-size:22px}}
+@media (max-width:767px){.ev-art{max-width:120px;margin-top:44px;justify-self:center}.ev-tag span{font-size:38px}}
 
 /* ============ WORK ============ */
 .work{padding:10vw 0 8vw;background:var(--fog);overflow:hidden}
@@ -196,6 +218,13 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 .wk-photo img{width:100%;aspect-ratio:5/6;object-fit:cover;filter:saturate(.5) contrast(1.03)}
 .wk-rows{--d:1/12/3/26;--m:3/2/4/10}
 .row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:32px;padding:30px 0;border-top:1px solid rgba(30,39,37,.22)}
+.row h3{transition:transform .5s cubic-bezier(.2,.7,.1,1)}
+.row:hover h3{transform:translateX(12px)}
+.row{transition:border-color .4s}
+.peek{position:absolute;left:0;top:0;width:170px;height:170px;background:var(--mist);padding:26px;z-index:4;pointer-events:none;opacity:0;transform:translate3d(0,0,0) scale(.85) rotate(-3deg);transition:opacity .35s,transform .35s;display:flex;align-items:center;justify-content:center}
+.peek img{max-width:100%;max-height:100%;object-fit:contain}
+.peek.show{opacity:1}
+@media (hover:none),(max-width:1099px){.peek{display:none}}
 .row:last-child{border-bottom:1px solid rgba(30,39,37,.22)}
 .row p{font-size:16.5px}
 .row .link{font-size:15px;display:inline-block;margin-top:10px}
@@ -221,6 +250,7 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 .ab-text{--d:1/17/2/25;--m:2/2/3/10;align-self:end;padding-top:40px}
 .ab-text p{margin-top:16px;font-size:17px}
 .ab-text .quiet{font-family:var(--f-display);font-size:24px;line-height:1.3;color:var(--ink);letter-spacing:var(--display-tracking);margin-top:26px}
+.ab-text .sig-ab{font-size:72px;line-height:.8;margin:22px 0 4px;display:inline-block;transform:rotate(-4deg)}
 .creds{--d:2/17/3/25;--m:3/2/4/10;margin-top:30px;font-size:13.5px;color:var(--muted);border-top:1px solid rgba(30,39,37,.22);padding-top:14px;line-height:1.7}
 @media (max-width:767px){.ab-text{padding-top:34px}}
 
@@ -274,6 +304,8 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
   .wk-head{--d:1/2/2/20}.wk-rows{--d:2/2/3/26;margin-top:40px}.wk-photo{--d:3/2/4/12;margin-top:50px}
   .ar-head{--d:1/2/2/20}.ar-bay{--d:2/2/3/14;margin-top:40px}.ar-state{--d:2/15/3/26;margin-top:40px}
   .fam-h{--d:1/2/2/12}.fam-list li{font-size:17px}
+  .hero-photo .ph-wrap .mark{left:auto;right:-22px;bottom:auto;top:-22px;width:96px;padding:12px}
+  .ev-copy{--d:1/2/2/22}.ev-art{--d:2/2/3/26;max-width:150px;margin-top:50px;justify-self:center}
   .f-brand{--d:1/2/2/26}.f-col{margin-top:40px}
   .f-1{--d:2/2/3/9}.f-2{--d:2/10/3/18}.f-3{--d:2/18/3/26}.f-legal{--d:3/2/4/26}
 }
@@ -282,11 +314,6 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 </style>
 </head>
 <body class="type-a">
-<!-- paper texture filters (Squarespace: Footer Code Injection, loaded once) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <filter id="torn" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="9"/></filter>
-  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 0.12  0 0 0 0 0.15  0 0 0 0 0.14  0 0 0 0.10 0"/><feComposite in2="SourceGraphic" operator="in"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
-</svg>
 
 <!-- HEADER (Squarespace header: site title left, nav right, button styled as underlined link via Custom CSS) -->
 <header class="hdr fe">
@@ -316,13 +343,10 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
   </div>
   <div class="hero-slab" aria-hidden="true"></div>
   <figure class="hero-photo">
-    <img src="img/kristina-portrait.webp" alt="Kristina Shimokawa, LMFT, smiling in a soft gray sweater" width="1000" height="1250">
-    <figcaption>Kristina Shimokawa, LMFT</figcaption>
+    <div class="ph-wrap"><div class="mark block static hide-m" data-speed="0" style="background:#7E9387" aria-hidden="true"><svg viewBox="0 0 100 100"><line class="t" pathLength="1" x1="50.0" y1="2.0" x2="96.4" y2="62.4" stroke="#EDEFEA" style="transition-delay:0.00s"/><line class="t" pathLength="1" x1="62.4" y1="3.6" x2="91.6" y2="74.0" stroke="#EDEFEA" style="transition-delay:0.05s"/><line class="t" pathLength="1" x1="74.0" y1="8.4" x2="83.9" y2="83.9" stroke="#EDEFEA" style="transition-delay:0.10s"/><line class="t" pathLength="1" x1="83.9" y1="16.1" x2="74.0" y2="91.6" stroke="#EDEFEA" style="transition-delay:0.15s"/><line class="t" pathLength="1" x1="91.6" y1="26.0" x2="62.4" y2="96.4" stroke="#EDEFEA" style="transition-delay:0.20s"/><line class="t" pathLength="1" x1="96.4" y1="37.6" x2="50.0" y2="98.0" stroke="#EDEFEA" style="transition-delay:0.25s"/><line class="t" pathLength="1" x1="98.0" y1="50.0" x2="37.6" y2="96.4" stroke="#EDEFEA" style="transition-delay:0.30s"/><line class="t" pathLength="1" x1="96.4" y1="62.4" x2="26.0" y2="91.6" stroke="#EDEFEA" style="transition-delay:0.35s"/><line class="t" pathLength="1" x1="91.6" y1="74.0" x2="16.1" y2="83.9" stroke="#EDEFEA" style="transition-delay:0.40s"/><line class="t" pathLength="1" x1="83.9" y1="83.9" x2="8.4" y2="74.0" stroke="#EDEFEA" style="transition-delay:0.45s"/><line class="t" pathLength="1" x1="74.0" y1="91.6" x2="3.6" y2="62.4" stroke="#EDEFEA" style="transition-delay:0.50s"/><line class="t" pathLength="1" x1="62.4" y1="96.4" x2="2.0" y2="50.0" stroke="#EDEFEA" style="transition-delay:0.55s"/><line class="t" pathLength="1" x1="50.0" y1="98.0" x2="3.6" y2="37.6" stroke="#EDEFEA" style="transition-delay:0.60s"/><line class="t" pathLength="1" x1="37.6" y1="96.4" x2="8.4" y2="26.0" stroke="#EDEFEA" style="transition-delay:0.65s"/><line class="t" pathLength="1" x1="26.0" y1="91.6" x2="16.1" y2="16.1" stroke="#EDEFEA" style="transition-delay:0.70s"/><line class="t" pathLength="1" x1="16.1" y1="83.9" x2="26.0" y2="8.4" stroke="#EDEFEA" style="transition-delay:0.75s"/><line class="t" pathLength="1" x1="8.4" y1="74.0" x2="37.6" y2="3.6" stroke="#EDEFEA" style="transition-delay:0.80s"/><line class="t" pathLength="1" x1="3.6" y1="62.4" x2="50.0" y2="2.0" stroke="#EDEFEA" style="transition-delay:0.85s"/><line class="t" pathLength="1" x1="2.0" y1="50.0" x2="62.4" y2="3.6" stroke="#EDEFEA" style="transition-delay:0.90s"/><line class="t" pathLength="1" x1="3.6" y1="37.6" x2="74.0" y2="8.4" stroke="#EDEFEA" style="transition-delay:0.95s"/><line class="t" pathLength="1" x1="8.4" y1="26.0" x2="83.9" y2="16.1" stroke="#EDEFEA" style="transition-delay:1.00s"/><line class="t" pathLength="1" x1="16.1" y1="16.1" x2="91.6" y2="26.0" stroke="#EDEFEA" style="transition-delay:1.05s"/><line class="t" pathLength="1" x1="26.0" y1="8.4" x2="96.4" y2="37.6" stroke="#EDEFEA" style="transition-delay:1.10s"/><line class="t" pathLength="1" x1="37.6" y1="3.6" x2="98.0" y2="50.0" stroke="#EDEFEA" style="transition-delay:1.15s"/></svg></div><div class="ph"><img src="img/kristina-portrait.webp" alt="Kristina Shimokawa, LMFT, smiling in a soft gray sweater" width="1000" height="1250"></div></div>
+    <figcaption><span>Kristina Shimokawa, LMFT</span><span class="sig" aria-hidden="true">Kristina</span></figcaption>
   </figure>
-  <!-- collage pieces: each is a Code Block in Fluid Engine, moved by the footer script -->
-  <div class="float clip edge hide-m" data-speed="-0.07" data-rot="5" style="right:2.2%;top:15%;width:92px;transform:rotate(5deg)" aria-hidden="true"><span class="tape" style="top:-9px;left:14px;transform:rotate(-8deg)"></span><img src="img/clip-teal.webp" alt="" loading="lazy"></div>
-  <div class="float paper hide-m" data-speed="0.04" style="left:-1%;bottom:1%;z-index:0;width:280px;transform:rotate(-2.5deg)" aria-hidden="true"><svg viewBox="0 0 280 54"><g filter="url(#torn)"><rect x="4" y="4" width="272" height="46" fill="#E2E6E0" filter="url(#grain)"/></g></svg></div>
-  <div class="float cut hide-m" data-speed="0.1" style="left:63%;bottom:5%;width:58px" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="slate" d="M0 0 H100 A100 100 0 0 1 0 100 Z"/></svg></div>
+  <!-- string-art marks: each is a Code Block in Fluid Engine -->
   </section>
 
 <!-- SECTION 2 · FAMILIAR -->
@@ -341,9 +365,14 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
     <p>You're not overreacting, and you don't have to figure it all out today. IFS and somatic therapy give those feelings somewhere to go, so you can work out what comes next with a clearer head.</p>
     <a class="link" href="#">Contact Kristina</a>
   </div>
-  <div class="float clip edge hide-m" data-speed="-0.08" data-rot="-5" style="left:25%;top:53%;width:132px;transform:rotate(-5deg)" aria-hidden="true"><span class="tape" style="top:-8px;right:18px;transform:rotate(6deg)"></span><img src="img/clip-grass.webp" alt="" loading="lazy"></div>
-  <div class="float cut" data-speed="0.1" style="right:6%;bottom:5%;width:78px" aria-hidden="true"><svg viewBox="0 0 100 50"><path class="euc" d="M0 50 A50 50 0 0 1 100 50 Z"/></svg></div>
+  <div class="mark hide-m" data-speed="0" style="right:4vw;bottom:8vw;width:86px" aria-hidden="true"><svg viewBox="0 0 100 100" style="transform:scaleX(-1)"><line class="t" pathLength="1" x1="0.0" y1="0.0" x2="0.0" y2="100.0" stroke="#2A3432" style="transition-delay:0.00s"/><line class="t" pathLength="1" x1="0.0" y1="100.0" x2="100.0" y2="100.0" stroke="#2A3432" style="transition-delay:0.00s"/><line class="t" pathLength="1" x1="0.0" y1="0.0" x2="6.2" y2="100.0" stroke="#2A3432" style="transition-delay:0.00s"/><line class="t" pathLength="1" x1="0.0" y1="6.2" x2="12.5" y2="100.0" stroke="#2A3432" style="transition-delay:0.07s"/><line class="t" pathLength="1" x1="0.0" y1="12.5" x2="18.8" y2="100.0" stroke="#2A3432" style="transition-delay:0.15s"/><line class="t" pathLength="1" x1="0.0" y1="18.8" x2="25.0" y2="100.0" stroke="#2A3432" style="transition-delay:0.22s"/><line class="t" pathLength="1" x1="0.0" y1="25.0" x2="31.2" y2="100.0" stroke="#2A3432" style="transition-delay:0.30s"/><line class="t" pathLength="1" x1="0.0" y1="31.2" x2="37.5" y2="100.0" stroke="#2A3432" style="transition-delay:0.38s"/><line class="t" pathLength="1" x1="0.0" y1="37.5" x2="43.8" y2="100.0" stroke="#2A3432" style="transition-delay:0.45s"/><line class="t" pathLength="1" x1="0.0" y1="43.8" x2="50.0" y2="100.0" stroke="#2A3432" style="transition-delay:0.53s"/><line class="t" pathLength="1" x1="0.0" y1="50.0" x2="56.2" y2="100.0" stroke="#2A3432" style="transition-delay:0.60s"/><line class="t" pathLength="1" x1="0.0" y1="56.2" x2="62.5" y2="100.0" stroke="#2A3432" style="transition-delay:0.67s"/><line class="t" pathLength="1" x1="0.0" y1="62.5" x2="68.8" y2="100.0" stroke="#2A3432" style="transition-delay:0.75s"/><line class="t" pathLength="1" x1="0.0" y1="68.8" x2="75.0" y2="100.0" stroke="#2A3432" style="transition-delay:0.82s"/><line class="t" pathLength="1" x1="0.0" y1="75.0" x2="81.2" y2="100.0" stroke="#2A3432" style="transition-delay:0.90s"/><line class="t" pathLength="1" x1="0.0" y1="81.2" x2="87.5" y2="100.0" stroke="#2A3432" style="transition-delay:0.97s"/><line class="t" pathLength="1" x1="0.0" y1="87.5" x2="93.8" y2="100.0" stroke="#2A3432" style="transition-delay:1.05s"/><line class="t" pathLength="1" x1="0.0" y1="93.8" x2="100.0" y2="100.0" stroke="#2A3432" style="transition-delay:1.12s"/></svg></div>
 </section>
+
+<!-- SECTION 2b · DUSK (empty section, gradient background; the sun is a Code Block that sinks as you scroll) -->
+<div class="dusk" aria-hidden="true">
+  <div class="horizon"></div>
+  <div class="sun mark"><div class="sun-in"><svg viewBox="0 0 120 60"><line class="t" pathLength="1" x1="2.0" y1="60.0" x2="22.0" y2="16.2" stroke="#C4AA7F" style="transition-delay:0.00s"/><line class="t" pathLength="1" x1="2.6" y1="51.7" x2="28.6" y2="11.2" stroke="#C4AA7F" style="transition-delay:0.06s"/><line class="t" pathLength="1" x1="4.3" y1="43.7" x2="35.9" y2="7.2" stroke="#C4AA7F" style="transition-delay:0.12s"/><line class="t" pathLength="1" x1="7.2" y1="35.9" x2="43.7" y2="4.3" stroke="#C4AA7F" style="transition-delay:0.18s"/><line class="t" pathLength="1" x1="11.2" y1="28.6" x2="51.7" y2="2.6" stroke="#C4AA7F" style="transition-delay:0.24s"/><line class="t" pathLength="1" x1="16.2" y1="22.0" x2="60.0" y2="2.0" stroke="#C4AA7F" style="transition-delay:0.30s"/><line class="t" pathLength="1" x1="22.0" y1="16.2" x2="68.3" y2="2.6" stroke="#C4AA7F" style="transition-delay:0.37s"/><line class="t" pathLength="1" x1="28.6" y1="11.2" x2="76.3" y2="4.3" stroke="#C4AA7F" style="transition-delay:0.43s"/><line class="t" pathLength="1" x1="35.9" y1="7.2" x2="84.1" y2="7.2" stroke="#C4AA7F" style="transition-delay:0.49s"/><line class="t" pathLength="1" x1="43.7" y1="4.3" x2="91.4" y2="11.2" stroke="#C4AA7F" style="transition-delay:0.55s"/><line class="t" pathLength="1" x1="51.7" y1="2.6" x2="98.0" y2="16.2" stroke="#C4AA7F" style="transition-delay:0.61s"/><line class="t" pathLength="1" x1="60.0" y1="2.0" x2="103.8" y2="22.0" stroke="#C4AA7F" style="transition-delay:0.67s"/><line class="t" pathLength="1" x1="68.3" y1="2.6" x2="108.8" y2="28.6" stroke="#C4AA7F" style="transition-delay:0.73s"/><line class="t" pathLength="1" x1="76.3" y1="4.3" x2="112.8" y2="35.9" stroke="#C4AA7F" style="transition-delay:0.79s"/><line class="t" pathLength="1" x1="84.1" y1="7.2" x2="115.7" y2="43.7" stroke="#C4AA7F" style="transition-delay:0.85s"/><line class="t" pathLength="1" x1="91.4" y1="11.2" x2="117.4" y2="51.7" stroke="#C4AA7F" style="transition-delay:0.91s"/><line class="t" pathLength="1" x1="98.0" y1="16.2" x2="118.0" y2="60.0" stroke="#C4AA7F" style="transition-delay:0.97s"/></svg></div></div>
+</div>
 
 <!-- SECTION 3 · EVENINGS -->
 <section class="evenings fe" id="evenings">
@@ -363,8 +392,9 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
     <p class="ev-tag sf">Bay Area<span>You</span></p>
     <p class="ev-tag maui">Maui<span>Kristina</span></p>
   </div>
-  <div class="float cut hide-m" data-speed="0.06" style="right:7%;bottom:30%;width:170px" aria-hidden="true"><svg viewBox="0 0 170 62"><path class="grass" d="M30 60 A55 55 0 0 1 140 60 Z"/><line x1="0" y1="60.5" x2="170" y2="60.5" stroke="#C9D0C8" stroke-opacity=".5" stroke-width="1"/></svg></div>
 </section>
+
+<div class="dawn" aria-hidden="true"></div>
 
 <!-- SECTION 4 · WHAT WE WORK ON -->
 <section class="work fe">
@@ -372,21 +402,20 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
   <h2>What we work on</h2>
   <p class="wk-intro">Most of the women I see are leaders, partners and mothers who look fine from the outside.</p>
   </div>
-  <figure class="wk-photo"><span class="tape" style="top:-9px;left:42%;transform:rotate(-3deg)"></span><img src="img/evening-curtain.webp" alt="Evening light through linen curtains" width="900" height="1080" loading="lazy"></figure>
+  <figure class="wk-photo"><div class="mark block static" data-speed="0.0" style="right:-38px;top:-38px;width:118px;background:#5D6E71" aria-hidden="true"><svg viewBox="0 0 100 100"><line class="t" pathLength="1" x1="50.0" y1="2.0" x2="95.7" y2="64.8" stroke="#EDEFEA" style="transition-delay:0.00s"/><line class="t" pathLength="1" x1="64.8" y1="4.3" x2="88.8" y2="78.2" stroke="#EDEFEA" style="transition-delay:0.06s"/><line class="t" pathLength="1" x1="78.2" y1="11.2" x2="78.2" y2="88.8" stroke="#EDEFEA" style="transition-delay:0.12s"/><line class="t" pathLength="1" x1="88.8" y1="21.8" x2="64.8" y2="95.7" stroke="#EDEFEA" style="transition-delay:0.18s"/><line class="t" pathLength="1" x1="95.7" y1="35.2" x2="50.0" y2="98.0" stroke="#EDEFEA" style="transition-delay:0.24s"/><line class="t" pathLength="1" x1="98.0" y1="50.0" x2="35.2" y2="95.7" stroke="#EDEFEA" style="transition-delay:0.30s"/><line class="t" pathLength="1" x1="95.7" y1="64.8" x2="21.8" y2="88.8" stroke="#EDEFEA" style="transition-delay:0.36s"/><line class="t" pathLength="1" x1="88.8" y1="78.2" x2="11.2" y2="78.2" stroke="#EDEFEA" style="transition-delay:0.42s"/><line class="t" pathLength="1" x1="78.2" y1="88.8" x2="4.3" y2="64.8" stroke="#EDEFEA" style="transition-delay:0.48s"/><line class="t" pathLength="1" x1="64.8" y1="95.7" x2="2.0" y2="50.0" stroke="#EDEFEA" style="transition-delay:0.54s"/><line class="t" pathLength="1" x1="50.0" y1="98.0" x2="4.3" y2="35.2" stroke="#EDEFEA" style="transition-delay:0.60s"/><line class="t" pathLength="1" x1="35.2" y1="95.7" x2="11.2" y2="21.8" stroke="#EDEFEA" style="transition-delay:0.66s"/><line class="t" pathLength="1" x1="21.8" y1="88.8" x2="21.8" y2="11.2" stroke="#EDEFEA" style="transition-delay:0.72s"/><line class="t" pathLength="1" x1="11.2" y1="78.2" x2="35.2" y2="4.3" stroke="#EDEFEA" style="transition-delay:0.78s"/><line class="t" pathLength="1" x1="4.3" y1="64.8" x2="50.0" y2="2.0" stroke="#EDEFEA" style="transition-delay:0.84s"/><line class="t" pathLength="1" x1="2.0" y1="50.0" x2="64.8" y2="4.3" stroke="#EDEFEA" style="transition-delay:0.90s"/><line class="t" pathLength="1" x1="4.3" y1="35.2" x2="78.2" y2="11.2" stroke="#EDEFEA" style="transition-delay:0.96s"/><line class="t" pathLength="1" x1="11.2" y1="21.8" x2="88.8" y2="21.8" stroke="#EDEFEA" style="transition-delay:1.02s"/><line class="t" pathLength="1" x1="21.8" y1="11.2" x2="95.7" y2="35.2" stroke="#EDEFEA" style="transition-delay:1.08s"/><line class="t" pathLength="1" x1="35.2" y1="4.3" x2="98.0" y2="50.0" stroke="#EDEFEA" style="transition-delay:1.14s"/></svg></div><img class="reveal" src="img/evening-curtain.webp" alt="Evening light through linen curtains" width="900" height="1080" loading="lazy"></figure>
+  <div class="peek" aria-hidden="true"><img alt="" src="img/line-woman.png"></div>
   <div class="wk-rows">
-    <div class="row"><h3>Betrayal and relational trauma</h3><div><p>Affairs, hidden sexual behavior, dating apps, a partner who wants to open the relationship. We sort through the shock first, then whether to stay or go.</p><a class="link" href="#">Betrayal and infidelity therapy</a></div></div>
-    <div class="row"><h3>Anxiety that passes for high functioning</h3><div><p>Racing thoughts, perfectionism, people-pleasing, and the exhaustion of always being the capable one.</p><a class="link" href="#">High-functioning anxiety</a></div></div>
-    <div class="row"><h3>Motherhood and matrescence</h3><div><p>The identity shift nobody warned you about. Mom rage, losing track of who you were, and wanting less sex than you used to.</p><a class="link" href="#">Therapy for mothers</a></div></div>
-    <div class="row"><h3>Therapists and clinicians</h3><div><p>Your own therapy, with someone who knows what it costs to sit in the chair all day.</p><a class="link" href="#">Therapy for therapists</a></div></div>
-    <div class="row"><h3>Ketamine-assisted therapy</h3><div><p>Online sessions with oral ketamine, through Journey Clinical, for anxiety or depression that hasn't shifted with talk therapy alone.</p><a class="link" href="#">Ketamine-assisted therapy</a></div></div>
+    <div class="row" data-art="img/line-woman.png"><h3>Betrayal and relational trauma</h3><div><p>Affairs, hidden sexual behavior, dating apps, a partner who wants to open the relationship. We sort through the shock first, then whether to stay or go.</p><a class="link" href="#">Betrayal and infidelity therapy</a></div></div>
+    <div class="row" data-art="img/line-ripple-leaf.png"><h3>Anxiety that passes for high functioning</h3><div><p>Racing thoughts, perfectionism, people-pleasing, and the exhaustion of always being the capable one.</p><a class="link" href="#">High-functioning anxiety</a></div></div>
+    <div class="row" data-art="img/line-thread.png"><h3>Motherhood and matrescence</h3><div><p>The identity shift nobody warned you about. Mom rage, losing track of who you were, and wanting less sex than you used to.</p><a class="link" href="#">Therapy for mothers</a></div></div>
+    <div class="row" data-art="img/line-compass.png"><h3>Therapists and clinicians</h3><div><p>Your own therapy, with someone who knows what it costs to sit in the chair all day.</p><a class="link" href="#">Therapy for therapists</a></div></div>
+    <div class="row" data-art="img/line-pins.png"><h3>Ketamine-assisted therapy</h3><div><p>Online sessions with oral ketamine, through Journey Clinical, for anxiety or depression that hasn't shifted with talk therapy alone.</p><a class="link" href="#">Ketamine-assisted therapy</a></div></div>
   </div>
-  <div class="float clip edge hide-m" data-speed="-0.06" data-rot="3" style="right:2.5%;top:3.5%;width:118px;transform:rotate(3deg)" aria-hidden="true"><img src="img/clip-trees.webp" alt="" loading="lazy"></div>
 </section>
 
 <!-- SECTION 5 · HOW WE START -->
 <section class="begin fe">
   <h2 class="bg-h" style="position:relative;z-index:2">How we start</h2>
-  <div class="float paper hide-m" data-speed="0.05" style="left:1.5%;top:7%;z-index:0;width:240px;transform:rotate(2deg)" aria-hidden="true"><svg viewBox="0 0 240 48"><g filter="url(#torn)"><rect x="4" y="4" width="232" height="40" fill="#EDEFEA" filter="url(#grain)"/></g></svg></div>
   <img class="bg-thread" src="img/line-thread.png" alt="" width="520" height="242" loading="lazy">
   <div class="steps">
     <div class="step"><h3>Book a free consult</h3><p>Thirty minutes on video. It isn't a sales call. You'll leave with more clarity about what's going on, whether or not we work together.</p></div>
@@ -397,11 +426,12 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 
 <!-- SECTION 6 · ABOUT -->
 <section class="about fe">
-  <figure class="ab-photo"><img src="img/kristina-field.webp" alt="Kristina Shimokawa standing in a sunlit field" width="1500" height="1000" loading="lazy"></figure>
+  <figure class="ab-photo"><img class="reveal" src="img/kristina-field.webp" alt="Kristina Shimokawa standing in a sunlit field" width="1500" height="1000" loading="lazy"></figure>
   <div class="ab-text">
     <h2>Hi, I'm Kristina.</h2>
     <p>I earned my master's in counseling psychology at the University of San Francisco, and I've spent years working with women through anxiety and relational trauma. I blend IFS, Brainspotting and somatic, attachment-based therapy, so we work with your body as well as your story.</p>
     <p class="quiet">There's no filter necessary with me.</p>
+    <p class="sig sig-ab" aria-hidden="true">Kristina</p>
     <p><a class="link" href="#">Meet Kristina</a></p>
   </div>
   <p class="creds">Licensed Marriage and Family Therapist, California #LMFT133759 and Hawaii #MFT-601<br>IFS Level 2, IFS Institute · Ketamine-assisted therapy, Journey Clinical · Level 1 Brainspotting</p>
@@ -415,8 +445,7 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
   </div>
   <div class="ar-col ar-bay"><h3>San Francisco and the Bay Area</h3><ul><li>San Francisco</li><li>Oakland</li><li>Berkeley</li><li>Marin County</li><li>San Mateo</li><li>Palo Alto</li><li>San Jose</li></ul></div>
   <div class="ar-col ar-state"><h3>And statewide</h3><ul><li>Sonoma County</li><li>Santa Cruz</li><li>Sacramento</li><li>Los Angeles</li><li>Santa Barbara</li><li>San Diego</li></ul></div>
-  <div class="float clip edge" data-speed="0.08" data-rot="-4" style="left:6%;bottom:9%;width:86px;transform:rotate(-4deg)" aria-hidden="true"><span class="tape" style="top:-8px;left:10px;transform:rotate(-10deg)"></span><img src="img/clip-light.webp" alt="" loading="lazy"></div>
-  <div class="float cut hide-m" data-speed="0.12" style="left:13.5%;bottom:5%;width:46px" aria-hidden="true"><svg viewBox="0 0 100 100"><path class="euc" d="M0 0 H100 A100 100 0 0 1 0 100 Z"/></svg></div>
+  <div class="mark hide-m" data-speed="0" style="left:4vw;bottom:8vw;width:150px;opacity:.75" aria-hidden="true"><svg viewBox="0 0 100 100"><line class="t" pathLength="1" x1="0.0" y1="0.0" x2="0.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.00s"/><line class="t" pathLength="1" x1="0.0" y1="100.0" x2="100.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.00s"/><line class="t" pathLength="1" x1="0.0" y1="0.0" x2="5.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.00s"/><line class="t" pathLength="1" x1="0.0" y1="5.0" x2="10.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.06s"/><line class="t" pathLength="1" x1="0.0" y1="10.0" x2="15.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.12s"/><line class="t" pathLength="1" x1="0.0" y1="15.0" x2="20.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.18s"/><line class="t" pathLength="1" x1="0.0" y1="20.0" x2="25.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.24s"/><line class="t" pathLength="1" x1="0.0" y1="25.0" x2="30.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.30s"/><line class="t" pathLength="1" x1="0.0" y1="30.0" x2="35.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.36s"/><line class="t" pathLength="1" x1="0.0" y1="35.0" x2="40.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.42s"/><line class="t" pathLength="1" x1="0.0" y1="40.0" x2="45.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.48s"/><line class="t" pathLength="1" x1="0.0" y1="45.0" x2="50.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.54s"/><line class="t" pathLength="1" x1="0.0" y1="50.0" x2="55.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.60s"/><line class="t" pathLength="1" x1="0.0" y1="55.0" x2="60.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.66s"/><line class="t" pathLength="1" x1="0.0" y1="60.0" x2="65.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.72s"/><line class="t" pathLength="1" x1="0.0" y1="65.0" x2="70.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.78s"/><line class="t" pathLength="1" x1="0.0" y1="70.0" x2="75.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.84s"/><line class="t" pathLength="1" x1="0.0" y1="75.0" x2="80.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.90s"/><line class="t" pathLength="1" x1="0.0" y1="80.0" x2="85.0" y2="100.0" stroke="#7E9387" style="transition-delay:0.96s"/><line class="t" pathLength="1" x1="0.0" y1="85.0" x2="90.0" y2="100.0" stroke="#7E9387" style="transition-delay:1.02s"/><line class="t" pathLength="1" x1="0.0" y1="90.0" x2="95.0" y2="100.0" stroke="#7E9387" style="transition-delay:1.08s"/><line class="t" pathLength="1" x1="0.0" y1="95.0" x2="100.0" y2="100.0" stroke="#7E9387" style="transition-delay:1.14s"/></svg></div>
 </section>
 
 <!-- SECTION 8 · BLOG -->
@@ -438,7 +467,6 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
     <a class="link link-lg" href="#">Book a free consult</a>
     <a class="link" href="mailto:kshimokawa.lmft@gmail.com">kshimokawa.lmft@gmail.com</a>
   </div>
-    <div class="float cut hide-m" data-speed="-0.08" style="right:9%;top:12%;width:64px" aria-hidden="true"><svg viewBox="0 0 100 50"><path class="slate" d="M0 50 A50 50 0 0 1 100 50 Z"/></svg></div>
   <img class="cl-art" src="img/line-ripple-leaf.png" alt="" width="535" height="169" loading="lazy">
 </section>
 </main>
@@ -483,7 +511,9 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
 /* ===== Floating parallax + line drawing (Squarespace: Footer Code Injection) ===== */
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var floats=[].slice.call(document.querySelectorAll('.float'));
+  var floats=[].slice.call(document.querySelectorAll('.mark:not(.static)'));
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.35}):null;
+  document.querySelectorAll('.mark').forEach(function(m){io?io.observe(m):m.classList.add('on')});
   var draws=[].slice.call(document.querySelectorAll('path.draw'));
   draws.forEach(function(p){var L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=reduce?0:L;p._L=L});
   function frame(){
@@ -495,6 +525,33 @@ h3{font-family:var(--f-display);font-size:clamp(22px,1.8vw,27px);line-height:1.2
   var ticking=false;
   function req(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
   window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);frame();
+})();
+
+/* ===== Headline rise, reveals, sunset, portrait scale, row peeks (Squarespace: Footer Code Injection) ===== */
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var h=document.querySelector('.hero-display');
+  if(h&&!reduce){var i=0;h.innerHTML=h.textContent.trim().split(/\s+/).map(function(w){return '<span class="w"><span style="animation-delay:'+(0.15+0.07*i++).toFixed(2)+'s">'+w+'</span></span>'}).join(' ')}
+  var rv=[].slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var im=e.target.querySelector('.reveal');im&&im.classList.add('in');o.unobserve(e.target)}})},{threshold:.2});rv.forEach(function(r){o.observe(r.parentNode)})}else rv.forEach(function(r){r.classList.add('in')});
+  var dusk=document.querySelector('.dusk'),sun=document.querySelector('.sun-in'),ph=document.querySelector('.hero-photo .ph img');
+  function frame(){var vh=window.innerHeight;
+    if(dusk&&sun&&!reduce){var r=dusk.getBoundingClientRect();var p=Math.min(1,Math.max(0,(vh*0.75-r.top)/(r.height+vh*0.35)));sun.style.transform='translateY('+(p*100).toFixed(1)+'%)'}
+    if(ph&&!reduce){var y=Math.min(1,Math.max(0,window.scrollY/vh));ph.style.transform='scale('+(1.08-0.08*Math.min(1,y*1.6+0.6)).toFixed(3)+')'}
+    t=false}
+  var t=false;function q(){if(!t){t=true;requestAnimationFrame(frame)}}
+  window.addEventListener('scroll',q,{passive:true});window.addEventListener('resize',q);frame();
+  if(ph&&!reduce)setTimeout(function(){q()},900);
+  var peek=document.querySelector('.peek'),wk=document.querySelector('.work');
+  if(peek&&wk&&window.matchMedia('(hover:hover) and (min-width:1100px)').matches){
+    var img=peek.querySelector('img'),tx=0,ty=0,cx=0,cy=0,on=false;
+    document.querySelectorAll('.row[data-art]').forEach(function(r){
+      r.addEventListener('mouseenter',function(){img.src=r.dataset.art;peek.classList.add('show');on=true});
+      r.addEventListener('mouseleave',function(){peek.classList.remove('show');on=false});
+    });
+    wk.addEventListener('mousemove',function(e){var b=wk.getBoundingClientRect();tx=e.clientX-b.left+56;ty=e.clientY-b.top-80});
+    (function loop(){cx+=(tx-cx)*.14;cy+=(ty-cy)*.14;peek.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0) scale('+(on?1:.85)+') rotate('+(on?-2:-5)+'deg)';requestAnimationFrame(loop)})();
+  }
 })();
 
 /* ===== Preview-only font switcher ===== */
