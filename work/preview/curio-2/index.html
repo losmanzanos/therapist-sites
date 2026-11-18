@@ -44,18 +44,18 @@ h3{font-size:clamp(22px,2vw,28px);line-height:1.1}
 .top .tel:hover{color:var(--brass-l);opacity:1}
 
 /* hero */
-.hero{position:relative;overflow:hidden;padding:clamp(40px,5vw,72px) var(--pad) 0;max-width:1520px;margin:0 auto;display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,90px);align-items:end}
-.hero::before{content:"";position:absolute;right:-10%;top:10%;width:60%;height:90%;background:radial-gradient(ellipse at 50% 60%,rgba(216,176,106,.28),rgba(216,176,106,.06) 50%,transparent 72%);pointer-events:none}
-.hero-copy{position:relative;padding-bottom:clamp(40px,5vw,72px)}
-.hero h1{font-size:clamp(38px,4.6vw,76px);font-weight:300;max-width:14ch;margin-top:12px}
-.hero .sub{margin-top:22px;font-size:clamp(18px,1.4vw,22px);max-width:30em;color:rgba(241,235,221,.85)}
-.hero .why{margin-top:22px;padding-top:16px;border-top:1px solid var(--rule-l);max-width:32em;font-size:17px;line-height:1.55;color:rgba(241,235,221,.8)}
+.hero{position:relative;overflow:hidden;padding:clamp(28px,4vh,56px) var(--pad) 0;max-width:1520px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,40%);gap:clamp(32px,4vw,72px);align-items:end}
+.hero::before{content:"";position:absolute;right:-6%;top:0;width:56%;height:100%;background:radial-gradient(ellipse at 50% 45%,rgba(216,176,106,.26),rgba(216,176,106,.05) 52%,transparent 74%);pointer-events:none}
+.hero-copy{position:relative;padding-bottom:clamp(28px,4vh,56px)}
+.hero h1{font-size:clamp(36px,4.3vw,70px);font-weight:300;max-width:14ch;margin-top:10px}
+.hero .sub{margin-top:18px;font-size:clamp(17px,1.3vw,20px);max-width:30em;color:rgba(241,235,221,.85)}
+.hero .why{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule-l);max-width:34em;font-size:clamp(15.5px,1.15vw,17px);line-height:1.5;color:rgba(241,235,221,.82)}
 .hero .why .k{display:block;margin-bottom:6px}
-.hero .acts{margin-top:28px;display:flex;gap:26px;flex-wrap:wrap}
+.hero .acts{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap}
 .hero .acts .u{font-size:16px}
-.hero .cab{position:relative;margin:0;align-self:end;justify-self:center}
-.hero .cab img{width:min(100%,440px);height:auto;display:block;box-shadow:0 40px 60px rgba(0,0,0,.55),0 0 0 1px rgba(216,176,106,.45),0 0 0 7px var(--green),0 0 0 8px rgba(216,176,106,.25)}
-.hero .cab figcaption{font-family:var(--fd);font-size:13px;line-height:1.4;color:rgba(241,235,221,.7);max-width:30ch;margin:18px 0 28px}
+.hero .cab{position:relative;margin:0;align-self:end;justify-self:center;display:grid;justify-items:center}
+.hero .cab img{height:min(66vh,620px);width:auto;max-width:100%;display:block;filter:drop-shadow(0 30px 34px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(216,176,106,.12))}
+.hero .cab figcaption{font-family:var(--fd);font-size:12.5px;line-height:1.4;color:rgba(241,235,221,.62);max-width:34ch;margin:14px 0 22px;text-align:center}
 .trust{background:var(--cream-2);color:var(--ink)}
 .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
 .trust .wrap>div{padding:22px 24px 22px 0;font-size:15px;line-height:1.45;color:var(--ink-2)}
@@ -146,8 +146,9 @@ footer nav a:hover{color:var(--brass-l)}
 
 @media (max-width:1000px){
   .hero,.index,.month .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
-  .hero .cab{justify-self:start}
-  .hero .cab img{width:min(100%,360px)}
+  .hero .cab{justify-self:start;justify-items:start}
+  .hero .cab img{height:auto;width:min(70%,380px)}
+  .hero .cab figcaption{text-align:left}
   .trust .wrap{grid-template-columns:1fr 1fr}
   .trust .wrap>div:nth-child(3){border-left:0;padding-left:0}
   .index .sticky{position:static}
@@ -164,7 +165,7 @@ footer nav a:hover{color:var(--brass-l)}
   .trust .wrap{grid-template-columns:1fr}
   .trust .wrap>div{border-left:0!important;padding:14px 0!important}
   .trust .wrap>div+div{border-top:1px solid var(--rule)}
-  .hero .cab img{width:min(100%,300px)}
+  .hero .cab img{width:min(80%,300px)}
   .hero h1{font-size:clamp(38px,11.5vw,54px)}
   .qs li a,.qs li.m a{grid-template-columns:40px 1fr;gap:12px 16px}
   .qs li.m .t{grid-column:2;white-space:normal;text-align:left}
@@ -186,13 +187,13 @@ footer nav a:hover{color:var(--brass-l)}
   <div class="hero-copy">
     <p class="k">Denver · In person and online across Colorado</p>
     <h1>Curio is a small therapy practice for people who look fine and aren't.</h1>
-    <p class="sub">Two therapists. One office on Harlan Street. We work with adults on anxiety, perfectionism, the big life changes, and the old things that still get in the way.</p>
-    <p class="why"><span class="k">About the name</span>A curio cabinet holds curiosities: the things closest to us, kept behind glass. Sometimes it's where we put something away, meaning to come back to it, and years go by. Then one day it gets opened, and everything in it is exactly as heavy as the day we shut the door. That's what this practice is for. Taking things out, dusting them off, and looking at them again with someone in the room.</p>
+    <p class="sub">Two therapists. One office on Harlan Street, and video sessions anywhere in Colorado.</p>
+    <p class="why"><span class="k">About the name</span>A curio cabinet holds curiosities: the things closest to us, kept behind a door. Sometimes it's where we put something away meaning to come back to it, and years go by. When it finally gets opened, everything inside is exactly as heavy as the day we shut it. This practice is for taking those things out, dusting them off, and looking at them again with someone in the room.</p>
     <p class="acts"><a class="u" href="#contact">Book a free 15-minute call</a><a class="u" href="#questions">See what people come in with</a></p>
   </div>
   <figure class="cab">
-    <img src="img/cabinet.webp" alt="A tall wooden curio cabinet with its glass doors closed" width="640" height="882" fetchpriority="high">
-    <figcaption>Curio, from the Latin <em>curiosus</em>: wanting to know more. What's behind the doors is below.</figcaption>
+    <img src="img/cabinet-glazed.webp" alt="A tall mahogany cabinet with glazed doors closed over empty shelves, English, about 1750" width="786" height="1015" fetchpriority="high">
+    <figcaption>Mahogany cabinet, England, about 1750. Art Institute of Chicago, public domain. Curio, from the Latin <em>curiosus</em>: wanting to know more.</figcaption>
   </figure>
 </section>
 <div class="trust">
