@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golden Hour Wellness Colorado | Trauma, EMDR &amp; Addiction Therapy</title>
+<meta name="description" content="Golden Hour Wellness Colorado is a therapist-owned counseling practice offering EMDR, trauma therapy, addiction counseling and telehealth across Colorado. In-network with Aetna, United Healthcare and Cigna.">
+<link rel="icon" href="/work/preview/golden-hour-wellness/assets/favicon.svg" type="image/svg+xml">
+
+<!-- PREVIEW ONLY — remove both of these when this goes live on her real domain.
+     Keeps the staging site out of Google so it can't compete with, or outrank,
+     goldenhourwellnesscolorado.com while she's still on Squarespace. -->
+<meta name="robots" content="noindex, nofollow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Golden Hour Wellness Colorado">
+<meta property="og:title" content="Golden Hour Wellness Colorado | Trauma, EMDR &amp; Addiction Therapy">
+<meta property="og:description" content="EMDR, trauma therapy and addiction counseling across Colorado. In-network with Aetna, United Healthcare and Cigna.">
+<meta property="og:url" content="https://www.goldenhourwellnesscolorado.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "additionalType": "https://schema.org/Psychotherapy",
+  "name": "Golden Hour Wellness Colorado, LLC",
+  "url": "https://www.goldenhourwellnesscolorado.com/",
+  "email": "goldenhourwellco@gmail.com",
+  "telephone": "+1-303-736-9822",
+  "areaServed": { "@type": "State", "name": "Colorado" },
+  "sameAs": [
+    "https://www.instagram.com/goldenhourwellnesscolorado",
+    "https://www.psychologytoday.com/profile/1406337"
+  ],
+  "medicalSpecialty": "Psychiatric",
+  "availableService": [
+    { "@type": "MedicalTherapy", "name": "EMDR Therapy" },
+    { "@type": "MedicalTherapy", "name": "Trauma Therapy" },
+    { "@type": "MedicalTherapy", "name": "Substance Use &amp; Addiction Counseling" },
+    { "@type": "MedicalTherapy", "name": "Cognitive Behavioral Therapy" }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   GOLDEN HOUR WELLNESS COLORADO — design tokens
+   ============================================================ */
+:root{
+  /* warm core */
+  --clay:      #B5623A;   /* primary terracotta */
+  --clay-deep: #8E4A2E;   /* text-safe terracotta */
+  --ember:     #C9764A;
+  --apricot:   #E9A65D;
+  --gold:      #F5C86E;
+  --blush:     #E9B9A6;
+  --petal:     #F2CFC4;   /* soft pink */
+
+  /* cool counterweight */
+  --plum:      #4A3550;   /* dark purple */
+  --plum-deep: #362439;
+  --lilac:     #B9A3C4;
+  --lilac-mist:#EFE7F1;
+
+  /* neutrals */
+  --cream:  #FDF8F2;
+  --sand:   #F7EDE2;
+  --ink:    #3A2E33;
+  --ink-mid:#6B5A60;
+  --line:   rgba(74,53,80,.14);
+
+  --shadow-sm: 0 1px 2px rgba(58,46,51,.06), 0 4px 14px rgba(142,74,46,.07);
+  --shadow-md: 0 2px 6px rgba(58,46,51,.06), 0 18px 44px rgba(142,74,46,.13);
+
+  --radius: 18px;
+  --radius-lg: 28px;
+  --wrap: 1160px;
+
+  /* Real height is measured by JS on load/resize. The header is sticky, so it
+     occupies flow space above the hero — without subtracting it the hero
+     overshoots the viewport and pushes the trust bar below the fold. */
+  --header-h: 79px;
+
+  --serif: "Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--cream); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:var(--clay-deep); text-decoration-thickness:1px; text-underline-offset:3px}
+
+h1,h2,h3,h4{font-family:var(--serif); font-weight:600; line-height:1.12; margin:0 0 .5em; letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,6vw,4.15rem)}
+h2{font-size:clamp(2rem,4vw,2.9rem)}
+h3{font-size:clamp(1.2rem,2vw,1.45rem)}
+p{margin:0 0 1.1em}
+
+.wrap{width:min(100% - 3rem, var(--wrap)); margin-inline:auto}
+.section{padding:clamp(4.5rem,9vw,8rem) 0}
+.eyebrow{
+  font-family:var(--sans); font-size:.74rem; font-weight:700;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--clay);
+  margin:0 0 1rem;
+}
+.lede{font-size:clamp(1.08rem,1.6vw,1.25rem); color:var(--ink-mid); max-width:62ch}
+
+.skip{position:absolute; left:-9999px; top:0; background:var(--plum); color:#fff; padding:.75rem 1.25rem; z-index:999; border-radius:0 0 10px 0}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--plum); outline-offset:3px; border-radius:6px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:.55rem;
+  font-family:var(--sans); font-size:.95rem; font-weight:600; letter-spacing:.01em;
+  padding:.92rem 1.7rem; border-radius:999px; border:1.5px solid transparent;
+  text-decoration:none; cursor:pointer; transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--clay) 0%, var(--ember) 55%, var(--apricot) 100%); color:#fff; box-shadow:var(--shadow-sm)}
+.btn-primary:hover{box-shadow:var(--shadow-md)}
+.btn-ghost{background:transparent; border-color:rgba(255,255,255,.6); color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.btn-outline{background:#fff; border-color:var(--line); color:var(--plum)}
+.btn-outline:hover{border-color:var(--clay); color:var(--clay-deep)}
+
+/* ---------- header ---------- */
+.header{
+  position:sticky; top:0; z-index:60;
+  background:rgba(253,248,242,.86); backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid transparent; transition:border-color .25s ease, box-shadow .25s ease;
+}
+.header.is-stuck{border-bottom-color:var(--line); box-shadow:0 6px 24px rgba(142,74,46,.06)}
+.header__inner{display:flex; align-items:center; gap:1.5rem; padding:.85rem 0}
+
+.brand{display:flex; align-items:center; gap:.7rem; text-decoration:none; margin-right:auto; min-width:0}
+.brand__mark{width:44px; height:44px; flex:none}
+.brand__text{display:flex; flex-direction:column; line-height:1; min-width:0}
+.brand__name{font-family:var(--serif); font-size:1.16rem; font-weight:600; color:var(--clay-deep); letter-spacing:.005em; white-space:nowrap}
+.brand__sub{font-size:.58rem; font-weight:700; letter-spacing:.3em; color:var(--plum); text-transform:uppercase; margin-top:.32rem; white-space:nowrap}
+
+.nav{display:flex; align-items:center; gap:1.9rem}
+.nav a{
+  font-size:.93rem; font-weight:500; color:var(--plum); text-decoration:none;
+  position:relative; padding:.25rem 0; white-space:nowrap;
+}
+.nav a::after{
+  content:""; position:absolute; left:0; right:100%; bottom:-1px; height:2px;
+  background:linear-gradient(90deg,var(--clay),var(--apricot)); border-radius:2px;
+  transition:right .25s ease;
+}
+.nav a:hover::after{right:0}
+
+.nav-toggle{display:none; background:none; border:1px solid var(--line); border-radius:10px; padding:.5rem .6rem; cursor:pointer}
+.nav-toggle span{display:block; width:20px; height:2px; background:var(--plum); border-radius:2px}
+.nav-toggle span+span{margin-top:4px}
+
+/* tablet / small laptop: tighten before the nav has any chance to wrap */
+@media (min-width:1041px) and (max-width:1300px){
+  .header__inner{gap:1rem}
+  .nav{gap:1.15rem}
+  .nav a{font-size:.87rem}
+  .header__cta{padding:.8rem 1.25rem; font-size:.87rem}
+  .brand__mark{width:38px; height:38px}
+  .brand__name{font-size:1.02rem}
+}
+
+@media (max-width:1040px){
+  .nav-toggle{display:block; order:3}
+  .nav{
+    position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
+    background:var(--cream); border-bottom:1px solid var(--line); padding:.5rem 1.5rem 1.25rem;
+    box-shadow:var(--shadow-md);
+    display:none;
+  }
+  .nav.is-open{display:flex}
+  .nav a{padding:.85rem 0; border-bottom:1px solid var(--line)}
+  .nav .btn{margin-top:1rem; justify-content:center}
+  .header__cta{display:none}
+}
+@media (min-width:1041px){ .nav .btn{display:none} }
+
+/* ---------- hero ---------- */
+/* Fills the viewport exactly on load so no sliver of the next section peeks.
+   svh = the *small* viewport height (browser chrome visible), which is the
+   state the page loads in — plain vh would leave a gap on mobile. */
+.hero{
+  position:relative; overflow:hidden; isolation:isolate; background:var(--plum-deep);
+  min-height:calc(100vh - var(--header-h));
+  min-height:calc(100svh - var(--header-h));
+  display:flex; flex-direction:column;
+}
+.hero__media{position:absolute; inset:0; z-index:-2}
+.hero__media img{width:100%; height:100%; object-fit:cover; object-position:center 55%}
+.hero::after{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(90deg, rgba(54,36,57,.62) 0%, rgba(74,53,80,.42) 42%, rgba(74,53,80,.10) 72%, transparent 100%),
+    linear-gradient(180deg, rgba(54,36,57,.42) 0%, rgba(54,36,57,.20) 38%, rgba(142,74,46,.52) 82%, rgba(74,53,80,.80) 100%),
+    linear-gradient(105deg, rgba(181,98,58,.46) 0%, rgba(233,166,93,.10) 46%, rgba(74,53,80,.40) 100%);
+}
+/* margin-block:auto centres the copy in whatever space is left once the
+   header offset and the trust bar have taken theirs. */
+.hero__inner{padding:clamp(1.5rem,4vh,3.5rem) 0 clamp(1.5rem,3vh,3rem); color:#fff; max-width:47rem; margin-block:auto}
+
+/* Short windows (laptops, browsers with lots of chrome): shrink the display
+   type rather than let the hero overshoot and push the trust bar off-screen. */
+@media (max-height:800px){
+  .hero h1{font-size:clamp(2rem,4.4vw,3rem)}
+  .hero p{font-size:clamp(1rem,1.4vw,1.12rem)}
+  .hero__actions{margin-top:1.4rem}
+}
+.hero .eyebrow{color:var(--gold)}
+.hero h1{color:#fff; text-shadow:0 2px 30px rgba(54,36,57,.35)}
+.hero h1 em{font-style:italic; color:var(--gold); font-weight:400}
+/* keep "golden hour —" on one line so the headline can't split mid-phrase
+   when the type shrinks on short viewports */
+.hero h1 .nb{white-space:nowrap}
+.hero p{color:rgba(255,255,255,.93); font-size:clamp(1.06rem,1.7vw,1.28rem); max-width:40rem}
+.hero__actions{display:flex; flex-wrap:wrap; gap:.85rem; margin-top:2rem}
+
+.trustbar{
+  position:relative; z-index:2;
+  background:rgba(253,248,242,.95); backdrop-filter:blur(10px);
+  border-top:1px solid rgba(255,255,255,.35);
+}
+.trustbar__inner{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+  gap:.7rem 1.5rem; padding:1.05rem 0;
+  font-size:.85rem; font-weight:500; color:var(--plum);
+}
+.trustbar strong{font-weight:700; color:var(--clay-deep)}
+.pill{
+  display:inline-flex; align-items:center; gap:.45rem;
+  background:#fff; border:1px solid var(--line); border-radius:999px;
+  padding:.4rem .95rem; font-size:.82rem; font-weight:600; color:var(--plum);
+}
+.pill svg{color:var(--clay)}
+
+/* ---------- welcome ---------- */
+.welcome{background:var(--cream); position:relative}
+.welcome__grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.5rem,6vw,5.5rem); align-items:center}
+@media (max-width:860px){.welcome__grid{grid-template-columns:1fr}}
+.welcome__img{position:relative}
+.welcome__img img{border-radius:var(--radius-lg); box-shadow:var(--shadow-md); aspect-ratio:4/5; object-fit:cover; width:100%}
+.welcome__img::before{
+  content:""; position:absolute; inset:-14px -14px 26px 26px; z-index:-1;
+  border-radius:var(--radius-lg);
+  background:linear-gradient(140deg,var(--petal),var(--lilac-mist));
+}
+.signature{font-family:var(--serif); font-style:italic; font-size:1.3rem; color:var(--clay-deep); margin-top:.4rem}
+.signature small{display:block; font-family:var(--sans); font-style:normal; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-mid); margin-top:.4rem}
+
+/* ---------- services ---------- */
+.services{background:linear-gradient(180deg,var(--sand) 0%, #FBEFE6 100%)}
+.grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:1.4rem}
+@media (max-width:1000px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid-4{grid-template-columns:1fr}}
+.card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+  padding:2rem 1.6rem; box-shadow:var(--shadow-sm);
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.card:hover{transform:translateY(-5px); box-shadow:var(--shadow-md); border-color:rgba(181,98,58,.3)}
+.card h3{margin-bottom:.45rem; color:var(--plum)}
+.card p{font-size:.95rem; color:var(--ink-mid); margin:0}
+.card__icon{
+  width:52px; height:52px; border-radius:15px; display:grid; place-items:center;
+  margin-bottom:1.15rem; color:#fff;
+}
+.i1{background:linear-gradient(140deg,var(--clay),var(--ember))}
+.i2{background:linear-gradient(140deg,var(--ember),var(--apricot))}
+.i3{background:linear-gradient(140deg,var(--plum),var(--lilac))}
+.i4{background:linear-gradient(140deg,var(--blush),var(--apricot))}
+
+/* ---------- team ---------- */
+.team{background:var(--cream)}
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem}
+@media (max-width:960px){.grid-3{grid-template-columns:1fr; max-width:38rem; margin-inline:auto}}
+.person{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg);
+  overflow:hidden; box-shadow:var(--shadow-sm); display:flex; flex-direction:column;
+}
+.person__frame{aspect-ratio:1/1; width:100%; overflow:hidden; background:linear-gradient(140deg,var(--petal),var(--lilac-mist))}
+.person__photo{width:100%; height:100%; object-fit:cover; object-position:center 25%}
+/* wide full-body source photo — zoom in so the face reads at card size */
+.person__photo--zoom{transform:scale(2.15); transform-origin:41% 44%}
+.person__ph{
+  aspect-ratio:1/1; display:grid; place-items:center;
+  background:linear-gradient(140deg,var(--petal),var(--lilac-mist));
+  font-family:var(--serif); font-size:3.4rem; color:var(--clay-deep);
+}
+.person__body{padding:1.7rem 1.6rem 1.9rem; display:flex; flex-direction:column; flex:1}
+.person__name{margin:0 0 .2rem; color:var(--plum); font-size:1.32rem}
+.person__cred{font-size:.75rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--clay); margin:0 0 1rem}
+.person__body p{font-size:.94rem; color:var(--ink-mid)}
+.tags{display:flex; flex-wrap:wrap; gap:.4rem; margin:0 0 1.1rem; padding:0; list-style:none}
+.tags li{
+  font-size:.72rem; font-weight:600; letter-spacing:.04em;
+  background:var(--lilac-mist); color:var(--plum);
+  border-radius:999px; padding:.3rem .7rem;
+}
+details.more{margin-top:auto}
+details.more summary{
+  cursor:pointer; list-style:none; font-size:.86rem; font-weight:600; color:var(--clay-deep);
+  display:inline-flex; align-items:center; gap:.35rem; padding-top:.4rem;
+}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"↓"; transition:transform .2s ease}
+details.more[open] summary::after{transform:rotate(180deg)}
+details.more p{margin-top:.9rem; font-size:.92rem}
+
+/* ---------- process ---------- */
+.process{background:linear-gradient(180deg,#FBEFE6 0%, var(--sand) 100%)}
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; counter-reset:step}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+.step{background:#fff; border-radius:var(--radius); padding:2rem 1.7rem; border:1px solid var(--line); position:relative}
+.step__num{
+  font-family:var(--serif); font-size:2.6rem; line-height:1; color:transparent;
+  background:linear-gradient(135deg,var(--clay),var(--apricot)); -webkit-background-clip:text; background-clip:text;
+  display:block; margin-bottom:.7rem; font-weight:700;
+}
+.step h3{color:var(--plum); font-size:1.2rem}
+.step p{font-size:.94rem; color:var(--ink-mid); margin:0}
+
+/* ---------- quote ---------- */
+.quote{
+  background:linear-gradient(135deg,var(--plum-deep) 0%, var(--plum) 45%, #6B4560 100%);
+  color:#fff; position:relative; overflow:hidden;
+}
+.quote::before{
+  content:""; position:absolute; width:620px; height:620px; border-radius:50%;
+  background:radial-gradient(circle,rgba(245,200,110,.3) 0%, rgba(233,166,93,.08) 55%, transparent 70%);
+  top:-260px; right:-160px;
+}
+.quote blockquote{
+  margin:0; max-width:52rem; position:relative;
+  font-family:var(--serif); font-size:clamp(1.45rem,3vw,2.15rem); line-height:1.35; font-weight:400;
+}
+.quote cite{
+  display:block; margin-top:1.6rem; font-style:normal; font-family:var(--sans);
+  font-size:.8rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--gold);
+}
+
+/* ---------- insurance ---------- */
+.insurance{background:var(--cream)}
+.ins-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2.5rem,6vw,5rem); align-items:center}
+@media (max-width:860px){.ins-grid{grid-template-columns:1fr}}
+.ins-logos{display:flex; flex-wrap:wrap; gap:.7rem; margin:1.5rem 0 0; padding:0; list-style:none}
+.ins-logos li{
+  background:#fff; border:1px solid var(--line); border-radius:14px;
+  padding:.85rem 1.3rem; font-family:var(--serif); font-size:1.05rem; font-weight:600; color:var(--plum);
+  box-shadow:var(--shadow-sm);
+}
+.ins-note{background:var(--lilac-mist); border-left:3px solid var(--lilac); border-radius:0 14px 14px 0; padding:1.1rem 1.3rem; font-size:.9rem; color:var(--plum); margin-top:1.6rem}
+.ins-note p:last-child{margin:0}
+/* second use of the same hero photo — warm-tinted + tighter crop so it reads as a different image */
+.ins-grid figure{margin:0; position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md)}
+.ins-grid figure::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(150deg, rgba(181,98,58,.32), rgba(233,166,93,.10) 45%, rgba(74,53,80,.30));
+  mix-blend-mode:multiply;
+}
+.ins-grid img{aspect-ratio:5/4; object-fit:cover; object-position:78% 40%; width:100%; filter:saturate(.82) contrast(1.03)}
+
+/* ---------- booking / benefits tabs ---------- */
+.booking{background:var(--cream)}
+.tabs{
+  display:flex; gap:.4rem; margin:0 0 -1px; padding:.4rem; list-style:none;
+  background:var(--sand); border:1px solid var(--line); border-radius:999px;
+  width:fit-content; max-width:100%; flex-wrap:wrap;
+}
+.tabs button{
+  font-family:var(--sans); font-size:.94rem; font-weight:600; color:var(--plum);
+  background:transparent; border:none; border-radius:999px; padding:.8rem 1.6rem;
+  cursor:pointer; white-space:nowrap; transition:background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.tabs button:hover{background:rgba(255,255,255,.6)}
+.tabs button[aria-selected="true"]{
+  background:linear-gradient(135deg,var(--clay),var(--ember) 60%,var(--apricot));
+  color:#fff; box-shadow:var(--shadow-sm);
+}
+.tabpanel{margin-top:2rem}
+.tabpanel[hidden]{display:none}
+.embed-shell{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md); padding:clamp(.6rem,1.6vw,1.5rem); overflow:hidden;
+}
+.embed-shell iframe{width:100%; border:0; display:block; border-radius:12px}
+/* Thrizer sends no postMessage resize event, so height is driven by JS
+   (see sizeBenefitsFrame below) keyed on the FRAME's own width — not the
+   viewport. Thrizer reflows at 768px of frame width, which sits very close
+   to our own breakpoints, so keying off the viewport put the gap right back.
+
+   Thrizer's document carries ~18px of blank canvas below its own card border.
+   Shrinking the iframe to crop that off makes their page overflow and shows
+   an internal scrollbar — so instead the iframe keeps its FULL natural
+   height and this wrapper clips the excess. No scrollbar, no dead space. */
+.benefits-clip{overflow:hidden; border-radius:12px; height:456px}
+.frame-benefits{display:block; width:100%; border:0; height:480px}
+.embed-note{
+  display:flex; gap:.6rem; align-items:flex-start;
+  font-size:.92rem; line-height:1.6; color:var(--ink-mid);
+  margin:1.4rem 0 0; max-width:68ch;
+}
+.embed-note svg{flex:none; margin-top:.32rem; color:var(--clay)}
+.embed-note span{flex:1 1 auto; min-width:0}   /* one text item, not many */
+.embed-note a{font-weight:600; white-space:nowrap}
+
+.embed-fallback{
+  display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .9rem;
+  margin:1.1rem 0 0; padding-left:2.2rem;      /* align under the note text */
+  font-size:.88rem; color:var(--ink-mid);
+}
+.embed-fallback .btn{padding:.62rem 1.2rem; font-size:.86rem}
+@media (max-width:560px){ .embed-fallback{padding-left:0} }
+
+/* ---------- CTA ---------- */
+.cta{
+  background:linear-gradient(120deg,var(--clay) 0%, var(--ember) 40%, var(--apricot) 78%, var(--gold) 100%);
+  color:#fff; text-align:center; position:relative; overflow:hidden;
+}
+.cta::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(ellipse at 50% 120%, rgba(74,53,80,.5) 0%, transparent 60%);
+}
+.cta > .wrap{position:relative}
+.cta h2{color:#fff; margin-bottom:.6rem}
+.cta p{color:rgba(255,255,255,.94); max-width:44rem; margin-inline:auto; font-size:1.08rem}
+.cta__actions{display:flex; flex-wrap:wrap; gap:.85rem; justify-content:center; margin-top:2rem}
+.cta .btn-primary{background:#fff; color:var(--clay-deep)}
+
+/* ---------- footer ---------- */
+.footer{background:var(--plum-deep); color:rgba(255,255,255,.78); font-size:.92rem}
+.footer a{color:rgba(255,255,255,.88)}
+.footer a:hover{color:var(--gold)}
+.footer__grid{display:grid; grid-template-columns:1.4fr 1fr 1.4fr; gap:3rem; padding:4.5rem 0 3rem}
+@media (max-width:860px){.footer__grid{grid-template-columns:1fr; gap:2.5rem}}
+.footer h4{color:#fff; font-family:var(--sans); font-size:.75rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; margin:0 0 1.1rem}
+.footer ul{list-style:none; margin:0; padding:0}
+.footer li{margin-bottom:.6rem}
+.footer .brand__name{color:#fff}
+.footer .brand__sub{color:var(--gold)}
+.signup{display:flex; gap:.5rem; margin-top:1rem; flex-wrap:wrap}
+.signup input{
+  flex:1 1 12rem; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2);
+  border-radius:999px; padding:.8rem 1.2rem; color:#fff; font-family:var(--sans); font-size:.9rem;
+}
+.signup input::placeholder{color:rgba(255,255,255,.5)}
+.signup button{border:none}
+.crisis{
+  border:1px solid rgba(245,200,110,.4); background:rgba(245,200,110,.09);
+  border-radius:14px; padding:1rem 1.2rem; font-size:.86rem; line-height:1.55; margin-top:1.4rem;
+}
+.crisis strong{color:var(--gold)}
+.footer__bar{
+  border-top:1px solid rgba(255,255,255,.12); padding:1.5rem 0 2.5rem;
+  display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; font-size:.8rem; color:rgba(255,255,255,.55);
+}
+.social{display:flex; gap:.7rem; margin-top:1.2rem}
+.social a{
+  width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
+  background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.16); color:#fff;
+  transition:background .2s ease, transform .2s ease;
+}
+.social a:hover{background:var(--clay); transform:translateY(-2px)}
+
+/* ============================================================
+   MOBILE REFINEMENTS
+   Everything above is desktop-first. On phones the defaults went
+   ragged — centered pills of three different widths, buttons of two
+   different widths, a two-line eyebrow, and a tab pair that wrapped.
+   This block makes every repeated element share one width so the
+   column reads as a clean stack instead of a jumble.
+   ============================================================ */
+@media (max-width:640px){
+
+  /* a little more usable width */
+  .wrap{width:min(100% - 2.25rem, var(--wrap))}
+  .section{padding:clamp(3.25rem,8vw,4.5rem) 0}
+
+  /* ---- hero ---- */
+  .hero .eyebrow{font-size:.64rem; letter-spacing:.14em; margin-bottom:.7rem}
+  .hero h1{font-size:clamp(1.95rem,7.6vw,2.6rem); line-height:1.08}
+  .hero p{font-size:1rem; line-height:1.55}
+  .hero__actions{gap:.6rem; margin-top:1.6rem; width:100%}
+  .hero__actions .btn{width:100%; justify-content:center; padding:.95rem 1.25rem}
+
+  /* ---- trust bar: uniform full-width stack, not centered ragged pills ---- */
+  .trustbar__inner{
+    flex-direction:column; align-items:stretch;
+    gap:.4rem; padding:.8rem 0;
+  }
+  .pill{
+    width:100%; justify-content:flex-start;
+    font-size:.78rem; padding:.55rem .9rem; gap:.55rem;
+  }
+
+  /* ---- booking / benefits tabs: equal halves, properly tappable ---- */
+  .tabs{
+    display:grid; grid-template-columns:1fr 1fr; width:100%;
+    gap:.35rem; padding:.35rem; border-radius:22px;
+  }
+  .tabs li{display:contents}
+  .tabs button{
+    width:100%; padding:.8rem .6rem; font-size:.84rem; line-height:1.25;
+    border-radius:18px; white-space:normal; min-height:52px;
+  }
+  .tabpanel{margin-top:1.4rem}
+  .embed-shell{padding:.5rem; border-radius:20px}
+
+  /* ---- insurance carriers: equal-width grid, no ragged row ---- */
+  .ins-logos{display:grid; grid-template-columns:1fr 1fr; gap:.5rem}
+  .ins-logos li{
+    text-align:center; padding:.75rem .6rem; font-size:.95rem; border-radius:12px;
+  }
+  .ins-logos li:first-child{grid-column:1 / -1}
+
+  /* ---- cards & steps ---- */
+  .card{padding:1.6rem 1.35rem}
+  .step{padding:1.6rem 1.35rem}
+  .step__num{font-size:2.2rem}
+  .person__body{padding:1.5rem 1.35rem 1.7rem}
+
+  /* ---- CTA ---- */
+  .cta__actions{flex-direction:column; gap:.6rem}
+  .cta__actions .btn{width:100%; justify-content:center}
+
+  /* ---- footer ---- */
+  .footer__grid{padding:3.25rem 0 2.25rem}
+  /* NB: once .signup is a column, `flex:1 1 12rem` from the desktop rule
+     applies to HEIGHT — the email field balloons to 192px tall. Reset it. */
+  .signup{flex-direction:column; gap:.55rem}
+  .signup input, .signup button{width:100%; flex:0 0 auto}
+  .signup button{justify-content:center}
+  .footer__bar{flex-direction:column; gap:.6rem; padding-bottom:2rem}
+
+  /* ---- tap targets: WCAG wants ~44px; audit found several at 18–32px ---- */
+  .nav a{padding:.95rem 0}
+  .nav-toggle{min-width:44px; min-height:44px; display:grid; place-content:center}
+  details.more summary{padding:.7rem 0; min-height:44px; align-items:center}
+  .footer li{margin-bottom:.2rem}
+  .footer li a{display:inline-flex; align-items:center; min-height:44px}
+  .social a{width:44px; height:44px}
+  .embed-note a{display:inline-block; padding:.15rem 0}
+}
+
+/* Very narrow phones — stop the tab labels from squeezing to 2 tight lines */
+@media (max-width:380px){
+  .tabs{grid-template-columns:1fr}
+  .tabs button{min-height:48px}
+}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1; transform:none; transition:none}
+  .btn:hover,.card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="wrap header__inner">
+    <a class="brand" href="#top" aria-label="Golden Hour Wellness Colorado — home">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="bs" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#F5C86E"/><stop offset="100%" stop-color="#DE8C58"/>
+          </linearGradient>
+          <clipPath id="bc"><circle cx="32" cy="32" r="30"/></clipPath>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="#FDF8F2"/>
+        <g clip-path="url(#bc)">
+          <circle cx="32" cy="27" r="14" fill="url(#bs)"/>
+          <path d="M2 50 L20 30 L30 40 L42 24 L56 44 L62 50 Z" fill="#B5623A"/>
+          <path d="M42 24 L47 31 L42 33 L37 30 Z" fill="#FDF8F2"/>
+          <rect x="0" y="50" width="64" height="14" fill="#4A3550"/>
+        </g>
+        <circle cx="32" cy="32" r="30" fill="none" stroke="#B5623A" stroke-width="3"/>
+      </svg>
+      <span class="brand__text">
+        <span class="brand__name">Golden Hour Wellness</span>
+        <span class="brand__sub">Colorado</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#welcome">About</a>
+      <a href="#services">How We Help</a>
+      <a href="#team">Our Team</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="#book">Book Now</a>
+    </nav>
+
+    <a class="btn btn-primary header__cta" href="#book">Book Now</a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__media">
+    <img src="https://images.squarespace-cdn.com/content/v1/681bcb8ff92760736f090ece/1749416619790-WA4RTZNGWM2VFWR89MGK/unsplash-image-8Jbo0T-DxUI.jpg?format=2500w"
+         alt="Sunrise over a still mountain lake in Colorado, framed by evergreens and snow-covered peaks.">
+  </div>
+  <div class="wrap hero__inner">
+    <p class="eyebrow">Colorado &middot; In-person &amp; Telehealth</p>
+    <h1>Healing happens in the <span class="nb"><em>golden hour</em>&nbsp;&mdash;</span><br>and we'll walk it with you.</h1>
+    <p>Golden Hour Wellness Colorado is a therapist-owned practice specializing in trauma, EMDR, and substance use counseling. Come as you are; leave with a little more room to breathe.</p>
+    <div class="hero__actions">
+      <a class="btn btn-primary" href="#book">Book a free consultation</a>
+      <a class="btn btn-ghost" href="#team">Meet our therapists</a>
+    </div>
+  </div>
+  <div class="trustbar">
+    <div class="wrap trustbar__inner">
+      <span class="pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        Now in-network with Aetna, United Healthcare &amp; Cigna
+      </span>
+      <span class="pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        EMDR-trained &mdash; in person or virtual
+      </span>
+      <span class="pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        Accepting new clients statewide
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WELCOME ============ -->
+<section class="section welcome" id="welcome">
+  <div class="wrap welcome__grid">
+    <div class="reveal">
+      <p class="eyebrow">Welcome</p>
+      <h2>A practice built around the person in the room.</h2>
+      <p class="lede">Golden Hour Wellness Colorado, LLC was founded by Shayla Martinez-O&rsquo;Brien, a Licensed Professional Counselor and Licensed Addiction Counselor with 11 years of clinical practice. What started as one clinician is now a small, hand-picked team.</p>
+      <p>We believe true healing comes from an increased ability to tolerate challenging emotion, paired with a clearer understanding of your own value system. That work is slow, human, and worth it &mdash; and you don&rsquo;t have to do it alone.</p>
+      <p class="signature">&ldquo;You can expect a co-pilot on your journey.&rdquo;
+        <small>Shayla Martinez-O&rsquo;Brien, LPC, LAC &middot; Founder</small>
+      </p>
+    </div>
+    <div class="welcome__img reveal">
+      <img src="https://images.squarespace-cdn.com/content/v1/681bcb8ff92760736f090ece/f9c2ee6a-fd2c-496d-8bff-db5741e5e882/IMG_1283.jpg?format=1200w"
+           alt="Shayla Martinez-O'Brien standing outdoors on a wooden deck surrounded by evergreens." loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div style="max-width:44rem; margin-bottom:3.2rem">
+      <p class="eyebrow">How we help</p>
+      <h2>Specialized care, without the clinical chill.</h2>
+      <p class="lede">Every therapist here brings a different lane of expertise. We&rsquo;ll help you find the right fit on your first call &mdash; even if that fit turns out to be somewhere else.</p>
+    </div>
+    <div class="grid-4">
+      <article class="card reveal">
+        <div class="card__icon i1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Trauma &amp; EMDR</h3>
+        <p>Eye Movement Desensitization and Reprocessing alongside other trauma-focused approaches &mdash; available in person and via telehealth.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon i2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10Z"/></svg>
+        </div>
+        <h3>Anxiety &amp; Depression</h3>
+        <p>Solution-oriented, CBT-informed work on how mood, thoughts, and behavior shape one another &mdash; plus practical tools you can actually use.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon i3">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4"/><path d="m4.9 4.9 2.8 2.8"/><path d="M2 12h4"/><path d="m4.9 19.1 2.8-2.8"/><path d="M12 18v4"/><path d="m19.1 19.1-2.8-2.8"/><path d="M18 12h4"/><path d="m19.1 4.9-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Substance Use &amp; Recovery</h3>
+        <p>Licensed addiction counseling for people living with substance use disorders, or anyone feeling stuck and disconnected from themselves.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon i4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Relationships &amp; Life Transitions</h3>
+        <p>Family stress, work stress, big pivots. Support for navigating major change with more clarity and a stronger sense of purpose.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="section team" id="team">
+  <div class="wrap">
+    <div style="max-width:44rem; margin-bottom:3.2rem">
+      <p class="eyebrow">Meet our therapists</p>
+      <h2>Three clinicians. Roughly 34 years of practice between them.</h2>
+    </div>
+    <div class="grid-3">
+
+      <article class="person reveal">
+        <div class="person__frame">
+          <img class="person__photo person__photo--zoom"
+               src="https://images.squarespace-cdn.com/content/v1/681bcb8ff92760736f090ece/f9c2ee6a-fd2c-496d-8bff-db5741e5e882/IMG_1283.jpg?format=1500w"
+               alt="Portrait of Shayla Martinez-O'Brien" loading="lazy">
+        </div>
+        <div class="person__body">
+          <h3 class="person__name">Shayla Martinez-O&rsquo;Brien</h3>
+          <p class="person__cred">LPC, LAC &middot; Founder</p>
+          <ul class="tags"><li>EMDR</li><li>Trauma</li><li>Addiction</li><li>Telehealth</li></ul>
+          <p>A Licensed Professional Counselor in Colorado specializing in trauma therapy, with 11 years of practice. She founded Golden Hour Wellness Colorado and works as both clinician and business manager.</p>
+          <details class="more">
+            <summary>Read more</summary>
+            <p>I use Eye Movement Desensitization and Reprocessing (EMDR) Therapy among other trauma-focused approaches to help clients better tolerate emotion related to past and present traumas and stressors. I believe that true healing comes from increased ability to tolerate challenging emotion along with better understanding of one&rsquo;s own value system.</p>
+            <p>I am a Colorado native and do my very best to live up to the stereotype. I&rsquo;m married, a mother of two, and have two lab mixes at home. I would love the opportunity to walk alongside you in your journey to improved self-awareness, strengthened positive neural pathways, and deeper connection with who you are.</p>
+          </details>
+        </div>
+      </article>
+
+      <!-- NOTE: confirm which therapist "headshot 3" belongs to before launch. -->
+      <article class="person reveal">
+        <div class="person__frame">
+          <img class="person__photo"
+               src="https://images.squarespace-cdn.com/content/v1/681bcb8ff92760736f090ece/5501e925-0ba7-44e2-b65a-a03d20e19ba0/headshot+3.jpg?format=900w"
+               alt="Portrait of Ashley LeRossignol" loading="lazy">
+        </div>
+        <div class="person__body">
+          <h3 class="person__name">Ashley LeRossignol</h3>
+          <p class="person__cred">LPC</p>
+          <ul class="tags"><li>CBT</li><li>Anxiety</li><li>Depression</li><li>Relationships</li></ul>
+          <p>Here to help you learn and grow. Working from a solution-oriented framework, Ashley builds a therapy experience geared to your specific goals, taking your individual experience and strengths into account.</p>
+          <details class="more">
+            <summary>Read more</summary>
+            <p>I utilize Cognitive Behavioral Therapy, highlighting ways in which your mood, thoughts and behaviors impact your well-being, and emphasize ways you build compassion towards yourself in your journey. I have over 10 years of experience treating anxiety, depression, relationship challenges, family and work stressors, and I enjoy connecting with clients who are goal-oriented, motivated for change, and in search of practical tools.</p>
+            <p>I received my master&rsquo;s degree in counseling psychology from the University of San Francisco. My husband and I have a fun-loving toddler, infant and an energetic dog. Outside of therapy, you&rsquo;ll find me outdoors, traveling, cooking and exploring new restaurants, places, cultures and communities.</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="person reveal">
+        <!-- Placeholder until a headshot is provided -->
+        <div class="person__ph" role="img" aria-label="Portrait coming soon">CF</div>
+        <div class="person__body">
+          <h3 class="person__name">Chrissie Flynn-Weirich</h3>
+          <p class="person__cred">LAC &middot; Wellness Facilitator</p>
+          <ul class="tags"><li>Substance Use</li><li>Mindfulness</li><li>Life Change</li></ul>
+          <p>A Licensed Addiction Counselor and Wellness Facilitator with 13+ years of experience working with individuals living with substance use disorders and those who feel &ldquo;stuck&rdquo; or disconnected.</p>
+          <details class="more">
+            <summary>Read more</summary>
+            <p>Together we will identify your strengths and your passions. Side by side we will assess what&rsquo;s working, what&rsquo;s not, and set meaningful goals that align with your vision of your best self. Each session will envelop empathy and unconditional regard.</p>
+            <p>I&rsquo;ll support and empower your narrative through mindfulness and compassion as we explore challenges and discover solutions for navigating major life changes with greater clarity and sense of purpose &mdash; reconnecting with yourself and others, and living your best life.</p>
+          </details>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="section quote">
+  <div class="wrap">
+    <blockquote>
+      &ldquo;True healing comes from an increased ability to tolerate challenging emotion, along with a better understanding of one&rsquo;s own value system.&rdquo;
+      <cite>Shayla Martinez-O&rsquo;Brien, LPC, LAC</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section process" id="process">
+  <div class="wrap">
+    <div style="max-width:44rem; margin-bottom:3.2rem">
+      <p class="eyebrow">Getting started</p>
+      <h2>Three steps, no mystery.</h2>
+      <p class="lede">The hardest part is the first message. Everything after that, we handle together.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step__num">01</span>
+        <h3>Reach out</h3>
+        <p>Call, email, or book online. Tell us as much or as little as you want &mdash; a sentence is plenty.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">02</span>
+        <h3>Free consultation</h3>
+        <p>A short, no-pressure conversation to talk through what you&rsquo;re looking for and which therapist fits best.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__num">03</span>
+        <h3>First session</h3>
+        <p>In person or by telehealth anywhere in Colorado. We&rsquo;ll set the pace together from there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSURANCE ============ -->
+<section class="section insurance" id="insurance">
+  <div class="wrap ins-grid">
+    <div class="reveal">
+      <p class="eyebrow">Insurance &amp; rates</p>
+      <h2>Now in-network with three major plans.</h2>
+      <p>We&rsquo;re currently in-network with the following carriers. If you don&rsquo;t see yours, reach out anyway &mdash; we can talk through out-of-network reimbursement and self-pay options.</p>
+      <ul class="ins-logos">
+        <li>Aetna</li>
+        <li>United Healthcare</li>
+        <li>Cigna</li>
+      </ul>
+      <div class="ins-note">
+        <p><strong>Good Faith Estimate:</strong> Under the No Surprises Act, you have the right to receive a written estimate of expected charges before your first session. Ask us and we&rsquo;ll send one over.</p>
+      </div>
+    </div>
+    <figure class="reveal">
+      <img src="https://images.squarespace-cdn.com/content/v1/681bcb8ff92760736f090ece/1749416619790-WA4RTZNGWM2VFWR89MGK/unsplash-image-8Jbo0T-DxUI.jpg?format=1500w"
+           alt="Golden light on a Colorado mountain lake at sunrise." loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ BOOKING / BENEFITS TABS ============ -->
+<!--
+  Both embeds below are platform-independent iframes lifted from the live Squarespace site.
+  Neither has any Squarespace dependency — they will keep working after migration.
+    Acuity  : owner ID 35696713   (app.acuityscheduling.com)
+    Thrizer : facility thrizerpei0crb (eligibility.thrizer.com)
+  Iframes use data-src and only load when their tab is opened, so the page stays fast.
+-->
+<section class="section booking" id="book">
+  <div class="wrap">
+    <div style="max-width:44rem; margin-bottom:2.6rem">
+      <p class="eyebrow">Book &amp; verify</p>
+      <h2>Schedule a session, or check your benefits first.</h2>
+      <p class="lede">No phone tag required. Pick a time that works, or run your insurance in about 30 seconds to see what you&rsquo;d actually pay.</p>
+    </div>
+
+    <ul class="tabs" role="tablist" aria-label="Booking and insurance tools">
+      <li role="presentation">
+        <button role="tab" id="tab-book" aria-controls="panel-book" aria-selected="true">Book an appointment</button>
+      </li>
+      <li role="presentation">
+        <button role="tab" id="tab-benefits" aria-controls="panel-benefits" aria-selected="false" tabindex="-1">Check your benefits</button>
+      </li>
+    </ul>
+
+    <div class="tabpanel" id="panel-book" role="tabpanel" aria-labelledby="tab-book" tabindex="0">
+      <div class="embed-shell">
+        <iframe
+          data-src="https://app.acuityscheduling.com/schedule.php?owner=35696713&amp;ref=embedded_csp"
+          title="Schedule an appointment with Golden Hour Wellness Colorado"
+          height="1000" loading="lazy"></iframe>
+      </div>
+      <p class="embed-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span>Prefer to talk first? Call <a href="tel:+13037369822">(303)&nbsp;736-9822</a> or email <a href="mailto:goldenhourwellco@gmail.com">goldenhourwellco@gmail.com</a> and we&rsquo;ll find a time together.</span>
+      </p>
+      <p class="embed-fallback">
+        Scheduler not loading?
+        <a class="btn btn-outline" href="https://app.acuityscheduling.com/schedule.php?owner=35696713" target="_blank" rel="noopener">Open the booking page &nearr;</a>
+      </p>
+    </div>
+
+    <div class="tabpanel" id="panel-benefits" role="tabpanel" aria-labelledby="tab-benefits" tabindex="0" hidden>
+      <div class="embed-shell">
+        <div class="benefits-clip">
+          <iframe class="frame-benefits"
+            data-src="https://eligibility.thrizer.com/facility/thrizerpei0crb?type=iframe"
+            title="Check your out-of-network insurance benefits"
+            referrerpolicy="no-referrer-when-downgrade" loading="lazy"></iframe>
+        </div>
+      </div>
+      <p class="embed-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+        <span>We&rsquo;re in-network with Aetna, United Healthcare and Cigna. If your plan isn&rsquo;t one of those, this checker estimates your out-of-network reimbursement so there are no surprises.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta" id="get-started">
+  <div class="wrap">
+    <p class="eyebrow" style="color:rgba(255,255,255,.85)">Accepting new clients</p>
+    <h2>Your golden hour starts with one message.</h2>
+    <p>Book online, or reach us directly at <strong>(303)&nbsp;736-9822</strong>. We typically respond within one business day.</p>
+    <div class="cta__actions">
+      <a class="btn btn-primary" href="#book">Book an appointment</a>
+      <a class="btn btn-ghost" href="mailto:goldenhourwellco@gmail.com">Email us</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contact">
+  <div class="wrap footer__grid">
+
+    <div>
+      <span class="brand__text" style="display:block">
+        <span class="brand__name" style="font-size:1.3rem">Golden Hour Wellness</span>
+        <span class="brand__sub" style="display:block">Colorado</span>
+      </span>
+      <p style="margin-top:1.2rem; max-width:30ch">Therapist-owned counseling for trauma, addiction, and everything in between. Serving clients across Colorado.</p>
+      <div class="social">
+        <a href="https://www.instagram.com/goldenhourwellnesscolorado" aria-label="Instagram" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.psychologytoday.com/profile/1406337" aria-label="Psychology Today profile" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h9a5 5 0 0 1 0 10H8v6H4z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#welcome">About</a></li>
+        <li><a href="#services">How We Help</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#insurance">Insurance</a></li>
+        <li><a href="#book">Book Now</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Get in touch</h4>
+      <ul>
+        <li><a href="mailto:goldenhourwellco@gmail.com">goldenhourwellco@gmail.com</a></li>
+        <li><a href="tel:+13037369822">(303) 736-9822</a></li>
+      </ul>
+      <form class="signup" action="#" method="post" onsubmit="return false">
+        <label for="email" style="position:absolute; left:-9999px">Email address</label>
+        <input id="email" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+        <button class="btn btn-primary" type="submit">Sign up</button>
+      </form>
+      <div class="crisis">
+        <strong>In crisis?</strong> This site is not for emergencies. Call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline), or <strong>Colorado Crisis Services at 1-844-493-8255</strong> &mdash; both available 24/7.
+      </div>
+    </div>
+
+  </div>
+  <div class="wrap footer__bar">
+    <span>&copy; <span id="yr">2026</span> Golden Hour Wellness Colorado, LLC. All rights reserved.</span>
+    <!-- PREVIEW: these pages are part of the full build. Restore as links once they exist:
+         <a href="/work/preview/golden-hour-wellness/privacy/">Privacy</a> · <a href="/work/preview/golden-hour-wellness/good-faith-estimate/">Good Faith Estimate</a>
+         Use RELATIVE paths — a GitHub Pages project site is served from /shayla/, so
+         a leading-slash "/privacy" resolves to the domain root and 404s. -->
+    <span>Licensed in the State of Colorado &middot; Privacy <em>(coming soon)</em> &middot; Good Faith Estimate <em>(coming soon)</em></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // sticky header shadow
+  var header = document.getElementById('header');
+
+  // Publish the header's real height so the hero can fill exactly one screen.
+  function measureHeader() {
+    document.documentElement.style.setProperty(
+      '--header-h', Math.round(header.getBoundingClientRect().height) + 'px'
+    );
+  }
+  measureHeader();
+  window.addEventListener('load', measureHeader);   // re-measure once webfonts land
+  var onScroll = function () {
+    header.classList.toggle('is-stuck', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // mobile nav
+  var toggle = document.getElementById('navToggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ---- booking / benefits tabs -------------------------------------------
+  // Iframes carry data-src and are only materialized when their tab first
+  // opens, so neither third-party embed blocks initial page load.
+  var tabs = [].slice.call(document.querySelectorAll('[role="tab"]'));
+
+  // ---- Thrizer frame sizing ----------------------------------------------
+  // Thrizer provides no resize event and we can't measure across origins, so
+  // the height is a lookup. It's keyed on the FRAME's measured width because
+  // Thrizer's own reflow points are 768px and 480px of frame width — keying
+  // off the viewport instead puts a gap back the moment our padding changes.
+  // Heights below were measured against the live widget.
+  var benefitsFrame = document.querySelector('.frame-benefits');
+  var benefitsClip  = document.querySelector('.benefits-clip');
+
+  // Extra height handed to the iframe beyond what we actually show. This must
+  // exceed Thrizer's ~18px of trailing canvas — if the iframe is even 1px
+  // shorter than their document, their page scrolls and you get a scrollbar.
+  // The wrapper clips it, so nothing is visible and nothing is cut off.
+  var BLEED = 24;
+
+  function sizeBenefitsFrame() {
+    if (!benefitsClip || !benefitsFrame) return;
+    var w = benefitsClip.getBoundingClientRect().width;
+    if (!w) return;                       // hidden tab — nothing to measure
+    // Visible height, cropped just BELOW Thrizer's lavender card border so the
+    // border and its rounded bottom corners stay visible — cropping level with
+    // the border shaves it off and the card looks open-ended.
+    var h = w >= 768 ? 464               // 3-across: Provider/Service, name row
+          : w >= 480 ? 670               // 2-across, DOB drops to its own row
+          : 882;                         // fully stacked
+    benefitsClip.style.height  = h + 'px';
+    benefitsFrame.style.height = (h + BLEED) + 'px';
+  }
+
+  var sizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(sizeTimer);
+    sizeTimer = setTimeout(function () {
+      measureHeader();
+      sizeBenefitsFrame();
+    }, 120);
+  });
+
+  function hydrate(panel) {
+    var frame = panel.querySelector('iframe[data-src]');
+    if (frame) {
+      frame.src = frame.getAttribute('data-src');
+      frame.removeAttribute('data-src');
+    }
+  }
+
+  function selectTab(tab, focus) {
+    tabs.forEach(function (t) {
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      var on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      panel.hidden = !on;
+      if (on) { hydrate(panel); sizeBenefitsFrame(); }
+    });
+    if (focus) tab.focus();
+  }
+
+  if (tabs.length) {
+    // load whichever panel starts open
+    hydrate(document.getElementById(tabs[0].getAttribute('aria-controls')));
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { selectTab(tab); });
+      tab.addEventListener('keydown', function (e) {
+        var next = null;
+        if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+        else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+        else if (e.key === 'Home') next = tabs[0];
+        else if (e.key === 'End') next = tabs[tabs.length - 1];
+        if (next) { e.preventDefault(); selectTab(next, true); }
+      });
+    });
+
+    // deep link: /#book?benefits or /#benefits opens the benefits tab
+    if (/benefits/i.test(location.hash)) selectTab(tabs[1]);
+
+    // Acuity's official embed script auto-resizes its iframe to fit content.
+    // Loaded once, lazily, the first time the booking panel is shown.
+    if (!window.__acuityEmbedLoaded) {
+      window.__acuityEmbedLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://embed.acuityscheduling.com/js/embed.js';
+      s.async = true;
+      document.body.appendChild(s);
+    }
+  }
+
+  // scroll reveal
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function () { entry.target.classList.add('in'); }, i * 70);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
