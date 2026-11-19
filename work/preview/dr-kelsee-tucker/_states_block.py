@@ -1,0 +1,43 @@
+STATES = [
+ ("illinois","Illinois","Chicago, the North Shore, Naperville and Oak Park","Central","one hour behind Indiana",
+  "Couples therapy online in Illinois, from a psychologist one state east",
+  "Chicago has more couples therapists than almost any city in the Midwest, and most of them have a waitlist. If you've been quoted eight weeks for a first appointment, or you'd rather not run into your therapist at the Jewel, there's another way to do this.",
+  ["Most Illinois couples I see are in the city or the near suburbs and work schedules that don't leave room for a 4pm drive to Lincoln Park. We meet by video in the evening, from wherever you both are, as long as that's somewhere in Illinois when the session starts.",
+   "Illinois is one of the original PSYPACT states, which is what lets me see you without an Illinois license. The compact has been in effect there since July 2020, so your insurer has seen out-of-state psychologists on superbills before."],
+  "Illinois PPO plans (Blue Cross Blue Shield of Illinois in particular) tend to reimburse out-of-network psychology at a reasonable rate once the deductible is met. I'll give you a superbill after every session; you submit it."),
+ ("texas","Texas","Austin, Dallas, Houston and San Antonio","Central","one hour behind Indiana",
+  "Online couples therapy for Texas, with a psychologist who isn't in your neighborhood",
+  "Texas is big enough that the right couples therapist is often three hours away. Austin couples drive to Dallas for a specialist. Houston couples give up and pick whoever has an opening. Video takes the distance out of it.",
+  ["I see a lot of couples in Texas where one partner travels for work, and video means we don't lose a week every time someone is in Midland or Houston. The only rule is that you're both physically in Texas when we meet.",
+   "Texas joined PSYPACT in July 2020. If you've looked at the Texas State Board of Examiners of Psychologists site and gotten lost, the short version: my authority to practice with you comes from the compact, not from a Texas license, and it's verifiable by my APIT number."],
+  "Many Texas employer plans are PPOs with out-of-network mental health benefits. Superbills are itemized with CPT 90847 (couples) so your insurer can process them."),
+ ("georgia","Georgia","Atlanta, Decatur, Alpharetta and Athens","Eastern","the same time as Indiana",
+  "Couples therapy by video for Georgia, on Atlanta time",
+  "Atlanta traffic is the reason a lot of couples never make it to a second session. One partner is stuck on 285, the other is parked outside the office, and the hour is gone. Same time zone as my office means evening sessions that actually start on time.",
+  ["Georgia and Indiana are both Eastern, so there's no math on scheduling. A 7pm session is 7pm for all three of us.",
+   "Georgia has been a PSYPACT member since the compact's first year. A fair number of my Georgia couples found me through a referral from a therapist who doesn't take couples, which is common in Atlanta, where individual therapists outnumber couples specialists by a wide margin."],
+  "Georgia PPO plans generally reimburse out-of-network psychologists. Ask your plan for the out-of-network rate for CPT 90847 before we start, and I'll help you read the answer."),
+ ("virginia","Virginia","Northern Virginia, Richmond, Charlottesville and Virginia Beach","Eastern","the same time as Indiana",
+  "Online couples therapy for Virginia couples who'd rather not sit in a waiting room",
+  "A lot of my Virginia couples work in or around Washington and have jobs where discretion matters. Video from your own home, with a psychologist two states away, is the private option.",
+  ["Northern Virginia is one of the highest-demand areas in the country for couples therapy and one of the hardest to get into. Evening and lunchtime video sessions are usually available within two weeks.",
+   "Virginia joined PSYPACT in January 2021. Note that the District of Columbia and Maryland are also members, so if you live in Virginia and work in DC, we can still meet during your workday as long as you're in a participating jurisdiction at the time."],
+  "Federal employee plans (FEP Blue and similar) often have solid out-of-network mental health coverage. I'll provide a superbill with everything your plan needs."),
+ ("colorado","Colorado","Denver, Boulder, Fort Collins and Colorado Springs","Mountain","two hours behind Indiana",
+  "Couples therapy online in Colorado, with evening sessions that work on Mountain time",
+  "Colorado couples tend to have full weekends and early mornings, so most of my Colorado sessions land on weekday evenings. Because I'm two hours ahead, a 6pm session in Denver is 8pm for me, which is a slot I hold specifically for Mountain and Pacific clients.",
+  ["Boulder and Denver have strong therapy communities, but private-pay couples specialists with doctoral training are a smaller group, and the ones in Boulder are often booked months out.",
+   "Colorado was in the first wave of PSYPACT states, effective July 2020. If you split time between Colorado and a non-member state, we'll plan sessions around where you'll be."],
+  "Colorado PPO plans reimburse out-of-network psychology at varying rates. The Colorado Division of Insurance requires plans to tell you the out-of-network rate on request."),
+ ("ohio","Ohio","Columbus, Cincinnati, Cleveland and Dayton","Eastern","the same time as Indiana",
+  "Couples therapy in Ohio, online, from the psychologist some of you already know",
+  "Before Indiana, I practiced in Columbus. A number of my Ohio couples are people who worked with me there and kept going by video, and their referrals are a big part of how new Ohio couples find me.",
+  ["Columbus, Cincinnati and Cleveland each have a handful of couples specialists trained in EFT and the Gottman Method, and they fill up fast. Video with someone an hour west, on the same time zone, is often the quicker route.",
+   "Ohio joined PSYPACT in July 2021. Nothing about our work changes because I'm across the state line; the compact handles the licensing side."],
+  "Ohio plans from Anthem, Medical Mutual and Aetna PPO products typically have out-of-network behavioral health benefits. Superbills go out the same day as your session."),
+]
+
+
+MEMBERS = ["Alabama","Alaska","Arizona","Arkansas","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Idaho","Illinois","Indiana","Kansas","Kentucky","Maine","Maryland","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","North Carolina","North Dakota","Ohio","Oklahoma","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming","Northern Mariana Islands"]
+PENDING = {"Iowa":"July 2027","Louisiana":"January 2028"}
+NONMEMBERS = ["California","Hawaii","Massachusetts","New Mexico","New York","Oregon","Puerto Rico","Guam","U.S. Virgin Islands"]

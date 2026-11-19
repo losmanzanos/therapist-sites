@@ -1,144 +1,187 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <title>Online Couples Therapy in Ohio | Kelsee Tucker, PhD, Psychologist</title><meta name="description" content="Video couples therapy for Ohio couples (Columbus, Cincinnati, Cleveland and Dayton) with a licensed psychologist under PSYPACT. EFT, Gottman and IBCT. Evening sessions on Eastern time."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><style>
-:root{--cream:#faf4ed;--cream-2:#f3eadf;--gold:#cd8e33;--gold-deep:#a86f1f;--ink:#262320;--mute:#7a716a;--olive:#2f3a2d;--olive-2:#3d4a39;--rule:#e2d7c6}
+:root{--cream:#faf4ed;--cream-2:#f3eadf;--gold:#cd8e33;--gold-deep:#a86f1f;--gold-pale:#e9c98a;--ink:#262320;--mute:#756d64;--rule:#e4d9c8;--night:#1f2320}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{display:block;max-width:100%}
-h1,h2,h3,blockquote{font-family:"Gilda Display",Georgia,serif;font-weight:400;margin:0;line-height:1.05;letter-spacing:.005em}
-.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,56px)}
+h1,h2,h3{font-family:"Gilda Display",Georgia,serif;font-weight:400;margin:0;line-height:1.08}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,56px)}
 .note{background:#fff5c2;border-bottom:1px solid #e6d98a;font-size:13px;padding:8px 0;color:#5a4d00}
-header.site{border-bottom:1px solid var(--rule);background:var(--cream)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 0}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-.brand img{width:54px;height:auto}
-.brand span{font-family:"Gilda Display",serif;font-size:19px;letter-spacing:.12em;text-transform:uppercase;line-height:1.1}
-.brand span small{display:block;font-family:"Hanken Grotesk",sans-serif;font-size:11px;letter-spacing:.34em;color:var(--gold-deep);margin-top:4px}
-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase}
-nav a{text-decoration:none}nav a:hover{color:var(--gold-deep)}
-.btn{display:inline-block;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--gold);color:#fff;padding:14px 22px;text-decoration:none}
+.k{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 14px}
+.center{text-align:center}
+.btn{display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:var(--gold);color:#fff;padding:15px 26px;text-decoration:none;transition:background .2s}
 .btn:hover{background:var(--gold-deep)}
-.btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
-.btn.line:hover{background:var(--ink);color:var(--cream)}
-.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 18px}
-section{padding:88px 0}
-.grid{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
-.grid h2{font-size:clamp(34px,3.8vw,54px);max-width:13ch}
-.prose p{margin:0 0 18px;max-width:62ch}
-.prose h3{font-size:28px;margin:34px 0 10px}
-/* hero: photo right, cream left with the sunburst */
-.hero{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:88svh;overflow:hidden;background:var(--cream)}
-.hero .copy{position:relative;z-index:2;padding:clamp(40px,6vw,96px) clamp(18px,4vw,56px) clamp(40px,6vw,96px) max(clamp(18px,4vw,56px),calc((100vw - 1280px)/2 + 56px));display:flex;flex-direction:column;justify-content:center}
-.hero .mark{position:absolute;left:-120px;top:-140px;width:560px;opacity:.10;pointer-events:none}
-.hero h1{font-size:clamp(40px,4.6vw,66px);max-width:12ch;position:relative}
-.hero .lede{font-size:clamp(17px,1.4vw,19px);max-width:42ch;margin:26px 0 0;color:#4a443d}
-.hero .cta{display:flex;gap:18px;align-items:center;margin-top:32px;flex-wrap:wrap}
-.hero .photo{position:relative;min-height:520px}
-.hero .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
-.hero .photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--cream) 0%,rgba(250,244,237,0) 18%)}
-.hero .tag{position:absolute;z-index:2;right:clamp(18px,4vw,56px);bottom:28px;background:rgba(38,35,32,.72);color:#f6eee2;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:10px 14px}
-.facts{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--cream-2)}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7)}
+.btn.ghost:hover{background:#fff;color:var(--ink)}
+.btn.dark{background:var(--ink)}.btn.dark:hover{background:#000}
+/* top bar over hero */
+.top{position:absolute;inset:0 0 auto 0;z-index:5;color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
+.top .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:"Gilda Display",serif;font-size:15px;letter-spacing:.16em;text-transform:uppercase}
+.top .brand img{width:40px}
+.top nav{display:flex;gap:26px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
+.top nav a{text-decoration:none;opacity:.92}.top nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.top .btn{padding:12px 18px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:#3a2a16}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,26,10,.38) 0%,rgba(40,26,10,.18) 40%,rgba(40,26,10,.58) 100%)}
+.hero .in{position:relative;z-index:2;padding:120px 20px 80px;max-width:820px}
+.hero .sun{width:clamp(120px,14vw,180px);margin:0 auto 18px;filter:brightness(0) invert(1) sepia(.5) saturate(3) hue-rotate(-10deg) brightness(1.15);animation:turn 140s linear infinite}
+@keyframes turn{to{transform:rotate(360deg)}}
+.hero .wm{font-family:"Gilda Display",serif;font-size:clamp(22px,2.6vw,34px);letter-spacing:.22em;text-transform:uppercase;line-height:1.1}
+.hero .wm small{display:block;font-family:"Hanken Grotesk",sans-serif;font-size:12px;letter-spacing:.5em;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+.hero h1{font-size:clamp(34px,5vw,66px);margin:38px auto 0;max-width:16ch;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero p{max-width:50ch;margin:20px auto 0;font-size:clamp(16px,1.4vw,19px);color:#fbf3e6}
+.hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.hero .down{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#fff;text-decoration:none;opacity:.8}
+/* facts arc */
+.facts{background:var(--cream-2);border-bottom:1px solid var(--rule)}
 .facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.facts div{padding:20px 20px 20px 0;border-right:1px solid var(--rule);font-size:15px}
-.facts div+div{padding-left:20px}.facts div:last-child{border-right:0}
-.facts b{display:block;font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:4px}
-/* methods list */
-.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
-.list li{border-bottom:1px solid var(--rule);padding:20px 0 20px 34px;position:relative;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
-.list li:before{content:"";position:absolute;left:0;top:30px;width:14px;height:14px;background:url(/work/preview/dr-kelsee-tucker/img/mark.png) center/contain no-repeat}
-.list a{font-family:"Gilda Display",serif;font-size:26px;text-decoration:none}.list a:hover{color:var(--gold-deep)}
-.list small{color:var(--mute);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-.list p{grid-column:1/-1;margin:4px 0 0;color:var(--mute);font-size:15px;max-width:60ch}
-/* online band: dusk photo */
-.dark{position:relative;background:var(--olive);color:#efe7da;overflow:hidden}
-.dark .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
-.dark:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(47,58,45,.96) 0%,rgba(47,58,45,.75) 55%,rgba(47,58,45,.35) 100%)}
-.dark .wrap{position:relative;z-index:2}
-.dark .kicker{color:#e3b76a}.dark a{color:#fff}.dark h2{color:#fff}
-.states{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px;border-top:1px solid rgba(239,231,218,.3)}
-.states li{border-bottom:1px solid rgba(239,231,218,.3);padding:14px 0;display:flex;justify-content:space-between;gap:10px;font-size:15px}
-.states li a{text-decoration:none;font-family:"Gilda Display",serif;font-size:19px}.states li a:hover{color:#e3b76a}
-.states li span{color:#c9c0b1;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-
-.checker label{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#e3b76a;margin-bottom:10px}
-.checker-row{position:relative;max-width:520px}
-.checker input{width:100%;font:inherit;font-size:18px;padding:14px 16px;background:rgba(250,244,237,.08);border:1px solid rgba(239,231,218,.45);color:#fff;outline:none}
-.checker input::placeholder{color:#b9b0a1}
-.checker input:focus{border-color:#e3b76a}
-.checker-list{position:absolute;left:0;right:0;top:100%;z-index:5;background:#fbf6ef;border:1px solid var(--rule);max-height:300px;overflow:auto}
+.facts div{padding:22px 18px;text-align:center;border-right:1px solid var(--rule);font-size:15px}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:4px;font-weight:600}
+/* sections */
+section{padding:88px 0}
+.div{width:44px;margin:0 auto 22px;opacity:.9}
+h2.t{font-size:clamp(32px,3.6vw,48px);max-width:18ch;margin:0 auto}
+.lead{max-width:60ch;margin:18px auto 0;color:#4a443d}
+/* intro with round portrait */
+.intro .port{width:clamp(200px,24vw,300px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:center 15%;margin:28px auto 0;box-shadow:0 0 0 10px var(--cream),0 0 0 11px var(--gold)}
+.intro .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:980px;margin:36px auto 0;text-align:left}
+.intro .two p{margin:0 0 14px}
+/* services: round photos that open */
+.svc{background:var(--cream-2)}
+.svc .row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px}
+.svc details{text-align:center}
+.svc summary{list-style:none;cursor:pointer;outline:none}
+.svc summary::-webkit-details-marker{display:none}
+.svc summary img{width:clamp(150px,16vw,200px);aspect-ratio:1;border-radius:50%;object-fit:cover;margin:0 auto;transition:transform .35s,box-shadow .35s;box-shadow:0 0 0 0 var(--gold)}
+.svc summary:hover img,.svc details[open] summary img{transform:scale(1.05);box-shadow:0 0 0 8px var(--cream-2),0 0 0 9px var(--gold)}
+.svc summary h3{font-size:24px;margin:20px 0 4px}
+.svc summary small{display:block;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep)}
+.svc .body{max-width:34ch;margin:16px auto 0;font-size:15.5px;color:#4a443d;animation:fade .4s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.svc .body a{display:inline-block;margin-top:8px;text-decoration:underline;text-underline-offset:4px}
+/* methods strip */
+.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule);margin-top:44px;background:#fff}
+.methods div{padding:28px 26px;border-right:1px solid var(--rule)}
+.methods div:last-child{border-right:0}
+.methods h3{font-size:22px;margin-bottom:8px}
+.methods p{margin:0;font-size:15px;color:#4a443d}
+/* map section */
+.map{background:var(--night);color:#efe7da;position:relative;overflow:hidden}
+.map .wrap{position:relative;z-index:2}
+.map .k{color:var(--gold-pale)}
+.map h2.t{color:#fff}
+.map .lead{color:#c9c0b1}
+.mapgrid{display:grid;grid-template-columns:7fr 5fr;gap:48px;align-items:center;margin-top:40px}
+.usmap{width:100%;height:auto;display:block}
+.usmap path{fill:#3a3f39;stroke:var(--night);stroke-width:1;cursor:pointer;transition:fill .2s}
+.usmap path.yes{fill:#8c6a2a}.usmap path.page{fill:var(--gold)}
+.usmap path.pending{fill:#5c5a3e}.usmap path.no{fill:#3a3f39}
+.usmap path:hover,.usmap path.sel{fill:#fff}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#c9c0b1;margin-top:12px}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+.panel{background:rgba(255,255,255,.04);border:1px solid rgba(239,231,218,.2);padding:26px}
+.panel label{display:block;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-pale);margin-bottom:10px}
+.checker-row{position:relative}
+.panel input{width:100%;font:inherit;font-size:18px;padding:14px 16px;background:rgba(250,244,237,.06);border:1px solid rgba(239,231,218,.4);color:#fff;outline:none}
+.panel input::placeholder{color:#a9a093}.panel input:focus{border-color:var(--gold-pale)}
+.checker-list{position:absolute;left:0;right:0;top:100%;z-index:5;background:#fbf6ef;border:1px solid var(--rule);max-height:260px;overflow:auto}
 .checker-list button{display:flex;justify-content:space-between;width:100%;text-align:left;font:inherit;font-size:16px;padding:11px 14px;background:none;border:0;border-bottom:1px solid var(--rule);color:var(--ink);cursor:pointer}
 .checker-list button:hover{background:var(--cream-2)}
 .checker-list button span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
-.checker-result{margin:18px 0 0;max-width:56ch;font-size:16px;color:#efe7da;min-height:3.2em}
-.checker-result a{color:#fff;text-decoration:underline;text-underline-offset:3px}
-.own{margin:34px 0 0}
-.own p{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#e3b76a;margin:0 0 10px}
-.own ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
-.own a{font-family:"Gilda Display",serif;font-size:19px;text-decoration:none;border-bottom:1px solid rgba(239,231,218,.4)}
-.own a:hover{color:#e3b76a;border-color:#e3b76a}
-
-/* about: portrait left */
-.about .wrap{display:grid;grid-template-columns:4fr 8fr;gap:64px;align-items:center}
-.about figure{margin:0;position:relative}
-.about figure img{aspect-ratio:3/4;object-fit:cover;object-position:center 20%;width:100%}
-.about figure:after{content:"";position:absolute;right:-18px;bottom:-18px;width:55%;height:55%;border:1px solid var(--gold);z-index:-1}
-.about h2{font-size:clamp(34px,3.8vw,54px);max-width:14ch;margin-bottom:18px}
+#stateResult{margin:18px 0 0;font-size:16px;color:#efe7da;min-height:4.8em}
+#stateResult strong{font-family:"Gilda Display",serif;font-weight:400;font-size:22px;display:block;margin-bottom:4px}
+#stateResult a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.own{margin-top:22px;font-size:14px;color:#c9c0b1}
+.own a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);margin-right:14px;white-space:nowrap}
+.own a:hover{border-color:#fff}
 /* gold band */
-.gold{background:var(--gold);color:#fff;padding:56px 0}
-.gold .wrap{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
-.gold h2{font-size:clamp(26px,2.8vw,38px);max-width:26ch}
-.gold .btn{background:#fff;color:var(--gold-deep)}
-blockquote{font-size:clamp(26px,2.8vw,38px);font-style:italic;max-width:24ch}
-dl.spec{display:grid;grid-template-columns:auto 1fr;gap:12px 28px;margin:0;font-size:15.5px}
-dl.spec dt{color:var(--gold-deep);font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding-top:3px}
-dl.spec dd{margin:0}
-.dark dl.spec dt{color:#e3b76a}
-.end .wrap{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:center}
-.end h2{font-size:clamp(34px,4vw,56px)}
-.box{border:1px solid var(--rule);background:#fff;padding:30px}.box b{display:block;font-family:"Gilda Display",serif;font-weight:400;font-size:22px;margin-bottom:8px}.box p{margin:0 0 16px;color:var(--mute);font-size:15px}
-footer{background:var(--cream-2);border-top:1px solid var(--rule);padding:40px 0 48px;font-size:14px;color:var(--mute)}
-footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
-footer b{color:var(--ink);display:block;margin-bottom:8px;font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.gold{background:var(--gold);color:#fff;padding:44px 0}
+.gold .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.gold h2{font-size:clamp(22px,2.4vw,32px)}
+.gold .btn{background:#fff;color:var(--gold-deep)}.gold .btn:hover{background:var(--cream)}
+/* blog over photo */
+.blog{position:relative;color:#fff;overflow:hidden;background:#2a2114}
+.blog img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.blog:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,22,10,.35),rgba(30,22,10,.65))}
+.blog .wrap{position:relative;z-index:2}
+.blog .k{color:var(--gold-pale)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.card{background:var(--cream);color:var(--ink);padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:10px;min-height:220px;transition:transform .25s}
+.card:hover{transform:translateY(-4px)}
+.card h3{font-size:22px}
+.card p{margin:0;color:#4a443d;font-size:15px;flex:1}
+.card small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+/* endorsements carousel */
+.endo .track{position:relative;max-width:860px;margin:36px auto 0;min-height:300px}
+.endo figure{margin:0;position:absolute;inset:0;opacity:0;transition:opacity .6s;pointer-events:none;text-align:center}
+.endo figure.on{opacity:1;pointer-events:auto;position:relative}
+.endo figure img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 20px;box-shadow:0 0 0 6px var(--cream),0 0 0 7px var(--gold)}
+.endo blockquote{margin:0 auto;max-width:62ch;font-family:"Gilda Display",serif;font-size:clamp(19px,1.8vw,24px);line-height:1.45}
+.endo figcaption{margin-top:16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.endo .dots{display:flex;justify-content:center;gap:10px;margin-top:26px}
+.endo .dots button{width:10px;height:10px;border-radius:50%;border:1px solid var(--gold);background:transparent;padding:0;cursor:pointer}
+.endo .dots button.on{background:var(--gold)}
+.endo .arrows{display:flex;justify-content:center;gap:18px;margin-top:14px}
+.endo .arrows button{font:inherit;font-size:12px;letter-spacing:.2em;text-transform:uppercase;background:none;border:0;color:var(--gold-deep);cursor:pointer}
+/* photo band */
+.band{position:relative;min-height:380px;overflow:hidden;display:grid;place-items:center;text-align:center;color:#fff}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.band:after{content:"";position:absolute;inset:0;background:rgba(30,22,10,.35)}
+.band .in{position:relative;z-index:2;padding:40px 20px;max-width:760px}
+.band h2{font-size:clamp(30px,3.6vw,50px)}
+/* footer */
+footer{background:var(--cream-2);border-top:1px solid var(--rule);padding:48px 0 40px;font-size:14px;color:var(--mute)}
+footer .vals{display:flex;justify-content:space-around;gap:16px;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--ink);padding-bottom:30px;border-bottom:1px solid var(--rule);margin-bottom:30px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+footer b{color:var(--ink);display:block;margin-bottom:8px;font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
 footer ul{list-style:none;margin:0;padding:0}footer li{margin:4px 0}footer a{text-decoration:none}footer a:hover{color:var(--gold-deep)}
 footer .mark{width:44px;margin-bottom:12px}
-.crumb{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:18px 0 0}.crumb a{text-decoration:none}
-/* state hero variant */
-.hero.state .photo img{object-position:center 40%}
-@media (max-width:980px){.hero{grid-template-columns:1fr}.hero .photo{min-height:360px;order:-1}.hero .photo:after{background:linear-gradient(180deg,rgba(250,244,237,0) 70%,var(--cream) 100%)}.hero .copy{padding-left:clamp(18px,4vw,56px)}.grid,.about .wrap,.end .wrap,.gold .wrap,footer .wrap{grid-template-columns:1fr;gap:28px}.facts .wrap,.states{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div:nth-child(3){padding-left:0}nav{display:none}}
-@media (max-width:560px){.states{grid-template-columns:1fr}}
+.crumb{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.85;margin:0 0 14px}.crumb a{text-decoration:none}
+/* inner-page hero */
+.hero.inner{min-height:72svh}
+.hero.inner:after{background:linear-gradient(180deg,rgba(30,22,10,.5),rgba(30,22,10,.62))}
+.hero.inner .in{padding-top:130px}
+/* prose for state pages */
+.prose{max-width:70ch;margin:0 auto}
+.prose p{margin:0 0 18px}
+.prose h3{font-size:26px;margin:32px 0 10px;text-align:center}
+.spec{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px;max-width:860px;margin:36px auto 0;border-top:1px solid var(--rule);padding-top:24px}
+.spec dt{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:4px}
+.spec dd{margin:0}
+@media (max-width:980px){.top nav{display:none}.facts .wrap{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.intro .two,.mapgrid,.methods,.cards{grid-template-columns:1fr}.methods div{border-right:0;border-bottom:1px solid var(--rule)}.svc .row{grid-template-columns:1fr;gap:40px}footer .cols{grid-template-columns:1fr 1fr}footer .vals{flex-wrap:wrap;letter-spacing:.25em}.spec{grid-template-columns:1fr}}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "Online Couples Therapy in Ohio", "url": "https://drkelseetucker.com/online-couples-therapy/ohio/", "about": {"@type": "MedicalTherapy", "name": "Couples therapy"}, "provider": {"@type": "Psychologist", "name": "Kelsee Tucker, PhD", "url": "https://drkelseetucker.com/"}, "areaServed": {"@type": "State", "name": "Ohio"}}</script></head>
 <body><div class="note"><div class="wrap">Preview for Dr. Tucker. Your photos, your mark, your colors. Copy is a first draft. Built to rebuild in WordPress one to one.</div></div>
-<header class="site"><div class="wrap nav">
- <a class="brand" href="/work/preview/dr-kelsee-tucker/"><img src="/work/preview/dr-kelsee-tucker/img/mark.png" alt=""><span>Kelsee Tucker, Ph.D.<small>Counseling</small></span></a>
- <nav><ul>
-  <li><a href="/work/preview/dr-kelsee-tucker/#couples">Couples therapy</a></li>
-  <li><a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/">Online, by state</a></li>
-  <li><a href="https://drkelseetucker.com/about-us/">About</a></li>
-  <li><a href="https://drkelseetucker.com/rates/">Rates</a></li>
-  <li><a href="https://drkelseetucker.com/blogs/">Writing</a></li>
- </ul></nav>
- <a class="btn" href="https://drkelseetucker.com/contact-us/">Free 15 minute consult</a>
-</div></header><main><div class="wrap crumb"><a href="/work/preview/dr-kelsee-tucker/">Home</a> / <a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/">Online couples therapy</a> / Ohio</div>
-<div class="hero state">
- <div class="copy">
-  <img class="mark" src="/work/preview/dr-kelsee-tucker/img/mark.png" alt="">
-  <p class="kicker">Online couples therapy in Ohio</p>
-  <h1>Couples therapy in Ohio, online, from the psychologist some of you already know</h1>
-  <p class="lede">Before Indiana, I practiced in Columbus. A number of my Ohio couples are people who worked with me there and kept going by video, and their referrals are a big part of how new Ohio couples find me.</p>
-  <div class="cta"><a class="btn" href="https://drkelseetucker.com/contact-us/">Book a free 15 minute consult</a><a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/">How PSYPACT works</a></div>
- </div>
- <div class="photo"><img src="/work/preview/dr-kelsee-tucker/img/kelsee-portrait.jpg" alt="Dr. Kelsee Tucker"><span class="tag">Dr. Tucker, by video in Ohio</span></div>
-</div>
-<div class="facts"><div class="wrap">
- <div><b>Where</b><span>Columbus, Cincinnati, Cleveland and Dayton</span></div>
- <div><b>Time zone</b><span>Eastern, the same time as Indiana</span></div>
- <div><b>Format</b><span>Secure video, 55 or 90 minutes</span></div>
- <div><b>Fee</b><span>$350 / $525, superbill provided</span></div>
+
+<header class="hero inner">
+ <img class="bg" src="/work/preview/dr-kelsee-tucker/img/kelsee-boardwalk.jpg" alt="">
+ <div class="top"><div class="wrap">
+ <a class="brand" href="/work/preview/dr-kelsee-tucker/"><img src="/work/preview/dr-kelsee-tucker/img/mark.png" alt="">Kelsee Tucker, Ph.D.</a>
+ <nav><a href="/work/preview/dr-kelsee-tucker/#couples">Couples</a><a href="/work/preview/dr-kelsee-tucker/#states">Online, by state</a><a href="https://drkelseetucker.com/about-us/">About</a><a href="https://drkelseetucker.com/rates/">Rates</a><a href="https://drkelseetucker.com/blogs/">Blog</a></nav>
+ <a class="btn" href="https://drkelseetucker.com/contact-us/">Free 15 min consult</a>
 </div></div>
-<section><div class="wrap grid">
- <div><p class="kicker">Working with Ohio couples</p><h2>What's different about doing this from Ohio.</h2></div>
- <div class="prose">
+ <div class="in">
+  <p class="crumb"><a href="/work/preview/dr-kelsee-tucker/">Home</a> / <a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/">Online couples therapy</a> / Ohio</p>
+  <h1>Couples therapy in Ohio, online, from the psychologist some of you already know</h1>
+  <p>Before Indiana, I practiced in Columbus. A number of my Ohio couples are people who worked with me there and kept going by video, and their referrals are a big part of how new Ohio couples find me.</p>
+  <div class="cta"><a class="btn" href="https://drkelseetucker.com/contact-us/">Free 15 minute consult</a><a class="btn ghost" href="/work/preview/dr-kelsee-tucker/online-couples-therapy/">How PSYPACT works</a></div>
+ </div>
+</header>
+<div class="facts"><div class="wrap">
+ <div><b>Where</b>Columbus, Cincinnati, Cleveland and Dayton</div>
+ <div><b>Time zone</b>Eastern, the same time as Indiana</div>
+ <div><b>Format</b>Secure video, 55 or 90 minutes</div>
+ <div><b>Fee</b>$350 / $525, superbill provided</div>
+</div></div>
+<section><div class="wrap">
+ <div class="center"><img class="div" src="/work/preview/dr-kelsee-tucker/img/mark.png" alt=""><p class="k">Working with Ohio couples</p><h2 class="t">What's different about doing this from Ohio.</h2></div>
+ <div class="prose" style="margin-top:30px">
   <p>Columbus, Cincinnati and Cleveland each have a handful of couples specialists trained in EFT and the Gottman Method, and they fill up fast. Video with someone an hour west, on the same time zone, is often the quicker route.</p>
   <p>Ohio joined PSYPACT in July 2021. Nothing about our work changes because I'm across the state line; the compact handles the licensing side.</p>
   <h3>Insurance and reimbursement in Ohio</h3>
@@ -146,23 +189,26 @@ footer .mark{width:44px;margin-bottom:12px}
   <h3>The methods</h3>
   <p>Emotionally Focused Therapy, the Gottman Method and Integrative Behavioral Couples Therapy. Which one we use depends on your pattern, and I'll explain the choice in plain language in the first two sessions. <a href="/work/preview/dr-kelsee-tucker/#couples">More on how I work with couples</a>.</p>
  </div>
-</div></section>
-<section class="dark"><img class="bgimg" src="/work/preview/dr-kelsee-tucker/img/couple-dusk.jpg" alt=""><div class="wrap grid">
- <div><p class="kicker">The one rule</p><blockquote>You both have to be in Ohio, or another PSYPACT state, when the session starts.</blockquote></div>
  <dl class="spec">
-  <dt>Credential</dt><dd>APIT / E.Passport, Mobility #16033, home license Indiana</dd>
-  <dt>Ohio joined</dt><dd>See the compact's map for the effective date; Ohio is a current member</dd>
-  <dt>Platform</dt><dd>HIPAA-compliant video, link sent before each session</dd>
-  <dt>Evening slots</dt><dd>Held weekly for Eastern time couples</dd>
+  <div><dt>The one rule</dt><dd>You both have to be in Ohio, or another PSYPACT state, when the session starts.</dd></div>
+  <div><dt>Credential</dt><dd>APIT / E.Passport, Mobility #16033, home license Indiana</dd></div>
+  <div><dt>Platform</dt><dd>HIPAA-compliant video, link sent before each session</dd></div>
+  <div><dt>Evening slots</dt><dd>Held weekly for Eastern time couples</dd></div>
  </dl>
 </div></section>
-<section class="end"><div class="wrap">
- <div><h2>Ready to stop having the same fight in Columbus?</h2></div>
- <div class="box"><b>Free 15 minute consult</b><p>We'll confirm you're in a member state, talk through what's going on, and pick a time that works on Eastern time.</p><a class="btn" href="https://drkelseetucker.com/contact-us/">Book the call</a></div>
+<section class="intro center" style="background:var(--cream-2)"><div class="wrap">
+ <img class="port" src="/work/preview/dr-kelsee-tucker/img/kelsee-portrait.jpg" alt="Dr. Kelsee Tucker" style="margin-top:0;box-shadow:0 0 0 10px var(--cream-2),0 0 0 11px var(--gold)">
+ <h2 class="t" style="margin-top:28px">Dr. Kelsee Tucker</h2>
+ <p class="lead">Licensed psychologist, couples specialist. Brownsburg, Indiana, and online wherever PSYPACT reaches.</p>
+ <p style="margin-top:22px"><a class="btn dark" href="https://drkelseetucker.com/about-us/">About Dr. Tucker</a></p>
 </div></section>
-</main><footer><div class="wrap">
+<div class="band"><img src="/work/preview/dr-kelsee-tucker/img/rooftop.jpg" alt=""><div class="in"><h2>Ready to stop having the same fight in Columbus?</h2><p style="margin:18px 0 26px;font-size:18px">We'll confirm you're in a member state, talk through what's going on, and pick a time that works on Eastern time.</p><a class="btn" href="https://drkelseetucker.com/contact-us/">Book the call</a></div></div>
+<footer><div class="wrap">
+ <div class="vals"><span>Renewal</span><span>Hope</span><span>Healing</span><span>Clarity</span></div>
+ <div class="cols">
  <div><img class="mark" src="/work/preview/dr-kelsee-tucker/img/mark.png" alt=""><b>Kelsee Tucker, Ph.D. Counseling</b>Licensed psychologist, couples specialist<br>Elevate Offices, 7230 Arbuckle Commons Ste 241, Brownsburg, IN 46112<br>317-214-0774<br>Online in 40+ PSYPACT states (APIT/E.Passport Mobility #16033)</div>
  <div><b>Couples</b><ul><li><a href="https://drkelseetucker.com/couples-therapy/">Couples therapy</a></li><li><a href="https://drkelseetucker.com/couples-therapy/">Premarital</a></li><li><a href="https://drkelseetucker.com/couples-therapy/">Affair recovery</a></li><li><a href="https://drkelseetucker.com/couples-therapy/">Discernment counseling</a></li><li><a href="https://drkelseetucker.com/couples-therapy/">Intensives</a></li></ul></div>
  <div><b>Online by state</b><ul><li><a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/illinois/">Illinois</a></li><li><a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/texas/">Texas</a></li><li><a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/georgia/">Georgia</a></li><li><a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/virginia/">Virginia</a></li><li><a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/colorado/">Colorado</a></li><li><a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/ohio/">Ohio</a></li><li><a href="/work/preview/dr-kelsee-tucker/online-couples-therapy/">All states</a></li></ul></div>
  <div><b>Practice</b><ul><li><a href="https://drkelseetucker.com/about-us/">About Dr. Tucker</a></li><li><a href="https://drkelseetucker.com/rates/">Rates and insurance</a></li><li><a href="https://drkelseetucker.com/individual-therapy/">Individual therapy</a></li><li><a href="https://drkelseetucker.com/family-therapy/">Family therapy</a></li><li><a href="https://drkelseetucker.com/contact-us/">Contact</a></li></ul></div>
+ </div>
 </div></footer></body></html>
