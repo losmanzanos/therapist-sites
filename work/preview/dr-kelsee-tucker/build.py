@@ -66,6 +66,24 @@ section{padding:88px 0}
 .states li{border-bottom:1px solid rgba(239,231,218,.3);padding:14px 0;display:flex;justify-content:space-between;gap:10px;font-size:15px}
 .states li a{text-decoration:none;font-family:"Gilda Display",serif;font-size:19px}.states li a:hover{color:#e3b76a}
 .states li span{color:#c9c0b1;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+
+.checker label{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#e3b76a;margin-bottom:10px}
+.checker-row{position:relative;max-width:520px}
+.checker input{width:100%;font:inherit;font-size:18px;padding:14px 16px;background:rgba(250,244,237,.08);border:1px solid rgba(239,231,218,.45);color:#fff;outline:none}
+.checker input::placeholder{color:#b9b0a1}
+.checker input:focus{border-color:#e3b76a}
+.checker-list{position:absolute;left:0;right:0;top:100%;z-index:5;background:#fbf6ef;border:1px solid var(--rule);max-height:300px;overflow:auto}
+.checker-list button{display:flex;justify-content:space-between;width:100%;text-align:left;font:inherit;font-size:16px;padding:11px 14px;background:none;border:0;border-bottom:1px solid var(--rule);color:var(--ink);cursor:pointer}
+.checker-list button:hover{background:var(--cream-2)}
+.checker-list button span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+.checker-result{margin:18px 0 0;max-width:56ch;font-size:16px;color:#efe7da;min-height:3.2em}
+.checker-result a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.own{margin:34px 0 0}
+.own p{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#e3b76a;margin:0 0 10px}
+.own ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.own a{font-family:"Gilda Display",serif;font-size:19px;text-decoration:none;border-bottom:1px solid rgba(239,231,218,.4)}
+.own a:hover{color:#e3b76a;border-color:#e3b76a}
+
 /* about: portrait left */
 .about .wrap{display:grid;grid-template-columns:4fr 8fr;gap:64px;align-items:center}
 .about figure{margin:0;position:relative}
@@ -138,6 +156,47 @@ STATES = [
   "Ohio plans from Anthem, Medical Mutual and Aetna PPO products typically have out-of-network behavioral health benefits. Superbills go out the same day as your session."),
 ]
 
+
+MEMBERS = ["Alabama","Alaska","Arizona","Arkansas","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Idaho","Illinois","Indiana","Kansas","Kentucky","Maine","Maryland","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","North Carolina","North Dakota","Ohio","Oklahoma","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming","Northern Mariana Islands"]
+PENDING = {"Iowa":"July 2027","Louisiana":"January 2028"}
+NONMEMBERS = ["California","Hawaii","Massachusetts","New Mexico","New York","Oregon","Puerto Rico","Guam","U.S. Virgin Islands"]
+
+def state_checker():
+    pages = {s[1]: f"{BASE}online-couples-therapy/{s[0]}/" for s in STATES}
+    data = []
+    for n in MEMBERS: data.append({"n":n,"s":"page" if n in pages else "yes","u":pages.get(n,"")})
+    for n,d in PENDING.items(): data.append({"n":n,"s":"pending","d":d})
+    for n in NONMEMBERS: data.append({"n":n,"s":"no"})
+    return f"""
+<div class="checker">
+ <label for="stateInput">Type your state</label>
+ <div class="checker-row"><input id="stateInput" type="text" placeholder="Illinois, Texas, Georgia..." autocomplete="off" aria-label="Check whether video sessions are available in your state"><div id="stateList" class="checker-list" hidden></div></div>
+ <p id="stateResult" class="checker-result" aria-live="polite">Start typing. If your state is one of the 44 PSYPACT jurisdictions, we can meet by video.</p>
+</div>
+<script>
+(function(){{
+ const D={json.dumps(data)};
+ const inp=document.getElementById('stateInput'),list=document.getElementById('stateList'),out=document.getElementById('stateResult');
+ function msg(x){{
+  if(x.s==='page') return '<strong>'+x.n+'</strong>: yes. There is a page just for '+x.n+' couples: <a href="'+x.u+'">online couples therapy in '+x.n+'</a>.';
+  if(x.s==='yes') return '<strong>'+x.n+'</strong>: yes. '+x.n+' is a PSYPACT member, so we can meet by video as long as you are both in the state at session time. <a href="{SITE}/contact-us/">Book a free consult</a>.';
+  if(x.s==='pending') return '<strong>'+x.n+'</strong>: not yet. '+x.n+' has passed PSYPACT and joins in '+x.d+'. Reach out closer to then.';
+  return '<strong>'+x.n+'</strong>: not yet. '+x.n+' has not joined PSYPACT, so I cannot see you by video there. If you travel to a member state, we can meet while you are there.';
+ }}
+ function render(q){{
+  const v=q.trim().toLowerCase(); if(!v){{list.hidden=true;return}}
+  const hits=D.filter(x=>x.n.toLowerCase().includes(v)).slice(0,8);
+  list.innerHTML=hits.map(x=>'<button type="button" data-n="'+x.n+'">'+x.n+'<span>'+(x.s==='page'?'own page':x.s==='yes'?'member':x.s==='pending'?'joins '+x.d:'not a member')+'</span></button>').join('');
+  list.hidden=!hits.length;
+  const exact=hits.find(x=>x.n.toLowerCase()===v); if(exact) out.innerHTML=msg(exact);
+ }}
+ inp.addEventListener('input',e=>render(e.target.value));
+ inp.addEventListener('focus',e=>render(e.target.value));
+ list.addEventListener('click',e=>{{const b=e.target.closest('button');if(!b)return;const x=D.find(y=>y.n===b.dataset.n);inp.value=x.n;out.innerHTML=msg(x);list.hidden=true}});
+ document.addEventListener('click',e=>{{if(!e.target.closest('.checker'))list.hidden=true}});
+}})();
+</script>"""
+
 def chrome(title, desc, body, path_depth, canonical, ld=None, crumb=""):
     pre = "../" * path_depth
     nav = f"""<header class="site"><div class="wrap nav">
@@ -203,10 +262,11 @@ home_body = f"""
 </div></section>
 
 <section class="dark"><img class="bgimg" src="{BASE}img/couple-dusk.jpg" alt=""><div class="wrap grid">
- <div><p class="kicker">Online, by state</p><h2 style="color:#fff">Licensed to see you in 40+ states. Here are the ones with their own page.</h2><p style="color:#c9c2b4;max-width:36ch">PSYPACT lets a psychologist licensed in one member state practice by video in the others. You have to be physically in a member state when we meet. That's the only rule.</p></div>
+ <div><p class="kicker">Online, by state</p><h2 style="color:#fff">Licensed to see you in 40+ states. Check yours.</h2><p style="color:#c9c2b4;max-width:36ch">PSYPACT lets a psychologist licensed in one member state practice by video in the others. You have to be physically in a member state when we meet. That's the only rule.</p></div>
  <div>
-  <ul class="states">{''.join(f'<li><a href="{BASE}online-couples-therapy/{s[0]}/">{s[1]}</a><span>{s[3]} time</span></li>' for s in STATES)}</ul>
-  <p style="margin:22px 0 0;color:#c9c2b4;font-size:15px">Not listed? <a href="{BASE}online-couples-therapy/">See every PSYPACT state</a>, or just ask on the consult call.</p>
+  {state_checker()}
+  <div class="own"><p>States with their own page</p><ul>{''.join(f'<li><a href="{BASE}online-couples-therapy/{s[0]}/">{s[1]}</a></li>' for s in STATES)}</ul></div>
+  <p style="margin:22px 0 0;color:#c9c2b4;font-size:15px"><a href="{BASE}online-couples-therapy/">How PSYPACT works and the full list</a></p>
  </div>
 </div></section>
 
@@ -242,6 +302,10 @@ hub_body = f"""
  </div>
 </div>
 </div>
+<section class="dark"><img class="bgimg" src="{BASE}img/couple-dusk.jpg" alt=""><div class="wrap grid">
+ <div><p class="kicker">Check your state</p><h2>Is video an option where you are?</h2><p style="color:#c9c2b4;max-width:34ch">Type it in. The answer covers all 44 PSYPACT jurisdictions, the two that join next, and the ones that have not joined.</p></div>
+ <div>{state_checker()}</div>
+</div></section>
 <section><div class="wrap grid">
  <div><p class="kicker">States with their own page</p><h2>Start with yours.</h2><p style="color:var(--mute);max-width:34ch">These are the states where I see the most couples. Each page covers scheduling across time zones and how reimbursement tends to work there.</p></div>
  <ul class="list">{''.join(f'<li><a href="{BASE}online-couples-therapy/{s[0]}/">{s[1]}</a><small>{s[3]} time</small><p>{s[2]}</p></li>' for s in STATES)}</ul>

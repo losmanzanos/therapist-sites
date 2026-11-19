@@ -60,6 +60,24 @@ section{padding:88px 0}
 .states li{border-bottom:1px solid rgba(239,231,218,.3);padding:14px 0;display:flex;justify-content:space-between;gap:10px;font-size:15px}
 .states li a{text-decoration:none;font-family:"Gilda Display",serif;font-size:19px}.states li a:hover{color:#e3b76a}
 .states li span{color:#c9c0b1;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+
+.checker label{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#e3b76a;margin-bottom:10px}
+.checker-row{position:relative;max-width:520px}
+.checker input{width:100%;font:inherit;font-size:18px;padding:14px 16px;background:rgba(250,244,237,.08);border:1px solid rgba(239,231,218,.45);color:#fff;outline:none}
+.checker input::placeholder{color:#b9b0a1}
+.checker input:focus{border-color:#e3b76a}
+.checker-list{position:absolute;left:0;right:0;top:100%;z-index:5;background:#fbf6ef;border:1px solid var(--rule);max-height:300px;overflow:auto}
+.checker-list button{display:flex;justify-content:space-between;width:100%;text-align:left;font:inherit;font-size:16px;padding:11px 14px;background:none;border:0;border-bottom:1px solid var(--rule);color:var(--ink);cursor:pointer}
+.checker-list button:hover{background:var(--cream-2)}
+.checker-list button span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+.checker-result{margin:18px 0 0;max-width:56ch;font-size:16px;color:#efe7da;min-height:3.2em}
+.checker-result a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.own{margin:34px 0 0}
+.own p{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#e3b76a;margin:0 0 10px}
+.own ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.own a{font-family:"Gilda Display",serif;font-size:19px;text-decoration:none;border-bottom:1px solid rgba(239,231,218,.4)}
+.own a:hover{color:#e3b76a;border-color:#e3b76a}
+
 /* about: portrait left */
 .about .wrap{display:grid;grid-template-columns:4fr 8fr;gap:64px;align-items:center}
 .about figure{margin:0;position:relative}
