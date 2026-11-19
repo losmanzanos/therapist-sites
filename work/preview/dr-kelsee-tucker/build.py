@@ -30,7 +30,6 @@ a{color:inherit}
 img{display:block;max-width:100%}
 h1,h2,h3{font-family:"Gilda Display",Georgia,serif;font-weight:400;margin:0;line-height:1.08}
 .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,56px)}
-.note{background:#fff5c2;border-bottom:1px solid #e6d98a;font-size:13px;padding:8px 0;color:#5a4d00}
 .k{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 14px}
 .center{text-align:center}
 .btn{display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:var(--gold);color:#fff;padding:15px 26px;text-decoration:none;transition:background .2s}
@@ -158,12 +157,18 @@ h2.t{font-size:clamp(32px,3.6vw,48px);max-width:18ch;margin:0 auto}
 .band .in{position:relative;z-index:2;padding:40px 20px;max-width:760px}
 .band h2{font-size:clamp(30px,3.6vw,50px)}
 /* footer */
-footer{background:var(--cream-2);border-top:1px solid var(--rule);padding:48px 0 40px;font-size:14px;color:var(--mute)}
-footer .vals{display:flex;justify-content:space-around;gap:16px;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--ink);padding-bottom:30px;border-bottom:1px solid var(--rule);margin-bottom:30px}
-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
-footer b{color:var(--ink);display:block;margin-bottom:8px;font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
-footer ul{list-style:none;margin:0;padding:0}footer li{margin:4px 0}footer a{text-decoration:none}footer a:hover{color:var(--gold-deep)}
-footer .mark{width:44px;margin-bottom:12px}
+footer{background:var(--night);color:#cfc8bb;padding:72px 0 36px;font-size:14.5px}
+footer .head{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:44px}
+footer .brand{display:flex;align-items:center;gap:18px;text-decoration:none;color:#fff}
+footer .brand img{width:64px;filter:brightness(0) invert(1) sepia(.6) saturate(4) hue-rotate(-12deg) brightness(1.05)}
+footer .brand span{font-family:"Gilda Display",serif;font-size:clamp(20px,2.2vw,28px);letter-spacing:.2em;text-transform:uppercase;line-height:1.15;display:block}
+footer .brand small{display:block;font-family:"Hanken Grotesk",sans-serif;font-size:11px;letter-spacing:.45em;color:var(--gold-pale);margin-top:6px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+footer b{color:#fff;display:block;margin-bottom:12px;font-weight:600;font-size:11px;letter-spacing:.26em;text-transform:uppercase}
+footer ul{list-style:none;margin:0;padding:0}footer li{margin:7px 0}footer a{text-decoration:none;color:#cfc8bb}footer a:hover{color:var(--gold-pale)}
+footer .addr a{color:#fff}
+footer .vals{display:flex;justify-content:space-between;gap:14px;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-pale);padding-top:36px;margin-top:48px;border-top:1px solid rgba(255,255,255,.12)}
+footer .vals span:before{content:"\2727";margin-right:10px;color:var(--gold)}
 .crumb{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.85;margin:0 0 14px}.crumb a{text-decoration:none}
 /* inner-page hero */
 .hero.inner{min-height:72svh}
@@ -176,7 +181,10 @@ footer .mark{width:44px;margin-bottom:12px}
 .spec{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px;max-width:860px;margin:36px auto 0;border-top:1px solid var(--rule);padding-top:24px}
 .spec dt{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:4px}
 .spec dd{margin:0}
-@media (max-width:980px){.top nav{display:none}.facts .wrap{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.intro .two,.mapgrid,.methods,.cards{grid-template-columns:1fr}.methods div{border-right:0;border-bottom:1px solid var(--rule)}.svc .row{grid-template-columns:1fr;gap:40px}footer .cols{grid-template-columns:1fr 1fr}footer .vals{flex-wrap:wrap;letter-spacing:.25em}.spec{grid-template-columns:1fr}}
+@media (max-width:980px){.top nav{display:none}.facts .wrap{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.intro .two,.mapgrid,.methods,.cards{grid-template-columns:1fr}.intro .two{gap:0}.methods div{border-right:0;border-bottom:1px solid var(--rule)}.svc .row{grid-template-columns:1fr;gap:40px}footer .cols{grid-template-columns:1fr 1fr}footer .vals{flex-wrap:wrap;justify-content:center;gap:12px 26px;letter-spacing:.3em}.spec{grid-template-columns:1fr}}
+@media (max-width:640px){.top .brand span{display:none}.top .wrap{padding:14px 0}.top .btn{padding:11px 14px;font-size:10.5px;letter-spacing:.16em}.hero .in{padding:92px 18px 64px}.hero .sun{width:84px;margin-bottom:12px}.hero .wm{font-size:17px;letter-spacing:.18em}.hero .wm small{font-size:10px;letter-spacing:.4em;margin-top:5px}.hero h1{font-size:clamp(32px,9.5vw,40px);margin-top:22px}.hero p{font-size:15.5px;margin-top:14px}.hero .cta{margin-top:22px}.hero .down{display:none}footer .head{flex-direction:column;align-items:flex-start;gap:22px}footer .cols{grid-template-columns:1fr 1fr;gap:28px 20px}footer .cols>.addr{grid-column:1/-1;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.1)}footer .vals{display:grid;grid-template-columns:1fr 1fr;gap:14px;justify-items:start;letter-spacing:.3em}}
+@media (max-height:840px) and (min-width:981px){.hero .in{padding:96px 20px 64px}.hero .sun{width:110px;margin-bottom:10px}.hero .wm{font-size:26px}.hero h1{font-size:50px;margin-top:22px}.hero p{margin-top:14px}.hero .cta{margin-top:22px}}
+@media (max-height:520px) and (orientation:landscape){.top .brand span{display:none}.hero{min-height:auto}.hero .in{padding:76px 20px 48px}.hero .sun{width:64px;margin-bottom:8px}.hero .wm{font-size:16px}.hero h1{font-size:32px;margin-top:14px;max-width:26ch}.hero p{margin-top:10px}.hero .cta{margin-top:16px}.hero .down{display:none}}
 """
 
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">'
@@ -251,20 +259,24 @@ d.forEach((b,j)=>b.addEventListener('click',()=>go(j)));document.querySelectorAl
 
 def topbar():
     return f"""<div class="top"><div class="wrap">
- <a class="brand" href="{BASE}"><img src="{IMG}mark.png" alt="">Kelsee Tucker, Ph.D.</a>
+ <a class="brand" href="{BASE}"><img src="{IMG}mark.png" alt=""><span>Kelsee Tucker, Ph.D.</span></a>
  <nav><a href="{BASE}#couples">Couples</a><a href="{BASE}#states">Online, by state</a><a href="{SITE}/about-us/">About</a><a href="{SITE}/rates/">Rates</a><a href="{SITE}/blogs/">Blog</a></nav>
  <a class="btn" href="{SITE}/contact-us/">Free 15 min consult</a>
 </div></div>"""
 
 def footer():
     return f"""<footer><div class="wrap">
- <div class="vals"><span>Renewal</span><span>Hope</span><span>Healing</span><span>Clarity</span></div>
+ <div class="head">
+  <a class="brand" href="{BASE}"><img src="{IMG}mark.png" alt=""><span>Kelsee Tucker, Ph.D.<small>Counseling</small></span></a>
+  <a class="btn" href="{SITE}/contact-us/">Free 15 min consult</a>
+ </div>
  <div class="cols">
- <div><img class="mark" src="{IMG}mark.png" alt=""><b>Kelsee Tucker, Ph.D. Counseling</b>Licensed psychologist, couples specialist<br>Elevate Offices, 7230 Arbuckle Commons Ste 241, Brownsburg, IN 46112<br>317-214-0774<br>Online in 40+ PSYPACT states (APIT/E.Passport Mobility #16033)</div>
+ <div class="addr"><b>Visit or call</b>Elevate Offices<br>7230 Arbuckle Commons, Suite 241<br>Brownsburg, IN 46112<br><br><a href="tel:+13172140774">317-214-0774</a><br><a href="mailto:kelsee@drtuckercounseling.com">kelsee@drtuckercounseling.com</a><br><br>Licensed psychologist. Online in 40+ PSYPACT states (APIT/E.Passport Mobility #16033).</div>
  <div><b>Couples</b><ul><li><a href="{SITE}/couples-therapy/">Couples therapy</a></li><li><a href="{SITE}/couples-therapy/">Premarital</a></li><li><a href="{SITE}/couples-therapy/">Affair recovery</a></li><li><a href="{SITE}/couples-therapy/">Discernment counseling</a></li><li><a href="{SITE}/couples-therapy/">Intensives</a></li></ul></div>
  <div><b>Online by state</b><ul>{''.join(f'<li><a href="{BASE}online-couples-therapy/{s[0]}/">{s[1]}</a></li>' for s in STATES)}<li><a href="{BASE}online-couples-therapy/">All states</a></li></ul></div>
  <div><b>Practice</b><ul><li><a href="{SITE}/about-us/">About Dr. Tucker</a></li><li><a href="{SITE}/rates/">Rates and insurance</a></li><li><a href="{SITE}/individual-therapy/">Individual therapy</a></li><li><a href="{SITE}/family-therapy/">Family therapy</a></li><li><a href="{SITE}/contact-us/">Contact</a></li></ul></div>
  </div>
+ <div class="vals"><span>Renewal</span><span>Hope</span><span>Healing</span><span>Clarity</span></div>
 </div></footer>"""
 
 def page(title, desc, body, ld=None):
@@ -272,8 +284,7 @@ def page(title, desc, body, ld=None):
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <title>{title}</title><meta name="description" content="{desc}">{FONTS}<style>{CSS}</style>{ldtag}</head>
-<body><div class="note"><div class="wrap">Preview for Dr. Tucker. Your photos, your mark, your colors. Copy is a first draft. Built to rebuild in WordPress one to one.</div></div>
-{body}{footer()}</body></html>"""
+<body>{body}{footer()}</body></html>"""
 
 def write(rel, html):
     p = os.path.join(ROOT, rel); os.makedirs(os.path.dirname(p), exist_ok=True)
