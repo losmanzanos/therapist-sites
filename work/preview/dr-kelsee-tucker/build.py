@@ -17,7 +17,7 @@ ENDORSE = [
  ("end-laren.jpg","Laren Conklin, Ph.D.","I worked with Dr. Tucker for multiple years. She is a wonderful clinician and is skilled in a variety of evidence-based treatment for couples and individuals. She is lovely to work with and is very caring and kind."),
  ("end-jenna.jpg","Jenna Renqvist, Ph.D.","Dr. Tucker is an experienced psychologist whose warm, genuine style and evidence-based approaches can help even the most disconnected partners reconnect. I highly recommend Dr. Tucker to anyone wishing to change their relationship for the better."),
  ("end-amanda.jpg","Amanda Shea, Ph.D.","I highly recommend Dr. Tucker for folks looking for an expert in couple and family therapy. She is kind, direct, and creative, using multiple therapy approaches to help couples and families heal from challenging problems and build deeper bonds."),
- ("end-4.jpg","Jessie Boone, LSW","I have heard nothing but fantastic things from Kelsee's clients. She has specialized knowledge for helping couples, veterans, and OCD clients. She is friendly, has a great sense of humor, and has a lot of experience in the field. Highly recommend!"),
+ ("end-dan.jpg","Dan Jones, LSW","Dr. Tucker is a talented couples therapist who has a knack for empowering couples to communicate more effectively and to develop a better understanding of each other's needs in a warm, supportive environment. I highly recommend working with her!"),
  ("end-5.jpg","Derek Ream, Ph.D.","As a former colleague of mine, Dr. Tucker was such a delight to work with. She has a very warm and empathetic approach to her practice that was refreshing to work with. Also, she brings a wealth of experience to working with couples and individuals."),
 ]
 
