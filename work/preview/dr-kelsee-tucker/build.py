@@ -32,34 +32,34 @@ h1,h2,h3{font-family:"Gilda Display",Georgia,serif;font-weight:400;margin:0;line
 .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,56px)}
 .k{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 14px}
 .center{text-align:center}
-.btn{display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:var(--gold);color:#fff;padding:15px 26px;text-decoration:none;transition:background .2s}
-.btn:hover{background:var(--gold-deep)}
-.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7)}
+.btn{display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:var(--gold-deep);color:#fff;padding:15px 26px;text-decoration:none;transition:background .2s;font-weight:600}
+.btn:hover{background:#8a5a16}
+.btn.ghost{background:rgba(30,22,10,.32);color:#fff;border:1px solid rgba(255,255,255,.85);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
 .btn.ghost:hover{background:#fff;color:var(--ink)}
 .btn.dark{background:var(--ink)}.btn.dark:hover{background:#000}
 /* top bar over hero */
 .top{position:absolute;inset:0 0 auto 0;z-index:5;color:#fff}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
-.top .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:"Gilda Display",serif;font-size:15px;letter-spacing:.16em;text-transform:uppercase}
+.top .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:"Gilda Display",serif;font-size:15px;letter-spacing:.16em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.35)}
 .top .brand img{width:40px}
 .top nav{display:flex;gap:26px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
-.top nav a{text-decoration:none;opacity:.92}.top nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.top nav a{text-decoration:none;opacity:.95;text-shadow:0 1px 8px rgba(0,0,0,.35)}.top nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
 .top .btn{padding:12px 18px}
 /* hero */
 .hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:#3a2a16}
 .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,26,10,.38) 0%,rgba(40,26,10,.18) 40%,rgba(40,26,10,.58) 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,26,10,.52) 0%,rgba(40,26,10,.3) 40%,rgba(40,26,10,.62) 100%)}
 .hero .in{position:relative;z-index:2;padding:120px 20px 80px;max-width:820px}
 .hero .sun{width:clamp(120px,14vw,180px);margin:0 auto 18px;filter:brightness(0) invert(1) sepia(.5) saturate(3) hue-rotate(-10deg) brightness(1.15);animation:turn 140s linear infinite}
 @keyframes turn{to{transform:rotate(360deg)}}
-.hero .wm{font-family:"Gilda Display",serif;font-size:clamp(22px,2.6vw,34px);letter-spacing:.22em;text-transform:uppercase;line-height:1.1}
+.hero .wm{font-family:"Gilda Display",serif;font-size:clamp(22px,2.6vw,34px);letter-spacing:.22em;text-transform:uppercase;line-height:1.1;text-shadow:0 1px 14px rgba(0,0,0,.3)}
 .hero .wm small{display:block;font-family:"Hanken Grotesk",sans-serif;font-size:12px;letter-spacing:.5em;color:#fff;opacity:.9;margin-top:8px;text-shadow:0 1px 10px rgba(0,0,0,.35)}
 .hero h1{font-size:clamp(34px,5vw,66px);margin:38px auto 0;max-width:16ch;text-shadow:0 2px 24px rgba(0,0,0,.25)}
 .hero p{max-width:50ch;margin:20px auto 0;font-size:clamp(16px,1.4vw,19px);color:#fbf3e6}
 .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
 .hero .down{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#fff;text-decoration:none;opacity:.8}
 /* facts arc */
-.facts{background:var(--cream-2);border-bottom:1px solid var(--rule)}
+.facts{background:var(--cream-2);border-bottom:1px solid var(--rule);scroll-margin-top:0}
 .facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
 .facts div{padding:22px 18px;text-align:center;border-right:1px solid var(--rule);font-size:15px}
 .facts div:last-child{border-right:0}
@@ -75,6 +75,9 @@ h2.t{font-size:clamp(32px,3.6vw,48px);max-width:18ch;margin:0 auto}
 .intro .two p{margin:0 0 14px}
 /* services: round photos that open */
 .svc{background:var(--cream-2)}
+.svc .tap{display:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin:14px 0 0}
+@media (min-width:981px){.svc summary{pointer-events:none}}
+@media (max-width:980px){.svc .tap{display:block}}
 .svc .row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px}
 .svc details{text-align:center}
 .svc summary{list-style:none;cursor:pointer;outline:none}
@@ -122,9 +125,10 @@ h2.t{font-size:clamp(32px,3.6vw,48px);max-width:18ch;margin:0 auto}
 .own a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);margin-right:14px;white-space:nowrap}
 .own a:hover{border-color:#fff}
 /* gold band */
-.gold{background:var(--gold);color:#fff;padding:44px 0}
+.gold{background:var(--gold-deep);color:#fff;padding:44px 0}
 .gold .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.gold h2{font-size:clamp(22px,2.4vw,32px)}
+.gold h2{font-size:clamp(22px,2.4vw,32px);max-width:28ch;flex:1 1 420px}
+.gold .btn{flex:0 0 auto}
 .gold .btn{background:#fff;color:var(--gold-deep)}.gold .btn:hover{background:var(--cream)}
 /* blog over photo */
 .blog{position:relative;color:#fff;overflow:hidden;background:#2a2114}
@@ -302,9 +306,9 @@ home = f"""
   <p>Couples therapy with a licensed psychologist. In person in Brownsburg, Indiana, and by video in 40+ states.</p>
   <div class="cta"><a class="btn" href="{SITE}/contact-us/">Free 15 minute consult</a><a class="btn ghost" href="#states">Is my state covered?</a></div>
  </div>
- <a class="down" href="#start">Scroll</a>
+ <a class="down" href="#facts">Scroll</a>
 </header>
-<div class="facts"><div class="wrap">
+<div class="facts" id="facts"><div class="wrap">
  <div><b>In person</b>Elevate Offices, Brownsburg</div>
  <div><b>Online</b>40+ states under PSYPACT</div>
  <div><b>Sessions</b>$350 for 55 min, $525 for 90</div>
@@ -322,25 +326,26 @@ home = f"""
 </div></section>
 
 <section class="svc" id="couples"><div class="wrap center">
- <img class="div" src="{IMG}mark.png" alt=""><p class="k">Specialties</p><h2 class="t">Tap one to see how the work goes.</h2>
+ <img class="div" src="{IMG}mark.png" alt=""><p class="k">Specialties</p><h2 class="t">How the work goes.</h2><p class="tap">Tap one to open it.</p>
  <div class="row">
   <details open><summary><img src="{IMG}svc-couples.jpg" alt=""><h3>Couples therapy</h3><small>The specialty</small></summary><div class="body">Weekly or every other week, 55 or 90 minutes. Premarital, affair recovery, discernment counseling for couples where one person is leaning out, and half or full day intensives for couples who travel in.<br><a href="{SITE}/couples-therapy/">Couples therapy</a></div></details>
-  <details><summary><img src="{IMG}svc-individual.jpg" alt=""><h3>Individual therapy</h3><small>Adults</small></summary><div class="body">Often one partner from couples work, or someone whose relationship is the thing they want to understand. Anxiety, loss, life transitions, and the patterns you keep repeating.<br><a href="{SITE}/individual-therapy/">Individual therapy</a></div></details>
-  <details><summary><img src="{IMG}svc-family.jpg" alt=""><h3>Family therapy</h3><small>Parents and adult children</small></summary><div class="body">For families where the same argument has been running for years. Structured, direct, and focused on the two or three changes that would matter most.<br><a href="{SITE}/family-therapy/">Family therapy</a></div></details>
+  <details open><summary><img src="{IMG}svc-individual.jpg" alt=""><h3>Individual therapy</h3><small>Adults</small></summary><div class="body">Often one partner from couples work, or someone whose relationship is the thing they want to understand. Anxiety, loss, life transitions, and the patterns you keep repeating.<br><a href="{SITE}/individual-therapy/">Individual therapy</a></div></details>
+  <details open><summary><img src="{IMG}svc-family.jpg" alt=""><h3>Family therapy</h3><small>Parents and adult children</small></summary><div class="body">For families where the same argument has been running for years. Structured, direct, and focused on the two or three changes that would matter most.<br><a href="{SITE}/family-therapy/">Family therapy</a></div></details>
  </div>
  <div class="methods">
   <div><h3>Emotionally Focused Therapy</h3><p>For couples whose fights are really about whether the other person will be there.</p></div>
   <div><h3>The Gottman Method</h3><p>For couples who need to learn to argue without damage.</p></div>
   <div><h3>IBCT</h3><p>For couples who've spent a decade trying to change each other and are ready to try acceptance.</p></div>
  </div>
-</div></section>
+</div><script>if(matchMedia("(max-width:980px)").matches){{document.querySelectorAll(".svc details").forEach((d,i)=>{{if(i)d.removeAttribute("open")}})}}</script>
+</section>
 
 {map_section()}
 
 <section class="gold"><div class="wrap"><h2>Ready to get started? Schedule a free 15 minute consult or your first session.</h2><a class="btn" href="{SITE}/contact-us/">Let's connect</a></div></section>
 
 <section class="blog"><img class="bg" src="{IMG}lily.jpg" alt=""><div class="wrap">
- <p class="k">From the blog</p><h2 class="t" style="color:#fff">Writing on couples, anxiety and the work.</h2>
+ <p class="k center">From the blog</p><h2 class="t" style="color:#fff">Writing on couples, anxiety and the work.</h2>
  <div class="cards">
   <a class="card" href="{SITE}/blogs/"><small>Couples</small><h3>Why most couples wait six years too long to call</h3><p>The average couple is unhappy for six years before the first appointment. What that costs, and why the first call is easier than it looks.</p></a>
   <a class="card" href="{SITE}/overcoming-depression-empowering-strategies-for-renewed-hope/"><small>Mood</small><h3>Overcoming depression: strategies for renewed hope</h3><p>What tends to help, what tends not to, and when it's time to bring a partner into the room.</p></a>
