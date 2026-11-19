@@ -34,23 +34,30 @@ h1,h2,h3,.disp{font-family:"Libre Caslon Display",serif;font-weight:400;letter-s
 .brand img{width:40px}
 .brand span{font-family:"Libre Caslon Display",serif;font-size:20px;letter-spacing:.01em}
 .top nav{display:flex;gap:30px;font-size:14px;font-weight:500}
+.top .menu{all:unset;display:none;cursor:pointer;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;padding:8px 0;border-bottom:1.5px solid var(--ink)}
+.brand span{white-space:nowrap}
 .top nav a{text-decoration:none;padding-bottom:3px;border-bottom:1.5px solid transparent}
 .top nav a:hover,.top nav a.on{border-color:var(--gold)}
 .top .call{font-size:14px;font-weight:600;text-decoration:none}
 
 /* hero */
 .hero{position:relative;background:var(--peach)}
-.hero .wrap{display:grid;grid-template-columns:7fr 5fr;gap:0;min-height:640px}
-.hero .txt{padding:84px 48px 72px 0;align-self:center}
+.hero .wrap{display:grid;grid-template-columns:6fr 6fr;gap:0;min-height:700px}
+.hero .txt{padding:84px 56px 64px 0;align-self:center}
+.hero .facts{display:flex;gap:0;margin:44px 0 0;padding-top:22px;border-top:1px solid rgba(29,29,27,.25);font-size:13.5px;color:#3d3833}
+.hero .facts span{padding-right:22px;margin-right:22px;border-right:1px solid rgba(29,29,27,.25)}
+.hero .facts span:last-child{border:0;margin:0;padding:0}
+.hero .facts b{display:block;font-family:"Libre Caslon Display",serif;font-size:19px;color:var(--ink);margin-bottom:2px}
 .hero h1{font-size:clamp(40px,5.6vw,78px);max-width:11ch}
 .hero .lede{font-size:19px;max-width:44ch;margin:28px 0 0;color:#3d3833}
 .hero .lede b{font-weight:600;color:var(--ink)}
 .hero .acts{display:flex;gap:26px;align-items:center;margin-top:36px;flex-wrap:wrap}
-.hero .pic{position:relative}
+.hero .pic{position:relative;margin-right:calc(-1 * max(28px, (100vw - var(--w)) / 2 + 28px))}
 .hero .pic img.bg{width:100%;height:100%;object-fit:cover;object-position:60% 50%;position:absolute;inset:0}
-.hero .pic:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--peach) 0,transparent 18%);z-index:1;pointer-events:none}
-.hero .tag{position:absolute;left:-1px;bottom:36px;background:var(--oyster);padding:14px 18px;font-size:12.5px;letter-spacing:.06em;z-index:2;max-width:260px;line-height:1.45}
-.hero .tag b{display:block;font-family:"Libre Caslon Display",serif;font-size:18px;letter-spacing:0;margin-bottom:4px}
+.hero .pic:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--peach) 0,transparent 14%);z-index:1;pointer-events:none}
+.hero .pic:after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--gold);z-index:2}
+.hero .tag{position:absolute;left:0;bottom:48px;background:var(--marsh);color:#efe8dc;padding:16px 20px;font-size:12.5px;letter-spacing:.06em;z-index:2;max-width:280px;line-height:1.45}
+.hero .tag b{display:block;font-family:"Libre Caslon Display",serif;font-size:18px;letter-spacing:0;margin-bottom:4px;color:#fff}
 .hero .lotus{position:absolute;right:28px;top:28px;width:64px;height:auto;opacity:.85;z-index:2;filter:invert(1)}
 
 /* who */
@@ -161,7 +168,8 @@ footer ul{list-style:none;margin:0;padding:0}footer li{margin:7px 0}footer a{tex
 footer .base{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:16px;font-size:12.5px;flex-wrap:wrap}
 
 @media (max-width:1040px){
- .hero .wrap{grid-template-columns:1fr;min-height:0}.hero .txt{padding:64px 0 48px}.hero .pic{height:420px}.hero .pic:before{background:linear-gradient(180deg,var(--peach) 0,transparent 14%)}
+ .top nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--oyster);border-bottom:1px solid var(--rule);flex-direction:column;gap:0;padding:8px 28px 16px;z-index:20}.top nav.open{display:flex}.top nav a{padding:12px 0;border-bottom:1px solid var(--rule)}.top{position:relative}.top .menu{display:inline-block}
+ .hero .wrap{grid-template-columns:1fr;min-height:0}.hero .txt{padding:64px 0 48px}.hero .pic{height:460px;margin-right:-28px;margin-left:-28px}.hero .pic:before{background:linear-gradient(180deg,var(--peach) 0,transparent 14%)}.hero .facts{flex-wrap:wrap;gap:12px 0}
  .who .wrap,.relate .wrap,.appr .head,.cta .wrap{grid-template-columns:1fr;gap:36px}
  .sam .wrap{grid-template-columns:1fr}.sam .pic{margin:0;max-width:520px}.sam .txt{padding:48px 0 72px}
  .tabs{grid-template-columns:1fr}.tabs .list{display:grid;grid-template-columns:repeat(4,1fr);border-right:0;border-bottom:1px solid var(--rule)}.tabs button{border-bottom:0;border-right:1px solid var(--rule);white-space:nowrap;padding:16px 18px;font-size:17px;gap:10px}.tabs button:last-child{border-right:0}.tabs .pane.on{grid-template-columns:1fr;gap:24px;padding:30px 26px}
@@ -170,7 +178,7 @@ footer .base{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);margin-
  footer .wrap{grid-template-columns:1fr 1fr}footer .wrap>div:first-child{grid-column:1/-1}
 }
 @media (max-width:640px){
- .wrap{padding:0 20px}.tick .wrap{flex-direction:column;gap:4px;font-size:11px}.tick .wrap span:last-child{display:none}.top nav{display:none}.brand span{font-size:17px;white-space:nowrap}.brand img{width:32px}.top .call span{display:none}.top .call{font-size:13.5px;white-space:nowrap}
+ .wrap{padding:0 20px}.tick .wrap{flex-direction:column;gap:4px;font-size:11px}.tick .wrap span:last-child{display:none}.top nav{padding:8px 20px 16px}.hero .pic{margin-left:-20px;margin-right:-20px;height:380px}.hero .facts span{border:0;margin:0 0 0 0;padding:0 18px 0 0}.brand span{font-size:17px;white-space:nowrap}.brand img{width:32px}.top .call span{display:none}.top .call{font-size:13.5px;white-space:nowrap}
  .hero h1{font-size:clamp(38px,11vw,48px)}.hero .lede{font-size:17px}.hero .pic{height:340px}.hero .tag{max-width:220px;bottom:20px}
  .row{grid-template-columns:36px 1fr;gap:14px}.row .go{grid-column:2}
  .relate .wrap{gap:30px}.qs label{font-size:16px}
@@ -186,7 +194,8 @@ footer .base{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);margin-
 <div class="tick"><div class="wrap"><span><b>Now accepting Cigna, Aetna, UHC and BCBS of NC.</b> Self-pay $150.</span><span>Virtual sessions across South Carolina and North Carolina</span></div></div>
 <div class="top"><div class="wrap">
  <a class="brand" href="#"><img src="img/lotus.png" alt=""><span>Resilient Spirit Counseling</span></a>
- <nav><a href="#" class="on">Home</a><a href="#who">Who we see</a><a href="#approach">Approach</a><a href="#samantha">About</a><a href="#fees">Fees and insurance</a><a href="#contact">Contact</a></nav>
+ <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+ <nav id="nav"><a href="#" class="on">Home</a><a href="#who">Who we see</a><a href="#approach">Approach</a><a href="#samantha">About</a><a href="#fees">Fees and insurance</a><a href="#contact">Contact</a></nav>
  <a class="call" href="tel:+18432126965"><span>Call or text </span>(843) 212-6965</a>
 </div></div>
 
@@ -197,6 +206,7 @@ footer .base{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);margin-
    <h1>You look like you have it all together.</h1>
    <p class="lede">Underneath, you are exhausted from trying to meet impossible standards. Therapy for <b>teens, adults and athletes</b> who are successful on the outside and worn down on the inside. Online, anywhere in <b>South Carolina or North Carolina</b>.</p>
    <div class="acts"><a class="btn" href="#contact">Book a free 15 minute consult</a><a class="ul" href="#relate">Does this sound like you?</a></div>
+   <div class="facts"><span><b>SC + NC</b>Licensed in both</span><span><b>Kids, teens, adults</b>And competitive athletes</span><span><b>Video only</b>From wherever you are</span></div>
   </div>
   <div class="pic">
    <img class="bg" src="img/marsh-sunset.jpg" alt="Salt marsh at sunset near Charleston, South Carolina">
@@ -321,6 +331,7 @@ footer .base{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);margin-
  var msg={0:['Check any that fit.','There is no score. One is enough of a reason to reach out.'],1:['One is enough.','You do not have to be in crisis to deserve help. A free consult is fifteen minutes.'],2:['This is the kind of thing we treat every week.','Two or more of these usually means the pattern is costing you more than it looks like from the outside.'],5:['You have been carrying a lot.','Most people who check this many have been holding it together for years. You can set some of it down.']};
  function upd(){var n=0;qs.forEach(function(c){if(c.checked)n++});var m=n>=5?msg[5]:n>=2?msg[2]:n===1?msg[1]:msg[0];t.innerHTML='<b>'+m[0]+'</b>'+m[1]+(n?' <a href="#contact">Request a consult.</a>':'')}
  qs.forEach(function(c){c.addEventListener('change',upd)});
+ var mb=document.querySelector('.top .menu'),nv=document.getElementById('nav');if(mb){mb.addEventListener('click',function(){var o=nv.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'});nv.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nv.classList.remove('open');mb.textContent='Menu'})})}
  var tabs=document.querySelectorAll('#tabs [role=tab]');
  tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected','false')});b.setAttribute('aria-selected','true');document.querySelectorAll('#tabs .pane').forEach(function(p){p.classList.remove('on')});document.getElementById('p-'+b.dataset.p).classList.add('on')})});
 })();
