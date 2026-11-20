@@ -3,8 +3,8 @@ const PREVIEW = true;
 const ROOT = document.body.dataset.root || "";
 
 /* ---- Kit (email list): fill these in once the Kit form exists ---- */
-const KIT_FORM_ID = "KIT_FORM_ID";            // e.g. "1234567"
-const KIT_TAGS = { "networking": "", "workshops-ce": "", "directory": "" };
+const KIT_FORM_ID = "10218157";
+const KIT_TAGS = { "networking": "26223546", "workshops-ce": "26223547", "directory": "26223548" };
 
 /* ---- Where things load from ----
    Preview: events come from a snapshot of the Luma calendar taken when the
@@ -89,7 +89,11 @@ $$(".kit-form").forEach(f => f.addEventListener("submit", async e => {
   try {
     const r = await fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`, { method: "POST", body: data, headers: { Accept: "application/json" } });
     if (!r.ok) throw new Error(r.status);
+    const j = await r.json().catch(() => ({}));
     thank(f);
+    // Kit sometimes asks a new subscriber to prove they're a person before it
+    // sends the confirmation email. Its own forms do the same redirect.
+    if (j && j.status === "quarantined" && j.url) setTimeout(() => location.assign(j.url), 900);
   } catch (err) {
     const m = $(".form-err", f); if (m) m.style.display = "block"; else toast("Something went wrong. Please try again.");
   } finally { btn.disabled = false; }
