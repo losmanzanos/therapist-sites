@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Lovett Counseling">
+  <rect width="64" height="64" fill="#F8F3E8"/>
+  <g transform="translate(9.6,4) scale(0.8)">
+    <path d="M28 5 C13 5 6 17 6 32 L6 65 L50 65 L50 32 C50 17 43 5 28 5 Z" fill="#3E4A35"/>
+    <circle cx="37" cy="23" r="5" fill="#D9A892"/>
+  </g>
+</svg>
