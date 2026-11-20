@@ -100,7 +100,6 @@ nav .btn{padding:11px 20px}
   .hero-bg{height:var(--ph);bottom:auto}
   .hero[data-photo] .hero-bg{object-position:50% 70%}
   .hero[data-photo="3"] .hero-bg{object-position:50% 100%}
-.hero[data-photo="4"] .hero-bg{object-position:50% 45%}
   .hero::after{background:linear-gradient(180deg,rgba(7,44,46,.05) 0,rgba(7,44,46,.10) calc(var(--ph) - 210px),rgba(14,79,82,.86) calc(var(--ph) - 70px),var(--pine) var(--ph))}
   .hero-in{padding-top:calc(var(--ph) - 108px);padding-bottom:44px}
 }
