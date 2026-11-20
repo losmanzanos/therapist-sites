@@ -119,9 +119,9 @@ if (topic && tSel) { const o = [...tSel.options].find(o => o.value.toLowerCase()
 (function () {
   const pick = $(".photo-pick"), h = $(".hero"); if (!pick || !h) return;
   const i = $(".hero-bg", h), b = $$("button", pick);
-  const alt = { 1: "Montclair Therapy Collective members together at a networking night", 2: "Clinicians talking at an MTC rooftop networking night", 3: "MTC members gathered in an office after a workshop" };
-  function set(n) { if (!alt[n]) n = 1; h.dataset.photo = n; i.src = ROOT + "assets/img/hero-" + n + ".jpg"; i.alt = alt[n]; b.forEach(x => x.setAttribute("aria-pressed", x.dataset.p == n)); try { sessionStorage.setItem("mtcPhoto", n); } catch (e) {} }
+  const alt = { 1: "Montclair Therapy Collective members together at a networking night", 2: "Clinicians talking at an MTC rooftop networking night", 3: "MTC members gathered in an office after a workshop", 4: "MTC members together at a networking night in Montclair" };
+  function set(n) { if (!alt[n]) n = 3; h.dataset.photo = n; i.src = ROOT + "assets/img/hero-" + n + ".jpg"; i.alt = alt[n]; b.forEach(x => x.setAttribute("aria-pressed", x.dataset.p == n)); try { sessionStorage.setItem("mtcPhoto", n); } catch (e) {} }
   b.forEach(x => x.addEventListener("click", () => set(x.dataset.p)));
-  let saved = 1; try { saved = sessionStorage.getItem("mtcPhoto") || 1; } catch (e) {}
+  let saved = 3; try { saved = sessionStorage.getItem("mtcPhoto") || 3; } catch (e) {}
   set(new URLSearchParams(location.search).get("photo") || saved);
 })();

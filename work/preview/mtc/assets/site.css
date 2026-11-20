@@ -84,6 +84,7 @@ nav .btn{padding:11px 20px}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 94%;z-index:-2}
 .hero[data-photo="2"] .hero-bg{object-position:50% 94%}
 .hero[data-photo="3"] .hero-bg{object-position:50% 100%}
+.hero[data-photo="4"] .hero-bg{object-position:50% 45%}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,44,46,.10) 0%,rgba(7,44,46,.16) 34%,rgba(7,44,46,.72) 62%,rgba(7,44,46,.93) 100%)}
 .hero-in{padding-top:260px;padding-bottom:60px}
 .hero h1{color:#fff;font-size:clamp(34px,4.5vw,62px);line-height:1.06;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(7,44,46,.45)}
@@ -99,6 +100,7 @@ nav .btn{padding:11px 20px}
   .hero-bg{height:var(--ph);bottom:auto}
   .hero[data-photo] .hero-bg{object-position:50% 70%}
   .hero[data-photo="3"] .hero-bg{object-position:50% 100%}
+.hero[data-photo="4"] .hero-bg{object-position:50% 45%}
   .hero::after{background:linear-gradient(180deg,rgba(7,44,46,.05) 0,rgba(7,44,46,.10) calc(var(--ph) - 210px),rgba(14,79,82,.86) calc(var(--ph) - 70px),var(--pine) var(--ph))}
   .hero-in{padding-top:calc(var(--ph) - 108px);padding-bottom:44px}
 }
