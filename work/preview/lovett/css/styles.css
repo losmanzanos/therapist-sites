@@ -2515,3 +2515,14 @@ body:has(.mobile-menu.open) .hamburger span {
 .ruled-list { list-style: none; padding: 0; margin: 1.25rem 0 1.5rem; }
 .ruled-list li { padding: 0.65rem 0; border-bottom: 1px solid var(--border-soft); font-size: 1rem; line-height: 1.6; color: var(--text-medium); }
 .ruled-list li:last-child { border-bottom: none; }
+
+/* Hero copy width on desktop: let the headline and lead run wider so they
+   don't sit in a narrow column on large screens. */
+@media (min-width: 1024px) {
+  .hero-content { max-width: 900px; }
+  .hero p { max-width: 680px; font-size: 1.1rem; line-height: 1.7; }
+}
+@media (min-width: 1440px) {
+  .hero-content { max-width: 1000px; }
+  .hero p { max-width: 740px; font-size: 1.15rem; }
+}
