@@ -6,6 +6,18 @@ body{margin:0;background:#f6f0ea}
 #rtc .rt-hero h1{text-transform:uppercase}
 #rtc p,#rtc li,#rtc dd,#rtc dt{color:inherit}
 #rtc a{border:0}
+#rtc .mnav{display:none;position:relative;margin-left:auto}
+#rtc .mnav summary{list-style:none;cursor:pointer;font-family:"Marcellus",serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;border:1px solid currentColor;padding:12px 16px}
+#rtc .mnav summary::-webkit-details-marker{display:none}
+#rtc .mnav[open] summary{background:var(--cream);color:var(--plum)}
+#rtc .mnav-panel{position:absolute;right:0;top:calc(100% + 8px);background:var(--cream);color:var(--plum);min-width:250px;padding:6px 0;box-shadow:0 12px 30px rgba(42,16,35,.3);z-index:30;max-height:75vh;overflow:auto}
+#rtc .mnav-panel a{display:block;padding:11px 20px;text-decoration:none;font-size:16px;border-bottom:1px solid rgba(60,24,50,.12)}
+#rtc .mnav-panel a:last-child{border-bottom:0}
+#rtc .rt-top .rt-wrap{padding:18px clamp(18px,4vw,56px)!important}
+@media (max-width:980px){#rtc .mnav{display:block}}
+@media (max-width:640px){#rtc .rt-top .rt-pill{display:none}#rtc .rt-logo span{font-size:12px}#rtc .rt-logo img{width:48px;height:48px}}
+#rtc .legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;margin-top:28px;padding-top:18px;border-top:1px solid rgba(60,24,50,.15);font-size:13px}
+#rtc .legal a{margin-right:18px;text-decoration:underline;text-underline-offset:3px}
 #rtc{--plum:#3c1832;--plum-deep:#2a1023;--cream:#f6f0ea;--cream-2:#efe6dc;--sage:#6f7d6d;--sage-deep:#55634f;--clay:#7a6255;--rose:#c66d7a;--teal:#2f8c8a}
 #rtc *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -124,12 +136,13 @@ html{scroll-behavior:smooth}
 #rtc .rt-band .rt-wrap{grid-template-columns:1fr 1fr}
 #rtc .rt-band .rt-wrap>div:nth-child(2){border-right:0}
 #rtc .rt-band .rt-wrap>div:nth-child(3){padding-left:0}
-#rtc .rt-top nav{display:none}}</style><div id="rtc">
+#rtc .rt-top nav{display:none}}</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalBusiness", "name": "Rebuilding Together Counseling", "url": "https://rebuildingtogethercounseling.com/", "telephone": "+1-303-351-1307", "email": "amy@rebuildingtogethercounseling.com", "areaServed": ["Denver CO", "Golden CO", "Boulder CO", "Colorado Springs CO", "Colorado"], "founder": {"@type": "Person", "name": "Amy Moreno", "jobTitle": "Licensed Professional Counselor"}}</script><div id="rtc">
 <header class="rt-hero">
  <img class="rt-bg" src="https://images.squarespace-cdn.com/content/v1/64c7ea91c7c5e43cd2ef5be9/93faf83e-a3d8-4059-ae96-df3464194ae3/IMG_2483.jpg?format=2500w" alt="">
  <div class="rt-top"><div class="rt-wrap">
-  <a class="rt-logo" href="https://rebuildingtogethercounseling.com/"><img src="https://images.squarespace-cdn.com/content/v1/64c7ea91c7c5e43cd2ef5be9/e0167751-2267-4227-90f6-50921a6fbf77/Rebuilding_together_counseling_logo_black.png?format=300w" alt=""><span>Rebuilding<br>Together<br>Counseling</span></a>
-  <nav><a href="#team">Therapists</a><a href="#what">What we work with</a><a href="#where">Locations</a><a href="https://rebuildingtogethercounseling.com/faq">Fees &amp; insurance</a><a href="https://rebuildingtogethercounseling.com/traumainformed-therapy-blog">Blog</a></nav>
+  <a class="rt-logo" href="/"><img src="https://images.squarespace-cdn.com/content/v1/64c7ea91c7c5e43cd2ef5be9/e0167751-2267-4227-90f6-50921a6fbf77/Rebuilding_together_counseling_logo_black.png?format=300w" alt="Rebuilding Together Counseling"><span>Rebuilding<br>Together<br>Counseling</span></a>
+  <nav><a href="/#team">Therapists</a><a href="/#what">What we work with</a><a href="/#where">Locations</a><a href="/insurance-fees">Fees &amp; insurance</a><a href="https://rebuildingtogethercounseling.com/traumainformed-therapy-blog">Blog</a></nav>
+  <details class="mnav"><summary>Menu</summary><div class="mnav-panel"><a href="/">Home</a><a href="/#team">Therapists</a><a href="/adhd-therapy">ADHD</a><a href="/emdr-therapy">EMDR</a><a href="/ifs-brainspotting">IFS and Brainspotting</a><a href="/affirming-therapy">Affirming care</a><a href="/perinatal-therapy">Perinatal and postpartum</a><a href="/kids-teens-families">Kids, teens and families</a><a href="https://rebuildingtogethercounseling.com/couples-counseling">Couples</a><a href="/insurance-fees">Fees and insurance</a><a href="https://rebuildingtogethercounseling.com/traumainformed-therapy-blog">Blog</a><a href="https://rebuildingtogethercounseling.com/consultation">Free consult</a></div></details>
   <a class="rt-pill" href="https://rebuildingtogethercounseling.com/consultation">Free 15 min consult</a>
  </div></div>
  <div class="rt-wrap">
@@ -159,7 +172,7 @@ html{scroll-behavior:smooth}
 
 <section class="rt-what" id="what"><div class="rt-wrap">
  <div><h2>What we work with</h2><p class="rt-lead">Whatever brought you here, someone on this team works with it every week.</p></div>
- <ol><li><a href="https://rebuildingtogethercounseling.com/traumainformed-therapy-blog/adhd-in-women-why-its-often-missed-or-misdiagnosed">ADHD therapy for adults</a><p>Late diagnosis, women and AFAB adults, rejection sensitivity, masking, and the way hormones change everything.</p></li><li><a href="https://rebuildingtogethercounseling.com/trauma-approaches">EMDR</a><p>Certified and trained EMDR clinicians, in person or by video. A structured way to help your brain finish processing what got stuck.</p></li><li><a href="https://rebuildingtogethercounseling.com/trauma-approaches">IFS and Brainspotting</a><p>For people who want to go underneath the story. Parts work and brain-body approaches for complex trauma.</p></li><li><a href="https://rebuildingtogethercounseling.com/individual-counseling">Neurodivergent and LGBTQIA+ affirming care</a><p>Queer, trans, nonbinary, autistic, ADHD, highly sensitive. You don't have to explain or translate yourself here.</p></li><li><a href="https://rebuildingtogethercounseling.com/camryn-joseph">Perinatal and postpartum</a><p>Pre-conception, pregnancy, loss, and the first year with a new baby.</p></li><li><a href="https://rebuildingtogethercounseling.com/emma-lewallen">Kids, teens and families</a><p>Kids 7 and up, teens, parents and whole families working through ADHD, autism and big transitions.</p></li><li><a href="https://rebuildingtogethercounseling.com/couples-counseling">Couples counseling</a><p>Communication, betrayal, disconnection and repair, for partners of every configuration, ENM included.</p></li><li><a href="https://rebuildingtogethercounseling.com/individual-counseling">Individual therapy</a><p>Anxiety, depression, grief, burnout, identity and life transitions.</p></li></ol>
+ <ol><li><a href="/adhd-therapy">ADHD therapy for adults</a><p>Late diagnosis, women and AFAB adults, rejection sensitivity, masking, and the way hormones change everything.</p></li><li><a href="/emdr-therapy">EMDR</a><p>Certified and trained EMDR clinicians, in person or by video. A structured way to help your brain finish processing what got stuck.</p></li><li><a href="/ifs-brainspotting">IFS and Brainspotting</a><p>For people who want to go underneath the story. Parts work and brain-body approaches for complex trauma.</p></li><li><a href="/affirming-therapy">Neurodivergent and LGBTQIA+ affirming care</a><p>Queer, trans, nonbinary, autistic, ADHD, highly sensitive. You don't have to explain or translate yourself here.</p></li><li><a href="/perinatal-therapy">Perinatal and postpartum</a><p>Pre-conception, pregnancy, loss, and the first year with a new baby.</p></li><li><a href="/kids-teens-families">Kids, teens and families</a><p>Kids 7 and up, teens, parents and whole families working through ADHD, autism and big transitions.</p></li><li><a href="https://rebuildingtogethercounseling.com/couples-counseling">Couples counseling</a><p>Communication, betrayal, disconnection and repair, for partners of every configuration, ENM included.</p></li><li><a href="https://rebuildingtogethercounseling.com/individual-counseling">Individual therapy</a><p>Anxiety, depression, grief, burnout, identity and life transitions.</p></li></ol>
 </div></section>
 
 <section class="rt-quote">
@@ -182,7 +195,7 @@ html{scroll-behavior:smooth}
    <dt>Colorado Springs</dt><dd>Tiffany</dd>
    <dt>Telehealth</dt><dd>The whole team, anywhere in Colorado</dd>
    <dt>Phone</dt><dd>303-351-1307, texting preferred</dd>
-   <dt>Insurance</dt><dd>In network with Kaiser, UHC, UMR, Cigna, Aetna, Curative, Oxford and Oscar. Private pay is also an option.</dd>
+   <dt>Insurance</dt><dd>In network with Kaiser, UHC, UMR, Cigna, Aetna, Curative, Oxford and Oscar. Private pay is also an option. <a href="/insurance-fees" style="text-decoration:underline">Fees and insurance</a></dd>
   </dl>
  </div>
 </div></section>
@@ -205,8 +218,10 @@ html{scroll-behavior:smooth}
 <div class="rt-strip"></div>
 <footer><div class="rt-wrap">
  <div><b>Rebuilding Together Counseling PLLC</b>Proudly a woman-owned business. A trauma-informed and culturally sensitive practice.<br>Colorado · 303-351-1307</div>
- <div><b>Therapy</b><ul><li><a href="https://rebuildingtogethercounseling.com/individual-counseling">Individual</a></li><li><a href="https://rebuildingtogethercounseling.com/couples-counseling">Couples</a></li><li><a href="https://rebuildingtogethercounseling.com/trauma-approaches">EMDR, IFS and Brainspotting</a></li><li><a href="https://rebuildingtogethercounseling.com/services">All services</a></li></ul></div>
- <div><b>Practice</b><ul><li><a href="#team">Therapists</a></li><li><a href="https://rebuildingtogethercounseling.com/faq">Fees and insurance</a></li><li><a href="https://rebuildingtogethercounseling.com/traumainformed-therapy-blog">Blog</a></li><li><a href="https://rebuildingtogethercounseling.com/contact">Contact</a></li></ul></div>
+ <div><b>Therapy</b><ul><li><a href="/adhd-therapy">ADHD</a></li><li><a href="/emdr-therapy">EMDR</a></li><li><a href="/ifs-brainspotting">IFS and Brainspotting</a></li><li><a href="/affirming-therapy">Affirming care</a></li><li><a href="/perinatal-therapy">Perinatal</a></li><li><a href="/kids-teens-families">Kids, teens, families</a></li><li><a href="https://rebuildingtogethercounseling.com/couples-counseling">Couples</a></li></ul></div>
+ <div><b>Practice</b><ul><li><a href="/#team">Therapists</a></li><li><a href="/insurance-fees">Fees and insurance</a></li><li><a href="https://rebuildingtogethercounseling.com/traumainformed-therapy-blog">Blog</a></li><li><a href="https://rebuildingtogethercounseling.com/contact">Contact</a></li></ul></div>
  <div><b>For clinicians</b><ul><li><a href="https://rebuildingtogethercounseling.com/contract-therapists">Join the team</a></li><li><a href="https://rebuildingtogethercounseling.com/practice-website-support">Practice and website support</a></li></ul></div>
-</div></footer>
+</div>
+<div class="rt-wrap legal"><span>&copy; 2026 Rebuilding Together Counseling PLLC</span><span><a href="/privacy-policy">Privacy policy</a><a href="/terms">Terms of use</a></span><span>In crisis? Call or text 988.</span></div>
+</footer>
 </div>
