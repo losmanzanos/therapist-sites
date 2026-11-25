@@ -682,3 +682,13 @@ html.rv .tide .under,html.rv .tide .rest>*{opacity:0;transform:translateY(34px);
 html.rv .tide.in .under,html.rv .tide.in .rest>*{opacity:1;transform:none}
 html.rv .tide.in .rest>*:nth-child(1){transition-delay:.18s}html.rv .tide.in .rest>*:nth-child(2){transition-delay:.3s}html.rv .tide.in .rest>*:nth-child(3){transition-delay:.42s}html.rv .tide.in .rest>*:nth-child(4){transition-delay:.54s}
 @media (prefers-reduced-motion:reduce){.tide .above img.bg{transform:none}html.rv .tide .under,html.rv .tide .rest>*{opacity:1;transform:none;transition:none}}
+
+/* About the mark (home) */
+.mark{padding:clamp(64px,8vw,112px) 0;background:var(--peach-2)}
+.mark .wrap{display:grid;grid-template-columns:4fr 7fr;gap:clamp(36px,6vw,96px);align-items:center}
+.mark .art{display:flex;justify-content:center;border-right:1px solid var(--rule);padding-right:clamp(24px,4vw,64px)}
+.mark .art svg{width:100%;max-width:280px;height:auto}
+.mark h2{font-size:clamp(34px,3.6vw,52px);margin:0 0 18px}
+.mark .lead{font-family:"Libre Caslon Text",serif;font-size:clamp(19px,1.6vw,22px);line-height:1.55;margin:0 0 16px;max-width:52ch}
+.mark p{max-width:60ch;margin:0 0 22px}
+@media (max-width:1040px){.mark .wrap{grid-template-columns:1fr}.mark .art{border-right:0;border-bottom:1px solid var(--rule);padding:0 0 28px}.mark .art svg{max-width:200px}}
