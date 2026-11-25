@@ -167,3 +167,28 @@
     paint();
   });
 })();
+
+// Home hero: the photo drifts and dims as you scroll, and the "underneath" copy rises up past the waterline.
+(function () {
+  var hero = document.querySelector('.hero.tide'); if (!hero) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var above = hero.querySelector('.above');
+  if (!reduce) {
+    document.documentElement.classList.add('rv');
+    var tick = false;
+    var run = function () {
+      var y = Math.min(window.scrollY, above.offsetHeight);
+      above.style.setProperty('--par', (y * 0.32).toFixed(1) + 'px');
+      above.style.setProperty('--dim', (y / above.offsetHeight * 0.45).toFixed(3));
+      tick = false;
+    };
+    window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(run); } }, { passive: true });
+    run();
+    var show = function () { hero.classList.add('in'); };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { show(); io.disconnect(); } }); }, { threshold: 0.01, rootMargin: '0px 0px -12% 0px' });
+      io.observe(hero.querySelector('.below'));
+    } else { show(); }
+    setTimeout(function () { if (hero.querySelector('.below').getBoundingClientRect().top < window.innerHeight) show(); }, 400);
+  }
+})();

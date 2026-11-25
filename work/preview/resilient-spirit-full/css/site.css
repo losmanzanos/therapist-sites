@@ -673,3 +673,12 @@ footer .brand .mk{color:#fff;width:42px;height:46px}
 .form .csel .csel-b{width:100%;margin:0;background:var(--oyster);color:var(--ink);border:1px solid var(--grey-2);padding:13px 18px 13px 14px;font-family:"Albert Sans",sans-serif;font-size:16px;font-weight:400;letter-spacing:0;text-transform:none;line-height:1.5;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
 .form .csel .csel-b:hover{background:#fff;color:var(--ink)}
 .form .csel.open .csel-b{border-color:var(--mustard);background:#fff}
+
+.tide .reeds{height:clamp(36px,4vw,60px)!important}
+.tide .above .wrap{padding-bottom:110px}
+.tide .above img.bg{will-change:transform;transform:translate3d(0,var(--par,0px),0) scale(1.08)}
+.tide .above:after{content:"";position:absolute;inset:0;z-index:1;background:#12221e;opacity:var(--dim,0);pointer-events:none}
+html.rv .tide .under,html.rv .tide .rest>*{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+html.rv .tide.in .under,html.rv .tide.in .rest>*{opacity:1;transform:none}
+html.rv .tide.in .rest>*:nth-child(1){transition-delay:.18s}html.rv .tide.in .rest>*:nth-child(2){transition-delay:.3s}html.rv .tide.in .rest>*:nth-child(3){transition-delay:.42s}html.rv .tide.in .rest>*:nth-child(4){transition-delay:.54s}
+@media (prefers-reduced-motion:reduce){.tide .above img.bg{transform:none}html.rv .tide .under,html.rv .tide .rest>*{opacity:1;transform:none;transition:none}}
