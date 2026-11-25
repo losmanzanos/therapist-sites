@@ -118,3 +118,52 @@
     });
   });
 })();
+
+// Styled dropdowns: the native select stays in the form (hidden) so submission is unchanged.
+(function () {
+  var sels = document.querySelectorAll('.form select');
+  sels.forEach(function (sel, n) {
+    var wrap = document.createElement('div'); wrap.className = 'csel';
+    var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'csel-b';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    var lab = document.querySelector('label[for="' + sel.id + '"]');
+    if (lab) { btn.id = sel.id + '-btn'; lab.setAttribute('for', btn.id); }
+    var txt = document.createElement('span'); btn.appendChild(txt);
+    btn.insertAdjacentHTML('beforeend', '<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>');
+    var list = document.createElement('ul'); list.className = 'csel-l'; list.setAttribute('role', 'listbox'); list.id = sel.id + '-list'; list.hidden = true; list.tabIndex = -1;
+    btn.setAttribute('aria-controls', list.id);
+    [].forEach.call(sel.options, function (o, i) {
+      var li = document.createElement('li'); li.setAttribute('role', 'option'); li.id = sel.id + '-o' + i; li.textContent = o.text;
+      li.addEventListener('click', function () { pick(i); close(true); });
+      list.appendChild(li);
+    });
+    var act = sel.selectedIndex;
+    function paint() {
+      txt.textContent = sel.options[sel.selectedIndex].text;
+      [].forEach.call(list.children, function (li, i) {
+        li.setAttribute('aria-selected', i === sel.selectedIndex ? 'true' : 'false');
+        li.classList.toggle('act', i === act);
+      });
+      list.setAttribute('aria-activedescendant', sel.id + '-o' + act);
+    }
+    function pick(i) { sel.selectedIndex = i; act = i; sel.dispatchEvent(new Event('change', { bubbles: true })); paint(); }
+    function open() { list.hidden = false; wrap.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); act = sel.selectedIndex; paint(); list.focus(); }
+    function close(f) { list.hidden = true; wrap.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); if (f) btn.focus(); }
+    btn.addEventListener('click', function () { list.hidden ? open() : close(true); });
+    btn.addEventListener('keydown', function (e) { if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); open(); } });
+    list.addEventListener('keydown', function (e) {
+      var k = e.key, m = sel.options.length - 1;
+      if (k === 'ArrowDown') { act = Math.min(m, act + 1); paint(); e.preventDefault(); }
+      else if (k === 'ArrowUp') { act = Math.max(0, act - 1); paint(); e.preventDefault(); }
+      else if (k === 'Home') { act = 0; paint(); e.preventDefault(); }
+      else if (k === 'End') { act = m; paint(); e.preventDefault(); }
+      else if (k === 'Enter' || k === ' ') { pick(act); close(true); e.preventDefault(); }
+      else if (k === 'Escape') { close(true); e.preventDefault(); }
+      else if (k === 'Tab') { close(false); }
+    });
+    document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) close(false); });
+    sel.parentNode.insertBefore(wrap, sel); wrap.appendChild(btn); wrap.appendChild(list); wrap.appendChild(sel);
+    sel.tabIndex = -1; sel.setAttribute('aria-hidden', 'true'); sel.classList.add('csel-n');
+    paint();
+  });
+})();
