@@ -173,6 +173,7 @@
   var hero = document.querySelector('.hero.tide'); if (!hero) return;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var above = hero.querySelector('.above');
+  var below = hero.querySelector('.below'), deep = hero.querySelector('.deep');
   if (!reduce) {
     document.documentElement.classList.add('rv');
     var tick = false;
@@ -180,6 +181,14 @@
       var y = Math.min(window.scrollY, above.offsetHeight);
       above.style.setProperty('--par', (y * 0.32).toFixed(1) + 'px');
       above.style.setProperty('--dim', (y / above.offsetHeight * 0.45).toFixed(3));
+      // Below the waterline: the marsh floor comes into focus as you sink toward it.
+      if (deep) {
+        var r = below.getBoundingClientRect(), vh = window.innerHeight;
+        var p = Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height)));
+        deep.style.setProperty('--sink', (-p * r.height * 0.14).toFixed(1) + 'px');
+        deep.style.setProperty('--zoom', (1.12 - p * 0.12).toFixed(4));
+        deep.style.setProperty('--see', (0.3 + p * 0.75).toFixed(3));
+      }
       tick = false;
     };
     window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(run); } }, { passive: true });

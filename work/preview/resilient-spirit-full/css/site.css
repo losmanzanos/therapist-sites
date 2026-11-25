@@ -692,3 +692,27 @@ html.rv .tide.in .rest>*:nth-child(1){transition-delay:.18s}html.rv .tide.in .re
 .mark .lead{font-family:"Libre Caslon Text",serif;font-size:clamp(19px,1.6vw,22px);line-height:1.55;margin:0 0 16px;max-width:52ch}
 .mark p{max-width:60ch;margin:0 0 22px}
 @media (max-width:1040px){.mark .wrap{grid-template-columns:1fr}.mark .art{border-right:0;border-bottom:1px solid var(--rule);padding:0 0 28px}.mark .art svg{max-width:200px}}
+
+/* ---- Underwater, Nov 24: scrolling below the waterline into the marsh ---- */
+.tide .below{overflow:hidden;isolation:isolate;padding-bottom:clamp(150px,20vw,300px)}
+.tide .below>.wrap{position:relative;z-index:2}
+.tide .deep{position:absolute;inset:0;z-index:0;background:#22403a}
+.tide .deep picture,.tide .deep img{position:absolute;left:0;width:100%;top:-8%;height:124%}
+.tide .deep img{object-fit:cover;object-position:50% 0;opacity:var(--see,.85);transform:translate3d(0,var(--sink,0px),0) scale(var(--zoom,1));transform-origin:50% 0;will-change:transform,opacity}
+.tide .deep:before{content:"";position:absolute;inset:0;z-index:1;background:
+ linear-gradient(180deg,#22403a 0,rgba(34,64,58,.62) 3%,rgba(30,58,52,.5) 14%,rgba(26,52,46,.5) 34%,rgba(20,40,36,.35) 62%,rgba(16,32,28,.2) 82%,rgba(16,32,28,.55) 100%),
+ linear-gradient(90deg,rgba(16,32,28,.66) 0,rgba(16,32,28,.34) 44%,rgba(16,32,28,.06) 100%)}
+.tide .floor{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(28px,3.4vw,54px);z-index:2;display:block}
+.tide .rays{position:absolute;inset:-20% -30% 0;z-index:1;pointer-events:none;mix-blend-mode:screen;opacity:.5;
+ background:repeating-linear-gradient(103deg,rgba(242,227,192,0) 0,rgba(242,227,192,0) 70px,rgba(242,227,192,.07) 110px,rgba(242,227,192,0) 160px,rgba(242,227,192,0) 240px);
+ -webkit-mask:linear-gradient(180deg,#000 0,rgba(0,0,0,.6) 40%,transparent 85%);mask:linear-gradient(180deg,#000 0,rgba(0,0,0,.6) 40%,transparent 85%);
+ animation:rs-rays 18s ease-in-out infinite alternate}
+@keyframes rs-rays{from{transform:translate3d(-40px,0,0) skewX(-2deg)}to{transform:translate3d(60px,0,0) skewX(3deg)}}
+.tide .motes{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.55;
+ background-image:radial-gradient(1.6px 1.6px at 12% 30%,#f2e3c0 50%,transparent 51%),radial-gradient(1.2px 1.2px at 27% 72%,#fff 50%,transparent 51%),radial-gradient(2px 2px at 41% 48%,#f2e3c0 50%,transparent 51%),radial-gradient(1.2px 1.2px at 58% 22%,#fff 50%,transparent 51%),radial-gradient(1.6px 1.6px at 69% 64%,#f2e3c0 50%,transparent 51%),radial-gradient(1.2px 1.2px at 83% 38%,#fff 50%,transparent 51%),radial-gradient(1.8px 1.8px at 92% 80%,#f2e3c0 50%,transparent 51%),radial-gradient(1.2px 1.2px at 6% 86%,#fff 50%,transparent 51%);
+ background-size:100% 100%;animation:rs-motes 26s linear infinite}
+@keyframes rs-motes{from{transform:translate3d(0,0,0)}to{transform:translate3d(-18px,-60px,0)}}
+.tide .below .under,.tide .below .lede{text-shadow:0 1px 18px rgba(10,22,19,.55)}
+.tide .facts{border-top-color:rgba(242,227,192,.28)}
+@media (max-width:1040px){.tide .deep:before{background:linear-gradient(180deg,#22403a 0,rgba(34,64,58,.7) 4%,rgba(30,58,52,.66) 14%,rgba(20,40,36,.62) 40%,rgba(16,32,28,.4) 75%,rgba(16,32,28,.6) 100%)}}
+@media (prefers-reduced-motion:reduce){.tide .rays,.tide .motes{animation:none}.tide .deep img{transform:none;opacity:.85}}
