@@ -187,7 +187,7 @@
         var p = Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height)));
         deep.style.setProperty('--sink', (-p * r.height * 0.14).toFixed(1) + 'px');
         deep.style.setProperty('--zoom', (1.12 - p * 0.12).toFixed(4));
-        deep.style.setProperty('--see', (0.3 + p * 0.75).toFixed(3));
+        deep.style.setProperty('--see', Math.min(1, 0.72 + p * 0.4).toFixed(3));
       }
       tick = false;
     };
