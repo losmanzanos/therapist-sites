@@ -201,3 +201,11 @@
     setTimeout(function () { if (hero.querySelector('.below').getBoundingClientRect().top < window.innerHeight) show(); }, 400);
   }
 })();
+
+// Hero fold: measure where the hero photo starts so it can end just above the bottom of the screen.
+(function () {
+  var a = document.querySelector('.tide .above');
+  if (!a) return;
+  function set() { document.documentElement.style.setProperty('--hero-top', Math.round(a.getBoundingClientRect().top + window.scrollY) + 'px'); }
+  set(); window.addEventListener('resize', set); window.addEventListener('load', set);
+})();
