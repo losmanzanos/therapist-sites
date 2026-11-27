@@ -749,3 +749,12 @@ html.rv .tide.in .rest>*:nth-child(1){transition-delay:.18s}html.rv .tide.in .re
 .tide>.wrap.divew{position:relative;height:0;z-index:3;padding-top:0;padding-bottom:0;pointer-events:none;display:flex;align-items:flex-end}
 .tide>.wrap.divew .dive{margin-bottom:4px;padding-bottom:0}
 @media (prefers-reduced-motion:reduce){.tide .deep img{opacity:.9}}
+/* Nov 27: clip instead of hidden so an anchor jump can never scroll the hero's own layers */
+.tide .above,.tide .below{overflow:clip}
+/* cue: same gold rule as the line it leads to */
+.tide .dive{font-size:13px;letter-spacing:.24em;color:#fff;gap:14px}
+.tide .dive span{border-bottom:2px solid var(--mustard);padding-bottom:8px}
+.tide .dive svg{width:16px;height:84px;margin-left:1px}
+.tide .dive:hover span,.tide .dive:focus-visible span{border-color:#f2e3c0;color:#f2e3c0}
+@media (max-width:640px){.tide .dive{font-size:12px}.tide .dive svg{height:64px}}
+@media (max-height:520px){.tide .dive svg{height:40px}}
